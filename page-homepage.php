@@ -9,13 +9,9 @@
 get_header();
 
 $hero_slides = [
-    ['label' => 'Tourism Exchange Australia', 'title' => "Australia's B2B Tourism Exchange", 'copy' => 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.', 'image' => get_theme_file_uri('/images/Lavender Bay, Sydney.jpg')],
-    ['label' => 'Connected tourism supply', 'title' => 'Bookable product across more channels', 'copy' => 'Help accommodation, tours, attractions, events and experiences move through destination websites, reseller networks and trade partners.', 'image' => get_theme_file_uri('/images/Great Barrier Reef, Whitsundays.jpg')],
-    ['label' => 'Smart destination infrastructure', 'title' => 'Turn destination interest into bookings', 'copy' => 'Connect local suppliers, owned digital assets, distributor pathways and visitor data through one neutral national exchange.', 'image' => get_theme_file_uri('/images/Broome, Western Australia.jpg')],
-    ['label' => 'Distributor-ready inventory', 'title' => 'Australian tourism product, ready for market', 'copy' => 'Give distributors and booking-system partners a practical way to connect with live Australian tourism supply.', 'image' => get_theme_file_uri('/images/Baines, Northern Territory.jpg')],
+    ['label' => 'Tourism Exchange Australia', 'title' => "Australia's B2B Tourism Exchange", 'copy' => 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.', 'image' => get_theme_file_uri('/images/hero-homepage.jpg')],
 ];
 
-$ecosystem = ['Suppliers', 'Booking Systems', 'TXA', 'Destinations', 'Distributors', 'Travellers'];
 $audiences = [
     ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/apply-now/'), 'image' => get_theme_file_uri('/images/Coffin Bay, Eyre Peninsula.jpg')],
     ['title' => 'Destinations', 'copy' => 'Become a Smart Destination and make local supply bookable through your own digital assets.', 'cta' => 'Explore Destinations', 'url' => home_url('/destinations/'), 'image' => get_theme_file_uri('/images/Twilight Beach 2, Esperance.jpg')],
@@ -42,18 +38,18 @@ if (!function_exists('txa_button')) {
 ?>
 
 <article class="txa-homepage bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="px-3 pb-6 pt-3 sm:px-4 sm:pt-5 lg:px-10 lg:pb-16 lg:pt-8">
-        <div class="mx-auto max-w-[1360px]">
+    <section class="px-3 pb-6 pt-3 sm:px-4 sm:pt-5 lg:px-5 lg:pb-16 lg:pt-8">
+        <div class="mx-auto max-w-[1400px]">
             <div class="txa-hero-slider relative min-h-[590px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]" data-hero-slider>
                 <?php foreach ($hero_slides as $index => $slide): ?>
                     <img src="<?php echo esc_url($slide['image']); ?>" alt="" class="<?php echo 0 === $index ? 'opacity-100' : 'opacity-0'; ?> absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700" data-hero-slide-image="<?php echo esc_attr($index); ?>">
                 <?php endforeach; ?>
                 <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
-                <div class="relative z-10 flex min-h-[590px] items-center px-5 pb-24 pt-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
-                    <div class="w-full max-w-[780px]">
-                        <p data-hero-slide-label class="inline-flex max-w-full rounded-lg bg-brand px-3 py-2 text-xs font-bold leading-5 text-white sm:px-4 sm:text-xl"><?php echo esc_html($hero_slides[0]['label']); ?></p>
-                        <h1 data-hero-slide-title class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:text-[64px] lg:leading-[72px]"><?php echo esc_html($hero_slides[0]['title']); ?></h1>
-                        <p data-hero-slide-copy class="mt-4 max-w-[660px] text-base font-semibold leading-6 text-white sm:text-xl sm:leading-7 lg:text-2xl lg:leading-normal"><?php echo esc_html($hero_slides[0]['copy']); ?></p>
+                <div class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
+                    <div class="w-full max-w-[760px]">
+                        <p data-hero-slide-label class="inline-flex max-w-full rounded-lg bg-brand px-5 py-3 font-bold uppercase leading-5 text-white"><?php echo esc_html($hero_slides[0]['label']); ?></p>
+                        <h1 data-hero-slide-title class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]"><?php echo esc_html($hero_slides[0]['title']); ?></h1>
+                        <p data-hero-slide-copy class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]"><?php echo esc_html($hero_slides[0]['copy']); ?></p>
                         <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4"><?php echo txa_button('Apply Now', home_url('/apply-now/')); ?><?php echo txa_button('Request Smart Destination Demo', home_url('/request-demo/'), 'light'); ?></div>
                     </div>
                 </div>
@@ -77,19 +73,6 @@ if (!function_exists('txa_button')) {
                     </div>
                 </div>
                 <div class="h-[240px] overflow-hidden rounded-lg border border-line sm:h-[368px]"><img src="<?php echo esc_url(get_theme_file_uri('/images/Glenelg, Adelaide.jpg')); ?>" alt="Glenelg, Adelaide" class="h-full w-full object-cover"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-surface px-4 py-9 sm:py-10 lg:p-16">
-        <div class="mx-auto max-w-[1312px] rounded-lg bg-white px-5 py-6 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:px-6 sm:py-8 lg:px-8 lg:py-[34px]">
-            <div class="grid gap-7 sm:gap-9 lg:grid-cols-[450px_1fr] lg:items-center lg:gap-[71px]">
-                <div>
-                    <p class="text-xs uppercase leading-5 text-brand sm:text-base">Australia's own B2B tourism exchange</p>
-                    <h2 class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">A connected tourism ecosystem</h2>
-                    <p class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">TXA helps Australian tourism suppliers make their accommodation, tours, attractions, events and experiences bookable across more diverse channels through one open exchange.</p>
-                </div>
-                <div class="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-x-[30px] lg:gap-y-[26px]"><?php foreach ($ecosystem as $index => $node): ?><div class="<?php echo 2 === $index ? 'border-brand bg-brand-tint' : 'border-line bg-surface'; ?> flex min-h-[68px] items-center gap-3 rounded-lg border p-3.5 sm:min-h-[82px] sm:gap-[14px] sm:p-4"><span class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand text-sm text-white sm:size-[34px]"><?php echo esc_html($index + 1); ?></span><span class="text-sm leading-5 text-near-black"><?php echo esc_html($node); ?></span></div><?php endforeach; ?></div>
             </div>
         </div>
     </section>
@@ -146,34 +129,9 @@ if (!function_exists('txa_button')) {
                 <div class="mt-6"><?php echo txa_button('Learn about Data & Insights', home_url('/data-insights/'), 'secondary'); ?></div>
             </div>
             <div class="flex min-h-[260px] items-center justify-center sm:min-h-[330px] lg:min-h-[414px]">
-                <div class="w-full max-w-[700px] rounded-xl border border-line bg-white p-3 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:p-6">
-                    <div class="rounded-lg bg-[#f2f4f7] p-3 sm:p-4">
-                        <div class="flex items-start justify-between gap-3 border-b border-line pb-3 sm:items-center">
-                            <div>
-                                <p class="text-[10px] font-bold uppercase tracking-wide text-brand sm:text-xs">TXA Dashboard</p>
-                                <p class="mt-1 text-xs text-mid-gray sm:text-sm">Destination performance overview</p>
-                            </div><span class="shrink-0 rounded bg-brand-tint px-2 py-1.5 text-[10px] font-semibold text-brand sm:px-3 sm:py-2 sm:text-xs">Live</span>
-                        </div>
-                        <div class="mt-3 grid grid-cols-1 gap-2 min-[390px]:grid-cols-3 sm:mt-4 sm:gap-3">
-                            <div class="rounded bg-white p-2.5 sm:p-3">
-                                <p class="text-[10px] text-mid-gray sm:text-xs">Suppliers</p>
-                                <p class="mt-1 text-lg font-bold sm:text-xl">1,284</p>
-                            </div>
-                            <div class="rounded bg-white p-2.5 sm:p-3">
-                                <p class="text-[10px] text-mid-gray sm:text-xs">Bookings</p>
-                                <p class="mt-1 text-lg font-bold sm:text-xl">8,462</p>
-                            </div>
-                            <div class="rounded bg-white p-2.5 sm:p-3">
-                                <p class="text-[10px] text-mid-gray sm:text-xs">Channels</p>
-                                <p class="mt-1 text-lg font-bold sm:text-xl">46</p>
-                            </div>
-                        </div>
-                        <div class="mt-3 h-28 rounded bg-white p-3 sm:h-36 sm:p-4">
-                            <div class="flex h-full items-end gap-1.5 sm:gap-2"><?php foreach ([42, 66, 53, 82, 61, 91, 73, 100, 78, 88] as $height): ?><span class="grow rounded-t bg-brand/80" style="height: <?php echo esc_attr($height); ?>%"></span><?php endforeach; ?></div>
-                        </div>
-                    </div>
-                    <div class="mx-auto h-3 w-2/3 rounded-b-xl bg-dark-gray sm:h-4"></div>
-                </div>
+                <img
+                    src="<?php echo esc_url(get_theme_file_uri('/images/dashboard-2.png')); ?>"
+                    alt="TXA dashboard">
             </div>
         </div>
     </section>

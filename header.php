@@ -30,7 +30,9 @@
                             <?php if (has_custom_logo()): ?>
                                 <?php the_custom_logo(); ?>
                             <?php else: ?>
-                                <a href="<?php echo esc_url(home_url('/')); ?>" class="text-xl font-bold tracking-tight text-brand !no-underline">TXA</a>
+                                <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex !no-underline">
+                                    <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-10 w-auto">
+                                </a>
                             <?php endif; ?>
                         </div>
 
@@ -49,8 +51,13 @@
                             <ul class="space-y-3 lg:flex lg:items-center lg:space-y-0 lg:-mx-4">
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/suppliers/')); ?>" class="text-xs font-medium text-mid-gray !no-underline hover:text-brand-text">Suppliers</a></li>
                                 <li class="relative lg:mx-4 lg:group">
-                                    <a href="<?php echo esc_url(home_url('/destinations/')); ?>" class="inline-flex items-center gap-1 text-xs font-medium text-mid-gray !no-underline hover:text-brand-text">Destinations <span class="text-[10px]" aria-hidden="true">⌄</span></a>
-                                    <ul class="mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:min-w-[240px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition lg:group-hover:visible lg:group-hover:opacity-100">
+                                    <div class="flex items-center gap-1">
+                                        <a href="<?php echo esc_url(home_url('/destinations/')); ?>" class="text-xs font-medium text-mid-gray !no-underline hover:text-brand-text">Destinations</a>
+                                        <button type="button" class="inline-flex size-6 items-center justify-center rounded text-mid-gray transition hover:text-brand-text" aria-expanded="false" aria-controls="destinations-submenu" aria-label="Toggle Destinations submenu" data-destinations-toggle>
+                                            <i class="bi bi-chevron-down text-[10px] leading-none transition" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <ul id="destinations-submenu" class="hidden mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:block lg:min-w-[240px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition lg:group-hover:visible lg:group-hover:opacity-100 lg:group-focus-within:visible lg:group-focus-within:opacity-100" data-destinations-submenu>
                                         <?php
                                         $destination_items = [
                                             ['Overview', '/destinations/'],

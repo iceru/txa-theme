@@ -12,6 +12,24 @@ window.addEventListener('load', function () {
         })
     }
 
+    document.querySelectorAll('[data-destinations-toggle]').forEach(function (toggle) {
+        const submenuId = toggle.getAttribute('aria-controls')
+        const submenu = submenuId ? document.getElementById(submenuId) : null
+        const icon = toggle.querySelector('.bi')
+
+        if (!submenu) return
+
+        toggle.addEventListener('click', function () {
+            const isOpen = toggle.getAttribute('aria-expanded') === 'true'
+
+            toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true')
+            submenu.classList.toggle('hidden', isOpen)
+            submenu.classList.toggle('lg:invisible', isOpen)
+            submenu.classList.toggle('lg:opacity-0', isOpen)
+            icon?.classList.toggle('rotate-180', !isOpen)
+        })
+    })
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     document.querySelectorAll('[data-hero-slider]').forEach(function (slider) {

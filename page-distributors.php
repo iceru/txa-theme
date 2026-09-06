@@ -43,15 +43,15 @@ if (!function_exists('txa_distributor_button')) {
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="px-3 pb-7 pt-4 sm:px-4 sm:pt-6 lg:px-5 lg:pt-8">
-        <div class="relative mx-auto min-h-[500px] max-w-[1400px] overflow-hidden rounded-xl bg-near-black sm:min-h-[520px] sm:rounded-2xl lg:min-h-[600px]">
+    <section class="px-3 pb-6 pt-3 sm:px-4 sm:pt-5 lg:px-5 lg:pb-16 lg:pt-8">
+        <div class="relative mx-auto min-h-[590px] max-w-[1400px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
             <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85" alt="Australian landscape" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
-            <div class="relative z-10 flex min-h-[500px] items-center px-5 py-10 sm:min-h-[520px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
-                <div class="max-w-[760px]">
-                    <p class="inline-flex rounded-lg bg-brand px-3 py-2 text-xs font-bold uppercase leading-5 text-white sm:px-6 sm:py-3 sm:text-xl">TXA for distributors</p>
-                    <h1 class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-5xl lg:text-[48px] lg:leading-[60px]">Unique access to bookable Australian tourism inventory</h1>
-                    <p class="mt-4 max-w-[660px] text-base font-semibold leading-6 text-white/90 sm:text-lg sm:leading-[29px]">TXA gives distributors a pathway to Australian tourism suppliers across accommodation, tours, attractions, events and experiences. TXA offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives.</p>
+            <div class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
+                <div class="w-full max-w-[760px]">
+                    <p class="inline-flex max-w-full rounded-lg bg-brand px-5 py-3 font-bold uppercase leading-5 text-white">TXA for distributors</p>
+                    <h1 class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">Unique access to bookable Australian tourism inventory</h1>
+                    <p class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">TXA gives distributors a pathway to Australian tourism suppliers across accommodation, tours, attractions, events and experiences. TXA offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives.</p>
                     <div class="mt-6"><?php echo txa_distributor_button('Become a Distributor', $apply_url); ?></div>
                 </div>
             </div>

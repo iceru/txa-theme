@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Template Name: Destinations Page
  *
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn (): string => 'TXA for Destinations | Become a Smart Destination');
+add_filter('pre_get_document_title', fn(): string => 'TXA for Destinations | Become a Smart Destination');
 
 add_action('wp_head', function (): void {
     if (is_page_template('page-destinations.php')) {
@@ -34,9 +35,9 @@ $problems = [
 ];
 
 $solutions = [
-    ['title' => 'Neutral Connectivity', 'copy' => 'One connection to TXA unlocks bookable local inventory regardless of software.'],
-    ['title' => 'Integrated Booking Path', 'copy' => 'Keep visitors on your domain from inspiration to confirmation.'],
-    ['title' => 'Total Data Visibility', 'copy' => 'Own the transaction data and attribution for every campaign dollar spent.'],
+    ['icon' => 'bi-diagram-3', 'title' => 'Neutral Connectivity', 'copy' => 'One connection to TXA unlocks bookable local inventory regardless of software.'],
+    ['icon' => 'bi-signpost-split', 'title' => 'Integrated Booking Path', 'copy' => 'Keep visitors on your domain from inspiration to confirmation.'],
+    ['icon' => 'bi-database-check', 'title' => 'Total Data Visibility', 'copy' => 'Own the transaction data and attribution for every campaign dollar spent.'],
 ];
 
 $capabilities = [
@@ -78,15 +79,16 @@ if (!function_exists('txa_destination_button')) {
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="px-3 pb-7 pt-4 sm:px-4 sm:pt-6 lg:px-5 lg:pb-14 lg:pt-8">
-        <div class="relative mx-auto min-h-[520px] max-w-[1400px] overflow-hidden rounded-xl bg-near-black sm:rounded-2xl lg:min-h-[600px]">
-            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=85" alt="Australian marina and coastline" class="absolute inset-0 h-full w-full object-cover">
+    <section class="px-3 pb-6 pt-3 sm:px-4 sm:pt-5 lg:px-5 lg:pb-16 lg:pt-8">
+        <div class="relative mx-auto min-h-[590px] max-w-[1400px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/destinations-1.jpg')); ?>"
+                alt="Australian marina and coastline" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
-            <div class="relative z-10 flex min-h-[520px] items-center px-5 py-10 sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
-                <div class="max-w-[760px]">
-                    <p class="inline-flex rounded-lg bg-brand px-3 py-2 text-xs font-bold uppercase leading-5 text-white sm:px-6 sm:py-3 sm:text-xl">TXA for destinations</p>
-                    <h1 class="mt-4 max-w-[660px] text-[34px] font-semibold leading-[1.08] text-white sm:text-5xl lg:text-5xl lg:leading-[56px]">Boost, sustain and protect your local visitor economy.</h1>
-                    <p class="mt-4 max-w-[660px] text-base font-semibold leading-6 text-white sm:text-lg sm:leading-[30px]">TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.</p>
+            <div class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
+                <div class="w-full max-w-[760px]">
+                    <p class="inline-flex max-w-full rounded-lg bg-brand px-5 py-3 font-bold uppercase leading-5 text-white">TXA for destinations</p>
+                    <h1 class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">Boost, sustain and protect your local visitor economy.</h1>
+                    <p class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.</p>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                         <?php echo txa_destination_button('Request Smart Destination Demo', $demo_url); ?>
                         <?php echo txa_destination_button('See destination packages', $pricing_url, 'light'); ?>
@@ -121,7 +123,7 @@ if (!function_exists('txa_destination_button')) {
                 <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle.</p>
                 <div class="mt-7 grid gap-3 sm:mt-8 sm:gap-4 md:grid-cols-2">
                     <?php foreach ($problems as $problem): ?>
-                        <article class="rounded-xl border-l-4 border-[#ba1a1a] bg-white px-5 py-5 shadow-sm sm:px-7 sm:py-6">
+                        <article class="rounded-xl  bg-white px-5 py-5 shadow-sm sm:px-7 sm:py-6">
                             <h3 class="text-base font-semibold text-[#151c27]"><?php echo esc_html($problem['title']); ?></h3>
                             <p class="mt-2 text-sm leading-5 text-mid-gray"><?php echo esc_html($problem['copy']); ?></p>
                         </article>
@@ -133,7 +135,9 @@ if (!function_exists('txa_destination_button')) {
                 <div class="mt-5 space-y-5 sm:mt-6 sm:space-y-6">
                     <?php foreach ($solutions as $item): ?>
                         <div class="flex gap-3 sm:gap-4">
-                            <span class="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full border border-white text-[10px]">✓</span>
+                            <span class="mt-1 flex size-7 shrink-0 items-center justify-center rounded-full border border-white/80 text-sm text-white">
+                                <i class="bi <?php echo esc_attr($item['icon']); ?>" aria-hidden="true"></i>
+                            </span>
                             <div>
                                 <h4 class="text-base font-semibold"><?php echo esc_html($item['title']); ?></h4>
                                 <p class="mt-1 text-sm leading-5 text-white/80"><?php echo esc_html($item['copy']); ?></p>
@@ -169,24 +173,14 @@ if (!function_exists('txa_destination_button')) {
                     <p>For the first time, your destination can see, in one place, which campaigns converted, which suppliers are performing, and where visitor spend is flowing through your local economy.</p>
                 </div>
                 <ul class="mt-5 space-y-3 text-sm font-semibold leading-5 text-[#151c27] sm:mt-6 sm:space-y-4">
-                    <li class="flex gap-3"><span class="shrink-0 text-brand">↗</span><span>Real-time Dashboards: Track supplier activity, campaign performance and visitor engagement in one place.</span></li>
-                    <li class="flex gap-3"><span class="shrink-0 text-brand">↗</span><span>Attribution & ROI: Connect marketing spend to actual booking outcomes with attribution codes.</span></li>
-                    <li class="flex gap-3"><span class="shrink-0 text-brand">↗</span><span>Data Ownership & Integration: Export insights or use APIs to flow data into your CRM or BI tools.</span></li>
+                    <li class="flex gap-3"><i class="bi bi-speedometer2 shrink-0 text-brand" aria-hidden="true"></i><span>Real-time Dashboards: Track supplier activity, campaign performance and visitor engagement in one place.</span></li>
+                    <li class="flex gap-3"><i class="bi bi-graph-up-arrow shrink-0 text-brand" aria-hidden="true"></i><span>Attribution & ROI: Connect marketing spend to actual booking outcomes with attribution codes.</span></li>
+                    <li class="flex gap-3"><i class="bi bi-database-up shrink-0 text-brand" aria-hidden="true"></i><span>Data Ownership & Integration: Export insights or use APIs to flow data into your CRM or BI tools.</span></li>
                 </ul>
             </div>
-            <div class="overflow-hidden rounded-xl border border-line bg-white p-3 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:p-5">
-                <div class="rounded-lg bg-[#f2f4f7] p-3 sm:p-4">
-                    <div class="flex items-start justify-between gap-3 border-b border-line pb-3">
-                        <div><p class="text-[11px] font-bold uppercase tracking-wide text-brand sm:text-xs">TXA Dashboard</p><p class="mt-1 text-xs leading-5 text-mid-gray sm:text-sm">Destination and channel signals</p></div>
-                        <span class="shrink-0 rounded bg-brand-tint px-2 py-1.5 text-[11px] font-semibold text-brand sm:px-3 sm:py-2 sm:text-xs">Live</span>
-                    </div>
-                    <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:grid-cols-4 sm:gap-3">
-                        <?php foreach (['Supplier activity' => '74%', 'Campaigns' => '81%', 'Engagement' => '68%', 'Conversion' => '79%'] as $label => $value): ?>
-                            <div class="rounded bg-white p-2.5 sm:p-3"><p class="text-[11px] leading-4 text-mid-gray sm:text-xs"><?php echo esc_html($label); ?></p><p class="mt-1 text-base font-bold sm:text-lg"><?php echo esc_html($value); ?></p></div>
-                        <?php endforeach; ?>
-                    </div>
-                    <div class="mt-3 h-28 rounded bg-white p-3 sm:h-40 sm:p-4"><div class="flex h-full items-end gap-1.5 sm:gap-2"><?php foreach ([35,52,48,70,63,80,58,88,76,94] as $h): ?><span class="grow rounded-t bg-brand/80" style="height:<?php echo esc_attr($h); ?>%"></span><?php endforeach; ?></div></div>
-                </div>
+            <div class="overflow-hidden">
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/dashboard-2.png')); ?>"
+                    alt="TXA dashboard" />
             </div>
         </div>
     </section>
