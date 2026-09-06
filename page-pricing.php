@@ -57,16 +57,26 @@ $partner_cards = [
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="relative min-h-[620px] overflow-hidden bg-near-black px-4 py-12 text-white sm:py-16 lg:px-16 lg:py-24">
-        <img src="<?php echo esc_url(get_theme_file_uri('/images/Baines, Northern Territory.jpg')); ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
+    <section
+        class="relative min-h-[620px] overflow-hidden bg-near-black px-4 py-12 text-white sm:py-16 lg:px-16 lg:py-24">
+        <img src="<?php echo esc_url(get_theme_file_uri('/images/Baines, Northern Territory.jpg')); ?>" alt=""
+            class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-near-black/60" aria-hidden="true"></div>
-        <div class="relative z-10 mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
+        <div
+            class="relative z-10 mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
             <div>
-                <h1 class="max-w-[620px] [font-family:'Hanken_Grotesk',sans-serif] text-[42px] font-bold leading-[1.1] text-white sm:text-5xl lg:text-[56px]">TXA pricing without the guesswork.</h1>
-                <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg">Tell us what you do and your preferred commercial model and we will help guide you.</p>
+                <h1
+                    class="max-w-[620px] [font-family:'Hanken_Grotesk',sans-serif] text-[42px] font-bold leading-[1.1] text-white sm:text-5xl lg:text-[44px]">
+                    TXA pricing without the guesswork.</h1>
+                <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg">Tell us what
+                    you do and your preferred commercial model and we will help guide you.</p>
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <a href="<?php echo esc_url($apply_url); ?>" class="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-8 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark">Apply Now</a>
-                    <a href="<?php echo esc_url($demo_url); ?>" class="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/70 bg-white/10 px-8 py-3 text-base font-bold text-white !no-underline hover:bg-white/20">Request Demo</a>
+                    <a href="<?php echo esc_url($apply_url); ?>"
+                        class="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-8 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark">Apply
+                        Now</a>
+                    <a href="<?php echo esc_url($demo_url); ?>"
+                        class="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/70 bg-white/10 px-8 py-3 text-base font-bold text-white !no-underline hover:bg-white/20">Request
+                        Demo</a>
                 </div>
                 <div class="mt-10 grid gap-6 sm:grid-cols-3">
                     <?php foreach ($hero_steps as $step): ?>
@@ -80,13 +90,17 @@ $partner_cards = [
             </div>
             <div class="grid gap-4">
                 <?php foreach ($hero_paths as $path): ?>
-                    <a href="<?php echo esc_url($path['url']); ?>" class="group flex min-h-[106px] items-center justify-between gap-5 rounded-lg border border-white/10 bg-white/20 p-6 shadow-lg backdrop-blur-md !no-underline hover:bg-white/25">
+                    <a href="<?php echo esc_url($path['url']); ?>"
+                        class="group flex min-h-[106px] items-center justify-between gap-5 rounded-lg border border-white/10 bg-white/20 p-6 shadow-lg backdrop-blur-md !no-underline hover:bg-white/25">
                         <span>
                             <i class="bi <?php echo esc_attr($path['icon']); ?> text-2xl text-white" aria-hidden="true"></i>
-                            <span class="mt-3 block text-2xl font-bold text-white"><?php echo esc_html($path['title']); ?></span>
-                            <span class="mt-1 block text-sm font-semibold text-white/80"><?php echo esc_html($path['copy']); ?></span>
+                            <span
+                                class="mt-3 block text-2xl font-bold text-white"><?php echo esc_html($path['title']); ?></span>
+                            <span
+                                class="mt-1 block text-sm font-semibold text-white/80"><?php echo esc_html($path['copy']); ?></span>
                         </span>
-                        <i class="bi bi-arrow-right text-2xl text-white/70 transition group-hover:translate-x-1 group-hover:text-white" aria-hidden="true"></i>
+                        <i class="bi bi-arrow-right text-2xl text-white/70 transition group-hover:translate-x-1 group-hover:text-white"
+                            aria-hidden="true"></i>
                     </a>
                 <?php endforeach; ?>
             </div>
@@ -95,30 +109,41 @@ $partner_cards = [
 
     <section class="px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
         <div class="mx-auto max-w-[1312px]">
-            <h2 class="text-center [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">Choose the pricing model that matches your organisation</h2>
+            <h2
+                class="text-center [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
+                Choose the pricing model that matches your organisation</h2>
             <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
                 <?php foreach ($pricing_cards as $card): ?>
-                    <article class="relative flex min-h-[430px] flex-col rounded-2xl border <?php echo !empty($card['featured']) ? 'border-2 border-brand' : 'border-line'; ?> bg-white p-8 shadow-sm">
+                    <article
+                        class="relative flex min-h-[430px] flex-col rounded-2xl border <?php echo !empty($card['featured']) ? 'border-2 border-brand' : 'border-line'; ?> bg-white p-8 shadow-sm">
                         <?php if (!empty($card['featured'])): ?>
-                            <span class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-brand px-7 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white">Most Common</span>
+                            <span
+                                class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-brand px-7 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white">Most
+                                Common</span>
                         <?php endif; ?>
                         <h3 class="text-xl font-bold text-brand"><?php echo esc_html($card['title']); ?></h3>
                         <div class="mt-8">
                             <?php if (!empty($card['price_end'])): ?>
-                                <p class="text-4xl font-bold leading-none text-[#151c27]"><?php echo esc_html($card['price']); ?> <span class="text-sm font-bold text-mid-gray"><?php echo esc_html($card['suffix']); ?></span> <?php echo esc_html($card['price_end']); ?></p>
+                                <p class="text-4xl font-bold leading-none text-[#151c27]">
+                                    <?php echo esc_html($card['price']); ?> <span
+                                        class="text-sm font-bold text-mid-gray"><?php echo esc_html($card['suffix']); ?></span>
+                                    <?php echo esc_html($card['price_end']); ?></p>
                             <?php else: ?>
-                                <p class="text-2xl font-bold leading-tight text-[#151c27]"><?php echo esc_html($card['price']); ?></p>
+                                <p class="text-2xl font-bold leading-tight text-[#151c27]">
+                                    <?php echo esc_html($card['price']); ?></p>
                             <?php endif; ?>
                         </div>
                         <p class="mt-6 text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                         <?php if (!empty($card['points'])): ?>
                             <ul class="mt-6 space-y-3 text-sm font-semibold text-[#151c27]">
                                 <?php foreach ($card['points'] as $point): ?>
-                                    <li class="flex items-center gap-2"><i class="bi bi-check-circle text-brand" aria-hidden="true"></i><?php echo esc_html($point); ?></li>
+                                    <li class="flex items-center gap-2"><i class="bi bi-check-circle text-brand"
+                                            aria-hidden="true"></i><?php echo esc_html($point); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
-                        <a href="<?php echo esc_url($card['url']); ?>" class="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center text-sm font-bold !no-underline"><?php echo esc_html($card['cta']); ?></a>
+                        <a href="<?php echo esc_url($card['url']); ?>"
+                            class="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center text-sm font-bold !no-underline"><?php echo esc_html($card['cta']); ?></a>
                     </article>
                 <?php endforeach; ?>
             </div>
@@ -128,15 +153,25 @@ $partner_cards = [
     <section class="bg-surface px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
             <div>
-                <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand">Supplier Focus</p>
-                <h2 class="mt-7 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">No booking, no fee supplier pricing</h2>
-                <p class="mt-6 max-w-[620px] text-base leading-8 text-mid-gray">Our model is designed to grow with you. The 0.75%-2.8% success fee ensures that TXA only succeeds when your business does. We reduce manual allocation and administrative overhead, allowing you to focus on the experience.</p>
+                <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand">Supplier
+                    Focus</p>
+                <h2
+                    class="mt-7 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
+                    No booking, no fee supplier pricing</h2>
+                <p class="mt-6 max-w-[620px] text-base leading-8 text-mid-gray">Our model is designed to grow with you.
+                    The 0.75%-2.8% success fee ensures that TXA only succeeds when your business does. We reduce manual
+                    allocation and administrative overhead, allowing you to focus on the experience.</p>
                 <div class="mt-8 grid gap-4 sm:grid-cols-2">
                     <?php foreach ($supplier_types as $type): ?>
-                        <div class="flex items-center gap-3 text-sm font-semibold text-[#151c27]"><i class="bi bi-check-lg text-brand" aria-hidden="true"></i><?php echo esc_html($type); ?></div>
+                        <div class="flex items-center gap-3 text-sm font-semibold text-[#151c27]"><i
+                                class="bi bi-check-lg text-brand" aria-hidden="true"></i><?php echo esc_html($type); ?>
+                        </div>
                     <?php endforeach; ?>
                 </div>
-                <a href="<?php echo esc_url($apply_url); ?>" class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 text-sm font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply Now using the TXA Get Connected Wizard <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                <a href="<?php echo esc_url($apply_url); ?>"
+                    class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 text-sm font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply
+                    Now using the TXA Get Connected Wizard <i class="bi bi-box-arrow-up-right"
+                        aria-hidden="true"></i></a>
             </div>
             <div class="rounded-2xl bg-white p-7 shadow-xl">
                 <div class="flex items-center justify-between gap-4 text-sm font-bold">
@@ -158,15 +193,21 @@ $partner_cards = [
         <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-2">
             <?php foreach ($partner_cards as $card): ?>
                 <article class="rounded-2xl border border-[#dfc0ba] bg-white p-8 sm:p-10 lg:p-12">
-                    <span class="flex size-14 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand"><i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i></span>
-                    <h2 class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27]"><?php echo esc_html($card['title']); ?></h2>
-                    <p class="mt-6 max-w-[560px] text-base leading-8 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
+                    <span class="flex size-14 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand"><i
+                            class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i></span>
+                    <h2 class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27]">
+                        <?php echo esc_html($card['title']); ?></h2>
+                    <p class="mt-6 max-w-[560px] text-base leading-8 text-mid-gray"><?php echo esc_html($card['copy']); ?>
+                    </p>
                     <ol class="mt-8 space-y-5">
                         <?php foreach ($card['points'] as $index => $point): ?>
-                            <li class="flex items-center gap-4 text-sm font-bold text-[#151c27]"><span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-tint text-xs text-brand"><?php echo esc_html($index + 1); ?></span><?php echo esc_html($point); ?></li>
+                            <li class="flex items-center gap-4 text-sm font-bold text-[#151c27]"><span
+                                    class="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-tint text-xs text-brand"><?php echo esc_html($index + 1); ?></span><?php echo esc_html($point); ?>
+                            </li>
                         <?php endforeach; ?>
                     </ol>
-                    <a href="<?php echo esc_url($card['url']); ?>" class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-near-black px-8 py-3 text-sm font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
+                    <a href="<?php echo esc_url($card['url']); ?>"
+                        class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-near-black px-8 py-3 text-sm font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
                 </article>
             <?php endforeach; ?>
         </div>

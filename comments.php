@@ -79,7 +79,7 @@ if (post_password_required()) {
                     '" size="30" /></p>'
             ]),
             'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title text-2xl font-bold mb-2">',
-            'class_submit'      => 'bg-dark rounded-full px-4 py-1.5 text-sm font-semibold text-light my-4',
+            'class_submit'      => 'bg-dark rounded-full px-4 py-1.5 font-semibold text-light my-4',
             'comment_field'     => '<textarea id="comment" name="comment" class="bg-light w-full px-4 py-3 my-2 rounded-xl text-sm" aria-required="true" placeholder="' . esc_attr__('Your comment', 'text-domain') . '"></textarea>',
             'logged_in_as'      => '<p class="logged-in-as mb-4">',
         ]);

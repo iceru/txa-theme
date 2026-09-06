@@ -27,7 +27,7 @@ if (!function_exists('txa_header_link_class')) {
             ? 'font-bold text-brand'
             : 'font-medium text-mid-gray';
 
-        return trim($extra_classes . ' text-xs ' . $state_classes . ' !no-underline hover:text-brand-text');
+        return trim($extra_classes . ' text-xs ' . $state_classes . ' !no-underline hover:text-brand');
     }
 }
 ?>
@@ -48,8 +48,8 @@ if (!function_exists('txa_header_link_class')) {
     <div id="page" class="min-h-screen flex flex-col">
         <?php do_action('tailpress_header'); ?>
 
-        <header class="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
-            <div class="container mx-auto py-3">
+        <header class="sticky top-0 z-50 border-b border-line bg-white/95 px-4 backdrop-blur lg:px-16">
+            <div class="mx-auto max-w-[1312px] py-3">
                 <div class="lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-8">
                     <div class="flex items-center justify-between">
                         <div>
@@ -88,7 +88,7 @@ if (!function_exists('txa_header_link_class')) {
                                         <a href="<?php echo esc_url(home_url('/destinations/')); ?>"
                                             class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'translate-y-px')); ?>">Destinations</a>
                                         <button type="button"
-                                            class="inline-flex size-6 translate-y-px items-center justify-center rounded <?php echo $destinations_active ? 'text-brand' : 'text-mid-gray'; ?> transition hover:text-brand-text mt-0.5"
+                                            class="inline-flex size-6 translate-y-px items-center justify-center rounded <?php echo $destinations_active ? 'text-brand' : 'text-mid-gray'; ?> transition hover:text-brand mt-0.5"
                                             aria-expanded="false" aria-controls="destinations-submenu"
                                             aria-label="Toggle Destinations submenu" data-destinations-toggle>
                                             <i class="bi bi-chevron-down text-[10px] leading-none transition"
@@ -134,7 +134,7 @@ if (!function_exists('txa_header_link_class')) {
 
                         <div class="mt-4 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:justify-self-end">
                             <a href="<?php echo esc_url(home_url('/request-demo/')); ?>"
-                                class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 text-sm font-bold text-white !no-underline hover:bg-brand-dark">Request
+                                class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white !no-underline hover:bg-brand-dark">Request
                                 Demo</a>
                         </div>
                     </div>

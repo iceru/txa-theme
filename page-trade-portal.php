@@ -47,7 +47,7 @@ $inventory_points = [
                 <p class="inline-flex rounded-lg bg-brand px-5 py-3 text-xs font-bold uppercase text-white sm:text-sm">
                     Trade Portal Solution</p>
                 <h1
-                    class="mt-8 max-w-[680px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[56px] lg:leading-[1.15]">
+                    class="mt-8 max-w-[680px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
                     Give trade partners a <span class="text-brand">dedicated destination page</span> with bookable local
                     supply</h1>
                 <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray">TXA can create a destination-specific

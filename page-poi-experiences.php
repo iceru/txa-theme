@@ -46,7 +46,7 @@ $feature_cards = [
                 <p class="inline-flex rounded-lg bg-brand px-5 py-3 text-xs font-bold uppercase text-white sm:text-sm">
                     Point of Interests &amp; Experiences</p>
                 <h1
-                    class="mt-8 max-w-[610px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[56px] lg:leading-[1.15]">
+                    class="mt-8 max-w-[610px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
                     Create destination content that <span class="text-brand">connects</span> to bookable product</h1>
                 <p class="mt-6 max-w-[540px] text-lg leading-8 text-mid-gray">TXA allows a destination to add Points of
                     Interest - free things to see and do - and to create recommended experiences and suggested
