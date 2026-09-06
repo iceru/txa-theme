@@ -12,25 +12,25 @@ $hero_slides = [
         'label' => 'Tourism Exchange Australia',
         'title' => "Australia's B2B Tourism Exchange",
         'copy' => 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.',
-        'image' => 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=2200&q=85',
+        'image' => get_theme_file_uri('/images/Lavender Bay, Sydney.jpg'),
     ],
     [
         'label' => 'Connected tourism supply',
         'title' => 'Bookable product across more channels',
         'copy' => 'Help accommodation, tours, attractions, events and experiences move through destination websites, reseller networks and trade partners.',
-        'image' => 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85',
+        'image' => get_theme_file_uri('/images/Great Barrier Reef, Whitsundays.jpg'),
     ],
     [
         'label' => 'Smart destination infrastructure',
         'title' => 'Turn destination interest into bookings',
         'copy' => 'Connect local suppliers, owned digital assets, distributor pathways and visitor data through one neutral national exchange.',
-        'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=85',
+        'image' => get_theme_file_uri('/images/Broome, Western Australia.jpg'),
     ],
     [
         'label' => 'Distributor-ready inventory',
         'title' => 'Australian tourism product, ready for market',
         'copy' => 'Give distributors and booking-system partners a practical way to connect with live Australian tourism supply.',
-        'image' => 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2200&q=85',
+        'image' => get_theme_file_uri('/images/Baines, Northern Territory.jpg'),
     ],
 ];
 
@@ -42,28 +42,28 @@ $audiences = [
         'copy' => 'Connect through your booking system and make your product bookable across more channels.',
         'cta' => 'Apply Now',
         'url' => home_url('/apply-now/'),
-        'image' => 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85',
+        'image' => get_theme_file_uri('/images/Coffin Bay, Eyre Peninsula.jpg'),
     ],
     [
         'title' => 'Destinations',
         'copy' => 'Become a Smart Destination and make local supply bookable through your own digital assets.',
         'cta' => 'Explore Destinations',
         'url' => home_url('/destinations/'),
-        'image' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85',
+        'image' => get_theme_file_uri('/images/Twilight Beach 2, Esperance.jpg'),
     ],
     [
         'title' => 'Distributors',
         'copy' => 'Access bookable Australian tourism inventory through TXA connected supply.',
         'cta' => 'Become a Distributor',
         'url' => home_url('/distributors/'),
-        'image' => 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85',
+        'image' => get_theme_file_uri('/images/Perth 2, Western Australia.jpg'),
     ],
     [
         'title' => 'Booking Systems',
         'copy' => 'Connect your booking system to TXA and unlock distribution for your customers.',
         'cta' => 'Partner Enquiry',
         'url' => home_url('/booking-systems/'),
-        'image' => 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=85',
+        'image' => get_theme_file_uri('/images/Elephant Rock, Kimberley.jpg'),
     ],
 ];
 
@@ -151,7 +151,7 @@ if (!function_exists('txa_button')) {
                     </div>
                 </div>
                 <div class="h-[240px] overflow-hidden rounded-lg border border-line sm:h-[368px]">
-                    <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1400&q=85" alt="Australian coastline and beach" class="h-full w-full object-cover">
+                    <img src="<?php echo esc_url(get_theme_file_uri('/images/Glenelg, Adelaide.jpg')); ?>" alt="Glenelg, Adelaide" class="h-full w-full object-cover">
                 </div>
             </div>
         </div>
@@ -210,7 +210,7 @@ if (!function_exists('txa_button')) {
         <div class="mx-auto max-w-[1312px] text-center">
             <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">How TXA Works</h2>
             <a href="<?php echo esc_url(home_url('/how-txa-works/')); ?>" class="group relative mt-6 block h-[240px] overflow-hidden rounded-xl bg-near-black sm:mt-8 sm:h-[460px] sm:rounded-2xl lg:h-[551px]">
-                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2200&q=85" alt="How TXA works" class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]">
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/Frame 21.png')); ?>" alt="How TXA works" class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]">
                 <span class="absolute inset-0 bg-black/40" aria-hidden="true"></span>
                 <span class="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 shadow-lg sm:size-[92px] lg:size-[114px]">
                     <svg viewBox="0 0 48 48" aria-hidden="true" class="ml-1 size-7 fill-near-black sm:size-10 lg:size-12"><path d="M17 12.5v23L36 24 17 12.5Z" /></svg>
@@ -220,7 +220,7 @@ if (!function_exists('txa_button')) {
     </section>
 
     <section class="relative overflow-hidden bg-near-black px-4 py-10 text-white sm:py-12 lg:px-16 lg:py-16">
-        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=85" alt="" class="absolute inset-0 h-full w-full object-cover">
+        <img src="<?php echo esc_url(get_theme_file_uri('/images/Torndirrup National Park, Torndirrup.jpg')); ?>" alt="Torndirrup National Park" class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-black/75 sm:bg-black/70" aria-hidden="true"></div>
         <div class="relative z-10 mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[554px_1fr] lg:items-center lg:gap-12">
             <div>
