@@ -17,17 +17,17 @@ get_header();
 $apply_url = home_url('/distributors/apply/');
 
 $benefits = [
-    ['icon' => '▦', 'title' => 'Access live inventory', 'copy' => 'Direct access to thousands of live-booked suppliers with real-time rates and availability.'],
-    ['icon' => '▤', 'title' => 'Commercial flexibility', 'copy' => 'Support for multiple payment and commercial models including Net, Gross, and Commission.'],
-    ['icon' => '⌁', 'title' => 'Campaign ready', 'copy' => 'Leverage national and state tourism campaigns by distributing opt-in campaign deals.'],
-    ['icon' => '◇', 'title' => 'Reduced friction', 'copy' => 'Connect once to TXA and gain access to an entire ecosystem without individual integrations.'],
+    ['icon' => 'bi-box-seam', 'title' => 'Access live inventory', 'copy' => 'Direct access to thousands of live-booked suppliers with real-time rates and availability.'],
+    ['icon' => 'bi-cash-stack', 'title' => 'Commercial flexibility', 'copy' => 'Support for multiple payment and commercial models including Net, Gross, and Commission.'],
+    ['icon' => 'bi-megaphone', 'title' => 'Campaign ready', 'copy' => 'Leverage national and state tourism campaigns by distributing opt-in campaign deals.'],
+    ['icon' => 'bi-link-45deg', 'title' => 'Reduced friction', 'copy' => 'Connect once to TXA and gain access to an entire ecosystem without individual integrations.'],
 ];
 
 $models = [
-    ['icon' => '✥', 'title' => 'API Connection', 'copy' => 'Direct JSON-based API for enterprise distributors who want total control over the booking UI and user experience.', 'points' => ['Real-time confirmation', 'Dynamic pricing support']],
-    ['icon' => '▭', 'title' => 'White-label Booking Pages', 'copy' => 'Branded booking widgets and search pages that integrate seamlessly into your website with minimal code.', 'points' => ['Rapid deployment', 'Mobile optimized']],
-    ['icon' => '⌂', 'title' => 'On-account / Agent Model', 'copy' => 'Support for traditional agency models where distributors hold accounts and manage payments offline.', 'points' => ['Flexible settlement', 'Back-office reconciliation']],
-    ['icon' => '◉', 'title' => 'Campaign & Destination Led', 'copy' => 'Targeted distribution focused on specific regions or events as part of institutional marketing efforts.', 'points' => ['High-intent traffic', 'Curated inventory lists']],
+    ['icon' => 'bi-code-slash', 'title' => 'API Connection', 'copy' => 'Direct JSON-based API for enterprise distributors who want total control over the booking UI and user experience.', 'points' => ['Real-time confirmation', 'Dynamic pricing support']],
+    ['icon' => 'bi-window', 'title' => 'White-label Booking Pages', 'copy' => 'Branded booking widgets and search pages that integrate seamlessly into your website with minimal code.', 'points' => ['Rapid deployment', 'Mobile optimized']],
+    ['icon' => 'bi-person-vcard', 'title' => 'On-account / Agent Model', 'copy' => 'Support for traditional agency models where distributors hold accounts and manage payments offline.', 'points' => ['Flexible settlement', 'Back-office reconciliation']],
+    ['icon' => 'bi-signpost-split', 'title' => 'Campaign & Destination Led', 'copy' => 'Targeted distribution focused on specific regions or events as part of institutional marketing efforts.', 'points' => ['High-intent traffic', 'Curated inventory lists']],
 ];
 
 if (!function_exists('txa_distributor_button')) {
@@ -43,8 +43,8 @@ if (!function_exists('txa_distributor_button')) {
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="px-3 pb-6 pt-3 sm:px-4 sm:pt-5 lg:px-5 lg:pb-16 lg:pt-8">
-        <div class="relative mx-auto min-h-[590px] max-w-[1400px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
+    <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
+        <div class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
             <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85" alt="Australian landscape" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
@@ -67,7 +67,7 @@ if (!function_exists('txa_distributor_button')) {
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
                 <?php foreach ($benefits as $index => $benefit): ?>
                     <article class="rounded-xl border border-[#dfc0ba]/20 bg-white p-5 shadow-[0_4px_10px_rgba(0,0,0,0.05)] sm:min-h-[250px] sm:p-8">
-                        <span class="<?php echo 0 === $index % 2 ? 'bg-[#ffdad4]' : 'bg-[#e0e2e9]'; ?> flex size-11 items-center justify-center rounded-lg text-lg font-bold text-brand sm:size-12"><?php echo esc_html($benefit['icon']); ?></span>
+                        <span class="<?php echo 0 === $index % 2 ? 'bg-[#ffdad4]' : 'bg-[#e0e2e9]'; ?> flex size-11 items-center justify-center rounded-lg text-lg font-bold text-brand sm:size-12"><i class="bi <?php echo esc_attr($benefit['icon']); ?>" aria-hidden="true"></i></span>
                         <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:mt-6 sm:text-xl sm:leading-7"><?php echo esc_html($benefit['title']); ?></h3>
                         <p class="mt-2 text-[15px] leading-6 text-mid-gray sm:mt-3 sm:text-base"><?php echo esc_html($benefit['copy']); ?></p>
                     </article>
@@ -85,12 +85,12 @@ if (!function_exists('txa_distributor_button')) {
             <div class="mt-7 grid gap-4 sm:mt-8 sm:gap-6 lg:grid-cols-2">
                 <?php foreach ($models as $model): ?>
                     <article class="flex flex-col gap-4 rounded-2xl border border-[#dfc0ba]/10 bg-surface p-5 sm:min-h-[254px] sm:flex-row sm:gap-8 sm:p-8">
-                        <span class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white text-xl font-bold text-brand shadow-sm sm:size-16 sm:text-2xl"><?php echo esc_html($model['icon']); ?></span>
+                        <span class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white text-xl font-bold text-brand shadow-sm sm:size-16 sm:text-2xl"><i class="bi <?php echo esc_attr($model['icon']); ?>" aria-hidden="true"></i></span>
                         <div>
                             <h3 class="[font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:text-xl sm:leading-7"><?php echo esc_html($model['title']); ?></h3>
                             <p class="mt-2 text-[15px] leading-6 text-mid-gray sm:text-base"><?php echo esc_html($model['copy']); ?></p>
                             <ul class="mt-4 space-y-2 text-sm text-[#151c27]">
-                                <?php foreach ($model['points'] as $point): ?><li class="flex items-center gap-2"><span class="text-brand">⊙</span><?php echo esc_html($point); ?></li><?php endforeach; ?>
+                                <?php foreach ($model['points'] as $point): ?><li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-brand" aria-hidden="true"></i><?php echo esc_html($point); ?></li><?php endforeach; ?>
                             </ul>
                         </div>
                     </article>

@@ -1,20 +1,176 @@
 <?php
 /**
  * Template Name: Pricing
+ *
  * @package TailPress
  */
+
 get_header();
-$cards=[
- ['title'=>'Tourism Suppliers','price'=>'0.75% – 2.8%','copy'=>'Success fee per booking with no fixed upfront or monthly TXA fee.','cta'=>'Apply Now','url'=>home_url('/apply-now/'),'featured'=>true],
- ['title'=>'Destinations','price'=>'Smart Destination Packages','copy'=>'Local, Regional and State packages for destination activation, content, trade tools and visitor experiences.','cta'=>'View Destination Pricing','url'=>home_url('/destinations/pricing/')],
- ['title'=>'Distributors','price'=>'Commercial Agreement','copy'=>'Commercial arrangements depend on distributor model, volume and agreed integration scope.','cta'=>'Become a Distributor','url'=>home_url('/distributors/')],
- ['title'=>'Booking Systems','price'=>'Partner Enquiry','copy'=>'Integration and commercial terms are handled through the booking-system partner pathway.','cta'=>'Partner Enquiry','url'=>home_url('/booking-systems/')],
+
+$apply_url = home_url('/apply-now/');
+$demo_url = home_url('/request-demo/');
+$supplier_url = home_url('/suppliers/');
+$destination_url = home_url('/destinations/pricing/');
+$distributor_url = home_url('/distributors/');
+$booking_url = home_url('/booking-systems/partner-enquiry/');
+
+$hero_steps = [
+    ['number' => '01', 'title' => 'Identify your role', 'copy' => 'Supplier, destination, distributor and booking-system partner pricing are intentionally separated.'],
+    ['number' => '02', 'title' => 'Confirm the model', 'copy' => 'Success fee, platform package, commercial agreement or partner enquiry depends on the pathway.'],
+    ['number' => '03', 'title' => 'Take the right next step', 'copy' => 'Each pathway leads to the enquiry or application process that matches the organisation type.'],
+];
+
+$hero_paths = [
+    ['icon' => 'bi-house-door', 'title' => 'Suppliers', 'copy' => '0.75% - 2.8% success fee per booking.', 'url' => $supplier_url],
+    ['icon' => 'bi-map', 'title' => 'Destinations', 'copy' => 'Packages subject to approval and scope.', 'url' => $destination_url],
+    ['icon' => 'bi-diagram-3', 'title' => 'Distributors', 'copy' => 'Pricing by agreement based on volume.', 'url' => $distributor_url],
+    ['icon' => 'bi-calendar2-check', 'title' => 'Booking Systems', 'copy' => 'Technical integration partner enquiry.', 'url' => $booking_url],
+];
+
+$pricing_cards = [
+    ['title' => 'Tourism Suppliers', 'price' => '0.75%', 'suffix' => 'to', 'price_end' => '2.8%', 'copy' => 'Success fee per booking. Perfect for hotels, tours, and attraction operators.', 'points' => ['No upfront fees', 'Unlimited distributors'], 'cta' => 'View Details', 'url' => $supplier_url, 'featured' => true],
+    ['title' => 'Destinations', 'price' => 'Destination Packages', 'copy' => 'Fixed monthly platform service packages for destination activation, supplier support, content, trade, virtual concierge and data. Publish only after package approval.', 'cta' => 'Request a Demo', 'url' => $demo_url],
+    ['title' => 'Distributors', 'price' => 'Commercial Base', 'copy' => 'Free to connect. Commercial arrangements depend on the distributor model and agreement.', 'cta' => 'Become a Distributor', 'url' => $distributor_url],
+    ['title' => 'Booking Systems', 'price' => 'Partner Enquiry', 'copy' => 'Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry.', 'cta' => 'Partner Enquiry', 'url' => $booking_url],
+];
+
+$supplier_types = ['Accommodation & Hotels', 'Guided Tours & Experiences', 'Attractions & Rentals', 'Event & Activity Providers'];
+
+$partner_cards = [
+    [
+        'icon' => 'bi-globe2',
+        'title' => 'Distributors',
+        'copy' => 'TXA acts as a commercially neutral exchange, allowing distributors to connect with thousands of Australian suppliers through a single pipe.',
+        'points' => ['Commercially Neutral Exchange', 'Live inventory from connected booking systems', 'Consolidated payment reconciliation'],
+        'cta' => 'Become a Distributor',
+        'url' => $distributor_url,
+    ],
+    [
+        'icon' => 'bi-terminal',
+        'title' => 'Booking-System Partners',
+        'copy' => 'Empower your software users with instant access to state and regional tourism markets via TXA\'s integration framework.',
+        'points' => ['Open API & Documentation', 'Technical support for onboarding', 'Value-add for your customer base'],
+        'cta' => 'Partner Enquiry',
+        'url' => $booking_url,
+    ],
 ];
 ?>
+
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-<section class="px-4 pb-8 pt-5 sm:pt-8 lg:px-5"><div class="relative mx-auto min-h-[470px] max-w-[1360px] overflow-hidden rounded-2xl bg-near-black sm:min-h-[520px] lg:min-h-[560px]"><div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(212,43,43,.38),transparent_34%),linear-gradient(135deg,#1a1a1a,#2a2a2a)]"></div><div class="relative z-10 flex min-h-[470px] items-center px-5 py-12 sm:min-h-[520px] sm:px-7 sm:py-14 lg:min-h-[560px] lg:px-8 lg:py-16"><div class="max-w-[780px]"><p class="inline-flex rounded-lg bg-brand px-4 py-2 text-xs font-bold text-white sm:text-sm">PRICING</p><h1 class="mt-5 text-[2rem] font-semibold leading-[1.08] text-white sm:text-5xl lg:leading-[56px]">A pricing model for every TXA pathway</h1><p class="mt-5 max-w-[680px] text-base font-semibold leading-7 text-white/90 sm:text-lg sm:leading-[30px]">Suppliers, destinations, distributors and booking-system partners connect to TXA in different ways. Choose the pathway that matches your organisation.</p><div class="mt-7 flex flex-col gap-3 sm:flex-row sm:gap-4"><a href="<?php echo esc_url(home_url('/apply-now/')); ?>" class="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-white px-6 py-3 text-center text-base font-bold text-brand !no-underline sm:w-auto sm:px-8 sm:text-lg">Apply Now</a><a href="<?php echo esc_url(home_url('/request-demo/')); ?>" class="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-white px-6 py-3 text-center text-base font-bold text-white !no-underline sm:w-auto sm:px-8 sm:text-lg">Request Demo</a></div></div></div></div></section>
-<section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-20"><div class="mx-auto max-w-[1312px]"><div class="text-center"><p class="text-xs uppercase text-brand sm:text-sm">Choose your pathway</p><h2 class="mt-3 text-2xl font-bold leading-8 text-[#151c27] sm:text-3xl lg:text-4xl">TXA pricing by audience</h2><p class="mx-auto mt-4 max-w-[700px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">Each audience has a different commercial model, so pricing stays aligned to the value and role of each connection.</p></div><div class="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:mt-14"><?php foreach($cards as $card): ?><article class="relative flex min-h-0 flex-col rounded-2xl <?php echo !empty($card['featured'])?'border-2 border-brand shadow-xl':'border border-[#dfc0ba]/30'; ?> bg-white p-6 sm:min-h-[360px] sm:rounded-3xl sm:p-8"><?php if(!empty($card['featured'])): ?><span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-3 py-1 text-[10px] uppercase tracking-wide text-white sm:px-4 sm:text-xs">MOST COMMON</span><?php endif; ?><p class="text-xs font-bold uppercase text-brand sm:text-sm"><?php echo esc_html($card['title']); ?></p><h3 class="mt-5 text-2xl font-bold leading-tight text-[#151c27] sm:mt-7 sm:text-3xl"><?php echo esc_html($card['price']); ?></h3><p class="mt-4 text-sm leading-6 text-mid-gray sm:mt-5"><?php echo esc_html($card['copy']); ?></p><a href="<?php echo esc_url($card['url']); ?>" class="mt-6 inline-flex min-h-11 items-center justify-center rounded-lg <?php echo !empty($card['featured'])?'bg-brand text-white':'border border-brand text-brand'; ?> px-5 py-3 text-center text-sm font-bold !no-underline sm:mt-auto"><?php echo esc_html($card['cta']); ?></a></article><?php endforeach; ?></div></div></section>
-<section class="bg-surface px-4 py-10 sm:py-12 lg:px-16 lg:py-14"><div class="mx-auto grid max-w-[1312px] gap-7 rounded-2xl bg-white p-6 sm:p-8 lg:grid-cols-[1fr_.9fr] lg:items-center lg:gap-10 lg:p-12"><div><p class="text-xs uppercase text-brand sm:text-sm">Supplier pricing</p><h2 class="mt-3 text-2xl font-bold leading-8 text-[#151c27] sm:text-3xl">No booking, no fee</h2><p class="mt-4 max-w-[650px] text-sm leading-6 text-mid-gray sm:mt-5 sm:text-base sm:leading-7">For TXA-originated supplier bookings, the success-fee model means TXA is paid when a booking is generated. There are no fixed TXA subscription fees for suppliers under this model.</p><a href="<?php echo esc_url(home_url('/suppliers/')); ?>" class="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand px-6 py-3 text-sm font-bold text-white !no-underline sm:mt-7 sm:w-auto sm:px-7">Explore Supplier Pathway</a></div><div class="rounded-2xl border border-line bg-surface p-6 sm:p-8"><p class="text-xs uppercase text-mid-gray sm:text-sm">Success fee range</p><p class="mt-3 break-words text-4xl font-bold leading-none text-brand sm:text-5xl">0.75% – 2.8%</p><div class="mt-6 h-3 rounded-full bg-brand/15 sm:mt-7"><div class="h-3 w-7/12 rounded-full bg-brand"></div></div></div></div></section>
-<section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-14"><div class="mx-auto max-w-[1100px] rounded-2xl bg-brand px-5 py-9 text-center text-white sm:px-8 sm:py-12 lg:px-16"><h2 class="text-2xl font-bold leading-8 sm:text-3xl lg:text-4xl">Not sure which pricing pathway applies?</h2><p class="mx-auto mt-4 max-w-[660px] text-base leading-7 text-white/90 sm:text-lg sm:leading-8">Tell us what type of organisation you are and TXA can direct you to the right connection model.</p><a href="<?php echo esc_url(home_url('/contact/')); ?>" class="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-white px-7 py-3 text-sm font-bold text-brand !no-underline sm:mt-7 sm:w-auto sm:px-8">Contact TXA</a></div></section>
+    <section class="relative min-h-[620px] overflow-hidden bg-near-black px-4 py-12 text-white sm:py-16 lg:px-16 lg:py-24">
+        <img src="<?php echo esc_url(get_theme_file_uri('/images/Baines, Northern Territory.jpg')); ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
+        <div class="absolute inset-0 bg-near-black/60" aria-hidden="true"></div>
+        <div class="relative z-10 mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
+            <div>
+                <h1 class="max-w-[620px] [font-family:'Hanken_Grotesk',sans-serif] text-[42px] font-bold leading-[1.1] text-white sm:text-5xl lg:text-[56px]">TXA pricing without the guesswork.</h1>
+                <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg">Tell us what you do and your preferred commercial model and we will help guide you.</p>
+                <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <a href="<?php echo esc_url($apply_url); ?>" class="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-8 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark">Apply Now</a>
+                    <a href="<?php echo esc_url($demo_url); ?>" class="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/70 bg-white/10 px-8 py-3 text-base font-bold text-white !no-underline hover:bg-white/20">Request Demo</a>
+                </div>
+                <div class="mt-10 grid gap-6 sm:grid-cols-3">
+                    <?php foreach ($hero_steps as $step): ?>
+                        <div class="max-w-[250px]">
+                            <p class="text-sm font-bold text-white/75"><?php echo esc_html($step['number']); ?></p>
+                            <h2 class="mt-4 text-base font-bold text-white"><?php echo esc_html($step['title']); ?></h2>
+                            <p class="mt-3 text-sm leading-6 text-white/80"><?php echo esc_html($step['copy']); ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="grid gap-4">
+                <?php foreach ($hero_paths as $path): ?>
+                    <a href="<?php echo esc_url($path['url']); ?>" class="group flex min-h-[106px] items-center justify-between gap-5 rounded-lg border border-white/10 bg-white/20 p-6 shadow-lg backdrop-blur-md !no-underline hover:bg-white/25">
+                        <span>
+                            <i class="bi <?php echo esc_attr($path['icon']); ?> text-2xl text-white" aria-hidden="true"></i>
+                            <span class="mt-3 block text-2xl font-bold text-white"><?php echo esc_html($path['title']); ?></span>
+                            <span class="mt-1 block text-sm font-semibold text-white/80"><?php echo esc_html($path['copy']); ?></span>
+                        </span>
+                        <i class="bi bi-arrow-right text-2xl text-white/70 transition group-hover:translate-x-1 group-hover:text-white" aria-hidden="true"></i>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
+        <div class="mx-auto max-w-[1312px]">
+            <h2 class="text-center [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">Choose the pricing model that matches your organisation</h2>
+            <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <?php foreach ($pricing_cards as $card): ?>
+                    <article class="relative flex min-h-[430px] flex-col rounded-2xl border <?php echo !empty($card['featured']) ? 'border-2 border-brand' : 'border-line'; ?> bg-white p-8 shadow-sm">
+                        <?php if (!empty($card['featured'])): ?>
+                            <span class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-brand px-7 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white">Most Common</span>
+                        <?php endif; ?>
+                        <h3 class="text-xl font-bold text-brand"><?php echo esc_html($card['title']); ?></h3>
+                        <div class="mt-8">
+                            <?php if (!empty($card['price_end'])): ?>
+                                <p class="text-4xl font-bold leading-none text-[#151c27]"><?php echo esc_html($card['price']); ?> <span class="text-sm font-bold text-mid-gray"><?php echo esc_html($card['suffix']); ?></span> <?php echo esc_html($card['price_end']); ?></p>
+                            <?php else: ?>
+                                <p class="text-2xl font-bold leading-tight text-[#151c27]"><?php echo esc_html($card['price']); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <p class="mt-6 text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
+                        <?php if (!empty($card['points'])): ?>
+                            <ul class="mt-6 space-y-3 text-sm font-semibold text-[#151c27]">
+                                <?php foreach ($card['points'] as $point): ?>
+                                    <li class="flex items-center gap-2"><i class="bi bi-check-circle text-brand" aria-hidden="true"></i><?php echo esc_html($point); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                        <a href="<?php echo esc_url($card['url']); ?>" class="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center text-sm font-bold !no-underline"><?php echo esc_html($card['cta']); ?></a>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-surface px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
+        <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
+            <div>
+                <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand">Supplier Focus</p>
+                <h2 class="mt-7 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">No booking, no fee supplier pricing</h2>
+                <p class="mt-6 max-w-[620px] text-base leading-8 text-mid-gray">Our model is designed to grow with you. The 0.75%-2.8% success fee ensures that TXA only succeeds when your business does. We reduce manual allocation and administrative overhead, allowing you to focus on the experience.</p>
+                <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                    <?php foreach ($supplier_types as $type): ?>
+                        <div class="flex items-center gap-3 text-sm font-semibold text-[#151c27]"><i class="bi bi-check-lg text-brand" aria-hidden="true"></i><?php echo esc_html($type); ?></div>
+                    <?php endforeach; ?>
+                </div>
+                <a href="<?php echo esc_url($apply_url); ?>" class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 text-sm font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply Now using the TXA Get Connected Wizard <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="rounded-2xl bg-white p-7 shadow-xl">
+                <div class="flex items-center justify-between gap-4 text-sm font-bold">
+                    <span class="text-[#151c27]">Booking Success Fee</span>
+                    <span class="text-brand">1.5% Avg.</span>
+                </div>
+                <div class="mt-6 h-4 overflow-hidden rounded-full bg-[#f0d2ce]">
+                    <div class="h-full w-[58%] rounded-full bg-brand"></div>
+                </div>
+                <div class="mt-4 flex justify-between text-xs font-semibold text-mid-gray">
+                    <span>0.75%</span>
+                    <span>2.8%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
+        <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-2">
+            <?php foreach ($partner_cards as $card): ?>
+                <article class="rounded-2xl border border-[#dfc0ba] bg-white p-8 sm:p-10 lg:p-12">
+                    <span class="flex size-14 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand"><i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i></span>
+                    <h2 class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27]"><?php echo esc_html($card['title']); ?></h2>
+                    <p class="mt-6 max-w-[560px] text-base leading-8 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
+                    <ol class="mt-8 space-y-5">
+                        <?php foreach ($card['points'] as $index => $point): ?>
+                            <li class="flex items-center gap-4 text-sm font-bold text-[#151c27]"><span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-tint text-xs text-brand"><?php echo esc_html($index + 1); ?></span><?php echo esc_html($point); ?></li>
+                        <?php endforeach; ?>
+                    </ol>
+                    <a href="<?php echo esc_url($card['url']); ?>" class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-near-black px-8 py-3 text-sm font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
 </article>
+
 <?php get_footer();

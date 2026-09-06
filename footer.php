@@ -12,12 +12,14 @@
 
     <?php do_action('tailpress_content_after'); ?>
 
-    <footer id="colophon" class="bg-near-black text-white" role="contentinfo">
-        <div class="container mx-auto py-16 lg:py-20">
+    <footer id="colophon" class="bg-near-black px-4 text-white lg:px-16" role="contentinfo">
+        <div class="mx-auto max-w-[1312px] py-16 lg:py-20">
             <?php do_action('tailpress_footer'); ?>
             <div class="grid gap-12 lg:grid-cols-[1.15fr_1.85fr]">
                 <div>
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="!no-underline text-4xl font-semibold tracking-tight text-white">TXA</a>
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex !no-underline">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-10 w-auto brightness-0 invert">
+                    </a>
                     <p class="mt-6 max-w-sm text-sm leading-7 text-white/70">
                         Australia's open, commercially neutral B2B tourism exchange for suppliers, destinations, distributors and booking-system partners.
                     </p>

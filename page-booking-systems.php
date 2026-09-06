@@ -18,16 +18,16 @@ $partner_url = home_url('/booking-systems/partner-enquiry/');
 $directory_url = home_url('/booking-systems/directory/');
 
 $benefits = [
-    ['icon' => '◎', 'title' => 'Broader Distribution', 'copy' => 'Access hundreds of distributors from global OTAs to hyper-local niche and re-seller channels and visitor information center.'],
-    ['icon' => 'ϟ', 'title' => 'Reduced Friction', 'copy' => 'Connect once to TXA and manage all distributor relationships through a unified API.'],
-    ['icon' => '↔', 'title' => 'Live Connectivity', 'copy' => 'Real-time availability and pricing updates ensure accurate booking data across the network.'],
+    ['icon' => 'bi-share', 'title' => 'Broader Distribution', 'copy' => 'Access hundreds of distributors from global OTAs to hyper-local niche and re-seller channels and visitor information center.'],
+    ['icon' => 'bi-lightning-charge', 'title' => 'Reduced Friction', 'copy' => 'Connect once to TXA and manage all distributor relationships through a unified API.'],
+    ['icon' => 'bi-arrow-left-right', 'title' => 'Live Connectivity', 'copy' => 'Real-time availability and pricing updates ensure accurate booking data across the network.'],
 ];
 
 $systems = [
-    ['name' => 'RezStream', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => '▦'],
-    ['name' => 'FareHarbor', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => '△'],
-    ['name' => 'Booking Boss', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => '◉'],
-    ['name' => 'Siteminder', 'status' => 'Limited Release', 'tone' => 'blue', 'icon' => '▦'],
+    ['name' => 'RezStream', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-calendar-check'],
+    ['name' => 'FareHarbor', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-compass'],
+    ['name' => 'Booking Boss', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-kanban'],
+    ['name' => 'Siteminder', 'status' => 'Limited Release', 'tone' => 'blue', 'icon' => 'bi-building-check'],
 ];
 
 if (!function_exists('txa_booking_button')) {
@@ -43,8 +43,8 @@ if (!function_exists('txa_booking_button')) {
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="px-4 pb-8 pt-5 sm:pt-8 lg:px-5 lg:pb-0">
-        <div class="relative mx-auto min-h-[500px] max-w-[1400px] overflow-hidden rounded-2xl bg-near-black sm:min-h-[540px] lg:min-h-[600px]">
+    <section class="px-4 pb-8 pt-5 sm:pt-8 lg:px-16 lg:pb-0">
+        <div class="relative mx-auto min-h-[500px] max-w-[1312px] overflow-hidden rounded-2xl bg-near-black sm:min-h-[540px] lg:min-h-[600px]">
             <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=85" alt="Aerial view of an Australian beach" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div class="relative z-10 grid min-h-[500px] gap-8 px-5 py-10 sm:min-h-[540px] sm:px-8 sm:py-14 lg:min-h-[600px] lg:grid-cols-[720px_1fr] lg:items-center lg:px-8 lg:py-24">
@@ -58,17 +58,17 @@ if (!function_exists('txa_booking_button')) {
                 <div class="rounded-2xl bg-white/55 px-4 py-6 shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1)] backdrop-blur-md sm:px-8 sm:py-10 lg:py-12">
                     <div class="grid grid-cols-1 items-center justify-items-center gap-4 sm:grid-cols-[1fr_auto_1fr] sm:gap-5">
                         <div class="flex size-24 flex-col items-center justify-center rounded-xl border border-[#dfc0ba] bg-white p-3 text-center shadow-sm sm:size-28 lg:size-32">
-                            <span class="text-2xl text-brand sm:text-3xl">▥</span>
+                            <i class="bi bi-calendar2-check text-2xl text-brand sm:text-3xl" aria-hidden="true"></i>
                             <span class="mt-2 text-xs font-semibold leading-4 text-[#151c27] sm:text-sm sm:leading-5">Booking<br>System</span>
                         </div>
                         <div class="relative flex items-center">
                             <div class="flex size-28 flex-col items-center justify-center rounded-full border-4 border-[#ac2d2d] bg-brand text-center text-white shadow-lg sm:size-36 lg:size-40">
-                                <span class="text-2xl sm:text-3xl">↔</span>
+                                <i class="bi bi-arrow-left-right text-2xl sm:text-3xl" aria-hidden="true"></i>
                                 <span class="mt-1 text-sm font-semibold uppercase leading-5 sm:text-base sm:leading-6">TXA<br>Exchange</span>
                             </div>
                         </div>
                         <div class="flex size-24 flex-col items-center justify-center rounded-xl border border-[#dfc0ba] bg-white p-3 text-center shadow-sm sm:size-28 lg:size-32">
-                            <span class="text-2xl text-brand sm:text-3xl">⌘</span>
+                            <i class="bi bi-broadcast text-2xl text-brand sm:text-3xl" aria-hidden="true"></i>
                             <span class="mt-2 text-xs font-semibold text-[#151c27] sm:text-sm">Channels</span>
                         </div>
                     </div>
@@ -86,7 +86,7 @@ if (!function_exists('txa_booking_button')) {
             <div class="mt-8 grid gap-5 md:grid-cols-3 md:gap-8">
                 <?php foreach ($benefits as $benefit): ?>
                     <article class="flex gap-4 rounded-xl border border-line bg-white p-5 shadow-sm sm:gap-5 md:border-0 md:p-0 md:shadow-none">
-                        <span class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[#e8e8e6] text-lg font-bold text-brand sm:size-12 sm:text-xl"><?php echo esc_html($benefit['icon']); ?></span>
+                        <span class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[#e8e8e6] text-lg font-bold text-brand sm:size-12 sm:text-xl"><i class="bi <?php echo esc_attr($benefit['icon']); ?>" aria-hidden="true"></i></span>
                         <div>
                             <h3 class="text-base font-semibold leading-6 text-[#151c27]"><?php echo esc_html($benefit['title']); ?></h3>
                             <p class="mt-2 text-sm leading-5 text-mid-gray"><?php echo esc_html($benefit['copy']); ?></p>
@@ -106,7 +106,7 @@ if (!function_exists('txa_booking_button')) {
             <div class="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 xl:grid-cols-4">
                 <?php foreach ($systems as $system): ?>
                     <article class="rounded-xl border border-[#dfc0ba] bg-white p-4 text-center sm:p-8">
-                        <span class="mx-auto flex size-14 items-center justify-center rounded-lg bg-[#e8e8e6] text-xl font-bold text-brand sm:size-20 sm:text-2xl"><?php echo esc_html($system['icon']); ?></span>
+                        <span class="mx-auto flex size-14 items-center justify-center rounded-lg bg-[#e8e8e6] text-xl font-bold text-brand sm:size-20 sm:text-2xl"><i class="bi <?php echo esc_attr($system['icon']); ?>" aria-hidden="true"></i></span>
                         <h3 class="mt-4 text-sm font-semibold text-[#151c27] sm:mt-6 sm:text-base"><?php echo esc_html($system['name']); ?></h3>
                         <span class="<?php echo 'green' === $system['tone'] ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'; ?> mt-3 inline-flex rounded-full px-2.5 py-1 text-[9px] font-semibold uppercase sm:mt-4 sm:px-3 sm:text-[10px]"><?php echo esc_html($system['status']); ?></span>
                     </article>

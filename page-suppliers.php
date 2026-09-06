@@ -50,8 +50,8 @@ if (!function_exists('txa_supplier_button')) {
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="px-3 pb-6 pt-3 sm:px-4 sm:pt-5 lg:px-5 lg:pb-16 lg:pt-8">
-        <div class="relative mx-auto min-h-[590px] max-w-[1400px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
+    <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
+        <div class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
             <img src="<?php echo esc_url(get_theme_file_uri('/images/supplier-1.jpg')); ?>" alt="Rottnest Island, Perth" class="absolute inset-0 h-full w-full object-cover object-center">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
