@@ -17,25 +17,15 @@ window.addEventListener('load', function () {
     document.querySelectorAll('[data-hero-slider]').forEach(function (slider) {
         const images = Array.from(slider.querySelectorAll('[data-hero-slide-image]'))
         const dots = Array.from(slider.querySelectorAll('[data-hero-slide-dot]'))
-        const label = slider.querySelector('[data-hero-slide-label]')
-        const title = slider.querySelector('[data-hero-slide-title]')
-        const copy = slider.querySelector('[data-hero-slide-copy]')
         const previous = slider.querySelector('[data-hero-slide-prev]')
         const next = slider.querySelector('[data-hero-slide-next]')
-        const slides = dots.map(function (dot) {
-            return {
-                label: dot.dataset.heroSlideLabelValue || '',
-                title: dot.dataset.heroSlideTitleValue || '',
-                copy: dot.dataset.heroSlideCopyValue || '',
-            }
-        })
         let activeIndex = 0
         let intervalId
 
         if (!images.length || !dots.length || images.length !== dots.length) return
 
         function setActiveSlide(index) {
-            activeIndex = (index + slides.length) % slides.length
+            activeIndex = (index + images.length) % images.length
             images.forEach(function (image, imageIndex) {
                 image.classList.toggle('opacity-100', imageIndex === activeIndex)
                 image.classList.toggle('opacity-0', imageIndex !== activeIndex)
@@ -47,9 +37,6 @@ window.addEventListener('load', function () {
                 dot.classList.toggle('bg-near-black/30', dotIndex !== activeIndex)
                 dot.setAttribute('aria-pressed', dotIndex === activeIndex ? 'true' : 'false')
             })
-            if (label) label.textContent = slides[activeIndex].label
-            if (title) title.textContent = slides[activeIndex].title
-            if (copy) copy.textContent = slides[activeIndex].copy
         }
 
         function restartAutoplay() {
