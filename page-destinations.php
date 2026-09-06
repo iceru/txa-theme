@@ -65,7 +65,7 @@ $faqs = [
 if (!function_exists('txa_destination_button')) {
     function txa_destination_button(string $label, string $url, string $variant = 'primary'): string
     {
-        $classes = 'inline-flex w-full items-center justify-center rounded-lg px-6 py-3 text-sm font-bold !no-underline transition sm:w-auto';
+        $classes = 'inline-flex min-h-12 w-full items-center justify-center rounded-lg px-5 py-3 text-sm font-bold !no-underline transition sm:w-auto sm:px-6';
         $classes .= 'light' === $variant
             ? ' border border-white bg-white/10 text-white hover:bg-white/20'
             : ('white' === $variant
@@ -78,16 +78,16 @@ if (!function_exists('txa_destination_button')) {
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="px-4 pb-8 pt-8 lg:px-5 lg:pb-14">
-        <div class="relative mx-auto min-h-[520px] max-w-[1400px] overflow-hidden rounded-2xl bg-near-black lg:min-h-[600px]">
+    <section class="px-3 pb-7 pt-4 sm:px-4 sm:pt-6 lg:px-5 lg:pb-14 lg:pt-8">
+        <div class="relative mx-auto min-h-[520px] max-w-[1400px] overflow-hidden rounded-xl bg-near-black sm:rounded-2xl lg:min-h-[600px]">
             <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=85" alt="Australian marina and coastline" class="absolute inset-0 h-full w-full object-cover">
-            <div class="absolute inset-0 bg-near-black/45" aria-hidden="true"></div>
-            <div class="relative z-10 flex min-h-[520px] items-center px-6 py-16 sm:px-8 lg:min-h-[600px] lg:px-8 lg:py-24">
+            <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
+            <div class="relative z-10 flex min-h-[520px] items-center px-5 py-10 sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
                 <div class="max-w-[760px]">
-                    <p class="inline-flex rounded-lg bg-brand px-6 py-3 text-sm font-bold uppercase text-white sm:text-xl">TXA for destinations</p>
-                    <h1 class="mt-4 max-w-[660px] text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-5xl lg:leading-[56px]">Boost, sustain and protect your local visitor economy.</h1>
-                    <p class="mt-4 max-w-[660px] text-lg font-semibold leading-[30px] text-white">TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.</p>
-                    <div class="mt-6 flex flex-col gap-4 sm:flex-row">
+                    <p class="inline-flex rounded-lg bg-brand px-3 py-2 text-xs font-bold uppercase leading-5 text-white sm:px-6 sm:py-3 sm:text-xl">TXA for destinations</p>
+                    <h1 class="mt-4 max-w-[660px] text-[34px] font-semibold leading-[1.08] text-white sm:text-5xl lg:text-5xl lg:leading-[56px]">Boost, sustain and protect your local visitor economy.</h1>
+                    <p class="mt-4 max-w-[660px] text-base font-semibold leading-6 text-white sm:text-lg sm:leading-[30px]">TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.</p>
+                    <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                         <?php echo txa_destination_button('Request Smart Destination Demo', $demo_url); ?>
                         <?php echo txa_destination_button('See destination packages', $pricing_url, 'light'); ?>
                     </div>
@@ -96,41 +96,43 @@ if (!function_exists('txa_destination_button')) {
         </div>
     </section>
 
-    <section class="px-4 py-10 lg:px-16 lg:py-12">
-        <div class="mx-auto max-w-[1312px] text-center">
-            <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold tracking-[-0.01em] text-[#151c27]">What is a TXA Smart Destination?</h2>
-            <p class="mx-auto mt-2 max-w-[890px] text-base leading-6 text-mid-gray">A Smart destination generates inspiration and TXA helps you own the conversion. Your organisation can use TXA to activate destination websites and apps, digitise local supply, connect suppliers to distributors, build tactical microsites, support trade initiatives, enable economy-wide re-seller networks and create virtual concierge collaborative commerce.</p>
-            <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-12">
+        <div class="mx-auto max-w-[1312px] text-left sm:text-center">
+            <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl">What is a TXA Smart Destination?</h2>
+            <p class="mx-auto mt-3 max-w-[890px] text-[15px] leading-6 text-mid-gray sm:mt-2 sm:text-base">A Smart destination generates inspiration and TXA helps you own the conversion. Your organisation can use TXA to activate destination websites and apps, digitise local supply, connect suppliers to distributors, build tactical microsites, support trade initiatives, enable economy-wide re-seller networks and create virtual concierge collaborative commerce.</p>
+            <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5">
                 <?php foreach ($pillars as $index => $pillar): ?>
-                    <article class="rounded-3xl bg-white p-4 text-center shadow-sm">
-                        <span class="mx-auto flex size-16 items-center justify-center rounded-xl bg-[#ffdad4] text-lg font-bold text-brand"><?php echo esc_html($index + 1); ?></span>
-                        <h3 class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold leading-7 text-[#151c27]"><?php echo esc_html($pillar['title']); ?></h3>
-                        <p class="mt-1 text-sm leading-5 text-mid-gray"><?php echo esc_html($pillar['copy']); ?></p>
+                    <article class="flex items-center gap-4 rounded-2xl bg-white p-4 text-left shadow-sm sm:block sm:rounded-3xl sm:text-center">
+                        <span class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[#ffdad4] text-base font-bold text-brand sm:mx-auto sm:size-16 sm:text-lg"><?php echo esc_html($index + 1); ?></span>
+                        <div>
+                            <h3 class="[font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:mt-3 sm:text-xl sm:leading-7"><?php echo esc_html($pillar['title']); ?></h3>
+                            <p class="mt-1 text-sm leading-5 text-mid-gray"><?php echo esc_html($pillar['copy']); ?></p>
+                        </div>
                     </article>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
 
-    <section class="bg-surface px-4 py-12 lg:px-16 lg:py-16">
-        <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-[1fr_511px] lg:items-center">
+    <section class="bg-surface px-4 py-10 sm:py-12 lg:px-16 lg:py-16">
+        <div class="mx-auto grid max-w-[1312px] gap-6 sm:gap-8 lg:grid-cols-[1fr_511px] lg:items-center">
             <div>
-                <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold tracking-[-0.01em] text-[#151c27]">The problem TXA solves for destinations</h2>
-                <p class="mt-3 text-base leading-6 text-mid-gray">Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle.</p>
-                <div class="mt-8 grid gap-4 md:grid-cols-2">
+                <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl">The problem TXA solves for destinations</h2>
+                <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle.</p>
+                <div class="mt-7 grid gap-3 sm:mt-8 sm:gap-4 md:grid-cols-2">
                     <?php foreach ($problems as $problem): ?>
-                        <article class="rounded-xl border-l-4 border-[#ba1a1a] bg-white px-7 py-6 shadow-sm">
+                        <article class="rounded-xl border-l-4 border-[#ba1a1a] bg-white px-5 py-5 shadow-sm sm:px-7 sm:py-6">
                             <h3 class="text-base font-semibold text-[#151c27]"><?php echo esc_html($problem['title']); ?></h3>
                             <p class="mt-2 text-sm leading-5 text-mid-gray"><?php echo esc_html($problem['copy']); ?></p>
                         </article>
                     <?php endforeach; ?>
                 </div>
             </div>
-            <aside class="overflow-hidden rounded-3xl bg-brand p-8 text-white shadow-2xl">
+            <aside class="overflow-hidden rounded-2xl bg-brand p-5 text-white shadow-xl sm:rounded-3xl sm:p-8 sm:shadow-2xl">
                 <h3 class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold">The TXA Solution</h3>
-                <div class="mt-6 space-y-6">
+                <div class="mt-5 space-y-5 sm:mt-6 sm:space-y-6">
                     <?php foreach ($solutions as $item): ?>
-                        <div class="flex gap-4">
+                        <div class="flex gap-3 sm:gap-4">
                             <span class="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full border border-white text-[10px]">✓</span>
                             <div>
                                 <h4 class="text-base font-semibold"><?php echo esc_html($item['title']); ?></h4>
@@ -143,68 +145,68 @@ if (!function_exists('txa_destination_button')) {
         </div>
     </section>
 
-    <section class="px-4 py-12 lg:px-16 lg:py-10">
+    <section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-10">
         <div class="mx-auto max-w-[1312px]">
-            <h2 class="max-w-[486px] [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-10 tracking-[-0.01em] text-[#181c21]">Your destination, your digital assets, your commercial model</h2>
-            <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <h2 class="max-w-[486px] [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#181c21] sm:text-3xl sm:leading-10">Your destination, your digital assets, your commercial model</h2>
+            <div class="mt-7 grid gap-4 sm:mt-8 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
                 <?php foreach ($capabilities as $index => $card): ?>
-                    <article class="<?php echo !empty($card['featured']) ? 'border-2 border-[#b3422f]' : 'border border-[#dfc0ba]/20 shadow-sm'; ?> min-h-[190px] rounded-2xl bg-white p-5">
+                    <article class="<?php echo !empty($card['featured']) ? 'border-2 border-[#b3422f]' : 'border border-[#dfc0ba]/20 shadow-sm'; ?> rounded-2xl bg-white p-5 sm:min-h-[190px]">
                         <span class="flex size-10 items-center justify-center rounded-lg bg-brand-tint text-sm font-bold text-brand"><?php echo esc_html($index + 1); ?></span>
-                        <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold leading-7 text-[#151c27]"><?php echo esc_html($card['title']); ?></h3>
-                        <p class="mt-3 text-sm leading-5 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
+                        <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:text-xl sm:leading-7"><?php echo esc_html($card['title']); ?></h3>
+                        <p class="mt-2 text-sm leading-5 text-mid-gray sm:mt-3"><?php echo esc_html($card['copy']); ?></p>
                     </article>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
 
-    <section class="bg-surface px-4 py-12 lg:px-16 lg:py-16">
-        <div class="mx-auto grid max-w-[1312px] gap-12 lg:grid-cols-[1fr_700px] lg:items-center">
+    <section class="bg-surface px-4 py-10 sm:py-12 lg:px-16 lg:py-16">
+        <div class="mx-auto grid max-w-[1312px] gap-8 sm:gap-12 lg:grid-cols-[1fr_700px] lg:items-center">
             <div>
-                <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-10 tracking-[-0.01em] text-[#151c27]">See who is visiting, what is working and where to invest next</h2>
-                <div class="mt-6 space-y-4 text-lg leading-7 text-mid-gray">
+                <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl sm:leading-10">See who is visiting, what is working and where to invest next</h2>
+                <div class="mt-5 space-y-4 text-base leading-6 text-mid-gray sm:mt-6 sm:text-lg sm:leading-7">
                     <p>Most destination marketing generates interest that's impossible to trace. Visitors click through to OTA listings or third-party pages, and the data disappears. TXA gives destinations something different: first-party booking and engagement data that belongs to you.</p>
                     <p>For the first time, your destination can see, in one place, which campaigns converted, which suppliers are performing, and where visitor spend is flowing through your local economy.</p>
                 </div>
-                <ul class="mt-6 space-y-4 text-sm font-semibold leading-5 text-[#151c27]">
-                    <li class="flex gap-3"><span class="text-brand">↗</span><span>Real-time Dashboards: Track supplier activity, campaign performance and visitor engagement in one place.</span></li>
-                    <li class="flex gap-3"><span class="text-brand">↗</span><span>Attribution & ROI: Connect marketing spend to actual booking outcomes with attribution codes.</span></li>
-                    <li class="flex gap-3"><span class="text-brand">↗</span><span>Data Ownership & Integration: Export insights or use APIs to flow data into your CRM or BI tools.</span></li>
+                <ul class="mt-5 space-y-3 text-sm font-semibold leading-5 text-[#151c27] sm:mt-6 sm:space-y-4">
+                    <li class="flex gap-3"><span class="shrink-0 text-brand">↗</span><span>Real-time Dashboards: Track supplier activity, campaign performance and visitor engagement in one place.</span></li>
+                    <li class="flex gap-3"><span class="shrink-0 text-brand">↗</span><span>Attribution & ROI: Connect marketing spend to actual booking outcomes with attribution codes.</span></li>
+                    <li class="flex gap-3"><span class="shrink-0 text-brand">↗</span><span>Data Ownership & Integration: Export insights or use APIs to flow data into your CRM or BI tools.</span></li>
                 </ul>
             </div>
-            <div class="rounded-xl border border-line bg-white p-5 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)]">
-                <div class="rounded-lg bg-[#f2f4f7] p-4">
-                    <div class="flex items-center justify-between border-b border-line pb-3">
-                        <div><p class="text-xs font-bold uppercase tracking-wide text-brand">TXA Dashboard</p><p class="mt-1 text-sm text-mid-gray">Destination and channel signals</p></div>
-                        <span class="rounded bg-brand-tint px-3 py-2 text-xs font-semibold text-brand">Live</span>
+            <div class="overflow-hidden rounded-xl border border-line bg-white p-3 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:p-5">
+                <div class="rounded-lg bg-[#f2f4f7] p-3 sm:p-4">
+                    <div class="flex items-start justify-between gap-3 border-b border-line pb-3">
+                        <div><p class="text-[11px] font-bold uppercase tracking-wide text-brand sm:text-xs">TXA Dashboard</p><p class="mt-1 text-xs leading-5 text-mid-gray sm:text-sm">Destination and channel signals</p></div>
+                        <span class="shrink-0 rounded bg-brand-tint px-2 py-1.5 text-[11px] font-semibold text-brand sm:px-3 sm:py-2 sm:text-xs">Live</span>
                     </div>
-                    <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:grid-cols-4 sm:gap-3">
                         <?php foreach (['Supplier activity' => '74%', 'Campaigns' => '81%', 'Engagement' => '68%', 'Conversion' => '79%'] as $label => $value): ?>
-                            <div class="rounded bg-white p-3"><p class="text-xs text-mid-gray"><?php echo esc_html($label); ?></p><p class="mt-1 text-lg font-bold"><?php echo esc_html($value); ?></p></div>
+                            <div class="rounded bg-white p-2.5 sm:p-3"><p class="text-[11px] leading-4 text-mid-gray sm:text-xs"><?php echo esc_html($label); ?></p><p class="mt-1 text-base font-bold sm:text-lg"><?php echo esc_html($value); ?></p></div>
                         <?php endforeach; ?>
                     </div>
-                    <div class="mt-3 h-40 rounded bg-white p-4"><div class="flex h-full items-end gap-2"><?php foreach ([35,52,48,70,63,80,58,88,76,94] as $h): ?><span class="grow rounded-t bg-brand/80" style="height:<?php echo esc_attr($h); ?>%"></span><?php endforeach; ?></div></div>
+                    <div class="mt-3 h-28 rounded bg-white p-3 sm:h-40 sm:p-4"><div class="flex h-full items-end gap-1.5 sm:gap-2"><?php foreach ([35,52,48,70,63,80,58,88,76,94] as $h): ?><span class="grow rounded-t bg-brand/80" style="height:<?php echo esc_attr($h); ?>%"></span><?php endforeach; ?></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="relative overflow-hidden px-4 py-14 text-white lg:px-16 lg:py-16">
+    <section class="relative overflow-hidden px-4 py-10 text-white sm:py-14 lg:px-16 lg:py-16">
         <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2200&q=85" alt="" class="absolute inset-0 h-full w-full object-cover">
-        <div class="absolute inset-0 bg-black/60" aria-hidden="true"></div>
-        <div class="relative z-10 mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[379px_1fr] lg:gap-12">
+        <div class="absolute inset-0 bg-black/65 sm:bg-black/60" aria-hidden="true"></div>
+        <div class="relative z-10 mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[379px_1fr] lg:gap-12">
             <div>
-                <h2 class="text-3xl font-semibold leading-tight lg:text-4xl lg:leading-[44px]">How a TXA Smart Destination is easily implemented</h2>
-                <div class="mt-6 space-y-3">
+                <h2 class="text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">How a TXA Smart Destination is easily implemented</h2>
+                <div class="mt-5 flex flex-col gap-3 sm:mt-6 sm:items-start">
                     <?php echo txa_destination_button('Ask about our destination packages', $pricing_url); ?>
                     <?php echo txa_destination_button('Request website activation demo', $demo_url, 'white'); ?>
                 </div>
             </div>
-            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div class="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
                 <?php foreach ($implementation as $index => $step): ?>
-                    <article class="min-h-[228px] rounded-xl border border-white/20 bg-white/10 p-6 backdrop-blur-md">
-                        <span class="flex size-11 items-center justify-center rounded-lg bg-brand text-base font-bold text-white"><?php echo esc_html($index + 1); ?></span>
-                        <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold leading-7"><?php echo esc_html($step['title']); ?></h3>
+                    <article class="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur-md sm:min-h-[228px] sm:p-6">
+                        <span class="flex size-10 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white sm:size-11 sm:text-base"><?php echo esc_html($index + 1); ?></span>
+                        <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 sm:text-xl sm:leading-7"><?php echo esc_html($step['title']); ?></h3>
                         <p class="mt-2 text-sm leading-[21px] text-white"><?php echo esc_html($step['copy']); ?></p>
                     </article>
                 <?php endforeach; ?>
@@ -212,13 +214,13 @@ if (!function_exists('txa_destination_button')) {
         </div>
     </section>
 
-    <section class="px-4 py-14 lg:px-16 lg:py-16">
+    <section class="px-4 py-10 sm:py-14 lg:px-16 lg:py-16">
         <div class="mx-auto max-w-[964px]">
-            <h2 class="text-center text-3xl font-semibold leading-tight lg:text-4xl lg:leading-[44px]">Frequently Asked Questions</h2>
-            <div class="mt-8 space-y-4 lg:px-8">
+            <h2 class="text-left text-[28px] font-semibold leading-9 sm:text-center sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">Frequently Asked Questions</h2>
+            <div class="mt-7 space-y-3 sm:mt-8 sm:space-y-4 lg:px-8">
                 <?php foreach ($faqs as $faq): ?>
-                    <details class="group rounded-lg border border-line bg-white p-6 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)]">
-                        <summary class="cursor-pointer list-none text-lg font-semibold text-[#151c27] [&::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-6"><?php echo esc_html($faq['question']); ?><span class="text-brand transition group-open:rotate-45">+</span></span></summary>
+                    <details class="group rounded-lg border border-line bg-white p-5 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:p-6">
+                        <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-[#151c27] [&::-webkit-details-marker]:hidden sm:text-lg"><span class="flex items-center justify-between gap-4 sm:gap-6"><?php echo esc_html($faq['question']); ?><span class="shrink-0 text-xl text-brand transition group-open:rotate-45">+</span></span></summary>
                         <p class="mt-3 text-sm leading-6 text-mid-gray"><?php echo esc_html($faq['answer']); ?></p>
                     </details>
                 <?php endforeach; ?>
