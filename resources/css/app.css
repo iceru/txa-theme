@@ -16,14 +16,6 @@
     padding-inline: 2rem;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -38,9 +30,7 @@
   .txa-scroll-reveal {
     opacity: 0;
     transform: translate3d(0, 48px, 0);
-    transition:
-      opacity 700ms ease,
-      transform 700ms ease;
+    transition: opacity 700ms ease, transform 700ms ease;
   }
 
   .txa-scroll-reveal.is-inview {
@@ -48,11 +38,49 @@
     transform: translate3d(0, 0, 0);
   }
 
+  .txa-network-path {
+    stroke: #d7d7d7;
+    stroke-width: 2;
+    fill: none;
+    color: #d7d7d7;
+    transition: stroke 250ms ease, color 250ms ease, opacity 250ms ease;
+  }
+
+  .txa-network-path.is-active {
+    stroke: #d42b2b;
+    color: #d42b2b;
+    stroke-width: 3;
+    stroke-dasharray: 9 10;
+    animation: txa-network-flow 650ms linear infinite;
+  }
+
+  .txa-network-node {
+    transition: transform 250ms ease, filter 250ms ease;
+  }
+
+  .txa-network-node.is-active {
+    transform: translateY(-6px);
+    filter: drop-shadow(0 10px 16px rgba(212, 43, 43, 0.14));
+  }
+
+  .txa-network-node[data-node='txa'].is-active {
+    transform: translate(-50%, calc(-50% - 6px));
+  }
+
+  @keyframes txa-network-flow {
+    from { stroke-dashoffset: 19; }
+    to { stroke-dashoffset: 0; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .txa-scroll-reveal {
       opacity: 1;
       transform: none;
       transition: none;
+    }
+
+    .txa-network-path.is-active {
+      animation: none;
     }
   }
 }
