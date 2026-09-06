@@ -21,17 +21,17 @@ $pathways=[
 ];
 ?>
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-<section class="bg-surface px-4 py-16 lg:px-16 lg:py-24">
- <div class="mx-auto grid max-w-[1312px] gap-12 lg:grid-cols-[619px_1fr] lg:items-center">
-  <div><p class="inline-flex rounded-lg bg-brand px-4 py-2 text-base font-bold text-white">CONTACT US</p><h1 class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-tight tracking-[-.02em] text-[#151c27] lg:text-5xl lg:leading-[60px]">Get in touch with Tourism Exchange Australia</h1><p class="mt-8 max-w-[500px] text-lg leading-7 text-mid-gray">Whether you are a tourism supplier, destination organisation, distributor or booking system partner, contact TXA to find the right pathway for your organisation.</p></div>
-  <div class="h-[320px] overflow-hidden rounded-lg border border-line lg:h-[430px]"><img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1400&q=85" alt="Australian wildlife and landscape" class="h-full w-full object-cover"></div>
+<section class="bg-surface px-4 py-10 sm:py-12 lg:px-16 lg:py-24">
+ <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-[619px_1fr] lg:items-center lg:gap-12">
+  <div><p class="inline-flex rounded-lg bg-brand px-4 py-2 text-sm font-bold text-white sm:text-base">CONTACT US</p><h1 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-[1.12] tracking-[-.02em] text-[#151c27] sm:mt-6 sm:text-4xl lg:mt-8 lg:text-5xl lg:leading-[60px]">Get in touch with Tourism Exchange Australia</h1><p class="mt-5 max-w-[500px] text-base leading-7 text-mid-gray sm:mt-6 sm:text-lg lg:mt-8">Whether you are a tourism supplier, destination organisation, distributor or booking system partner, contact TXA to find the right pathway for your organisation.</p></div>
+  <div class="h-[240px] overflow-hidden rounded-lg border border-line sm:h-[320px] lg:h-[430px]"><img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1400&q=85" alt="Australian wildlife and landscape" class="h-full w-full object-cover"></div>
  </div>
 </section>
-<section class="px-4 py-16 lg:px-16 lg:py-8">
- <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-[734px_1fr] lg:items-start">
-  <div class="rounded-3xl border border-[#dfc0ba]/20 bg-white p-6 shadow-sm lg:p-8"><h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27]">Send an Enquiry</h2><div class="txa-contact-form mt-8"><?php echo txa_contact_form_markup(); ?></div></div>
-  <aside class="lg:pl-0"><h2 class="text-center [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27]">Pathway Guidance</h2><div class="mt-12 space-y-8">
-   <?php foreach($pathways as $index=>$pathway): ?><article class="grid grid-cols-[48px_1fr] gap-6"><span class="flex size-12 items-center justify-center rounded-full bg-brand text-base text-white"><?php echo esc_html($index+1); ?></span><div><h3 class="text-xl font-semibold text-[#151c27]"><?php echo esc_html($pathway[0]); ?></h3><p class="mt-2 text-base leading-6 text-mid-gray"><?php echo esc_html($pathway[1]); ?></p></div></article><?php endforeach; ?>
+<section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-8">
+ <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[734px_1fr] lg:items-start lg:gap-8">
+  <div class="rounded-2xl border border-[#dfc0ba]/20 bg-white p-5 shadow-sm sm:p-6 lg:rounded-3xl lg:p-8"><h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-tight text-[#151c27] sm:text-3xl">Send an Enquiry</h2><div class="txa-contact-form mt-6 [&_input]:min-h-11 [&_input]:w-full [&_select]:min-h-11 [&_select]:w-full [&_textarea]:w-full sm:mt-8"><?php echo txa_contact_form_markup(); ?></div></div>
+  <aside><h2 class="text-left [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27] sm:text-3xl lg:text-center">Pathway Guidance</h2><div class="mt-7 space-y-6 sm:mt-9 sm:space-y-8 lg:mt-12">
+   <?php foreach($pathways as $index=>$pathway): ?><article class="grid grid-cols-[40px_1fr] gap-4 sm:grid-cols-[48px_1fr] sm:gap-6"><span class="flex size-10 items-center justify-center rounded-full bg-brand text-sm text-white sm:size-12 sm:text-base"><?php echo esc_html($index+1); ?></span><div><h3 class="text-lg font-semibold leading-6 text-[#151c27] sm:text-xl"><?php echo esc_html($pathway[0]); ?></h3><p class="mt-2 text-sm leading-6 text-mid-gray sm:text-base"><?php echo esc_html($pathway[1]); ?></p></div></article><?php endforeach; ?>
   </div></aside>
  </div>
 </section>
