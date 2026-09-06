@@ -51,7 +51,7 @@ if (!function_exists('txa_supplier_button')) {
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="px-3 pb-6 pt-3 sm:px-4 sm:pt-5 lg:px-5 lg:pb-16 lg:pt-8">
         <div class="relative mx-auto min-h-[590px] max-w-[1400px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=85" alt="Australian coastline" class="absolute inset-0 h-full w-full object-cover object-center">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/Rottnest Island, Perth.jpg')); ?>" alt="Rottnest Island, Perth" class="absolute inset-0 h-full w-full object-cover object-center">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
                 <div class="w-full max-w-[760px]">
@@ -116,7 +116,7 @@ if (!function_exists('txa_supplier_button')) {
                 <div class="mt-5 sm:mt-4"><?php echo txa_supplier_button('Apply Now using TXA Get Connected Wizard', $wizard_url, 'primary', true); ?></div>
             </div>
             <div class="h-[230px] overflow-hidden rounded-lg border border-line sm:h-[408px]">
-                <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1500&q=85" alt="Island surrounded by turquoise water" class="h-full w-full object-cover">
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/Frame 23.png')); ?>" alt="TXA supplier connection" class="h-full w-full object-cover">
             </div>
         </div>
     </section>
