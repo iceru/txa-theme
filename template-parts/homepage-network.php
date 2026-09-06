@@ -85,19 +85,19 @@
 
             <div class="txa-network-node absolute left-[55px] top-[78px] z-10 w-[160px] rounded-xl border border-line bg-white p-4 shadow-sm"
                 data-node="supplier" tabindex="0">
-                <p class="text-xs uppercase text-brand">Supplier</p>
+                <p class="text-xs font-semibold uppercase text-brand">Supplier</p>
                 <h3 class="mt-1 font-semibold">Accommodation</h3>
                 <p class="mt-2 text-xs leading-5 text-mid-gray">Hotels, resorts and stays</p>
             </div>
             <div class="txa-network-node absolute left-[55px] top-[243px] z-10 w-[160px] rounded-xl border border-line bg-white p-4 shadow-sm"
                 data-node="supplier" tabindex="0">
-                <p class="text-xs uppercase text-brand">Supplier</p>
+                <p class="text-xs font-semibold uppercase text-brand">Supplier</p>
                 <h3 class="mt-1 font-semibold">Tours</h3>
                 <p class="mt-2 text-xs leading-5 text-mid-gray">Tours and activities</p>
             </div>
             <div class="txa-network-node absolute left-[55px] top-[408px] z-10 w-[160px] rounded-xl border border-line bg-white p-4 shadow-sm"
                 data-node="supplier" tabindex="0">
-                <p class="text-xs uppercase text-brand">Supplier</p>
+                <p class="text-xs font-semibold uppercase text-brand">Supplier</p>
                 <h3 class="mt-1 font-semibold">Attractions</h3>
                 <p class="mt-2 text-xs leading-5 text-mid-gray">Events and experiences</p>
             </div>
@@ -118,17 +118,17 @@
 
             <div class="txa-network-node absolute right-[210px] top-[72px] z-10 w-[175px] rounded-xl border border-line bg-white p-4 shadow-sm"
                 data-node="channel" tabindex="0">
-                <p class="text-xs uppercase text-brand">Destination</p>
+                <p class="text-xs font-semibold uppercase text-brand">Destination</p>
                 <h3 class="mt-1 font-semibold">Destination Websites</h3>
             </div>
             <div class="txa-network-node absolute right-[210px] top-[227px] z-10 w-[175px] rounded-xl border border-line bg-white p-4 shadow-sm"
                 data-node="channel" tabindex="0">
-                <p class="text-xs uppercase text-brand">Distribution</p>
+                <p class="text-xs font-semibold uppercase text-brand">Distribution</p>
                 <h3 class="mt-1 font-semibold">Distributors & OTAs</h3>
             </div>
             <div class="txa-network-node absolute right-[210px] top-[382px] z-10 w-[175px] rounded-xl border border-line bg-white p-4 shadow-sm"
                 data-node="channel" tabindex="0">
-                <p class="text-xs uppercase text-brand">Travel Trade</p>
+                <p class="text-xs font-semibold uppercase text-brand">Travel Trade</p>
                 <h3 class="mt-1 font-semibold">Travel Partners</h3>
             </div>
 

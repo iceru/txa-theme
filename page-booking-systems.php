@@ -131,7 +131,7 @@ if (!function_exists('txa_booking_button')) {
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold tracking-[-0.01em] text-[#151c27] sm:text-3xl">
                     Connected booking systems</h2>
                 <a href="<?php echo esc_url($directory_url); ?>"
-                    class="inline-flex items-center gap-2 text-sm font-semibold text-brand !no-underline hover:text-brand-dark sm:text-base">View
+ class="inline-flex items-center gap-2 font-semibold text-brand !no-underline hover:text-brand-dark sm:text-base">View
                     Directory <span aria-hidden="true">→</span></a>
             </div>
             <div class="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 xl:grid-cols-4">

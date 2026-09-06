@@ -143,7 +143,7 @@ $partner_cards = [
                             </ul>
                         <?php endif; ?>
                         <a href="<?php echo esc_url($card['url']); ?>"
-                            class="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center text-sm font-bold !no-underline"><?php echo esc_html($card['cta']); ?></a>
+ class="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline"><?php echo esc_html($card['cta']); ?></a>
                     </article>
                 <?php endforeach; ?>
             </div>
@@ -169,7 +169,7 @@ $partner_cards = [
                     <?php endforeach; ?>
                 </div>
                 <a href="<?php echo esc_url($apply_url); ?>"
-                    class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 text-sm font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply
+ class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply
                     Now using the TXA Get Connected Wizard <i class="bi bi-box-arrow-up-right"
                         aria-hidden="true"></i></a>
             </div>
@@ -207,7 +207,7 @@ $partner_cards = [
                         <?php endforeach; ?>
                     </ol>
                     <a href="<?php echo esc_url($card['url']); ?>"
-                        class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-near-black px-8 py-3 text-sm font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
+ class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-near-black px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
                 </article>
             <?php endforeach; ?>
         </div>

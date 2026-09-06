@@ -19,7 +19,7 @@ $packages = [
         <div class="relative mx-auto flex min-h-[39S0px] max-w-[1312px] items-center sm:min-h-[420px] lg:min-h-0">
             <div class="max-w-[666px]">
                 <p
-                    class="inline-flex rounded-lg bg-white px-4 py-2 text-sm font-bold text-brand sm:px-6 sm:py-3 sm:text-lg lg:text-xl">
+ class="inline-flex rounded-lg bg-white px-4 py-2 font-bold text-brand sm:px-6 sm:py-3 sm:text-lg lg:text-xl">
                     TXA FOR DESTINATIONS</p>
                 <h1 class="mt-5 text-3xl font-semibold leading-[1.1] sm:mt-6 sm:text-5xl lg:leading-[56px]">TXA Smart
                     Destination<br class="hidden sm:block"> Packages</h1>

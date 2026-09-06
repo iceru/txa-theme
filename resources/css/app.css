@@ -43,7 +43,7 @@
     stroke-width: 2;
     fill: none;
     color: #d7d7d7;
-    transition: stroke 250ms ease, color 250ms ease, opacity 250ms ease;
+    transition: stroke 250ms ease, color 250ms ease, opacity 250ms ease, stroke-width 250ms ease;
   }
 
   .txa-network-path.is-active {
@@ -55,7 +55,7 @@
   }
 
   .txa-network-node {
-    transition: transform 250ms ease, filter 250ms ease;
+    transition: transform 250ms ease, filter 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
   }
 
   .txa-network-node.is-active {
@@ -64,7 +64,11 @@
   }
 
   .txa-network-node[data-node='txa'].is-active {
-    transform: translate(-50%, calc(-50% - 6px));
+    transform: translate(-50%, -50%) scale(1.08);
+    border-color: #e32929;
+    box-shadow: 0 26px 58px -24px rgba(227, 41, 41, 0.65), 0 18px 34px -28px rgba(0, 0, 0, 0.55);
+    filter: none;
+    z-index: 30;
   }
 
   @keyframes txa-network-flow {

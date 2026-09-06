@@ -26,7 +26,7 @@
             <div class="mt-6 max-w-2xl text-base text-zinc-600">
                 <?php the_excerpt(); ?>
             </div>
-            <a class="!no-underline mt-8 inline-flex rounded-full bg-zinc-950 px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-zinc-800" aria-label="<?php echo esc_attr(sprintf(__('Read more: %s', 'tailpress'), get_the_title())); ?>" href="<?php the_permalink(); ?>">
+ <a class="!no-underline mt-8 inline-flex rounded-full bg-zinc-950 px-4 py-1.5 font-semibold text-white transition hover:bg-zinc-800" aria-label="<?php echo esc_attr(sprintf(__('Read more: %s', 'tailpress'), get_the_title())); ?>" href="<?php the_permalink(); ?>">
                 <?php _e('Read more', 'tailpress'); ?>
             </a>
         </div>

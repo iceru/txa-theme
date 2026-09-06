@@ -120,7 +120,7 @@ if (!function_exists('txa_button')) {
         <div class="mx-auto max-w-[1312px]">
             <div class="grid gap-4 sm:gap-5 md:grid-cols-[1fr_400px] md:items-end">
                 <div>
-                    <p class="text-xs uppercase leading-5 text-brand sm:text-sm">TXA pathway</p>
+                    <p class="text-xs font-semibold uppercase leading-5 text-brand sm:text-sm">TXA pathway</p>
                     <h2
                         class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:mt-3 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                         How to Connect to TXA?</h2>
@@ -140,7 +140,7 @@ if (!function_exists('txa_button')) {
                             </h3>
                             <p class="mt-2 grow text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                             <a href="<?php echo esc_url($card['url']); ?>"
-                                class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-brand !no-underline hover:text-brand-dark"><?php echo esc_html($card['cta']); ?><span
+ class="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-brand !no-underline hover:text-brand-dark"><?php echo esc_html($card['cta']); ?><span
                                     aria-hidden="true">→</span></a>
                         </div>
                     </article><?php endforeach; ?>
@@ -173,7 +173,7 @@ if (!function_exists('txa_button')) {
             class="relative z-10 mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[554px_1fr] lg:items-center lg:gap-12">
             <div>
                 <p
-                    class="inline-flex rounded-lg bg-white/10 px-3 py-2 text-xs uppercase leading-5 text-white sm:px-4 sm:text-sm">
+ class="inline-flex rounded-lg bg-white/10 px-3 py-2 text-xs font-semibold uppercase leading-5 text-white sm:px-4 sm:text-sm">
                     Become a Smart Destination</p>
                 <h2
                     class="mt-3 text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
@@ -200,7 +200,7 @@ if (!function_exists('txa_button')) {
     <section class="bg-surface px-4 py-10 sm:py-12 lg:px-16 lg:py-[95px]">
         <div class="mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[1fr_700px] lg:items-center lg:gap-12">
             <div>
-                <p class="text-xs uppercase leading-5 text-brand sm:text-sm">Data and insights</p>
+                <p class="text-xs font-semibold uppercase leading-5 text-brand sm:text-sm">Data and insights</p>
                 <h2
                     class="mt-2 max-w-[480px] text-[28px] font-semibold leading-9 sm:mt-3 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                     Data that helps destinations see what is working</h2>

@@ -74,6 +74,8 @@ window.addEventListener('load', function () {
     document.querySelectorAll('[data-txa-network]').forEach(function (network) {
         const nodes = Array.from(network.querySelectorAll('[data-node]'))
         const paths = Array.from(network.querySelectorAll('[data-path]'))
+        const txaNode = network.querySelector('[data-node="txa"]')
+        const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
         function clearNetwork() {
             nodes.forEach(function (node) { node.classList.remove('is-active') })
@@ -89,9 +91,21 @@ window.addEventListener('load', function () {
             })
         }
 
+        if (txaNode && canHover) {
+            network.addEventListener('mouseenter', function () { activateNetwork(txaNode) })
+            network.addEventListener('mouseleave', clearNetwork)
+        }
+
         nodes.forEach(function (node) {
             node.addEventListener('mouseenter', function () { activateNetwork(node) })
-            node.addEventListener('mouseleave', clearNetwork)
+            node.addEventListener('mouseleave', function () {
+                if (txaNode && canHover && network.matches(':hover')) {
+                    activateNetwork(txaNode)
+                    return
+                }
+
+                clearNetwork()
+            })
             node.addEventListener('focusin', function () { activateNetwork(node) })
             node.addEventListener('focusout', clearNetwork)
         })
