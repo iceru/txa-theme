@@ -57,8 +57,8 @@ $demo_url = home_url('/request-demo/');
             <div class="mt-10 grid gap-5 sm:mt-12 sm:gap-6 lg:grid-cols-3">
                 <article
                     class="overflow-hidden rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8 lg:col-span-2">
-                    <div class="flex h-full items-center gap-8">
-                        <div class="md:w-1/2 w-full">
+                    <div class="flex h-full flex-col gap-8 md:flex-row md:items-center">
+                        <div class="w-full md:w-1/2">
                             <span
                                 class="flex size-12 items-center justify-center rounded-xl bg-brand-tint text-xl text-brand">
                                 <i class="bi bi-grid" aria-hidden="true"></i>
@@ -76,7 +76,7 @@ $demo_url = home_url('/request-demo/');
                                         aria-hidden="true"></i><span>Visual trend analysis</span></li>
                             </ul>
                         </div>
-                        <div class="md:w-1/2 w-full">
+                        <div class="w-full md:w-1/2">
                             <img src="<?php echo esc_url(get_theme_file_uri('/images/dashboard.png')); ?>"
                                 alt="Tourism products displayed on an interactive destination map"
                                 class="h-auto w-full object-cover">
