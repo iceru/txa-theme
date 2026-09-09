@@ -24,7 +24,7 @@ $demo_url = home_url('/request-demo/');
                 <p class="inline-flex rounded-lg bg-brand px-5 py-3 text-sm font-bold uppercase leading-5 text-white">
                     Data &amp; Insights</p>
                 <h1
-                    class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-[36px] font-bold leading-[1.15] tracking-[-.02em] text-[#151c27] sm:text-5xl lg:text-[52px] lg:leading-[1.12]">
+                    class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-[36px] font-bold leading-[1.15] tracking-[-.02em] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.12]">
                     Use <span class="text-brand">destination data</span> to plan and see what’s working and what’s not
                 </h1>
                 <p class="mt-6 max-w-[600px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">TXA gives
@@ -58,7 +58,7 @@ $demo_url = home_url('/request-demo/');
                 <article
                     class="overflow-hidden rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8 lg:col-span-2">
                     <div class="flex h-full items-center gap-8">
-                        <div class="md:w-2/3 w-full">
+                        <div class="md:w-1/2 w-full">
                             <span
                                 class="flex size-12 items-center justify-center rounded-xl bg-brand-tint text-xl text-brand">
                                 <i class="bi bi-grid" aria-hidden="true"></i>
@@ -76,7 +76,7 @@ $demo_url = home_url('/request-demo/');
                                         aria-hidden="true"></i><span>Visual trend analysis</span></li>
                             </ul>
                         </div>
-                        <div class="md:w-1/3 w-full">
+                        <div class="md:w-1/2 w-full">
                             <img src="<?php echo esc_url(get_theme_file_uri('/images/dashboard.png')); ?>"
                                 alt="Tourism products displayed on an interactive destination map"
                                 class="h-auto w-full object-cover">

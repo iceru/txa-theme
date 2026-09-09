@@ -26,7 +26,7 @@ $feature_cards = [
         'copy' => 'Can reduce manual follow-up by making supplier contracting, content, images and descriptions, and bookable product easier to access for busy trade partners.',
     ],
     [
-        'icon' => 'bi-handshake',
+        'icon' => 'bi-building-check',
         'title' => 'Strategic DMO Partner',
         'copy' => 'Supports the DMO role as a trade activation partner for local industry. Actively stimulate bookings and visibility for your regional operators without the heavy lifting.',
         'red' => true,
@@ -125,7 +125,6 @@ $portal_benefits = [
                         </div>
 
                         <div class="mt-5 flex grow flex-col items-center justify-end text-center">
-                            <div class="flex items-end gap-1 text-2xl text-brand" aria-hidden="true"><i class="bi bi-person"></i><i class="bi bi-person-standing text-3xl"></i><i class="bi bi-person"></i></div>
                             <p class="mt-2 text-xs font-semibold leading-5 text-[#151c27]">Domestic &amp; international trade partners</p>
                         </div>
                     </article>
@@ -143,19 +142,16 @@ $portal_benefits = [
 
                         <div class="divide-y divide-line">
                             <?php foreach ($portal_features as $item): ?>
-                                <div class="flex gap-3 py-4">
-                                    <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-tint text-xl text-brand" aria-hidden="true"><i class="bi <?php echo esc_attr($item['icon']); ?>"></i></span>
-                                    <div>
-                                        <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]"><?php echo esc_html($item['title']); ?></h4>
-                                        <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?></p>
-                                    </div>
+                                <div class="py-4">
+                                    <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]"><?php echo esc_html($item['title']); ?></h4>
+                                    <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
 
                         <div class="mt-2 grid grid-cols-2 gap-2 border-t border-line pt-4 sm:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4">
-                            <?php foreach ([['bi-phone', 'Mobile optimised'], ['bi-qr-code', 'QR shareable'], ['bi-translate', 'Multi-language'], ['bi-file-earmark-arrow-down', 'Downloads']] as $tool): ?>
-                                <div class="text-center"><i class="bi <?php echo esc_attr($tool[0]); ?> text-lg text-brand" aria-hidden="true"></i><p class="mt-1 text-[9px] font-semibold leading-3 text-mid-gray"><?php echo esc_html($tool[1]); ?></p></div>
+                            <?php foreach (['Mobile optimised', 'QR shareable', 'Multi-language', 'Downloads'] as $tool): ?>
+                                <p class="rounded-md bg-surface px-2 py-2 text-center text-[9px] font-semibold leading-3 text-mid-gray"><?php echo esc_html($tool); ?></p>
                             <?php endforeach; ?>
                         </div>
                     </article>
@@ -172,12 +168,9 @@ $portal_benefits = [
 
                         <div class="divide-y divide-line">
                             <?php foreach ($supply_features as $item): ?>
-                                <div class="flex gap-3 py-4 <?php echo !empty($item['featured']) ? 'text-brand' : ''; ?>">
-                                    <span class="flex size-10 shrink-0 items-center justify-center rounded-lg <?php echo !empty($item['featured']) ? 'bg-brand text-white' : 'bg-brand-tint text-brand'; ?> text-xl" aria-hidden="true"><i class="bi <?php echo esc_attr($item['icon']); ?>"></i></span>
-                                    <div>
-                                        <h4 class="text-xs font-bold uppercase leading-5 <?php echo !empty($item['featured']) ? 'text-brand' : 'text-[#151c27]'; ?>"><?php echo esc_html($item['title']); ?></h4>
-                                        <p class="mt-1 text-xs leading-5 <?php echo !empty($item['featured']) ? 'text-brand/80' : 'text-mid-gray'; ?>"><?php echo esc_html($item['copy']); ?></p>
-                                    </div>
+                                <div class="py-4 <?php echo !empty($item['featured']) ? 'text-brand' : ''; ?>">
+                                    <h4 class="text-xs font-bold uppercase leading-5 <?php echo !empty($item['featured']) ? 'text-brand' : 'text-[#151c27]'; ?>"><?php echo esc_html($item['title']); ?></h4>
+                                    <p class="mt-1 text-xs leading-5 <?php echo !empty($item['featured']) ? 'text-brand/80' : 'text-mid-gray'; ?>"><?php echo esc_html($item['copy']); ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -197,9 +190,9 @@ $portal_benefits = [
 
                         <div class="mt-5 divide-y divide-line rounded-xl border border-line bg-surface px-4">
                             <?php foreach ($buyer_outcomes as $item): ?>
-                                <div class="flex gap-3 py-4">
-                                    <i class="bi <?php echo esc_attr($item['icon']); ?> shrink-0 text-2xl text-brand" aria-hidden="true"></i>
-                                    <div><h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]"><?php echo esc_html($item['title']); ?></h4><p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?></p></div>
+                                <div class="py-4">
+                                    <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]"><?php echo esc_html($item['title']); ?></h4>
+                                    <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -244,7 +237,7 @@ $portal_benefits = [
                                 <?php echo esc_html($card['copy']); ?></p>
                         </div>
                         <?php if (!empty($card['red'])): ?>
-                            <i class="bi bi-handshake hidden shrink-0 text-[120px] leading-none text-white lg:block"
+                            <i class="bi bi-building-check hidden shrink-0 text-[120px] leading-none text-white lg:block"
                                 aria-hidden="true"></i>
                         <?php endif; ?>
                     </article>

@@ -88,7 +88,7 @@ if (!function_exists('txa_header_link_class')) {
                                         aria-expanded="false" aria-haspopup="true" aria-controls="destinations-submenu"
                                         data-destinations-toggle>
                                         <span>Destinations</span>
-                                        <i class="bi bi-chevron-down text-sm leading-none transition"
+                                        <i class="bi bi-chevron-down text-sm leading-none transition mt-1 ml-0.5"
                                             aria-hidden="true"></i>
                                     </button>
                                     <ul id="destinations-submenu"

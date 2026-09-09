@@ -27,7 +27,7 @@ $activation_cards = [
         'title' => 'Real-time Insights',
         'copy' => 'Make real-time dashboards available to the destination and relevant industry participants for informed decision-making.',
         'image' => 'dashboard.png',
-        'image_left' => true,
+        'wide' => true,
     ],
     [
         'icon' => 'bi-arrow-repeat',
@@ -110,10 +110,8 @@ $partner_cards = [
                 <?php foreach ($activation_cards as $card) { ?>
                     <article
                         class="<?php echo !empty($card['wide']) || !empty($card['image_left']) ? 'lg:col-span-2' : ''; ?> rounded-2xl border border-[#dfc0ba] bg-white p-8 shadow-sm sm:p-10">
-                        <?php if (!empty($card['image_left'])) { ?>
-                            <div class="grid gap-8 sm:grid-cols-[250px_1fr] sm:items-center">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $card['image'])); ?>"
-                                    alt="Virtual concierge dashboard insights" class="h-[160px] w-full rounded-lg object-cover">
+                        <?php if (!empty($card['image'])) { ?>
+                            <div class="grid gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(260px,1.35fr)] sm:items-center">
                                 <div>
                                     <span
                                         class="flex size-12 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand">
@@ -125,25 +123,19 @@ $partner_cards = [
                                     </h3>
                                     <p class="mt-4 text-base leading-7 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                                 </div>
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $card['image'])); ?>"
+                                    alt="<?php echo esc_attr($card['title']); ?>"
+                                    class="h-[160px] w-full rounded-lg object-cover">
                             </div>
                         <?php } else { ?>
                             <span class="flex size-12 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand">
                                 <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
                             </span>
-                            <div
-                                class="<?php echo !empty($card['image']) ? 'mt-6 grid gap-8 sm:grid-cols-[1fr_1.45fr] sm:items-center' : ''; ?>">
-                                <div>
-                                    <h3
-                                        class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27]">
-                                        <?php echo esc_html($card['title']); ?>
-                                    </h3>
-                                    <p class="mt-4 text-base leading-7 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
-                                </div>
-                                <?php if (!empty($card['image'])) { ?>
-                                    <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $card['image'])); ?>"
-                                        alt="Local spend network map" class="h-[160px] w-full rounded-lg object-cover">
-                                <?php } ?>
-                            </div>
+                            <h3
+                                class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27]">
+                                <?php echo esc_html($card['title']); ?>
+                            </h3>
+                            <p class="mt-4 text-base leading-7 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                         <?php } ?>
                     </article>
                 <?php } ?>

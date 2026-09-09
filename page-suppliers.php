@@ -58,7 +58,7 @@ if (!function_exists('txa_supplier_button')) {
                         inventory on every site.</p>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                         <?php echo txa_supplier_button('Apply Now', home_url('/apply-now/')); ?>
-                        <?php echo txa_supplier_button('See connected booking systems', home_url('/booking-systems/directory/'), 'light'); ?>
+                        <?php echo txa_supplier_button('See connected booking systems', home_url('/booking-systems'), 'light'); ?>
                     </div>
                 </div>
             </div>

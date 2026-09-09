@@ -95,8 +95,8 @@ window.addEventListener('load', function () {
         const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
         function clearNetwork() {
-            nodes.forEach(function (node) { node.classList.remove('is-active', 'is-dimmed') })
-            paths.forEach(function (path) { path.classList.remove('is-active', 'is-dimmed') })
+            nodes.forEach(function (node) { node.classList.remove('is-active') })
+            paths.forEach(function (path) { path.classList.remove('is-active') })
         }
 
         function activateNetwork(node) {
@@ -109,14 +109,9 @@ window.addEventListener('load', function () {
                 return
             }
 
-            nodes.forEach(function (candidate) {
-                if (candidate !== node && candidate.dataset.node !== type && candidate.dataset.node !== 'txa') {
-                    candidate.classList.add('is-dimmed')
-                }
-            })
             paths.forEach(function (path) {
                 const pathTypes = (path.dataset.path || '').split(/\s+/)
-                path.classList.add(pathTypes.includes(type) ? 'is-active' : 'is-dimmed')
+                if (pathTypes.includes(type)) path.classList.add('is-active')
             })
         }
 
