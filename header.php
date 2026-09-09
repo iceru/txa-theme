@@ -101,7 +101,7 @@ if (!function_exists('txa_header_link_class')) {
                                         <?php
                                         $destination_items = [
                                             ['Overview', '/destinations/'],
-                                            ['Pricing', '/destinations/pricing/'],
+                                            ['Destination Pricing', '/destinations/pricing/'],
                                             ['POI & Experiences', '/destinations/poi-experiences/'],
                                             ['Trade Portal', '/destinations/trade-portal/'],
                                             ['Microsite Campaigns', '/destinations/microsite-campaigns/'],
@@ -133,9 +133,9 @@ if (!function_exists('txa_header_link_class')) {
                         </nav>
 
                         <div class="mt-4 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:justify-self-end">
-                            <a href="<?php echo esc_url(home_url('/request-demo/')); ?>"
-                                class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white !no-underline hover:bg-brand-dark">Request
-                                Demo</a>
+                            <a href="https://www.au.v3travel.com/TXA.Dashboard/Login.aspx"
+                                class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white !no-underline hover:bg-brand-dark">
+                                Dashboard Login</a>
                         </div>
                     </div>
                 </div>

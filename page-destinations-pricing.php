@@ -13,13 +13,13 @@ $packages = [
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section
         class="relative min-h-[500px] overflow-hidden px-4 py-14 text-white sm:min-h-[540px] sm:py-16 lg:min-h-[594px] lg:px-16 lg:py-24">
-        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2200&q=85"
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/destination-pricing.jpg'); ?>"
             alt="Australian destination landscape" class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45"></div>
         <div class="relative mx-auto flex min-h-[39S0px] max-w-[1312px] items-center sm:min-h-[420px] lg:min-h-0">
             <div class="max-w-[666px]">
                 <p
- class="inline-flex rounded-lg bg-white px-4 py-2 font-bold text-brand sm:px-6 sm:py-3 sm:text-lg lg:text-xl">
+                    class="inline-flex rounded-lg bg-white px-4 py-2 font-bold text-brand sm:px-6 sm:py-3 sm:text-lg lg:text-xl">
                     TXA FOR DESTINATIONS</p>
                 <h1 class="mt-5 text-3xl font-semibold leading-[1.1] sm:mt-6 sm:text-5xl lg:leading-[56px]">TXA Smart
                     Destination<br class="hidden sm:block"> Packages</h1>

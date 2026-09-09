@@ -13,17 +13,26 @@ $hero_slides = [
 ];
 
 $audiences = [
-    ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/apply-now/'), 'image' => get_theme_file_uri('/images/Coffin Bay, Eyre Peninsula.jpg')],
-    ['title' => 'Destinations', 'copy' => 'Become a Smart Destination and make local supply bookable through your own digital assets.', 'cta' => 'Explore Destinations', 'url' => home_url('/destinations/'), 'image' => get_theme_file_uri('/images/Twilight Beach 2, Esperance.jpg')],
-    ['title' => 'Distributors', 'copy' => 'Access bookable Australian tourism inventory through TXA connected supply.', 'cta' => 'Become a Distributor', 'url' => home_url('/distributors/'), 'image' => get_theme_file_uri('/images/Perth 2, Western Australia.jpg')],
-    ['title' => 'Booking Systems', 'copy' => 'Connect your booking system to TXA and unlock distribution for your customers.', 'cta' => 'Partner Enquiry', 'url' => home_url('/booking-systems/'), 'image' => get_theme_file_uri('/images/Elephant Rock, Kimberley.jpg')],
+    ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/apply-now/'), 'image' => get_theme_file_uri('/images/supplier-1.jpg')],
+    ['title' => 'Destinations', 'copy' => 'Become a Smart Destination and make local supply bookable through your own digital assets.', 'cta' => 'Explore Destinations', 'url' => home_url('/destinations/'), 'image' => get_theme_file_uri('/images/destinations-1.jpg')],
+    ['title' => 'Distributors', 'copy' => 'Access bookable Australian tourism inventory through TXA connected supply.', 'cta' => 'Become a Distributor', 'url' => home_url('/distributors/'), 'image' => get_theme_file_uri('/images/distributor.jpg')],
+    ['title' => 'Booking Systems', 'copy' => 'Connect your booking system to TXA and unlock distribution for your customers.', 'cta' => 'Partner Enquiry', 'url' => home_url('/booking-systems/'), 'image' => get_theme_file_uri('/images/booking-systems.jpg')],
 ];
 $smart_cards = [
-    ['title' => 'Activate digital assets', 'copy' => 'Turn destination websites, apps and visitor touchpoints into conversion-ready channels.'],
-    ['title' => 'Digitise local supply', 'copy' => 'Help local operators bring bookable products, pricing and availability online.'],
-    ['title' => 'Connect supply to the world', 'copy' => 'Open inventory pathways to trade channels, resellers and owned destination channels.'],
-    ['title' => 'Own your data', 'copy' => 'Use activity, campaign and booking signals to see what is driving outcomes.'],
+    ['icon' => 'bi-window-stack', 'title' => 'Activate digital assets', 'copy' => 'Turn destination websites, apps and visitor touchpoints into conversion-ready channels.'],
+    ['icon' => 'bi-cloud-arrow-up', 'title' => 'Digitise local supply', 'copy' => 'Help local operators bring bookable products, pricing and availability online.'],
+    ['icon' => 'bi-globe2', 'title' => 'Connect supply to the world', 'copy' => 'Open inventory pathways to trade channels, resellers and owned destination channels.'],
+    ['icon' => 'bi-bar-chart-line', 'title' => 'Own your data', 'copy' => 'Use activity, campaign and booking signals to see what is driving outcomes.'],
 ];
+
+$how_txa_works_video = function_exists('get_field') ? get_field('how_txa_works_video') : '';
+$how_txa_works_embed = is_string($how_txa_works_video) && false !== strpos($how_txa_works_video, '<iframe')
+    ? $how_txa_works_video
+    : ($how_txa_works_video ? wp_oembed_get($how_txa_works_video, ['width' => 1312, 'height' => 551]) : '');
+
+if (!$how_txa_works_embed) {
+    $how_txa_works_embed = '<iframe src="https://www.youtube.com/embed/1sPtIwpXi6M?si=56zHnuGjLdztmnOv" width="1312" height="551" title="How TXA works video placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>';
+}
 
 if (!function_exists('txa_button')) {
     function txa_button(string $label, string $url, string $variant = 'primary'): string
@@ -89,7 +98,7 @@ if (!function_exists('txa_button')) {
 
     <section class="px-4 py-9 sm:py-10 lg:px-16 lg:py-16">
         <div class="mx-auto max-w-[1312px]">
-            <div class="grid gap-8 sm:gap-10 lg:grid-cols-[1fr_1.02fr] lg:items-start lg:gap-12">
+            <div class="grid gap-8 items-center sm:gap-10 lg:grid-cols-[1fr_1.02fr] lg:items-start lg:gap-12">
                 <div class="max-w-[629px]">
                     <h2
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl sm:leading-10">
@@ -140,7 +149,7 @@ if (!function_exists('txa_button')) {
                             </h3>
                             <p class="mt-2 grow text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                             <a href="<?php echo esc_url($card['url']); ?>"
- class="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-brand !no-underline hover:text-brand-dark"><?php echo esc_html($card['cta']); ?><span
+                                class="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-brand !no-underline hover:text-brand-dark"><?php echo esc_html($card['cta']); ?><span
                                     aria-hidden="true">→</span></a>
                         </div>
                     </article><?php endforeach; ?>
@@ -152,16 +161,27 @@ if (!function_exists('txa_button')) {
         <div class="mx-auto max-w-[1312px] text-center">
             <h2
                 class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                How TXA Works</h2><a href="<?php echo esc_url(home_url('/how-txa-works/')); ?>"
-                class="group relative mt-6 block h-[240px] overflow-hidden rounded-xl bg-near-black sm:mt-8 sm:h-[460px] sm:rounded-2xl lg:h-[551px]"><img
-                    src="<?php echo esc_url(get_theme_file_uri('/images/Frame 21.png')); ?>" alt="How TXA works"
-                    class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"><span
-                    class="absolute inset-0 bg-black/40" aria-hidden="true"></span><span
-                    class="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 shadow-lg sm:size-[92px] lg:size-[114px]"><svg
-                        viewBox="0 0 48 48" aria-hidden="true"
-                        class="ml-1 size-7 fill-near-black sm:size-10 lg:size-12">
-                        <path d="M17 12.5v23L36 24 17 12.5Z" />
-                    </svg></span></a>
+                How TXA Works</h2>
+            <div
+                class="relative mt-6 h-[240px] overflow-hidden rounded-xl bg-near-black sm:mt-8 sm:h-[460px] sm:rounded-2xl lg:h-[551px] [&_iframe]:h-full [&_iframe]:w-full">
+                <?php if ($how_txa_works_embed): ?>
+                    <?php echo wp_kses($how_txa_works_embed, [
+                        'iframe' => [
+                            'src' => true,
+                            'width' => true,
+                            'height' => true,
+                            'title' => true,
+                            'frameborder' => true,
+                            'allow' => true,
+                            'allowfullscreen' => true,
+                            'loading' => true,
+                            'referrerpolicy' => true,
+                        ],
+                    ]); ?>
+                <?php else: ?>
+                    <p class="flex h-full items-center justify-center px-6 text-white">Video unavailable.</p>
+                <?php endif; ?>
+            </div>
         </div>
     </section>
 
@@ -173,7 +193,7 @@ if (!function_exists('txa_button')) {
             class="relative z-10 mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[554px_1fr] lg:items-center lg:gap-12">
             <div>
                 <p
- class="inline-flex rounded-lg bg-white/10 px-3 py-2 text-xs font-semibold uppercase leading-5 text-white sm:px-4 sm:text-sm">
+                    class="inline-flex rounded-lg bg-white/10 px-3 py-2 text-xs font-semibold uppercase leading-5 text-white sm:px-4 sm:text-sm">
                     Become a Smart Destination</p>
                 <h2
                     class="mt-3 text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
@@ -185,9 +205,11 @@ if (!function_exists('txa_button')) {
                     <?php echo txa_button('Explore Smart Destinations', home_url('/destinations/')); ?><?php echo txa_button('Request Demo', home_url('/request-demo/'), 'light'); ?>
                 </div>
             </div>
-            <div class="grid gap-3 sm:grid-cols-2 sm:gap-6"><?php foreach ($smart_cards as $index => $card): ?>
+            <div class="grid gap-3 sm:grid-cols-2 sm:gap-6"><?php foreach ($smart_cards as $card): ?>
                     <article class="rounded-lg bg-white/15 p-4 backdrop-blur-md sm:bg-white/20 sm:p-5"><span
-                            class="flex size-10 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white sm:size-11 sm:text-base"><?php echo esc_html($index + 1); ?></span>
+                            class="flex size-10 items-center justify-center rounded-lg bg-brand text-lg text-white sm:size-11 sm:text-xl">
+                            <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
+                        </span>
                         <h3 class="mt-3 text-lg font-bold leading-6 sm:mt-4 sm:text-xl">
                             <?php echo esc_html($card['title']); ?>
                         </h3>

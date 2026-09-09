@@ -41,11 +41,11 @@ $solutions = [
 ];
 
 $capabilities = [
-    ['title' => 'Activate digital assets', 'copy' => 'Use B2B and B2C destination websites, apps, APIs, widgets and custom booking pages to connect brand, content and conversion.'],
-    ['title' => 'Insights to drive growth', 'copy' => 'Support multiple supplier pathways, including connected systems, free or low-cost booking options, on-request, content-only and smart referral models.'],
-    ['title' => 'Own your data', 'copy' => 'Data and insights to drive growth that belongs to your destination, not a third-party platform.', 'featured' => true],
-    ['title' => 'Connect supply to the world', 'copy' => 'Aggregate supplier and destination content and make it available to distributors, trade channels, DMO-owned assets and connected APIs.'],
-    ['title' => 'Commercial neutrality', 'copy' => 'Use a platform model that supports multiple booking systems and commercial models.'],
+    ['icon' => 'bi-window-stack', 'title' => 'Activate digital assets', 'copy' => 'Use B2B and B2C destination websites, apps, APIs, widgets and custom booking pages to connect brand, content and conversion.'],
+    ['icon' => 'bi-graph-up-arrow', 'title' => 'Insights to drive growth', 'copy' => 'Support multiple supplier pathways, including connected systems, free or low-cost booking options, on-request, content-only and smart referral models.'],
+    ['icon' => 'bi-database-lock', 'title' => 'Own your data', 'copy' => 'Data and insights to drive growth that belongs to your destination, not a third-party platform.', 'featured' => true],
+    ['icon' => 'bi-globe2', 'title' => 'Connect supply to the world', 'copy' => 'Aggregate supplier and destination content and make it available to distributors, trade channels, DMO-owned assets and connected APIs.'],
+    ['icon' => 'bi-diagram-3', 'title' => 'Commercial neutrality', 'copy' => 'Use a platform model that supports multiple booking systems and commercial models.'],
 ];
 
 $implementation = [
@@ -55,12 +55,6 @@ $implementation = [
     ['title' => 'Create Digital Assets', 'copy' => 'Create branded booking pages, destination landing pages, widgets, QR links and campaign assets.'],
     ['title' => 'Launch Network', 'copy' => 'Launch DMO website activation, microsite, trade portal or local reseller network.'],
     ['title' => 'Track & Optimize', 'copy' => 'Track engagement, conversion, attribution and data exports through dashboards and the agreed reporting model.'],
-];
-
-$faqs = [
-    ['question' => 'Does this replace our existing CMS?', 'answer' => 'No. TXA can work alongside your existing destination website or CMS by powering bookable pathways, widgets, APIs and destination-specific booking pages.'],
-    ['question' => 'How much does it cost operators?', 'answer' => 'Commercial models can vary by destination. TXA is designed to support flexible destination packages and supplier pathways.'],
-    ['question' => 'Is TXA an OTA (Online Travel Agent)?', 'answer' => 'No. TXA is a neutral B2B exchange connecting suppliers, destinations, distributors and booking systems.'],
 ];
 
 if (!function_exists('txa_destination_button')) {
@@ -184,11 +178,12 @@ if (!function_exists('txa_destination_button')) {
                 class="max-w-[486px] [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#181c21] sm:text-3xl sm:leading-10">
                 Your destination, your digital assets, your commercial model</h2>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
-                <?php foreach ($capabilities as $index => $card): ?>
+                <?php foreach ($capabilities as $card): ?>
                     <article
                         class="<?php echo !empty($card['featured']) ? 'border-2 border-[#b3422f]' : 'border border-[#dfc0ba]/20 shadow-sm'; ?> rounded-2xl bg-white p-5 sm:min-h-[190px]">
-                        <span
-                            class="flex size-10 items-center justify-center rounded-lg bg-brand-tint text-sm font-bold text-brand"><?php echo esc_html($index + 1); ?></span>
+                        <span class="flex size-10 items-center justify-center rounded-lg bg-brand-tint text-xl text-brand">
+                            <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
+                        </span>
                         <h3
                             class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:text-xl sm:leading-7">
                             <?php echo esc_html($card['title']); ?></h3>
@@ -260,27 +255,6 @@ if (!function_exists('txa_destination_button')) {
         </div>
     </section>
 
-    <section class="px-4 py-10 sm:py-14 lg:px-16 lg:py-16">
-        <div class="mx-auto max-w-[964px]">
-            <h2
-                class="text-left text-[28px] font-semibold leading-9 sm:text-center sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                Frequently Asked Questions</h2>
-            <div class="mt-7 space-y-3 sm:mt-8 sm:space-y-4 lg:px-8">
-                <?php foreach ($faqs as $faq): ?>
-                    <details
-                        class="group rounded-lg border border-line bg-white p-5 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:p-6">
-                        <summary
-                            class="cursor-pointer list-none text-base font-semibold leading-6 text-[#151c27] [&::-webkit-details-marker]:hidden sm:text-lg">
-                            <span
-                                class="flex items-center justify-between gap-4 sm:gap-6"><?php echo esc_html($faq['question']); ?><span
-                                    class="shrink-0 text-xl text-brand transition group-open:rotate-45">+</span></span>
-                        </summary>
-                        <p class="mt-3 text-sm leading-6 text-mid-gray"><?php echo esc_html($faq['answer']); ?></p>
-                    </details>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
 </article>
 
 <?php get_footer();

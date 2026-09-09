@@ -10,13 +10,6 @@ get_header();
 
 $wizard_url = 'https://sites.txa.com.au/Connect';
 
-$distribution_steps = [
-    ['title' => 'Suppliers', 'copy' => 'The primary originators of tourism products and inventory.'],
-    ['title' => 'Booking Systems', 'copy' => 'The technology providers use to manage live rates and inventory availability.'],
-    ['title' => 'TXA', 'copy' => 'The central distribution hub connecting all tourism digital infrastructure.'],
-    ['title' => 'Online Channels', 'copy' => 'Destination websites, distributors, and global online OTAs.'],
-];
-
 $benefits = [
     ['icon' => 'bi-share', 'title' => 'Broader distribution', 'copy' => 'Broader distribution pathway through connected channels and destination partners.'],
     ['icon' => 'bi-arrow-repeat', 'title' => 'Real-time updates', 'copy' => 'Real-time automation and booking through your connected booking system where available.'],
@@ -24,13 +17,6 @@ $benefits = [
     ['icon' => 'bi-credit-card-2-front', 'title' => 'Flexible booking payment models', 'copy' => 'Support for direct payment and OTA / on-request account distributor models depending on the channel.'],
     ['icon' => 'bi-list-check', 'title' => 'Less manual tasks', 'copy' => 'No need for time consuming inventory and rate management across multiple websites and platforms.'],
     ['icon' => 'bi-cash-coin', 'title' => 'No booking, no fee', 'copy' => 'A no-booking-no-fee supplier pricing model for TXA-originated online bookings means no fixed upfront or monthly fees = no risk!'],
-];
-
-$faqs = [
-    ['question' => 'Do I need a booking system?', 'answer' => 'Usually TXA works through a connected booking system. If you do not have one, TXA can help you understand available options.'],
-    ['question' => 'Will I have to manage another system?', 'answer' => 'The goal is to reduce manual management by using your booking system as the source of product, rates and availability.'],
-    ['question' => 'Can I keep personal contact with customers?', 'answer' => 'Yes. The customer remains your customer, with booking and customer information flowing according to the relevant channel and payment model.'],
-    ['question' => 'What size business is TXA designed for?', 'answer' => 'TXA is designed for tourism suppliers of different sizes across accommodation, activities, attractions, events and experiences.'],
 ];
 
 if (!function_exists('txa_supplier_button')) {
@@ -80,8 +66,7 @@ if (!function_exists('txa_supplier_button')) {
     </section>
 
     <section class="bg-surface px-4 py-9 sm:py-10 lg:p-16">
-        <div
-            class="mx-auto max-w-[1312px] rounded-lg bg-white px-5 py-6 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:px-6 sm:py-8 lg:px-8 lg:py-[34px]">
+        <div class="mx-auto max-w-[1312px]">
             <div class="max-w-[640px]">
                 <p class="text-xs uppercase leading-5 text-brand sm:text-sm">Connect once, sell everywhere</p>
                 <h2
@@ -91,28 +76,7 @@ if (!function_exists('txa_supplier_button')) {
                     work by using your booking system as the single source of products, rates and availability where
                     available.</p>
             </div>
-            <div class="mt-7 grid gap-3 sm:mt-8 sm:gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
-                <?php foreach ($distribution_steps as $index => $step): ?>
-                    <article
-                        class="<?php echo 2 === $index ? 'border-2 border-brand bg-[#ffdad4] shadow-[0_0_0_4px_rgba(146,42,26,0.10)]' : 'border border-line bg-white'; ?> relative min-h-[0] overflow-hidden rounded-lg p-5 sm:min-h-[148px] sm:p-6">
-                        <div class="flex items-center gap-3 sm:gap-4">
-                            <span
-                                class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white sm:size-10 sm:text-base"><?php echo esc_html($index + 1); ?></span>
-                            <h3
-                                class="[font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold sm:text-xl <?php echo 2 === $index ? 'text-brand' : 'text-[#151c27]'; ?>">
-                                <?php echo esc_html($step['title']); ?>
-                            </h3>
-                        </div>
-                        <p
-                            class="mt-3 text-sm leading-5 sm:mt-4 <?php echo 2 === $index ? 'text-brand' : 'text-[#5b5f64]'; ?>">
-                            <?php echo esc_html($step['copy']); ?>
-                        </p>
-                        <?php if (2 === $index): ?><span
-                                class="absolute -bottom-8 -right-6 size-24 rounded-full border-[14px] border-brand/10"
-                                aria-hidden="true"></span><?php endif; ?>
-                    </article>
-                <?php endforeach; ?>
-            </div>
+            <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'supplier']); ?>
         </div>
     </section>
 
@@ -172,29 +136,6 @@ if (!function_exists('txa_supplier_button')) {
         </div>
     </section>
 
-    <section class="px-4 py-10 sm:py-14 lg:px-16 lg:py-16">
-        <div class="mx-auto max-w-[1100px]">
-            <h2
-                class="text-center text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                Frequently Asked Questions</h2>
-            <div class="mt-7 space-y-3 sm:mt-10 sm:space-y-4 lg:px-8">
-                <?php foreach ($faqs as $index => $faq): ?>
-                    <details
-                        class="group rounded-lg border border-line bg-white p-5 shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:p-6"
-                        <?php echo 0 === $index ? 'open' : ''; ?>>
-                        <summary
-                            class="cursor-pointer list-none text-lg font-semibold leading-6 text-near-black sm:text-xl sm:leading-7 [&::-webkit-details-marker]:hidden">
-                            <span
-                                class="flex items-start justify-between gap-4 sm:items-center sm:gap-6"><?php echo esc_html($faq['question']); ?><span
-                                    class="shrink-0 text-brand transition group-open:rotate-45"
-                                    aria-hidden="true">+</span></span>
-                        </summary>
-                        <p class="mt-3 text-sm leading-6 text-mid-gray sm:mt-2"><?php echo esc_html($faq['answer']); ?></p>
-                    </details>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
 </article>
 
 <?php get_footer();

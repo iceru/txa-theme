@@ -46,6 +46,172 @@
     transition: stroke 250ms ease, color 250ms ease, opacity 250ms ease, stroke-width 250ms ease;
   }
 
+  .txa-network-path--green {
+    stroke: #55a348;
+    color: #55a348;
+  }
+
+  .txa-ecosystem {
+    position: relative;
+    min-height: 690px;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 1.5rem;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 43, 43, 0.06), transparent 23%), #f8f8f8;
+    box-shadow: 0 20px 50px -38px rgba(20, 20, 20, 0.35);
+  }
+
+  .txa-ecosystem__lines {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .txa-ecosystem__source {
+    position: absolute;
+    top: 42px;
+    left: 34px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-near-black);
+  }
+
+  .txa-ecosystem__source-icon {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    place-items: center;
+    border-radius: 999px;
+    background: rgba(212, 43, 43, 0.1);
+    color: var(--color-brand);
+    font-size: 1.5rem;
+  }
+
+  .txa-ecosystem__source strong,
+  .txa-ecosystem__source small { display: block; }
+  .txa-ecosystem__source strong { font-size: 0.875rem; }
+  .txa-ecosystem__source small { margin-top: 0.15rem; color: var(--color-mid-gray); font-size: 0.7rem; }
+
+  .txa-ecosystem__booking-label {
+    position: absolute;
+    bottom: 24px;
+    left: 32px;
+    z-index: 2;
+    max-width: 190px;
+    color: var(--color-mid-gray);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .txa-ecosystem__logo {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    width: 112px;
+    min-height: 68px;
+    place-items: center;
+    border: 1px solid rgba(20, 20, 20, 0.07);
+    border-radius: 0.75rem;
+    background: #fff;
+    padding: 0.75rem;
+    box-shadow: 0 8px 24px -18px rgba(20, 20, 20, 0.5);
+  }
+
+  .txa-ecosystem__logo img { max-width: 100%; max-height: 45px; object-fit: contain; }
+  .txa-ecosystem__logo--1 { top: 75px; left: 272px; }
+  .txa-ecosystem__logo--2 { top: 155px; left: 163px; width: 82px; }
+  .txa-ecosystem__logo--3 { top: 216px; left: 337px; width: 124px; }
+  .txa-ecosystem__logo--4 { top: 273px; left: 67px; width: 76px; }
+  .txa-ecosystem__logo--5 { top: 351px; left: 137px; width: 88px; }
+  .txa-ecosystem__logo--6 { top: 377px; left: 276px; width: 132px; }
+  .txa-ecosystem__logo--7 { top: 484px; left: 158px; width: 120px; }
+  .txa-ecosystem__logo--8 { top: 488px; left: 360px; width: 116px; }
+  .txa-ecosystem__logo--9 { top: 570px; left: 282px; width: 90px; }
+
+  .txa-ecosystem__hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    display: grid;
+    width: 220px;
+    min-height: 145px;
+    place-items: center;
+    border: 2px solid var(--color-brand);
+    border-radius: 1.25rem;
+    background: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 22px 48px -28px rgba(212, 43, 43, 0.6);
+    translate: -50% -50%;
+  }
+
+  .txa-ecosystem__hub img { width: auto; height: 54px; object-fit: contain; }
+  .txa-ecosystem__hub span { color: var(--color-brand); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-align: center; text-transform: uppercase; }
+  .txa-ecosystem__channels { position: absolute; inset: 0; z-index: 2; }
+
+  .txa-ecosystem__channel {
+    position: absolute;
+    right: 215px;
+    display: flex;
+    width: 168px;
+    min-height: 72px;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    background: #fff;
+    padding: 0.9rem 1rem;
+    color: var(--color-near-black);
+    box-shadow: 0 8px 24px -20px rgba(20, 20, 20, 0.5);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .txa-ecosystem__channel i { color: var(--color-brand); font-size: 1.25rem; }
+  .txa-ecosystem__channel:nth-child(1) { top: 47px; }
+  .txa-ecosystem__channel:nth-child(2) { top: 195px; }
+  .txa-ecosystem__channel:nth-child(3) { top: 374px; }
+  .txa-ecosystem__channel:nth-child(4) { top: 536px; }
+
+  .txa-ecosystem__travellers {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    z-index: 3;
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    background: var(--color-brand);
+    padding: 1.2rem 1rem;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 18px 34px -22px rgba(212, 43, 43, 0.85);
+    translate: 0 -50%;
+  }
+
+  .txa-ecosystem__people { display: flex; align-items: end; gap: 0.2rem; margin-bottom: 0.5rem; font-size: 1.55rem; }
+  .txa-ecosystem__people i:nth-child(2) { font-size: 2rem; }
+  .txa-ecosystem__travellers strong { font-size: 0.95rem; }
+  .txa-ecosystem__travellers span { margin-top: 0.1rem; color: rgba(255,255,255,0.75); font-size: 0.7rem; }
+
+  @media (max-width: 1170px) {
+    .txa-ecosystem__channel { right: 178px; width: 155px; }
+    .txa-ecosystem__travellers { right: 20px; width: 138px; }
+    .txa-ecosystem__logo--1 { left: 245px; }
+    .txa-ecosystem__logo--3 { left: 300px; }
+    .txa-ecosystem__logo--8 { left: 330px; }
+  }
+
   .txa-network-path.is-active {
     stroke: #d42b2b;
     color: #d42b2b;
@@ -55,7 +221,7 @@
   }
 
   .txa-network-node {
-    transition: transform 250ms ease, filter 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    transition: transform 250ms ease, scale 250ms ease, filter 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
   }
 
   .txa-network-node.is-active {
@@ -64,7 +230,8 @@
   }
 
   .txa-network-node[data-node='txa'].is-active {
-    transform: translate(-50%, -50%) scale(1.08);
+    transform: none;
+    scale: 1.08;
     border-color: #e32929;
     box-shadow: 0 26px 58px -24px rgba(227, 41, 41, 0.65), 0 18px 34px -28px rgba(0, 0, 0, 0.55);
     filter: none;

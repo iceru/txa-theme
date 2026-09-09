@@ -46,7 +46,7 @@ if (!function_exists('txa_distributor_button')) {
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div
             class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85"
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/distributor.jpg'); ?>"
                 alt="Australian landscape" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div
@@ -138,7 +138,7 @@ if (!function_exists('txa_distributor_button')) {
     <section class="px-3 py-10 sm:px-4 sm:py-14 lg:px-16 lg:py-16">
         <div
             class="relative mx-auto min-h-[390px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[420px] sm:rounded-2xl lg:min-h-[526px]">
-            <img src="https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=2200&q=85"
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/distributor-2.jpg'); ?>"
                 alt="Australian city waterfront at night" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-black/60 sm:bg-black/50" aria-hidden="true"></div>
             <div

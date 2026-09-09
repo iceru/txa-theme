@@ -111,6 +111,25 @@ window.addEventListener('load', function () {
         })
     })
 
+    document.querySelectorAll('[data-faq-card]').forEach(function (faq) {
+        faq.addEventListener('click', function (event) {
+            if (event.target.closest('summary, a, button, input, select, textarea')) return
+
+            faq.open = !faq.open
+        })
+
+        faq.addEventListener('toggle', function () {
+            if (!faq.open) return
+
+            const group = faq.closest('[data-faq-group]')
+            if (!group) return
+
+            group.querySelectorAll('[data-faq-card][open]').forEach(function (openFaq) {
+                if (openFaq !== faq) openFaq.open = false
+            })
+        })
+    })
+
     if (!prefersReducedMotion) {
         document.querySelectorAll('main > article > section').forEach(function (section) {
             section.setAttribute('data-scroll', '')

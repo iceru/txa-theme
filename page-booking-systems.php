@@ -46,7 +46,7 @@ if (!function_exists('txa_booking_button')) {
     <section class="px-4 pb-8 pt-5 sm:pt-8 lg:px-16 lg:pb-0">
         <div
             class="relative mx-auto min-h-[500px] max-w-[1312px] overflow-hidden rounded-2xl bg-near-black sm:min-h-[540px] lg:min-h-[600px]">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=85"
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/booking-systems.jpg')); ?>"
                 alt="Aerial view of an Australian beach" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div
@@ -65,28 +65,34 @@ if (!function_exists('txa_booking_button')) {
                     </div>
                 </div>
 
-                <div
-                    class="rounded-2xl bg-white/55 px-4 py-6 shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1)] backdrop-blur-md sm:px-8 sm:py-10 lg:py-12">
-                    <div
-                        class="grid grid-cols-1 items-center justify-items-center gap-4 sm:grid-cols-[1fr_auto_1fr] sm:gap-5">
-                        <div
-                            class="flex size-24 flex-col items-center justify-center rounded-xl border border-[#dfc0ba] bg-white p-3 text-center shadow-sm sm:size-28 lg:size-32">
-                            <i class="bi bi-calendar2-check text-2xl text-brand sm:text-3xl" aria-hidden="true"></i>
-                            <span
-                                class="mt-2 text-xs font-semibold leading-4 text-[#151c27] sm:text-sm sm:leading-5">Booking<br>System</span>
+                <div class="overflow-hidden rounded-xl bg-black px-5 py-7 text-center text-white shadow-[0_20px_25px_-5px_rgba(0,0,0,0.22)] sm:px-6 sm:py-8">
+                    <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold sm:text-2xl">TXA System Diagram</h2>
+                    <p class="mt-1 text-xs font-semibold text-white/75">Booking-system connection flow</p>
+
+                    <div class="mx-auto mt-7 flex flex-col items-center justify-between gap-4 sm:flex-row sm:gap-2 lg:mt-9">
+                        <div class="flex w-full max-w-[120px] flex-col items-center">
+                            <i class="bi bi-calendar2-check text-5xl leading-none text-white sm:text-6xl" aria-hidden="true"></i>
+                            <p class="mt-4 text-xs font-semibold leading-4 text-white/90 sm:text-sm sm:leading-5">Booking System</p>
                         </div>
-                        <div class="relative flex items-center">
-                            <div
-                                class="flex size-28 flex-col items-center justify-center rounded-full border-4 border-[#ac2d2d] bg-brand text-center text-white shadow-lg sm:size-36 lg:size-40">
-                                <i class="bi bi-arrow-left-right text-2xl sm:text-3xl" aria-hidden="true"></i>
-                                <span
-                                    class="mt-1 text-sm font-semibold uppercase leading-5 sm:text-base sm:leading-6">TXA<br>Exchange</span>
-                            </div>
+
+                        <svg class="h-7 w-11 shrink-0 rotate-90 text-white sm:rotate-0" viewBox="0 0 64 24" fill="none" aria-hidden="true">
+                            <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <div class="flex w-full max-w-[130px] flex-col items-center">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
+                                alt="Tourism Exchange Australia"
+                                class="h-auto w-[112px] brightness-0 invert sm:w-[124px]">
+                            <p class="mt-4 text-xs font-semibold leading-4 text-white/90 sm:text-sm sm:leading-5">TXA System</p>
                         </div>
-                        <div
-                            class="flex size-24 flex-col items-center justify-center rounded-xl border border-[#dfc0ba] bg-white p-3 text-center shadow-sm sm:size-28 lg:size-32">
-                            <i class="bi bi-broadcast text-2xl text-brand sm:text-3xl" aria-hidden="true"></i>
-                            <span class="mt-2 text-xs font-semibold text-[#151c27] sm:text-sm">Channels</span>
+
+                        <svg class="h-7 w-11 shrink-0 rotate-90 text-white sm:rotate-0" viewBox="0 0 64 24" fill="none" aria-hidden="true">
+                            <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <div class="flex w-full max-w-[120px] flex-col items-center">
+                            <i class="bi bi-window-stack text-5xl leading-none text-white sm:text-6xl" aria-hidden="true"></i>
+                            <p class="mt-4 text-xs font-semibold leading-4 text-white/90 sm:text-sm sm:leading-5">Distribution Channels</p>
                         </div>
                     </div>
                 </div>
@@ -115,7 +121,8 @@ if (!function_exists('txa_booking_button')) {
                                 class="bi <?php echo esc_attr($benefit['icon']); ?>" aria-hidden="true"></i></span>
                         <div>
                             <h3 class="text-base font-semibold leading-6 text-[#151c27]">
-                                <?php echo esc_html($benefit['title']); ?></h3>
+                                <?php echo esc_html($benefit['title']); ?>
+                            </h3>
                             <p class="mt-2 text-sm leading-5 text-mid-gray"><?php echo esc_html($benefit['copy']); ?></p>
                         </div>
                     </article>
@@ -131,7 +138,7 @@ if (!function_exists('txa_booking_button')) {
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold tracking-[-0.01em] text-[#151c27] sm:text-3xl">
                     Connected booking systems</h2>
                 <a href="<?php echo esc_url($directory_url); ?>"
- class="inline-flex items-center gap-2 font-semibold text-brand !no-underline hover:text-brand-dark sm:text-base">View
+                    class="inline-flex items-center gap-2 font-semibold text-brand !no-underline hover:text-brand-dark sm:text-base">View
                     Directory <span aria-hidden="true">→</span></a>
             </div>
             <div class="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 xl:grid-cols-4">
@@ -141,7 +148,8 @@ if (!function_exists('txa_booking_button')) {
                             class="mx-auto flex size-14 items-center justify-center rounded-lg bg-[#e8e8e6] text-xl font-bold text-brand sm:size-20 sm:text-2xl"><i
                                 class="bi <?php echo esc_attr($system['icon']); ?>" aria-hidden="true"></i></span>
                         <h3 class="mt-4 text-sm font-semibold text-[#151c27] sm:mt-6 sm:text-base">
-                            <?php echo esc_html($system['name']); ?></h3>
+                            <?php echo esc_html($system['name']); ?>
+                        </h3>
                         <span
                             class="<?php echo 'green' === $system['tone'] ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'; ?> mt-3 inline-flex rounded-full px-2.5 py-1 text-[9px] font-semibold uppercase sm:mt-4 sm:px-3 sm:text-[10px]"><?php echo esc_html($system['status']); ?></span>
                     </article>
