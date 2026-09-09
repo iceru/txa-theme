@@ -144,7 +144,7 @@ if (!function_exists('txa_button')) {
                         <div class="h-[160px] overflow-hidden sm:h-[180px]"><img
                                 src="<?php echo esc_url($card['image']); ?>" alt=""
                                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"></div>
-                        <div class="flex grow flex-col px-5 pb-5 pt-4 sm:px-6 sm:pt-2">
+                        <div class="flex grow flex-col px-5 pb-5 pt-4 sm:px-6">
                             <h3 class="text-lg font-semibold leading-7 sm:text-xl"><?php echo esc_html($card['title']); ?>
                             </h3>
                             <p class="mt-2 grow text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
@@ -186,8 +186,8 @@ if (!function_exists('txa_button')) {
     </section>
 
     <section class="relative overflow-hidden bg-near-black px-4 py-10 text-white sm:py-12 lg:px-16 lg:py-16"><img
-            src="<?php echo esc_url(get_theme_file_uri('/images/Torndirrup National Park, Torndirrup.jpg')); ?>"
-            alt="Torndirrup National Park" class="absolute inset-0 h-full w-full object-cover">
+            src="<?php echo esc_url(get_theme_file_uri('/images/pricing.jpg')); ?>" alt="Torndirrup National Park"
+            class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-black/75 sm:bg-black/70" aria-hidden="true"></div>
         <div
             class="relative z-10 mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[554px_1fr] lg:items-center lg:gap-12">
