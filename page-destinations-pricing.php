@@ -16,7 +16,7 @@ $packages = [
         <img src="<?php echo esc_url(get_template_directory_uri() . '/images/destination-pricing.jpg'); ?>"
             alt="Australian destination landscape" class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45"></div>
-        <div class="relative mx-auto flex min-h-[39S0px] max-w-[1312px] items-center sm:min-h-[420px] lg:min-h-0">
+        <div class="relative mx-auto flex min-h-[390px] max-w-[1312px] items-center sm:min-h-[420px] lg:min-h-0">
             <div class="max-w-[666px]">
                 <p
                     class="inline-flex rounded-lg bg-white px-4 py-2 font-bold text-brand sm:px-6 sm:py-3 sm:text-lg lg:text-xl">
@@ -65,21 +65,48 @@ $packages = [
                             <?php echo esc_html($package['name']); ?> Package</a>
                     </article><?php endforeach; ?>
             </div>
-            <div
-                class="mt-12 grid gap-6 rounded-2xl bg-surface p-6 sm:mt-14 sm:p-8 lg:mt-16 lg:grid-cols-[1fr_360px] lg:items-center lg:p-12">
-                <div>
-                    <h2 class="text-2xl font-semibold leading-tight text-[#151c27]">Set up and Training</h2>
-                    <p class="mt-4 max-w-[536px] text-sm leading-6 text-mid-gray sm:mt-6 sm:text-base">Every package
-                        includes a comprehensive onboarding phase to ensure your team and suppliers are ready to
-                        leverage the platform's full potential. This covers system configuration, initial data import,
-                        and hands-on training for your destination managers.</p>
+
+            <section class="relative mt-12 overflow-hidden rounded-3xl border border-brand/10 bg-gradient-to-br from-[#fff7f5] via-white to-[#f7f7f5] p-6 shadow-sm sm:mt-14 sm:p-8 lg:mt-16 lg:p-12">
+                <div class="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-brand/5 blur-3xl" aria-hidden="true"></div>
+                <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,.85fr)] lg:items-center lg:gap-14">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[.18em] text-brand sm:text-sm">Get started with confidence</p>
+                        <h2 class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">Set up and Training</h2>
+                        <p class="mt-4 max-w-[680px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">Every package includes a structured onboarding phase so your team and suppliers are ready to use the platform with confidence. We help prepare the system, organise the initial data and guide your destination team through the rollout.</p>
+
+                        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                            <article class="rounded-2xl border border-brand/10 bg-white p-5 shadow-sm">
+                                <span class="flex size-11 items-center justify-center rounded-xl bg-brand-tint text-xl text-brand"><i class="bi bi-gear" aria-hidden="true"></i></span>
+                                <h3 class="mt-4 text-base font-bold text-[#151c27]">System configuration</h3>
+                                <p class="mt-1 text-sm leading-5 text-mid-gray">Set up around your destination's requirements.</p>
+                            </article>
+                            <article class="rounded-2xl border border-brand/10 bg-white p-5 shadow-sm">
+                                <span class="flex size-11 items-center justify-center rounded-xl bg-brand-tint text-xl text-brand"><i class="bi bi-database" aria-hidden="true"></i></span>
+                                <h3 class="mt-4 text-base font-bold text-[#151c27]">Initial data import</h3>
+                                <p class="mt-1 text-sm leading-5 text-mid-gray">Prepare core destination and supplier data.</p>
+                            </article>
+                            <article class="rounded-2xl border border-brand/10 bg-white p-5 shadow-sm">
+                                <span class="flex size-11 items-center justify-center rounded-xl bg-brand-tint text-xl text-brand"><i class="bi bi-people" aria-hidden="true"></i></span>
+                                <h3 class="mt-4 text-base font-bold text-[#151c27]">Hands-on training</h3>
+                                <p class="mt-1 text-sm leading-5 text-mid-gray">Practical guidance for your team and suppliers.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="rounded-3xl border border-brand/15 bg-white p-6 shadow-[0_20px_45px_-28px_rgba(20,20,20,.35)] sm:p-8">
+                        <div class="flex items-start gap-4">
+                            <span class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl text-white"><i class="bi bi-credit-card" aria-hidden="true"></i></span>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-[.14em] text-mid-gray">One-time charge</p>
+                                <p class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold leading-7 text-[#151c27]">Applied to all new package implementations</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 border-t border-line pt-6">
+                            <p class="text-sm leading-6 text-mid-gray">Covers the initial setup, configuration, data preparation and onboarding support required to get your destination live.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="rounded-2xl border border-[#dfc0ba] bg-white p-6 text-center shadow-sm sm:p-8">
-                    <p class="text-xs tracking-[.1em] text-mid-gray sm:text-sm">ONE-TIME CHARGE</p>
-                    <p class="mt-2 text-sm italic leading-6 text-mid-gray">Applied to all new package implementations
-                    </p>
-                </div>
-            </div>
+            </section>
         </div>
     </section>
 </article>
