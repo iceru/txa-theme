@@ -105,7 +105,7 @@ $portal_benefits = [
             </div>
 
             <div class="mt-10 overflow-hidden rounded-2xl border border-line bg-surface p-4 shadow-sm sm:mt-12 sm:p-6 lg:p-8">
-                <div class="grid grid-cols-1 items-stretch gap-4 xl:grid-cols-[0.8fr_34px_1.35fr_34px_1.35fr_34px_0.8fr] xl:gap-3">
+                <div class="grid grid-cols-1 items-stretch gap-4 xl:grid-cols-[1fr_30px_1.2fr_30px_1.2fr_30px_1fr] xl:gap-3">
                     <article class="flex flex-col rounded-2xl border border-line bg-white p-5 shadow-sm">
                         <div class="text-center">
                             <span class="mx-auto flex size-14 items-center justify-center rounded-xl bg-brand-tint text-3xl text-brand" aria-hidden="true"><i class="bi bi-person-workspace"></i></span>

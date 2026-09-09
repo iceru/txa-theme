@@ -177,6 +177,10 @@
       grid-column: 1 / -1;
     }
 
+    :where(.wpcf7-form > p:has(input[name='your-subject']), .wpcf7-form > p:has(textarea)) {
+      grid-column: 1 / -1;
+    }
+
     :where(.txa-form-grid) {
       display: grid;
       gap: 1.5rem;

@@ -125,9 +125,9 @@ $timeline_values = [
             </div>
 
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
-                <svg class="absolute inset-x-0 top-0 hidden h-[382px] w-full lg:block" viewBox="0 0 1180 382"
+                <svg class="absolute inset-x-0 top-0 hidden h-[382px] w-full text-brand lg:block" viewBox="0 0 1180 382"
                     preserveAspectRatio="none" fill="none" aria-hidden="true">
-                    <path d="M54 2 H1100 C1150 2 1176 38 1176 82 V297 C1176 346 1148 378 1098 378 H54" stroke="#00A651"
+                    <path d="M54 2 H1100 C1150 2 1176 38 1176 82 V297 C1176 346 1148 378 1098 378 H54" stroke="currentColor"
                         stroke-width="5" stroke-linecap="round" />
                 </svg>
 
@@ -144,7 +144,7 @@ $timeline_values = [
                         <article
                             class="relative grid grid-cols-[40px_1fr] gap-4 lg:block lg:min-h-[330px] lg:text-center <?php echo esc_attr($desktop_position); ?>">
                             <span
-                                class="relative z-10 mt-1 block size-10 rounded-full border-[7px] border-surface bg-brand shadow-[0_0_0_2px_#00A651] lg:absolute lg:left-1/2 lg:top-[-20px] lg:-translate-x-1/2"
+                                class="relative z-10 mt-1 block size-10 rounded-full border-[7px] border-surface bg-brand ring-2 ring-brand lg:absolute lg:left-1/2 lg:top-[-20px] lg:-translate-x-1/2"
                                 aria-hidden="true"></span>
                             <div class="lg:pt-11">
                                 <span
