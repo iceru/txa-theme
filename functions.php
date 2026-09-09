@@ -45,6 +45,25 @@ add_action('wp_enqueue_scripts', function () {
     );
 });
 
+/**
+ * Keep unfinished internal CTA routes as placeholders until their final URLs are available.
+ * This lets templates keep descriptive route names without sending visitors to 404 pages.
+ */
+add_filter('home_url', function (string $url, string $path): string {
+    $placeholder_paths = [
+        '/apply-now/',
+        '/request-demo/',
+        '/destinations/request-demo/',
+        '/distributors/apply/',
+        '/booking-systems/partner-enquiry/',
+        '/register-your-interest/',
+    ];
+
+    $normalized_path = '/' . trim($path, '/') . '/';
+
+    return in_array($normalized_path, $placeholder_paths, true) ? '#' : $url;
+}, 10, 2);
+
 if (!function_exists('txa_article_reading_time')) {
     /**
      * Estimate an article's reading time at 200 words per minute.
