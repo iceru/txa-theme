@@ -30,7 +30,7 @@ $activation_cards = [
         'image_left' => true,
     ],
     [
-        'icon' => 'bi-handshake',
+        'icon' => 'bi-arrow-repeat',
         'title' => 'Seamless Operations',
         'copy' => 'Use supplier opt-in, automated hosted booking pages, and integrated and automated direct payment and settlement of booking funds.',
     ],
@@ -78,7 +78,7 @@ $partner_cards = [
                     TXA's Virtual Concierge</a>
             </div>
             <div class="relative overflow-hidden rounded-lg">
-                <img src="<?php echo esc_url(get_theme_file_uri('/images/Lavender Bay, Sydney.jpg')); ?>"
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/virtual-concierge.jpg')); ?>"
                     alt="Sydney Harbour Bridge" class="h-[340px] w-full object-cover sm:h-[390px] lg:h-[400px]">
                 <div
                     class="absolute bottom-5 left-5 right-5 flex items-center gap-5 rounded-xl bg-white/90 p-5 shadow-lg backdrop-blur">
@@ -121,7 +121,8 @@ $partner_cards = [
                                     </span>
                                     <h3
                                         class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27]">
-                                        <?php echo esc_html($card['title']); ?></h3>
+                                        <?php echo esc_html($card['title']); ?>
+                                    </h3>
                                     <p class="mt-4 text-base leading-7 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                                 </div>
                             </div>
@@ -134,7 +135,8 @@ $partner_cards = [
                                 <div>
                                     <h3
                                         class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27]">
-                                        <?php echo esc_html($card['title']); ?></h3>
+                                        <?php echo esc_html($card['title']); ?>
+                                    </h3>
                                     <p class="mt-4 text-base leading-7 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                                 </div>
                                 <?php if (!empty($card['image'])) { ?>
@@ -159,25 +161,28 @@ $partner_cards = [
                     book experiences, turning every tourism operator, information desk and concierge into an active,
                     informed and motivated local booking channel</p>
             </div>
-            <div class="mt-14 grid gap-6 lg:grid-cols-3 lg:items-center">
+            <div class="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
                 <?php foreach ($partner_cards as $card) { ?>
                     <article
-                        class="<?php echo !empty($card['red']) ? 'bg-brand text-white lg:min-h-[390px]' : 'bg-white text-[#151c27] shadow-lg'; ?> rounded-2xl p-8 text-center sm:p-10">
+                        class="<?php echo !empty($card['red']) ? 'bg-brand text-white' : 'bg-white text-[#151c27] shadow-lg'; ?> flex h-full flex-col items-center rounded-2xl p-8 text-center sm:p-10">
                         <span
                             class="<?php echo !empty($card['red']) ? 'bg-white/15 text-white' : 'bg-brand-tint text-brand'; ?> mx-auto flex size-20 items-center justify-center rounded-2xl text-3xl">
                             <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
                         </span>
                         <h3
                             class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($card['red']) ? 'text-white' : 'text-[#151c27]'; ?>">
-                            <?php echo esc_html($card['title']); ?></h3>
+                            <?php echo esc_html($card['title']); ?>
+                        </h3>
                         <p
-                            class="mx-auto mt-6 max-w-[320px] text-base leading-7 <?php echo !empty($card['red']) ? 'text-white/90' : 'text-mid-gray'; ?>">
-                            <?php echo esc_html($card['copy']); ?></p>
+                            class="mx-auto mb-8 mt-6 max-w-[320px] text-base leading-7 <?php echo !empty($card['red']) ? 'text-white/90' : 'text-mid-gray'; ?>">
+                            <?php echo esc_html($card['copy']); ?>
+                        </p>
                         <div
-                            class="mt-8 border-t <?php echo !empty($card['red']) ? 'border-white/20' : 'border-line'; ?> pt-6">
+                            class="mt-auto w-full border-t <?php echo !empty($card['red']) ? 'border-white/20' : 'border-line'; ?> pt-6">
                             <p
                                 class="text-xs font-bold uppercase tracking-wide <?php echo !empty($card['red']) ? 'text-white' : 'text-brand'; ?>">
-                                <?php echo esc_html($card['label']); ?></p>
+                                <?php echo esc_html($card['label']); ?>
+                            </p>
                         </div>
                     </article>
                 <?php } ?>

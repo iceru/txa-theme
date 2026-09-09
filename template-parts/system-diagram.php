@@ -52,7 +52,7 @@ $platform_items = [
                     alt="Tourism Exchange Australia" class="h-11 w-auto brightness-0 invert sm:h-14">
             </div>
             <article
-                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6 xl:h-[472px]">
+                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6 xl:h-[536px]">
                 <div class="flex flex-1 flex-col divide-y divide-white/15">
                     <?php foreach ($system_items as $item): ?>
                         <div class="flex min-h-[128px] flex-1 flex-col items-center justify-center py-5">
@@ -75,7 +75,7 @@ $platform_items = [
         <div class="flex flex-col">
             <div class="hidden xl:mb-6 xl:block xl:min-h-16" aria-hidden="true"></div>
             <article
-                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6 xl:h-[472px]">
+                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6 xl:h-[536px]">
                 <div class="flex flex-1 flex-col divide-y divide-white/15">
                     <?php foreach ($platform_items as $item):
                         $item_highlighted = $dmo_highlighted && 'dmo' === $item['key']; ?>

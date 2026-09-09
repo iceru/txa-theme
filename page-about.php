@@ -27,7 +27,7 @@ $countries = [
 ];
 $timeline = [
     ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'icon' => 'bi-lightbulb'],
-    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'icon' => 'bi-file-earmark-search'],
+    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'icon' => 'bi-search'],
     ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'icon' => 'bi-people'],
     ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'icon' => 'bi-display'],
     ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'icon' => 'bi-globe2'],
@@ -36,7 +36,7 @@ $timeline = [
 $timeline_values = [
     ['title' => 'Australia\'s Own', 'copy' => 'Proudly built and operated in Australia.', 'icon' => 'bi-geo-alt'],
     ['title' => 'For the Industry', 'copy' => 'Designed for all tourism businesses, big and small.', 'icon' => 'bi-people'],
-    ['title' => 'Government Backed', 'copy' => 'Supported by every State and Federal Government Tourism Organisation.', 'icon' => 'bi-handshake'],
+    ['title' => 'Government Backed', 'copy' => 'Supported by every State and Federal Government Tourism Organisation.', 'icon' => 'bi-building-check'],
     ['title' => 'One Connected Platform', 'copy' => 'Connecting suppliers, destinations, distributors and booking systems seamlessly.', 'icon' => 'bi-diagram-3'],
     ['title' => 'Global Impact', 'copy' => 'Powering tourism platforms in the UK, Japan, Saudi Arabia and the United States.', 'icon' => 'bi-globe-americas'],
     ['title' => 'Value Stays in Australia', 'copy' => 'Keeping more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-currency-dollar'],
@@ -106,8 +106,8 @@ $timeline_values = [
                     <div
                         class="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 p-3 text-sm text-white sm:border-0 sm:bg-transparent sm:p-0 sm:text-base">
                         <?php if (!empty($country['icon'])): ?>
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $country['icon'])); ?>"
-                                alt="" class="h-5 w-auto shrink-0 brightness-0 invert" aria-hidden="true">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $country['icon'])); ?>" alt=""
+                                class="h-5 w-auto shrink-0 brightness-0 invert" aria-hidden="true">
                         <?php endif; ?>
                         <?php echo esc_html(strtoupper($country['name'])); ?>
                     </div><?php endforeach; ?>
@@ -125,13 +125,13 @@ $timeline_values = [
             </div>
 
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
-                <svg class="absolute inset-x-0 top-0 hidden h-[352px] w-full lg:block" viewBox="0 0 1180 352"
+                <svg class="absolute inset-x-0 top-0 hidden h-[382px] w-full lg:block" viewBox="0 0 1180 382"
                     preserveAspectRatio="none" fill="none" aria-hidden="true">
-                    <path d="M54 2 H1090 C1138 2 1158 38 1158 82 V267 C1158 316 1131 348 1082 348 H54"
-                        stroke="#00A651" stroke-width="5" stroke-linecap="round" />
+                    <path d="M54 2 H1100 C1150 2 1176 38 1176 82 V297 C1176 346 1148 378 1098 378 H54" stroke="#00A651"
+                        stroke-width="5" stroke-linecap="round" />
                 </svg>
 
-                <div class="absolute bottom-4 left-[19px] top-4 w-0.5 bg-[#00A651] lg:hidden" aria-hidden="true"></div>
+                <div class="absolute bottom-4 left-[19px] top-4 w-0.5 bg-brand lg:hidden" aria-hidden="true"></div>
                 <div class="relative grid gap-9 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-12">
                     <?php
                     $timeline_positions = [
@@ -142,16 +142,17 @@ $timeline_values = [
                     foreach ($timeline as $index => $item):
                         $desktop_position = $timeline_positions[$index] ?? ''; ?>
                         <article
-                            class="relative grid grid-cols-[40px_1fr] gap-4 lg:block lg:min-h-[300px] lg:text-center <?php echo esc_attr($desktop_position); ?>">
+                            class="relative grid grid-cols-[40px_1fr] gap-4 lg:block lg:min-h-[330px] lg:text-center <?php echo esc_attr($desktop_position); ?>">
                             <span
-                                class="relative z-10 mt-1 block size-10 rounded-full border-[7px] border-surface bg-[#00A651] shadow-[0_0_0_2px_#00A651] lg:absolute lg:left-1/2 lg:top-[-20px] lg:-translate-x-1/2"
+                                class="relative z-10 mt-1 block size-10 rounded-full border-[7px] border-surface bg-brand shadow-[0_0_0_2px_#00A651] lg:absolute lg:left-1/2 lg:top-[-20px] lg:-translate-x-1/2"
                                 aria-hidden="true"></span>
                             <div class="lg:pt-11">
                                 <span
                                     class="ml-0 flex size-16 items-center justify-center rounded-full bg-white text-3xl text-brand shadow-sm sm:size-[72px] lg:mx-auto lg:size-20">
                                     <i class="bi <?php echo esc_attr($item['icon']); ?>" aria-hidden="true"></i>
                                 </span>
-                                <p class="mt-4 text-xl font-bold uppercase text-[#151c27]"><?php echo esc_html($item['year']); ?></p>
+                                <p class="mt-4 text-xl font-bold uppercase text-[#151c27]">
+                                    <?php echo esc_html($item['year']); ?></p>
                                 <h3
                                     class="mt-2 inline-flex rounded-lg bg-brand px-4 py-1.5 [font-family:'Hanken_Grotesk',sans-serif] text-xs font-bold uppercase tracking-wide text-white sm:text-sm">
                                     <?php echo esc_html($item['title']); ?>

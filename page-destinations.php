@@ -49,12 +49,12 @@ $capabilities = [
 ];
 
 $implementation = [
-    ['title' => 'Define Assets Activation', 'copy' => 'Define the destination assets activation: website, campaign, trade, virtual concierge, data or a combination.'],
-    ['title' => 'Identify Priorities', 'copy' => 'Identify priority suppliers, POIs, recommended experiences, itineraries and local partners.'],
-    ['title' => 'Onboard Suppliers', 'copy' => 'Onboard suppliers through the most appropriate pathway for each business.'],
-    ['title' => 'Create Digital Assets', 'copy' => 'Create branded booking pages, destination landing pages, widgets, QR links and campaign assets.'],
-    ['title' => 'Launch Network', 'copy' => 'Launch DMO website activation, microsite, trade portal or local reseller network.'],
-    ['title' => 'Track & Optimize', 'copy' => 'Track engagement, conversion, attribution and data exports through dashboards and the agreed reporting model.'],
+    ['icon' => 'bi-ui-checks-grid', 'title' => 'Define Assets Activation', 'copy' => 'Define the destination assets activation: website, campaign, trade, virtual concierge, data or a combination.'],
+    ['icon' => 'bi-geo-alt', 'title' => 'Identify Priorities', 'copy' => 'Identify priority suppliers, POIs, recommended experiences, itineraries and local partners.'],
+    ['icon' => 'bi-person-plus', 'title' => 'Onboard Suppliers', 'copy' => 'Onboard suppliers through the most appropriate pathway for each business.'],
+    ['icon' => 'bi-window-plus', 'title' => 'Create Digital Assets', 'copy' => 'Create branded booking pages, destination landing pages, widgets, QR links and campaign assets.'],
+    ['icon' => 'bi-rocket-takeoff', 'title' => 'Launch Network', 'copy' => 'Launch DMO website activation, microsite, trade portal or local reseller network.'],
+    ['icon' => 'bi-graph-up-arrow', 'title' => 'Track & Optimize', 'copy' => 'Track engagement, conversion, attribution and data exports through dashboards and the agreed reporting model.'],
 ];
 
 if (!function_exists('txa_destination_button')) {
@@ -239,18 +239,41 @@ if (!function_exists('txa_destination_button')) {
                     <?php echo txa_destination_button('Request website activation demo', $demo_url, 'white'); ?>
                 </div>
             </div>
-            <div class="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
-                <?php foreach ($implementation as $index => $step): ?>
-                    <article
-                        class="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur-md sm:min-h-[228px] sm:p-6">
-                        <span
-                            class="flex size-10 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white sm:size-11 sm:text-base"><?php echo esc_html($index + 1); ?></span>
-                        <h3
-                            class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 sm:text-xl sm:leading-7">
-                            <?php echo esc_html($step['title']); ?></h3>
-                        <p class="mt-2 text-sm leading-[21px] text-white"><?php echo esc_html($step['copy']); ?></p>
-                    </article>
-                <?php endforeach; ?>
+            <div class="relative">
+                <div class="absolute bottom-10 left-10 top-10 w-px bg-white/40 md:hidden" aria-hidden="true"></div>
+                <div class="absolute left-[16.666%] right-[16.666%] top-12 hidden h-px bg-white/40 md:block"
+                    aria-hidden="true"></div>
+                <div class="absolute left-[16.666%] right-[16.666%] top-[392px] hidden h-px bg-white/40 md:block"
+                    aria-hidden="true"></div>
+                <div class="absolute right-[16.666%] top-12 hidden h-[344px] w-px bg-white/40 md:block"
+                    aria-hidden="true"></div>
+
+                <div class="relative grid gap-8 md:grid-cols-3 md:gap-x-4 md:gap-y-16">
+                    <?php
+                    $implementation_positions = [
+                        3 => 'md:col-start-3 md:row-start-2',
+                        4 => 'md:col-start-2 md:row-start-2',
+                        5 => 'md:col-start-1 md:row-start-2',
+                    ];
+                    foreach ($implementation as $index => $step):
+                        $implementation_position = $implementation_positions[$index] ?? ''; ?>
+                        <article
+                            class="relative grid grid-cols-[80px_1fr] items-start gap-5 md:block md:min-h-[280px] md:text-center <?php echo esc_attr($implementation_position); ?>">
+                            <div
+                                class="relative z-10 flex size-20 items-center justify-center rounded-full border border-white/50 bg-near-black/80 text-3xl text-white shadow-lg backdrop-blur-md md:mx-auto md:size-24">
+                                <i class="bi <?php echo esc_attr($step['icon']); ?>" aria-hidden="true"></i>
+                                <span
+                                    class="absolute -right-1 -top-1 flex size-7 items-center justify-center rounded-full bg-brand text-xs font-bold text-white ring-4 ring-near-black/70"><?php echo esc_html($index + 1); ?></span>
+                            </div>
+                            <div class="pt-1 md:pt-0">
+                                <h3
+                                    class="[font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 md:mt-5 md:text-xl md:leading-7">
+                                    <?php echo esc_html($step['title']); ?></h3>
+                                <p class="mt-2 text-sm leading-[21px] text-white/85"><?php echo esc_html($step['copy']); ?></p>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </section>

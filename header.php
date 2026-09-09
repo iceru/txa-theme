@@ -101,6 +101,7 @@ if (!function_exists('txa_header_link_class')) {
                                             ['POI & Experiences', '/destinations/poi-experiences/'],
                                             ['Trade Portal', '/destinations/trade-portal/'],
                                             ['Microsite Campaigns', '/destinations/microsite-campaigns/'],
+                                            ['Data & Insights', '/destinations/data-insights/'],
                                             ['Virtual Concierge', '/destinations/virtual-concierge/'],
                                         ];
                                         foreach ($destination_items as $destination_item): ?>

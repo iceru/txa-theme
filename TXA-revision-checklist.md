@@ -219,8 +219,8 @@ Approved content/image notes:
 
 ### Distributor role diagram
 
-- [ ] Add the shared four-column TXA system diagram.
-- [ ] Use these columns:
+- [x] Add the shared four-column TXA system diagram.
+- [x] Use these columns:
   - [ ] Column 1: Tourism Suppliers.
   - [ ] Column 2: Booking System, Data, Content.
   - [ ] Column 3: Company Website, Local Government/DMO, Google/AI, Various OTAs.
