@@ -26,12 +26,20 @@ $countries = [
     ['name' => 'United States', 'icon' => 'txusa.png'],
 ];
 $timeline = [
-    ['title' => 'Identifying the Need', 'copy' => 'Tourism bodies recognize the lack of digital connectivity for small operators.'],
-    ['title' => 'Global Tender', 'copy' => 'A rigorous selection process to find the world\'s best exchange architecture.'],
-    ['title' => 'National Backing', 'copy' => 'All STOs and Federal organizations align to support a single national standard.'],
-    ['title' => 'Rapid Adoption', 'copy' => 'Thousands of suppliers connect via a growing network of booking systems.'],
-    ['title' => 'Global Expansion', 'copy' => 'The underlying technology exports to international markets like the UK and US.'],
-    ['title' => 'The Future Hub', 'copy' => 'Evolving with data insights to drive Australia\'s tourism productivity.'],
+    ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'icon' => 'bi-lightbulb'],
+    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'icon' => 'bi-file-earmark-search'],
+    ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'icon' => 'bi-people'],
+    ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'icon' => 'bi-display'],
+    ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'icon' => 'bi-globe2'],
+    ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-heart'],
+];
+$timeline_values = [
+    ['title' => 'Australia\'s Own', 'copy' => 'Proudly built and operated in Australia.', 'icon' => 'bi-geo-alt'],
+    ['title' => 'For the Industry', 'copy' => 'Designed for all tourism businesses, big and small.', 'icon' => 'bi-people'],
+    ['title' => 'Government Backed', 'copy' => 'Supported by every State and Federal Government Tourism Organisation.', 'icon' => 'bi-handshake'],
+    ['title' => 'One Connected Platform', 'copy' => 'Connecting suppliers, destinations, distributors and booking systems seamlessly.', 'icon' => 'bi-diagram-3'],
+    ['title' => 'Global Impact', 'copy' => 'Powering tourism platforms in the UK, Japan, Saudi Arabia and the United States.', 'icon' => 'bi-globe-americas'],
+    ['title' => 'Value Stays in Australia', 'copy' => 'Keeping more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-currency-dollar'],
 ];
 ?>
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
@@ -107,27 +115,67 @@ $timeline = [
         </div>
     </section>
     <section class="bg-surface px-4 py-14 sm:py-16 lg:px-16 lg:py-24">
-        <div class="mx-auto max-w-[1280px]">
-            <h2
-                class="text-center [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight tracking-[-.01em] text-[#151c27]">
-                How TXA became Australia’s tourism exchange</h2>
-            <div class="relative mx-auto mt-10 max-w-[896px] sm:mt-12 lg:mt-16">
-                <div class="absolute bottom-0 left-5 top-0 w-0.5 bg-brand/20 sm:left-6 md:left-1/2 md:-translate-x-1/2"
-                    aria-hidden="true"></div>
-                <div class="space-y-10 sm:space-y-12 md:space-y-24">
-                    <?php foreach ($timeline as $index => $item):
-                        $is_left = 0 === $index % 2; ?>
-                        <div class="relative grid min-h-[56px] grid-cols-1 pl-16 sm:pl-20 md:grid-cols-2 md:gap-16 md:pl-0">
-                            <div class="<?php echo $is_left ? 'md:pr-8 md:text-right' : 'md:col-start-2 md:pl-8'; ?>">
+        <div class="mx-auto max-w-[1312px]">
+            <div class="text-center">
+                <h2
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold uppercase leading-tight tracking-[-.01em] text-[#151c27] sm:text-4xl">
+                    TXA Journey</h2>
+                <p class="mt-2 text-sm font-bold uppercase tracking-[.04em] text-brand sm:text-base">Built in Australia.
+                    Connected to the world. Powering our industry.</p>
+            </div>
+
+            <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
+                <svg class="absolute inset-x-0 top-0 hidden h-[352px] w-full lg:block" viewBox="0 0 1180 352"
+                    preserveAspectRatio="none" fill="none" aria-hidden="true">
+                    <path d="M54 2 H1090 C1138 2 1158 38 1158 82 V267 C1158 316 1131 348 1082 348 H54"
+                        stroke="#00A651" stroke-width="5" stroke-linecap="round" />
+                </svg>
+
+                <div class="absolute bottom-4 left-[19px] top-4 w-0.5 bg-[#00A651] lg:hidden" aria-hidden="true"></div>
+                <div class="relative grid gap-9 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-12">
+                    <?php
+                    $timeline_positions = [
+                        3 => 'lg:col-start-3 lg:row-start-2',
+                        4 => 'lg:col-start-2 lg:row-start-2',
+                        5 => 'lg:col-start-1 lg:row-start-2',
+                    ];
+                    foreach ($timeline as $index => $item):
+                        $desktop_position = $timeline_positions[$index] ?? ''; ?>
+                        <article
+                            class="relative grid grid-cols-[40px_1fr] gap-4 lg:block lg:min-h-[300px] lg:text-center <?php echo esc_attr($desktop_position); ?>">
+                            <span
+                                class="relative z-10 mt-1 block size-10 rounded-full border-[7px] border-surface bg-[#00A651] shadow-[0_0_0_2px_#00A651] lg:absolute lg:left-1/2 lg:top-[-20px] lg:-translate-x-1/2"
+                                aria-hidden="true"></span>
+                            <div class="lg:pt-11">
+                                <span
+                                    class="ml-0 flex size-16 items-center justify-center rounded-full bg-white text-3xl text-brand shadow-sm sm:size-[72px] lg:mx-auto lg:size-20">
+                                    <i class="bi <?php echo esc_attr($item['icon']); ?>" aria-hidden="true"></i>
+                                </span>
+                                <p class="mt-4 text-xl font-bold uppercase text-[#151c27]"><?php echo esc_html($item['year']); ?></p>
                                 <h3
-                                    class="[font-family:'Hanken_Grotesk',sans-serif] text-base font-semibold text-[#151c27]">
+                                    class="mt-2 inline-flex rounded-lg bg-brand px-4 py-1.5 [font-family:'Hanken_Grotesk',sans-serif] text-xs font-bold uppercase tracking-wide text-white sm:text-sm">
                                     <?php echo esc_html($item['title']); ?>
                                 </h3>
-                                <p class="mt-1 text-sm leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?></p>
-                            </div><span
-                                class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-full border-4 border-[#e7eefe] bg-brand text-sm font-bold text-white sm:size-12 sm:text-base md:left-1/2 md:-translate-x-1/2"><?php echo esc_html($index + 1); ?></span>
-                        </div><?php endforeach; ?>
+                                <p class="mx-auto mt-3 max-w-[310px] text-sm leading-5 text-mid-gray">
+                                    <?php echo esc_html($item['copy']); ?>
+                                </p>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
                 </div>
+            </div>
+
+            <div
+                class="mt-12 grid overflow-hidden rounded-xl border border-line bg-white shadow-sm sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 xl:grid-cols-6">
+                <?php foreach ($timeline_values as $value): ?>
+                    <article class="border-b border-line p-5 last:border-b-0 sm:border-r lg:p-6 xl:border-b-0">
+                        <i class="bi <?php echo esc_attr($value['icon']); ?> text-3xl text-brand" aria-hidden="true"></i>
+                        <h3 class="mt-3 text-xs font-bold uppercase leading-5 text-[#151c27]">
+                            <?php echo esc_html($value['title']); ?>
+                        </h3>
+                        <p class="mt-2 text-xs leading-5 text-mid-gray"><?php echo esc_html($value['copy']); ?></p>
+                    </article>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>

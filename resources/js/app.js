@@ -28,6 +28,23 @@ window.addEventListener('load', function () {
             submenu.classList.toggle('lg:opacity-0', isOpen)
             icon?.classList.toggle('rotate-180', !isOpen)
         })
+
+        document.addEventListener('click', function (event) {
+            if (toggle.contains(event.target) || submenu.contains(event.target)) return
+
+            toggle.setAttribute('aria-expanded', 'false')
+            submenu.classList.add('hidden', 'lg:invisible', 'lg:opacity-0')
+            icon?.classList.remove('rotate-180')
+        })
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key !== 'Escape' || toggle.getAttribute('aria-expanded') !== 'true') return
+
+            toggle.setAttribute('aria-expanded', 'false')
+            submenu.classList.add('hidden', 'lg:invisible', 'lg:opacity-0')
+            icon?.classList.remove('rotate-180')
+            toggle.focus()
+        })
     })
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -78,16 +95,28 @@ window.addEventListener('load', function () {
         const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
         function clearNetwork() {
-            nodes.forEach(function (node) { node.classList.remove('is-active') })
-            paths.forEach(function (path) { path.classList.remove('is-active') })
+            nodes.forEach(function (node) { node.classList.remove('is-active', 'is-dimmed') })
+            paths.forEach(function (path) { path.classList.remove('is-active', 'is-dimmed') })
         }
 
         function activateNetwork(node) {
             clearNetwork()
             const type = node.dataset.node
             node.classList.add('is-active')
+
+            if (type === 'txa') {
+                paths.forEach(function (path) { path.classList.add('is-active') })
+                return
+            }
+
+            nodes.forEach(function (candidate) {
+                if (candidate !== node && candidate.dataset.node !== type && candidate.dataset.node !== 'txa') {
+                    candidate.classList.add('is-dimmed')
+                }
+            })
             paths.forEach(function (path) {
-                if (path.dataset.path === type || type === 'txa') path.classList.add('is-active')
+                const pathTypes = (path.dataset.path || '').split(/\s+/)
+                path.classList.add(pathTypes.includes(type) ? 'is-active' : 'is-dimmed')
             })
         }
 
@@ -99,6 +128,15 @@ window.addEventListener('load', function () {
         nodes.forEach(function (node) {
             node.addEventListener('mouseenter', function () { activateNetwork(node) })
             node.addEventListener('mouseleave', function () {
+                const hoveredNode = nodes.slice().reverse().find(function (candidate) {
+                    return candidate !== node && candidate.matches(':hover')
+                })
+
+                if (hoveredNode) {
+                    activateNetwork(hoveredNode)
+                    return
+                }
+
                 if (txaNode && canHover && network.matches(':hover')) {
                     activateNetwork(txaNode)
                     return
@@ -106,8 +144,12 @@ window.addEventListener('load', function () {
 
                 clearNetwork()
             })
-            node.addEventListener('focusin', function () { activateNetwork(node) })
-            node.addEventListener('focusout', clearNetwork)
+            node.addEventListener('focusin', function (event) {
+                if (event.target === node) activateNetwork(node)
+            })
+            node.addEventListener('focusout', function (event) {
+                if (event.target === node) clearNetwork()
+            })
         })
     })
 

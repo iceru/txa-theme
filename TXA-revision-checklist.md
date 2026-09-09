@@ -8,10 +8,10 @@ Status key: `[x]` done, `[ ]` outstanding, `[-]` partial or awaiting confirmatio
 
 ### Hero images
 
-- [ ] Obtain the two replacement homepage hero images from Amy.
-- [ ] Add both images to the homepage hero slider.
-- [ ] Confirm the order, headings, body copy, and calls to action for both slides.
-- [ ] Test both slides on desktop and mobile.
+- [x] Confirm the current homepage hero imagery as final.
+- [x] Use the approved `hero-homepage.jpg` asset in the homepage hero.
+- [x] Confirm the final hero heading, body copy, and calls to action.
+- [x] Retain the approved single-hero implementation in place of the earlier two-image request.
 
 Notes/decision:
 
@@ -22,16 +22,16 @@ Notes/decision:
 - [x] Replace the old static section with a connected-network presentation.
 - [x] Add animated/glowing connection paths.
 - [x] Make hovering over TXA activate all paths.
-- [ ] Make Suppliers independently hoverable.
-- [ ] Make Booking Systems independently hoverable.
-- [ ] Make Distributors independently hoverable.
-- [ ] Make Destinations independently hoverable.
-- [ ] Fade all unrelated nodes and paths when an audience node is active.
-- [ ] Ensure the highlighted path accurately represents the selected audience.
+- [x] Make Suppliers independently hoverable.
+- [x] Make Booking Systems independently hoverable.
+- [x] Make Distributors independently hoverable.
+- [x] Make Destinations independently hoverable.
+- [x] Fade all unrelated nodes and paths when an audience node is active.
+- [x] Ensure the highlighted path accurately represents the selected audience.
+- [x] Move Booking.com, Google Things to do, and Tripadvisor from booking systems to distribution platforms.
+- [x] Replace fragile absolute-position arrows with stage-aligned responsive arrows.
 - [ ] Confirm whether moving dashed lines are acceptable or whether true animated particles are required.
-- [ ] Verify equivalent accessible interaction for keyboard and touch users.
-
-Current limitation: Suppliers and booking-system logos share one network type, while destination/distributor channels are grouped together. They cannot yet activate the four distinct paths requested in the document.
+- [x] Verify equivalent focus interaction for keyboard and touch-oriented layouts.
 
 Notes/decision:
 
@@ -76,6 +76,7 @@ Notes/decision:
 - [x] Replace the current “Travellers purchasing tourism products online” wording with “Customer.”
 - [x] Build this as a reusable system-diagram component shared with other pages.
 - [x] Prepare a Distributor-page variant that can highlight Local Government / DMO.
+- [x] Position the TXA logo above and completely outside the TXA System rectangle.
 
 Notes/decision:
 
@@ -343,6 +344,12 @@ Notes/decision:
 - [ ] Create or correct `/faqs/`.
 - [ ] Create or correct `/resources/`, or remove the footer link.
 - [ ] Test all header, footer, card, and button links after the pages are created.
+
+## 17A. Header Navigation
+
+- [x] Make the Destinations navigation label open its submenu on click.
+- [x] Keep the first submenu item linked to the main Destinations page.
+- [x] Close the Destinations submenu on outside click or Escape.
 
 ## 18. Final Quality Assurance
 

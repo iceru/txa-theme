@@ -27,7 +27,7 @@ if (!function_exists('txa_header_link_class')) {
             ? 'font-bold text-brand'
             : 'font-medium text-mid-gray';
 
-        return trim($extra_classes . ' text-xs ' . $state_classes . ' !no-underline hover:text-brand');
+        return trim($extra_classes . ' text-sm ' . $state_classes . ' !no-underline hover:text-brand');
     }
 }
 ?>
@@ -82,21 +82,17 @@ if (!function_exists('txa_header_link_class')) {
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/suppliers/')); ?>"
                                         class="<?php echo esc_attr(txa_header_link_class('/suppliers/')); ?>">Suppliers</a>
                                 </li>
-                                <li class="relative lg:mx-4 lg:group">
-                                    <?php $destinations_active = txa_header_path_is_active('/destinations/', true); ?>
-                                    <div class="flex items-center gap-0.5">
-                                        <a href="<?php echo esc_url(home_url('/destinations/')); ?>"
-                                            class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'translate-y-px')); ?>">Destinations</a>
-                                        <button type="button"
-                                            class="inline-flex size-6 translate-y-px items-center justify-center rounded <?php echo $destinations_active ? 'text-brand' : 'text-mid-gray'; ?> transition hover:text-brand mt-0.5"
-                                            aria-expanded="false" aria-controls="destinations-submenu"
-                                            aria-label="Toggle Destinations submenu" data-destinations-toggle>
-                                            <i class="bi bi-chevron-down text-[10px] leading-none transition"
-                                                aria-hidden="true"></i>
-                                        </button>
-                                    </div>
+                                <li class="relative lg:mx-4">
+                                    <button type="button"
+                                        class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex min-h-6 translate-y-px items-center gap-1 rounded')); ?>"
+                                        aria-expanded="false" aria-haspopup="true" aria-controls="destinations-submenu"
+                                        data-destinations-toggle>
+                                        <span>Destinations</span>
+                                        <i class="bi bi-chevron-down text-sm leading-none transition"
+                                            aria-hidden="true"></i>
+                                    </button>
                                     <ul id="destinations-submenu"
-                                        class="hidden mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:block lg:min-w-[240px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition lg:group-hover:visible lg:group-hover:opacity-100 lg:group-focus-within:visible lg:group-focus-within:opacity-100"
+                                        class="hidden mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:block lg:min-w-[240px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition"
                                         data-destinations-submenu>
                                         <?php
                                         $destination_items = [
@@ -134,7 +130,7 @@ if (!function_exists('txa_header_link_class')) {
 
                         <div class="mt-4 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:justify-self-end">
                             <a href="https://www.au.v3travel.com/TXA.Dashboard/Login.aspx"
-                                class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white !no-underline hover:bg-brand-dark">
+                                class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark">
                                 Dashboard Login</a>
                         </div>
                     </div>

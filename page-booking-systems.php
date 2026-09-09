@@ -43,56 +43,62 @@ if (!function_exists('txa_booking_button')) {
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
-    <section class="px-4 pb-8 pt-5 sm:pt-8 lg:px-16 lg:pb-0">
+    <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div
-            class="relative mx-auto min-h-[500px] max-w-[1312px] overflow-hidden rounded-2xl bg-near-black sm:min-h-[540px] lg:min-h-[600px]">
+            class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
             <img src="<?php echo esc_url(get_theme_file_uri('/images/booking-systems.jpg')); ?>"
                 alt="Aerial view of an Australian beach" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div
-                class="relative z-10 grid min-h-[500px] gap-8 px-5 py-10 sm:min-h-[540px] sm:px-8 sm:py-14 lg:min-h-[600px] lg:grid-cols-[720px_1fr] lg:items-center lg:px-8 lg:py-24">
-                <div>
+                class="relative z-10 grid min-h-[590px] items-center gap-8 px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:grid-cols-[minmax(0,1.35fr)_minmax(360px,0.65fr)] lg:gap-10 lg:px-8 lg:py-24">
+                <div class="w-full max-w-[760px]">
                     <p
-                        class="inline-flex rounded-lg bg-brand px-4 py-2 text-xs font-bold uppercase text-white sm:px-6 sm:py-3 sm:text-xl">
+                        class="inline-flex max-w-full rounded-lg bg-brand px-5 py-3 font-bold uppercase leading-5 text-white">
                         TXA Booking Systems</p>
                     <h1
-                        class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-[2rem] font-semibold leading-[1.08] text-white sm:text-5xl lg:text-[48px] lg:leading-[56px]">
+                        class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
                         Connect your booking system to Australia’s national tourism exchange</h1>
-                    <p class="mt-4 text-base font-semibold leading-7 text-white sm:text-lg sm:leading-[30px]">TXA helps
+                    <p class="mt-4 max-w-[660px] text-base font-semibold leading-7 text-white sm:text-lg sm:leading-[30px]">TXA helps
                         booking-system vendors connect their operator customers to broader destination, distributor and
                         trade channels through Australia’s open B2B tourism exchange.</p>
                     <div class="mt-6"><?php echo txa_booking_button('Booking System Partner Enquiry', $partner_url); ?>
                     </div>
                 </div>
 
-                <div class="overflow-hidden rounded-xl bg-black px-5 py-7 text-center text-white shadow-[0_20px_25px_-5px_rgba(0,0,0,0.22)] sm:px-6 sm:py-8">
+                <div class="overflow-hidden rounded-2xl border border-white/25 bg-white/10 px-5 py-7 text-center text-white shadow-[0_20px_45px_-18px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6 sm:py-8">
                     <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold sm:text-2xl">TXA System Diagram</h2>
-                    <p class="mt-1 text-xs font-semibold text-white/75">Booking-system connection flow</p>
+                    <p class="mt-1 text-xs font-semibold text-white/80">One connection. More distribution.</p>
 
                     <div class="mx-auto mt-7 flex flex-col items-center justify-between gap-4 sm:flex-row sm:gap-2 lg:mt-9">
                         <div class="flex w-full max-w-[120px] flex-col items-center">
-                            <i class="bi bi-calendar2-check text-5xl leading-none text-white sm:text-6xl" aria-hidden="true"></i>
-                            <p class="mt-4 text-xs font-semibold leading-4 text-white/90 sm:text-sm sm:leading-5">Booking System</p>
+                            <span class="flex size-16 items-center justify-center rounded-2xl bg-brand text-3xl leading-none text-white shadow-lg shadow-brand/25 sm:size-[72px] sm:text-4xl">
+                                <i class="bi bi-calendar2-check" aria-hidden="true"></i>
+                            </span>
+                            <p class="mt-3 text-xs font-semibold leading-4 text-white sm:text-sm sm:leading-5">Booking System</p>
                         </div>
 
-                        <svg class="h-7 w-11 shrink-0 rotate-90 text-white sm:rotate-0" viewBox="0 0 64 24" fill="none" aria-hidden="true">
+                        <svg class="h-7 w-11 shrink-0 rotate-90 text-white/80 sm:rotate-0" viewBox="0 0 64 24" fill="none" aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
                         <div class="flex w-full max-w-[130px] flex-col items-center">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
-                                alt="Tourism Exchange Australia"
-                                class="h-auto w-[112px] brightness-0 invert sm:w-[124px]">
-                            <p class="mt-4 text-xs font-semibold leading-4 text-white/90 sm:text-sm sm:leading-5">TXA System</p>
+                            <span class="flex h-16 w-[104px] items-center justify-center rounded-2xl border border-white/30 bg-white/15 px-3 shadow-lg sm:h-[72px] sm:w-[116px]">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
+                                    alt="Tourism Exchange Australia"
+                                    class="h-auto w-full brightness-0 invert">
+                            </span>
+                            <p class="mt-3 text-xs font-semibold leading-4 text-white sm:text-sm sm:leading-5">TXA System</p>
                         </div>
 
-                        <svg class="h-7 w-11 shrink-0 rotate-90 text-white sm:rotate-0" viewBox="0 0 64 24" fill="none" aria-hidden="true">
+                        <svg class="h-7 w-11 shrink-0 rotate-90 text-white/80 sm:rotate-0" viewBox="0 0 64 24" fill="none" aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
                         <div class="flex w-full max-w-[120px] flex-col items-center">
-                            <i class="bi bi-window-stack text-5xl leading-none text-white sm:text-6xl" aria-hidden="true"></i>
-                            <p class="mt-4 text-xs font-semibold leading-4 text-white/90 sm:text-sm sm:leading-5">Distribution Channels</p>
+                            <span class="flex size-16 items-center justify-center rounded-2xl bg-brand text-3xl leading-none text-white shadow-lg shadow-brand/25 sm:size-[72px] sm:text-4xl">
+                                <i class="bi bi-window-stack" aria-hidden="true"></i>
+                            </span>
+                            <p class="mt-3 text-xs font-semibold leading-4 text-white sm:text-sm sm:leading-5">Distribution Channels</p>
                         </div>
                     </div>
                 </div>

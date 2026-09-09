@@ -70,6 +70,21 @@ if (!function_exists('txa_distributor_button')) {
         </div>
     </section>
 
+    <section class="bg-surface px-4 py-9 sm:py-10 lg:p-16">
+        <div class="mx-auto max-w-[1312px]">
+            <div class="max-w-[680px]">
+                <p class="text-xs uppercase leading-5 text-brand sm:text-sm">Connected tourism ecosystem</p>
+                <h2
+                    class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
+                    See where distributors connect through TXA</h2>
+                <p class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">TXA connects live tourism
+                    inventory with the websites and distribution channels travellers use to discover and book
+                    Australian experiences.</p>
+            </div>
+            <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'dmo']); ?>
+        </div>
+    </section>
+
     <section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-16">
         <div class="mx-auto max-w-[1312px]">
             <div class="text-left sm:text-center">

@@ -221,7 +221,12 @@
   }
 
   .txa-network-node {
-    transition: transform 250ms ease, scale 250ms ease, filter 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    transition: transform 250ms ease, scale 250ms ease, filter 250ms ease, box-shadow 250ms ease, border-color 250ms ease, opacity 250ms ease;
+  }
+
+  .txa-network-node.is-dimmed,
+  .txa-network-path.is-dimmed {
+    opacity: 0.2;
   }
 
   .txa-network-node.is-active {
