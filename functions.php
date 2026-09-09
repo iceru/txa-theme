@@ -44,3 +44,35 @@ add_action('wp_enqueue_scripts', function () {
         '1.11.3'
     );
 });
+
+if (!function_exists('txa_article_reading_time')) {
+    /**
+     * Estimate an article's reading time at 200 words per minute.
+     */
+    function txa_article_reading_time(int $post_id = 0): int
+    {
+        $post = get_post($post_id ?: get_the_ID());
+
+        if (!$post) {
+            return 1;
+        }
+
+        $content = strip_shortcodes($post->post_content);
+        $content = wp_strip_all_tags($content);
+        preg_match_all('/[\p{L}\p{N}\x{2019}\']+/u', html_entity_decode($content, ENT_QUOTES, get_bloginfo('charset')), $words);
+        $word_count = count($words[0]);
+
+        return max(1, (int) ceil($word_count / 200));
+    }
+}
+
+if (!function_exists('txa_article_image_url')) {
+    /**
+     * Return a post image or a consistent local fallback.
+     */
+    function txa_article_image_url(int $post_id, string $size = 'large'): string
+    {
+        return get_the_post_thumbnail_url($post_id, $size)
+            ?: get_theme_file_uri('/images/hero-homepage.jpg');
+    }
+}
