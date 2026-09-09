@@ -26,11 +26,11 @@ Notes/decision:
 - [x] Make Booking Systems independently hoverable.
 - [x] Make Distributors independently hoverable.
 - [x] Make Destinations independently hoverable.
-- [x] Fade all unrelated nodes and paths when an audience node is active.
+- [x] Keep unrelated nodes and paths fully visible when an audience node is active; do not lower opacity on hover.
 - [x] Ensure the highlighted path accurately represents the selected audience.
 - [x] Move Booking.com, Google Things to do, and Tripadvisor from booking systems to distribution platforms.
 - [x] Replace fragile absolute-position arrows with stage-aligned responsive arrows.
-- [ ] Confirm whether moving dashed lines are acceptable or whether true animated particles are required.
+- [x] Replace the broken moving-dash arrow treatment with a stable glow-pulse animation that preserves the arrowhead.
 - [x] Verify equivalent focus interaction for keyboard and touch-oriented layouts.
 
 Notes/decision:
@@ -77,6 +77,8 @@ Notes/decision:
 - [x] Build this as a reusable system-diagram component shared with other pages.
 - [x] Prepare a Distributor-page variant that can highlight Local Government / DMO.
 - [x] Position the TXA logo above and completely outside the TXA System rectangle.
+- [x] Align the TXA System and Web Platforms columns to equal desktop heights.
+- [x] Prevent the Web Platforms footer label from overlapping its border.
 
 Notes/decision:
 
@@ -88,9 +90,9 @@ Notes/decision:
 
 - [x] Include six implementation steps.
 - [x] Use numbered steps.
-- [x] Place the numbers on the left/top side of each card and style them with colour.
-- [ ] Add or select an icon for every step.
-- [ ] Position each icon on the right as requested.
+- [x] Replace the six separate cards with a connected serpentine process flow on desktop and a vertical flow on mobile.
+- [x] Add a Bootstrap icon for every step.
+- [x] Move each step number into a small coloured badge attached outside its icon.
 - [ ] Confirm the final wording and order of all six steps.
 
 Notes/decision:
@@ -177,6 +179,8 @@ Notes/decision:
 - [x] Show connected supply, availability, booking, confirmation, and supplier support.
 - [x] Show the buyer/traveller outcome.
 - [x] Keep the existing laptop mockups alongside the diagram.
+- [x] Replace the blank Strategic DMO Partner icon with a supported Bootstrap icon.
+- [x] Reduce repeated detail-row icons in the Destination Trade Portal diagram to improve readability.
 
 Notes/decision:
 
@@ -184,9 +188,11 @@ Notes/decision:
 
 ## 9. Data & Insights
 
-- [ ] Create/publish a WordPress Data & Insights page using the existing template.
-- [ ] Replace the external stock hero image with an approved TXA dashboard screenshot.
-- [ ] Replace or approve the fabricated dashboard/bar-chart block.
+- [x] Rebuild the Data & Insights page template using the supplied design reference.
+- [-] Create/publish the corresponding WordPress page; template implementation is complete but route availability still requires verification.
+- [x] Replace the external stock hero image with a local TXA laptop mockup and position it to the right of the hero copy on desktop.
+- [x] Replace the fabricated dashboard/bar-chart block with the asymmetric Comprehensive Data Capabilities layout.
+- [x] Use Bootstrap icons for the Data & Insights capability panels.
 - [ ] Confirm which dashboard screenshot should be used.
 - [ ] Add the page to the appropriate navigation location.
 - [ ] Verify that `/data-insights/` works and does not return a 404.
@@ -197,8 +203,11 @@ Approved screenshot:
 
 ## 10. Virtual Concierge
 
-- [ ] Supply and add the new Virtual Concierge image.
-- [ ] Fix the broken reference to deleted `images/Lavender Bay, Sydney.jpg`.
+- [x] Add the local `virtual-concierge.jpg` hero image.
+- [x] Remove the broken reference to deleted `images/Lavender Bay, Sydney.jpg`.
+- [x] Replace the blank Seamless Operations icon with a supported Bootstrap icon.
+- [x] Place each image-card icon, title and description together on the left, with its image on the right at desktop widths.
+- [x] Centre the Empower Your Local Partners cards and give all three equal height with aligned footer labels.
 - [ ] Review all Virtual Concierge page content.
 - [ ] Obtain approval for the final heading, description, feature cards, and calls to action.
 - [ ] Confirm whether `map-2.jpg` and `dashboard.png` are approved assets.
@@ -221,12 +230,12 @@ Approved content/image notes:
 
 - [x] Add the shared four-column TXA system diagram.
 - [x] Use these columns:
-  - [ ] Column 1: Tourism Suppliers.
-  - [ ] Column 2: Booking System, Data, Content.
-  - [ ] Column 3: Company Website, Local Government/DMO, Google/AI, Various OTAs.
-  - [ ] Column 4: Customer/Travellers.
-- [ ] Highlight the correct Distributor/channel element in Column 3.
-- [ ] Confirm whether the final label should be “Customer” or “Travellers.”
+  - [x] Column 1: Tourism Suppliers.
+  - [x] Column 2: Booking Engine, CRM, Database.
+  - [x] Column 3: Company Website, Local Government/DMO, Google, Various OTAs.
+  - [x] Column 4: Customer.
+- [x] Highlight Local Government / DMO in the Distributor-page diagram as requested.
+- [x] Use “Customer” as the final Column 4 label.
 
 Notes/decision:
 
@@ -249,12 +258,13 @@ Approval notes:
 
 ## 13. About TXA
 
-- [x] Add “How TXA became Australia’s tourism exchange.”
+- [x] Add the TXA Journey history section.
 - [x] Redesign the implementation/history timeline.
-- [-] Current implementation is a vertical alternating timeline rather than the detailed TXA Journey example in the document.
-- [ ] Confirm the final timeline design direction.
+- [x] Use a winding/serpentine desktop timeline based on the supplied first reference, with a vertical mobile fallback.
+- [x] Use the milestone content from the supplied TXA Journey reference.
+- [x] Include the six-item value/benefit row shown in the TXA Journey reference.
+- [x] Replace unsupported timeline icons and add additional clearance around the 2014 milestone.
 - [ ] Confirm the milestone names, dates, and descriptions with Amy and Stephen.
-- [ ] Decide whether to include the value/benefit row shown in the TXA Journey example.
 - [ ] Add approved dates and partner/integration logos if required.
 
 Approved timeline content:
@@ -275,6 +285,8 @@ Approved timeline content:
 ### Booking-system role diagram
 
 - [-] A simplified Booking System → TXA → Distribution Channels diagram exists.
+- [x] Prevent the compact hero diagram from clipping at 1366×768 by using a flexible five-column layout.
+- [x] Match the Booking Systems hero heading and body typography to the Suppliers hero.
 - [ ] Replace it with the shared detailed system concept diagram.
 - [ ] Highlight Booking Systems in the appropriate column.
 - [ ] Include the other requested system, data, content, channel, and customer elements.
@@ -360,7 +372,7 @@ Notes/decision:
 - [ ] Check image alternative text.
 - [ ] Check heading hierarchy.
 - [ ] Check colour contrast and visible keyboard focus.
-- [ ] Run PHP syntax checks.
+- [-] Run PHP syntax checks; all PHP templates edited in this revision pass, but a final full-theme sweep remains outstanding.
 - [ ] Build the production CSS and JavaScript assets.
 - [ ] Check the production build for missing Tailwind classes.
 - [ ] Test every internal link and call to action.
@@ -378,7 +390,7 @@ Notes/decision:
 - [ ] Approved National Trade Portal map capture.
 - [ ] Approved microsite demonstration image.
 - [ ] Approved TXA dashboard screenshot for Data & Insights.
-- [ ] New Virtual Concierge image and approved copy.
+- [ ] Approval for the current Virtual Concierge image and final page copy.
 - [ ] Distributor logos.
 - [ ] Booking-system logos and complete system list.
 - [ ] Approved Pricing copy.

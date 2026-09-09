@@ -59,7 +59,7 @@ $partner_cards = [
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section
         class="relative min-h-[620px] overflow-hidden bg-near-black px-4 py-12 text-white sm:py-16 lg:px-16 lg:py-24">
-        <img src="<?php echo esc_url(get_theme_file_uri('/images/Baines, Northern Territory.jpg')); ?>" alt=""
+        <img src="<?php echo esc_url(get_theme_file_uri('/images/pricing.jpg')); ?>" alt=""
             class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-near-black/60" aria-hidden="true"></div>
         <div
@@ -127,10 +127,12 @@ $partner_cards = [
                                 <p class="text-4xl font-bold leading-none text-[#151c27]">
                                     <?php echo esc_html($card['price']); ?> <span
                                         class="text-sm font-bold text-mid-gray"><?php echo esc_html($card['suffix']); ?></span>
-                                    <?php echo esc_html($card['price_end']); ?></p>
+                                    <?php echo esc_html($card['price_end']); ?>
+                                </p>
                             <?php else: ?>
                                 <p class="text-2xl font-bold leading-tight text-[#151c27]">
-                                    <?php echo esc_html($card['price']); ?></p>
+                                    <?php echo esc_html($card['price']); ?>
+                                </p>
                             <?php endif; ?>
                         </div>
                         <p class="mt-6 text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
@@ -143,7 +145,7 @@ $partner_cards = [
                             </ul>
                         <?php endif; ?>
                         <a href="<?php echo esc_url($card['url']); ?>"
- class="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline"><?php echo esc_html($card['cta']); ?></a>
+                            class="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline"><?php echo esc_html($card['cta']); ?></a>
                     </article>
                 <?php endforeach; ?>
             </div>
@@ -169,7 +171,7 @@ $partner_cards = [
                     <?php endforeach; ?>
                 </div>
                 <a href="<?php echo esc_url($apply_url); ?>"
- class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply
+                    class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply
                     Now using the TXA Get Connected Wizard <i class="bi bi-box-arrow-up-right"
                         aria-hidden="true"></i></a>
             </div>
@@ -196,7 +198,8 @@ $partner_cards = [
                     <span class="flex size-14 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand"><i
                             class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i></span>
                     <h2 class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27]">
-                        <?php echo esc_html($card['title']); ?></h2>
+                        <?php echo esc_html($card['title']); ?>
+                    </h2>
                     <p class="mt-6 max-w-[560px] text-base leading-8 text-mid-gray"><?php echo esc_html($card['copy']); ?>
                     </p>
                     <ol class="mt-8 space-y-5">
@@ -207,7 +210,7 @@ $partner_cards = [
                         <?php endforeach; ?>
                     </ol>
                     <a href="<?php echo esc_url($card['url']); ?>"
- class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-near-black px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
+                        class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-near-black px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
                 </article>
             <?php endforeach; ?>
         </div>
