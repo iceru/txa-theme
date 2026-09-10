@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -31,6 +31,19 @@ jobs:
 
       - name: Build theme assets
         run: npm run build
+
+      - name: Commit built dist assets
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist
+          if git diff --cached --quiet; then
+            echo "No dist changes to commit."
+          else
+            git commit -m "build: update compiled theme assets [skip ci]"
+            git push
+          fi
 
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
