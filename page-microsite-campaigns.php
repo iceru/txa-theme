@@ -78,9 +78,7 @@ $tools = [
                     <article
                         class="<?php echo !empty($tool['red']) ? 'bg-brand text-white shadow-xl shadow-brand/20' : 'border border-[#dfc0ba] bg-white text-[#151c27] shadow-sm'; ?> rounded-2xl p-8 sm:p-10 <?php echo !empty($tool['span']) ? esc_attr($tool['span']) : ''; ?>">
                         <?php if (!empty($tool['large'])) { ?>
-                            <div class="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $tool['image'])); ?>"
-                                    alt="TXA campaign analytics dashboard" class="w-full rounded-xl">
+                            <div class="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
                                 <div>
                                     <span
                                         class="flex size-12 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand">
@@ -92,6 +90,8 @@ $tools = [
                                     </h3>
                                     <p class="mt-5 text-base leading-8 text-mid-gray"><?php echo esc_html($tool['copy']); ?></p>
                                 </div>
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $tool['image'])); ?>"
+                                    alt="TXA campaign analytics dashboard" class="w-full rounded-xl">
                             </div>
                         <?php } else { ?>
                             <span
