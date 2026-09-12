@@ -6,6 +6,31 @@ window.addEventListener('load', function () {
     let mainNavigationToggle = document.getElementById('primary-menu-toggle')
     let mainNavigationClose = document.getElementById('primary-menu-close')
     let mainNavigationOverlay = document.getElementById('primary-navigation-overlay')
+    let lockedScrollY = 0
+
+    const lockPageScroll = function () {
+        lockedScrollY = window.scrollY
+        document.documentElement.classList.add('overflow-hidden')
+        document.body.classList.add('overflow-hidden')
+        document.body.style.position = 'fixed'
+        document.body.style.top = `-${lockedScrollY}px`
+        document.body.style.left = '0'
+        document.body.style.right = '0'
+        document.body.style.width = '100%'
+        window.txaLocomotiveScroll?.stop?.()
+    }
+
+    const unlockPageScroll = function () {
+        document.documentElement.classList.remove('overflow-hidden')
+        document.body.classList.remove('overflow-hidden')
+        document.body.style.position = ''
+        document.body.style.top = ''
+        document.body.style.left = ''
+        document.body.style.right = ''
+        document.body.style.width = ''
+        window.scrollTo(0, lockedScrollY)
+        window.txaLocomotiveScroll?.start?.()
+    }
 
     if (mainNavigation && mainNavigationToggle && mainNavigationOverlay) {
         const openNavigation = function () {
@@ -15,7 +40,7 @@ window.addEventListener('load', function () {
             mainNavigationOverlay.classList.add('opacity-100')
             mainNavigationToggle.setAttribute('aria-expanded', 'true')
             mainNavigationToggle.setAttribute('aria-label', 'Close navigation')
-            document.body.classList.add('overflow-hidden')
+            lockPageScroll()
         }
 
         const closeNavigation = function () {
@@ -25,7 +50,7 @@ window.addEventListener('load', function () {
             mainNavigationOverlay.classList.add('pointer-events-none', 'opacity-0')
             mainNavigationToggle.setAttribute('aria-expanded', 'false')
             mainNavigationToggle.setAttribute('aria-label', 'Open navigation')
-            document.body.classList.remove('overflow-hidden')
+            unlockPageScroll()
         }
 
         mainNavigationToggle.addEventListener('click', function (e) {
