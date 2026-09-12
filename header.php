@@ -48,7 +48,7 @@ if (!function_exists('txa_header_link_class')) {
     <div id="page" class="min-h-screen flex flex-col">
         <?php do_action('tailpress_header'); ?>
 
-        <header class="sticky top-0 z-50 border-b border-line bg-white/95 px-4 backdrop-blur lg:px-16">
+        <header class="sticky top-0 z-50 border-b border-line bg-white/95 px-4 lg:px-16">
             <div class="mx-auto max-w-[1312px] py-3">
                 <div class="lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-8">
                     <div class="flex items-center justify-between">
