@@ -64,7 +64,8 @@ if (!function_exists('txa_header_link_class')) {
                         </div>
 
                         <div class="lg:hidden">
-                            <button type="button" aria-label="Toggle navigation" id="primary-menu-toggle"
+                            <button type="button" aria-label="Open navigation" aria-expanded="false"
+                                aria-controls="primary-navigation" id="primary-menu-toggle"
                                 class="inline-flex size-11 items-center justify-center rounded border border-line text-mid-gray">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -75,16 +76,39 @@ if (!function_exists('txa_header_link_class')) {
                         </div>
                     </div>
 
+                    <button type="button" id="primary-navigation-overlay" aria-label="Close navigation"
+                        class="pointer-events-none fixed inset-0 z-[55] bg-black/70 opacity-0 transition-opacity duration-300 ease-out lg:hidden"></button>
+
                     <div id="primary-navigation"
-                        class="hidden items-start rounded border border-line p-4 mt-4 lg:col-span-2 lg:mt-0 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-8 lg:border-none lg:bg-transparent lg:p-0">
+                        class="fixed inset-y-0 right-0 z-[60] flex h-dvh w-4/5 translate-x-full flex-col overflow-y-auto bg-white p-6 shadow-2xl transition-transform duration-300 ease-out lg:static lg:inset-auto lg:z-auto lg:col-span-2 lg:grid lg:h-auto lg:w-auto lg:translate-x-0 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-8 lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none lg:transition-none">
+                        <div class="mb-8 flex items-center justify-between lg:hidden">
+                            <div>
+                                <?php if (has_custom_logo()): ?>
+                                    <?php the_custom_logo(); ?>
+                                <?php else: ?>
+                                    <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex !no-underline">
+                                        <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
+                                            alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-10 w-auto">
+                                    </a>
+                                <?php endif; ?>
+                            </div>
+                            <button type="button" id="primary-menu-close" aria-label="Close navigation"
+                                class="inline-flex size-10 items-center justify-center rounded border border-line text-mid-gray">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
                         <nav class="lg:justify-self-center" aria-label="Primary navigation">
-                            <ul class="space-y-3 lg:flex lg:items-center lg:space-y-0 lg:-mx-4">
+                            <ul class="space-y-5 lg:flex lg:items-center lg:space-y-0 lg:-mx-4">
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/suppliers/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/suppliers/')); ?>">Suppliers</a>
+                                        class="<?php echo esc_attr(txa_header_link_class('/suppliers/', false, 'block py-1')); ?>">Suppliers</a>
                                 </li>
                                 <li class="relative lg:mx-4">
                                     <button type="button"
-                                        class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex min-h-6 translate-y-px items-center gap-1 rounded')); ?>"
+                                        class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex min-h-6 w-full items-center justify-between gap-1 rounded py-1 lg:w-auto lg:justify-start lg:translate-y-px')); ?>"
                                         aria-expanded="false" aria-haspopup="true" aria-controls="destinations-submenu"
                                         data-destinations-toggle>
                                         <span>Destinations</span>
@@ -112,24 +136,24 @@ if (!function_exists('txa_header_link_class')) {
                                     </ul>
                                 </li>
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/distributors/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/distributors/')); ?>">Distributors</a>
+                                        class="<?php echo esc_attr(txa_header_link_class('/distributors/', false, 'block py-1')); ?>">Distributors</a>
                                 </li>
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/booking-systems/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/booking-systems/', true)); ?>">Booking
+                                        class="<?php echo esc_attr(txa_header_link_class('/booking-systems/', true, 'block py-1')); ?>">Booking
                                         Systems</a></li>
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/pricing/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/pricing/')); ?>">Pricing</a>
+                                        class="<?php echo esc_attr(txa_header_link_class('/pricing/', false, 'block py-1')); ?>">Pricing</a>
                                 </li>
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/about/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/about/')); ?>">About</a>
+                                        class="<?php echo esc_attr(txa_header_link_class('/about/', false, 'block py-1')); ?>">About</a>
                                 </li>
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/contact/')); ?>">Contact</a>
+                                        class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>
                                 </li>
                             </ul>
                         </nav>
 
-                        <div class="mt-4 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:justify-self-end">
+                        <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
                             <a href="https://www.au.v3travel.com/TXA.Dashboard/Login.aspx"
                                 class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark">
                                 Dashboard Login</a>
