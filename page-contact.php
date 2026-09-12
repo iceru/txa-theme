@@ -28,7 +28,7 @@ $pathways = [
     <section class="bg-surface px-4 py-10 sm:py-12 lg:px-16 lg:py-24">
         <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-[619px_1fr] lg:items-center lg:gap-12">
             <div>
-                <p class="inline-flex rounded-lg bg-brand px-4 py-2 text-sm font-bold text-white sm:text-base">CONTACT US</p>
+                <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base leading-5 text-white">CONTACT US</p>
                 <h1 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-[1.12] tracking-[-.02em] text-[#151c27] sm:mt-6 sm:text-4xl lg:mt-8 lg:text-5xl lg:leading-[60px]">Get in touch with Tourism Exchange Australia</h1>
                 <p class="mt-5 max-w-[500px] text-base leading-7 text-mid-gray sm:mt-6 sm:text-lg lg:mt-8">Whether you are a tourism supplier, destination organisation, distributor or booking system partner, contact TXA to find the right pathway for your organisation.</p>
             </div>

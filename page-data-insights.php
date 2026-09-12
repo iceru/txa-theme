@@ -21,7 +21,7 @@ $demo_url = home_url('/request-demo/');
     <section class="bg-surface px-4 py-12 sm:py-16 lg:px-16 lg:py-20 xl:py-24">
         <div class="mx-auto grid max-w-[1312px] items-center gap-10 md:grid-cols-2 md:gap-12 xl:gap-20">
             <div class="max-w-[650px] md:col-start-1 md:row-start-1">
-                <p class="inline-flex rounded-lg bg-brand px-5 py-3 text-sm font-bold uppercase leading-5 text-white">
+                <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                     Data &amp; Insights</p>
                 <h1
                     class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-[36px] font-bold leading-[1.15] tracking-[-.02em] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.12]">

@@ -69,7 +69,7 @@ $faq_groups = [
         <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-[1fr_420px] lg:items-center lg:gap-16">
             <div class="max-w-[760px]">
                 <p
-                    class="inline-flex rounded-lg bg-brand px-4 py-2 text-xs font-bold uppercase text-white sm:px-5 sm:py-3 sm:text-sm">
+                    class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                     Help centre</p>
                 <h1
                     class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.1] tracking-[-.02em] text-[#151c27] sm:text-5xl lg:text-[44px]">

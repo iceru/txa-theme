@@ -130,7 +130,7 @@ if (!function_exists('txa_booking_button')) {
                 class="relative z-10 grid min-h-[590px] items-center gap-8 px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:grid-cols-[minmax(0,1fr)_minmax(360px,485px)] lg:gap-10 lg:px-8 lg:py-24">
                 <div class="w-full max-w-[760px]">
                     <p
-                        class="inline-flex max-w-full rounded-lg bg-brand px-5 py-3 font-bold uppercase leading-5 text-white">
+                        class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                         TXA Booking Systems</p>
                     <h1
                         class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">

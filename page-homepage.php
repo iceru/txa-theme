@@ -64,7 +64,7 @@ if (!function_exists('txa_button')) {
                     class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
                     <div class="w-full max-w-[760px]">
                         <p data-hero-slide-label
-                            class="inline-flex max-w-full rounded-lg bg-brand px-5 py-3 font-bold uppercase leading-5 text-white">
+                            class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                             <?php echo esc_html($hero_slides[0]['label']); ?>
                         </p>
                         <h1 data-hero-slide-title
