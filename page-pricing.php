@@ -115,7 +115,7 @@ $partner_cards = [
             <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
                 <?php foreach ($pricing_cards as $card): ?>
                     <article
-                        class="relative flex min-h-[430px] flex-col rounded-2xl border <?php echo !empty($card['featured']) ? 'border-2 border-brand' : 'border-line'; ?> bg-white p-8 shadow-sm">
+                        class="relative flex flex-col rounded-2xl border <?php echo !empty($card['featured']) ? 'border-2 border-brand' : 'border-line'; ?> bg-white p-8 shadow-sm md:min-h-[430px]">
                         <?php if (!empty($card['featured'])): ?>
                             <span
                                 class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-brand px-7 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white">Most
@@ -145,7 +145,7 @@ $partner_cards = [
                             </ul>
                         <?php endif; ?>
                         <a href="<?php echo esc_url($card['url']); ?>"
-                            class="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline"><?php echo esc_html($card['cta']); ?></a>
+                            class="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline md:mt-auto"><?php echo esc_html($card['cta']); ?></a>
                     </article>
                 <?php endforeach; ?>
             </div>
