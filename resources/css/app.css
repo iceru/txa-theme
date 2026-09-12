@@ -254,3 +254,48 @@
     }
   }
 }
+
+@layer utilities {
+  :is(
+    body[class*="page-template-page-destinations-pricing"],
+    body[class*="page-template-page-poi-experiences"],
+    body[class*="page-template-page-trade-portal"],
+    body[class*="page-template-page-microsite-campaigns"],
+    body[class*="page-template-page-data-insights"],
+    body[class*="page-template-page-virtual-concierge"]
+  ) article > section:first-child h1 {
+    margin-top: 1.25rem;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: normal;
+  }
+
+  @media (min-width: 640px) {
+    :is(
+      body[class*="page-template-page-destinations-pricing"],
+      body[class*="page-template-page-poi-experiences"],
+      body[class*="page-template-page-trade-portal"],
+      body[class*="page-template-page-microsite-campaigns"],
+      body[class*="page-template-page-data-insights"],
+      body[class*="page-template-page-virtual-concierge"]
+    ) article > section:first-child h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :is(
+      body[class*="page-template-page-destinations-pricing"],
+      body[class*="page-template-page-poi-experiences"],
+      body[class*="page-template-page-trade-portal"],
+      body[class*="page-template-page-microsite-campaigns"],
+      body[class*="page-template-page-data-insights"],
+      body[class*="page-template-page-virtual-concierge"]
+    ) article > section:first-child h1 {
+      font-size: 44px;
+      line-height: 1.15;
+    }
+  }
+}
