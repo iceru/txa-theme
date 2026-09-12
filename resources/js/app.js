@@ -4,11 +4,50 @@ import 'locomotive-scroll/dist/locomotive-scroll.css'
 window.addEventListener('load', function () {
     let mainNavigation = document.getElementById('primary-navigation')
     let mainNavigationToggle = document.getElementById('primary-menu-toggle')
+    let mainNavigationClose = document.getElementById('primary-menu-close')
+    let mainNavigationOverlay = document.getElementById('primary-navigation-overlay')
 
-    if (mainNavigation && mainNavigationToggle) {
+    if (mainNavigation && mainNavigationToggle && mainNavigationOverlay) {
+        const openNavigation = function () {
+            mainNavigation.classList.remove('translate-x-full')
+            mainNavigation.classList.add('translate-x-0')
+            mainNavigationOverlay.classList.remove('pointer-events-none', 'opacity-0')
+            mainNavigationOverlay.classList.add('opacity-100')
+            mainNavigationToggle.setAttribute('aria-expanded', 'true')
+            mainNavigationToggle.setAttribute('aria-label', 'Close navigation')
+            document.body.classList.add('overflow-hidden')
+        }
+
+        const closeNavigation = function () {
+            mainNavigation.classList.remove('translate-x-0')
+            mainNavigation.classList.add('translate-x-full')
+            mainNavigationOverlay.classList.remove('opacity-100')
+            mainNavigationOverlay.classList.add('pointer-events-none', 'opacity-0')
+            mainNavigationToggle.setAttribute('aria-expanded', 'false')
+            mainNavigationToggle.setAttribute('aria-label', 'Open navigation')
+            document.body.classList.remove('overflow-hidden')
+        }
+
         mainNavigationToggle.addEventListener('click', function (e) {
             e.preventDefault()
-            mainNavigation.classList.toggle('hidden')
+            const isOpen = mainNavigationToggle.getAttribute('aria-expanded') === 'true'
+            isOpen ? closeNavigation() : openNavigation()
+        })
+
+        mainNavigationOverlay.addEventListener('click', closeNavigation)
+        mainNavigationClose?.addEventListener('click', closeNavigation)
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && mainNavigationToggle.getAttribute('aria-expanded') === 'true') {
+                closeNavigation()
+                mainNavigationToggle.focus()
+            }
+        })
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 1024 && mainNavigationToggle.getAttribute('aria-expanded') === 'true') {
+                closeNavigation()
+            }
         })
     }
 
