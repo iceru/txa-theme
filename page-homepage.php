@@ -106,7 +106,7 @@ if (!function_exists('txa_button')) {
                             why</span></h2>
                     <div
                         class="mt-5 space-y-5 text-base leading-7 text-near-black sm:mt-6 sm:space-y-6 sm:text-lg sm:leading-[1.625]">
-                        <p>Tourism Exchange Australia was established in partnership with ATDW (an organisation
+                        <p>Tourism Exchange Australia was established in 2008 in partnership with ATDW (an organisation
                             representing all Australian State and Federal Government Tourism Organisations) as the
                             nation's open, commercially neutral booking exchange.</p>
                         <p>Selected through a global tender, TXA was built to give every Australian tourism supplier,
@@ -230,7 +230,7 @@ if (!function_exists('txa_button')) {
                     destinations understand supplier activity, campaign performance, visitor engagement and booking
                     outcomes through dashboards, attribution and data exports.</p>
                 <div class="mt-6">
-                    <?php echo txa_button('Learn about Data & Insights', home_url('/data-insights/'), 'secondary'); ?>
+                    <?php echo txa_button('Learn about Data and Insights', home_url('/data-insights/'), 'secondary'); ?>
                 </div>
             </div>
             <div class="flex min-h-[260px] items-center justify-center sm:min-h-[330px] lg:min-h-[414px]">

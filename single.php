@@ -31,7 +31,7 @@ $articles_page_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('
                 <div class="mx-auto max-w-[980px] text-center">
                     <a href="<?php echo esc_url($articles_page_url); ?>"
                         class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-brand !no-underline">
-                        <i class="bi bi-arrow-left" aria-hidden="true"></i> Articles &amp; News
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i> Articles and News
                     </a>
                     <p class="mt-7 text-sm font-bold uppercase tracking-wide text-brand">
                         <?php echo esc_html($article_category); ?>

@@ -5,7 +5,7 @@
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'Articles & News | Tourism Exchange Australia');
+add_filter('pre_get_document_title', fn(): string => 'Articles and News | Tourism Exchange Australia');
 
 get_header();
 
@@ -31,7 +31,7 @@ $articles_query = new WP_Query([
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="bg-surface px-4 py-12 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto max-w-[1312px]">
-            <p class="text-sm font-bold uppercase tracking-wide text-brand">Articles &amp; News</p>
+            <p class="text-sm font-bold uppercase tracking-wide text-brand">Articles and News</p>
             <div class="mt-3 grid gap-5 lg:grid-cols-[1fr_480px] lg:items-end lg:gap-12">
                 <h1
                     class="max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-tight tracking-[-.02em] text-[#151c27] sm:text-5xl">

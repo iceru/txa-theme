@@ -40,7 +40,7 @@ $partner_cards = [
     [
         'icon' => 'bi-buildings',
         'title' => 'Accommodation',
-        'copy' => 'Hotels and B&Bs can easily book tours and activities for their guests directly through the concierge portal.',
+        'copy' => 'Hotels and Bed and Breakfasts can easily book tours and activities for their guests directly through the concierge portal.',
         'label' => 'Cross-sell to tours',
     ],
     [

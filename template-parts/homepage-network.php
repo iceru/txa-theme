@@ -77,7 +77,7 @@ $distribution_channels = [
                 </div>
 
                 <article class="rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6">
-                    <p class="mb-3 text-center text-[11px] font-bold uppercase tracking-wide text-mid-gray">Distribution platforms &amp; channels</p>
+                    <p class="mb-3 text-center text-[11px] font-bold uppercase tracking-wide text-mid-gray">Distribution platforms and channels</p>
                     <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-2">
                         <?php foreach ($distribution_channels as $channel): ?>
                             <div class="txa-network-node flex min-h-[86px] items-center justify-center rounded-xl border border-line bg-white p-3 text-center" data-node="<?php echo esc_attr($channel['type']); ?>" tabindex="0">
@@ -99,7 +99,7 @@ $distribution_channels = [
                 <div class="txa-network-node rounded-2xl bg-brand px-5 py-7 text-center text-white shadow-[0_18px_34px_-20px_rgba(212,43,43,0.85)]" data-node="traveller" tabindex="0">
                     <div class="flex items-end justify-center gap-1 text-2xl" aria-hidden="true"><i class="bi bi-person-walking"></i><i class="bi bi-person-standing-dress text-3xl"></i><i class="bi bi-person-arms-up"></i></div>
                     <h3 class="mt-3 text-base font-bold">Travellers</h3>
-                    <p class="mt-1 text-xs text-white/75">Discover &amp; book</p>
+                    <p class="mt-1 text-xs text-white/75">Discover and book</p>
                 </div>
             </div>
 

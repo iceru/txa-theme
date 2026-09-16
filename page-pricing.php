@@ -34,7 +34,7 @@ $pricing_cards = [
     ['title' => 'Booking Systems', 'price' => 'Partner Enquiry', 'copy' => 'Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry.', 'cta' => 'Partner Enquiry', 'url' => $booking_url],
 ];
 
-$supplier_types = ['Accommodation & Hotels', 'Guided Tours & Experiences', 'Attractions & Rentals', 'Event & Activity Providers'];
+$supplier_types = ['Accommodation and Hotels', 'Guided Tours and Experiences', 'Attractions and Rentals', 'Event and Activity Providers'];
 
 $partner_cards = [
     [
@@ -49,7 +49,7 @@ $partner_cards = [
         'icon' => 'bi-terminal',
         'title' => 'Booking-System Partners',
         'copy' => 'Empower your software users with instant access to state and regional tourism markets via TXA\'s integration framework.',
-        'points' => ['Open API & Documentation', 'Technical support for onboarding', 'Value-add for your customer base'],
+        'points' => ['Open API and Documentation', 'Technical support for onboarding', 'Value-add for your customer base'],
         'cta' => 'Partner Enquiry',
         'url' => $booking_url,
     ],

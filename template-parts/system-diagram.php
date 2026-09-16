@@ -13,15 +13,17 @@ $dmo_highlighted = 'dmo' === $highlight;
 
 $system_items = [
     ['icon' => 'bi-calendar2-check', 'label' => 'Booking Engine'],
-    ['icon' => 'bi-bar-chart-line', 'label' => 'CRM'],
-    ['icon' => 'bi-database', 'label' => 'Database'],
+    ['icon' => 'bi-bar-chart-line', 'label' => 'Performance Insights'],
+    ['icon' => 'bi-database', 'label' => 'Customer booking data'],
 ];
 
 $platform_items = [
-    ['icon' => 'bi-window-stack', 'label' => 'Company Website', 'key' => 'website'],
+    ['icon' => 'bi-window-stack', 'label' => 'Supplier\'s own website', 'key' => 'website'],
     ['icon' => 'bi-buildings', 'label' => 'Local Government / DMO', 'key' => 'dmo'],
+    ['icon' => 'bi-briefcase', 'label' => 'Travel trade', 'key' => 'travel_trade'],
     ['icon' => 'bi-geo-alt', 'label' => 'Google', 'key' => 'google'],
     ['icon' => 'bi-window-check', 'label' => 'Various OTAs', 'key' => 'otas'],
+    ['icon' => 'bi-share', 'label' => 'Social media channels', 'key' => 'social'],
 ];
 ?>
 
@@ -61,7 +63,10 @@ $platform_items = [
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <p class="mt-5 text-sm font-semibold text-white/80">TXA System</p>
+                <p class="mt-5 flex items-center justify-center gap-2 text-sm font-semibold text-white/80">
+                    <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
+                    <span>Content, live availability and rates</span>
+                </p>
             </article>
         </div>
 
@@ -80,7 +85,7 @@ $platform_items = [
                     <?php foreach ($platform_items as $item):
                         $item_highlighted = $dmo_highlighted && 'dmo' === $item['key']; ?>
                         <div
-                            class="flex min-h-[112px] flex-1 flex-col items-center justify-center rounded-xl px-3 py-4 transition xl:min-h-[96px] <?php echo $item_highlighted ? 'bg-brand/15 shadow-[inset_0_0_0_2px_rgba(212,43,43,0.9)]' : ''; ?>">
+                            class="flex min-h-[112px] flex-1 flex-col items-center justify-center rounded-xl px-3 py-4 transition xl:min-h-16 <?php echo $item_highlighted ? 'bg-brand/15 shadow-[inset_0_0_0_2px_rgba(212,43,43,0.9)]' : ''; ?>">
                             <i class="bi <?php echo esc_attr($item['icon']); ?> text-4xl <?php echo $item_highlighted ? 'text-brand' : 'text-white'; ?>"
                                 aria-hidden="true"></i>
                             <p
@@ -90,7 +95,7 @@ $platform_items = [
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <p class="mt-5 text-sm font-semibold text-white/80">Web Platforms</p>
+                <p class="mt-5 text-sm font-semibold text-white/80">Social media channels</p>
             </article>
         </div>
 

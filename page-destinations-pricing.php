@@ -44,6 +44,7 @@ $packages = [
                     Choose Your Destination Scale</h2>
                 <p class="mx-auto mt-3 max-w-[640px] text-sm leading-6 text-mid-gray sm:mt-4 sm:text-base">Scalable
                     infrastructure designed for every level of the tourism ecosystem.</p>
+                <p class="mt-4 text-sm font-bold uppercase tracking-wide text-brand sm:text-base">Destination packages include:</p>
             </div>
             <div class="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-8 lg:px-10">
                 <?php foreach ($packages as $package): ?>
@@ -97,7 +98,7 @@ $packages = [
                         <div class="flex items-start gap-4">
                             <span class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl text-white"><i class="bi bi-credit-card" aria-hidden="true"></i></span>
                             <div>
-                                <p class="text-xs font-bold uppercase tracking-[.14em] text-mid-gray">One-time charge</p>
+                                <p class="text-xs font-bold uppercase tracking-[.14em] text-mid-gray">Small One-time charge</p>
                                 <p class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold leading-7 text-[#151c27]">Applied to all new package implementations</p>
                             </div>
                         </div>

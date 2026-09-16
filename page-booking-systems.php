@@ -146,8 +146,7 @@ if (!function_exists('txa_booking_button')) {
 
                 <div
                     class="overflow-hidden rounded-2xl border border-white/25 bg-white/10 px-5 py-7 text-center text-white shadow-[0_20px_45px_-18px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6 sm:py-8">
-                    <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold sm:text-2xl">TXA System
-                        Diagram</h2>
+                    <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold uppercase sm:text-2xl">TXA CONNECTED BOOKING SYSTEMS</h2>
                     <p class="mt-1 text-xs font-semibold text-white/80">One connection. More distribution.</p>
 
                     <div

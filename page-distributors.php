@@ -27,7 +27,7 @@ $models = [
     ['icon' => 'bi-code-slash', 'title' => 'API Connection', 'copy' => 'Direct JSON-based API for enterprise distributors who want total control over the booking UI and user experience.', 'points' => ['Real-time confirmation', 'Dynamic pricing support']],
     ['icon' => 'bi-window', 'title' => 'White-label Booking Pages', 'copy' => 'Branded booking widgets and search pages that integrate seamlessly into your website with minimal code.', 'points' => ['Rapid deployment', 'Mobile optimized']],
     ['icon' => 'bi-person-vcard', 'title' => 'On-account / Agent Model', 'copy' => 'Support for traditional agency models where distributors hold accounts and manage payments offline.', 'points' => ['Flexible settlement', 'Back-office reconciliation']],
-    ['icon' => 'bi-signpost-split', 'title' => 'Campaign & Destination Led', 'copy' => 'Targeted distribution focused on specific regions or events as part of institutional marketing efforts.', 'points' => ['High-intent traffic', 'Curated inventory lists']],
+    ['icon' => 'bi-signpost-split', 'title' => 'Campaign and Destination Led', 'copy' => 'Targeted distribution focused on specific regions or events as part of institutional marketing efforts.', 'points' => ['High-intent traffic', 'Curated inventory lists']],
 ];
 
 if (!function_exists('txa_distributor_button')) {

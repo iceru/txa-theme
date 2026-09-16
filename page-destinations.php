@@ -49,12 +49,12 @@ $capabilities = [
 ];
 
 $implementation = [
-    ['icon' => 'bi-ui-checks-grid', 'title' => 'Define Assets Activation', 'copy' => 'Define the destination assets activation: website, campaign, trade, virtual concierge, data or a combination.'],
+    ['icon' => 'bi-ui-checks-grid', 'title' => 'Define the destination assets for activation', 'copy' => 'Define the destination assets for activation: website, campaign, trade, virtual concierge, data or a combination.'],
     ['icon' => 'bi-geo-alt', 'title' => 'Identify Priorities', 'copy' => 'Identify priority suppliers, POIs, recommended experiences, itineraries and local partners.'],
     ['icon' => 'bi-person-plus', 'title' => 'Onboard Suppliers', 'copy' => 'Onboard suppliers through the most appropriate pathway for each business.'],
     ['icon' => 'bi-window-plus', 'title' => 'Create Digital Assets', 'copy' => 'Create branded booking pages, destination landing pages, widgets, QR links and campaign assets.'],
     ['icon' => 'bi-rocket-takeoff', 'title' => 'Launch Network', 'copy' => 'Launch DMO website activation, microsite, trade portal or local reseller network.'],
-    ['icon' => 'bi-graph-up-arrow', 'title' => 'Track & Optimize', 'copy' => 'Track engagement, conversion, attribution and data exports through dashboards and the agreed reporting model.'],
+    ['icon' => 'bi-graph-up-arrow', 'title' => 'Track and Optimize', 'copy' => 'Track engagement, conversion, attribution and data exports through dashboards and the agreed reporting model.'],
 ];
 
 if (!function_exists('txa_destination_button')) {
@@ -180,7 +180,7 @@ if (!function_exists('txa_destination_button')) {
             <div class="mt-7 grid gap-4 sm:mt-8 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
                 <?php foreach ($capabilities as $card): ?>
                     <article
-                        class="<?php echo !empty($card['featured']) ? 'border-2 border-[#b3422f]' : 'border border-[#dfc0ba]/20 shadow-sm'; ?> rounded-2xl bg-white p-5 sm:min-h-[190px]">
+                        class="<?php echo !empty($card['featured']) ? 'border border-line shadow-sm' : 'border border-[#dfc0ba]/20 shadow-sm'; ?> rounded-2xl bg-white p-5 sm:min-h-[190px]">
                         <span class="flex size-10 items-center justify-center rounded-lg bg-brand-tint text-xl text-brand">
                             <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
                         </span>
@@ -212,10 +212,10 @@ if (!function_exists('txa_destination_button')) {
                             aria-hidden="true"></i><span>Real-time Dashboards: Track supplier activity, campaign
                             performance and visitor engagement in one place.</span></li>
                     <li class="flex gap-3"><i class="bi bi-graph-up-arrow shrink-0 text-brand"
-                            aria-hidden="true"></i><span>Attribution & ROI: Connect marketing spend to actual booking
+                            aria-hidden="true"></i><span>Attribution and ROI: Connect marketing spend to actual booking
                             outcomes with attribution codes.</span></li>
                     <li class="flex gap-3"><i class="bi bi-database-up shrink-0 text-brand"
-                            aria-hidden="true"></i><span>Data Ownership & Integration: Export insights or use APIs to
+                            aria-hidden="true"></i><span>Data Ownership and Integration: Export insights or use APIs to
                             flow data into your CRM or BI tools.</span></li>
                 </ul>
             </div>

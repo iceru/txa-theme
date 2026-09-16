@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Destination POI & Experiences
+ * Template Name: Destination POI and Experiences
  *
  * @package TailPress
  */
@@ -44,7 +44,7 @@ $feature_cards = [
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_600px] lg:items-center lg:gap-16">
             <div>
                 <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                    Point of Interests &amp; Experiences</p>
+                    Point of Interests and Experiences</p>
                 <h1
                     class="mt-8 max-w-[610px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
                     Create destination content that <span class="text-brand">connects</span> to bookable product</h1>

@@ -1,11 +1,11 @@
 <?php
 /**
- * Template Name: Data & Insights
+ * Template Name: Data and Insights
  *
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'Data & Insights | Tourism Exchange Australia');
+add_filter('pre_get_document_title', fn(): string => 'Data and Insights | Tourism Exchange Australia');
 add_action('wp_head', function (): void {
     if (is_page_template('page-data-insights.php')) {
         echo '<meta name="description" content="' . esc_attr('Use TXA destination data, dashboards, attribution and exports to understand visitor engagement, supplier activity and campaign performance.') . '">' . "\n";
@@ -22,7 +22,7 @@ $demo_url = home_url('/request-demo/');
         <div class="mx-auto grid max-w-[1312px] items-center gap-10 md:grid-cols-2 md:gap-12 xl:gap-20">
             <div class="max-w-[650px] md:col-start-1 md:row-start-1">
                 <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                    Data &amp; Insights</p>
+                    Data and Insights</p>
                 <h1
                     class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-[36px] font-bold leading-[1.15] tracking-[-.02em] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.12]">
                     Use <span class="text-brand">destination data</span> to plan and see what’s working and what’s not

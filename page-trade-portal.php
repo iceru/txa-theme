@@ -51,7 +51,7 @@ $supply_features = [
     ['icon' => 'bi-person-badge', 'title' => 'Supplier Profiles', 'copy' => 'Detailed information, photos, descriptions and contacts.'],
     ['icon' => 'bi-calendar3', 'title' => 'Real-time Availability', 'copy' => 'Live availability and pricing from connected systems.'],
     ['icon' => 'bi-cart-check', 'title' => 'Instant Booking', 'copy' => 'Book tours, accommodation, experiences and services.', 'featured' => true],
-    ['icon' => 'bi-ticket-perforated', 'title' => 'Confirmation & Vouchers', 'copy' => 'Instant confirmations, digital vouchers and e-tickets.'],
+    ['icon' => 'bi-ticket-perforated', 'title' => 'Confirmation and Vouchers', 'copy' => 'Instant confirmations, digital vouchers and e-tickets.'],
     ['icon' => 'bi-headset', 'title' => 'Supplier Support', 'copy' => 'Enquiries, changes and cancellations support.'],
     ['icon' => 'bi-database-gear', 'title' => 'Connected Systems', 'copy' => 'Booking engines, CRMs, inventory and payment gateways.'],
 ];
@@ -59,7 +59,7 @@ $supply_features = [
 $buyer_outcomes = [
     ['icon' => 'bi-search', 'title' => 'Easy Discovery', 'copy' => 'Find the right products and experiences.'],
     ['icon' => 'bi-cart-check', 'title' => 'Seamless Booking', 'copy' => 'Book instantly with real-time availability.'],
-    ['icon' => 'bi-ticket-perforated', 'title' => 'Confirm & Go', 'copy' => 'Receive confirmations and vouchers.'],
+    ['icon' => 'bi-ticket-perforated', 'title' => 'Confirm and Go', 'copy' => 'Receive confirmations and vouchers.'],
     ['icon' => 'bi-hand-thumbs-up', 'title' => 'Great Experience', 'copy' => 'Enjoy memorable experiences.'],
 ];
 
@@ -125,7 +125,7 @@ $portal_benefits = [
                         </div>
 
                         <div class="mt-5 flex grow flex-col items-center justify-end text-center">
-                            <p class="mt-2 text-xs font-semibold leading-5 text-[#151c27]">Domestic &amp; international trade partners</p>
+                            <p class="mt-2 text-sm font-bold uppercase leading-5 text-[#151c27]">Domestic and international trade partners</p>
                         </div>
                     </article>
 
@@ -163,7 +163,8 @@ $portal_benefits = [
                     <article class="rounded-2xl border border-line bg-white p-5 shadow-sm">
                         <header class="border-b border-line pb-4 text-center">
                             <span class="mx-auto flex size-12 items-center justify-center rounded-xl bg-brand text-2xl text-white" aria-hidden="true"><i class="bi bi-box-seam"></i></span>
-                            <h3 class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">Integrated Local Supply &amp; Booking</h3>
+                            <h3 class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">Integrated Local Supply and Booking</h3>
+                            <p class="mt-2 text-xs leading-5 text-mid-gray">Connect local supplier profiles, live availability, instant booking and confirmation tools in one trade-ready supply pathway.</p>
                         </header>
 
                         <div class="divide-y divide-line">
@@ -216,7 +217,7 @@ $portal_benefits = [
             <div class="mx-auto max-w-[720px] text-center">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    Empowering Destinations &amp; Trade</h2>
+                    Empowering Destinations and Trade</h2>
                 <p class="mt-6 text-base leading-7 text-mid-gray">Discover how the TXA Trade Portal bridges the gap
                     between local supply and global demand through a structured, professional interface.</p>
             </div>

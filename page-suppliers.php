@@ -13,7 +13,7 @@ $wizard_url = 'https://sites.txa.com.au/Connect';
 $benefits = [
     ['icon' => 'bi-share', 'title' => 'Broader distribution', 'copy' => 'Broader distribution pathway through connected channels and destination partners.'],
     ['icon' => 'bi-arrow-repeat', 'title' => 'Real-time updates', 'copy' => 'Real-time automation and booking through your connected booking system where available.'],
-    ['icon' => 'bi-diagram-3', 'title' => 'Connection options', 'copy' => 'Options for suppliers without a suitable booking system, supported connection pathways.'],
+    ['icon' => 'bi-diagram-3', 'title' => 'Connection options', 'copy' => 'Options for suppliers without a suitable booking system, or alternative supported connection pathways.'],
     ['icon' => 'bi-credit-card-2-front', 'title' => 'Flexible booking payment models', 'copy' => 'Support for direct payment and OTA / on-request account distributor models depending on the channel.'],
     ['icon' => 'bi-list-check', 'title' => 'Less manual tasks', 'copy' => 'No need for time consuming inventory and rate management across multiple websites and platforms.'],
     ['icon' => 'bi-cash-coin', 'title' => 'No booking, no fee', 'copy' => 'A no-booking-no-fee supplier pricing model for TXA-originated online bookings means no fixed upfront or monthly fees = no risk!'],
