@@ -24,6 +24,37 @@ $distribution_channels = [
 ];
 ?>
 
+<style>
+    [data-txa-network] .txa-network-node:is([data-node="booking"], [data-node="destination"], [data-node="distributor"], [data-node="txa"], [data-node="traveller"]) {
+        position: relative;
+        transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+
+    [data-txa-network] .txa-network-node:is([data-node="booking"], [data-node="destination"], [data-node="distributor"]):is(:hover, :focus-visible) {
+        z-index: 10;
+        transform: translateY(-6px);
+        box-shadow: 0 16px 28px -14px rgba(20, 20, 20, 0.32);
+    }
+
+    [data-txa-network] .txa-network-node[data-node="txa"]:is(:hover, :focus-visible) {
+        z-index: 30;
+        transform: translateY(-6px) scale(1.05);
+        box-shadow: 0 26px 58px -24px rgba(227, 41, 41, 0.65), 0 18px 34px -28px rgba(0, 0, 0, 0.55);
+    }
+
+    [data-txa-network] .txa-network-node[data-node="traveller"]:is(:hover, :focus-visible) {
+        z-index: 10;
+        transform: translateY(-6px);
+        box-shadow: 0 22px 38px -18px rgba(212, 43, 43, 0.65);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        [data-txa-network] .txa-network-node {
+            transition: none;
+        }
+    }
+</style>
+
 <section class="bg-surface px-4 py-10 sm:py-14 lg:px-16 lg:py-20">
     <div class="mx-auto max-w-[1312px]">
         <div class="mx-auto max-w-[760px] text-center">

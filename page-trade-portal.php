@@ -75,14 +75,15 @@ $portal_benefits = [
     <section class="bg-surface px-4 py-14 sm:py-16 lg:px-16 lg:py-24">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
-                <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
+                <p
+                    class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                     Trade Portal Solution</p>
                 <h1
                     class="mt-8 max-w-[680px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
                     Give trade partners a <span class="text-brand">dedicated destination page</span> with bookable local
                     supply</h1>
                 <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray">TXA can create a destination-specific
-                    landing page in in Australia's National Trade Portal. The page can be accessed by URL or QR code and
+                    landing page in Australia's National Trade Portal. The page can be accessed by URL or QR code and
                     can present POIs, recommended experiences and suppliers with real-time booking access for domestic
                     and international trade initiatives.</p>
                 <a href="<?php echo esc_url($demo_url); ?>"
@@ -99,25 +100,38 @@ $portal_benefits = [
     <section class="bg-white px-4 py-14 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto max-w-[1312px]">
             <div class="mx-auto max-w-[820px] text-center">
-                <p class="text-xs font-bold uppercase tracking-wide text-brand sm:text-sm">Connected trade activation</p>
-                <h2 class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">Destination Trade Portal</h2>
-                <p class="mt-3 text-base leading-7 text-mid-gray sm:text-lg">Connecting trade partners to bookable local supply.</p>
+                <p class="text-xs font-bold uppercase tracking-wide text-brand sm:text-sm">Connected trade activation
+                </p>
+                <h2
+                    class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
+                    Destination Trade Portal</h2>
+                <p class="mt-3 text-base leading-7 text-mid-gray sm:text-lg">Connecting trade partners to bookable local
+                    supply.</p>
             </div>
 
-            <div class="mt-10 overflow-hidden rounded-2xl border border-line bg-surface p-4 shadow-sm sm:mt-12 sm:p-6 lg:p-8">
-                <div class="grid grid-cols-1 items-stretch gap-4 xl:grid-cols-[1fr_30px_1.2fr_30px_1.2fr_30px_1fr] xl:gap-3">
+            <div
+                class="mt-10 overflow-hidden rounded-2xl border border-line bg-surface p-4 shadow-sm sm:mt-12 sm:p-6 lg:p-8">
+                <div
+                    class="grid grid-cols-1 items-stretch gap-4 xl:grid-cols-[1fr_30px_1.2fr_30px_1.2fr_30px_1fr] xl:gap-3">
                     <article class="flex flex-col rounded-2xl border border-line bg-white p-5 shadow-sm">
                         <div class="text-center">
-                            <span class="mx-auto flex size-14 items-center justify-center rounded-xl bg-brand-tint text-3xl text-brand" aria-hidden="true"><i class="bi bi-person-workspace"></i></span>
-                            <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">Access for Trade Partners</h3>
-                            <p class="mt-2 text-xs leading-5 text-mid-gray">Access the destination page via URL or QR code.</p>
+                            <span
+                                class="mx-auto flex size-14 items-center justify-center rounded-xl bg-brand-tint text-3xl text-brand"
+                                aria-hidden="true"><i class="bi bi-person-workspace"></i></span>
+                            <h3
+                                class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">
+                                Access for Trade Partners</h3>
+                            <p class="mt-2 text-xs leading-5 text-mid-gray">Access the destination page via URL or QR
+                                code.</p>
                         </div>
 
                         <div class="mt-5 rounded-xl border border-line bg-surface p-4 text-center">
                             <p class="text-[10px] font-bold uppercase tracking-wide text-brand">Destination URL</p>
-                            <div class="mt-3 flex items-center gap-2 rounded-lg border border-line bg-white px-3 py-3 text-left">
+                            <div
+                                class="mt-3 flex items-center gap-2 rounded-lg border border-line bg-white px-3 py-3 text-left">
                                 <i class="bi bi-window text-brand" aria-hidden="true"></i>
-                                <span class="min-w-0 break-all text-[11px] font-semibold leading-4 text-[#151c27]">tradeportal.com/<br>destinations/queensland</span>
+                                <span
+                                    class="min-w-0 break-all text-[11px] font-semibold leading-4 text-[#151c27]">tradeportal.com/<br>destinations/queensland</span>
                             </div>
                             <p class="my-3 text-[10px] font-bold uppercase text-mid-gray">or</p>
                             <i class="bi bi-qr-code text-7xl leading-none text-near-black" aria-hidden="true"></i>
@@ -125,86 +139,131 @@ $portal_benefits = [
                         </div>
 
                         <div class="mt-5 flex grow flex-col items-center justify-end text-center">
-                            <p class="mt-2 text-sm font-bold uppercase leading-5 text-[#151c27]">Domestic and international trade partners</p>
+                            <p class="mt-2 font-bold uppercase leading-5 text-[#151c27]">Domestic and
+                                international trade partners</p>
                         </div>
                     </article>
 
                     <div class="flex items-center justify-center text-brand" aria-hidden="true">
-                        <i class="bi bi-arrow-down-up text-2xl xl:hidden"></i><i class="bi bi-arrow-left-right hidden text-2xl xl:block"></i>
+                        <i class="bi bi-arrow-down-up text-2xl xl:hidden"></i><i
+                            class="bi bi-arrow-left-right hidden text-2xl xl:block"></i>
                     </div>
 
                     <article class="rounded-2xl border border-line bg-white p-5 shadow-sm">
                         <header class="border-b border-line pb-4 text-center">
-                            <span class="mx-auto flex size-12 items-center justify-center rounded-xl bg-brand text-2xl text-white" aria-hidden="true"><i class="bi bi-window-stack"></i></span>
-                            <h3 class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">Destination Trade Portal</h3>
+                            <span
+                                class="mx-auto flex size-12 items-center justify-center rounded-xl bg-brand text-2xl text-white"
+                                aria-hidden="true"><i class="bi bi-window-stack"></i></span>
+                            <h3
+                                class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">
+                                Destination Trade Portal</h3>
                             <p class="text-xs text-mid-gray">Destination page</p>
                         </header>
 
                         <div class="divide-y divide-line">
                             <?php foreach ($portal_features as $item): ?>
                                 <div class="py-4">
-                                    <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]"><?php echo esc_html($item['title']); ?></h4>
-                                    <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?></p>
+                                    <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]">
+                                        <?php echo esc_html($item['title']); ?>
+                                    </h4>
+                                    <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?>
+                                    </p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
 
-                        <div class="mt-2 grid grid-cols-2 gap-2 border-t border-line pt-4 sm:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4">
+                        <div
+                            class="mt-2 grid grid-cols-2 gap-2 border-t border-line pt-4 sm:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4">
                             <?php foreach (['Mobile optimised', 'QR shareable', 'Multi-language', 'Downloads'] as $tool): ?>
-                                <p class="rounded-md bg-surface px-2 py-2 text-center text-[9px] font-semibold leading-3 text-mid-gray"><?php echo esc_html($tool); ?></p>
+                                <p
+                                    class="rounded-md bg-surface px-2 py-2 text-center text-[9px] font-semibold leading-3 text-mid-gray">
+                                    <?php echo esc_html($tool); ?>
+                                </p>
                             <?php endforeach; ?>
                         </div>
                     </article>
 
                     <div class="flex items-center justify-center text-brand" aria-hidden="true">
-                        <i class="bi bi-arrow-down-up text-2xl xl:hidden"></i><i class="bi bi-arrow-left-right hidden text-2xl xl:block"></i>
+                        <i class="bi bi-arrow-down-up text-2xl xl:hidden"></i><i
+                            class="bi bi-arrow-left-right hidden text-2xl xl:block"></i>
                     </div>
 
                     <article class="rounded-2xl border border-line bg-white p-5 shadow-sm">
                         <header class="border-b border-line pb-4 text-center">
-                            <span class="mx-auto flex size-12 items-center justify-center rounded-xl bg-brand text-2xl text-white" aria-hidden="true"><i class="bi bi-box-seam"></i></span>
-                            <h3 class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">Integrated Local Supply and Booking</h3>
-                            <p class="mt-2 text-xs leading-5 text-mid-gray">Connect local supplier profiles, live availability, instant booking and confirmation tools in one trade-ready supply pathway.</p>
+                            <span
+                                class="mx-auto flex size-12 items-center justify-center rounded-xl bg-brand text-2xl text-white"
+                                aria-hidden="true"><i class="bi bi-box-seam"></i></span>
+                            <h3
+                                class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">
+                                Integrated Local Supply and Booking</h3>
+                            <p class="mt-2 text-xs leading-5 text-mid-gray">Connect local supplier profiles, live
+                                availability, instant booking and confirmation tools in one trade-ready supply pathway.
+                            </p>
                         </header>
 
                         <div class="divide-y divide-line">
                             <?php foreach ($supply_features as $item): ?>
                                 <div class="py-4 <?php echo !empty($item['featured']) ? 'text-brand' : ''; ?>">
-                                    <h4 class="text-xs font-bold uppercase leading-5 <?php echo !empty($item['featured']) ? 'text-brand' : 'text-[#151c27]'; ?>"><?php echo esc_html($item['title']); ?></h4>
-                                    <p class="mt-1 text-xs leading-5 <?php echo !empty($item['featured']) ? 'text-brand/80' : 'text-mid-gray'; ?>"><?php echo esc_html($item['copy']); ?></p>
+                                    <h4
+                                        class="text-xs font-bold uppercase leading-5 <?php echo !empty($item['featured']) ? 'text-brand' : 'text-[#151c27]'; ?>">
+                                        <?php echo esc_html($item['title']); ?>
+                                    </h4>
+                                    <p
+                                        class="mt-1 text-xs leading-5 <?php echo !empty($item['featured']) ? 'text-brand/80' : 'text-mid-gray'; ?>">
+                                        <?php echo esc_html($item['copy']); ?>
+                                    </p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
                     </article>
 
                     <div class="flex items-center justify-center text-brand" aria-hidden="true">
-                        <i class="bi bi-arrow-down-up text-2xl xl:hidden"></i><i class="bi bi-arrow-left-right hidden text-2xl xl:block"></i>
+                        <i class="bi bi-arrow-down-up text-2xl xl:hidden"></i><i
+                            class="bi bi-arrow-left-right hidden text-2xl xl:block"></i>
                     </div>
 
                     <article class="flex flex-col rounded-2xl border border-line bg-white p-5 shadow-sm">
                         <div class="text-center">
-                            <span class="mx-auto flex size-14 items-center justify-center rounded-xl bg-brand-tint text-3xl text-brand" aria-hidden="true"><i class="bi bi-person-check"></i></span>
-                            <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">Buyers / Travellers</h3>
+                            <span
+                                class="mx-auto flex size-14 items-center justify-center rounded-xl bg-brand-tint text-3xl text-brand"
+                                aria-hidden="true"><i class="bi bi-person-check"></i></span>
+                            <h3
+                                class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">
+                                Buyers / Travellers</h3>
                             <p class="mt-1 text-xs text-mid-gray">Trade customers</p>
-                            <p class="mt-3 text-xs leading-5 text-mid-gray">Discover, book and experience with confidence.</p>
+                            <p class="mt-3 text-xs leading-5 text-mid-gray">Discover, book and experience with
+                                confidence.</p>
                         </div>
 
                         <div class="mt-5 divide-y divide-line rounded-xl border border-line bg-surface px-4">
                             <?php foreach ($buyer_outcomes as $item): ?>
                                 <div class="py-4">
-                                    <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]"><?php echo esc_html($item['title']); ?></h4>
-                                    <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?></p>
+                                    <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]">
+                                        <?php echo esc_html($item['title']); ?>
+                                    </h4>
+                                    <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?>
+                                    </p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
                     </article>
                 </div>
 
-                <div class="mt-5 grid overflow-hidden rounded-xl border border-line bg-white sm:grid-cols-2 xl:grid-cols-4">
+                <div
+                    class="mt-5 grid overflow-hidden rounded-xl border border-line bg-white sm:grid-cols-2 xl:grid-cols-4">
                     <?php foreach ($portal_benefits as $index => $benefit): ?>
-                        <article class="flex gap-3 p-4 sm:p-5 <?php echo $index ? 'border-t border-line sm:border-l sm:border-t-0' : ''; ?>">
-                            <i class="bi <?php echo esc_attr($benefit['icon']); ?> shrink-0 text-2xl text-brand" aria-hidden="true"></i>
-                            <div><h3 class="text-xs font-bold uppercase leading-5 text-[#151c27]"><?php echo esc_html($benefit['title']); ?></h3><p class="mt-1 text-[11px] leading-4 text-mid-gray"><?php echo esc_html($benefit['copy']); ?></p></div>
+                        <article
+                            class="flex gap-3 p-4 sm:p-5 <?php echo $index ? 'border-t border-line sm:border-l sm:border-t-0' : ''; ?>">
+                            <i class="bi <?php echo esc_attr($benefit['icon']); ?> shrink-0 text-2xl text-brand"
+                                aria-hidden="true"></i>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase leading-5 text-[#151c27]">
+                                    <?php echo esc_html($benefit['title']); ?>
+                                </h3>
+                                <p class="mt-1 text-[11px] leading-4 text-mid-gray">
+                                    <?php echo esc_html($benefit['copy']); ?>
+                                </p>
+                            </div>
                         </article>
                     <?php endforeach; ?>
                 </div>
@@ -232,10 +291,12 @@ $portal_benefits = [
                             </span>
                             <h3
                                 class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($card['red']) ? 'text-white' : 'text-[#151c27]'; ?>">
-                                <?php echo esc_html($card['title']); ?></h3>
+                                <?php echo esc_html($card['title']); ?>
+                            </h3>
                             <p
                                 class="mt-5 max-w-[620px] text-base leading-8 <?php echo !empty($card['red']) ? 'text-white' : 'text-mid-gray'; ?>">
-                                <?php echo esc_html($card['copy']); ?></p>
+                                <?php echo esc_html($card['copy']); ?>
+                            </p>
                         </div>
                         <?php if (!empty($card['red'])): ?>
                             <i class="bi bi-building-check hidden shrink-0 text-[120px] leading-none text-white lg:block"
@@ -263,7 +324,8 @@ $portal_benefits = [
                             <div>
                                 <h3 class="text-lg font-bold text-[#151c27]"><?php echo esc_html($point['title']); ?></h3>
                                 <p class="mt-1 max-w-[560px] text-sm leading-6 text-mid-gray">
-                                    <?php echo esc_html($point['copy']); ?></p>
+                                    <?php echo esc_html($point['copy']); ?>
+                                </p>
                             </div>
                         </div>
                     <?php } ?>

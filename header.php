@@ -108,11 +108,11 @@ if (!function_exists('txa_header_link_class')) {
                                 </li>
                                 <li class="relative lg:mx-4">
                                     <button type="button"
-                                        class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex min-h-6 w-full items-center justify-between gap-1 rounded py-1 lg:w-auto lg:justify-start lg:translate-y-px')); ?>"
+                                        class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex w-full items-center justify-between gap-1 rounded py-1 lg:w-auto lg:justify-start')); ?>"
                                         aria-expanded="false" aria-haspopup="true" aria-controls="destinations-submenu"
                                         data-destinations-toggle>
                                         <span>Destinations</span>
-                                        <i class="bi bi-chevron-down text-sm leading-none transition mt-1 ml-0.5"
+                                        <i class="bi bi-chevron-down ml-0.5 text-sm leading-none transition"
                                             aria-hidden="true"></i>
                                     </button>
                                     <ul id="destinations-submenu"

@@ -15,9 +15,9 @@ $distributor_url = home_url('/distributors/');
 $booking_url = home_url('/booking-systems/partner-enquiry/');
 
 $hero_steps = [
-    ['number' => '01', 'title' => 'Identify your role', 'copy' => 'Supplier, destination, distributor and booking-system partner pricing are intentionally separated.'],
-    ['number' => '02', 'title' => 'Confirm the model', 'copy' => 'Success fee, platform package, commercial agreement or partner enquiry depends on the pathway.'],
-    ['number' => '03', 'title' => 'Take the right next step', 'copy' => 'Each pathway leads to the enquiry or application process that matches the organisation type.'],
+    ['number' => '1', 'title' => 'Identify your role', 'copy' => 'Supplier, destination, distributor and booking-system partner pricing are intentionally separated.'],
+    ['number' => '2', 'title' => 'Confirm the model', 'copy' => 'Success fee, platform package, commercial agreement or partner enquiry depends on the pathway.'],
+    ['number' => '3', 'title' => 'Take the right next step', 'copy' => 'Each pathway leads to the enquiry or application process that matches the organisation type.'],
 ];
 
 $hero_paths = [
@@ -29,7 +29,7 @@ $hero_paths = [
 
 $pricing_cards = [
     ['title' => 'Tourism Suppliers', 'price' => '0.75%', 'suffix' => 'to', 'price_end' => '2.8%', 'copy' => 'Success fee per booking. Perfect for hotels, tours, and attraction operators.', 'points' => ['No upfront fees', 'Unlimited distributors'], 'cta' => 'View Details', 'url' => $supplier_url, 'featured' => true],
-    ['title' => 'Destinations', 'price' => 'Destination Packages', 'copy' => 'Fixed monthly platform service packages for destination activation, supplier support, content, trade, virtual concierge and data. Publish only after package approval.', 'cta' => 'Request a Demo', 'url' => $demo_url],
+    ['title' => 'Destinations', 'price' => 'Destination Packages', 'copy' => 'Fixed monthly platform service packages for destination activation, supplier support, content, trade, virtual concierge and data. Publish only after package approval.', 'cta' => 'View Packages', 'url' => $destination_url],
     ['title' => 'Distributors', 'price' => 'Commercial Base', 'copy' => 'Free to connect. Commercial arrangements depend on the distributor model and agreement.', 'cta' => 'Become a Distributor', 'url' => $distributor_url],
     ['title' => 'Booking Systems', 'price' => 'Partner Enquiry', 'copy' => 'Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry.', 'cta' => 'Partner Enquiry', 'url' => $booking_url],
 ];
@@ -38,7 +38,17 @@ $supplier_types = ['Accommodation and Hotels', 'Guided Tours and Experiences', '
 
 $partner_cards = [
     [
+        'icon' => 'bi-map',
+        'eyebrow' => 'Are you a Destination?',
+        'title' => 'Destinations',
+        'copy' => 'Choose a Smart Destination package matched to the scale of your visitor economy, with platform infrastructure and support for local supplier activation.',
+        'points' => ['Local, Regional and State packages', 'Destination website and content activation', 'Trade portal and virtual concierge tools'],
+        'cta' => 'View Destination Packages',
+        'url' => $destination_url,
+    ],
+    [
         'icon' => 'bi-globe2',
+        'eyebrow' => 'Are you a Distributor?',
         'title' => 'Distributors',
         'copy' => 'TXA acts as a commercially neutral exchange, allowing distributors to connect with thousands of Australian suppliers through a single pipe.',
         'points' => ['Commercially Neutral Exchange', 'Live inventory from connected booking systems', 'Consolidated payment reconciliation'],
@@ -47,6 +57,7 @@ $partner_cards = [
     ],
     [
         'icon' => 'bi-terminal',
+        'eyebrow' => 'Are you a Booking System Vendor?',
         'title' => 'Booking-System Partners',
         'copy' => 'Empower your software users with instant access to state and regional tourism markets via TXA\'s integration framework.',
         'points' => ['Open API and Documentation', 'Technical support for onboarding', 'Value-add for your customer base'],
@@ -93,9 +104,13 @@ $partner_cards = [
                     <a href="<?php echo esc_url($path['url']); ?>"
                         class="group flex min-h-[106px] items-center justify-between gap-5 rounded-lg border border-white/10 bg-white/20 p-6 shadow-lg backdrop-blur-md !no-underline hover:bg-white/25">
                         <span>
-                            <i class="bi <?php echo esc_attr($path['icon']); ?> text-2xl text-white" aria-hidden="true"></i>
-                            <span
-                                class="mt-3 block text-2xl font-bold text-white"><?php echo esc_html($path['title']); ?></span>
+                            <div class="flex space-x-4 items-center">
+                                <i class="bi <?php echo esc_attr($path['icon']); ?> text-xl text-white"
+                                    aria-hidden="true"></i>
+                                <span class="block text-2xl font-bold text-white">
+                                    <?php echo esc_html($path['title']); ?>
+                                </span>
+                            </div>
                             <span
                                 class="mt-1 block text-sm font-semibold text-white/80"><?php echo esc_html($path['copy']); ?></span>
                         </span>
@@ -155,8 +170,8 @@ $partner_cards = [
     <section class="bg-surface px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
             <div>
-                <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand">Supplier
-                    Focus</p>
+                <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand">Are you a
+                    Supplier?</p>
                 <h2
                     class="mt-7 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
                     No booking, no fee supplier pricing</h2>
@@ -192,15 +207,18 @@ $partner_cards = [
     </section>
 
     <section class="px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
-        <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-2">
+        <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-3">
             <?php foreach ($partner_cards as $card): ?>
-                <article class="rounded-2xl border border-[#dfc0ba] bg-white p-8 sm:p-10 lg:p-12">
-                    <span class="flex size-14 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand"><i
-                            class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i></span>
-                    <h2 class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27]">
-                        <?php echo esc_html($card['title']); ?>
-                    </h2>
-                    <p class="mt-6 max-w-[560px] text-base leading-8 text-mid-gray"><?php echo esc_html($card['copy']); ?>
+                <article class="rounded-2xl border border-[#dfc0ba] bg-white p-8 sm:p-10 lg:p-8">
+                    <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand"><?php echo esc_html($card['eyebrow']); ?></p>
+                    <div class="mt-6 flex min-h-12 items-center gap-3">
+                        <span class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-tint text-xl text-brand"><i
+                                class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i></span>
+                        <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-bold leading-6 text-[#151c27]">
+                            <?php echo esc_html($card['title']); ?>
+                        </h2>
+                    </div>
+                    <p class="mt-5 max-w-[560px] text-base leading-8 text-mid-gray"><?php echo esc_html($card['copy']); ?>
                     </p>
                     <ol class="mt-8 space-y-5">
                         <?php foreach ($card['points'] as $index => $point): ?>

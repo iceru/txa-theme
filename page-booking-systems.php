@@ -27,7 +27,7 @@ $fallback_systems = [
     ['name' => 'RezStream', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-calendar-check'],
     ['name' => 'FareHarbor', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-compass'],
     ['name' => 'Booking Boss', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-kanban'],
-    ['name' => 'Siteminder', 'status' => 'Limited Release', 'tone' => 'blue', 'icon' => 'bi-building-check'],
+    ['name' => 'Siteminder', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-building-check'],
 ];
 
 $booking_system_post_type = null;
@@ -131,7 +131,7 @@ if (!function_exists('txa_booking_button')) {
                 <div class="w-full max-w-[760px]">
                     <p
                         class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                        TXA Booking Systems</p>
+                        TXA CONNECTED BOOKING SYSTEMS</p>
                     <h1
                         class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
                         Connect your booking system to Australia’s national tourism exchange</h1>
@@ -146,11 +146,12 @@ if (!function_exists('txa_booking_button')) {
 
                 <div
                     class="overflow-hidden rounded-2xl border border-white/25 bg-white/10 px-5 py-7 text-center text-white shadow-[0_20px_45px_-18px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6 sm:py-8">
-                    <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold uppercase sm:text-2xl">TXA CONNECTED BOOKING SYSTEMS</h2>
+                    <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold uppercase sm:text-2xl">
+                        TXA PLATFORM</h2>
                     <p class="mt-1 text-xs font-semibold text-white/80">One connection. More distribution.</p>
 
                     <div
-                        class="mx-auto mt-7 grid grid-cols-1 items-center justify-items-center gap-4 sm:grid-cols-[minmax(0,1fr)_28px_minmax(0,1fr)_28px_minmax(0,1fr)] sm:gap-2 lg:mt-9">
+                        class="mx-auto mt-7 grid grid-cols-1 justify-center gap-4 sm:grid-cols-[minmax(0,1fr)_28px_minmax(0,1fr)_28px_minmax(0,1fr)] sm:gap-2 lg:mt-9">
                         <div class="flex w-full min-w-0 max-w-[120px] flex-col items-center">
                             <span
                                 class="flex size-16 items-center justify-center rounded-2xl bg-brand text-3xl leading-none text-white shadow-lg shadow-brand/25 sm:size-[72px] sm:text-4xl">
@@ -160,24 +161,22 @@ if (!function_exists('txa_booking_button')) {
                                 System</p>
                         </div>
 
-                        <svg class="h-7 w-11 shrink-0 rotate-90 text-white/80 sm:w-7 sm:rotate-0" viewBox="0 0 64 24"
-                            fill="none" aria-hidden="true">
+                        <svg class="h-7 w-11 shrink-0 rotate-90 mt-6 text-white/80 sm:w-7 sm:rotate-0"
+                            viewBox="0 0 64 24" fill="none" aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <div class="flex w-full min-w-0 max-w-[130px] flex-col items-center">
+                        <div class="flex w-full min-w-0 max-w-[130px] flex-col items-center mb-4">
                             <span
                                 class="flex h-16 w-full max-w-[104px] items-center justify-center rounded-2xl border border-white/30 bg-white/15 px-3 shadow-lg sm:h-[72px] sm:max-w-[116px]">
                                 <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
                                     alt="Tourism Exchange Australia" class="h-auto w-full brightness-0 invert">
                             </span>
-                            <p class="mt-3 text-xs font-semibold leading-4 text-white sm:text-sm sm:leading-5">TXA
-                                System</p>
                         </div>
 
-                        <svg class="h-7 w-11 shrink-0 rotate-90 text-white/80 sm:w-7 sm:rotate-0" viewBox="0 0 64 24"
-                            fill="none" aria-hidden="true">
+                        <svg class="h-7 w-11 shrink-0 rotate-90 mt-6 text-white/80 sm:w-7 sm:rotate-0"
+                            viewBox="0 0 64 24" fill="none" aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>

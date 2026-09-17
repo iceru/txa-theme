@@ -21,8 +21,6 @@ $feature_cards = [
         'icon' => 'bi-stars',
         'title' => 'Connect Content',
         'copy' => 'Connect content with bookable suppliers so visitors can act on inspiration immediately.',
-        'cta' => 'Learn how',
-        'url' => home_url('/destinations/'),
         'red' => true,
     ],
     [
@@ -43,7 +41,8 @@ $feature_cards = [
     <section class="bg-surface px-4 py-14 sm:py-16 lg:px-16 lg:py-24">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_600px] lg:items-center lg:gap-16">
             <div>
-                <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
+                <p
+                    class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                     Point of Interests and Experiences</p>
                 <h1
                     class="mt-8 max-w-[610px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">

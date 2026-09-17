@@ -87,7 +87,7 @@ if (!function_exists('txa_supplier_button')) {
                 class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                 What TXA helps suppliers do</h2>
             <p class="mt-3 max-w-[723px] text-base leading-6 text-mid-gray">TXA has options for suppliers that don't
-                have a suitable booking system or supported connection pathways</p>
+                have a suitable booking system or alternative connection pathways</p>
             <div class="mt-7 grid gap-4 sm:mt-8 md:grid-cols-2 md:gap-6 xl:grid-cols-3 xl:gap-8">
                 <?php foreach ($benefits as $benefit): ?>
                     <article

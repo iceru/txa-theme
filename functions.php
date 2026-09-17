@@ -36,6 +36,16 @@ function tailpress(): TailPress\Framework\Theme
 
 tailpress();
 
+// TailPress enqueues the Vite entry as tailpress-app; its dev-server module filter misses that handle.
+add_filter('script_loader_tag', function (string $tag, string $handle, string $src): string {
+    if ('tailpress-app' === $handle && str_contains($src, '/resources/js/app.js')) {
+        $tag = preg_replace("/\s+type=(?:\"[^\"]*\"|'[^']*')/i", '', $tag, 1);
+        return preg_replace('/<script\b/i', '<script type="module"', $tag, 1);
+    }
+
+    return $tag;
+}, 10, 3);
+
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style(
         'bootstrap-icons',

@@ -43,7 +43,7 @@ $solutions = [
 $capabilities = [
     ['icon' => 'bi-window-stack', 'title' => 'Activate digital assets', 'copy' => 'Use B2B and B2C destination websites, apps, APIs, widgets and custom booking pages to connect brand, content and conversion.'],
     ['icon' => 'bi-graph-up-arrow', 'title' => 'Insights to drive growth', 'copy' => 'Support multiple supplier pathways, including connected systems, free or low-cost booking options, on-request, content-only and smart referral models.'],
-    ['icon' => 'bi-database-lock', 'title' => 'Own your data', 'copy' => 'Data and insights to drive growth that belongs to your destination, not a third-party platform.', 'featured' => true],
+    ['icon' => 'bi-database-lock', 'title' => 'Own your data', 'copy' => 'Data and insights to drive growth that belongs to your destination, not a third-party platform.'],
     ['icon' => 'bi-globe2', 'title' => 'Connect supply to the world', 'copy' => 'Aggregate supplier and destination content and make it available to distributors, trade channels, DMO-owned assets and connected APIs.'],
     ['icon' => 'bi-diagram-3', 'title' => 'Commercial neutrality', 'copy' => 'Use a platform model that supports multiple booking systems and commercial models.'],
 ];
@@ -111,8 +111,8 @@ if (!function_exists('txa_destination_button')) {
             <p class="mx-auto mt-3 max-w-[890px] text-[15px] leading-6 text-mid-gray sm:mt-2 sm:text-base">A Smart
                 destination generates inspiration and TXA helps you own the conversion. Your organisation can use TXA to
                 activate destination websites and apps, digitise local supply, connect suppliers to distributors, build
-                tactical microsites, support trade initiatives, enable economy-wide re-seller networks and create
-                virtual concierge collaborative commerce.</p>
+                tactical microsites, support trade initiatives, enable economy-wide re-seller networks and collaborative
+                commerce.</p>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5">
                 <?php foreach ($pillars as $index => $pillar): ?>
                     <article
@@ -124,7 +124,8 @@ if (!function_exists('txa_destination_button')) {
                         <div>
                             <h3
                                 class="[font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:mt-3 sm:text-xl sm:leading-7">
-                                <?php echo esc_html($pillar['title']); ?></h3>
+                                <?php echo esc_html($pillar['title']); ?>
+                            </h3>
                             <p class="mt-1 text-sm leading-5 text-mid-gray"><?php echo esc_html($pillar['copy']); ?></p>
                         </div>
                     </article>
@@ -186,7 +187,8 @@ if (!function_exists('txa_destination_button')) {
                         </span>
                         <h3
                             class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:text-xl sm:leading-7">
-                            <?php echo esc_html($card['title']); ?></h3>
+                            <?php echo esc_html($card['title']); ?>
+                        </h3>
                         <p class="mt-2 text-sm leading-5 text-mid-gray sm:mt-3"><?php echo esc_html($card['copy']); ?></p>
                     </article>
                 <?php endforeach; ?>
@@ -268,8 +270,10 @@ if (!function_exists('txa_destination_button')) {
                             <div class="pt-1 md:pt-0">
                                 <h3
                                     class="[font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 md:mt-5 md:text-xl md:leading-7">
-                                    <?php echo esc_html($step['title']); ?></h3>
-                                <p class="mt-2 text-sm leading-[21px] text-white/85"><?php echo esc_html($step['copy']); ?></p>
+                                    <?php echo esc_html($step['title']); ?>
+                                </h3>
+                                <p class="mt-2 text-sm leading-[21px] text-white/85"><?php echo esc_html($step['copy']); ?>
+                                </p>
                             </div>
                         </article>
                     <?php endforeach; ?>

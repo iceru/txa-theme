@@ -15,6 +15,7 @@ $system_items = [
     ['icon' => 'bi-calendar2-check', 'label' => 'Booking Engine'],
     ['icon' => 'bi-bar-chart-line', 'label' => 'Performance Insights'],
     ['icon' => 'bi-database', 'label' => 'Customer booking data'],
+    ['icon' => 'bi-broadcast-pin', 'label' => 'Content, Live Availability and Rates'],
 ];
 
 $platform_items = [
@@ -22,7 +23,7 @@ $platform_items = [
     ['icon' => 'bi-buildings', 'label' => 'Local Government / DMO', 'key' => 'dmo'],
     ['icon' => 'bi-briefcase', 'label' => 'Travel trade', 'key' => 'travel_trade'],
     ['icon' => 'bi-geo-alt', 'label' => 'Google', 'key' => 'google'],
-    ['icon' => 'bi-window-check', 'label' => 'Various OTAs', 'key' => 'otas'],
+    ['icon' => 'bi-window', 'label' => 'Various OTAs', 'key' => 'otas'],
     ['icon' => 'bi-share', 'label' => 'Social media channels', 'key' => 'social'],
 ];
 ?>
@@ -54,7 +55,7 @@ $platform_items = [
                     alt="Tourism Exchange Australia" class="h-11 w-auto brightness-0 invert sm:h-14">
             </div>
             <article
-                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6 xl:h-[536px]">
+                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6">
                 <div class="flex flex-1 flex-col divide-y divide-white/15">
                     <?php foreach ($system_items as $item): ?>
                         <div class="flex min-h-[128px] flex-1 flex-col items-center justify-center py-5">
@@ -63,10 +64,6 @@ $platform_items = [
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <p class="mt-5 flex items-center justify-center gap-2 text-sm font-semibold text-white/80">
-                    <i class="bi bi-broadcast-pin" aria-hidden="true"></i>
-                    <span>Content, live availability and rates</span>
-                </p>
             </article>
         </div>
 
@@ -80,22 +77,21 @@ $platform_items = [
         <div class="flex flex-col">
             <div class="hidden xl:mb-6 xl:block xl:min-h-16" aria-hidden="true"></div>
             <article
-                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6 xl:h-[536px]">
+                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6">
                 <div class="flex flex-1 flex-col divide-y divide-white/15">
                     <?php foreach ($platform_items as $item):
                         $item_highlighted = $dmo_highlighted && 'dmo' === $item['key']; ?>
                         <div
                             class="flex min-h-[112px] flex-1 flex-col items-center justify-center rounded-xl px-3 py-4 transition xl:min-h-16 <?php echo $item_highlighted ? 'bg-brand/15 shadow-[inset_0_0_0_2px_rgba(212,43,43,0.9)]' : ''; ?>">
-                            <i class="bi <?php echo esc_attr($item['icon']); ?> text-4xl <?php echo $item_highlighted ? 'text-brand' : 'text-white'; ?>"
+                            <i class="bi <?php echo esc_attr($item['icon']); ?> text-2xl <?php echo $item_highlighted ? 'text-brand' : 'text-white'; ?>"
                                 aria-hidden="true"></i>
                             <p
-                                class="mt-3 text-sm font-semibold leading-5 <?php echo $item_highlighted ? 'text-brand' : 'text-white/90'; ?>">
+                                class="mt-2 text-sm font-semibold leading-5 <?php echo $item_highlighted ? 'text-brand' : 'text-white/90'; ?>">
                                 <?php echo esc_html($item['label']); ?>
                             </p>
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <p class="mt-5 text-sm font-semibold text-white/80">Social media channels</p>
             </article>
         </div>
 

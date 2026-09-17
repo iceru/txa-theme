@@ -13,16 +13,16 @@ $hero_slides = [
 ];
 
 $audiences = [
-    ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/apply-now/'), 'image' => get_theme_file_uri('/images/supplier-1.jpg')],
+    ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/suppliers/'), 'image' => get_theme_file_uri('/images/supplier-1.jpg')],
     ['title' => 'Destinations', 'copy' => 'Become a Smart Destination and make local supply bookable through your own digital assets.', 'cta' => 'Explore Destinations', 'url' => home_url('/destinations/'), 'image' => get_theme_file_uri('/images/destinations-1.jpg')],
     ['title' => 'Distributors', 'copy' => 'Access bookable Australian tourism inventory through TXA connected supply.', 'cta' => 'Become a Distributor', 'url' => home_url('/distributors/'), 'image' => get_theme_file_uri('/images/distributor.jpg')],
     ['title' => 'Booking Systems', 'copy' => 'Connect your booking system to TXA and unlock distribution for your customers.', 'cta' => 'Partner Enquiry', 'url' => home_url('/booking-systems/'), 'image' => get_theme_file_uri('/images/booking-systems.jpg')],
 ];
 $smart_cards = [
-    ['icon' => 'bi-window-stack', 'title' => 'Activate digital assets', 'copy' => 'Turn destination websites, apps and visitor touchpoints into conversion-ready channels.'],
-    ['icon' => 'bi-cloud-arrow-up', 'title' => 'Digitise local supply', 'copy' => 'Help local operators bring bookable products, pricing and availability online.'],
-    ['icon' => 'bi-globe2', 'title' => 'Connect supply to the world', 'copy' => 'Open inventory pathways to trade channels, resellers and owned destination channels.'],
-    ['icon' => 'bi-bar-chart-line', 'title' => 'Own your data', 'copy' => 'Use activity, campaign and booking signals to see what is driving outcomes.'],
+    ['icon' => 'bi-window-stack', 'title' => 'Activate digital assets', 'copy' => 'Turn destination websites, apps and visitor touchpoints into conversion-ready channels.', 'url' => home_url('/destinations/')],
+    ['icon' => 'bi-cloud-arrow-up', 'title' => 'Digitise local supply', 'copy' => 'Help local operators bring bookable products, pricing and availability online.', 'url' => home_url('/suppliers/')],
+    ['icon' => 'bi-globe2', 'title' => 'Connect supply to the world', 'copy' => 'Open inventory pathways to trade channels, resellers and owned destination channels.', 'url' => home_url('/distributors/')],
+    ['icon' => 'bi-bar-chart-line', 'title' => 'Own your data', 'copy' => 'Use activity, campaign and booking signals to see what is driving outcomes.', 'url' => home_url('/data-insights/')],
 ];
 
 $how_txa_works_video = function_exists('get_field') ? get_field('how_txa_works_video') : '';
@@ -129,7 +129,8 @@ if (!function_exists('txa_button')) {
         <div class="mx-auto max-w-[1312px]">
             <div class="grid gap-4 sm:gap-5 md:grid-cols-[1fr_400px] md:items-end">
                 <div>
-                    <p class="text-xs font-semibold uppercase leading-5 text-brand sm:text-sm">TXA pathway</p>
+                    <p class="text-xs font-semibold uppercase leading-5 text-brand sm:text-sm">TXA Connection Pathway
+                    </p>
                     <h2
                         class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:mt-3 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                         How to Connect to TXA?</h2>
@@ -139,8 +140,8 @@ if (!function_exists('txa_button')) {
             </div>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
                 <?php foreach ($audiences as $card): ?>
-                    <article
-                        class="group flex min-h-[0] flex-col overflow-hidden rounded-lg border border-line bg-white shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] sm:min-h-[360px]">
+                    <a href="<?php echo esc_url($card['url']); ?>"
+                        class="group flex min-h-[0] flex-col overflow-hidden rounded-lg border border-line bg-white text-near-black shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] !no-underline transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:min-h-[360px]">
                         <div class="h-[160px] overflow-hidden sm:h-[180px]"><img
                                 src="<?php echo esc_url($card['image']); ?>" alt=""
                                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"></div>
@@ -148,11 +149,11 @@ if (!function_exists('txa_button')) {
                             <h3 class="text-lg font-semibold leading-7 sm:text-xl"><?php echo esc_html($card['title']); ?>
                             </h3>
                             <p class="mt-2 grow text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
-                            <a href="<?php echo esc_url($card['url']); ?>"
-                                class="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-brand !no-underline hover:text-brand-dark"><?php echo esc_html($card['cta']); ?><span
-                                    aria-hidden="true">→</span></a>
+                            <span
+                                class="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-brand group-hover:text-brand-dark"><?php echo esc_html($card['cta']); ?><span
+                                    aria-hidden="true">→</span></span>
                         </div>
-                    </article><?php endforeach; ?>
+                    </a><?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -206,7 +207,8 @@ if (!function_exists('txa_button')) {
                 </div>
             </div>
             <div class="grid gap-3 sm:grid-cols-2 sm:gap-6"><?php foreach ($smart_cards as $card): ?>
-                    <article class="rounded-lg bg-white/15 p-4 backdrop-blur-md sm:bg-white/20 sm:p-5"><span
+                    <a href="<?php echo esc_url($card['url']); ?>"
+                        class="block rounded-lg bg-white/15 p-4 text-white !no-underline backdrop-blur-md transition-colors hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:bg-white/20 sm:p-5"><span
                             class="flex size-10 items-center justify-center rounded-lg bg-brand text-lg text-white sm:size-11 sm:text-xl">
                             <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
                         </span>
@@ -214,7 +216,7 @@ if (!function_exists('txa_button')) {
                             <?php echo esc_html($card['title']); ?>
                         </h3>
                         <p class="mt-2 text-sm leading-6 text-white sm:mt-4"><?php echo esc_html($card['copy']); ?></p>
-                    </article><?php endforeach; ?>
+                    </a><?php endforeach; ?>
             </div>
         </div>
     </section>

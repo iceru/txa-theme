@@ -228,9 +228,16 @@
     filter: drop-shadow(0 10px 16px rgba(212, 43, 43, 0.14));
   }
 
+  .txa-network-node[data-node='booking'].is-active,
+  .txa-network-node[data-node='destination'].is-active,
+  .txa-network-node[data-node='distributor'].is-active {
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 16px 28px -14px rgba(20, 20, 20, 0.32);
+  }
+
   .txa-network-node[data-node='txa'].is-active {
-    transform: none;
-    scale: 1.08;
+    transform: translateY(-6px) scale(1.05);
     border-color: #e32929;
     box-shadow: 0 26px 58px -24px rgba(227, 41, 41, 0.65), 0 18px 34px -28px rgba(0, 0, 0, 0.55);
     filter: none;
@@ -251,6 +258,10 @@
 
     .txa-network-path.is-active {
       animation: none;
+    }
+
+    .txa-network-node {
+      transition: none;
     }
   }
 }

@@ -63,7 +63,7 @@
                                 href="<?php echo esc_url(home_url('/register-your-interest/')); ?>">Register your
                                 interest</a></li>
                         <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="https://www.au.v3travel.com/">Dashboard Login</a></li>
+                                href="https://www.au.v3travel.com/TXA.Dashboard/Login.aspx">Dashboard Login</a></li>
                     </ul>
                 </div>
                 <div>

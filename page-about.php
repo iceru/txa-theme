@@ -92,7 +92,7 @@ $timeline_values = [
         </div>
     </section>
     <section class="bg-brand px-4 py-12 text-white sm:py-14 lg:px-16 lg:py-16">
-        <div class="mx-auto grid max-w-[1280px] gap-8 lg:grid-cols-[672px_1fr] lg:items-center lg:gap-24">
+        <div class="mx-auto grid max-w-[1280px] gap-8 lg:grid-cols-[550px_1fr] lg:items-center lg:gap-24">
             <div>
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight tracking-[-.01em]">
@@ -101,15 +101,17 @@ $timeline_values = [
                     exchange technology powers tourism platforms in the UK, Japan, Saudi Arabia, and the US. TXA remains
                     Australia’s own—tailored for our unique geography and market dynamics.</p>
             </div>
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:gap-x-8 lg:gap-y-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <?php foreach ($countries as $country): ?>
                     <div
-                        class="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 p-3 text-sm text-white sm:border-0 sm:bg-transparent sm:p-0 sm:text-base">
+                        class="flex flex-col items-center justify-center rounded-xl bg-white p-4 text-center text-near-black shadow-sm">
                         <?php if (!empty($country['icon'])): ?>
                             <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $country['icon'])); ?>" alt=""
-                                class="h-5 w-auto shrink-0 brightness-0 invert" aria-hidden="true">
+                                class="mb-4 h-14 w-auto max-w-full object-contain sm:h-16" aria-hidden="true">
                         <?php endif; ?>
-                        <?php echo esc_html(strtoupper($country['name'])); ?>
+                        <h3 class="text-sm font-bold uppercase tracking-wide sm:text-base">
+                            <?php echo esc_html($country['name']); ?>
+                        </h3>
                     </div><?php endforeach; ?>
             </div>
         </div>
@@ -127,8 +129,8 @@ $timeline_values = [
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
                 <svg class="absolute inset-x-0 top-0 hidden h-[382px] w-full text-brand lg:block" viewBox="0 0 1180 382"
                     preserveAspectRatio="none" fill="none" aria-hidden="true">
-                    <path d="M54 2 H1100 C1150 2 1176 38 1176 82 V297 C1176 346 1148 378 1098 378 H54" stroke="currentColor"
-                        stroke-width="5" stroke-linecap="round" />
+                    <path d="M54 2 H1100 C1150 2 1176 38 1176 82 V297 C1176 346 1148 378 1098 378 H54"
+                        stroke="currentColor" stroke-width="5" stroke-linecap="round" />
                 </svg>
 
                 <div class="absolute bottom-4 left-[19px] top-4 w-0.5 bg-brand lg:hidden" aria-hidden="true"></div>
@@ -152,7 +154,8 @@ $timeline_values = [
                                     <i class="bi <?php echo esc_attr($item['icon']); ?>" aria-hidden="true"></i>
                                 </span>
                                 <p class="mt-4 text-xl font-bold uppercase text-[#151c27]">
-                                    <?php echo esc_html($item['year']); ?></p>
+                                    <?php echo esc_html($item['year']); ?>
+                                </p>
                                 <h3
                                     class="mt-2 inline-flex rounded-lg bg-brand px-4 py-1.5 [font-family:'Hanken_Grotesk',sans-serif] text-xs font-bold uppercase tracking-wide text-white sm:text-sm">
                                     <?php echo esc_html($item['title']); ?>
