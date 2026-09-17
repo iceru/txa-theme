@@ -35,6 +35,7 @@ $systems = [
     ['name' => 'RoomMaster', 'file' => 'roommaster.png'],
     ['name' => 'Seekom', 'file' => 'seekom.png'],
     ['name' => 'SiteMinder', 'file' => 'siteminder.png'],
+    ['name' => 'Little Hotelier', 'file' => 'little-hotelier.png'],
     ['name' => 'Update 247', 'file' => 'update247.png'],
 ];
 
