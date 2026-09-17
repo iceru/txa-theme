@@ -65,7 +65,7 @@ if (!function_exists('txa_supplier_button')) {
         </div>
     </section>
 
-    <section class="bg-surface px-4 py-9 sm:py-10 lg:p-16">
+    <section class="px-4 py-9 sm:py-10 lg:px-16">
         <div class="mx-auto max-w-[1312px]">
             <div class="max-w-[640px]">
                 <p class="text-xs uppercase leading-5 text-brand sm:text-sm">Connect once, sell everywhere</p>

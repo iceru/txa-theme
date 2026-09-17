@@ -32,7 +32,7 @@ $platform_items = [
     class="mt-7 overflow-hidden rounded-2xl bg-black px-5 py-8 text-white shadow-xl sm:mt-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
 
     <div
-        class="mx-auto mt-10 grid max-w-[1160px] grid-cols-1 items-center gap-5 sm:mt-12 xl:grid-cols-[0.8fr_54px_1.08fr_54px_1.15fr_54px_0.8fr] xl:gap-3">
+        class="mx-auto grid max-w-[1160px] grid-cols-1 items-center gap-5 xl:grid-cols-[0.8fr_54px_1.08fr_54px_1.15fr_54px_0.8fr] xl:gap-3">
         <article
             class="flex min-h-[230px] flex-col items-center justify-center rounded-2xl border p-6 text-center transition <?php echo $supplier_highlighted ? 'border-brand bg-brand/10 shadow-[0_0_42px_-16px_rgba(212,43,43,0.95)]' : 'border-white/20 bg-white/[0.03]'; ?>">
             <span

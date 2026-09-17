@@ -58,10 +58,9 @@
                         <li><a class="text-white/65 !no-underline hover:text-white"
                                 href="<?php echo esc_url(home_url('/about/')); ?>">About TXA</a></li>
                         <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/contact/')); ?>">Contact us</a></li>
+                                href="<?php echo esc_url(home_url('/blog/')); ?>">Blog</a></li>
                         <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/register-your-interest/')); ?>">Register your
-                                interest</a></li>
+                                href="<?php echo esc_url(home_url('/contact/')); ?>">Contact us</a></li>
                         <li><a class="text-white/65 !no-underline hover:text-white"
                                 href="https://www.au.v3travel.com/TXA.Dashboard/Login.aspx">Dashboard Login</a></li>
                     </ul>

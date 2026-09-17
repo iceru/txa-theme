@@ -8,7 +8,8 @@
 get_header();
 
 $posts_page_id = (int) get_option('page_for_posts');
-$articles_page_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('/articles/');
+$blog_page = $posts_page_id ? get_post($posts_page_id) : get_page_by_path('blog');
+$blog_page_url = $blog_page ? get_permalink($blog_page) : home_url('/blog/');
 ?>
 
 <?php if (have_posts()): ?>
@@ -29,9 +30,9 @@ $articles_page_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('
             <?php post_class("bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]"); ?>>
             <header class="bg-surface px-4 py-12 sm:py-16 lg:px-16 lg:py-20">
                 <div class="mx-auto max-w-[980px] text-center">
-                    <a href="<?php echo esc_url($articles_page_url); ?>"
+                    <a href="<?php echo esc_url($blog_page_url); ?>"
                         class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-brand !no-underline">
-                        <i class="bi bi-arrow-left" aria-hidden="true"></i> Articles and News
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i> Back to blog
                     </a>
                     <p class="mt-7 text-sm font-bold uppercase tracking-wide text-brand">
                         <?php echo esc_html($article_category); ?>
@@ -57,18 +58,29 @@ $articles_page_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('
                 </div>
             </header>
 
+            <?php if (has_post_thumbnail()): ?>
             <div class="px-4 pt-8 sm:pt-10 lg:px-16 lg:pt-12">
                 <div class="mx-auto max-w-[1312px] overflow-hidden rounded-2xl bg-surface shadow-sm">
-                    <img src="<?php echo esc_url(txa_article_image_url($article_id, 'full')); ?>"
+                    <img src="<?php echo esc_url(get_the_post_thumbnail_url($article_id, 'full')); ?>"
                         alt="<?php echo esc_attr(get_the_title()); ?>"
                         class="aspect-[16/7] min-h-[260px] w-full object-cover sm:min-h-[360px]">
                 </div>
             </div>
+            <?php endif; ?>
 
             <div class="px-4 py-12 sm:py-16 lg:px-16 lg:py-20">
                 <div class="entry-content mx-auto max-w-[800px] text-[#2d2d2d]">
                     <?php the_content(); ?>
                     <?php wp_link_pages(); ?>
+                </div>
+                <div class="mx-auto mt-12 flex max-w-[800px] flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:justify-between">
+                    <?php $older_post = get_previous_post(); $newer_post = get_next_post(); ?>
+                    <?php if ($older_post): ?>
+                        <a href="<?php echo esc_url(get_permalink($older_post)); ?>" class="max-w-sm text-sm font-semibold text-brand !no-underline hover:text-brand-dark">← Previous post<br><span class="mt-1 block text-base text-near-black"><?php echo esc_html(get_the_title($older_post)); ?></span></a>
+                    <?php endif; ?>
+                    <?php if ($newer_post): ?>
+                        <a href="<?php echo esc_url(get_permalink($newer_post)); ?>" class="max-w-sm text-sm font-semibold text-brand !no-underline hover:text-brand-dark sm:ml-auto sm:text-right">Next post →<br><span class="mt-1 block text-base text-near-black"><?php echo esc_html(get_the_title($newer_post)); ?></span></a>
+                    <?php endif; ?>
                 </div>
             </div>
         </article>
@@ -81,10 +93,10 @@ $articles_page_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('
                             <p class="text-xs font-bold uppercase tracking-wide text-brand">Continue reading</p>
                             <h2
                                 class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27] sm:text-4xl">
-                                Other articles</h2>
+                                More from the blog</h2>
                         </div>
-                        <a href="<?php echo esc_url($articles_page_url); ?>"
-                            class="inline-flex items-center gap-2 font-semibold text-brand !no-underline">View all articles
+                        <a href="<?php echo esc_url($blog_page_url); ?>"
+                            class="inline-flex items-center gap-2 font-semibold text-brand !no-underline">View all posts
                             <span aria-hidden="true">→</span></a>
                     </div>
                     <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">

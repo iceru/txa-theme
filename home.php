@@ -1,11 +1,11 @@
 <?php
 /**
- * Article index template.
+ * Blog index template, shared by the posts page and the Blog page template.
  *
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'Articles and News | Tourism Exchange Australia');
+add_filter('pre_get_document_title', fn(): string => 'Blog | Tourism Exchange Australia');
 
 get_header();
 
@@ -17,7 +17,7 @@ $featured_query = new WP_Query([
 ]);
 $featured_posts = $featured_query->posts;
 $featured_ids = wp_list_pluck($featured_posts, 'ID');
-$paged = max(1, (int) get_query_var('paged'));
+$paged = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
 $articles_query = new WP_Query([
     'post_type' => 'post',
     'post_status' => 'publish',
@@ -31,11 +31,11 @@ $articles_query = new WP_Query([
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="bg-surface px-4 py-12 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto max-w-[1312px]">
-            <p class="text-sm font-bold uppercase tracking-wide text-brand">Articles and News</p>
+            <p class="text-sm font-bold uppercase tracking-wide text-brand">TXA Blog</p>
             <div class="mt-3 grid gap-5 lg:grid-cols-[1fr_480px] lg:items-end lg:gap-12">
                 <h1
                     class="max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-tight tracking-[-.02em] text-[#151c27] sm:text-5xl">
-                    Tourism insights, industry news and TXA updates</h1>
+                    Ideas for a more connected tourism industry</h1>
                 <p class="max-w-[540px] text-base leading-7 text-mid-gray sm:text-lg">Explore practical perspectives on
                     connected tourism, destination technology, distribution and the Australian visitor economy.</p>
             </div>
@@ -50,7 +50,7 @@ $articles_query = new WP_Query([
             <div class="mx-auto max-w-[1312px]">
                 <div class="mb-7 flex items-center gap-3">
                     <span class="h-px w-8 bg-brand" aria-hidden="true"></span>
-                    <h2 class="text-sm font-bold uppercase tracking-wide text-[#151c27]">Highlighted news</h2>
+                    <h2 class="text-sm font-bold uppercase tracking-wide text-[#151c27]">Featured story</h2>
                 </div>
                 <div class="grid gap-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(340px,0.8fr)] lg:gap-8">
                     <article class="group overflow-hidden rounded-2xl bg-near-black text-white shadow-xl">
@@ -106,6 +106,7 @@ $articles_query = new WP_Query([
         </section>
     <?php endif; ?>
 
+    <?php if ($articles_query->have_posts() || !$featured_posts || $paged > 1): ?>
     <section class="bg-surface px-4 py-12 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto max-w-[1312px]">
             <div class="flex items-end justify-between gap-6">
@@ -113,7 +114,7 @@ $articles_query = new WP_Query([
                     <p class="text-xs font-bold uppercase tracking-wide text-brand">Stay informed</p>
                     <h2
                         class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold text-[#151c27] sm:text-4xl">
-                        <?php echo 1 === $paged ? 'More articles' : 'Articles'; ?></h2>
+                        <?php echo 1 === $paged ? 'Latest stories' : 'Blog stories'; ?></h2>
                 </div>
             </div>
 
@@ -125,18 +126,42 @@ $articles_query = new WP_Query([
                     endwhile; ?>
                 </div>
                 <?php if ($articles_query->max_num_pages > 1): ?>
-                    <div class="mt-10">
-                        <?php TailPress\Pagination::render($articles_query); ?>
-                    </div>
+                    <?php
+                    $last_page = (int) $articles_query->max_num_pages;
+                    $page_numbers = array_unique(array_merge(
+                        [1, $last_page],
+                        range(max(1, $paged - 1), min($last_page, $paged + 1))
+                    ));
+                    sort($page_numbers);
+                    $previous_number = 0;
+                    ?>
+                    <nav class="mt-10 flex flex-wrap items-center justify-center gap-2" aria-label="Blog pages">
+                        <?php if ($paged > 1): ?>
+                            <a href="<?php echo esc_url(get_pagenum_link($paged - 1)); ?>" class="inline-flex min-h-10 items-center rounded-lg border border-line bg-white px-4 font-semibold text-near-black !no-underline hover:border-brand hover:text-brand">← Previous</a>
+                        <?php endif; ?>
+                        <?php foreach ($page_numbers as $page_number): ?>
+                            <?php if ($previous_number && $page_number > $previous_number + 1): ?>
+                                <span class="px-2 text-mid-gray" aria-hidden="true">…</span>
+                            <?php endif; ?>
+                            <a href="<?php echo esc_url(get_pagenum_link($page_number)); ?>"
+                                class="inline-flex size-10 items-center justify-center rounded-lg border font-semibold !no-underline <?php echo $page_number === $paged ? 'border-brand bg-brand text-white' : 'border-line bg-white text-near-black hover:border-brand hover:text-brand'; ?>"
+                                <?php if ($page_number === $paged): ?>aria-current="page"<?php endif; ?>><?php echo esc_html($page_number); ?></a>
+                            <?php $previous_number = $page_number; ?>
+                        <?php endforeach; ?>
+                        <?php if ($paged < $last_page): ?>
+                            <a href="<?php echo esc_url(get_pagenum_link($paged + 1)); ?>" class="inline-flex min-h-10 items-center rounded-lg border border-line bg-white px-4 font-semibold text-near-black !no-underline hover:border-brand hover:text-brand">Next →</a>
+                        <?php endif; ?>
+                    </nav>
                 <?php endif; ?>
             <?php else: ?>
                 <div class="mt-8 rounded-2xl border border-line bg-white p-8 text-center text-mid-gray">
-                    No additional articles are available yet.
+                    No blog posts are available yet.
                 </div>
             <?php endif; ?>
             <?php wp_reset_postdata(); ?>
         </div>
     </section>
+    <?php endif; ?>
 </article>
 
 <?php get_footer();

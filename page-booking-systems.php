@@ -23,89 +23,20 @@ $benefits = [
     ['icon' => 'bi-arrow-left-right', 'title' => 'Live Connectivity', 'copy' => 'Real-time availability and pricing updates ensure accurate booking data across the network.'],
 ];
 
-$fallback_systems = [
-    ['name' => 'RezStream', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-calendar-check'],
-    ['name' => 'FareHarbor', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-compass'],
-    ['name' => 'Booking Boss', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-kanban'],
-    ['name' => 'Siteminder', 'status' => 'Full Integration', 'tone' => 'green', 'icon' => 'bi-building-check'],
+$systems = [
+    ['name' => 'Bookeo', 'file' => 'bookeo.png'],
+    ['name' => 'CustomLinc', 'file' => 'customlinc.webp'],
+    ['name' => 'DigitalRez', 'file' => 'digitalrez.png'],
+    ['name' => 'FareHarbor', 'file' => 'fareharbor.png'],
+    ['name' => 'NewBook', 'file' => 'newbook.png'],
+    ['name' => 'Rezdy', 'file' => 'rezdy.png'],
+    ['name' => 'Rezobx', 'file' => 'rezobx.jpg'],
+    ['name' => 'RMS', 'file' => 'rms.png'],
+    ['name' => 'RoomMaster', 'file' => 'roommaster.png'],
+    ['name' => 'Seekom', 'file' => 'seekom.png'],
+    ['name' => 'SiteMinder', 'file' => 'siteminder.png'],
+    ['name' => 'Update 247', 'file' => 'update247.png'],
 ];
-
-$booking_system_post_type = null;
-$booking_system_post_type_candidates = ['booking_system', 'booking-system', 'booking_systems'];
-
-foreach ($booking_system_post_type_candidates as $post_type_candidate) {
-    if (post_type_exists($post_type_candidate)) {
-        $booking_system_post_type = $post_type_candidate;
-        break;
-    }
-}
-
-if (!$booking_system_post_type) {
-    foreach (get_post_types([], 'objects') as $post_type_object) {
-        if ('booking-system' === sanitize_title($post_type_object->labels->singular_name)) {
-            $booking_system_post_type = $post_type_object->name;
-            break;
-        }
-    }
-}
-
-$booking_system_posts = $booking_system_post_type
-    ? get_posts([
-        'post_type' => $booking_system_post_type,
-        'post_status' => 'publish',
-        'numberposts' => -1,
-        'orderby' => ['menu_order' => 'ASC', 'title' => 'ASC'],
-        'order' => 'ASC',
-    ])
-    : [];
-
-$systems = [];
-
-foreach ($booking_system_posts as $booking_system_post) {
-    $logo_url = get_the_post_thumbnail_url($booking_system_post, 'medium');
-
-    if (!$logo_url) {
-        foreach (['logo', 'booking_system_logo'] as $logo_field) {
-            $logo_value = function_exists('get_field')
-                ? get_field($logo_field, $booking_system_post->ID)
-                : get_post_meta($booking_system_post->ID, $logo_field, true);
-
-            if (is_array($logo_value)) {
-                $logo_url = $logo_value['sizes']['medium'] ?? $logo_value['url'] ?? '';
-            } elseif (is_numeric($logo_value)) {
-                $logo_url = wp_get_attachment_image_url((int) $logo_value, 'medium') ?: '';
-            } elseif (is_string($logo_value)) {
-                $logo_url = $logo_value;
-            }
-
-            if ($logo_url) {
-                break;
-            }
-        }
-    }
-
-    $status_value = function_exists('get_field')
-        ? get_field('integration_status', $booking_system_post->ID)
-        : get_post_meta($booking_system_post->ID, 'integration_status', true);
-
-    if (is_array($status_value)) {
-        $status = (string) ($status_value['label'] ?? $status_value['value'] ?? '');
-    } else {
-        $status = is_scalar($status_value) ? (string) $status_value : '';
-    }
-
-    $systems[] = [
-        'name' => get_the_title($booking_system_post),
-        'status' => $status,
-        'tone' => false !== stripos($status, 'full') ? 'green' : 'blue',
-        'logo' => $logo_url,
-        'icon' => 'bi-calendar-check',
-    ];
-}
-
-if (!$systems) {
-    $systems = $fallback_systems;
-}
 
 if (!function_exists('txa_booking_button')) {
     function txa_booking_button(string $label, string $url, string $variant = 'primary'): string
@@ -119,6 +50,43 @@ if (!function_exists('txa_booking_button')) {
 }
 ?>
 
+<style>
+    .txa-booking-system-card {
+        position: relative;
+        transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    }
+
+    .txa-booking-system-card img {
+        transition: transform 250ms ease;
+    }
+
+    @media (hover: hover) {
+        .txa-booking-system-card:hover {
+            z-index: 1;
+            transform: translateY(-6px);
+            border-color: rgba(212, 43, 43, 0.4);
+            box-shadow: 0 18px 34px -18px rgba(20, 20, 20, 0.35);
+        }
+
+        .txa-booking-system-card:hover img {
+            transform: scale(1.05);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .txa-booking-system-card,
+        .txa-booking-system-card img {
+            transition: none;
+        }
+
+        .txa-booking-system-card:hover,
+        .txa-booking-system-card:hover img {
+            transform: none;
+        }
+    }
+</style>
+
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div
@@ -127,7 +95,7 @@ if (!function_exists('txa_booking_button')) {
                 alt="Aerial view of an Australian beach" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div
-                class="relative z-10 grid min-h-[590px] items-center gap-8 px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:grid-cols-[minmax(0,1fr)_minmax(360px,485px)] lg:gap-10 lg:px-8 lg:py-24">
+                class="relative z-10 grid min-h-[590px] items-center gap-8 px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:grid-cols-[minmax(0,1fr)_minmax(360px,485px)] lg:gap-10 lg:px-8">
                 <div class="w-full max-w-[760px]">
                     <p
                         class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
@@ -212,7 +180,7 @@ if (!function_exists('txa_booking_button')) {
                     <article
                         class="flex gap-4 rounded-xl border border-line bg-white p-5 shadow-sm sm:gap-5 md:border-0 md:p-0 md:shadow-none">
                         <span
-                            class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[#e8e8e6] text-lg font-bold text-brand sm:size-12 sm:text-xl"><i
+                            class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-tint text-lg font-bold text-brand sm:size-12 sm:text-xl"><i
                                 class="bi <?php echo esc_attr($benefit['icon']); ?>" aria-hidden="true"></i></span>
                         <div>
                             <h3 class="text-base font-semibold leading-6 text-[#151c27]">
@@ -232,31 +200,20 @@ if (!function_exists('txa_booking_button')) {
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold tracking-[-0.01em] text-[#151c27] sm:text-3xl">
                     Connected booking systems</h2>
-                <a href="<?php echo esc_url($directory_url); ?>"
-                    class="inline-flex items-center gap-2 font-semibold text-brand !no-underline hover:text-brand-dark sm:text-base">View
-                    Directory <span aria-hidden="true">→</span></a>
             </div>
             <div class="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
                 <?php foreach ($systems as $system): ?>
                     <article
-                        class="flex h-full min-h-[180px] flex-col items-center justify-center rounded-xl border border-[#dfc0ba] bg-white p-4 text-center sm:min-h-[220px] sm:p-8">
+                        class="txa-booking-system-card flex h-full min-h-[180px] flex-col items-center justify-center rounded-xl border border-[#dfc0ba] bg-white p-4 text-center sm:min-h-[220px] sm:p-8">
                         <span
-                            class="mx-auto flex h-16 w-full max-w-[160px] items-center justify-center rounded-lg bg-[#e8e8e6] px-4 text-xl font-bold text-brand sm:h-20 sm:max-w-[190px] sm:text-2xl">
-                            <?php if (!empty($system['logo'])): ?>
-                                <img src="<?php echo esc_url($system['logo']); ?>"
-                                    alt="<?php echo esc_attr($system['name']); ?> logo"
-                                    class="max-h-12 max-w-full object-contain sm:max-h-14" loading="lazy">
-                            <?php else: ?>
-                                <i class="bi <?php echo esc_attr($system['icon']); ?>" aria-hidden="true"></i>
-                            <?php endif; ?>
+                            class="mx-auto flex h-16 w-full max-w-[160px] items-center justify-center rounded-lg bg-white px-4 text-xl font-bold text-brand sm:h-20 sm:max-w-[190px] sm:text-2xl">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/images/networks/' . $system['file'])); ?>"
+                                alt="<?php echo esc_attr($system['name']); ?> logo"
+                                class="max-h-12 max-w-full object-contain sm:max-h-14" loading="lazy">
                         </span>
                         <h3 class="mt-4 text-sm font-semibold text-[#151c27] sm:mt-6 sm:text-base">
                             <?php echo esc_html($system['name']); ?>
                         </h3>
-                        <?php if (!empty($system['status'])): ?>
-                            <span
-                                class="<?php echo 'green' === $system['tone'] ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'; ?> mt-3 inline-flex rounded-full px-2.5 py-1 text-[9px] font-semibold uppercase sm:mt-4 sm:px-3 sm:text-[10px]"><?php echo esc_html($system['status']); ?></span>
-                        <?php endif; ?>
                     </article>
                 <?php endforeach; ?>
             </div>
@@ -275,7 +232,7 @@ if (!function_exists('txa_booking_button')) {
                     <h2
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-8 tracking-[-0.01em] text-white sm:text-3xl sm:leading-10">
                         TXA Booking-system partners</h2>
-                    <p class="mt-4 text-sm leading-6 text-white/90 sm:mt-5 sm:text-base">Fee to connect. Integration
+                    <p class="mt-4 text-sm leading-6 text-white/90 sm:mt-5 sm:text-base">Free to connect. Integration
                         scope, documentation and commercial arrangements via partner enquiry.</p>
                     <div class="mt-6"><?php echo txa_booking_button('Free to connect', $partner_url, 'light'); ?></div>
                 </div>

@@ -150,6 +150,9 @@ if (!function_exists('txa_header_link_class')) {
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/contact/')); ?>"
                                         class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>
                                 </li>
+                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/blog/')); ?>"
+                                        class="<?php echo esc_attr(txa_header_link_class('/blog/', false, 'block py-1')); ?>">Blog</a>
+                                </li>
                             </ul>
                         </nav>
 
