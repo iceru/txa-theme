@@ -228,7 +228,7 @@ if (!function_exists('txa_destination_button')) {
     </section>
 
     <section class="relative overflow-hidden px-4 py-10 text-white sm:py-14 lg:px-16 lg:py-16">
-        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2200&q=85" alt=""
+        <img src="<?php echo esc_url(get_theme_file_uri('/images/new/destinations-2.jpg')); ?>" alt=""
             class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-black/65 sm:bg-black/60" aria-hidden="true"></div>
         <div class="relative z-10 mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[379px_1fr] lg:gap-12">

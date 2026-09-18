@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Distributors Page
  *
@@ -46,7 +47,7 @@ if (!function_exists('txa_distributor_button')) {
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div
             class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/distributor.jpg'); ?>"
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/new/distributors-hero.jpg'); ?>"
                 alt="Australian landscape" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
             <div
@@ -153,7 +154,7 @@ if (!function_exists('txa_distributor_button')) {
     <section class="px-3 py-10 sm:px-4 sm:py-14 lg:px-16 lg:py-16">
         <div
             class="relative mx-auto min-h-[390px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[420px] sm:rounded-2xl lg:min-h-[526px]">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/distributor-2.jpg'); ?>"
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/new/distributors-2.jpg'); ?>"
                 alt="Australian city waterfront at night" class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-black/60 sm:bg-black/50" aria-hidden="true"></div>
             <div

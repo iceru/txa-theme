@@ -130,7 +130,7 @@ if (!function_exists('txa_supplier_button')) {
                 </div>
             </div>
             <div class="h-[230px] overflow-hidden rounded-lg border border-line sm:h-[408px]">
-                <img src="<?php echo esc_url(get_theme_file_uri('/images/supplier-2.jpg')); ?>"
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/new/suppliers-2.jpg')); ?>"
                     alt="TXA supplier connection" class="h-full w-full object-cover">
             </div>
         </div>

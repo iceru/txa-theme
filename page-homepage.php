@@ -9,14 +9,19 @@
 get_header();
 
 $hero_slides = [
-    ['label' => 'Tourism Exchange Australia', 'title' => "Australia's B2B Tourism Exchange", 'copy' => 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.', 'image' => get_theme_file_uri('/images/hero-homepage.jpg')],
+    [
+        'label' => 'Tourism Exchange Australia',
+        'title' => "Australia's B2B Tourism Exchange",
+        'copy' => 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.',
+        'image' => get_theme_file_uri('/images/new/homepage-hero.jpg')
+    ],
 ];
 
 $audiences = [
-    ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/suppliers/'), 'image' => get_theme_file_uri('/images/supplier-1.jpg')],
+    ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/suppliers/'), 'image' => get_theme_file_uri('/images/new/homepage-suppliers.jpg')],
     ['title' => 'Destinations', 'copy' => 'Become a Smart Destination and make local supply bookable through your own digital assets.', 'cta' => 'Explore Destinations', 'url' => home_url('/destinations/'), 'image' => get_theme_file_uri('/images/destinations-1.jpg')],
     ['title' => 'Distributors', 'copy' => 'Access bookable Australian tourism inventory through TXA connected supply.', 'cta' => 'Become a Distributor', 'url' => home_url('/distributors/'), 'image' => get_theme_file_uri('/images/distributor.jpg')],
-    ['title' => 'Booking Systems', 'copy' => 'Connect your booking system to TXA and unlock distribution for your customers.', 'cta' => 'Partner Enquiry', 'url' => home_url('/booking-systems/'), 'image' => get_theme_file_uri('/images/booking-systems.jpg')],
+    ['title' => 'Booking Systems', 'copy' => 'Connect your booking system to TXA and unlock distribution for your customers.', 'cta' => 'Partner Enquiry', 'url' => home_url('/booking-systems/'), 'image' => get_theme_file_uri('/images/new/homepage-booking.jpg')],
 ];
 $smart_cards = [
     ['icon' => 'bi-window-stack', 'title' => 'Activate digital assets', 'copy' => 'Turn destination websites, apps and visitor touchpoints into conversion-ready channels.', 'url' => home_url('/destinations/')],

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: About TXA
  * @package TailPress
@@ -47,7 +48,7 @@ $timeline_values = [
         <div class="mx-auto max-w-[1312px]">
             <div
                 class="relative flex min-h-[590px] items-center overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
-                <img src="<?php echo esc_url(get_theme_file_uri('/images/about-1.jpg')); ?>"
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/new/about-us.jpg')); ?>"
                     alt="Australian tourism landscape"
                     class="absolute inset-0 h-full w-full object-cover object-center">
                 <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
