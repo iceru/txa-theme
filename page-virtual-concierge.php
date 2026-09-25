@@ -64,7 +64,7 @@ $partner_cards = [
     <section class="bg-surface px-4 py-14 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_590px] lg:items-center lg:gap-16">
             <div>
-                <p class="text-sm text-mid-gray">UNIQUE COLLABORATIVE OPPORTUNITY</p>
+                <p class="text-sm text-brand mb-4 font-semibold">UNIQUE COLLABORATIVE OPPORTUNITY</p>
                 <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                     Virtual Concierge</p>
                 <h1
