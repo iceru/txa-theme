@@ -64,12 +64,13 @@ $partner_cards = [
     <section class="bg-surface px-4 py-14 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_590px] lg:items-center lg:gap-16">
             <div>
+                <p class="text-sm text-mid-gray">UNIQUE COLLABORATIVE OPPORTUNITY</p>
                 <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                     Virtual Concierge</p>
                 <h1
                     class="mt-8 max-w-[670px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.16]">
                     TXA’s local reseller network or ‘Virtual Concierge’</h1>
-                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg">XA’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity
+                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg">TXA’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity
                     providers cross sell, visitor information centres, National Park offices, airports and other local
                     partners inter-connect offering visitors' numerous local channels for booking local activities,
                     events and experiences.</p>
