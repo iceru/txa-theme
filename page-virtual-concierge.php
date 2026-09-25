@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Destination Virtual Concierge
  *
@@ -7,7 +8,7 @@
 
 get_header();
 
-$demo_url = home_url('/request-demo/');
+$demo_url = home_url('/contact/');
 
 $activation_cards = [
     [
@@ -67,9 +68,8 @@ $partner_cards = [
                     Virtual Concierge</p>
                 <h1
                     class="mt-8 max-w-[670px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.16]">
-                    Create a dynamic local re-seller network for tourism products in your region</h1>
-                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg">TXA Virtual Concierge
-                    initiatives help tourism product categories cross-sell, for example, accommodation and activity
+                    TXA’s local reseller network or ‘Virtual Concierge’</h1>
+                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg">XA’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity
                     providers cross sell, visitor information centres, National Park offices, airports and other local
                     partners inter-connect offering visitors' numerous local channels for booking local activities,
                     events and experiences.</p>
