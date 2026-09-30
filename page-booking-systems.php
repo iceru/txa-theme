@@ -123,8 +123,8 @@ if (!function_exists('txa_booking_button')) {
                     <p class="mt-1 text-xs font-semibold text-white/80">One connection. More distribution.</p>
 
                     <div
-                        class="mx-auto mt-7 grid grid-cols-1 justify-center gap-4 sm:grid-cols-[minmax(0,1fr)_28px_minmax(0,1fr)_28px_minmax(0,1fr)] sm:gap-2 lg:mt-9">
-                        <div class="flex w-full min-w-0 max-w-[120px] flex-col items-center">
+                        class="mx-auto mt-7 grid grid-cols-[minmax(0,1fr)_24px_minmax(0,1fr)_24px_minmax(0,1fr)] items-center justify-center gap-1 sm:grid-cols-[minmax(0,1fr)_28px_minmax(0,1fr)_28px_minmax(0,1fr)] sm:gap-2 lg:mt-9">
+                        <div class="flex w-full min-w-0 flex-col items-center">
                             <span
                                 class="flex size-16 items-center justify-center rounded-2xl bg-brand text-3xl leading-none text-white shadow-lg shadow-brand/25 sm:size-[72px] sm:text-4xl">
                                 <i class="bi bi-calendar2-check" aria-hidden="true"></i>
@@ -133,27 +133,27 @@ if (!function_exists('txa_booking_button')) {
                                 System</p>
                         </div>
 
-                        <svg class="h-7 w-11 shrink-0 rotate-90 mt-6 text-white/80 sm:w-7 sm:rotate-0"
+                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7"
                             viewBox="0 0 64 24" fill="none" aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <div class="flex w-full min-w-0 max-w-[130px] flex-col items-center mb-4">
+                        <div class="flex w-full min-w-0 flex-col items-center">
                             <span
-                                class="flex h-16 w-full max-w-[104px] items-center justify-center rounded-2xl border border-white/30 bg-white/15 px-3 shadow-lg sm:h-[72px] sm:max-w-[116px]">
+                                class="flex h-16 w-full max-w-[88px] items-center justify-center rounded-2xl border border-white/30 bg-white/15 px-2 shadow-lg sm:h-[72px] sm:max-w-[116px]">
                                 <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
                                     alt="Tourism Exchange Australia" class="h-auto w-full brightness-0 invert">
                             </span>
                         </div>
 
-                        <svg class="h-7 w-11 shrink-0 rotate-90 mt-6 text-white/80 sm:w-7 sm:rotate-0"
+                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7"
                             viewBox="0 0 64 24" fill="none" aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <div class="flex w-full min-w-0 max-w-[120px] flex-col items-center">
+                        <div class="flex w-full min-w-0 flex-col items-center">
                             <span
                                 class="flex size-16 items-center justify-center rounded-2xl bg-brand text-3xl leading-none text-white shadow-lg shadow-brand/25 sm:size-[72px] sm:text-4xl">
                                 <i class="bi bi-window-stack" aria-hidden="true"></i>
