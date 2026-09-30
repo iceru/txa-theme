@@ -173,6 +173,8 @@ if (!function_exists('txa_distributor_button')) {
             </div>
         </div>
     </section>
+<?php get_template_part('template-parts/participant-faqs', null, ['group' => 'distributors']); ?>
+
 </article>
 
 <?php get_footer();

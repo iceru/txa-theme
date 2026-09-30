@@ -25,12 +25,14 @@ $benefits = [
 ];
 
 $systems = [
+    ['name' => 'Booking Boss', 'file' => 'bookingboss.png'],
     ['name' => 'Bookeo', 'file' => 'bookeo.png'],
     ['name' => 'CustomLinc', 'file' => 'customlinc.webp'],
     ['name' => 'DigitalRez', 'file' => 'digitalrez.png'],
     ['name' => 'FareHarbor', 'file' => 'fareharbor.png'],
     ['name' => 'NewBook', 'file' => 'newbook.png'],
     ['name' => 'Rezdy', 'file' => 'rezdy.png'],
+    ['name' => 'ResOnline', 'file' => 'resonline-logo.png'],
     ['name' => 'Rezobx', 'file' => 'rezobx.jpg'],
     ['name' => 'RMS', 'file' => 'rms.png'],
     ['name' => 'RoomMaster', 'file' => 'roommaster.png'],
@@ -241,6 +243,8 @@ if (!function_exists('txa_booking_button')) {
             </div>
         </div>
     </section>
+<?php get_template_part('template-parts/participant-faqs', null, ['group' => 'booking-systems']); ?>
+
 </article>
 
 <?php get_footer();

@@ -74,6 +74,34 @@ add_filter('home_url', function (string $url, string $path): string {
     return in_array($normalized_path, $placeholder_paths, true) ? '#' : $url;
 }, 10, 2);
 
+/**
+ * Keep the public blog archive available if the WordPress Blog page is missing
+ * or has not been assigned as the Posts page yet.
+ */
+add_filter('template_include', function (string $template): string {
+    global $wp_query;
+
+    if (!is_404()) {
+        return $template;
+    }
+
+    $request_path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    if (!preg_match('#^blog(?:/page/[1-9][0-9]*)?$#', $request_path)) {
+        return $template;
+    }
+
+    if ($wp_query instanceof WP_Query) {
+        $wp_query->is_404 = false;
+        $wp_query->is_home = true;
+        if (preg_match('#^blog/page/([1-9][0-9]*)$#', $request_path, $page_match)) {
+            $wp_query->set('paged', (int) $page_match[1]);
+        }
+    }
+    status_header(200);
+
+    return __DIR__ . '/home.php';
+});
+
 if (!function_exists('txa_article_reading_time')) {
     /**
      * Estimate an article's reading time at 200 words per minute.

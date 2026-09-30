@@ -282,6 +282,8 @@ if (!function_exists('txa_destination_button')) {
         </div>
     </section>
 
+<?php get_template_part('template-parts/participant-faqs', null, ['group' => 'destinations']); ?>
+
 </article>
 
 <?php get_footer();

@@ -7,10 +7,10 @@ Note: Items below are extracted from the attached Word document and its comments
 ## Sitewide
 
 - [x] Replace all `&` with `and` across every website page.
-- [ ] Review FAQ placement:
-  - [ ] Add relevant FAQs at the bottom of participant pages: Supplier, Destination, Distributor, Booking System.
-  - [ ] Keep or create a standalone FAQ page listing all questions.
-  - [ ] Confirm which FAQs should be embedded in body copy.
+- [x] Review FAQ placement:
+  - [x] Add relevant FAQs at the bottom of participant pages: Supplier, Destination, Distributor, Booking System.
+  - [x] Keep a standalone FAQ page listing all questions.
+  - [x] Use the existing audience-specific FAQs on each participant page.
 
 ## Home Page
 
@@ -107,7 +107,8 @@ URL: `https://staging.txa.com.au/booking-systems/`
 - [ ] Delete `TXA System`.
 - [ ] Delete `limited release` under SiteMinder.
 - [ ] Include Little Hotelier.
-- [ ] Add or review other booking system logos: Rezobx, Bookeo, CustomLinc, Newbook, ResOnline, Rezdy, DigitalRez, RMS, RoomMaster, Seekom, Update247.
+- [x] Add or review other booking system logos: Rezobx, Bookeo, CustomLinc, Newbook, ResOnline, Rezdy, DigitalRez, RMS, RoomMaster, Seekom, Update247.
+- [x] Add the requested ResOnline and Booking Boss logos.
 - [ ] Remove RezStream.
 - [ ] Review the `Fee to connect` panel.
 - [ ] Change TXA logo colour to either white or black.
@@ -136,9 +137,11 @@ URL: `https://staging.txa.com.au/pricing/`
 - [ ] Display territory partner logos side by side in their original colours, not blended in red/white.
 - [ ] Ask Nicola or Shane for the TXS logo if it is missing.
 - [ ] Stephen Wells to edit the timeline.
+- [x] Export the six current timeline milestone icons as individual PNG files and a ZIP package.
 
 ## Blogs
 
+- [x] Keep the `/blog/` archive from showing a 404 when the WordPress Blog page is missing or not assigned.
 - [ ] Keep the current blog content from `https://www.txa.com.au/blog/` on the new TXA website.
 - [ ] Redesign blog layout/pages to align with the new website design.
 

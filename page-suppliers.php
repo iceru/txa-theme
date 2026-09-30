@@ -136,6 +136,8 @@ if (!function_exists('txa_supplier_button')) {
         </div>
     </section>
 
+<?php get_template_part('template-parts/participant-faqs', null, ['group' => 'suppliers']); ?>
+
 </article>
 
 <?php get_footer();

@@ -27,12 +27,12 @@ $countries = [
     ['name' => 'United States', 'icon' => 'txusa.png'],
 ];
 $timeline = [
-    ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'icon' => 'bi-lightbulb'],
-    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'icon' => 'bi-search'],
-    ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'icon' => 'bi-people'],
-    ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'icon' => 'bi-display'],
-    ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'icon' => 'bi-globe2'],
-    ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-heart'],
+    ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'asset' => 'conviction.png'],
+    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'asset' => 'global-tender.png'],
+    ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'asset' => 'national-support.png'],
+    ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'asset' => 'exchange-launched.png'],
+    ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'asset' => 'global-expansion.png'],
+    ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.', 'asset' => 'built-here-for-here.png'],
 ];
 $timeline_values = [
     ['title' => 'Australia\'s Own', 'copy' => 'Proudly built and operated in Australia.', 'icon' => 'bi-geo-alt'],
@@ -152,7 +152,9 @@ $timeline_values = [
                             <div class="lg:pt-11">
                                 <span
                                     class="ml-0 flex size-16 items-center justify-center rounded-full bg-white text-3xl text-brand shadow-sm sm:size-[72px] lg:mx-auto lg:size-20">
-                                    <i class="bi <?php echo esc_attr($item['icon']); ?>" aria-hidden="true"></i>
+                                    <img
+                                        src="<?php echo esc_url(get_theme_file_uri('/images/timeline-icons/' . $item['asset'])); ?>"
+                                        alt="" class="h-10 w-10 object-contain sm:h-12 sm:w-12 lg:h-14 lg:w-14" loading="lazy">
                                 </span>
                                 <p class="mt-4 text-xl font-bold uppercase text-[#151c27]">
                                     <?php echo esc_html($item['year']); ?>
