@@ -123,7 +123,7 @@ if (!function_exists('txa_booking_button')) {
                     <p class="mt-1 text-xs font-semibold text-white/80">One connection. More distribution.</p>
 
                     <div
-                        class="mx-auto mt-7 grid grid-cols-[minmax(0,1fr)_24px_minmax(0,1fr)_24px_minmax(0,1fr)] items-center justify-center gap-1 sm:grid-cols-[minmax(0,1fr)_28px_minmax(0,1fr)_28px_minmax(0,1fr)] sm:gap-2 lg:mt-9">
+                        class="mx-auto mt-7 grid grid-cols-[minmax(0,1fr)_24px_minmax(0,1fr)_24px_minmax(0,1fr)] justify-center gap-1 sm:grid-cols-[minmax(0,1fr)_28px_minmax(0,1fr)_28px_minmax(0,1fr)] sm:gap-2 lg:mt-9">
                         <div class="flex w-full min-w-0 flex-col items-center">
                             <span
                                 class="flex size-16 items-center justify-center rounded-2xl bg-brand text-3xl leading-none text-white shadow-lg shadow-brand/25 sm:size-[72px] sm:text-4xl">
@@ -243,7 +243,7 @@ if (!function_exists('txa_booking_button')) {
             </div>
         </div>
     </section>
-<?php get_template_part('template-parts/participant-faqs', null, ['group' => 'booking-systems']); ?>
+    <?php get_template_part('template-parts/participant-faqs', null, ['group' => 'booking-systems']); ?>
 
 </article>
 
