@@ -133,7 +133,7 @@ if (!function_exists('txa_booking_button')) {
                                 System</p>
                         </div>
 
-                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7"
+                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7 mt-6"
                             viewBox="0 0 64 24" fill="none" aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -147,7 +147,7 @@ if (!function_exists('txa_booking_button')) {
                             </span>
                         </div>
 
-                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7"
+                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7 mt-6"
                             viewBox="0 0 64 24" fill="none" aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
