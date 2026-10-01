@@ -79,21 +79,21 @@ URL: `https://staging.txa.com.au/destinations/trade-portal/`
 URL: `https://staging.txa.com.au/destinations/virtual-concierge/`
 
 - [ ] Keep the URL as `destinations/virtual-concierge/`.
-- [ ] Above the box, insert: `UNIQUE COLLABORATIVE OPPORTUNITY`.
-- [ ] Change the headline from `Virtual Concierge` to `TXA's local reseller network or 'Virtual Concierge'`.
-- [ ] Change copy to begin: `TXA's unique local re-seller network or 'Virtual Concierge' capability helps tourism product...`
+- [x] Above the box, insert: `UNIQUE COLLABORATIVE OPPORTUNITY`.
+- [x] Change the headline from `Virtual Concierge` to `TXA's local reseller network or 'Virtual Concierge'`.
+- [x] Change copy to begin: `TXA's unique local re-seller network or 'Virtual Concierge' capability helps tourism product...`
 - [ ] Decide where the `Explore TXA's virtual concierge` box should link.
 
 ## Distributors
 
 - [ ] Re-edit the diagram using the same format as the Supplier page diagram, but focus on the distribution box.
 - [ ] Amend the diagram to exclude `Supplier's own website`.
-- [ ] Add or amend icons as needed, consistent with the Supplier diagram.
-- [ ] Change `Why distribute through TXA?` to `Why use TXA to source Australian tourism suppliers`.
-- [ ] Under `Flexible distribution models`, add a grey box titled `Direct to Supplier payment option`.
-- [ ] Add copy for `Direct to Supplier payment option`: `Facilitates the Supplier transaction with the supplier as merchant. Distributors don't have PCI compliance or GDPR. Supplier is the merchant but distributor still gets credited with commission.`
-- [ ] Under `Flexible distribution models`, add another grey box titled `Simple and easy Supplier contracting`.
-- [ ] Add copy for `Simple and easy Supplier contracting`: `Simple opt-in opt-out model for contracting. Single supplier contract legally covers all suppliers. Simple, fast, efficient.`
+- [x] Add or amend icons as needed, consistent with the Supplier diagram.
+- [x] Change `Why distribute through TXA?` to `Why use TXA to source Australian tourism suppliers`.
+- [x] Under `Flexible distribution models`, add a grey box titled `Direct to Supplier payment option`.
+- [x] Add copy for `Direct to Supplier payment option`: `Facilitates the Supplier transaction with the supplier as merchant. Distributors don't have PCI compliance or GDPR. Supplier is the merchant but distributor still gets credited with commission.`
+- [x] Under `Flexible distribution models`, add another grey box titled `Simple and easy Supplier contracting`.
+- [x] Add copy for `Simple and easy Supplier contracting`: `Simple opt-in opt-out model for contracting. Single supplier contract legally covers all suppliers. Simple, fast, efficient.`
 - [ ] Replace/change the page image after Stephen selects another image.
 - [ ] Link `Become a distributor` to the TXA Distributor Application Form once reviewed/created.
 

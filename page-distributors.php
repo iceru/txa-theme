@@ -29,6 +29,8 @@ $models = [
     ['icon' => 'bi-window', 'title' => 'White-label Booking Pages', 'copy' => 'Branded booking widgets and search pages that integrate seamlessly into your website with minimal code.', 'points' => ['Rapid deployment', 'Mobile optimized']],
     ['icon' => 'bi-person-vcard', 'title' => 'On-account / Agent Model', 'copy' => 'Support for traditional agency models where distributors hold accounts and manage payments offline.', 'points' => ['Flexible settlement', 'Back-office reconciliation']],
     ['icon' => 'bi-signpost-split', 'title' => 'Campaign and Destination Led', 'copy' => 'Targeted distribution focused on specific regions or events as part of institutional marketing efforts.', 'points' => ['High-intent traffic', 'Curated inventory lists']],
+    ['icon' => 'bi-credit-card-2-front', 'title' => 'Direct to Supplier payment option', 'copy' => "Facilitates the Supplier transaction with the supplier as merchant. Distributors don't have PCI compliance or GDPR. Supplier is the merchant but distributor still gets credited with commission."],
+    ['icon' => 'bi-file-earmark-check', 'title' => 'Simple and easy Supplier contracting', 'copy' => 'Simple opt-in opt-out model for contracting. Single supplier contract legally covers all suppliers. Simple, fast, efficient.'],
 ];
 
 if (!function_exists('txa_distributor_button')) {
@@ -91,7 +93,7 @@ if (!function_exists('txa_distributor_button')) {
             <div class="text-left sm:text-center">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl">
-                    Why distribute through TXA?</h2>
+                    Why use TXA to source Australian tourism suppliers</h2>
                 <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">Providing the connectivity required to
                     scale your Australian tourism portfolio efficiently.</p>
             </div>
@@ -139,11 +141,13 @@ if (!function_exists('txa_distributor_button')) {
                             <p class="mt-2 text-[15px] leading-6 text-mid-gray sm:text-base">
                                 <?php echo esc_html($model['copy']); ?>
                             </p>
-                            <ul class="mt-4 space-y-2 text-sm text-[#151c27]">
-                                <?php foreach ($model['points'] as $point): ?>
-                                    <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-brand"
-                                            aria-hidden="true"></i><?php echo esc_html($point); ?></li><?php endforeach; ?>
-                            </ul>
+                            <?php if (!empty($model['points'])): ?>
+                                <ul class="mt-4 space-y-2 text-sm text-[#151c27]">
+                                    <?php foreach ($model['points'] as $point): ?>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-brand"
+                                                aria-hidden="true"></i><?php echo esc_html($point); ?></li><?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                     </article>
                 <?php endforeach; ?>
@@ -173,7 +177,7 @@ if (!function_exists('txa_distributor_button')) {
             </div>
         </div>
     </section>
-<?php get_template_part('template-parts/participant-faqs', null, ['group' => 'distributors']); ?>
+    <?php get_template_part('template-parts/participant-faqs', null, ['group' => 'distributors']); ?>
 
 </article>
 

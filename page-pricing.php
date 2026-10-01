@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Pricing
  *
@@ -39,7 +40,7 @@ $supplier_types = ['Accommodation and Hotels', 'Guided Tours and Experiences', '
 $partner_cards = [
     [
         'icon' => 'bi-map',
-        'eyebrow' => 'Are you a Destination?',
+        'eyebrow' => 'Are you a Destination Manager?',
         'title' => 'Destinations',
         'copy' => 'Choose a Smart Destination package matched to the scale of your visitor economy, with platform infrastructure and support for local supplier activation.',
         'points' => ['Local, Regional and State packages', 'Destination website and content activation', 'Trade portal and virtual concierge tools'],

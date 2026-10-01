@@ -23,7 +23,7 @@ $what_txa_does = [
 $countries = [
     ['name' => 'United Kingdom', 'icon' => 'txgb.png'],
     ['name' => 'Japan', 'icon' => 'txj.png'],
-    ['name' => 'Saudi Arabia', 'icon' => null],
+    ['name' => 'Saudi Arabia', 'icon' => 'txsa.jpg'],
     ['name' => 'United States', 'icon' => 'txusa.png'],
 ];
 $timeline = [
