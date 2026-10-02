@@ -1,0 +1,88 @@
+[
+  {
+    "key": "group_txa_pricing",
+    "title": "TXA Destinations Pricing Page",
+    "fields": [
+      {"key": "field_prc_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_prc_hero_label", "label": "Hero Label", "name": "pricing_hero_label", "type": "text", "placeholder": "TXA FOR DESTINATIONS"},
+      {"key": "field_prc_hero_title_line_1", "label": "Title Line 1", "name": "pricing_hero_title_line_1", "type": "text", "placeholder": "TXA Smart Destination"},
+      {"key": "field_prc_hero_title_line_2", "label": "Title Line 2", "name": "pricing_hero_title_line_2", "type": "text", "placeholder": "Packages"},
+      {"key": "field_prc_hero_copy", "label": "Hero Copy", "name": "pricing_hero_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "TXA offers Smart Destination packages that match the scope and scale of your visitor economy. Each package is designed to give your destination access to platform infrastructure, supplier activation support, destination content activation and industry-facing tools without the risk of a custom technology build."},
+      {"key": "field_prc_hero_image", "label": "Hero Image", "name": "pricing_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_prc_hero_image_alt", "label": "Hero Image Alt Text", "name": "pricing_hero_image_alt", "type": "text", "placeholder": "Australian destination landscape"},
+      {"key": "field_prc_hero_primary_label", "label": "Primary Button Label", "name": "pricing_hero_primary_label", "type": "text", "placeholder": "Apply Now"},
+      {"key": "field_prc_hero_primary_url", "label": "Primary Button URL", "name": "pricing_hero_primary_url", "type": "text", "placeholder": "/apply-now/"},
+      {"key": "field_prc_hero_secondary_label", "label": "Secondary Button Label", "name": "pricing_hero_secondary_label", "type": "text", "placeholder": "Request Demo"},
+      {"key": "field_prc_hero_secondary_url", "label": "Secondary Button URL", "name": "pricing_hero_secondary_url", "type": "text", "placeholder": "/contact/"},
+
+      {"key": "field_prc_tab_packages", "label": "Packages", "type": "tab", "placement": "top"},
+      {"key": "field_prc_scale_heading", "label": "Heading", "name": "pricing_scale_heading", "type": "text", "placeholder": "Choose Your Destination Scale"},
+      {"key": "field_prc_scale_copy", "label": "Description", "name": "pricing_scale_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Scalable infrastructure designed for every level of the tourism ecosystem."},
+      {"key": "field_prc_includes_label", "label": "Includes Label", "name": "pricing_includes_label", "type": "text", "placeholder": "Destination packages include:"},
+      {"key": "field_prc_popular_badge", "label": "Popular Badge Text", "name": "pricing_popular_badge", "type": "text", "placeholder": "MOST POPULAR"},
+      {"key": "field_prc_package_button_url", "label": "Package Button URL (used by all packages)", "name": "pricing_package_button_url", "type": "text", "placeholder": "/contact/"},
+
+      {"key": "field_prc_feature_paas", "label": "Feature: Subscription", "name": "pricing_feature_paas", "type": "text", "placeholder": "PaaS subscription"},
+      {"key": "field_prc_feature_poi_suffix", "label": "Feature: POI Text (after the number)", "name": "pricing_feature_poi_suffix", "type": "text", "placeholder": "POI assets input service"},
+      {"key": "field_prc_feature_dmo", "label": "Feature: DMO Website", "name": "pricing_feature_dmo", "type": "text", "placeholder": "1 DMO website activation"},
+      {"key": "field_prc_feature_microsite_singular", "label": "Feature: Microsite Text, singular (when number is 1)", "name": "pricing_feature_microsite_singular", "type": "text", "placeholder": "microsite initiative p.a."},
+      {"key": "field_prc_feature_microsite_plural", "label": "Feature: Microsite Text, plural", "name": "pricing_feature_microsite_plural", "type": "text", "placeholder": "microsite initiatives p.a."},
+      {"key": "field_prc_feature_trade", "label": "Feature: Trade Portal", "name": "pricing_feature_trade", "type": "text", "placeholder": "1 landing page for TXA Trade Portal"},
+      {"key": "field_prc_feature_concierge_suffix", "label": "Feature: Concierge Text (after the number)", "name": "pricing_feature_concierge_suffix", "type": "text", "placeholder": "Virtual Concierge initiatives"},
+
+      {"key": "field_prc_package_1_name", "label": "Package 1 Name", "name": "pricing_package_1_name", "type": "text", "placeholder": "Local"},
+      {"key": "field_prc_package_1_poi", "label": "Package 1 POI Number", "name": "pricing_package_1_poi", "type": "text", "placeholder": "150"},
+      {"key": "field_prc_package_1_microsites", "label": "Package 1 Microsites Number", "name": "pricing_package_1_microsites", "type": "text", "placeholder": "1"},
+      {"key": "field_prc_package_1_concierge", "label": "Package 1 Concierge Number", "name": "pricing_package_1_concierge", "type": "text", "placeholder": "5"},
+      {"key": "field_prc_package_1_popular", "label": "Package 1 Most Popular", "name": "pricing_package_1_popular", "type": "true_false", "ui": 1},
+      {"key": "field_prc_package_1_button", "label": "Package 1 Button Label", "name": "pricing_package_1_button", "type": "text", "placeholder": "Select Local Package"},
+
+      {"key": "field_prc_package_2_name", "label": "Package 2 Name", "name": "pricing_package_2_name", "type": "text", "placeholder": "Regional"},
+      {"key": "field_prc_package_2_poi", "label": "Package 2 POI Number", "name": "pricing_package_2_poi", "type": "text", "placeholder": "375"},
+      {"key": "field_prc_package_2_microsites", "label": "Package 2 Microsites Number", "name": "pricing_package_2_microsites", "type": "text", "placeholder": "2"},
+      {"key": "field_prc_package_2_concierge", "label": "Package 2 Concierge Number", "name": "pricing_package_2_concierge", "type": "text", "placeholder": "10"},
+      {"key": "field_prc_package_2_popular", "label": "Package 2 Most Popular", "name": "pricing_package_2_popular", "type": "true_false", "ui": 1},
+      {"key": "field_prc_package_2_button", "label": "Package 2 Button Label", "name": "pricing_package_2_button", "type": "text", "placeholder": "Select Regional Package"},
+
+      {"key": "field_prc_package_3_name", "label": "Package 3 Name", "name": "pricing_package_3_name", "type": "text", "placeholder": "State"},
+      {"key": "field_prc_package_3_poi", "label": "Package 3 POI Number", "name": "pricing_package_3_poi", "type": "text", "placeholder": "1,125"},
+      {"key": "field_prc_package_3_microsites", "label": "Package 3 Microsites Number", "name": "pricing_package_3_microsites", "type": "text", "placeholder": "5"},
+      {"key": "field_prc_package_3_concierge", "label": "Package 3 Concierge Number", "name": "pricing_package_3_concierge", "type": "text", "placeholder": "20"},
+      {"key": "field_prc_package_3_popular", "label": "Package 3 Most Popular", "name": "pricing_package_3_popular", "type": "true_false", "ui": 1},
+      {"key": "field_prc_package_3_button", "label": "Package 3 Button Label", "name": "pricing_package_3_button", "type": "text", "placeholder": "Select State Package"},
+
+      {"key": "field_prc_tab_setup", "label": "Set up and Training", "type": "tab", "placement": "top"},
+      {"key": "field_prc_setup_eyebrow", "label": "Eyebrow", "name": "pricing_setup_eyebrow", "type": "text", "placeholder": "Get started with confidence"},
+      {"key": "field_prc_setup_heading", "label": "Heading", "name": "pricing_setup_heading", "type": "text", "placeholder": "Set up and Training"},
+      {"key": "field_prc_setup_copy", "label": "Copy", "name": "pricing_setup_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "Every package includes a structured onboarding phase so your team and suppliers are ready to use the platform with confidence. We help prepare the system, organise the initial data and guide your destination team through the rollout."},
+
+      {"key": "field_prc_setup_1_icon", "label": "Card 1 Icon (Bootstrap Icons class)", "name": "pricing_setup_1_icon", "type": "text", "placeholder": "bi-gear"},
+      {"key": "field_prc_setup_1_title", "label": "Card 1 Title", "name": "pricing_setup_1_title", "type": "text", "placeholder": "System configuration"},
+      {"key": "field_prc_setup_1_copy", "label": "Card 1 Copy", "name": "pricing_setup_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Set up around your destination's requirements."},
+
+      {"key": "field_prc_setup_2_icon", "label": "Card 2 Icon (Bootstrap Icons class)", "name": "pricing_setup_2_icon", "type": "text", "placeholder": "bi-database"},
+      {"key": "field_prc_setup_2_title", "label": "Card 2 Title", "name": "pricing_setup_2_title", "type": "text", "placeholder": "Initial data import"},
+      {"key": "field_prc_setup_2_copy", "label": "Card 2 Copy", "name": "pricing_setup_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Prepare core destination and supplier data."},
+
+      {"key": "field_prc_setup_3_icon", "label": "Card 3 Icon (Bootstrap Icons class)", "name": "pricing_setup_3_icon", "type": "text", "placeholder": "bi-people"},
+      {"key": "field_prc_setup_3_title", "label": "Card 3 Title", "name": "pricing_setup_3_title", "type": "text", "placeholder": "Hands-on training"},
+      {"key": "field_prc_setup_3_copy", "label": "Card 3 Copy", "name": "pricing_setup_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Practical guidance for your team and suppliers."},
+
+      {"key": "field_prc_charge_icon", "label": "Charge Box Icon (Bootstrap Icons class)", "name": "pricing_charge_icon", "type": "text", "placeholder": "bi-credit-card"},
+      {"key": "field_prc_charge_eyebrow", "label": "Charge Box Eyebrow", "name": "pricing_charge_eyebrow", "type": "text", "placeholder": "Small One-time charge"},
+      {"key": "field_prc_charge_title", "label": "Charge Box Title", "name": "pricing_charge_title", "type": "text", "placeholder": "Applied to all new package implementations"},
+      {"key": "field_prc_charge_copy", "label": "Charge Box Copy", "name": "pricing_charge_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Covers the initial setup, configuration, data preparation and onboarding support required to get your destination live."}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-destinations-pricing.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

@@ -1,0 +1,109 @@
+[
+  {
+    "key": "group_txa_homepage",
+    "title": "TXA Homepage",
+    "fields": [
+      {"key": "field_txa_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_txa_hero_label", "label": "Hero Label", "name": "hero_label", "type": "text", "placeholder": "Tourism Exchange Australia"},
+      {"key": "field_txa_hero_title", "label": "Hero Title", "name": "hero_title", "type": "text", "placeholder": "Australia's B2B Tourism Exchange"},
+      {"key": "field_txa_hero_copy", "label": "Hero Copy", "name": "hero_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online."},
+      {"key": "field_txa_hero_image", "label": "Hero Image", "name": "hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_txa_hero_primary_label", "label": "Primary Button Label", "name": "hero_primary_label", "type": "text", "placeholder": "Apply Now"},
+      {"key": "field_txa_hero_primary_url", "label": "Primary Button URL", "name": "hero_primary_url", "type": "text", "placeholder": "/apply-now/"},
+      {"key": "field_txa_hero_secondary_label", "label": "Secondary Button Label", "name": "hero_secondary_label", "type": "text", "placeholder": "Request Smart Destination Demo"},
+      {"key": "field_txa_hero_secondary_url", "label": "Secondary Button URL", "name": "hero_secondary_url", "type": "text", "placeholder": "/contact/"},
+
+      {"key": "field_txa_tab_intro", "label": "Intro", "type": "tab", "placement": "top"},
+      {"key": "field_txa_intro_heading", "label": "Heading", "name": "intro_heading", "type": "text", "placeholder": "Australia's national tourism exchange."},
+      {"key": "field_txa_intro_heading_highlight", "label": "Heading Highlight", "name": "intro_heading_highlight", "type": "text", "placeholder": "How TXA was built and why"},
+      {"key": "field_txa_intro_paragraph_1", "label": "Paragraph 1", "name": "intro_paragraph_1", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "Tourism Exchange Australia was established in 2008 in partnership with ATDW (an organisation representing all Australian State and Federal Government Tourism Organisations) as the nation's open, commercially neutral booking exchange."},
+      {"key": "field_txa_intro_paragraph_2", "label": "Paragraph 2", "name": "intro_paragraph_2", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "Selected through a global tender, TXA was built to give every Australian tourism supplier, regardless of category, size or booking system, fair access to ecommerce and online distribution. The same exchange technology now powers tourism platforms in the United Kingdom, Japan, the United States and Saudi Arabia. TXA remains Australia's own."},
+      {"key": "field_txa_intro_image", "label": "Image", "name": "intro_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_txa_intro_image_alt", "label": "Image Alt Text", "name": "intro_image_alt", "type": "text", "placeholder": "Glenelg, Adelaide"},
+
+      {"key": "field_txa_tab_pathway", "label": "Connection Pathway", "type": "tab", "placement": "top"},
+      {"key": "field_txa_pathway_eyebrow", "label": "Eyebrow", "name": "pathway_eyebrow", "type": "text", "placeholder": "TXA Connection Pathway"},
+      {"key": "field_txa_pathway_heading", "label": "Heading", "name": "pathway_heading", "type": "text", "placeholder": "How to Connect to TXA?"},
+      {"key": "field_txa_pathway_copy", "label": "Description", "name": "pathway_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Each pathway connects to the same national exchange infrastructure, with different entry points for each part of the visitor economy."},
+
+      {"key": "field_txa_pathway_1_title", "label": "Card 1 Title", "name": "pathway_1_title", "type": "text", "placeholder": "Tourism Suppliers"},
+      {"key": "field_txa_pathway_1_copy", "label": "Card 1 Copy", "name": "pathway_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Connect through your booking system and make your product bookable across more channels."},
+      {"key": "field_txa_pathway_1_cta", "label": "Card 1 Button Text", "name": "pathway_1_cta", "type": "text", "placeholder": "Apply Now"},
+      {"key": "field_txa_pathway_1_url", "label": "Card 1 URL", "name": "pathway_1_url", "type": "text", "placeholder": "/suppliers/"},
+      {"key": "field_txa_pathway_1_image", "label": "Card 1 Image", "name": "pathway_1_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+
+      {"key": "field_txa_pathway_2_title", "label": "Card 2 Title", "name": "pathway_2_title", "type": "text", "placeholder": "Destinations"},
+      {"key": "field_txa_pathway_2_copy", "label": "Card 2 Copy", "name": "pathway_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Become a Smart Destination and make local supply bookable through your own digital assets."},
+      {"key": "field_txa_pathway_2_cta", "label": "Card 2 Button Text", "name": "pathway_2_cta", "type": "text", "placeholder": "Explore Destinations"},
+      {"key": "field_txa_pathway_2_url", "label": "Card 2 URL", "name": "pathway_2_url", "type": "text", "placeholder": "/destinations/"},
+      {"key": "field_txa_pathway_2_image", "label": "Card 2 Image", "name": "pathway_2_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+
+      {"key": "field_txa_pathway_3_title", "label": "Card 3 Title", "name": "pathway_3_title", "type": "text", "placeholder": "Distributors"},
+      {"key": "field_txa_pathway_3_copy", "label": "Card 3 Copy", "name": "pathway_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Access bookable Australian tourism inventory through TXA connected supply."},
+      {"key": "field_txa_pathway_3_cta", "label": "Card 3 Button Text", "name": "pathway_3_cta", "type": "text", "placeholder": "Become a Distributor"},
+      {"key": "field_txa_pathway_3_url", "label": "Card 3 URL", "name": "pathway_3_url", "type": "text", "placeholder": "/distributors/"},
+      {"key": "field_txa_pathway_3_image", "label": "Card 3 Image", "name": "pathway_3_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+
+      {"key": "field_txa_pathway_4_title", "label": "Card 4 Title", "name": "pathway_4_title", "type": "text", "placeholder": "Booking Systems"},
+      {"key": "field_txa_pathway_4_copy", "label": "Card 4 Copy", "name": "pathway_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Connect your booking system to TXA and unlock distribution for your customers."},
+      {"key": "field_txa_pathway_4_cta", "label": "Card 4 Button Text", "name": "pathway_4_cta", "type": "text", "placeholder": "Partner Enquiry"},
+      {"key": "field_txa_pathway_4_url", "label": "Card 4 URL", "name": "pathway_4_url", "type": "text", "placeholder": "/booking-systems/"},
+      {"key": "field_txa_pathway_4_image", "label": "Card 4 Image", "name": "pathway_4_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+
+      {"key": "field_txa_tab_video", "label": "How TXA Works", "type": "tab", "placement": "top"},
+      {"key": "field_txa_video_heading", "label": "Heading", "name": "video_heading", "type": "text", "placeholder": "How TXA Works"},
+      {"key": "field_txa_how_txa_works_video", "label": "Video", "name": "how_txa_works_video", "type": "oembed", "width": "", "height": ""},
+
+      {"key": "field_txa_tab_smart", "label": "Smart Destination", "type": "tab", "placement": "top"},
+      {"key": "field_txa_smart_background_image", "label": "Background Image", "name": "smart_background_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_txa_smart_background_alt", "label": "Background Alt Text", "name": "smart_background_alt", "type": "text", "placeholder": "Torndirrup National Park"},
+      {"key": "field_txa_smart_eyebrow", "label": "Eyebrow", "name": "smart_eyebrow", "type": "text", "placeholder": "Become a Smart Destination"},
+      {"key": "field_txa_smart_heading", "label": "Heading", "name": "smart_heading", "type": "text", "placeholder": "Move destination marketing from inspiration to conversion"},
+      {"key": "field_txa_smart_copy", "label": "Copy", "name": "smart_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Smart Destinations use TXA as digital infrastructure for their visitor economy. It connects local suppliers, destination content, owned websites and apps, trade channels, local reseller networks and real-time data."},
+      {"key": "field_txa_smart_primary_label", "label": "Primary Button Label", "name": "smart_primary_label", "type": "text", "placeholder": "Explore Smart Destinations"},
+      {"key": "field_txa_smart_primary_url", "label": "Primary Button URL", "name": "smart_primary_url", "type": "text", "placeholder": "/destinations/"},
+      {"key": "field_txa_smart_secondary_label", "label": "Secondary Button Label", "name": "smart_secondary_label", "type": "text", "placeholder": "Request Demo"},
+      {"key": "field_txa_smart_secondary_url", "label": "Secondary Button URL", "name": "smart_secondary_url", "type": "text", "placeholder": "/contact/"},
+
+      {"key": "field_txa_smart_card_1_icon", "label": "Smart Card 1 Icon (Bootstrap Icons class)", "name": "smart_card_1_icon", "type": "text", "placeholder": "bi-window-stack"},
+      {"key": "field_txa_smart_card_1_title", "label": "Smart Card 1 Title", "name": "smart_card_1_title", "type": "text", "placeholder": "Activate digital assets"},
+      {"key": "field_txa_smart_card_1_copy", "label": "Smart Card 1 Copy", "name": "smart_card_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Turn destination websites, apps and visitor touchpoints into conversion-ready channels."},
+      {"key": "field_txa_smart_card_1_url", "label": "Smart Card 1 URL", "name": "smart_card_1_url", "type": "text", "placeholder": "/destinations/"},
+
+      {"key": "field_txa_smart_card_2_icon", "label": "Smart Card 2 Icon (Bootstrap Icons class)", "name": "smart_card_2_icon", "type": "text", "placeholder": "bi-cloud-arrow-up"},
+      {"key": "field_txa_smart_card_2_title", "label": "Smart Card 2 Title", "name": "smart_card_2_title", "type": "text", "placeholder": "Digitise local supply"},
+      {"key": "field_txa_smart_card_2_copy", "label": "Smart Card 2 Copy", "name": "smart_card_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Help local operators bring bookable products, pricing and availability online."},
+      {"key": "field_txa_smart_card_2_url", "label": "Smart Card 2 URL", "name": "smart_card_2_url", "type": "text", "placeholder": "/suppliers/"},
+
+      {"key": "field_txa_smart_card_3_icon", "label": "Smart Card 3 Icon (Bootstrap Icons class)", "name": "smart_card_3_icon", "type": "text", "placeholder": "bi-globe2"},
+      {"key": "field_txa_smart_card_3_title", "label": "Smart Card 3 Title", "name": "smart_card_3_title", "type": "text", "placeholder": "Connect supply to the world"},
+      {"key": "field_txa_smart_card_3_copy", "label": "Smart Card 3 Copy", "name": "smart_card_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Open inventory pathways to trade channels, resellers and owned destination channels."},
+      {"key": "field_txa_smart_card_3_url", "label": "Smart Card 3 URL", "name": "smart_card_3_url", "type": "text", "placeholder": "/distributors/"},
+
+      {"key": "field_txa_smart_card_4_icon", "label": "Smart Card 4 Icon (Bootstrap Icons class)", "name": "smart_card_4_icon", "type": "text", "placeholder": "bi-bar-chart-line"},
+      {"key": "field_txa_smart_card_4_title", "label": "Smart Card 4 Title", "name": "smart_card_4_title", "type": "text", "placeholder": "Own your data"},
+      {"key": "field_txa_smart_card_4_copy", "label": "Smart Card 4 Copy", "name": "smart_card_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Use activity, campaign and booking signals to see what is driving outcomes."},
+      {"key": "field_txa_smart_card_4_url", "label": "Smart Card 4 URL", "name": "smart_card_4_url", "type": "text", "placeholder": "/data-insights/"},
+
+      {"key": "field_txa_tab_data", "label": "Data and Insights", "type": "tab", "placement": "top"},
+      {"key": "field_txa_data_eyebrow", "label": "Eyebrow", "name": "data_eyebrow", "type": "text", "placeholder": "Data and insights"},
+      {"key": "field_txa_data_heading", "label": "Heading", "name": "data_heading", "type": "text", "placeholder": "Data that helps destinations see what is working"},
+      {"key": "field_txa_data_copy", "label": "Copy", "name": "data_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXA helps destinations understand supplier activity, campaign performance, visitor engagement and booking outcomes through dashboards, attribution and data exports."},
+      {"key": "field_txa_data_button_label", "label": "Button Label", "name": "data_button_label", "type": "text", "placeholder": "Learn about Data and Insights"},
+      {"key": "field_txa_data_button_url", "label": "Button URL", "name": "data_button_url", "type": "text", "placeholder": "/data-insights/"},
+      {"key": "field_txa_data_image", "label": "Image", "name": "data_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_txa_data_image_alt", "label": "Image Alt Text", "name": "data_image_alt", "type": "text", "placeholder": "TXA dashboard"}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-templates/txa-homepage.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

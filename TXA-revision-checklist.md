@@ -347,8 +347,8 @@ Notes/decision:
 ## 17. Broken or Missing Routes
 
 - [ ] Create or correct `/apply-now/`.
-- [ ] Create or correct `/request-demo/`.
-- [ ] Decide whether `/destinations/request-demo/` should be separate or redirect to `/request-demo/`.
+- [ ] Create or correct `/contact/`.
+- [ ] Decide whether `/destinations/contact/` should be separate or redirect to `/contact/`.
 - [ ] Create or correct `/distributors/apply/`.
 - [ ] Create or correct `/booking-systems/partner-enquiry/`.
 - [ ] Create or correct `/booking-systems/directory/`.

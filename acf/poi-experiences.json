@@ -1,0 +1,60 @@
+[
+  {
+    "key": "group_txa_poi_experiences",
+    "title": "TXA Destination POI and Experiences Page",
+    "fields": [
+      {"key": "field_poi_tab_seo", "label": "SEO", "type": "tab", "placement": "top"},
+      {"key": "field_poi_seo_title", "label": "Browser Title", "name": "poi_seo_title", "type": "text", "placeholder": "Points of Interest and Experiences | Tourism Exchange Australia"},
+      {"key": "field_poi_seo_description", "label": "Meta Description", "name": "poi_seo_description", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Help destinations connect points of interest, itineraries and bookable tourism experiences."},
+
+      {"key": "field_poi_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_poi_hero_label", "label": "Hero Label", "name": "poi_hero_label", "type": "text", "placeholder": "Point of Interests and Experiences"},
+      {"key": "field_poi_hero_title_start", "label": "Heading Before Highlight", "name": "poi_hero_title_start", "type": "text", "placeholder": "Create destination content that"},
+      {"key": "field_poi_hero_title_highlight", "label": "Highlighted Heading Text", "name": "poi_hero_title_highlight", "type": "text", "placeholder": "connects"},
+      {"key": "field_poi_hero_title_end", "label": "Heading After Highlight", "name": "poi_hero_title_end", "type": "text", "placeholder": "to bookable product"},
+      {"key": "field_poi_hero_copy", "label": "Hero Copy", "name": "poi_hero_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXA allows a destination to add Points of Interest - free things to see and do - and to create recommended experiences and suggested itineraries."},
+      {"key": "field_poi_hero_button_label", "label": "Button Label", "name": "poi_hero_button_label", "type": "text", "placeholder": "Discuss destination content activation"},
+      {"key": "field_poi_hero_button_url", "label": "Button URL", "name": "poi_hero_button_url", "type": "text", "placeholder": "/contact/"},
+      {"key": "field_poi_hero_image", "label": "Hero Image", "name": "poi_hero_image", "type": "image", "return_format": "url", "preview_size": "medium", "library": "all"},
+      {"key": "field_poi_hero_image_alt", "label": "Hero Image Alt Text", "name": "poi_hero_image_alt", "type": "text", "placeholder": "Destination points of interest map"},
+
+      {"key": "field_poi_tab_features", "label": "Features", "type": "tab", "placement": "top"},
+      {"key": "field_poi_features_heading", "label": "Section Heading", "name": "poi_features_heading", "type": "text", "placeholder": "Transforming destination assets into visitor journeys"},
+      {"key": "field_poi_features_copy", "label": "Section Description", "name": "poi_features_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "A unified ecosystem to manage free landmarks alongside bookable experiences."},
+
+      {"key": "field_poi_tab_card_1", "label": "POI Card", "type": "tab", "placement": "top"},
+      {"key": "field_poi_card_1_icon", "label": "Icon (Bootstrap Icons class)", "name": "poi_card_1_icon", "type": "text", "placeholder": "bi-image"},
+      {"key": "field_poi_card_1_title", "label": "Title", "name": "poi_card_1_title", "type": "text", "placeholder": "Points of Interest (POIs)"},
+      {"key": "field_poi_card_1_copy", "label": "Copy", "name": "poi_card_1_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Build POIs for free visitor experiences, landmarks, attractions and public places. Enrich your maps with detailed content that matters to travelers."},
+      {"key": "field_poi_card_1_tag_1", "label": "Tag 1", "name": "poi_card_1_tag_1", "type": "text", "placeholder": "Landmarks"},
+      {"key": "field_poi_card_1_tag_2", "label": "Tag 2", "name": "poi_card_1_tag_2", "type": "text", "placeholder": "Public Spaces"},
+      {"key": "field_poi_card_1_tag_3", "label": "Tag 3", "name": "poi_card_1_tag_3", "type": "text", "placeholder": "Natural Attractions"},
+
+      {"key": "field_poi_tab_card_2", "label": "Connect Content Card", "type": "tab", "placement": "top"},
+      {"key": "field_poi_card_2_icon", "label": "Icon (Bootstrap Icons class)", "name": "poi_card_2_icon", "type": "text", "placeholder": "bi-stars"},
+      {"key": "field_poi_card_2_title", "label": "Title", "name": "poi_card_2_title", "type": "text", "placeholder": "Connect Content"},
+      {"key": "field_poi_card_2_copy", "label": "Copy", "name": "poi_card_2_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Connect content with bookable suppliers so visitors can act on inspiration immediately."},
+
+      {"key": "field_poi_tab_card_3", "label": "Themed Experiences Card", "type": "tab", "placement": "top"},
+      {"key": "field_poi_card_3_icon", "label": "Icon (Bootstrap Icons class)", "name": "poi_card_3_icon", "type": "text", "placeholder": "bi-calendar3"},
+      {"key": "field_poi_card_3_title", "label": "Title", "name": "poi_card_3_title", "type": "text", "placeholder": "Themed Experiences"},
+      {"key": "field_poi_card_3_copy", "label": "Copy", "name": "poi_card_3_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Create recommended experiences for seasons, regions, events or specific visitor types."},
+
+      {"key": "field_poi_tab_card_4", "label": "Omnichannel Distribution Card", "type": "tab", "placement": "top"},
+      {"key": "field_poi_card_4_icon", "label": "Icon (Bootstrap Icons class)", "name": "poi_card_4_icon", "type": "text", "placeholder": "bi-window-sidebar"},
+      {"key": "field_poi_card_4_title", "label": "Title", "name": "poi_card_4_title", "type": "text", "placeholder": "Omnichannel Distribution"},
+      {"key": "field_poi_card_4_copy", "label": "Copy", "name": "poi_card_4_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Use POIs and experiences in destination pages, trade pages, campaign microsites and virtual concierge journeys. Reach your audience wherever they are."}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-poi-experiences.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

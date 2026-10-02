@@ -1,0 +1,103 @@
+[
+  {
+    "key": "group_txa_distributors",
+    "title": "TXA Distributors Page",
+    "fields": [
+      {"key": "field_dist_tab_seo", "label": "SEO", "type": "tab", "placement": "top"},
+      {"key": "field_dist_seo_title", "label": "Browser Title", "name": "distributor_seo_title", "type": "text", "placeholder": "TXA for Distributors | Access Bookable Australian Tourism Inventory"},
+      {"key": "field_dist_seo_description", "label": "Meta Description", "name": "distributor_seo_description", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "TXA gives distributors unique access to bookable Australian tourism inventory through flexible commercial and technical distribution models."},
+
+      {"key": "field_dist_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_dist_hero_label", "label": "Hero Label", "name": "distributor_hero_label", "type": "text", "placeholder": "TXA for distributors"},
+      {"key": "field_dist_hero_title", "label": "Hero Title", "name": "distributor_hero_title", "type": "text", "placeholder": "Unique access to bookable Australian tourism inventory"},
+      {"key": "field_dist_hero_copy", "label": "Hero Copy", "name": "distributor_hero_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "TXA gives distributors a pathway to Australian tourism suppliers across accommodation, tours, attractions, events and experiences. TXA offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives."},
+      {"key": "field_dist_hero_image", "label": "Hero Image", "name": "distributor_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_dist_hero_image_alt", "label": "Hero Image Alt Text", "name": "distributor_hero_image_alt", "type": "text", "placeholder": "Australian landscape"},
+      {"key": "field_dist_hero_button_label", "label": "Hero Button Label", "name": "distributor_hero_button_label", "type": "text", "placeholder": "Become a Distributor"},
+      {"key": "field_dist_apply_url", "label": "Apply URL (used by all buttons)", "name": "distributor_apply_url", "type": "text", "placeholder": "/distributors/apply/"},
+
+      {"key": "field_dist_tab_ecosystem", "label": "Ecosystem", "type": "tab", "placement": "top"},
+      {"key": "field_dist_ecosystem_eyebrow", "label": "Eyebrow", "name": "distributor_ecosystem_eyebrow", "type": "text", "placeholder": "Connected tourism ecosystem"},
+      {"key": "field_dist_ecosystem_heading", "label": "Heading", "name": "distributor_ecosystem_heading", "type": "text", "placeholder": "See where distributors connect through TXA"},
+      {"key": "field_dist_ecosystem_copy", "label": "Copy", "name": "distributor_ecosystem_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "TXA connects live tourism inventory with the websites and distribution channels travellers use to discover and book Australian experiences."},
+
+      {"key": "field_dist_tab_benefits", "label": "Benefits", "type": "tab", "placement": "top"},
+      {"key": "field_dist_benefits_heading", "label": "Heading", "name": "distributor_benefits_heading", "type": "text", "placeholder": "Why use TXA to source Australian tourism suppliers"},
+      {"key": "field_dist_benefits_copy", "label": "Description", "name": "distributor_benefits_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Providing the connectivity required to scale your Australian tourism portfolio efficiently."},
+
+      {"key": "field_dist_benefit_1_icon", "label": "Benefit 1 Icon (Bootstrap Icons class)", "name": "distributor_benefit_1_icon", "type": "text", "placeholder": "bi-box-seam"},
+      {"key": "field_dist_benefit_1_title", "label": "Benefit 1 Title", "name": "distributor_benefit_1_title", "type": "text", "placeholder": "Access live inventory"},
+      {"key": "field_dist_benefit_1_copy", "label": "Benefit 1 Copy", "name": "distributor_benefit_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Direct access to thousands of live-booked suppliers with real-time rates and availability."},
+
+      {"key": "field_dist_benefit_2_icon", "label": "Benefit 2 Icon (Bootstrap Icons class)", "name": "distributor_benefit_2_icon", "type": "text", "placeholder": "bi-cash-stack"},
+      {"key": "field_dist_benefit_2_title", "label": "Benefit 2 Title", "name": "distributor_benefit_2_title", "type": "text", "placeholder": "Commercial flexibility"},
+      {"key": "field_dist_benefit_2_copy", "label": "Benefit 2 Copy", "name": "distributor_benefit_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Support for multiple payment and commercial models including Net, Gross, and Commission."},
+
+      {"key": "field_dist_benefit_3_icon", "label": "Benefit 3 Icon (Bootstrap Icons class)", "name": "distributor_benefit_3_icon", "type": "text", "placeholder": "bi-megaphone"},
+      {"key": "field_dist_benefit_3_title", "label": "Benefit 3 Title", "name": "distributor_benefit_3_title", "type": "text", "placeholder": "Campaign ready"},
+      {"key": "field_dist_benefit_3_copy", "label": "Benefit 3 Copy", "name": "distributor_benefit_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Leverage national and state tourism campaigns by distributing opt-in campaign deals."},
+
+      {"key": "field_dist_benefit_4_icon", "label": "Benefit 4 Icon (Bootstrap Icons class)", "name": "distributor_benefit_4_icon", "type": "text", "placeholder": "bi-link-45deg"},
+      {"key": "field_dist_benefit_4_title", "label": "Benefit 4 Title", "name": "distributor_benefit_4_title", "type": "text", "placeholder": "Reduced friction"},
+      {"key": "field_dist_benefit_4_copy", "label": "Benefit 4 Copy", "name": "distributor_benefit_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Connect once to TXA and gain access to an entire ecosystem without individual integrations."},
+
+      {"key": "field_dist_tab_models", "label": "Distribution Models", "type": "tab", "placement": "top"},
+      {"key": "field_dist_models_heading", "label": "Heading", "name": "distributor_models_heading", "type": "text", "placeholder": "Flexible distribution models"},
+      {"key": "field_dist_models_copy", "label": "Description", "name": "distributor_models_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "We provide multiple ways to consume inventory based on your technical maturity and business model."},
+
+      {"key": "field_dist_model_1_icon", "label": "Model 1 Icon (Bootstrap Icons class)", "name": "distributor_model_1_icon", "type": "text", "placeholder": "bi-code-slash"},
+      {"key": "field_dist_model_1_title", "label": "Model 1 Title", "name": "distributor_model_1_title", "type": "text", "placeholder": "API Connection"},
+      {"key": "field_dist_model_1_copy", "label": "Model 1 Copy", "name": "distributor_model_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Direct JSON-based API for enterprise distributors who want total control over the booking UI and user experience."},
+      {"key": "field_dist_model_1_point_1", "label": "Model 1 Point 1", "name": "distributor_model_1_point_1", "type": "text", "placeholder": "Real-time confirmation"},
+      {"key": "field_dist_model_1_point_2", "label": "Model 1 Point 2", "name": "distributor_model_1_point_2", "type": "text", "placeholder": "Dynamic pricing support"},
+
+      {"key": "field_dist_model_2_icon", "label": "Model 2 Icon (Bootstrap Icons class)", "name": "distributor_model_2_icon", "type": "text", "placeholder": "bi-window"},
+      {"key": "field_dist_model_2_title", "label": "Model 2 Title", "name": "distributor_model_2_title", "type": "text", "placeholder": "White-label Booking Pages"},
+      {"key": "field_dist_model_2_copy", "label": "Model 2 Copy", "name": "distributor_model_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Branded booking widgets and search pages that integrate seamlessly into your website with minimal code."},
+      {"key": "field_dist_model_2_point_1", "label": "Model 2 Point 1", "name": "distributor_model_2_point_1", "type": "text", "placeholder": "Rapid deployment"},
+      {"key": "field_dist_model_2_point_2", "label": "Model 2 Point 2", "name": "distributor_model_2_point_2", "type": "text", "placeholder": "Mobile optimized"},
+
+      {"key": "field_dist_model_3_icon", "label": "Model 3 Icon (Bootstrap Icons class)", "name": "distributor_model_3_icon", "type": "text", "placeholder": "bi-person-vcard"},
+      {"key": "field_dist_model_3_title", "label": "Model 3 Title", "name": "distributor_model_3_title", "type": "text", "placeholder": "On-account / Agent Model"},
+      {"key": "field_dist_model_3_copy", "label": "Model 3 Copy", "name": "distributor_model_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Support for traditional agency models where distributors hold accounts and manage payments offline."},
+      {"key": "field_dist_model_3_point_1", "label": "Model 3 Point 1", "name": "distributor_model_3_point_1", "type": "text", "placeholder": "Flexible settlement"},
+      {"key": "field_dist_model_3_point_2", "label": "Model 3 Point 2", "name": "distributor_model_3_point_2", "type": "text", "placeholder": "Back-office reconciliation"},
+
+      {"key": "field_dist_model_4_icon", "label": "Model 4 Icon (Bootstrap Icons class)", "name": "distributor_model_4_icon", "type": "text", "placeholder": "bi-signpost-split"},
+      {"key": "field_dist_model_4_title", "label": "Model 4 Title", "name": "distributor_model_4_title", "type": "text", "placeholder": "Campaign and Destination Led"},
+      {"key": "field_dist_model_4_copy", "label": "Model 4 Copy", "name": "distributor_model_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Targeted distribution focused on specific regions or events as part of institutional marketing efforts."},
+      {"key": "field_dist_model_4_point_1", "label": "Model 4 Point 1", "name": "distributor_model_4_point_1", "type": "text", "placeholder": "High-intent traffic"},
+      {"key": "field_dist_model_4_point_2", "label": "Model 4 Point 2", "name": "distributor_model_4_point_2", "type": "text", "placeholder": "Curated inventory lists"},
+
+      {"key": "field_dist_model_5_icon", "label": "Model 5 Icon (Bootstrap Icons class)", "name": "distributor_model_5_icon", "type": "text", "placeholder": "bi-credit-card-2-front"},
+      {"key": "field_dist_model_5_title", "label": "Model 5 Title", "name": "distributor_model_5_title", "type": "text", "placeholder": "Direct to Supplier payment option"},
+      {"key": "field_dist_model_5_copy", "label": "Model 5 Copy", "name": "distributor_model_5_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Facilitates the Supplier transaction with the supplier as merchant. Distributors don't have PCI compliance or GDPR. Supplier is the merchant but distributor still gets credited with commission."},
+      {"key": "field_dist_model_5_point_1", "label": "Model 5 Point 1 (optional)", "name": "distributor_model_5_point_1", "type": "text"},
+      {"key": "field_dist_model_5_point_2", "label": "Model 5 Point 2 (optional)", "name": "distributor_model_5_point_2", "type": "text"},
+
+      {"key": "field_dist_model_6_icon", "label": "Model 6 Icon (Bootstrap Icons class)", "name": "distributor_model_6_icon", "type": "text", "placeholder": "bi-file-earmark-check"},
+      {"key": "field_dist_model_6_title", "label": "Model 6 Title", "name": "distributor_model_6_title", "type": "text", "placeholder": "Simple and easy Supplier contracting"},
+      {"key": "field_dist_model_6_copy", "label": "Model 6 Copy", "name": "distributor_model_6_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Simple opt-in opt-out model for contracting. Single supplier contract legally covers all suppliers. Simple, fast, efficient."},
+      {"key": "field_dist_model_6_point_1", "label": "Model 6 Point 1 (optional)", "name": "distributor_model_6_point_1", "type": "text"},
+      {"key": "field_dist_model_6_point_2", "label": "Model 6 Point 2 (optional)", "name": "distributor_model_6_point_2", "type": "text"},
+
+      {"key": "field_dist_tab_campaign", "label": "Campaign Banner", "type": "tab", "placement": "top"},
+      {"key": "field_dist_campaign_image", "label": "Background Image", "name": "distributor_campaign_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_dist_campaign_image_alt", "label": "Background Alt Text", "name": "distributor_campaign_image_alt", "type": "text", "placeholder": "Australian city waterfront at night"},
+      {"key": "field_dist_campaign_heading", "label": "Heading", "name": "distributor_campaign_heading", "type": "text", "placeholder": "Drive regional impact with destination-led campaigns"},
+      {"key": "field_dist_campaign_copy", "label": "Copy", "name": "distributor_campaign_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXA sits at the heart of Australian tourism. We work closely with STOs and RTOs to power booking engines for state-wide initiatives. Become a partner in these high-value trade campaigns."},
+      {"key": "field_dist_campaign_button_label", "label": "Button Label", "name": "distributor_campaign_button_label", "type": "text", "placeholder": "Become a TXA distributor"}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-distributors.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

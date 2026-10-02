@@ -1,0 +1,25 @@
+[
+  {
+    "key": "group_txa_blog_header",
+    "title": "TXA Blog Header",
+    "fields": [
+      {"key": "field_blog_header_eyebrow", "label": "Eyebrow", "name": "blog_hero_eyebrow", "type": "text", "placeholder": "TXA Blog"},
+      {"key": "field_blog_header_title", "label": "Heading", "name": "blog_hero_title", "type": "text", "placeholder": "Ideas for a more connected tourism industry"},
+      {"key": "field_blog_header_copy", "label": "Description", "name": "blog_hero_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Explore practical perspectives on connected tourism, destination technology, distribution and the Australian visitor economy."}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-blog.php"}
+      ],
+      [
+        {"param": "page_type", "operator": "==", "value": "posts_page"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

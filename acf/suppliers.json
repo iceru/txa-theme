@@ -1,0 +1,73 @@
+[
+  {
+    "key": "group_txa_suppliers",
+    "title": "TXA Suppliers Page",
+    "fields": [
+      {"key": "field_sup_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_sup_hero_label", "label": "Hero Label", "name": "supplier_hero_label", "type": "text", "placeholder": "TXA for Australian tourism suppliers"},
+      {"key": "field_sup_hero_title", "label": "Hero Title", "name": "supplier_hero_title", "type": "text", "placeholder": "Connect once and sell across more channels"},
+      {"key": "field_sup_hero_copy", "label": "Hero Copy", "name": "supplier_hero_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXA helps tourism suppliers connect live product, pricing and availability to destination websites, distributors and other online channels without manually allocating to and managing inventory on every site."},
+      {"key": "field_sup_hero_image", "label": "Hero Image", "name": "supplier_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_sup_hero_image_alt", "label": "Hero Image Alt Text", "name": "supplier_hero_image_alt", "type": "text", "placeholder": "Rottnest Island, Perth"},
+      {"key": "field_sup_hero_primary_label", "label": "Primary Button Label", "name": "supplier_hero_primary_label", "type": "text", "placeholder": "Apply Now"},
+      {"key": "field_sup_hero_primary_url", "label": "Primary Button URL", "name": "supplier_hero_primary_url", "type": "text", "placeholder": "/apply-now/"},
+      {"key": "field_sup_hero_secondary_label", "label": "Secondary Button Label", "name": "supplier_hero_secondary_label", "type": "text", "placeholder": "See connected booking systems"},
+      {"key": "field_sup_hero_secondary_url", "label": "Secondary Button URL", "name": "supplier_hero_secondary_url", "type": "text", "placeholder": "/booking-systems"},
+
+      {"key": "field_sup_tab_intro", "label": "Intro", "type": "tab", "placement": "top"},
+      {"key": "field_sup_intro_eyebrow", "label": "Eyebrow", "name": "supplier_intro_eyebrow", "type": "text", "placeholder": "Connect once, sell everywhere"},
+      {"key": "field_sup_intro_heading", "label": "Heading", "name": "supplier_intro_heading", "type": "text", "placeholder": "Boost your digital distribution profile"},
+      {"key": "field_sup_intro_copy", "label": "Copy", "name": "supplier_intro_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "TXA is designed to reduce manual work by using your booking system as the single source of products, rates and availability where available."},
+
+      {"key": "field_sup_tab_benefits", "label": "Benefits", "type": "tab", "placement": "top"},
+      {"key": "field_sup_benefits_eyebrow", "label": "Eyebrow", "name": "supplier_benefits_eyebrow", "type": "text", "placeholder": "Supplier benefits"},
+      {"key": "field_sup_benefits_heading", "label": "Heading", "name": "supplier_benefits_heading", "type": "text", "placeholder": "What TXA helps suppliers do"},
+      {"key": "field_sup_benefits_copy", "label": "Description", "name": "supplier_benefits_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "TXA has options for suppliers that don't have a suitable booking system or alternative connection pathways"},
+
+      {"key": "field_sup_benefit_1_icon", "label": "Benefit 1 Icon (Bootstrap Icons class)", "name": "supplier_benefit_1_icon", "type": "text", "placeholder": "bi-share"},
+      {"key": "field_sup_benefit_1_title", "label": "Benefit 1 Title", "name": "supplier_benefit_1_title", "type": "text", "placeholder": "Broader distribution"},
+      {"key": "field_sup_benefit_1_copy", "label": "Benefit 1 Copy", "name": "supplier_benefit_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Broader distribution pathway through connected channels and destination partners."},
+
+      {"key": "field_sup_benefit_2_icon", "label": "Benefit 2 Icon (Bootstrap Icons class)", "name": "supplier_benefit_2_icon", "type": "text", "placeholder": "bi-arrow-repeat"},
+      {"key": "field_sup_benefit_2_title", "label": "Benefit 2 Title", "name": "supplier_benefit_2_title", "type": "text", "placeholder": "Real-time updates"},
+      {"key": "field_sup_benefit_2_copy", "label": "Benefit 2 Copy", "name": "supplier_benefit_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Real-time automation and booking through your connected booking system where available."},
+
+      {"key": "field_sup_benefit_3_icon", "label": "Benefit 3 Icon (Bootstrap Icons class)", "name": "supplier_benefit_3_icon", "type": "text", "placeholder": "bi-diagram-3"},
+      {"key": "field_sup_benefit_3_title", "label": "Benefit 3 Title", "name": "supplier_benefit_3_title", "type": "text", "placeholder": "Connection options"},
+      {"key": "field_sup_benefit_3_copy", "label": "Benefit 3 Copy", "name": "supplier_benefit_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Options for suppliers without a suitable booking system, or alternative supported connection pathways."},
+
+      {"key": "field_sup_benefit_4_icon", "label": "Benefit 4 Icon (Bootstrap Icons class)", "name": "supplier_benefit_4_icon", "type": "text", "placeholder": "bi-credit-card-2-front"},
+      {"key": "field_sup_benefit_4_title", "label": "Benefit 4 Title", "name": "supplier_benefit_4_title", "type": "text", "placeholder": "Flexible booking payment models"},
+      {"key": "field_sup_benefit_4_copy", "label": "Benefit 4 Copy", "name": "supplier_benefit_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Support for direct payment and OTA / on-request account distributor models depending on the channel."},
+
+      {"key": "field_sup_benefit_5_icon", "label": "Benefit 5 Icon (Bootstrap Icons class)", "name": "supplier_benefit_5_icon", "type": "text", "placeholder": "bi-list-check"},
+      {"key": "field_sup_benefit_5_title", "label": "Benefit 5 Title", "name": "supplier_benefit_5_title", "type": "text", "placeholder": "Less manual tasks"},
+      {"key": "field_sup_benefit_5_copy", "label": "Benefit 5 Copy", "name": "supplier_benefit_5_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "No need for time consuming inventory and rate management across multiple websites and platforms."},
+
+      {"key": "field_sup_benefit_6_icon", "label": "Benefit 6 Icon (Bootstrap Icons class)", "name": "supplier_benefit_6_icon", "type": "text", "placeholder": "bi-cash-coin"},
+      {"key": "field_sup_benefit_6_title", "label": "Benefit 6 Title", "name": "supplier_benefit_6_title", "type": "text", "placeholder": "No booking, no fee"},
+      {"key": "field_sup_benefit_6_copy", "label": "Benefit 6 Copy", "name": "supplier_benefit_6_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "A no-booking-no-fee supplier pricing model for TXA-originated online bookings means no fixed upfront or monthly fees = no risk!"},
+
+      {"key": "field_sup_tab_connect", "label": "Get Connected", "type": "tab", "placement": "top"},
+      {"key": "field_sup_connect_eyebrow", "label": "Eyebrow", "name": "supplier_connect_eyebrow", "type": "text", "placeholder": "Get connected"},
+      {"key": "field_sup_connect_heading", "label": "Heading", "name": "supplier_connect_heading", "type": "text", "placeholder": "Ready to connect your tourism business to TXA?"},
+      {"key": "field_sup_connect_copy", "label": "Copy", "name": "supplier_connect_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "It's so easy! Use the TXA Get Connected Wizard. It captures your business details, website or social media URL, product description, industry category and images, then lets you confirm whether you want to remain content only or make your connection bookable."},
+      {"key": "field_sup_connect_notice", "label": "Notice Box", "name": "supplier_connect_notice", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "No booking, no fee. Pay only when you receive online bookings through TXA channels, subject to final success fee of 0.75%-2.8% of total booking value."},
+      {"key": "field_sup_connect_button_label", "label": "Button Label", "name": "supplier_connect_button_label", "type": "text", "placeholder": "Apply Now using TXA Get Connected Wizard"},
+      {"key": "field_sup_connect_button_url", "label": "Button URL", "name": "supplier_connect_button_url", "type": "text", "placeholder": "https://sites.txa.com.au/Connect"},
+      {"key": "field_sup_connect_image", "label": "Image", "name": "supplier_connect_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_sup_connect_image_alt", "label": "Image Alt Text", "name": "supplier_connect_image_alt", "type": "text", "placeholder": "TXA supplier connection"}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-templates/suppliers.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

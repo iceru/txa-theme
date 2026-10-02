@@ -1,0 +1,72 @@
+[
+  {
+    "key": "group_txa_concierge",
+    "title": "TXA Virtual Concierge Page",
+    "fields": [
+      {"key": "field_cnc_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_cnc_hero_eyebrow", "label": "Eyebrow", "name": "concierge_hero_eyebrow", "type": "text", "placeholder": "UNIQUE COLLABORATIVE OPPORTUNITY"},
+      {"key": "field_cnc_hero_label", "label": "Hero Label", "name": "concierge_hero_label", "type": "text", "placeholder": "Virtual Concierge"},
+      {"key": "field_cnc_hero_title", "label": "Hero Title", "name": "concierge_hero_title", "type": "text", "placeholder": "TXA’s local reseller network or ‘Virtual Concierge’"},
+      {"key": "field_cnc_hero_copy", "label": "Hero Copy", "name": "concierge_hero_copy", "type": "textarea", "rows": 6, "new_lines": "", "placeholder": "TXA’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity providers cross sell, visitor information centres, National Park offices, airports and other local partners inter-connect offering visitors' numerous local channels for booking local activities, events and experiences."},
+      {"key": "field_cnc_hero_button_label", "label": "Button Label", "name": "concierge_hero_button_label", "type": "text", "placeholder": "Explore TXA's Virtual Concierge"},
+      {"key": "field_cnc_hero_button_url", "label": "Button URL", "name": "concierge_hero_button_url", "type": "text", "placeholder": "/contact/"},
+      {"key": "field_cnc_hero_image", "label": "Hero Image", "name": "concierge_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_cnc_hero_image_alt", "label": "Hero Image Alt Text", "name": "concierge_hero_image_alt", "type": "text", "placeholder": "Sydney Harbour Bridge"},
+      {"key": "field_cnc_badge_icon", "label": "Badge Icon (Bootstrap Icons class)", "name": "concierge_badge_icon", "type": "text", "placeholder": "bi-diagram-3"},
+      {"key": "field_cnc_badge_title", "label": "Badge Title", "name": "concierge_badge_title", "type": "text", "placeholder": "Integrated Connectivity"},
+      {"key": "field_cnc_badge_copy", "label": "Badge Copy", "name": "concierge_badge_copy", "type": "text", "placeholder": "Real-time local ecosystem activation"},
+
+      {"key": "field_cnc_tab_activation", "label": "Activation", "type": "tab", "placement": "top"},
+      {"key": "field_cnc_activation_heading", "label": "Heading", "name": "concierge_activation_heading", "type": "text", "placeholder": "Interconnect and activate your visitor economy."},
+      {"key": "field_cnc_activation_copy", "label": "Description", "name": "concierge_activation_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Transform every touchpoint into a booking opportunity. By connecting diverse local operators, you create a resilient network that keeps spending within the region."},
+
+      {"key": "field_cnc_activation_1_icon", "label": "Card 1 Icon (Bootstrap Icons class)", "name": "concierge_activation_1_icon", "type": "text", "placeholder": "bi-share"},
+      {"key": "field_cnc_activation_1_title", "label": "Card 1 Title", "name": "concierge_activation_1_title", "type": "text", "placeholder": "Industry Activation"},
+      {"key": "field_cnc_activation_1_copy", "label": "Card 1 Copy", "name": "concierge_activation_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Interconnect and activate your entire industry and visitor economy through a unified local channel with shared distribution technology."},
+
+      {"key": "field_cnc_activation_2_icon", "label": "Card 2 Icon (Bootstrap Icons class)", "name": "concierge_activation_2_icon", "type": "text", "placeholder": "bi-cash"},
+      {"key": "field_cnc_activation_2_title", "label": "Card 2 Title", "name": "concierge_activation_2_title", "type": "text", "placeholder": "Support Local Spend"},
+      {"key": "field_cnc_activation_2_copy", "label": "Card 2 Copy", "name": "concierge_activation_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Incentivize in-destination spend and facilitate wider visitor dispersal across the region."},
+      {"key": "field_cnc_activation_2_image", "label": "Card 2 Image", "name": "concierge_activation_2_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+
+      {"key": "field_cnc_activation_3_icon", "label": "Card 3 Icon (Bootstrap Icons class)", "name": "concierge_activation_3_icon", "type": "text", "placeholder": "bi-grid"},
+      {"key": "field_cnc_activation_3_title", "label": "Card 3 Title", "name": "concierge_activation_3_title", "type": "text", "placeholder": "Real-time Insights"},
+      {"key": "field_cnc_activation_3_copy", "label": "Card 3 Copy", "name": "concierge_activation_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Make real-time dashboards available to the destination and relevant industry participants for informed decision-making."},
+      {"key": "field_cnc_activation_3_image", "label": "Card 3 Image", "name": "concierge_activation_3_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+
+      {"key": "field_cnc_activation_4_icon", "label": "Card 4 Icon (Bootstrap Icons class)", "name": "concierge_activation_4_icon", "type": "text", "placeholder": "bi-arrow-repeat"},
+      {"key": "field_cnc_activation_4_title", "label": "Card 4 Title", "name": "concierge_activation_4_title", "type": "text", "placeholder": "Seamless Operations"},
+      {"key": "field_cnc_activation_4_copy", "label": "Card 4 Copy", "name": "concierge_activation_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Use supplier opt-in, automated hosted booking pages, and integrated and automated direct payment and settlement of booking funds."},
+
+      {"key": "field_cnc_tab_partners", "label": "Local Partners", "type": "tab", "placement": "top"},
+      {"key": "field_cnc_partners_heading", "label": "Heading", "name": "concierge_partners_heading", "type": "text", "placeholder": "Empower Your Local Partners"},
+      {"key": "field_cnc_partners_copy", "label": "Description", "name": "concierge_partners_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Give local partners a practical way to recommend and book experiences, turning every tourism operator, information desk and concierge into an active, informed and motivated local booking channel"},
+
+      {"key": "field_cnc_partner_1_icon", "label": "Partner 1 Icon (Bootstrap Icons class)", "name": "concierge_partner_1_icon", "type": "text", "placeholder": "bi-buildings"},
+      {"key": "field_cnc_partner_1_title", "label": "Partner 1 Title", "name": "concierge_partner_1_title", "type": "text", "placeholder": "Accommodation"},
+      {"key": "field_cnc_partner_1_copy", "label": "Partner 1 Copy", "name": "concierge_partner_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Hotels and Bed and Breakfasts can easily book tours and activities for their guests directly through the concierge portal."},
+      {"key": "field_cnc_partner_1_label", "label": "Partner 1 Footer Label", "name": "concierge_partner_1_label", "type": "text", "placeholder": "Cross-sell to tours"},
+
+      {"key": "field_cnc_partner_2_icon", "label": "Partner 2 Icon (Bootstrap Icons class)", "name": "concierge_partner_2_icon", "type": "text", "placeholder": "bi-info-circle-fill"},
+      {"key": "field_cnc_partner_2_title", "label": "Partner 2 Title (red card)", "name": "concierge_partner_2_title", "type": "text", "placeholder": "Visitor Information"},
+      {"key": "field_cnc_partner_2_copy", "label": "Partner 2 Copy", "name": "concierge_partner_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "VICs become full-service booking hubs, reducing manual paperwork and improving visitor experience."},
+      {"key": "field_cnc_partner_2_label", "label": "Partner 2 Footer Label", "name": "concierge_partner_2_label", "type": "text", "placeholder": "Centralized bookings"},
+
+      {"key": "field_cnc_partner_3_icon", "label": "Partner 3 Icon (Bootstrap Icons class)", "name": "concierge_partner_3_icon", "type": "text", "placeholder": "bi-bus-front"},
+      {"key": "field_cnc_partner_3_title", "label": "Partner 3 Title", "name": "concierge_partner_3_title", "type": "text", "placeholder": "Dispersal"},
+      {"key": "field_cnc_partner_3_copy", "label": "Partner 3 Copy", "name": "concierge_partner_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Airports and National Park offices inter-connect to offer visitors numerous hyper local channels for discovery and booking options"},
+      {"key": "field_cnc_partner_3_label", "label": "Partner 3 Footer Label", "name": "concierge_partner_3_label", "type": "text", "placeholder": "Regional dispersal"}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-virtual-concierge.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

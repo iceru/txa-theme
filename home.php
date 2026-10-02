@@ -5,6 +5,15 @@
  * @package TailPress
  */
 
+if (!function_exists('txa_blog_header')) {
+    function txa_blog_header(string $name, string $default): string
+    {
+        $page_id = get_queried_object_id();
+        $value = function_exists('get_field') && $page_id ? get_field($name, $page_id) : null;
+        return (null === $value || '' === $value || false === $value) ? $default : (string) $value;
+    }
+}
+
 add_filter('pre_get_document_title', fn(): string => 'Blog | Tourism Exchange Australia');
 
 get_header();
@@ -31,13 +40,12 @@ $articles_query = new WP_Query([
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="bg-surface px-4 py-12 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto max-w-[1312px]">
-            <p class="text-sm font-bold uppercase tracking-wide text-brand">TXA Blog</p>
+            <p class="text-sm font-bold uppercase tracking-wide text-brand"><?php echo esc_html(txa_blog_header('blog_hero_eyebrow', 'TXA Blog')); ?></p>
             <div class="mt-3 grid gap-5 lg:grid-cols-[1fr_480px] lg:items-end lg:gap-12">
                 <h1
                     class="max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-tight tracking-[-.02em] text-[#151c27] sm:text-5xl">
-                    Ideas for a more connected tourism industry</h1>
-                <p class="max-w-[540px] text-base leading-7 text-mid-gray sm:text-lg">Explore practical perspectives on
-                    connected tourism, destination technology, distribution and the Australian visitor economy.</p>
+                    <?php echo esc_html(txa_blog_header('blog_hero_title', 'Ideas for a more connected tourism industry')); ?></h1>
+                <p class="max-w-[540px] text-base leading-7 text-mid-gray sm:text-lg"><?php echo esc_html(txa_blog_header('blog_hero_copy', 'Explore practical perspectives on connected tourism, destination technology, distribution and the Australian visitor economy.')); ?></p>
             </div>
         </div>
     </section>

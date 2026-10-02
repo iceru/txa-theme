@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Destination Microsite Campaigns
  *
@@ -7,7 +8,7 @@
 
 get_header();
 
-$demo_url = home_url('/request-demo/');
+$demo_url = home_url('/contact/');
 
 $tools = [
     [

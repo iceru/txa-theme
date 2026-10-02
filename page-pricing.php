@@ -9,7 +9,7 @@
 get_header();
 
 $apply_url = home_url('/apply-now/');
-$demo_url = home_url('/request-demo/');
+$demo_url = home_url('/contact/');
 $supplier_url = home_url('/suppliers/');
 $destination_url = home_url('/destinations/pricing/');
 $distributor_url = home_url('/distributors/');

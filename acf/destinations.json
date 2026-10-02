@@ -1,0 +1,157 @@
+[
+  {
+    "key": "group_txa_destinations",
+    "title": "TXA Destinations Page",
+    "fields": [
+      {"key": "field_dest_tab_seo", "label": "SEO", "type": "tab", "placement": "top"},
+      {"key": "field_dest_seo_title", "label": "Browser Title", "name": "destination_seo_title", "type": "text", "placeholder": "TXA for Destinations | Become a Smart Destination"},
+      {"key": "field_dest_seo_description", "label": "Meta Description", "name": "destination_seo_description", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "TXA helps destination organisations move from inspiration-only marketing to connected, bookable visitor outcomes through Smart Destination infrastructure."},
+
+      {"key": "field_dest_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_dest_hero_label", "label": "Hero Label", "name": "destination_hero_label", "type": "text", "placeholder": "TXA for destinations"},
+      {"key": "field_dest_hero_title", "label": "Hero Title", "name": "destination_hero_title", "type": "text", "placeholder": "Boost, sustain and protect your local visitor economy."},
+      {"key": "field_dest_hero_copy", "label": "Hero Copy", "name": "destination_hero_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack."},
+      {"key": "field_dest_hero_image", "label": "Hero Image", "name": "destination_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_dest_hero_image_alt", "label": "Hero Image Alt Text", "name": "destination_hero_image_alt", "type": "text", "placeholder": "Australian marina and coastline"},
+      {"key": "field_dest_hero_primary_label", "label": "Primary Button Label", "name": "destination_hero_primary_label", "type": "text", "placeholder": "Request Smart Destination Demo"},
+      {"key": "field_dest_hero_secondary_label", "label": "Secondary Button Label", "name": "destination_hero_secondary_label", "type": "text", "placeholder": "See destination packages"},
+      {"key": "field_dest_demo_url", "label": "Demo URL (used by all demo buttons)", "name": "destination_demo_url", "type": "text", "placeholder": "/destinations/contact/"},
+      {"key": "field_dest_pricing_url", "label": "Pricing URL (used by all package buttons)", "name": "destination_pricing_url", "type": "text", "placeholder": "/destinations/pricing/"},
+
+      {"key": "field_dest_tab_what", "label": "What is a Smart Destination", "type": "tab", "placement": "top"},
+      {"key": "field_dest_what_heading", "label": "Heading", "name": "destination_what_heading", "type": "text", "placeholder": "What is a TXA Smart Destination?"},
+      {"key": "field_dest_what_copy", "label": "Copy", "name": "destination_what_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "A Smart destination generates inspiration and TXA helps you own the conversion. Your organisation can use TXA to activate destination websites and apps, digitise local supply, connect suppliers to distributors, build tactical microsites, support trade initiatives, enable economy-wide re-seller networks and collaborative commerce."},
+
+      {"key": "field_dest_pillar_1_icon", "label": "Pillar 1 Icon (Bootstrap Icons class)", "name": "destination_pillar_1_icon", "type": "text", "placeholder": "bi-box-seam"},
+      {"key": "field_dest_pillar_1_title", "label": "Pillar 1 Title", "name": "destination_pillar_1_title", "type": "text", "placeholder": "Supply"},
+      {"key": "field_dest_pillar_1_copy", "label": "Pillar 1 Copy", "name": "destination_pillar_1_copy", "type": "text", "placeholder": "Real-time inventory"},
+
+      {"key": "field_dest_pillar_2_icon", "label": "Pillar 2 Icon (Bootstrap Icons class)", "name": "destination_pillar_2_icon", "type": "text", "placeholder": "bi-file-richtext"},
+      {"key": "field_dest_pillar_2_title", "label": "Pillar 2 Title", "name": "destination_pillar_2_title", "type": "text", "placeholder": "Content"},
+      {"key": "field_dest_pillar_2_copy", "label": "Pillar 2 Copy", "name": "destination_pillar_2_copy", "type": "text", "placeholder": "Rich product data"},
+
+      {"key": "field_dest_pillar_3_icon", "label": "Pillar 3 Icon (Bootstrap Icons class)", "name": "destination_pillar_3_icon", "type": "text", "placeholder": "bi-broadcast"},
+      {"key": "field_dest_pillar_3_title", "label": "Pillar 3 Title", "name": "destination_pillar_3_title", "type": "text", "placeholder": "Channels"},
+      {"key": "field_dest_pillar_3_copy", "label": "Pillar 3 Copy", "name": "destination_pillar_3_copy", "type": "text", "placeholder": "Global, local, niche and alternative distribution"},
+
+      {"key": "field_dest_pillar_4_icon", "label": "Pillar 4 Icon (Bootstrap Icons class)", "name": "destination_pillar_4_icon", "type": "text", "placeholder": "bi-people"},
+      {"key": "field_dest_pillar_4_title", "label": "Pillar 4 Title", "name": "destination_pillar_4_title", "type": "text", "placeholder": "Local Reseller Network"},
+      {"key": "field_dest_pillar_4_copy", "label": "Pillar 4 Copy", "name": "destination_pillar_4_copy", "type": "text", "placeholder": "Active collaboration amongst your local industry"},
+
+      {"key": "field_dest_pillar_5_icon", "label": "Pillar 5 Icon (Bootstrap Icons class)", "name": "destination_pillar_5_icon", "type": "text", "placeholder": "bi-bar-chart-line"},
+      {"key": "field_dest_pillar_5_title", "label": "Pillar 5 Title", "name": "destination_pillar_5_title", "type": "text", "placeholder": "Data"},
+      {"key": "field_dest_pillar_5_copy", "label": "Pillar 5 Copy", "name": "destination_pillar_5_copy", "type": "text", "placeholder": "Behavioral insights"},
+
+      {"key": "field_dest_tab_problem", "label": "Problem and Solution", "type": "tab", "placement": "top"},
+      {"key": "field_dest_problem_heading", "label": "Heading", "name": "destination_problem_heading", "type": "text", "placeholder": "The problem TXA solves for destinations"},
+      {"key": "field_dest_problem_copy", "label": "Description", "name": "destination_problem_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle."},
+
+      {"key": "field_dest_problem_1_title", "label": "Problem 1 Title", "name": "destination_problem_1_title", "type": "text", "placeholder": "Fragmented Inventory"},
+      {"key": "field_dest_problem_1_copy", "label": "Problem 1 Copy", "name": "destination_problem_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Suppliers use 100+ different booking systems, making a central portal impossible."},
+
+      {"key": "field_dest_problem_2_title", "label": "Problem 2 Title", "name": "destination_problem_2_title", "type": "text", "placeholder": "Lost Conversion"},
+      {"key": "field_dest_problem_2_copy", "label": "Problem 2 Copy", "name": "destination_problem_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Users leave the destination site to book, resulting in massive drop-offs, booking funds going offshore and lost data."},
+
+      {"key": "field_dest_problem_3_title", "label": "Problem 3 Title", "name": "destination_problem_3_title", "type": "text", "placeholder": "Blind Marketing"},
+      {"key": "field_dest_problem_3_copy", "label": "Problem 3 Copy", "name": "destination_problem_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "DMOs know who looks at pages, but not who actually visits the region."},
+
+      {"key": "field_dest_problem_4_title", "label": "Problem 4 Title", "name": "destination_problem_4_title", "type": "text", "placeholder": "Manual Workflows"},
+      {"key": "field_dest_problem_4_copy", "label": "Problem 4 Copy", "name": "destination_problem_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Updating content and product status across platforms is labor-intensive."},
+
+      {"key": "field_dest_solution_heading", "label": "Solution Box Heading", "name": "destination_solution_heading", "type": "text", "placeholder": "The TXA Solution"},
+
+      {"key": "field_dest_solution_1_icon", "label": "Solution 1 Icon (Bootstrap Icons class)", "name": "destination_solution_1_icon", "type": "text", "placeholder": "bi-diagram-3"},
+      {"key": "field_dest_solution_1_title", "label": "Solution 1 Title", "name": "destination_solution_1_title", "type": "text", "placeholder": "Neutral Connectivity"},
+      {"key": "field_dest_solution_1_copy", "label": "Solution 1 Copy", "name": "destination_solution_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "One connection to TXA unlocks bookable local inventory regardless of software."},
+
+      {"key": "field_dest_solution_2_icon", "label": "Solution 2 Icon (Bootstrap Icons class)", "name": "destination_solution_2_icon", "type": "text", "placeholder": "bi-signpost-split"},
+      {"key": "field_dest_solution_2_title", "label": "Solution 2 Title", "name": "destination_solution_2_title", "type": "text", "placeholder": "Integrated Booking Path"},
+      {"key": "field_dest_solution_2_copy", "label": "Solution 2 Copy", "name": "destination_solution_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Keep visitors on your domain from inspiration to confirmation."},
+
+      {"key": "field_dest_solution_3_icon", "label": "Solution 3 Icon (Bootstrap Icons class)", "name": "destination_solution_3_icon", "type": "text", "placeholder": "bi-database-check"},
+      {"key": "field_dest_solution_3_title", "label": "Solution 3 Title", "name": "destination_solution_3_title", "type": "text", "placeholder": "Total Data Visibility"},
+      {"key": "field_dest_solution_3_copy", "label": "Solution 3 Copy", "name": "destination_solution_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Own the transaction data and attribution for every campaign dollar spent."},
+
+      {"key": "field_dest_tab_capabilities", "label": "Capabilities", "type": "tab", "placement": "top"},
+      {"key": "field_dest_capabilities_heading", "label": "Heading", "name": "destination_capabilities_heading", "type": "text", "placeholder": "Your destination, your digital assets, your commercial model"},
+
+      {"key": "field_dest_capability_1_icon", "label": "Capability 1 Icon (Bootstrap Icons class)", "name": "destination_capability_1_icon", "type": "text", "placeholder": "bi-window-stack"},
+      {"key": "field_dest_capability_1_title", "label": "Capability 1 Title", "name": "destination_capability_1_title", "type": "text", "placeholder": "Activate digital assets"},
+      {"key": "field_dest_capability_1_copy", "label": "Capability 1 Copy", "name": "destination_capability_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Use B2B and B2C destination websites, apps, APIs, widgets and custom booking pages to connect brand, content and conversion."},
+
+      {"key": "field_dest_capability_2_icon", "label": "Capability 2 Icon (Bootstrap Icons class)", "name": "destination_capability_2_icon", "type": "text", "placeholder": "bi-graph-up-arrow"},
+      {"key": "field_dest_capability_2_title", "label": "Capability 2 Title", "name": "destination_capability_2_title", "type": "text", "placeholder": "Insights to drive growth"},
+      {"key": "field_dest_capability_2_copy", "label": "Capability 2 Copy", "name": "destination_capability_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Support multiple supplier pathways, including connected systems, free or low-cost booking options, on-request, content-only and smart referral models."},
+
+      {"key": "field_dest_capability_3_icon", "label": "Capability 3 Icon (Bootstrap Icons class)", "name": "destination_capability_3_icon", "type": "text", "placeholder": "bi-database-lock"},
+      {"key": "field_dest_capability_3_title", "label": "Capability 3 Title", "name": "destination_capability_3_title", "type": "text", "placeholder": "Own your data"},
+      {"key": "field_dest_capability_3_copy", "label": "Capability 3 Copy", "name": "destination_capability_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Data and insights to drive growth that belongs to your destination, not a third-party platform."},
+
+      {"key": "field_dest_capability_4_icon", "label": "Capability 4 Icon (Bootstrap Icons class)", "name": "destination_capability_4_icon", "type": "text", "placeholder": "bi-globe2"},
+      {"key": "field_dest_capability_4_title", "label": "Capability 4 Title", "name": "destination_capability_4_title", "type": "text", "placeholder": "Connect supply to the world"},
+      {"key": "field_dest_capability_4_copy", "label": "Capability 4 Copy", "name": "destination_capability_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Aggregate supplier and destination content and make it available to distributors, trade channels, DMO-owned assets and connected APIs."},
+
+      {"key": "field_dest_capability_5_icon", "label": "Capability 5 Icon (Bootstrap Icons class)", "name": "destination_capability_5_icon", "type": "text", "placeholder": "bi-diagram-3"},
+      {"key": "field_dest_capability_5_title", "label": "Capability 5 Title", "name": "destination_capability_5_title", "type": "text", "placeholder": "Commercial neutrality"},
+      {"key": "field_dest_capability_5_copy", "label": "Capability 5 Copy", "name": "destination_capability_5_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Use a platform model that supports multiple booking systems and commercial models."},
+
+      {"key": "field_dest_tab_data", "label": "Data and Insights", "type": "tab", "placement": "top"},
+      {"key": "field_dest_data_heading", "label": "Heading", "name": "destination_data_heading", "type": "text", "placeholder": "See who is visiting, what is working and where to invest next"},
+      {"key": "field_dest_data_paragraph_1", "label": "Paragraph 1", "name": "destination_data_paragraph_1", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Most destination marketing generates interest that's impossible to trace. Visitors click through to OTA listings or third-party pages, and the data disappears. TXA gives destinations something different: first-party booking and engagement data that belongs to you."},
+      {"key": "field_dest_data_paragraph_2", "label": "Paragraph 2", "name": "destination_data_paragraph_2", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "For the first time, your destination can see, in one place, which campaigns converted, which suppliers are performing, and where visitor spend is flowing through your local economy."},
+
+      {"key": "field_dest_data_point_1_icon", "label": "Bullet 1 Icon (Bootstrap Icons class)", "name": "destination_data_point_1_icon", "type": "text", "placeholder": "bi-speedometer2"},
+      {"key": "field_dest_data_point_1_text", "label": "Bullet 1 Text", "name": "destination_data_point_1_text", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Real-time Dashboards: Track supplier activity, campaign performance and visitor engagement in one place."},
+
+      {"key": "field_dest_data_point_2_icon", "label": "Bullet 2 Icon (Bootstrap Icons class)", "name": "destination_data_point_2_icon", "type": "text", "placeholder": "bi-graph-up-arrow"},
+      {"key": "field_dest_data_point_2_text", "label": "Bullet 2 Text", "name": "destination_data_point_2_text", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Attribution and ROI: Connect marketing spend to actual booking outcomes with attribution codes."},
+
+      {"key": "field_dest_data_point_3_icon", "label": "Bullet 3 Icon (Bootstrap Icons class)", "name": "destination_data_point_3_icon", "type": "text", "placeholder": "bi-database-up"},
+      {"key": "field_dest_data_point_3_text", "label": "Bullet 3 Text", "name": "destination_data_point_3_text", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Data Ownership and Integration: Export insights or use APIs to flow data into your CRM or BI tools."},
+
+      {"key": "field_dest_data_image", "label": "Image", "name": "destination_data_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_dest_data_image_alt", "label": "Image Alt Text", "name": "destination_data_image_alt", "type": "text", "placeholder": "TXA dashboard"},
+
+      {"key": "field_dest_tab_steps", "label": "Implementation", "type": "tab", "placement": "top"},
+      {"key": "field_dest_steps_image", "label": "Background Image", "name": "destination_steps_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_dest_steps_heading", "label": "Heading", "name": "destination_steps_heading", "type": "text", "placeholder": "How a TXA Smart Destination is easily implemented"},
+      {"key": "field_dest_steps_primary_label", "label": "Primary Button Label", "name": "destination_steps_primary_label", "type": "text", "placeholder": "Ask about our destination packages"},
+      {"key": "field_dest_steps_secondary_label", "label": "Secondary Button Label", "name": "destination_steps_secondary_label", "type": "text", "placeholder": "Request website activation demo"},
+
+      {"key": "field_dest_step_1_icon", "label": "Step 1 Icon (Bootstrap Icons class)", "name": "destination_step_1_icon", "type": "text", "placeholder": "bi-ui-checks-grid"},
+      {"key": "field_dest_step_1_title", "label": "Step 1 Title", "name": "destination_step_1_title", "type": "text", "placeholder": "Define the destination assets for activation"},
+      {"key": "field_dest_step_1_copy", "label": "Step 1 Copy", "name": "destination_step_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Define the destination assets for activation: website, campaign, trade, virtual concierge, data or a combination."},
+
+      {"key": "field_dest_step_2_icon", "label": "Step 2 Icon (Bootstrap Icons class)", "name": "destination_step_2_icon", "type": "text", "placeholder": "bi-geo-alt"},
+      {"key": "field_dest_step_2_title", "label": "Step 2 Title", "name": "destination_step_2_title", "type": "text", "placeholder": "Identify Priorities"},
+      {"key": "field_dest_step_2_copy", "label": "Step 2 Copy", "name": "destination_step_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Identify priority suppliers, POIs, recommended experiences, itineraries and local partners."},
+
+      {"key": "field_dest_step_3_icon", "label": "Step 3 Icon (Bootstrap Icons class)", "name": "destination_step_3_icon", "type": "text", "placeholder": "bi-person-plus"},
+      {"key": "field_dest_step_3_title", "label": "Step 3 Title", "name": "destination_step_3_title", "type": "text", "placeholder": "Onboard Suppliers"},
+      {"key": "field_dest_step_3_copy", "label": "Step 3 Copy", "name": "destination_step_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Onboard suppliers through the most appropriate pathway for each business."},
+
+      {"key": "field_dest_step_4_icon", "label": "Step 4 Icon (Bootstrap Icons class)", "name": "destination_step_4_icon", "type": "text", "placeholder": "bi-window-plus"},
+      {"key": "field_dest_step_4_title", "label": "Step 4 Title", "name": "destination_step_4_title", "type": "text", "placeholder": "Create Digital Assets"},
+      {"key": "field_dest_step_4_copy", "label": "Step 4 Copy", "name": "destination_step_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Create branded booking pages, destination landing pages, widgets, QR links and campaign assets."},
+
+      {"key": "field_dest_step_5_icon", "label": "Step 5 Icon (Bootstrap Icons class)", "name": "destination_step_5_icon", "type": "text", "placeholder": "bi-rocket-takeoff"},
+      {"key": "field_dest_step_5_title", "label": "Step 5 Title", "name": "destination_step_5_title", "type": "text", "placeholder": "Launch Network"},
+      {"key": "field_dest_step_5_copy", "label": "Step 5 Copy", "name": "destination_step_5_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Launch DMO website activation, microsite, trade portal or local reseller network."},
+
+      {"key": "field_dest_step_6_icon", "label": "Step 6 Icon (Bootstrap Icons class)", "name": "destination_step_6_icon", "type": "text", "placeholder": "bi-graph-up-arrow"},
+      {"key": "field_dest_step_6_title", "label": "Step 6 Title", "name": "destination_step_6_title", "type": "text", "placeholder": "Track and Optimize"},
+      {"key": "field_dest_step_6_copy", "label": "Step 6 Copy", "name": "destination_step_6_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Track engagement, conversion, attribution and data exports through dashboards and the agreed reporting model."}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-destinations.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

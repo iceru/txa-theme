@@ -1,0 +1,69 @@
+[
+  {
+    "key": "group_txa_insights",
+    "title": "TXA Data and Insights Page",
+    "fields": [
+      {"key": "field_ins_tab_seo", "label": "SEO", "type": "tab", "placement": "top"},
+      {"key": "field_ins_seo_title", "label": "Browser Title", "name": "insights_seo_title", "type": "text", "placeholder": "Data and Insights | Tourism Exchange Australia"},
+      {"key": "field_ins_seo_description", "label": "Meta Description", "name": "insights_seo_description", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Use TXA destination data, dashboards, attribution and exports to understand visitor engagement, supplier activity and campaign performance."},
+
+      {"key": "field_ins_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_ins_hero_label", "label": "Hero Label", "name": "insights_hero_label", "type": "text", "placeholder": "Data and Insights"},
+      {"key": "field_ins_hero_title_start", "label": "Heading Start", "name": "insights_hero_title_start", "type": "text", "placeholder": "Use"},
+      {"key": "field_ins_hero_title_highlight", "label": "Heading Highlighted Text", "name": "insights_hero_title_highlight", "type": "text", "placeholder": "destination data"},
+      {"key": "field_ins_hero_title_end", "label": "Heading End", "name": "insights_hero_title_end", "type": "text", "placeholder": "to plan and see what’s working and what’s not"},
+      {"key": "field_ins_hero_copy", "label": "Hero Copy", "name": "insights_hero_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "TXA gives destinations the capability to build useful analytics and consumer data sets. Dashboards, attribution data and exports can help DMOs understand visitor engagement, supplier activity, campaign ROI and the economic model of tourism."},
+      {"key": "field_ins_hero_button_label", "label": "Button Label", "name": "insights_hero_button_label", "type": "text", "placeholder": "Request a demo"},
+      {"key": "field_ins_hero_button_url", "label": "Button URL", "name": "insights_hero_button_url", "type": "text", "placeholder": "/contact"},
+      {"key": "field_ins_hero_image", "label": "Hero Image", "name": "insights_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_ins_hero_image_alt", "label": "Hero Image Alt Text", "name": "insights_hero_image_alt", "type": "text", "placeholder": "Destination website displayed on a laptop"},
+
+      {"key": "field_ins_tab_capabilities", "label": "Capabilities", "type": "tab", "placement": "top"},
+      {"key": "field_ins_capabilities_heading", "label": "Heading", "name": "insights_capabilities_heading", "type": "text", "placeholder": "Comprehensive Data Capabilities"},
+      {"key": "field_ins_capabilities_copy", "label": "Description", "name": "insights_capabilities_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "DMOs need evidence of marketing ROI, supplier engagement and local economic impact, but often lack real-time performance data."},
+
+      {"key": "field_ins_tab_dashboard", "label": "Dashboard Card", "type": "tab", "placement": "top"},
+      {"key": "field_ins_dashboard_icon", "label": "Icon (Bootstrap Icons class)", "name": "insights_dashboard_icon", "type": "text", "placeholder": "bi-grid"},
+      {"key": "field_ins_dashboard_title", "label": "Title", "name": "insights_dashboard_title", "type": "text", "placeholder": "Real-time Dashboard Display"},
+      {"key": "field_ins_dashboard_copy", "label": "Copy", "name": "insights_dashboard_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Monitor key industry metrics as they happen. Visualise visitor flow, booking surges and market shifts through a dynamic interface designed for DMO decision makers."},
+      {"key": "field_ins_dashboard_point_1", "label": "Bullet 1", "name": "insights_dashboard_point_1", "type": "text", "placeholder": "Dynamic metric tracking"},
+      {"key": "field_ins_dashboard_point_2", "label": "Bullet 2", "name": "insights_dashboard_point_2", "type": "text", "placeholder": "Visual trend analysis"},
+      {"key": "field_ins_dashboard_image", "label": "Image", "name": "insights_dashboard_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_ins_dashboard_image_alt", "label": "Image Alt Text", "name": "insights_dashboard_image_alt", "type": "text", "placeholder": "Tourism products displayed on an interactive destination map"},
+
+      {"key": "field_ins_tab_export", "label": "Export Card", "type": "tab", "placement": "top"},
+      {"key": "field_ins_export_icon", "label": "Icon (Bootstrap Icons class)", "name": "insights_export_icon", "type": "text", "placeholder": "bi-file-earmark-arrow-down"},
+      {"key": "field_ins_export_title", "label": "Title", "name": "insights_export_title", "type": "text", "placeholder": "Export Power"},
+      {"key": "field_ins_export_copy", "label": "Copy", "name": "insights_export_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Take your data anywhere. Export booking and consumer metrics into Excel or XML formats for deep internal auditing or offline presentation."},
+      {"key": "field_ins_export_format_1", "label": "Format Tag 1", "name": "insights_export_format_1", "type": "text", "placeholder": "XLSX"},
+      {"key": "field_ins_export_format_2", "label": "Format Tag 2", "name": "insights_export_format_2", "type": "text", "placeholder": "XML"},
+      {"key": "field_ins_export_format_3", "label": "Format Tag 3", "name": "insights_export_format_3", "type": "text", "placeholder": "JSON"},
+
+      {"key": "field_ins_tab_api", "label": "API Card", "type": "tab", "placement": "top"},
+      {"key": "field_ins_api_icon", "label": "Icon (Bootstrap Icons class)", "name": "insights_api_icon", "type": "text", "placeholder": "bi-arrows-fullscreen"},
+      {"key": "field_ins_api_title", "label": "Title", "name": "insights_api_title", "type": "text", "placeholder": "Information API"},
+      {"key": "field_ins_api_copy", "label": "Copy", "name": "insights_api_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Directly pipe your TXA data into existing CRM or BI tools. Our robust Information API supports complex integrations for enterprise-level automation."},
+
+      {"key": "field_ins_tab_campaign", "label": "Campaign Card", "type": "tab", "placement": "top"},
+      {"key": "field_ins_campaign_icon", "label": "Icon (Bootstrap Icons class)", "name": "insights_campaign_icon", "type": "text", "placeholder": "bi-megaphone"},
+      {"key": "field_ins_campaign_title", "label": "Title", "name": "insights_campaign_title", "type": "text", "placeholder": "Campaign Attribution"},
+      {"key": "field_ins_campaign_copy", "label": "Copy", "name": "insights_campaign_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Close the loop on marketing spend. Use unique attribution codes to track exactly which campaigns triggered bookings and visitor growth."},
+
+      {"key": "field_ins_tab_governance", "label": "Governance Card", "type": "tab", "placement": "top"},
+      {"key": "field_ins_governance_icon", "label": "Icon (Bootstrap Icons class)", "name": "insights_governance_icon", "type": "text", "placeholder": "bi-shield-check"},
+      {"key": "field_ins_governance_title", "label": "Title", "name": "insights_governance_title", "type": "text", "placeholder": "Secure Governance"},
+      {"key": "field_ins_governance_copy", "label": "Copy", "name": "insights_governance_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Enterprise-grade privacy. We ensure all data access adheres to strict privacy, consent and governance rules to protect industry participants."}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-data-insights.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

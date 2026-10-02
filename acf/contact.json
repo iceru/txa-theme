@@ -1,0 +1,47 @@
+[
+  {
+    "key": "group_txa_contact",
+    "title": "TXA Contact Page",
+    "fields": [
+      {"key": "field_con_tab_seo", "label": "SEO", "type": "tab", "placement": "top"},
+      {"key": "field_con_seo_title", "label": "Browser Title", "name": "contact_seo_title", "type": "text", "placeholder": "Contact TXA | Tourism Exchange Australia"},
+      {"key": "field_con_seo_description", "label": "Meta Description", "name": "contact_seo_description", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Contact Tourism Exchange Australia to find the right pathway for suppliers, destinations, distributors and booking-system partners."},
+
+      {"key": "field_con_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_con_hero_label", "label": "Hero Label", "name": "contact_hero_label", "type": "text", "placeholder": "CONTACT US"},
+      {"key": "field_con_hero_title", "label": "Hero Title", "name": "contact_hero_title", "type": "text", "placeholder": "Get in touch with Tourism Exchange Australia"},
+      {"key": "field_con_hero_copy", "label": "Hero Copy", "name": "contact_hero_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Whether you are a tourism supplier, destination organisation, distributor or booking system partner, contact TXA to find the right pathway for your organisation."},
+      {"key": "field_con_hero_image", "label": "Hero Image", "name": "contact_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_con_hero_image_alt", "label": "Hero Image Alt Text", "name": "contact_hero_image_alt", "type": "text", "placeholder": "Australian wildlife and landscape"},
+
+      {"key": "field_con_tab_form", "label": "Enquiry Form", "type": "tab", "placement": "top"},
+      {"key": "field_con_form_heading", "label": "Form Heading", "name": "contact_form_heading", "type": "text", "placeholder": "Send an Enquiry"},
+
+      {"key": "field_con_tab_pathways", "label": "Pathway Guidance", "type": "tab", "placement": "top"},
+      {"key": "field_con_pathways_heading", "label": "Heading", "name": "contact_pathways_heading", "type": "text", "placeholder": "Pathway Guidance"},
+
+      {"key": "field_con_pathway_1_title", "label": "Pathway 1 Title", "name": "contact_pathway_1_title", "type": "text", "placeholder": "Tourism Suppliers"},
+      {"key": "field_con_pathway_1_copy", "label": "Pathway 1 Copy", "name": "contact_pathway_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "If you have tours, accommodation, or attractions, choose 'General Enquiry' or contact your current booking system provider to see if they are already integrated with TXA."},
+
+      {"key": "field_con_pathway_2_title", "label": "Pathway 2 Title", "name": "contact_pathway_2_title", "type": "text", "placeholder": "Distributors"},
+      {"key": "field_con_pathway_2_copy", "label": "Pathway 2 Copy", "name": "contact_pathway_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "OTAs and wholesalers looking for high quality bookable Australian inventory should select 'Distributor Enquiry' to start the technical evaluation process."},
+
+      {"key": "field_con_pathway_3_title", "label": "Pathway 3 Title", "name": "contact_pathway_3_title", "type": "text", "placeholder": "Destinations"},
+      {"key": "field_con_pathway_3_copy", "label": "Pathway 3 Copy", "name": "contact_pathway_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Regional and State bodies should request the 'Smart Destination Demo' to understand the strategic benefits of our destination wide aggregation."},
+
+      {"key": "field_con_pathway_4_title", "label": "Pathway 4 Title", "name": "contact_pathway_4_title", "type": "text", "placeholder": "Booking Systems"},
+      {"key": "field_con_pathway_4_copy", "label": "Pathway 4 Copy", "name": "contact_pathway_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Tech providers wanting to offer their clients global distribution via TXA should select 'Booking-System Partner' for API documentation access."}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-contact.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

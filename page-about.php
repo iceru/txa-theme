@@ -26,7 +26,7 @@ $countries = [
     ['name' => 'Saudi Arabia', 'icon' => 'txsa.jpg'],
     ['name' => 'United States', 'icon' => 'txusa.png'],
 ];
-$timeline = [
+$default_timeline = [
     ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'asset' => 'conviction.png'],
     ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'asset' => 'global-tender.png'],
     ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'asset' => 'national-support.png'],
@@ -34,7 +34,7 @@ $timeline = [
     ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'asset' => 'global-expansion.png'],
     ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.', 'asset' => 'built-here-for-here.png'],
 ];
-$timeline_values = [
+$default_timeline_values = [
     ['title' => 'Australia\'s Own', 'copy' => 'Proudly built and operated in Australia.', 'icon' => 'bi-geo-alt'],
     ['title' => 'For the Industry', 'copy' => 'Designed for all tourism businesses, big and small.', 'icon' => 'bi-people'],
     ['title' => 'Government Backed', 'copy' => 'Supported by every State and Federal Government Tourism Organisation.', 'icon' => 'bi-building-check'],
@@ -42,6 +42,26 @@ $timeline_values = [
     ['title' => 'Global Impact', 'copy' => 'Powering tourism platforms in the UK, Japan, Saudi Arabia and the United States.', 'icon' => 'bi-globe-americas'],
     ['title' => 'Value Stays in Australia', 'copy' => 'Keeping more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-currency-dollar'],
 ];
+$timeline_query = new WP_Query([
+    'post_type' => 'txa_timeline',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
+    'no_found_rows' => true,
+]);
+$timeline = $default_timeline;
+if ($timeline_query->have_posts()) {
+    $timeline = [];
+    foreach ($timeline_query->posts as $timeline_post) {
+        $timeline[] = [
+            'year' => get_post_meta($timeline_post->ID, '_txa_timeline_year', true),
+            'title' => get_the_title($timeline_post),
+            'copy' => get_post_meta($timeline_post->ID, '_txa_timeline_copy', true),
+            'image' => get_the_post_thumbnail_url($timeline_post, 'medium'),
+        ];
+    }
+}
+$timeline_values = $default_timeline_values;
 ?>
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
@@ -144,6 +164,12 @@ $timeline_values = [
                     ];
                     foreach ($timeline as $index => $item):
                         $desktop_position = $timeline_positions[$index] ?? ''; ?>
+                        <?php
+                        $timeline_image = $item['image'] ?? '';
+                        if (!$timeline_image && !empty($item['asset'])) {
+                            $timeline_image = get_theme_file_uri('/images/timeline-icons/' . $item['asset']);
+                        }
+                        ?>
                         <article
                             class="relative grid grid-cols-[40px_1fr] gap-4 lg:block lg:min-h-[330px] lg:text-center <?php echo esc_attr($desktop_position); ?>">
                             <span
@@ -152,9 +178,10 @@ $timeline_values = [
                             <div class="lg:pt-11">
                                 <span
                                     class="ml-0 flex size-16 items-center justify-center rounded-full bg-white text-3xl text-brand shadow-sm sm:size-[72px] lg:mx-auto lg:size-20">
-                                    <img
-                                        src="<?php echo esc_url(get_theme_file_uri('/images/timeline-icons/' . $item['asset'])); ?>"
-                                        alt="" class="h-10 w-10 object-contain sm:h-12 sm:w-12 lg:h-14 lg:w-14" loading="lazy">
+                                    <?php if ($timeline_image): ?>
+                                        <img src="<?php echo esc_url($timeline_image); ?>" alt=""
+                                            class="h-10 w-10 object-contain sm:h-12 sm:w-12 lg:h-14 lg:w-14" loading="lazy">
+                                    <?php endif; ?>
                                 </span>
                                 <p class="mt-4 text-xl font-bold uppercase text-[#151c27]">
                                     <?php echo esc_html($item['year']); ?>
@@ -175,8 +202,9 @@ $timeline_values = [
             <div
                 class="mt-12 grid overflow-hidden rounded-xl border border-line bg-white shadow-sm sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 xl:grid-cols-6">
                 <?php foreach ($timeline_values as $value): ?>
+                    <?php $value_icon = $value['icon'] ?? ''; ?>
                     <article class="border-b border-line p-5 last:border-b-0 sm:border-r lg:p-6 xl:border-b-0">
-                        <i class="bi <?php echo esc_attr($value['icon']); ?> text-3xl text-brand" aria-hidden="true"></i>
+                        <?php if ($value_icon): ?><i class="bi <?php echo esc_attr($value_icon); ?> text-3xl text-brand" aria-hidden="true"></i><?php endif; ?>
                         <h3 class="mt-3 text-xs font-bold uppercase leading-5 text-[#151c27]">
                             <?php echo esc_html($value['title']); ?>
                         </h3>

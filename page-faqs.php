@@ -6,6 +6,14 @@
  * @package TailPress
  */
 
+if (!function_exists('txa_faq_header')) {
+    function txa_faq_header(string $name, string $default): string
+    {
+        $value = function_exists('get_field') ? get_field($name) : null;
+        return (null === $value || '' === $value || false === $value) ? $default : (string) $value;
+    }
+}
+
 add_filter('pre_get_document_title', fn(): string => 'Frequently Asked Questions | Tourism Exchange Australia');
 add_action('wp_head', function (): void {
     if (is_page_template('page-faqs.php') || is_page('faqs')) {
@@ -70,26 +78,23 @@ $faq_groups = [
             <div class="max-w-[760px]">
                 <p
                     class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                    Help centre</p>
+                    <?php echo esc_html(txa_faq_header('faq_hero_eyebrow', 'Help centre')); ?></p>
                 <h1
                     class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.1] tracking-[-.02em] text-[#151c27] sm:text-5xl lg:text-[44px]">
-                    Frequently asked questions
+                    <?php echo esc_html(txa_faq_header('faq_hero_title', 'Frequently asked questions')); ?>
                 </h1>
                 <p class="mt-5 max-w-[680px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">
-                    Find answers for your pathway into Australia’s national tourism exchange. Choose a category, then
-                    open only the questions you need.
+                    <?php echo esc_html(txa_faq_header('faq_hero_copy', 'Find answers for your pathway into Australia’s national tourism exchange. Choose a category, then open only the questions you need.')); ?>
                 </p>
             </div>
             <aside class="rounded-2xl bg-brand p-6 text-white shadow-xl sm:p-8">
                 <span class="flex size-12 items-center justify-center rounded-xl bg-white/15 text-2xl"
                     aria-hidden="true"><i class="bi bi-chat-square-text"></i></span>
-                <h2 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold">Can’t find your answer?
+                <h2 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold"><?php echo esc_html(txa_faq_header('faq_hero_aside_title', 'Can’t find your answer?')); ?>
                 </h2>
-                <p class="mt-3 text-sm leading-6 text-white/85">Tell us which pathway you are exploring and the TXA team
-                    will help you find the right next step.</p>
-                <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                    class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-white px-5 py-3 font-bold text-brand !no-underline hover:bg-surface sm:w-auto">Contact
-                    TXA</a>
+                <p class="mt-3 text-sm leading-6 text-white/85"><?php echo esc_html(txa_faq_header('faq_hero_aside_copy', 'Tell us which pathway you are exploring and the TXA team will help you find the right next step.')); ?></p>
+                <a href="<?php $faq_cta_url = txa_faq_header('faq_hero_aside_button_url', '/contact/'); echo esc_url((0 === strpos($faq_cta_url, '/') && 0 !== strpos($faq_cta_url, '//')) ? home_url($faq_cta_url) : $faq_cta_url); ?>"
+                    class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-white px-5 py-3 font-bold text-brand !no-underline hover:bg-surface sm:w-auto"><?php echo esc_html(txa_faq_header('faq_hero_aside_button_label', 'Contact TXA')); ?></a>
             </aside>
         </div>
     </section>

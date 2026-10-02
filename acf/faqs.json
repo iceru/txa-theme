@@ -1,0 +1,26 @@
+[
+  {
+    "key": "group_txa_faqs_header",
+    "title": "TXA FAQs Page Header",
+    "fields": [
+      {"key": "field_faq_header_eyebrow", "label": "Eyebrow", "name": "faq_hero_eyebrow", "type": "text", "placeholder": "Help centre"},
+      {"key": "field_faq_header_title", "label": "Heading", "name": "faq_hero_title", "type": "text", "placeholder": "Frequently asked questions"},
+      {"key": "field_faq_header_copy", "label": "Description", "name": "faq_hero_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Find answers for your pathway into Australia’s national tourism exchange. Choose a category, then open only the questions you need."},
+      {"key": "field_faq_header_aside_title", "label": "Aside Heading", "name": "faq_hero_aside_title", "type": "text", "placeholder": "Can’t find your answer?"},
+      {"key": "field_faq_header_aside_copy", "label": "Aside Description", "name": "faq_hero_aside_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Tell us which pathway you are exploring and the TXA team will help you find the right next step."},
+      {"key": "field_faq_header_button_label", "label": "Button Label", "name": "faq_hero_aside_button_label", "type": "text", "placeholder": "Contact TXA"},
+      {"key": "field_faq_header_button_url", "label": "Button URL", "name": "faq_hero_aside_button_url", "type": "text", "placeholder": "/contact/"}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-faqs.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

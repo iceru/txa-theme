@@ -6,11 +6,66 @@
  * @package TailPress
  */
 
+if (!function_exists('txa_f')) {
+    function txa_f(string $name, $default = '')
+    {
+        $value = function_exists('get_field') ? get_field($name) : null;
+        return (null === $value || '' === $value || false === $value) ? $default : $value;
+    }
+}
+
+if (!function_exists('txa_img')) {
+    function txa_img(string $name, string $default): string
+    {
+        $value = txa_f($name);
+        if (is_array($value) && !empty($value['url'])) {
+            return $value['url'];
+        }
+        if (is_numeric($value)) {
+            $url = wp_get_attachment_image_url((int) $value, 'full');
+            if ($url) {
+                return $url;
+            }
+        }
+        if (is_string($value) && '' !== $value) {
+            return $value;
+        }
+        return $default;
+    }
+}
+
+if (!function_exists('txa_url')) {
+    function txa_url(string $name, string $default): string
+    {
+        $value = trim((string) txa_f($name, $default));
+        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
+            return home_url($value);
+        }
+        return $value;
+    }
+}
+
+if (!function_exists('txa_concierge_cards')) {
+    function txa_concierge_cards(string $prefix, array $cards, array $keys): array
+    {
+        foreach ($cards as $i => $card) {
+            $n = $i + 1;
+            foreach ($keys as $key) {
+                $cards[$i][$key] = txa_f("{$prefix}_{$n}_{$key}", $card[$key] ?? '');
+            }
+            if (!empty($card['image'])) {
+                $cards[$i]['image'] = txa_img("{$prefix}_{$n}_image", get_theme_file_uri('/images/' . $card['image']));
+            }
+        }
+        return $cards;
+    }
+}
+
 get_header();
 
-$demo_url = home_url('/contact/');
+$demo_url = txa_url('concierge_hero_button_url', home_url('/contact/'));
 
-$activation_cards = [
+$activation_cards = txa_concierge_cards('concierge_activation', [
     [
         'icon' => 'bi-share',
         'title' => 'Industry Activation',
@@ -35,9 +90,9 @@ $activation_cards = [
         'title' => 'Seamless Operations',
         'copy' => 'Use supplier opt-in, automated hosted booking pages, and integrated and automated direct payment and settlement of booking funds.',
     ],
-];
+], ['icon', 'title', 'copy']);
 
-$partner_cards = [
+$partner_cards = txa_concierge_cards('concierge_partner', [
     [
         'icon' => 'bi-buildings',
         'title' => 'Accommodation',
@@ -57,39 +112,35 @@ $partner_cards = [
         'copy' => 'Airports and National Park offices inter-connect to offer visitors numerous hyper local channels for discovery and booking options',
         'label' => 'Regional dispersal',
     ],
-];
+], ['icon', 'title', 'copy', 'label']);
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="bg-surface px-4 py-14 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_590px] lg:items-center lg:gap-16">
             <div>
-                <p class="text-sm text-brand mb-4 font-semibold">UNIQUE COLLABORATIVE OPPORTUNITY</p>
+                <p class="text-sm text-brand mb-4 font-semibold"><?php echo esc_html(txa_f('concierge_hero_eyebrow', 'UNIQUE COLLABORATIVE OPPORTUNITY')); ?></p>
                 <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                    Virtual Concierge</p>
+                    <?php echo esc_html(txa_f('concierge_hero_label', 'Virtual Concierge')); ?></p>
                 <h1
                     class="mt-8 max-w-[670px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.16]">
-                    TXA’s local reseller network or ‘Virtual Concierge’</h1>
-                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg">TXA’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity
-                    providers cross sell, visitor information centres, National Park offices, airports and other local
-                    partners inter-connect offering visitors' numerous local channels for booking local activities,
-                    events and experiences.</p>
+                    <?php echo esc_html(txa_f('concierge_hero_title', 'TXA’s local reseller network or ‘Virtual Concierge’')); ?></h1>
+                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg"><?php echo esc_html(txa_f('concierge_hero_copy', 'TXA’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity providers cross sell, visitor information centres, National Park offices, airports and other local partners inter-connect offering visitors\' numerous local channels for booking local activities, events and experiences.')); ?></p>
                 <a href="<?php echo esc_url($demo_url); ?>"
-                    class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto">Explore
-                    TXA's Virtual Concierge</a>
+                    class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('concierge_hero_button_label', "Explore TXA's Virtual Concierge")); ?></a>
             </div>
             <div class="relative overflow-hidden rounded-lg">
-                <img src="<?php echo esc_url(get_theme_file_uri('/images/virtual-concierge.jpg')); ?>"
-                    alt="Sydney Harbour Bridge" class="h-[340px] w-full object-cover sm:h-[390px] lg:h-[400px]">
+                <img src="<?php echo esc_url(txa_img('concierge_hero_image', get_theme_file_uri('/images/virtual-concierge.jpg'))); ?>"
+                    alt="<?php echo esc_attr(txa_f('concierge_hero_image_alt', 'Sydney Harbour Bridge')); ?>" class="h-[340px] w-full object-cover sm:h-[390px] lg:h-[400px]">
                 <div
                     class="absolute bottom-5 left-5 right-5 flex items-center gap-5 rounded-xl bg-white/90 p-5 shadow-lg backdrop-blur">
                     <span
                         class="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand text-xl text-white">
-                        <i class="bi bi-diagram-3" aria-hidden="true"></i>
+                        <i class="bi <?php echo esc_attr(txa_f('concierge_badge_icon', 'bi-diagram-3')); ?>" aria-hidden="true"></i>
                     </span>
                     <div>
-                        <p class="text-lg font-bold text-[#151c27]">Integrated Connectivity</p>
-                        <p class="mt-1 text-sm text-mid-gray">Real-time local ecosystem activation</p>
+                        <p class="text-lg font-bold text-[#151c27]"><?php echo esc_html(txa_f('concierge_badge_title', 'Integrated Connectivity')); ?></p>
+                        <p class="mt-1 text-sm text-mid-gray"><?php echo esc_html(txa_f('concierge_badge_copy', 'Real-time local ecosystem activation')); ?></p>
                     </div>
                 </div>
             </div>
@@ -101,10 +152,8 @@ $partner_cards = [
             <div class="max-w-[790px]">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    Interconnect and activate your visitor economy.</h2>
-                <p class="mt-5 text-base leading-7 text-mid-gray">Transform every touchpoint into a booking opportunity.
-                    By connecting diverse local operators, you create a resilient network that keeps spending within the
-                    region.</p>
+                    <?php echo esc_html(txa_f('concierge_activation_heading', 'Interconnect and activate your visitor economy.')); ?></h2>
+                <p class="mt-5 text-base leading-7 text-mid-gray"><?php echo esc_html(txa_f('concierge_activation_copy', 'Transform every touchpoint into a booking opportunity. By connecting diverse local operators, you create a resilient network that keeps spending within the region.')); ?></p>
             </div>
 
             <div class="mt-10 grid gap-6 lg:grid-cols-3">
@@ -124,7 +173,7 @@ $partner_cards = [
                                     </h3>
                                     <p class="mt-4 text-base leading-7 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                                 </div>
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $card['image'])); ?>"
+                                <img src="<?php echo esc_url($card['image']); ?>"
                                     alt="<?php echo esc_attr($card['title']); ?>"
                                     class="h-[160px] w-full rounded-lg object-cover">
                             </div>
@@ -149,10 +198,8 @@ $partner_cards = [
             <div class="mx-auto max-w-[720px] text-center">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    Empower Your Local Partners</h2>
-                <p class="mt-6 text-base leading-7 text-mid-gray">Give local partners a practical way to recommend and
-                    book experiences, turning every tourism operator, information desk and concierge into an active,
-                    informed and motivated local booking channel</p>
+                    <?php echo esc_html(txa_f('concierge_partners_heading', 'Empower Your Local Partners')); ?></h2>
+                <p class="mt-6 text-base leading-7 text-mid-gray"><?php echo esc_html(txa_f('concierge_partners_copy', 'Give local partners a practical way to recommend and book experiences, turning every tourism operator, information desk and concierge into an active, informed and motivated local booking channel')); ?></p>
             </div>
             <div class="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
                 <?php foreach ($partner_cards as $card) { ?>

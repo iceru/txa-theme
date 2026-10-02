@@ -1,0 +1,97 @@
+[
+  {
+    "key": "group_txa_booking_systems",
+    "title": "TXA Booking Systems Page",
+    "fields": [
+      {"key": "field_book_tab_seo", "label": "SEO", "type": "tab", "placement": "top"},
+      {"key": "field_book_seo_title", "label": "Browser Title", "name": "booking_seo_title", "type": "text", "placeholder": "TXA Booking Systems | Tourism Exchange Australia"},
+      {"key": "field_book_seo_description", "label": "Meta Description", "name": "booking_seo_description", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Connect your booking system to Australia's national tourism exchange and help operator customers access broader destination, distributor and trade channels."},
+
+      {"key": "field_book_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_book_hero_label", "label": "Hero Label", "name": "booking_hero_label", "type": "text", "placeholder": "TXA CONNECTED BOOKING SYSTEMS"},
+      {"key": "field_book_hero_title", "label": "Hero Title", "name": "booking_hero_title", "type": "text", "placeholder": "Connect your booking system to Australia’s national tourism exchange"},
+      {"key": "field_book_hero_copy", "label": "Hero Copy", "name": "booking_hero_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXA helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Australia’s open B2B tourism exchange."},
+      {"key": "field_book_hero_image", "label": "Hero Image", "name": "booking_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_hero_image_alt", "label": "Hero Image Alt Text", "name": "booking_hero_image_alt", "type": "text", "placeholder": "Aerial view of an Australian beach"},
+      {"key": "field_book_hero_button_label", "label": "Hero Button Label", "name": "booking_hero_button_label", "type": "text", "placeholder": "Booking System Partner Enquiry"},
+      {"key": "field_book_partner_url", "label": "Partner Enquiry URL (used by all buttons)", "name": "booking_partner_url", "type": "text", "placeholder": "/booking-systems/partner-enquiry/"},
+
+      {"key": "field_book_platform_heading", "label": "Platform Card Heading", "name": "booking_platform_heading", "type": "text", "placeholder": "TXA PLATFORM"},
+      {"key": "field_book_platform_tagline", "label": "Platform Card Tagline", "name": "booking_platform_tagline", "type": "text", "placeholder": "One connection. More distribution."},
+      {"key": "field_book_platform_left_icon", "label": "Platform Left Icon (Bootstrap Icons class)", "name": "booking_platform_left_icon", "type": "text", "placeholder": "bi-calendar2-check"},
+      {"key": "field_book_platform_left_label", "label": "Platform Left Label", "name": "booking_platform_left_label", "type": "text", "placeholder": "Booking System"},
+      {"key": "field_book_platform_logo", "label": "Platform Middle Logo", "name": "booking_platform_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_platform_logo_alt", "label": "Platform Middle Logo Alt Text", "name": "booking_platform_logo_alt", "type": "text", "placeholder": "Tourism Exchange Australia"},
+      {"key": "field_book_platform_right_icon", "label": "Platform Right Icon (Bootstrap Icons class)", "name": "booking_platform_right_icon", "type": "text", "placeholder": "bi-window-stack"},
+      {"key": "field_book_platform_right_label", "label": "Platform Right Label", "name": "booking_platform_right_label", "type": "text", "placeholder": "Distribution Channels"},
+
+      {"key": "field_book_tab_intro", "label": "Intro and Benefits", "type": "tab", "placement": "top"},
+      {"key": "field_book_intro_heading", "label": "Heading", "name": "booking_intro_heading", "type": "text", "placeholder": "Connect your customers to Australia’s national tourism exchange"},
+      {"key": "field_book_intro_copy", "label": "Copy", "name": "booking_intro_copy", "type": "textarea", "rows": 6, "new_lines": "", "placeholder": "Integrating your Booking system via TXA’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels."},
+
+      {"key": "field_book_benefit_1_icon", "label": "Benefit 1 Icon (Bootstrap Icons class)", "name": "booking_benefit_1_icon", "type": "text", "placeholder": "bi-share"},
+      {"key": "field_book_benefit_1_title", "label": "Benefit 1 Title", "name": "booking_benefit_1_title", "type": "text", "placeholder": "Broader Distribution"},
+      {"key": "field_book_benefit_1_copy", "label": "Benefit 1 Copy", "name": "booking_benefit_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Access hundreds of distributors from global OTAs to hyper-local niche and re-seller channels and visitor information center."},
+
+      {"key": "field_book_benefit_2_icon", "label": "Benefit 2 Icon (Bootstrap Icons class)", "name": "booking_benefit_2_icon", "type": "text", "placeholder": "bi-lightning-charge"},
+      {"key": "field_book_benefit_2_title", "label": "Benefit 2 Title", "name": "booking_benefit_2_title", "type": "text", "placeholder": "Reduced Friction"},
+      {"key": "field_book_benefit_2_copy", "label": "Benefit 2 Copy", "name": "booking_benefit_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Connect once to TXA and manage all distributor relationships through a unified API."},
+
+      {"key": "field_book_benefit_3_icon", "label": "Benefit 3 Icon (Bootstrap Icons class)", "name": "booking_benefit_3_icon", "type": "text", "placeholder": "bi-arrow-left-right"},
+      {"key": "field_book_benefit_3_title", "label": "Benefit 3 Title", "name": "booking_benefit_3_title", "type": "text", "placeholder": "Live Connectivity"},
+      {"key": "field_book_benefit_3_copy", "label": "Benefit 3 Copy", "name": "booking_benefit_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Real-time availability and pricing updates ensure accurate booking data across the network."},
+
+      {"key": "field_book_tab_systems", "label": "Connected Systems", "type": "tab", "placement": "top"},
+      {"key": "field_book_systems_heading", "label": "Heading", "name": "booking_systems_heading", "type": "text", "placeholder": "Connected booking systems"},
+
+      {"key": "field_book_system_1_name", "label": "System 1 Name", "name": "booking_system_1_name", "type": "text", "placeholder": "Booking Boss"},
+      {"key": "field_book_system_1_logo", "label": "System 1 Logo", "name": "booking_system_1_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_2_name", "label": "System 2 Name", "name": "booking_system_2_name", "type": "text", "placeholder": "Bookeo"},
+      {"key": "field_book_system_2_logo", "label": "System 2 Logo", "name": "booking_system_2_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_3_name", "label": "System 3 Name", "name": "booking_system_3_name", "type": "text", "placeholder": "CustomLinc"},
+      {"key": "field_book_system_3_logo", "label": "System 3 Logo", "name": "booking_system_3_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_4_name", "label": "System 4 Name", "name": "booking_system_4_name", "type": "text", "placeholder": "DigitalRez"},
+      {"key": "field_book_system_4_logo", "label": "System 4 Logo", "name": "booking_system_4_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_5_name", "label": "System 5 Name", "name": "booking_system_5_name", "type": "text", "placeholder": "FareHarbor"},
+      {"key": "field_book_system_5_logo", "label": "System 5 Logo", "name": "booking_system_5_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_6_name", "label": "System 6 Name", "name": "booking_system_6_name", "type": "text", "placeholder": "NewBook"},
+      {"key": "field_book_system_6_logo", "label": "System 6 Logo", "name": "booking_system_6_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_7_name", "label": "System 7 Name", "name": "booking_system_7_name", "type": "text", "placeholder": "Rezdy"},
+      {"key": "field_book_system_7_logo", "label": "System 7 Logo", "name": "booking_system_7_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_8_name", "label": "System 8 Name", "name": "booking_system_8_name", "type": "text", "placeholder": "ResOnline"},
+      {"key": "field_book_system_8_logo", "label": "System 8 Logo", "name": "booking_system_8_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_9_name", "label": "System 9 Name", "name": "booking_system_9_name", "type": "text", "placeholder": "Rezobx"},
+      {"key": "field_book_system_9_logo", "label": "System 9 Logo", "name": "booking_system_9_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_10_name", "label": "System 10 Name", "name": "booking_system_10_name", "type": "text", "placeholder": "RMS"},
+      {"key": "field_book_system_10_logo", "label": "System 10 Logo", "name": "booking_system_10_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_11_name", "label": "System 11 Name", "name": "booking_system_11_name", "type": "text", "placeholder": "RoomMaster"},
+      {"key": "field_book_system_11_logo", "label": "System 11 Logo", "name": "booking_system_11_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_12_name", "label": "System 12 Name", "name": "booking_system_12_name", "type": "text", "placeholder": "Seekom"},
+      {"key": "field_book_system_12_logo", "label": "System 12 Logo", "name": "booking_system_12_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_13_name", "label": "System 13 Name", "name": "booking_system_13_name", "type": "text", "placeholder": "SiteMinder"},
+      {"key": "field_book_system_13_logo", "label": "System 13 Logo", "name": "booking_system_13_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_14_name", "label": "System 14 Name", "name": "booking_system_14_name", "type": "text", "placeholder": "Little Hotelier"},
+      {"key": "field_book_system_14_logo", "label": "System 14 Logo", "name": "booking_system_14_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_system_15_name", "label": "System 15 Name", "name": "booking_system_15_name", "type": "text", "placeholder": "Update 247"},
+      {"key": "field_book_system_15_logo", "label": "System 15 Logo", "name": "booking_system_15_logo", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+
+      {"key": "field_book_tab_partners", "label": "Partners Banner", "type": "tab", "placement": "top"},
+      {"key": "field_book_partners_image", "label": "Background Image", "name": "booking_partners_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_book_partners_image_alt", "label": "Background Alt Text", "name": "booking_partners_image_alt", "type": "text", "placeholder": "Sydney Harbour"},
+      {"key": "field_book_partners_heading", "label": "Heading", "name": "booking_partners_heading", "type": "text", "placeholder": "TXA Booking-system partners"},
+      {"key": "field_book_partners_copy", "label": "Copy", "name": "booking_partners_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry."},
+      {"key": "field_book_partners_button_label", "label": "Button Label", "name": "booking_partners_button_label", "type": "text", "placeholder": "Free to connect"}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-booking-systems.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]
