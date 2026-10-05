@@ -263,7 +263,6 @@ add_action('wp_enqueue_scripts', function () {
 add_filter('home_url', function (string $url, string $path): string {
     $placeholder_paths = [
         '/apply-now/',
-        '/contact/',
         '/destinations/contact/',
         '/distributors/apply/',
         '/booking-systems/partner-enquiry/',
