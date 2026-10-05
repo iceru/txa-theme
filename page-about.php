@@ -27,12 +27,12 @@ $countries = [
     ['name' => 'United States', 'icon' => 'txusa.png'],
 ];
 $default_timeline = [
-    ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'asset' => 'conviction.png'],
-    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'asset' => 'global-tender.png'],
-    ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'asset' => 'national-support.png'],
-    ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'asset' => 'exchange-launched.png'],
-    ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'asset' => 'global-expansion.png'],
-    ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.', 'asset' => 'built-here-for-here.png'],
+    ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'icon' => 'bi-lightbulb'],
+    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'icon' => 'bi-globe2'],
+    ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'icon' => 'bi-people'],
+    ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'icon' => 'bi-rocket-takeoff'],
+    ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'icon' => 'bi-airplane'],
+    ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-house-heart'],
 ];
 $default_timeline_values = [
     ['title' => 'Australia\'s Own', 'copy' => 'Proudly built and operated in Australia.', 'icon' => 'bi-geo-alt'],
@@ -58,6 +58,7 @@ if ($timeline_query->have_posts()) {
             'title' => get_the_title($timeline_post),
             'copy' => get_post_meta($timeline_post->ID, '_txa_timeline_copy', true),
             'image' => get_the_post_thumbnail_url($timeline_post, 'medium'),
+            'icon' => 'bi-calendar-event',
         ];
     }
 }
@@ -166,9 +167,7 @@ $timeline_values = $default_timeline_values;
                         $desktop_position = $timeline_positions[$index] ?? ''; ?>
                         <?php
                         $timeline_image = $item['image'] ?? '';
-                        if (!$timeline_image && !empty($item['asset'])) {
-                            $timeline_image = get_theme_file_uri('/images/timeline-icons/' . $item['asset']);
-                        }
+                        $timeline_icon = $item['icon'] ?? 'bi-calendar-event';
                         ?>
                         <article
                             class="relative grid grid-cols-[40px_1fr] gap-4 lg:block lg:min-h-[330px] lg:text-center <?php echo esc_attr($desktop_position); ?>">
@@ -181,6 +180,8 @@ $timeline_values = $default_timeline_values;
                                     <?php if ($timeline_image): ?>
                                         <img src="<?php echo esc_url($timeline_image); ?>" alt=""
                                             class="h-10 w-10 object-contain sm:h-12 sm:w-12 lg:h-14 lg:w-14" loading="lazy">
+                                    <?php else: ?>
+                                        <i class="bi <?php echo esc_attr($timeline_icon); ?>" aria-hidden="true"></i>
                                     <?php endif; ?>
                                 </span>
                                 <p class="mt-4 text-xl font-bold uppercase text-[#151c27]">
