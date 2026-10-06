@@ -164,37 +164,45 @@ foreach ($systems as $i => $system) {
                 <div class="w-full max-w-[760px]">
                     <p
                         class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                        <?php echo esc_html(txa_f('booking_hero_label', 'TXA CONNECTED BOOKING SYSTEMS')); ?></p>
+                        <?php echo esc_html(txa_f('booking_hero_label', 'TXA CONNECTED BOOKING SYSTEMS')); ?>
+                    </p>
                     <h1
                         class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                        <?php echo esc_html(txa_f('booking_hero_title', 'Connect your booking system to Australia’s national tourism exchange')); ?></h1>
+                        <?php echo esc_html(txa_f('booking_hero_title', 'Connect your booking system to Australia’s national tourism exchange')); ?>
+                    </h1>
                     <p
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo esc_html(txa_f('booking_hero_copy', 'TXA helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Australia’s open B2B tourism exchange.')); ?></p>
-                    <div class="mt-6"><?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $partner_url); ?>
+                        <?php echo esc_html(txa_f('booking_hero_copy', 'TXA helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Australia’s open B2B tourism exchange.')); ?>
+                    </p>
+                    <div class="mt-6">
+                        <?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $partner_url); ?>
                     </div>
                 </div>
 
                 <div
                     class="overflow-hidden rounded-2xl border border-white/25 bg-white/10 px-5 py-7 text-center text-white shadow-[0_20px_45px_-18px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6 sm:py-8">
                     <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold uppercase sm:text-2xl">
-                        <?php echo esc_html(txa_f('booking_platform_heading', 'TXA PLATFORM')); ?></h2>
+                        <?php echo esc_html(txa_f('booking_platform_heading', 'TXA PLATFORM')); ?>
+                    </h2>
                     <p class="mt-1 text-xs font-semibold text-white/80">
-                        <?php echo esc_html(txa_f('booking_platform_tagline', 'One connection. More distribution.')); ?></p>
+                        <?php echo esc_html(txa_f('booking_platform_tagline', 'One connection. More distribution.')); ?>
+                    </p>
 
                     <div
                         class="mx-auto mt-7 grid grid-cols-[minmax(0,1fr)_24px_minmax(0,1fr)_24px_minmax(0,1fr)] justify-center gap-1 sm:grid-cols-[minmax(0,1fr)_28px_minmax(0,1fr)_28px_minmax(0,1fr)] sm:gap-2 lg:mt-9">
                         <div class="flex w-full min-w-0 flex-col items-center">
                             <span
                                 class="flex size-16 items-center justify-center rounded-2xl bg-brand text-3xl leading-none text-white shadow-lg shadow-brand/25 sm:size-[72px] sm:text-4xl">
-                                <i class="bi <?php echo esc_attr(txa_f('booking_platform_left_icon', 'bi-calendar2-check')); ?>" aria-hidden="true"></i>
+                                <i class="bi <?php echo esc_attr(txa_f('booking_platform_left_icon', 'bi-calendar2-check')); ?>"
+                                    aria-hidden="true"></i>
                             </span>
                             <p class="mt-3 text-xs font-semibold leading-4 text-white sm:text-sm sm:leading-5">
-                                <?php echo esc_html(txa_f('booking_platform_left_label', 'Booking System')); ?></p>
+                                <?php echo esc_html(txa_f('booking_platform_left_label', 'Booking System')); ?>
+                            </p>
                         </div>
 
-                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7 mt-6"
-                            viewBox="0 0 64 24" fill="none" aria-hidden="true">
+                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7 mt-6" viewBox="0 0 64 24" fill="none"
+                            aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -208,8 +216,8 @@ foreach ($systems as $i => $system) {
                             </span>
                         </div>
 
-                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7 mt-6"
-                            viewBox="0 0 64 24" fill="none" aria-hidden="true">
+                        <svg class="h-5 w-6 shrink-0 text-white/80 sm:h-7 sm:w-7 mt-6" viewBox="0 0 64 24" fill="none"
+                            aria-hidden="true">
                             <path d="M3 12h58M3 12l7-7M3 12l7 7M61 12l-7-7M61 12l-7 7" stroke="currentColor"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -217,10 +225,12 @@ foreach ($systems as $i => $system) {
                         <div class="flex w-full min-w-0 flex-col items-center">
                             <span
                                 class="flex size-16 items-center justify-center rounded-2xl bg-brand text-3xl leading-none text-white shadow-lg shadow-brand/25 sm:size-[72px] sm:text-4xl">
-                                <i class="bi <?php echo esc_attr(txa_f('booking_platform_right_icon', 'bi-window-stack')); ?>" aria-hidden="true"></i>
+                                <i class="bi <?php echo esc_attr(txa_f('booking_platform_right_icon', 'bi-window-stack')); ?>"
+                                    aria-hidden="true"></i>
                             </span>
                             <p class="mt-3 text-xs font-semibold leading-4 text-white sm:text-sm sm:leading-5">
-                                <?php echo esc_html(txa_f('booking_platform_right_label', 'Distribution Channels')); ?></p>
+                                <?php echo esc_html(txa_f('booking_platform_right_label', 'Distribution Channels')); ?>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -233,9 +243,11 @@ foreach ($systems as $i => $system) {
             <div class="max-w-[725px]">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-8 tracking-[-0.01em] text-[#151c27] sm:text-3xl sm:leading-10">
-                    <?php echo esc_html(txa_f('booking_intro_heading', 'Connect your customers to Australia’s national tourism exchange')); ?></h2>
+                    <?php echo esc_html(txa_f('booking_intro_heading', 'Connect your customers to Australia’s national tourism exchange')); ?>
+                </h2>
                 <p class="mt-4 text-sm leading-6 text-mid-gray sm:text-base">
-                    <?php echo esc_html(txa_f('booking_intro_copy', 'Integrating your Booking system via TXA’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels.')); ?></p>
+                    <?php echo esc_html(txa_f('booking_intro_copy', 'Integrating your Booking system via TXA’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels.')); ?>
+                </p>
             </div>
             <div class="mt-8 grid gap-5 md:grid-cols-3 md:gap-8">
                 <?php foreach ($benefits as $benefit): ?>
@@ -261,7 +273,8 @@ foreach ($systems as $i => $system) {
             <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold tracking-[-0.01em] text-[#151c27] sm:text-3xl">
-                    <?php echo esc_html(txa_f('booking_systems_heading', 'Connected booking systems')); ?></h2>
+                    <?php echo esc_html(txa_f('booking_systems_heading', 'Connected booking systems')); ?>
+                </h2>
             </div>
             <div class="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
                 <?php foreach ($systems as $system): ?>
@@ -294,10 +307,14 @@ foreach ($systems as $i => $system) {
                 <div class="max-w-[687px]">
                     <h2
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-8 tracking-[-0.01em] text-white sm:text-3xl sm:leading-10">
-                        <?php echo esc_html(txa_f('booking_partners_heading', 'TXA Booking-system partners')); ?></h2>
+                        <?php echo esc_html(txa_f('booking_partners_heading', 'TXA Booking System partners')); ?>
+                    </h2>
                     <p class="mt-4 text-sm leading-6 text-white/90 sm:mt-5 sm:text-base">
-                        <?php echo esc_html(txa_f('booking_partners_copy', 'Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry.')); ?></p>
-                    <div class="mt-6"><?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partner_url, 'light'); ?></div>
+                        <?php echo esc_html(txa_f('booking_partners_copy', 'Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry.')); ?>
+                    </p>
+                    <div class="mt-6">
+                        <?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partner_url, 'light'); ?>
+                    </div>
                 </div>
             </div>
         </div>

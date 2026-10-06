@@ -59,7 +59,7 @@ $partner_cards = [
     [
         'icon' => 'bi-terminal',
         'eyebrow' => 'Are you a Booking System Vendor?',
-        'title' => 'Booking-System Partners',
+        'title' => 'Booking System Partners',
         'copy' => 'Empower your software users with instant access to state and regional tourism markets via TXA\'s integration framework.',
         'points' => ['Open API and Documentation', 'Technical support for onboarding', 'Value-add for your customer base'],
         'cta' => 'Partner Enquiry',
@@ -211,9 +211,11 @@ $partner_cards = [
         <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-3">
             <?php foreach ($partner_cards as $card): ?>
                 <article class="rounded-2xl border border-[#dfc0ba] bg-white p-8 sm:p-10 lg:p-8">
-                    <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand"><?php echo esc_html($card['eyebrow']); ?></p>
+                    <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand">
+                        <?php echo esc_html($card['eyebrow']); ?></p>
                     <div class="mt-6 flex min-h-12 items-center gap-3">
-                        <span class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-tint text-xl text-brand"><i
+                        <span
+                            class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-tint text-xl text-brand"><i
                                 class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i></span>
                         <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-bold leading-6 text-[#151c27]">
                             <?php echo esc_html($card['title']); ?>

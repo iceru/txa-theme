@@ -132,7 +132,8 @@ $distribution_channels = [
                     </svg>
                 </div>
 
-                <article class="rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6">
+                <article class="txa-network-node rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6"
+                    data-node="distributor" tabindex="0">
                     <p class="mb-3 text-center text-[11px] font-bold uppercase tracking-wide text-mid-gray">Distribution
                         platforms and channels</p>
                     <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-2">

@@ -33,7 +33,7 @@ $faq_groups = [
         ],
     ],
     'booking-systems' => [
-        'title' => 'Booking-system FAQs',
+        'title' => 'Booking System FAQs',
         'items' => [
             ['question' => 'What does a TXA integration offer booking-system customers?', 'answer' => 'A TXA integration can give operator customers access to broader destination, distributor and trade channels through Australia’s national tourism exchange.'],
             ['question' => 'How is product availability kept current?', 'answer' => 'Connected systems can exchange live product, pricing and availability updates so booking data remains accurate across the network.'],
@@ -51,16 +51,20 @@ $faq_group = $faq_groups[$group];
 <section class="bg-surface px-4 py-10 sm:py-14 lg:px-16 lg:py-16" aria-labelledby="participant-faq-title">
     <div class="mx-auto max-w-[1000px]">
         <p class="text-xs font-bold uppercase tracking-wide text-brand">Common questions</p>
-        <h2 id="participant-faq-title" class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27] sm:text-3xl">
+        <h2 id="participant-faq-title"
+            class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27] sm:text-3xl">
             <?php echo esc_html($faq_group['title']); ?>
         </h2>
         <div class="mt-6 space-y-3" data-faq-group>
             <?php foreach ($faq_group['items'] as $index => $faq): ?>
                 <details class="group rounded-xl border border-line bg-white p-5 shadow-sm" data-faq-card <?php echo 0 === $index ? 'open' : ''; ?>>
-                    <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-[#151c27] [&::-webkit-details-marker]:hidden">
+                    <summary
+                        class="cursor-pointer list-none text-base font-semibold leading-6 text-[#151c27] [&::-webkit-details-marker]:hidden">
                         <span class="flex items-start justify-between gap-5">
                             <?php echo esc_html($faq['question']); ?>
-                            <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-tint text-xl text-brand transition group-open:rotate-45" aria-hidden="true">+</span>
+                            <span
+                                class="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-tint text-xl text-brand transition group-open:rotate-45"
+                                aria-hidden="true">+</span>
                         </span>
                     </summary>
                     <p class="mt-4 border-t border-line pt-4 text-sm leading-6 text-mid-gray sm:text-base sm:leading-7">
@@ -69,6 +73,7 @@ $faq_group = $faq_groups[$group];
                 </details>
             <?php endforeach; ?>
         </div>
-        <a class="mt-6 inline-flex font-semibold text-brand underline" href="<?php echo esc_url(home_url('/faqs/#' . $group)); ?>">View all FAQs</a>
+        <a class="mt-6 inline-flex font-semibold text-brand underline"
+            href="<?php echo esc_url(home_url('/faqs/#' . $group)); ?>">View all FAQs</a>
     </div>
 </section>
