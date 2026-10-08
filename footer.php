@@ -62,7 +62,7 @@
                         <li><a class="text-white/65 !no-underline hover:text-white"
                                 href="<?php echo esc_url(home_url('/contact/')); ?>">Contact us</a></li>
                         <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="https://www.au.v3travel.com/TXA.Dashboard/Login.aspx">Dashboard Login</a></li>
+                                href="https://sites.txa.com.au/Dashboard/">Dashboard Login</a></li>
                     </ul>
                 </div>
                 <div>

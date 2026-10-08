@@ -105,7 +105,9 @@ function txa_seo_metadata(): void
         'page-destinations.php',
         'page-distributors.php',
         'page-booking-systems.php',
-    ], true) || is_page('faqs');
+        'page-privacy-policy.php',
+        'page-terms-of-use.php',
+    ], true) || is_page(['faqs', 'privacy-policy', 'terms-of-use']);
 
     if (!$has_template_description) {
         echo '<meta name="description" content="' . esc_attr($description) . '">' . "\n";

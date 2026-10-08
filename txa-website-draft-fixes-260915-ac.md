@@ -7,6 +7,8 @@ Note: Items below are extracted from the attached Word document and its comments
 ## Sitewide
 
 - [x] Replace all `&` with `and` across every website page.
+- [x] Update the red Dashboard Login button in the menu bar and the footer link to `https://sites.txa.com.au/Dashboard/`.
+- [x] Add Privacy Policy and Terms of Use pages in the current TXA design using the approved text from the existing TXA website.
 - [x] Review FAQ placement:
   - [x] Add relevant FAQs at the bottom of participant pages: Supplier, Destination, Distributor, Booking System.
   - [x] Keep a standalone FAQ page listing all questions.

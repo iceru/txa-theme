@@ -157,7 +157,7 @@ if (!function_exists('txa_header_link_class')) {
                         </nav>
 
                         <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
-                            <a href="https://www.au.v3travel.com/TXA.Dashboard/Login.aspx"
+                            <a href="https://sites.txa.com.au/Dashboard/"
                                 class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark">
                                 Dashboard Login</a>
                         </div>
