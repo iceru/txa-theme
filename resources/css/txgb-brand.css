@@ -1,0 +1,117 @@
+/**
+ * TXGB brand layer.
+ *
+ * This stylesheet is intentionally independent of the generated Vite bundle so
+ * brand changes are active in WordPress before the next production build.
+ */
+:root {
+    --wp--preset--color--primary: #262459;
+    --wp--preset--color--secondary: #E20714;
+    --wp--preset--color--dark: #1A1A1A;
+    --wp--preset--color--light: #F5F5F5;
+
+    --color-primary: #262459;
+    --color-primary-dark: #262459;
+    --color-secondary: #E20714;
+    --color-brand: #262459;
+    --color-brand-dark: #1B1942;
+    --color-brand-tint: #F2F2F2;
+    --color-brand-text: #262459;
+    --color-near-black: #1A1A1A;
+    --color-dark-gray: #2D2D2D;
+    --color-mid-gray: #6B6B6B;
+    --color-surface: #F5F5F5;
+    --color-line: #E5E5E5;
+}
+
+/* Carry the navy foundation through older hard-coded template utilities. */
+[class*="text-brand"],
+[class*="text-brand"],
+[class*="text-[#181c21]"],
+[class*="text-[#181C21]"] {
+    color: #262459 !important;
+}
+
+[class*="border-[#dfc0ba]"],
+[class*="border-[#DFC0BA]"],
+[class*="border-[#d7b8b3]"],
+[class*="border-[#D7B8B3]"] {
+    border-color: #D8D7E7 !important;
+}
+
+[class*="border-[#dfc0ba]/10"],
+[class*="border-[#DFC0BA]/10"] {
+    border-color: rgba(216, 215, 231, 0.1) !important;
+}
+
+[class*="border-[#dfc0ba]/20"],
+[class*="border-[#DFC0BA]/20"] {
+    border-color: rgba(216, 215, 231, 0.2) !important;
+}
+
+[class*="border-[#dfc0ba]/30"],
+[class*="border-[#DFC0BA]/30"] {
+    border-color: rgba(216, 215, 231, 0.3) !important;
+}
+
+[class*="border-[#dfc0ba]/80"],
+[class*="border-[#DFC0BA]/80"] {
+    border-color: rgba(216, 215, 231, 0.8) !important;
+}
+
+[class*="bg-[#dfc0ba]/20"],
+[class*="bg-[#DFC0BA]/20"] {
+    background-color: rgba(216, 215, 231, 0.2) !important;
+}
+
+[class*="bg-[#ffdad4]"],
+[class*="bg-[#FFDAD4]"] {
+    background-color: #F2F2F2 !important;
+}
+
+[class*="bg-[#f0d2ce]"],
+[class*="bg-[#F0D2CE]"] {
+    background-color: #E0E0E0 !important;
+}
+
+[class*="bg-[#fff7f5]"],
+[class*="bg-[#FFF7F5]"],
+[class*="bg-[#f7f7f5]"],
+[class*="bg-[#F7F7F5]"],
+[class*="bg-[#f8f8f8]"],
+[class*="bg-[#F8F8F8]"] {
+    background-color: #F5F5F5 !important;
+}
+
+/* WordPress's custom-logo markup should remain correctly sized if used elsewhere. */
+.custom-logo {
+    width: auto;
+    max-height: 3.5rem;
+}
+
+/* Stable brand shadows that do not depend on generated arbitrary utilities. */
+.txgb-shadow-card {
+    box-shadow: 0 22px 48px -24px rgba(38, 36, 89, 0.65);
+}
+
+.txgb-shadow-strong {
+    box-shadow: 0 18px 34px -20px rgba(38, 36, 89, 0.75);
+}
+
+.txgb-shadow-highlight {
+    box-shadow: 0 0 42px -16px rgba(38, 36, 89, 0.85);
+}
+
+.txgb-shadow-inset {
+    box-shadow: inset 0 0 0 2px rgba(38, 36, 89, 0.9);
+}
+
+/* Red is reserved for small editorial accents, never primary actions. */
+.txgb-accent-text {
+    color: #E20714 !important;
+}
+
+/* Runtime counterpart for the Tailwind token; available without a rebuild. */
+.bg-primary-dark {
+    background-color: #262459;
+}

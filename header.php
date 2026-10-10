@@ -25,9 +25,9 @@ if (!function_exists('txa_header_link_class')) {
     {
         $state_classes = txa_header_path_is_active($path, $include_children)
             ? 'font-bold text-brand'
-            : 'font-medium text-mid-gray';
+            : 'text-gray-500';
 
-        return trim($extra_classes . ' text-sm ' . $state_classes . ' !no-underline hover:text-brand');
+        return trim($extra_classes . ' text-sm ' . $state_classes . ' !no-underline');
     }
 }
 ?>
@@ -53,14 +53,10 @@ if (!function_exists('txa_header_link_class')) {
                 <div class="lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-8">
                     <div class="flex items-center justify-between">
                         <div>
-                            <?php if (has_custom_logo()): ?>
-                                <?php the_custom_logo(); ?>
-                            <?php else: ?>
-                                <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex !no-underline">
-                                    <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
-                                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-10 w-auto">
-                                </a>
-                            <?php endif; ?>
+                            <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex !no-underline">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/logo-with-text.png')); ?>"
+                                    alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-10 w-auto sm:h-12">
+                            </a>
                         </div>
 
                         <div class="lg:hidden">
@@ -83,14 +79,10 @@ if (!function_exists('txa_header_link_class')) {
                         class="fixed inset-y-0 right-0 z-[60] flex h-dvh w-4/5 translate-x-full flex-col overflow-y-auto bg-white p-6 shadow-2xl transition-transform duration-300 ease-out lg:static lg:inset-auto lg:z-auto lg:col-span-2 lg:grid lg:h-auto lg:w-auto lg:translate-x-0 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-8 lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none lg:transition-none">
                         <div class="mb-8 flex items-center justify-between lg:hidden">
                             <div>
-                                <?php if (has_custom_logo()): ?>
-                                    <?php the_custom_logo(); ?>
-                                <?php else: ?>
-                                    <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex !no-underline">
-                                        <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
-                                            alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-10 w-auto">
-                                    </a>
-                                <?php endif; ?>
+                                <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex !no-underline">
+                                    <img src="<?php echo esc_url(get_theme_file_uri('/images/logo-with-text.png')); ?>"
+                                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-12 w-auto">
+                                </a>
                             </div>
                             <button type="button" id="primary-menu-close" aria-label="Close navigation"
                                 class="inline-flex size-10 items-center justify-center rounded border border-line text-mid-gray">
@@ -150,9 +142,9 @@ if (!function_exists('txa_header_link_class')) {
                                 <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/contact/')); ?>"
                                         class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>
                                 </li>
-                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/blog/')); ?>"
+                                <!-- <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/blog/')); ?>"
                                         class="<?php echo esc_attr(txa_header_link_class('/blog/', false, 'block py-1')); ?>">Blog</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
 

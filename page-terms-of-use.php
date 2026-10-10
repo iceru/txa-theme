@@ -4,10 +4,10 @@
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'Terms of Use | Tourism Exchange Australia');
+add_filter('pre_get_document_title', fn(): string => 'Terms of Use | Tourism Exchange Great Britain');
 add_action('wp_head', function (): void {
     if (is_page('terms-of-use') || is_page_template('page-terms-of-use.php')) {
-        echo '<meta name="description" content="' . esc_attr('Read the terms and conditions that apply when using the Tourism Exchange Australia website.') . '">' . "\n";
+        echo '<meta name="description" content="' . esc_attr('Read the terms and conditions that apply when using the Tourism Exchange Great Britain website.') . '">' . "\n";
     }
 });
 
@@ -17,34 +17,40 @@ $sections = [
     [
         'title' => 'Website Terms and Conditions',
         'content' => [
-            ['text' => 'Access to and use of <a href="https://www.txa.com.au/">www.TXA.com.au</a> is provided on these terms and conditions by VCubed Pty Ltd (ACN 074 524 879) (“V3”) to facilitate the operation of the travel and leisure business collaborative established by V3. By accessing and using <a href="https://www.txa.com.au/">www.TXA.com.au</a>, you agree to abide by these terms and conditions. You may contact us at:'],
-            ['text' => '<strong>VCubed Pty Ltd</strong><br>28 John Street<br>Northbridge, 6003 Western Australia<br><strong>Telephone:</strong> <a href="tel:+61892273933">+61 8 9227 3933</a><br><strong>Facsimile:</strong> +61 8 9227 3900<br><strong>Email:</strong> <a href="mailto:customerservice@v3leisure.com">customerservice@v3leisure.com</a>'],
+            ['text' => 'Access to and use of <a href="https://www.txa.com.au/">www.TXGB.com.au</a> is provided on these terms and conditions by VCubed Pty Ltd (ACN 074 524 879) (“V3”) to facilitate the operation of the travel and leisure business collaborative established by V3. By accessing and using <a href="https://www.txa.com.au/">www.TXGB.com.au</a>, you agree to abide by these terms and conditions. You may contact us at:'],
+            ['text' => '<strong>VCubed Pty Ltd</strong><br>28 John Street<br>Northbridge, 6003 Western Great Britain<br><strong>Telephone:</strong> <a href="tel:+61892273933">+61 8 9227 3933</a><br><strong>Facsimile:</strong> +61 8 9227 3900<br><strong>Email:</strong> <a href="mailto:customerservice@v3leisure.com">customerservice@v3leisure.com</a>'],
         ],
     ],
     [
         'title' => 'Permitted Use',
         'content' => [
-            ['text' => 'You must not use <a href="https://www.txa.com.au/">www.TXA.com.au</a>:'],
-            ['type' => 'list', 'items' => [
-                'For any activities, or to post or transmit any information or materials, which breach any regulations, infringe a third party’s rights, or are contrary to any relevant standard or codes.',
-                'In a way, or to post or transmit any material, which interferes with other users or defames, threatens, menaces, offends or restricts any person, or which inhibits any other user from using or enjoying the website.',
-                'To post, upload, email or otherwise transmit any unsolicited or unauthorised advertising, promotional materials, junk mail, spam, chain letters, pyramid schemes or any other form of solicitation or commercial exploitation.',
-                'To make any fraudulent or speculative enquiries, bookings, reservations or requests.',
-            ]],
-            ['text' => 'You must not access <a href="https://www.txa.com.au/">www.TXA.com.au</a> by using another person’s name, username or password without permission.'],
-            ['text' => 'You must not post or transmit via <a href="https://www.txa.com.au/">www.TXA.com.au</a> any obscene, indecent, inflammatory or pornographic material, or material that could give rise to civil or criminal proceedings.'],
-            ['text' => 'You must not tamper with, hinder the operation of, or make unauthorised modifications to <a href="https://www.txa.com.au/">www.TXA.com.au</a>.'],
-            ['text' => 'You must not knowingly transmit any virus or other disabling feature to <a href="https://www.txa.com.au/">www.TXA.com.au</a>.'],
+            ['text' => 'You must not use <a href="https://www.txa.com.au/">www.TXGB.com.au</a>:'],
+            [
+                'type' => 'list',
+                'items' => [
+                    'For any activities, or to post or transmit any information or materials, which breach any regulations, infringe a third party’s rights, or are contrary to any relevant standard or codes.',
+                    'In a way, or to post or transmit any material, which interferes with other users or defames, threatens, menaces, offends or restricts any person, or which inhibits any other user from using or enjoying the website.',
+                    'To post, upload, email or otherwise transmit any unsolicited or unauthorised advertising, promotional materials, junk mail, spam, chain letters, pyramid schemes or any other form of solicitation or commercial exploitation.',
+                    'To make any fraudulent or speculative enquiries, bookings, reservations or requests.',
+                ]
+            ],
+            ['text' => 'You must not access <a href="https://www.txa.com.au/">www.TXGB.com.au</a> by using another person’s name, username or password without permission.'],
+            ['text' => 'You must not post or transmit via <a href="https://www.txa.com.au/">www.TXGB.com.au</a> any obscene, indecent, inflammatory or pornographic material, or material that could give rise to civil or criminal proceedings.'],
+            ['text' => 'You must not tamper with, hinder the operation of, or make unauthorised modifications to <a href="https://www.txa.com.au/">www.TXGB.com.au</a>.'],
+            ['text' => 'You must not knowingly transmit any virus or other disabling feature to <a href="https://www.txa.com.au/">www.TXGB.com.au</a>.'],
         ],
     ],
     [
         'title' => 'Newsletters and Subscriptions',
         'content' => [
-            ['text' => 'Where you register with <a href="https://www.txa.com.au/">www.TXA.com.au</a> or V3 Travel to receive newsletters by email or by any other means, or subscribe to receive copies of magazines or other publications by email, online download via a web browser or post:'],
-            ['type' => 'list', 'items' => [
-                'You agree to provide true, accurate, current and complete information about yourself as requested in the registration or subscription form (“the Registration Information”).',
-                'You agree to maintain and promptly update the Registration Information to keep it true, accurate, current and complete.',
-            ]],
+            ['text' => 'Where you register with <a href="https://www.txa.com.au/">www.TXGB.com.au</a> or V3 Travel to receive newsletters by email or by any other means, or subscribe to receive copies of magazines or other publications by email, online download via a web browser or post:'],
+            [
+                'type' => 'list',
+                'items' => [
+                    'You agree to provide true, accurate, current and complete information about yourself as requested in the registration or subscription form (“the Registration Information”).',
+                    'You agree to maintain and promptly update the Registration Information to keep it true, accurate, current and complete.',
+                ]
+            ],
         ],
     ],
     [
@@ -86,9 +92,9 @@ $sections = [
         ],
     ],
     [
-        'title' => 'Contact TXA',
+        'title' => 'Contact TXGB',
         'content' => [
-            ['text' => '<strong>Tourism Exchange Australia</strong><br>3/8 Alvan Street<br>Subiaco, WA 6008<br>Australia<br><br><strong>Phone:</strong> <a href="tel:1300266582">1300 266 582</a><br><strong>Email:</strong> <a href="mailto:customerservice@txa.com.au">customerservice@txa.com.au</a> (<a href="mailto:sales@txa.com.au">sales@txa.com.au</a>)'],
+            ['text' => '<strong>Tourism Exchange Great Britain</strong><br>3/8 Alvan Street<br>Subiaco, WA 6008<br>Great Britain<br><br><strong>Phone:</strong> <a href="tel:1300266582">1300 266 582</a><br><strong>Email:</strong> <a href="mailto:customerservice@txa.com.au">customerservice@txa.com.au</a> (<a href="mailto:sales@txa.com.au">sales@txa.com.au</a>)'],
         ],
     ],
 ];
@@ -96,7 +102,7 @@ $sections = [
 get_template_part('template-parts/legal-page', null, [
     'label' => 'LEGAL',
     'title' => 'Terms of Use',
-    'intro' => 'The terms and conditions that apply when using the Tourism Exchange Australia website.',
+    'intro' => 'The terms and conditions that apply when using the Tourism Exchange Great Britain website.',
     'sections' => $sections,
 ]);
 

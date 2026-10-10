@@ -51,7 +51,7 @@ $partner_cards = [
         'icon' => 'bi-globe2',
         'eyebrow' => 'Are you a Distributor?',
         'title' => 'Distributors',
-        'copy' => 'TXA acts as a commercially neutral exchange, allowing distributors to connect with thousands of Australian suppliers through a single pipe.',
+        'copy' => 'TXGB acts as a commercially neutral exchange, allowing distributors to connect with thousands of British suppliers through a single pipe.',
         'points' => ['Commercially Neutral Exchange', 'Live inventory from connected booking systems', 'Consolidated payment reconciliation'],
         'cta' => 'Become a Distributor',
         'url' => $distributor_url,
@@ -60,7 +60,7 @@ $partner_cards = [
         'icon' => 'bi-terminal',
         'eyebrow' => 'Are you a Booking System Vendor?',
         'title' => 'Booking System Partners',
-        'copy' => 'Empower your software users with instant access to state and regional tourism markets via TXA\'s integration framework.',
+        'copy' => 'Empower your software users with instant access to state and regional tourism markets via TXGB\'s integration framework.',
         'points' => ['Open API and Documentation', 'Technical support for onboarding', 'Value-add for your customer base'],
         'cta' => 'Partner Enquiry',
         'url' => $booking_url,
@@ -70,16 +70,16 @@ $partner_cards = [
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section
-        class="relative min-h-[620px] overflow-hidden bg-near-black px-4 py-12 text-white sm:py-16 lg:px-16 lg:py-24">
+        class="relative min-h-[620px] overflow-hidden bg-black/40 px-4 py-12 text-white sm:py-16 lg:px-16 lg:py-24">
         <img src="<?php echo esc_url(get_theme_file_uri('/images/pricing.jpg')); ?>" alt=""
             class="absolute inset-0 h-full w-full object-cover">
-        <div class="absolute inset-0 bg-near-black/60" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-black/60" aria-hidden="true"></div>
         <div
             class="relative z-10 mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
             <div>
                 <h1
                     class="max-w-[620px] [font-family:'Hanken_Grotesk',sans-serif] text-[42px] font-bold leading-[1.1] text-white sm:text-5xl lg:text-[44px]">
-                    TXA pricing without the guesswork.</h1>
+                    TXGB pricing without the guesswork.</h1>
                 <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg">Tell us what
                     you do and your preferred commercial model and we will help guide you.</p>
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -126,7 +126,7 @@ $partner_cards = [
     <section class="px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
         <div class="mx-auto max-w-[1312px]">
             <h2
-                class="text-center [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
+                class="text-center [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                 Choose the pricing model that matches your organisation</h2>
             <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
                 <?php foreach ($pricing_cards as $card): ?>
@@ -140,20 +140,20 @@ $partner_cards = [
                         <h3 class="text-xl font-bold text-brand"><?php echo esc_html($card['title']); ?></h3>
                         <div class="mt-8">
                             <?php if (!empty($card['price_end'])): ?>
-                                <p class="text-4xl font-bold leading-none text-[#151c27]">
+                                <p class="text-4xl font-bold leading-none text-brand">
                                     <?php echo esc_html($card['price']); ?> <span
                                         class="text-sm font-bold text-mid-gray"><?php echo esc_html($card['suffix']); ?></span>
                                     <?php echo esc_html($card['price_end']); ?>
                                 </p>
                             <?php else: ?>
-                                <p class="text-2xl font-bold leading-tight text-[#151c27]">
+                                <p class="text-2xl font-bold leading-tight text-brand">
                                     <?php echo esc_html($card['price']); ?>
                                 </p>
                             <?php endif; ?>
                         </div>
                         <p class="mt-6 text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                         <?php if (!empty($card['points'])): ?>
-                            <ul class="mt-6 space-y-3 text-sm font-semibold text-[#151c27]">
+                            <ul class="mt-6 space-y-3 text-sm font-semibold text-brand">
                                 <?php foreach ($card['points'] as $point): ?>
                                     <li class="flex items-center gap-2"><i class="bi bi-check-circle text-brand"
                                             aria-hidden="true"></i><?php echo esc_html($point); ?></li>
@@ -161,7 +161,7 @@ $partner_cards = [
                             </ul>
                         <?php endif; ?>
                         <a href="<?php echo esc_url($card['url']); ?>"
-                            class="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-[#151c27] hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline md:mt-auto"><?php echo esc_html($card['cta']); ?></a>
+                            class="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-brand hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline md:mt-auto"><?php echo esc_html($card['cta']); ?></a>
                     </article>
                 <?php endforeach; ?>
             </div>
@@ -171,29 +171,30 @@ $partner_cards = [
     <section class="bg-surface px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
             <div>
-                <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand">Are you a
+                <p class="txgb-accent-text inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase">Are
+                    you a
                     Supplier?</p>
                 <h2
-                    class="mt-7 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
+                    class="mt-7 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                     No booking, no fee supplier pricing</h2>
                 <p class="mt-6 max-w-[620px] text-base leading-8 text-mid-gray">Our model is designed to grow with you.
-                    The 0.75%-2.8% success fee ensures that TXA only succeeds when your business does. We reduce manual
+                    The 0.75%-2.8% success fee ensures that TXGB only succeeds when your business does. We reduce manual
                     allocation and administrative overhead, allowing you to focus on the experience.</p>
                 <div class="mt-8 grid gap-4 sm:grid-cols-2">
                     <?php foreach ($supplier_types as $type): ?>
-                        <div class="flex items-center gap-3 text-sm font-semibold text-[#151c27]"><i
+                        <div class="flex items-center gap-3 text-sm font-semibold text-brand"><i
                                 class="bi bi-check-lg text-brand" aria-hidden="true"></i><?php echo esc_html($type); ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
                 <a href="<?php echo esc_url($apply_url); ?>"
                     class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply
-                    Now using the TXA Get Connected Wizard <i class="bi bi-box-arrow-up-right"
+                    Now using the TXGB Get Connected Wizard <i class="bi bi-box-arrow-up-right"
                         aria-hidden="true"></i></a>
             </div>
             <div class="rounded-2xl bg-white p-7 shadow-xl">
                 <div class="flex items-center justify-between gap-4 text-sm font-bold">
-                    <span class="text-[#151c27]">Booking Success Fee</span>
+                    <span class="text-brand">Booking Success Fee</span>
                     <span class="text-brand">1.5% Avg.</span>
                 </div>
                 <div class="mt-6 h-4 overflow-hidden rounded-full bg-[#f0d2ce]">
@@ -211,13 +212,14 @@ $partner_cards = [
         <div class="mx-auto grid max-w-[1312px] gap-8 lg:grid-cols-3">
             <?php foreach ($partner_cards as $card): ?>
                 <article class="rounded-2xl border border-[#dfc0ba] bg-white p-8 sm:p-10 lg:p-8">
-                    <p class="inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase text-brand">
-                        <?php echo esc_html($card['eyebrow']); ?></p>
+                    <p class="txgb-accent-text inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase">
+                        <?php echo esc_html($card['eyebrow']); ?>
+                    </p>
                     <div class="mt-6 flex min-h-12 items-center gap-3">
                         <span
                             class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-tint text-xl text-brand"><i
                                 class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i></span>
-                        <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-bold leading-6 text-[#151c27]">
+                        <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-bold leading-6 text-brand">
                             <?php echo esc_html($card['title']); ?>
                         </h2>
                     </div>
@@ -225,13 +227,13 @@ $partner_cards = [
                     </p>
                     <ol class="mt-8 space-y-5">
                         <?php foreach ($card['points'] as $index => $point): ?>
-                            <li class="flex items-center gap-4 text-sm font-bold text-[#151c27]"><span
+                            <li class="flex items-center gap-4 text-sm font-bold text-brand"><span
                                     class="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-tint text-xs text-brand"><?php echo esc_html($index + 1); ?></span><?php echo esc_html($point); ?>
                             </li>
                         <?php endforeach; ?>
                     </ol>
                     <a href="<?php echo esc_url($card['url']); ?>"
-                        class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-near-black px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
+                        class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-black/40 px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
                 </article>
             <?php endforeach; ?>
         </div>

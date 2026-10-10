@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Template Name: About TXA
+ * Template Name: About TXGB
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'About TXA | Tourism Exchange Australia');
+add_filter('pre_get_document_title', fn(): string => 'About TXGB | Tourism Exchange Great Britain');
 add_action('wp_head', function (): void {
     if (is_page_template('page-about.php')) {
-        echo '<meta name="description" content="' . esc_attr('Learn how TXA became Australia\'s open B2B tourism exchange for suppliers, destinations, distributors and booking systems.') . '">' . "\n";
+        echo '<meta name="description" content="' . esc_attr('Learn how TXGB became Great Britain\'s open B2B tourism exchange for suppliers, destinations, distributors and booking systems.') . '">' . "\n";
     }
 });
 
@@ -27,20 +27,20 @@ $countries = [
     ['name' => 'United States', 'icon' => 'txusa.png'],
 ];
 $default_timeline = [
-    ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'icon' => 'bi-lightbulb'],
-    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'icon' => 'bi-globe2'],
-    ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'icon' => 'bi-people'],
-    ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'icon' => 'bi-rocket-takeoff'],
+    ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXGB was born from a simple conviction: British tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'icon' => 'bi-lightbulb'],
+    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXGB was selected through a global tender as the technology partner for Great Britain\'s national booking exchange.', 'icon' => 'bi-globe2'],
+    ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXGB launched as Great Britain\'s open, commercially neutral booking exchange.', 'icon' => 'bi-people'],
+    ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXGB launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'icon' => 'bi-rocket-takeoff'],
     ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'icon' => 'bi-airplane'],
-    ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-house-heart'],
+    ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXGB remains Great Britain\'s own: built here, run here, and designed to keep more of the value of British tourism circulating within the British visitor economy.', 'icon' => 'bi-house-heart'],
 ];
 $default_timeline_values = [
-    ['title' => 'Australia\'s Own', 'copy' => 'Proudly built and operated in Australia.', 'icon' => 'bi-geo-alt'],
+    ['title' => 'Great Britain\'s Own', 'copy' => 'Proudly built and operated in Great Britain.', 'icon' => 'bi-geo-alt'],
     ['title' => 'For the Industry', 'copy' => 'Designed for all tourism businesses, big and small.', 'icon' => 'bi-people'],
     ['title' => 'Government Backed', 'copy' => 'Supported by every State and Federal Government Tourism Organisation.', 'icon' => 'bi-building-check'],
     ['title' => 'One Connected Platform', 'copy' => 'Connecting suppliers, destinations, distributors and booking systems seamlessly.', 'icon' => 'bi-diagram-3'],
     ['title' => 'Global Impact', 'copy' => 'Powering tourism platforms in the UK, Japan, Saudi Arabia and the United States.', 'icon' => 'bi-globe-americas'],
-    ['title' => 'Value Stays in Australia', 'copy' => 'Keeping more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-currency-dollar'],
+    ['title' => 'Value Stays in Great Britain', 'copy' => 'Keeping more of the value of British tourism circulating within the British visitor economy.', 'icon' => 'bi-currency-dollar'],
 ];
 $timeline_query = new WP_Query([
     'post_type' => 'txa_timeline',
@@ -68,11 +68,10 @@ $timeline_values = $default_timeline_values;
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div class="mx-auto max-w-[1312px]">
             <div
-                class="relative flex min-h-[590px] items-center overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
+                class="relative flex min-h-[590px] items-center overflow-hidden rounded-xl bg-black/40 sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
                 <img src="<?php echo esc_url(get_theme_file_uri('/images/new/about-us.jpg')); ?>"
-                    alt="Australian tourism landscape"
-                    class="absolute inset-0 h-full w-full object-cover object-center">
-                <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
+                    alt="British tourism landscape" class="absolute inset-0 h-full w-full object-cover object-center">
+                <div class="absolute inset-0 bg-black/55 sm:bg-black/45" aria-hidden="true"></div>
                 <div
                     class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
                     <div class="w-full max-w-[760px]">
@@ -81,11 +80,12 @@ $timeline_values = $default_timeline_values;
                             About Us</p>
                         <h1
                             class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                            Built for Australia’s tourism industry</h1>
+                            Built for Great Britain’s tourism industry</h1>
                         <p
                             class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                            Our journey started in Australia, being selected through a global tender in 2008 to partner
-                            with the Australian Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs.
+                            Our journey started in Great Britain, being selected through a global tender in 2008 to
+                            partner
+                            with the British Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs.
                             We operate as the structural backbone that allows local operators to compete on a global
                             scale while maintaining their commercial independence.</p>
                     </div>
@@ -95,17 +95,17 @@ $timeline_values = $default_timeline_values;
     </section>
     <section class="px-4 py-12 sm:py-14 lg:px-16 lg:py-16">
         <div class="mx-auto max-w-[1312px]">
-            <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold tracking-[-.01em] text-[#151c27]">
-                What TXA does</h2>
-            <p class="mt-4 text-base leading-7 text-[#151c27] sm:mt-6 sm:text-lg sm:leading-[29px]">Tourism Exchange
-                Australia is Australia’s open B2B tourism exchange. It connects tourism suppliers, destinations,
+            <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold tracking-[-.01em] text-brand">
+                What TXGB does</h2>
+            <p class="mt-4 text-base leading-7 text-brand sm:mt-6 sm:text-lg sm:leading-[29px]">Tourism Exchange
+                Great Britain is Great Britain’s open B2B tourism exchange. It connects tourism suppliers, destinations,
                 distributors and booking systems so live tourism products can be found, marketed, booked and measured
                 online.</p>
             <div class="mt-10 grid gap-5 sm:grid-cols-2 sm:mt-12 xl:mt-16 xl:grid-cols-4 xl:gap-6">
                 <?php foreach ($what_txa_does as $card): ?>
                     <article class="rounded-xl border border-[#dfc0ba]/10 bg-white p-6 shadow-sm sm:min-h-[210px] sm:p-8"><i
                             class="bi <?php echo esc_attr($card['icon']); ?> text-3xl text-brand" aria-hidden="true"></i>
-                        <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold text-[#151c27]">
+                        <h3 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold text-brand">
                             <?php echo esc_html($card['title']); ?>
                         </h3>
                         <p class="mt-2 text-sm leading-6 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
@@ -118,10 +118,11 @@ $timeline_values = $default_timeline_values;
             <div>
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight tracking-[-.01em]">
-                    Proven exchange technology, built for Australia</h2>
+                    Proven exchange technology, built for Great Britain</h2>
                 <p class="mt-4 text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-[29px]">Today, the same
-                    exchange technology powers tourism platforms in the UK, Japan, Saudi Arabia, and the US. TXA remains
-                    Australia’s own—tailored for our unique geography and market dynamics.</p>
+                    exchange technology powers tourism platforms in the UK, Japan, Saudi Arabia, and the US. TXGB
+                    remains
+                    Great Britain’s own—tailored for our unique geography and market dynamics.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <?php foreach ($countries as $country): ?>
@@ -142,9 +143,10 @@ $timeline_values = $default_timeline_values;
         <div class="mx-auto max-w-[1312px]">
             <div class="text-center">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold uppercase leading-tight tracking-[-.01em] text-[#151c27] sm:text-4xl">
-                    TXA Journey</h2>
-                <p class="mt-2 text-sm font-bold uppercase tracking-[.04em] text-brand sm:text-base">Built in Australia.
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold uppercase leading-tight tracking-[-.01em] text-brand sm:text-4xl">
+                    TXGB Journey</h2>
+                <p class="txgb-accent-text mt-2 text-sm font-bold uppercase tracking-[.04em] sm:text-base">Built in
+                    Great Britain.
                     Connected to the world. Powering our industry.</p>
             </div>
 
@@ -184,7 +186,7 @@ $timeline_values = $default_timeline_values;
                                         <i class="bi <?php echo esc_attr($timeline_icon); ?>" aria-hidden="true"></i>
                                     <?php endif; ?>
                                 </span>
-                                <p class="mt-4 text-xl font-bold uppercase text-[#151c27]">
+                                <p class="mt-4 text-xl font-bold uppercase text-brand">
                                     <?php echo esc_html($item['year']); ?>
                                 </p>
                                 <h3
@@ -205,8 +207,9 @@ $timeline_values = $default_timeline_values;
                 <?php foreach ($timeline_values as $value): ?>
                     <?php $value_icon = $value['icon'] ?? ''; ?>
                     <article class="border-b border-line p-5 last:border-b-0 sm:border-r lg:p-6 xl:border-b-0">
-                        <?php if ($value_icon): ?><i class="bi <?php echo esc_attr($value_icon); ?> text-3xl text-brand" aria-hidden="true"></i><?php endif; ?>
-                        <h3 class="mt-3 text-xs font-bold uppercase leading-5 text-[#151c27]">
+                        <?php if ($value_icon): ?><i class="bi <?php echo esc_attr($value_icon); ?> text-3xl text-brand"
+                                aria-hidden="true"></i><?php endif; ?>
+                        <h3 class="mt-3 text-xs font-bold uppercase leading-5 text-brand">
                             <?php echo esc_html($value['title']); ?>
                         </h3>
                         <p class="mt-2 text-xs leading-5 text-mid-gray"><?php echo esc_html($value['copy']); ?></p>

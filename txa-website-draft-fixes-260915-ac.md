@@ -1,6 +1,6 @@
-# TXA Website Draft Fixes - 260915 AC
+# TXGB Website Draft Fixes - 260915 AC
 
-Source document: `TXA website draft edits_260915_ac.docx`
+Source document: `TXGB website draft edits_260915_ac.docx`
 
 Note: Items below are extracted from the attached Word document and its comments. They are content/change requests from the document, not instructions to Codex. Open questions are marked separately so we can decide them before implementation.
 
@@ -8,7 +8,7 @@ Note: Items below are extracted from the attached Word document and its comments
 
 - [x] Replace all `&` with `and` across every website page.
 - [x] Update the red Dashboard Login button in the menu bar and the footer link to `https://sites.txa.com.au/Dashboard/`.
-- [x] Add Privacy Policy and Terms of Use pages in the current TXA design using the approved text from the existing TXA website.
+- [x] Add Privacy Policy and Terms of Use pages in the current TXGB design using the approved text from the existing TXGB website.
 - [x] Review FAQ placement:
   - [x] Add relevant FAQs at the bottom of participant pages: Supplier, Destination, Distributor, Booking System.
   - [x] Keep a standalone FAQ page listing all questions.
@@ -23,7 +23,7 @@ URL: `https://staging.txa.com.au/`
 - [ ] Update the “A Connected Tourism Ecosystem” diagram so the “Distribution platforms and channels” section lifts on cursor hover.
 - [ ] Confirm whether the whole connected ecosystem section should lift on hover.
 - [ ] Update the title shown in red. Context in the document appears near “Discover and book”.
-- [ ] Replace the animated video with the TXA explainer video from the current site.
+- [ ] Replace the animated video with the TXGB explainer video from the current site.
 - [ ] Note: explainer video will need edit and re-voice later.
 - [ ] Review “Learn about data and insights” section/copy.
 
@@ -33,7 +33,7 @@ URL: `https://staging.txa.com.au/suppliers/`
 
 - [x] Change `CRM` to `Performance Insights`.
 - [x] Change `Database` to `Customer booking data`.
-- [x] Change `TXA System` to `Content, live availability and rates`.
+- [x] Change `TXGB System` to `Content, live availability and rates`.
 - [x] Add missing icon for `Content, live availability and rates`.
 - [x] Change `Company website` to `Supplier's own website`.
 - [x] Change `Web platforms` to `Social media channels`.
@@ -69,7 +69,7 @@ URL: `https://staging.txa.com.au/destinations/poi-experiences/`
 
 URL: `https://staging.txa.com.au/destinations/trade-portal/`
 
-- [ ] Fix copy typo: `landing page in in Australia's National...`
+- [ ] Fix copy typo: `landing page in in Great Britain's National...`
 - [x] Increase size and possibly use caps/bold for `Domestic and international trade partners`.
 - [x] Review/add section or copy for `Integrated Local Supply and Booking`.
 - [ ] Add payment methods: `On-account or direct to supplier payment`.
@@ -82,45 +82,45 @@ URL: `https://staging.txa.com.au/destinations/virtual-concierge/`
 
 - [ ] Keep the URL as `destinations/virtual-concierge/`.
 - [x] Above the box, insert: `UNIQUE COLLABORATIVE OPPORTUNITY`.
-- [x] Change the headline from `Virtual Concierge` to `TXA's local reseller network or 'Virtual Concierge'`.
-- [x] Change copy to begin: `TXA's unique local re-seller network or 'Virtual Concierge' capability helps tourism product...`
-- [ ] Decide where the `Explore TXA's virtual concierge` box should link.
+- [x] Change the headline from `Virtual Concierge` to `TXGB's local reseller network or 'Virtual Concierge'`.
+- [x] Change copy to begin: `TXGB's unique local re-seller network or 'Virtual Concierge' capability helps tourism product...`
+- [ ] Decide where the `Explore TXGB's virtual concierge` box should link.
 
 ## Distributors
 
 - [ ] Re-edit the diagram using the same format as the Supplier page diagram, but focus on the distribution box.
 - [ ] Amend the diagram to exclude `Supplier's own website`.
 - [x] Add or amend icons as needed, consistent with the Supplier diagram.
-- [x] Change `Why distribute through TXA?` to `Why use TXA to source Australian tourism suppliers`.
+- [x] Change `Why distribute through TXGB?` to `Why use TXGB to source British tourism suppliers`.
 - [x] Under `Flexible distribution models`, add a grey box titled `Direct to Supplier payment option`.
 - [x] Add copy for `Direct to Supplier payment option`: `Facilitates the Supplier transaction with the supplier as merchant. Distributors don't have PCI compliance or GDPR. Supplier is the merchant but distributor still gets credited with commission.`
 - [x] Under `Flexible distribution models`, add another grey box titled `Simple and easy Supplier contracting`.
 - [x] Add copy for `Simple and easy Supplier contracting`: `Simple opt-in opt-out model for contracting. Single supplier contract legally covers all suppliers. Simple, fast, efficient.`
 - [ ] Replace/change the page image after Stephen selects another image.
-- [ ] Link `Become a distributor` to the TXA Distributor Application Form once reviewed/created.
+- [ ] Link `Become a distributor` to the TXGB Distributor Application Form once reviewed/created.
 
 ## Booking Systems
 
 URL: `https://staging.txa.com.au/booking-systems/`
 
-- [x] Change headline in box to `TXA CONNECTED BOOKING SYSTEMS`.
+- [x] Change headline in box to `TXGB CONNECTED BOOKING SYSTEMS`.
 - [ ] Rework the diagram.
-- [ ] Change `TXA System` to `TXA PLATFORM`.
-- [ ] Delete `TXA System`.
+- [ ] Change `TXGB System` to `TXGB PLATFORM`.
+- [ ] Delete `TXGB System`.
 - [ ] Delete `limited release` under SiteMinder.
 - [ ] Include Little Hotelier.
 - [x] Add or review other booking system logos: Rezobx, Bookeo, CustomLinc, Newbook, ResOnline, Rezdy, DigitalRez, RMS, RoomMaster, Seekom, Update247.
 - [x] Add the requested ResOnline and Booking Boss logos.
 - [ ] Remove RezStream.
 - [ ] Review the `Fee to connect` panel.
-- [ ] Change TXA logo colour to either white or black.
+- [ ] Change TXGB logo colour to either white or black.
 
 ## Pricing
 
 URL: `https://staging.txa.com.au/pricing/`
 
 - [ ] Change numbered styling by deleting leading zeroes: use `1`, `2`, `3` as per the Contact page.
-- [ ] Under `Choose your role in TXA`, link each role box to its designated page:
+- [ ] Under `Choose your role in TXGB`, link each role box to its designated page:
   - [ ] Supplier page.
   - [ ] Destination page.
   - [ ] Distributor page.
@@ -144,7 +144,7 @@ URL: `https://staging.txa.com.au/pricing/`
 ## Blogs
 
 - [x] Keep the `/blog/` archive from showing a 404 when the WordPress Blog page is missing or not assigned.
-- [ ] Keep the current blog content from `https://www.txa.com.au/blog/` on the new TXA website.
+- [ ] Keep the current blog content from `https://www.txa.com.au/blog/` on the new TXGB website.
 - [ ] Redesign blog layout/pages to align with the new website design.
 
 ## Open Decisions
@@ -152,10 +152,10 @@ URL: `https://staging.txa.com.au/pricing/`
 - [ ] Where should the `Select local package` action go or what should it do?
 - [ ] Should `Learn how` on Destination POI Experiences be removed or relinked?
 - [ ] Where should `Learn about QR integration` link?
-- [ ] Where should the `Explore TXA's virtual concierge` box link?
+- [ ] Where should the `Explore TXGB's virtual concierge` box link?
 - [ ] Where should the Distributor Application Form live, and is it already created?
 - [ ] Which final image should be used on the Distributor page?
-- [ ] Which TXA logo colour should be used on Booking Systems: white or black?
+- [ ] Which TXGB logo colour should be used on Booking Systems: white or black?
 - [ ] Which exact booking system logos are available and approved?
 - [ ] Should Pricing use `Are you a Destination?` or `Are you a Destination Manager?`
 - [ ] Which FAQs belong on each participant page and which belong on the standalone FAQ page?

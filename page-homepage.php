@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: TXA Homepage
+ * Template Name: TXGB Homepage
  *
  * @package TailPress
  */
@@ -63,18 +63,18 @@ if (!function_exists('txa_button')) {
 
 $hero_slides = [
     [
-        'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
-        'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
-        'copy' => txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'),
-        'image' => txa_img('hero_image', get_theme_file_uri('/images/new/homepage-hero.jpg')),
+        'label' => txa_f('hero_label', 'Tourism Exchange Great Britain'),
+        'title' => txa_f('hero_title', "Great Britain's B2B Tourism Exchange"),
+        'copy' => txa_f('hero_copy', 'TXGB connects British tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'),
+        'image' => txa_img('hero_image', get_theme_file_uri('/images/txgb-home.jpg')),
     ],
 ];
 
 $audiences = [
     ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/suppliers/'), 'image' => get_theme_file_uri('/images/new/homepage-suppliers.jpg')],
     ['title' => 'Destinations', 'copy' => 'Become a Smart Destination and make local supply bookable through your own digital assets.', 'cta' => 'Explore Destinations', 'url' => home_url('/destinations/'), 'image' => get_theme_file_uri('/images/destinations-1.jpg')],
-    ['title' => 'Distributors', 'copy' => 'Access bookable Australian tourism inventory through TXA connected supply.', 'cta' => 'Become a Distributor', 'url' => home_url('/distributors/'), 'image' => get_theme_file_uri('/images/distributor.jpg')],
-    ['title' => 'Booking Systems', 'copy' => 'Connect your booking system to TXA and unlock distribution for your customers.', 'cta' => 'Partner Enquiry', 'url' => home_url('/booking-systems/'), 'image' => get_theme_file_uri('/images/new/homepage-booking.jpg')],
+    ['title' => 'Distributors', 'copy' => 'Access bookable British tourism inventory through TXGB connected supply.', 'cta' => 'Become a Distributor', 'url' => home_url('/distributors/'), 'image' => get_theme_file_uri('/images/distributor.jpg')],
+    ['title' => 'Booking Systems', 'copy' => 'Connect your booking system to TXGB and unlock distribution for your customers.', 'cta' => 'Partner Enquiry', 'url' => home_url('/booking-systems/'), 'image' => get_theme_file_uri('/images/new/homepage-booking.jpg')],
 ];
 
 foreach ($audiences as $i => $audience) {
@@ -111,21 +111,21 @@ $how_txa_works_embed = is_string($how_txa_works_video) && false !== strpos($how_
     : ($how_txa_works_video ? wp_oembed_get($how_txa_works_video, ['width' => 1312, 'height' => 551]) : '');
 
 if (!$how_txa_works_embed) {
-    $how_txa_works_embed = '<iframe src="https://www.youtube.com/embed/1sPtIwpXi6M?si=56zHnuGjLdztmnOv" width="1312" height="551" title="How TXA works video placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>';
+    $how_txa_works_embed = '<iframe src="https://www.youtube.com/embed/1sPtIwpXi6M?si=56zHnuGjLdztmnOv" width="1312" height="551" title="How TXGB works video placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>';
 }
 ?>
 
 <article class="txa-homepage bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div class="mx-auto max-w-[1312px]">
-            <div class="txa-hero-slider relative min-h-[590px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]"
+            <div class="txa-hero-slider relative min-h-[590px] overflow-hidden rounded-xl bg-black/40 sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]"
                 data-hero-slider>
                 <?php foreach ($hero_slides as $index => $slide): ?>
                     <img src="<?php echo esc_url($slide['image']); ?>" alt=""
                         class="<?php echo 0 === $index ? 'opacity-100' : 'opacity-0'; ?> absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700"
                         data-hero-slide-image="<?php echo esc_attr($index); ?>">
                 <?php endforeach; ?>
-                <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
+                <div class="absolute inset-0 bg-black/55 sm:bg-black/45" aria-hidden="true"></div>
                 <div
                     class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
                     <div class="w-full max-w-[760px]">
@@ -149,7 +149,7 @@ if (!$how_txa_works_embed) {
                 <div class="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white p-2.5 shadow-sm sm:bottom-6 sm:left-auto sm:right-6 sm:translate-x-0 sm:p-3 lg:bottom-8 lg:right-8"
                     aria-label="Hero slides">
                     <?php foreach ($hero_slides as $index => $slide): ?><button type="button"
-                            class="<?php echo 0 === $index ? 'w-7 bg-brand' : 'w-2.5 bg-near-black/10'; ?> h-2.5 rounded-full transition-all"
+                            class="<?php echo 0 === $index ? 'w-7 bg-brand' : 'w-2.5 bg-black/10'; ?> h-2.5 rounded-full transition-all"
                             aria-label="<?php echo esc_attr('Show slide ' . ($index + 1) . ': ' . $slide['title']); ?>"
                             aria-pressed="<?php echo 0 === $index ? 'true' : 'false'; ?>"
                             data-hero-slide-label-value="<?php echo esc_attr($slide['label']); ?>"
@@ -167,13 +167,16 @@ if (!$how_txa_works_embed) {
             <div class="grid gap-8 items-center sm:gap-10 lg:grid-cols-[1fr_1.02fr] lg:items-start lg:gap-12">
                 <div class="max-w-[629px]">
                     <h2
-                        class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl sm:leading-10">
-                        <?php echo esc_html(txa_f('intro_heading', "Australia's national tourism exchange.")); ?><br><span
-                            class="text-brand"><?php echo esc_html(txa_f('intro_heading_highlight', 'How TXA was built and why')); ?></span></h2>
+                        class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-brand sm:text-3xl sm:leading-10">
+                        <?php echo esc_html(txa_f('intro_heading', "Great Britain's national tourism exchange.")); ?><span
+                            class="txgb-accent-text"><?php echo esc_html(txa_f('intro_heading_highlight', 'How TXGB was built and why')); ?></span>
+                    </h2>
                     <div
                         class="mt-5 space-y-5 text-base leading-7 text-near-black sm:mt-6 sm:space-y-6 sm:text-lg sm:leading-[1.625]">
-                        <p><?php echo esc_html(txa_f('intro_paragraph_1', "Tourism Exchange Australia was established in 2008 in partnership with ATDW (an organisation representing all Australian State and Federal Government Tourism Organisations) as the nation's open, commercially neutral booking exchange.")); ?></p>
-                        <p><?php echo esc_html(txa_f('intro_paragraph_2', "Selected through a global tender, TXA was built to give every Australian tourism supplier, regardless of category, size or booking system, fair access to ecommerce and online distribution. The same exchange technology now powers tourism platforms in the United Kingdom, Japan, the United States and Saudi Arabia. TXA remains Australia's own.")); ?></p>
+                        <p><?php echo esc_html(txa_f('intro_paragraph_1', "Tourism Exchange Great Britain was established in 2008 in partnership with ATDW (an organisation representing all British State and Federal Government Tourism Organisations) as the nation's open, commercially neutral booking exchange.")); ?>
+                        </p>
+                        <p><?php echo esc_html(txa_f('intro_paragraph_2', "Selected through a global tender, TXGB was built to give every British tourism supplier, regardless of category, size or booking system, fair access to ecommerce and online distribution. The same exchange technology now powers tourism platforms in the United Kingdom, Japan, the United States and Saudi Arabia. TXGB remains Great Britain's own.")); ?>
+                        </p>
                     </div>
                 </div>
                 <div class="h-[240px] overflow-hidden rounded-lg border border-line sm:h-[368px]"><img
@@ -191,12 +194,13 @@ if (!$how_txa_works_embed) {
         <div class="mx-auto max-w-[1312px]">
             <div class="grid gap-4 sm:gap-5 md:grid-cols-[1fr_400px] md:items-end">
                 <div>
-                    <p class="text-xs font-semibold uppercase leading-5 text-brand sm:text-sm">
-                        <?php echo esc_html(txa_f('pathway_eyebrow', 'TXA Connection Pathway')); ?>
+                    <p class="txgb-accent-text text-xs font-semibold uppercase leading-5 sm:text-sm">
+                        <?php echo esc_html(txa_f('pathway_eyebrow', 'TXGB Connection Pathway')); ?>
                     </p>
                     <h2
                         class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:mt-3 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                        <?php echo esc_html(txa_f('pathway_heading', 'How to Connect to TXA?')); ?></h2>
+                        <?php echo esc_html(txa_f('pathway_heading', 'How to Connect to TXGB?')); ?>
+                    </h2>
                 </div>
                 <p class="text-sm leading-6 text-mid-gray">
                     <?php echo esc_html(txa_f('pathway_copy', 'Each pathway connects to the same national exchange infrastructure, with different entry points for each part of the visitor economy.')); ?>
@@ -226,9 +230,10 @@ if (!$how_txa_works_embed) {
         <div class="mx-auto max-w-[1312px] text-center">
             <h2
                 class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                <?php echo esc_html(txa_f('video_heading', 'How TXA Works')); ?></h2>
+                <?php echo esc_html(txa_f('video_heading', 'How TXGB Works')); ?>
+            </h2>
             <div
-                class="relative mt-6 h-[240px] overflow-hidden rounded-xl bg-near-black sm:mt-8 sm:h-[460px] sm:rounded-2xl lg:h-[551px] [&_iframe]:h-full [&_iframe]:w-full">
+                class="relative mt-6 h-[240px] overflow-hidden rounded-xl bg-black/40 sm:mt-8 sm:h-[460px] sm:rounded-2xl lg:h-[551px] [&_iframe]:h-full [&_iframe]:w-full">
                 <?php if ($how_txa_works_embed): ?>
                     <?php echo wp_kses($how_txa_works_embed, [
                         'iframe' => [
@@ -250,7 +255,7 @@ if (!$how_txa_works_embed) {
         </div>
     </section>
 
-    <section class="relative overflow-hidden bg-near-black px-4 py-10 text-white sm:py-12 lg:px-16 lg:py-16"><img
+    <section class="relative overflow-hidden bg-black/40 px-4 py-10 text-white sm:py-12 lg:px-16 lg:py-16"><img
             src="<?php echo esc_url(txa_img('smart_background_image', get_theme_file_uri('/images/pricing.jpg'))); ?>"
             alt="<?php echo esc_attr(txa_f('smart_background_alt', 'Torndirrup National Park')); ?>"
             class="absolute inset-0 h-full w-full object-cover">
@@ -260,12 +265,14 @@ if (!$how_txa_works_embed) {
             <div>
                 <p
                     class="inline-flex rounded-lg bg-white/10 px-3 py-2 text-xs font-semibold uppercase leading-5 text-white sm:px-4 sm:text-sm">
-                    <?php echo esc_html(txa_f('smart_eyebrow', 'Become a Smart Destination')); ?></p>
+                    <?php echo esc_html(txa_f('smart_eyebrow', 'Become a Smart Destination')); ?>
+                </p>
                 <h2
                     class="mt-3 text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                    <?php echo esc_html(txa_f('smart_heading', 'Move destination marketing from inspiration to conversion')); ?></h2>
+                    <?php echo esc_html(txa_f('smart_heading', 'Move destination marketing from inspiration to conversion')); ?>
+                </h2>
                 <p class="mt-3 text-base leading-7 text-white sm:text-lg sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('smart_copy', 'Smart Destinations use TXA as digital infrastructure for their visitor economy. It connects local suppliers, destination content, owned websites and apps, trade channels, local reseller networks and real-time data.')); ?>
+                    <?php echo esc_html(txa_f('smart_copy', 'Smart Destinations use TXGB as digital infrastructure for their visitor economy. It connects local suppliers, destination content, owned websites and apps, trade channels, local reseller networks and real-time data.')); ?>
                 </p>
                 <div class="mt-6 flex flex-col gap-3 sm:flex-row">
                     <?php echo txa_button(txa_f('smart_primary_label', 'Explore Smart Destinations'), txa_url('smart_primary_url', home_url('/destinations/'))); ?><?php echo txa_button(txa_f('smart_secondary_label', 'Request Demo'), txa_url('smart_secondary_url', home_url('/contact/')), 'light'); ?>
@@ -289,13 +296,15 @@ if (!$how_txa_works_embed) {
     <section class="bg-surface px-4 py-10 sm:py-12 lg:px-16 lg:py-[95px]">
         <div class="mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[1fr_700px] lg:items-center lg:gap-12">
             <div>
-                <p class="text-xs font-semibold uppercase leading-5 text-brand sm:text-sm">
-                    <?php echo esc_html(txa_f('data_eyebrow', 'Data and insights')); ?></p>
+                <p class="txgb-accent-text text-xs font-semibold uppercase leading-5 sm:text-sm">
+                    <?php echo esc_html(txa_f('data_eyebrow', 'Data and insights')); ?>
+                </p>
                 <h2
                     class="mt-2 max-w-[480px] text-[28px] font-semibold leading-9 sm:mt-3 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                    <?php echo esc_html(txa_f('data_heading', 'Data that helps destinations see what is working')); ?></h2>
+                    <?php echo esc_html(txa_f('data_heading', 'Data that helps destinations see what is working')); ?>
+                </h2>
                 <p class="mt-3 max-w-[500px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('data_copy', 'TXA helps destinations understand supplier activity, campaign performance, visitor engagement and booking outcomes through dashboards, attribution and data exports.')); ?>
+                    <?php echo esc_html(txa_f('data_copy', 'TXGB helps destinations understand supplier activity, campaign performance, visitor engagement and booking outcomes through dashboards, attribution and data exports.')); ?>
                 </p>
                 <div class="mt-6">
                     <?php echo txa_button(txa_f('data_button_label', 'Learn about Data and Insights'), txa_url('data_button_url', home_url('/data-insights/')), 'secondary'); ?>
@@ -303,7 +312,7 @@ if (!$how_txa_works_embed) {
             </div>
             <div class="flex min-h-[260px] items-center justify-center sm:min-h-[330px] lg:min-h-[414px]">
                 <img src="<?php echo esc_url(txa_img('data_image', get_theme_file_uri('/images/dashboard-2.png'))); ?>"
-                    alt="<?php echo esc_attr(txa_f('data_image_alt', 'TXA dashboard')); ?>">
+                    alt="<?php echo esc_attr(txa_f('data_image_alt', 'TXGB dashboard')); ?>">
             </div>
         </div>
     </section>

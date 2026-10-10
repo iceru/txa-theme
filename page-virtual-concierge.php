@@ -119,28 +119,41 @@ $partner_cards = txa_concierge_cards('concierge_partner', [
     <section class="bg-surface px-4 py-14 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_590px] lg:items-center lg:gap-16">
             <div>
-                <p class="text-sm text-brand mb-4 font-semibold"><?php echo esc_html(txa_f('concierge_hero_eyebrow', 'UNIQUE COLLABORATIVE OPPORTUNITY')); ?></p>
-                <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                    <?php echo esc_html(txa_f('concierge_hero_label', 'Virtual Concierge')); ?></p>
+                <p class="txgb-accent-text mb-4 text-sm font-semibold">
+                    <?php echo esc_html(txa_f('concierge_hero_eyebrow', 'UNIQUE COLLABORATIVE OPPORTUNITY')); ?>
+                </p>
+                <p
+                    class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
+                    <?php echo esc_html(txa_f('concierge_hero_label', 'Virtual Concierge')); ?>
+                </p>
                 <h1
-                    class="mt-8 max-w-[670px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.16]">
-                    <?php echo esc_html(txa_f('concierge_hero_title', 'TXA’s local reseller network or ‘Virtual Concierge’')); ?></h1>
-                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg"><?php echo esc_html(txa_f('concierge_hero_copy', 'TXA’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity providers cross sell, visitor information centres, National Park offices, airports and other local partners inter-connect offering visitors\' numerous local channels for booking local activities, events and experiences.')); ?></p>
+                    class="mt-8 max-w-[670px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-brand sm:text-5xl lg:text-[44px] lg:leading-[1.16]">
+                    <?php echo esc_html(txa_f('concierge_hero_title', 'TXGB’s local reseller network or ‘Virtual Concierge’')); ?>
+                </h1>
+                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg">
+                    <?php echo esc_html(txa_f('concierge_hero_copy', 'TXGB’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity providers cross sell, visitor information centres, National Park offices, airports and other local partners inter-connect offering visitors\' numerous local channels for booking local activities, events and experiences.')); ?>
+                </p>
                 <a href="<?php echo esc_url($demo_url); ?>"
-                    class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('concierge_hero_button_label', "Explore TXA's Virtual Concierge")); ?></a>
+                    class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('concierge_hero_button_label', "Explore TXGB's Virtual Concierge")); ?></a>
             </div>
             <div class="relative overflow-hidden rounded-lg">
                 <img src="<?php echo esc_url(txa_img('concierge_hero_image', get_theme_file_uri('/images/virtual-concierge.jpg'))); ?>"
-                    alt="<?php echo esc_attr(txa_f('concierge_hero_image_alt', 'Sydney Harbour Bridge')); ?>" class="h-[340px] w-full object-cover sm:h-[390px] lg:h-[400px]">
+                    alt="<?php echo esc_attr(txa_f('concierge_hero_image_alt', 'Sydney Harbour Bridge')); ?>"
+                    class="h-[340px] w-full object-cover sm:h-[390px] lg:h-[400px]">
                 <div
                     class="absolute bottom-5 left-5 right-5 flex items-center gap-5 rounded-xl bg-white/90 p-5 shadow-lg backdrop-blur">
                     <span
                         class="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand text-xl text-white">
-                        <i class="bi <?php echo esc_attr(txa_f('concierge_badge_icon', 'bi-diagram-3')); ?>" aria-hidden="true"></i>
+                        <i class="bi <?php echo esc_attr(txa_f('concierge_badge_icon', 'bi-diagram-3')); ?>"
+                            aria-hidden="true"></i>
                     </span>
                     <div>
-                        <p class="text-lg font-bold text-[#151c27]"><?php echo esc_html(txa_f('concierge_badge_title', 'Integrated Connectivity')); ?></p>
-                        <p class="mt-1 text-sm text-mid-gray"><?php echo esc_html(txa_f('concierge_badge_copy', 'Real-time local ecosystem activation')); ?></p>
+                        <p class="text-lg font-bold text-brand">
+                            <?php echo esc_html(txa_f('concierge_badge_title', 'Integrated Connectivity')); ?>
+                        </p>
+                        <p class="mt-1 text-sm text-mid-gray">
+                            <?php echo esc_html(txa_f('concierge_badge_copy', 'Real-time local ecosystem activation')); ?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -151,9 +164,12 @@ $partner_cards = txa_concierge_cards('concierge_partner', [
         <div class="mx-auto max-w-[1312px]">
             <div class="max-w-[790px]">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    <?php echo esc_html(txa_f('concierge_activation_heading', 'Interconnect and activate your visitor economy.')); ?></h2>
-                <p class="mt-5 text-base leading-7 text-mid-gray"><?php echo esc_html(txa_f('concierge_activation_copy', 'Transform every touchpoint into a booking opportunity. By connecting diverse local operators, you create a resilient network that keeps spending within the region.')); ?></p>
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
+                    <?php echo esc_html(txa_f('concierge_activation_heading', 'Interconnect and activate your visitor economy.')); ?>
+                </h2>
+                <p class="mt-5 text-base leading-7 text-mid-gray">
+                    <?php echo esc_html(txa_f('concierge_activation_copy', 'Transform every touchpoint into a booking opportunity. By connecting diverse local operators, you create a resilient network that keeps spending within the region.')); ?>
+                </p>
             </div>
 
             <div class="mt-10 grid gap-6 lg:grid-cols-3">
@@ -167,22 +183,19 @@ $partner_cards = txa_concierge_cards('concierge_partner', [
                                         class="flex size-12 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand">
                                         <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
                                     </span>
-                                    <h3
-                                        class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27]">
+                                    <h3 class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-brand">
                                         <?php echo esc_html($card['title']); ?>
                                     </h3>
                                     <p class="mt-4 text-base leading-7 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
                                 </div>
-                                <img src="<?php echo esc_url($card['image']); ?>"
-                                    alt="<?php echo esc_attr($card['title']); ?>"
+                                <img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>"
                                     class="h-[160px] w-full rounded-lg object-cover">
                             </div>
                         <?php } else { ?>
                             <span class="flex size-12 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand">
                                 <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
                             </span>
-                            <h3
-                                class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27]">
+                            <h3 class="mt-6 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-brand">
                                 <?php echo esc_html($card['title']); ?>
                             </h3>
                             <p class="mt-4 text-base leading-7 text-mid-gray"><?php echo esc_html($card['copy']); ?></p>
@@ -197,20 +210,23 @@ $partner_cards = txa_concierge_cards('concierge_partner', [
         <div class="mx-auto max-w-[1312px]">
             <div class="mx-auto max-w-[720px] text-center">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    <?php echo esc_html(txa_f('concierge_partners_heading', 'Empower Your Local Partners')); ?></h2>
-                <p class="mt-6 text-base leading-7 text-mid-gray"><?php echo esc_html(txa_f('concierge_partners_copy', 'Give local partners a practical way to recommend and book experiences, turning every tourism operator, information desk and concierge into an active, informed and motivated local booking channel')); ?></p>
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
+                    <?php echo esc_html(txa_f('concierge_partners_heading', 'Empower Your Local Partners')); ?>
+                </h2>
+                <p class="mt-6 text-base leading-7 text-mid-gray">
+                    <?php echo esc_html(txa_f('concierge_partners_copy', 'Give local partners a practical way to recommend and book experiences, turning every tourism operator, information desk and concierge into an active, informed and motivated local booking channel')); ?>
+                </p>
             </div>
             <div class="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
                 <?php foreach ($partner_cards as $card) { ?>
                     <article
-                        class="<?php echo !empty($card['red']) ? 'bg-brand text-white' : 'bg-white text-[#151c27] shadow-lg'; ?> flex h-full flex-col items-center rounded-2xl p-8 text-center sm:p-10">
+                        class="<?php echo !empty($card['red']) ? 'bg-brand text-white' : 'bg-white text-brand shadow-lg'; ?> flex h-full flex-col items-center rounded-2xl p-8 text-center sm:p-10">
                         <span
                             class="<?php echo !empty($card['red']) ? 'bg-white/15 text-white' : 'bg-brand-tint text-brand'; ?> mx-auto flex size-20 items-center justify-center rounded-2xl text-3xl">
                             <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
                         </span>
                         <h3
-                            class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($card['red']) ? 'text-white' : 'text-[#151c27]'; ?>">
+                            class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($card['red']) ? 'text-white' : 'text-brand'; ?>">
                             <?php echo esc_html($card['title']); ?>
                         </h3>
                         <p

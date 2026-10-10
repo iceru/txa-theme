@@ -137,17 +137,24 @@ $portal_tools = array_values(array_filter([
             <div>
                 <p
                     class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                    <?php echo esc_html(txa_f('trade_hero_label', 'Trade Portal Solution')); ?></p>
+                    <?php echo esc_html(txa_f('trade_hero_label', 'Trade Portal Solution')); ?>
+                </p>
                 <h1
-                    class="mt-8 max-w-[680px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
-                    <?php echo esc_html(txa_f('trade_hero_title_start', 'Give trade partners a')); ?> <span class="text-brand"><?php echo esc_html(txa_f('trade_hero_title_highlight', 'dedicated destination page')); ?></span> <?php echo esc_html(txa_f('trade_hero_title_end', 'with bookable local supply')); ?></h1>
-                <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray"><?php echo esc_html(txa_f('trade_hero_copy', "TXA can create a destination-specific landing page in Australia's National Trade Portal. The page can be accessed by URL or QR code and can present POIs, recommended experiences and suppliers with real-time booking access for domestic and international trade initiatives.")); ?></p>
+                    class="mt-8 max-w-[680px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-brand sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
+                    <?php echo esc_html(txa_f('trade_hero_title_start', 'Give trade partners a')); ?> <span
+                        class="txgb-accent-text"><?php echo esc_html(txa_f('trade_hero_title_highlight', 'dedicated destination page')); ?></span>
+                    <?php echo esc_html(txa_f('trade_hero_title_end', 'with bookable local supply')); ?>
+                </h1>
+                <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray">
+                    <?php echo esc_html(txa_f('trade_hero_copy', "TXGB can create a destination-specific landing page in Great Britain's National Trade Portal. The page can be accessed by URL or QR code and can present POIs, recommended experiences and suppliers with real-time booking access for domestic and international trade initiatives.")); ?>
+                </p>
                 <a href="<?php echo esc_url($demo_url); ?>"
                     class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('trade_hero_button_label', 'Request trade portal activation')); ?></a>
             </div>
             <div>
                 <img src="<?php echo esc_url(txa_img('trade_hero_image', get_theme_file_uri('/images/laptop-1.png'))); ?>"
-                    alt="<?php echo esc_attr(txa_f('trade_hero_image_alt', 'Trade portal destination page on a laptop')); ?>" class="mx-auto w-full max-w-[560px]">
+                    alt="<?php echo esc_attr(txa_f('trade_hero_image_alt', 'Trade portal destination page on a laptop')); ?>"
+                    class="mx-auto w-full max-w-[560px]">
             </div>
         </div>
     </section>
@@ -155,12 +162,16 @@ $portal_tools = array_values(array_filter([
     <section class="bg-white px-4 py-14 sm:py-16 lg:px-16 lg:py-20">
         <div class="mx-auto max-w-[1312px]">
             <div class="mx-auto max-w-[820px] text-center">
-                <p class="text-xs font-bold uppercase tracking-wide text-brand sm:text-sm"><?php echo esc_html(txa_f('trade_intro_eyebrow', 'Connected trade activation')); ?>
+                <p class="txgb-accent-text text-xs font-bold uppercase tracking-wide sm:text-sm">
+                    <?php echo esc_html(txa_f('trade_intro_eyebrow', 'Connected trade activation')); ?>
                 </p>
                 <h2
-                    class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    <?php echo esc_html(txa_f('trade_intro_heading', 'Destination Trade Portal')); ?></h2>
-                <p class="mt-3 text-base leading-7 text-mid-gray sm:text-lg"><?php echo esc_html(txa_f('trade_intro_copy', 'Connecting trade partners to bookable local supply.')); ?></p>
+                    class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
+                    <?php echo esc_html(txa_f('trade_intro_heading', 'Destination Trade Portal')); ?>
+                </h2>
+                <p class="mt-3 text-base leading-7 text-mid-gray sm:text-lg">
+                    <?php echo esc_html(txa_f('trade_intro_copy', 'Connecting trade partners to bookable local supply.')); ?>
+                </p>
             </div>
 
             <div
@@ -171,28 +182,40 @@ $portal_tools = array_values(array_filter([
                         <div class="text-center">
                             <span
                                 class="mx-auto flex size-14 items-center justify-center rounded-xl bg-brand-tint text-3xl text-brand"
-                                aria-hidden="true"><i class="bi <?php echo esc_attr(txa_f('trade_access_icon', 'bi-person-workspace')); ?>"></i></span>
+                                aria-hidden="true"><i
+                                    class="bi <?php echo esc_attr(txa_f('trade_access_icon', 'bi-person-workspace')); ?>"></i></span>
                             <h3
-                                class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">
-                                <?php echo esc_html(txa_f('trade_access_title', 'Access for Trade Partners')); ?></h3>
-                            <p class="mt-2 text-xs leading-5 text-mid-gray"><?php echo esc_html(txa_f('trade_access_copy', 'Access the destination page via URL or QR code.')); ?></p>
+                                class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-brand">
+                                <?php echo esc_html(txa_f('trade_access_title', 'Access for Trade Partners')); ?>
+                            </h3>
+                            <p class="mt-2 text-xs leading-5 text-mid-gray">
+                                <?php echo esc_html(txa_f('trade_access_copy', 'Access the destination page via URL or QR code.')); ?>
+                            </p>
                         </div>
 
                         <div class="mt-5 rounded-xl border border-line bg-surface p-4 text-center">
-                            <p class="text-[10px] font-bold uppercase tracking-wide text-brand"><?php echo esc_html(txa_f('trade_access_url_label', 'Destination URL')); ?></p>
+                            <p class="txgb-accent-text text-[10px] font-bold uppercase tracking-wide">
+                                <?php echo esc_html(txa_f('trade_access_url_label', 'Destination URL')); ?>
+                            </p>
                             <div
                                 class="mt-3 flex items-center gap-2 rounded-lg border border-line bg-white px-3 py-3 text-left">
                                 <i class="bi bi-window text-brand" aria-hidden="true"></i>
                                 <span
-                                    class="min-w-0 break-all text-[11px] font-semibold leading-4 text-[#151c27]"><?php echo esc_html(txa_f('trade_access_url_line_1', 'tradeportal.com/')); ?><br><?php echo esc_html(txa_f('trade_access_url_line_2', 'destinations/queensland')); ?></span>
+                                    class="min-w-0 break-all text-[11px] font-semibold leading-4 text-brand"><?php echo esc_html(txa_f('trade_access_url_line_1', 'tradeportal.com/')); ?><br><?php echo esc_html(txa_f('trade_access_url_line_2', 'destinations/queensland')); ?></span>
                             </div>
-                            <p class="my-3 text-[10px] font-bold uppercase text-mid-gray"><?php echo esc_html(txa_f('trade_access_or', 'or')); ?></p>
+                            <p class="my-3 text-[10px] font-bold uppercase text-mid-gray">
+                                <?php echo esc_html(txa_f('trade_access_or', 'or')); ?>
+                            </p>
                             <i class="bi bi-qr-code text-7xl leading-none text-near-black" aria-hidden="true"></i>
-                            <p class="mt-2 text-[10px] font-semibold text-mid-gray"><?php echo esc_html(txa_f('trade_access_qr_label', 'QR code access')); ?></p>
+                            <p class="mt-2 text-[10px] font-semibold text-mid-gray">
+                                <?php echo esc_html(txa_f('trade_access_qr_label', 'QR code access')); ?>
+                            </p>
                         </div>
 
                         <div class="mt-5 flex grow flex-col items-center justify-end text-center">
-                            <p class="mt-2 font-bold uppercase leading-5 text-[#151c27]"><?php echo esc_html(txa_f('trade_access_footer', 'Domestic and international trade partners')); ?></p>
+                            <p class="mt-2 font-bold uppercase leading-5 text-brand">
+                                <?php echo esc_html(txa_f('trade_access_footer', 'Domestic and international trade partners')); ?>
+                            </p>
                         </div>
                     </article>
 
@@ -205,17 +228,21 @@ $portal_tools = array_values(array_filter([
                         <header class="border-b border-line pb-4 text-center">
                             <span
                                 class="mx-auto flex size-12 items-center justify-center rounded-xl bg-brand text-2xl text-white"
-                                aria-hidden="true"><i class="bi <?php echo esc_attr(txa_f('trade_portal_icon', 'bi-window-stack')); ?>"></i></span>
+                                aria-hidden="true"><i
+                                    class="bi <?php echo esc_attr(txa_f('trade_portal_icon', 'bi-window-stack')); ?>"></i></span>
                             <h3
-                                class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">
-                                <?php echo esc_html(txa_f('trade_portal_title', 'Destination Trade Portal')); ?></h3>
-                            <p class="text-xs text-mid-gray"><?php echo esc_html(txa_f('trade_portal_subtitle', 'Destination page')); ?></p>
+                                class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-brand">
+                                <?php echo esc_html(txa_f('trade_portal_title', 'Destination Trade Portal')); ?>
+                            </h3>
+                            <p class="text-xs text-mid-gray">
+                                <?php echo esc_html(txa_f('trade_portal_subtitle', 'Destination page')); ?>
+                            </p>
                         </header>
 
                         <div class="divide-y divide-line">
                             <?php foreach ($portal_features as $item): ?>
                                 <div class="py-4">
-                                    <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]">
+                                    <h4 class="text-xs font-bold uppercase leading-5 text-brand">
                                         <?php echo esc_html($item['title']); ?>
                                     </h4>
                                     <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?>
@@ -244,11 +271,14 @@ $portal_tools = array_values(array_filter([
                         <header class="border-b border-line pb-4 text-center">
                             <span
                                 class="mx-auto flex size-12 items-center justify-center rounded-xl bg-brand text-2xl text-white"
-                                aria-hidden="true"><i class="bi <?php echo esc_attr(txa_f('trade_supply_icon', 'bi-box-seam')); ?>"></i></span>
+                                aria-hidden="true"><i
+                                    class="bi <?php echo esc_attr(txa_f('trade_supply_icon', 'bi-box-seam')); ?>"></i></span>
                             <h3
-                                class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">
-                                <?php echo esc_html(txa_f('trade_supply_title', 'Integrated Local Supply and Booking')); ?></h3>
-                            <p class="mt-2 text-xs leading-5 text-mid-gray"><?php echo esc_html(txa_f('trade_supply_copy', 'Connect local supplier profiles, live availability, instant booking and confirmation tools in one trade-ready supply pathway.')); ?>
+                                class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-brand">
+                                <?php echo esc_html(txa_f('trade_supply_title', 'Integrated Local Supply and Booking')); ?>
+                            </h3>
+                            <p class="mt-2 text-xs leading-5 text-mid-gray">
+                                <?php echo esc_html(txa_f('trade_supply_copy', 'Connect local supplier profiles, live availability, instant booking and confirmation tools in one trade-ready supply pathway.')); ?>
                             </p>
                         </header>
 
@@ -256,7 +286,7 @@ $portal_tools = array_values(array_filter([
                             <?php foreach ($supply_features as $item): ?>
                                 <div class="py-4 <?php echo !empty($item['featured']) ? 'text-brand' : ''; ?>">
                                     <h4
-                                        class="text-xs font-bold uppercase leading-5 <?php echo !empty($item['featured']) ? 'text-brand' : 'text-[#151c27]'; ?>">
+                                        class="text-xs font-bold uppercase leading-5 <?php echo !empty($item['featured']) ? 'text-brand' : 'text-brand'; ?>">
                                         <?php echo esc_html($item['title']); ?>
                                     </h4>
                                     <p
@@ -277,18 +307,24 @@ $portal_tools = array_values(array_filter([
                         <div class="text-center">
                             <span
                                 class="mx-auto flex size-14 items-center justify-center rounded-xl bg-brand-tint text-3xl text-brand"
-                                aria-hidden="true"><i class="bi <?php echo esc_attr(txa_f('trade_buyer_icon', 'bi-person-check')); ?>"></i></span>
+                                aria-hidden="true"><i
+                                    class="bi <?php echo esc_attr(txa_f('trade_buyer_icon', 'bi-person-check')); ?>"></i></span>
                             <h3
-                                class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-[#151c27]">
-                                <?php echo esc_html(txa_f('trade_buyer_title', 'Buyers / Travellers')); ?></h3>
-                            <p class="mt-1 text-xs text-mid-gray"><?php echo esc_html(txa_f('trade_buyer_subtitle', 'Trade customers')); ?></p>
-                            <p class="mt-3 text-xs leading-5 text-mid-gray"><?php echo esc_html(txa_f('trade_buyer_copy', 'Discover, book and experience with confidence.')); ?></p>
+                                class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-brand">
+                                <?php echo esc_html(txa_f('trade_buyer_title', 'Buyers / Travellers')); ?>
+                            </h3>
+                            <p class="mt-1 text-xs text-mid-gray">
+                                <?php echo esc_html(txa_f('trade_buyer_subtitle', 'Trade customers')); ?>
+                            </p>
+                            <p class="mt-3 text-xs leading-5 text-mid-gray">
+                                <?php echo esc_html(txa_f('trade_buyer_copy', 'Discover, book and experience with confidence.')); ?>
+                            </p>
                         </div>
 
                         <div class="mt-5 divide-y divide-line rounded-xl border border-line bg-surface px-4">
                             <?php foreach ($buyer_outcomes as $item): ?>
                                 <div class="py-4">
-                                    <h4 class="text-xs font-bold uppercase leading-5 text-[#151c27]">
+                                    <h4 class="text-xs font-bold uppercase leading-5 text-brand">
                                         <?php echo esc_html($item['title']); ?>
                                     </h4>
                                     <p class="mt-1 text-xs leading-5 text-mid-gray"><?php echo esc_html($item['copy']); ?>
@@ -307,7 +343,7 @@ $portal_tools = array_values(array_filter([
                             <i class="bi <?php echo esc_attr($benefit['icon']); ?> shrink-0 text-2xl text-brand"
                                 aria-hidden="true"></i>
                             <div>
-                                <h3 class="text-xs font-bold uppercase leading-5 text-[#151c27]">
+                                <h3 class="text-xs font-bold uppercase leading-5 text-brand">
                                     <?php echo esc_html($benefit['title']); ?>
                                 </h3>
                                 <p class="mt-1 text-[11px] leading-4 text-mid-gray">
@@ -325,21 +361,24 @@ $portal_tools = array_values(array_filter([
         <div class="mx-auto max-w-[1312px]">
             <div class="mx-auto max-w-[720px] text-center">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    <?php echo esc_html(txa_f('trade_cards_heading', 'Empowering Destinations and Trade')); ?></h2>
-                <p class="mt-6 text-base leading-7 text-mid-gray"><?php echo esc_html(txa_f('trade_cards_copy', 'Discover how the TXA Trade Portal bridges the gap between local supply and global demand through a structured, professional interface.')); ?></p>
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
+                    <?php echo esc_html(txa_f('trade_cards_heading', 'Empowering Destinations and Trade')); ?>
+                </h2>
+                <p class="mt-6 text-base leading-7 text-mid-gray">
+                    <?php echo esc_html(txa_f('trade_cards_copy', 'Discover how the TXGB Trade Portal bridges the gap between local supply and global demand through a structured, professional interface.')); ?>
+                </p>
             </div>
             <div class="mt-12 grid gap-8 lg:grid-cols-2">
                 <?php foreach ($feature_cards as $card): ?>
                     <article
-                        class="<?php echo !empty($card['red']) ? 'bg-brand text-white shadow-xl shadow-brand/20' : 'border border-[#dfc0ba] bg-white text-[#151c27] shadow-sm'; ?> rounded-2xl p-8 sm:p-10 lg:min-h-[250px] <?php echo !empty($card['red']) ? 'lg:flex lg:items-center lg:justify-between lg:gap-10' : ''; ?>">
+                        class="<?php echo !empty($card['red']) ? 'bg-brand text-white shadow-xl shadow-brand/20' : 'border border-[#dfc0ba] bg-white text-brand shadow-sm'; ?> rounded-2xl p-8 sm:p-10 lg:min-h-[250px] <?php echo !empty($card['red']) ? 'lg:flex lg:items-center lg:justify-between lg:gap-10' : ''; ?>">
                         <div>
                             <span
                                 class="<?php echo !empty($card['red']) ? 'bg-white/15 text-white' : 'bg-brand-tint text-brand'; ?> flex size-12 items-center justify-center rounded-lg text-2xl">
                                 <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
                             </span>
                             <h3
-                                class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($card['red']) ? 'text-white' : 'text-[#151c27]'; ?>">
+                                class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($card['red']) ? 'text-white' : 'text-brand'; ?>">
                                 <?php echo esc_html($card['title']); ?>
                             </h3>
                             <p
@@ -361,8 +400,9 @@ $portal_tools = array_values(array_filter([
         <div class="mx-auto  max-w-[1312px] gap-10 grid lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    <?php echo esc_html(txa_f('trade_inventory_heading', 'Real-time inventory, local expertise.')); ?></h2>
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
+                    <?php echo esc_html(txa_f('trade_inventory_heading', 'Real-time inventory, local expertise.')); ?>
+                </h2>
                 <div class="mt-8 space-y-8">
                     <?php foreach ($inventory_points as $point) { ?>
                         <div class="flex gap-5">
@@ -371,7 +411,7 @@ $portal_tools = array_values(array_filter([
                                 <i class="bi bi-check-lg" aria-hidden="true"></i>
                             </span>
                             <div>
-                                <h3 class="text-lg font-bold text-[#151c27]"><?php echo esc_html($point['title']); ?></h3>
+                                <h3 class="text-lg font-bold text-brand"><?php echo esc_html($point['title']); ?></h3>
                                 <p class="mt-1 max-w-[560px] text-sm leading-6 text-mid-gray">
                                     <?php echo esc_html($point['copy']); ?>
                                 </p>
@@ -381,7 +421,8 @@ $portal_tools = array_values(array_filter([
                 </div>
             </div>
             <img src="<?php echo esc_url(txa_img('trade_inventory_image', get_theme_file_uri('/images/laptop-2.png'))); ?>"
-                alt="<?php echo esc_attr(txa_f('trade_inventory_image_alt', 'Bookable trade inventory shown on a laptop')); ?>" class="mx-auto w-full max-w-[620px]">
+                alt="<?php echo esc_attr(txa_f('trade_inventory_image_alt', 'Bookable trade inventory shown on a laptop')); ?>"
+                class="mx-auto w-full max-w-[620px]">
         </div>
     </section>
 </article>

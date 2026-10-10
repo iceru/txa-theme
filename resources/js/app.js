@@ -133,7 +133,7 @@ window.addEventListener('load', function () {
                 dot.classList.toggle('w-7', dotIndex === activeIndex)
                 dot.classList.toggle('w-2.5', dotIndex !== activeIndex)
                 dot.classList.toggle('bg-brand', dotIndex === activeIndex)
-                dot.classList.toggle('bg-near-black/30', dotIndex !== activeIndex)
+                dot.classList.toggle('bg-black/30', dotIndex !== activeIndex)
                 dot.setAttribute('aria-pressed', dotIndex === activeIndex ? 'true' : 'false')
             })
         }

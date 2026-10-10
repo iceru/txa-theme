@@ -40,6 +40,21 @@ function tailpress(): TailPress\Framework\Theme
 tailpress();
 
 /**
+ * Load the TXGB brand layer separately so the rebrand is visible immediately
+ * without requiring a Vite production build.
+ */
+add_action('wp_enqueue_scripts', function (): void {
+    $brand_stylesheet = get_theme_file_path('/resources/css/txgb-brand.css');
+
+    wp_enqueue_style(
+        'txgb-brand',
+        get_theme_file_uri('/resources/css/txgb-brand.css'),
+        [],
+        is_file($brand_stylesheet) ? (string) filemtime($brand_stylesheet) : null
+    );
+}, 30);
+
+/**
  * Add a consistent SEO and entity layer when a dedicated SEO plugin is not
  * active. Page templates may keep their existing title and description tags;
  * this layer fills gaps and supplies social and structured metadata.
@@ -58,11 +73,11 @@ function txa_seo_plugin_is_active(): bool
 function txa_seo_page_description(): string
 {
     $template_fields = [
-        'page-homepage.php' => ['hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'],
-        'page-suppliers.php' => ['supplier_hero_copy', 'Connect Australian tourism products, rates and availability to destination websites, distributors and more online channels through TXA.'],
-        'page-booking-systems.php' => ['booking_seo_description', 'Connect your booking system to Australia’s national tourism exchange and help operator customers access broader destination, distributor and trade channels.'],
-        'page-destinations.php' => ['destination_seo_description', 'TXA helps destination organisations move from inspiration-only marketing to connected, bookable visitor outcomes through Smart Destination infrastructure.'],
-        'page-distributors.php' => ['distributor_seo_description', 'TXA gives distributors unique access to bookable Australian tourism inventory through flexible commercial and technical distribution models.'],
+        'page-homepage.php' => ['hero_copy', 'TXGB connects British tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'],
+        'page-suppliers.php' => ['supplier_hero_copy', 'Connect British tourism products, rates and availability to destination websites, distributors and more online channels through TXGB.'],
+        'page-booking-systems.php' => ['booking_seo_description', 'Connect your booking system to Great Britain’s national tourism exchange and help operator customers access broader destination, distributor and trade channels.'],
+        'page-destinations.php' => ['destination_seo_description', 'TXGB helps destination organisations move from inspiration-only marketing to connected, bookable visitor outcomes through Smart Destination infrastructure.'],
+        'page-distributors.php' => ['distributor_seo_description', 'TXGB gives distributors unique access to bookable British tourism inventory through flexible commercial and technical distribution models.'],
     ];
 
     $template = (string) get_page_template_slug(get_queried_object_id());
@@ -81,7 +96,7 @@ function txa_seo_page_description(): string
         }
     }
 
-    return 'Tourism Exchange Australia connects tourism suppliers, destinations, distributors and booking systems through a shared tourism exchange.';
+    return 'Tourism Exchange Great Britain connects tourism suppliers, destinations, distributors and booking systems through a shared tourism exchange.';
 }
 
 function txa_seo_metadata(): void
@@ -113,7 +128,7 @@ function txa_seo_metadata(): void
         echo '<meta name="description" content="' . esc_attr($description) . '">' . "\n";
     }
     echo '<meta property="og:type" content="' . (is_singular('post') ? 'article' : 'website') . '">' . "\n";
-    echo '<meta property="og:site_name" content="' . esc_attr(get_bloginfo('name') ?: 'Tourism Exchange Australia') . '">' . "\n";
+    echo '<meta property="og:site_name" content="' . esc_attr(get_bloginfo('name') ?: 'Tourism Exchange Great Britain') . '">' . "\n";
     echo '<meta property="og:title" content="' . esc_attr($title) . '">' . "\n";
     echo '<meta property="og:description" content="' . esc_attr($description) . '">' . "\n";
     echo '<meta property="og:url" content="' . esc_url($url) . '">' . "\n";
@@ -122,24 +137,24 @@ function txa_seo_metadata(): void
     echo '<meta name="twitter:title" content="' . esc_attr($title) . '">' . "\n";
     echo '<meta name="twitter:description" content="' . esc_attr($description) . '">' . "\n";
 
-    $logo = get_theme_file_uri('/images/logo.png');
+    $logo = get_theme_file_uri('/images/logo-with-text.png');
     $organization_id = trailingslashit(home_url('/')) . '#organization';
     $website_id = trailingslashit(home_url('/')) . '#website';
     $graph = [
         [
             '@type' => 'Organization',
             '@id' => $organization_id,
-            'name' => 'Tourism Exchange Australia',
-            'alternateName' => 'TXA',
+            'name' => 'Tourism Exchange Great Britain',
+            'alternateName' => 'TXGB',
             'url' => home_url('/'),
             'logo' => ['@type' => 'ImageObject', 'url' => $logo],
-            'description' => 'Australia’s open B2B tourism exchange connecting suppliers, destinations, distributors and booking systems.',
+            'description' => 'Great Britain’s open B2B tourism exchange connecting suppliers, destinations, distributors and booking systems.',
         ],
         [
             '@type' => 'WebSite',
             '@id' => $website_id,
             'url' => home_url('/'),
-            'name' => get_bloginfo('name') ?: 'Tourism Exchange Australia',
+            'name' => get_bloginfo('name') ?: 'Tourism Exchange Great Britain',
             'publisher' => ['@id' => $organization_id],
             'inLanguage' => get_bloginfo('language') ?: 'en-AU',
         ],
@@ -210,17 +225,21 @@ add_action('add_meta_boxes_txa_timeline', function (): void {
             wp_nonce_field('txa_timeline_details', 'txa_timeline_nonce');
             $year = get_post_meta($post->ID, '_txa_timeline_year', true);
             $copy = get_post_meta($post->ID, '_txa_timeline_copy', true);
-?>
+            ?>
         <p>
             <label for="txa_timeline_year"><strong><?php esc_html_e('Year or period', 'tailpress'); ?></strong></label><br>
-            <input type="text" id="txa_timeline_year" name="txa_timeline_year" value="<?php echo esc_attr($year); ?>" class="widefat" placeholder="2012 or Today">
+            <input type="text" id="txa_timeline_year" name="txa_timeline_year" value="<?php echo esc_attr($year); ?>"
+                class="widefat" placeholder="2012 or Today">
         </p>
         <p>
             <label for="txa_timeline_copy"><strong><?php esc_html_e('Description', 'tailpress'); ?></strong></label><br>
-            <textarea id="txa_timeline_copy" name="txa_timeline_copy" rows="4" class="widefat"><?php echo esc_textarea($copy); ?></textarea>
+            <textarea id="txa_timeline_copy" name="txa_timeline_copy" rows="4"
+                class="widefat"><?php echo esc_textarea($copy); ?></textarea>
         </p>
-        <p class="description"><?php esc_html_e('Use the Featured image panel for the timeline icon. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?></p>
-<?php
+        <p class="description">
+            <?php esc_html_e('Use the Featured image panel for the timeline icon. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
+        </p>
+        <?php
         }
     );
 });

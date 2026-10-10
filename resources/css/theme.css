@@ -7,18 +7,20 @@
     --breakpoint-2xl: 1440px;
 
     --color-primary: var(--wp--preset--color--primary);
+    --color-primary-dark: #262459;
     --color-secondary: var(--wp--preset--color--secondary);
     --color-dark: var(--wp--preset--color--dark);
     --color-light: var(--wp--preset--color--light);
-    --color-brand: #D42B2B;
-    --color-brand-dark: #B82424;
-    --color-brand-tint: #FDF2F2;
-    --color-brand-text: #8C1A1A;
+    /* TXGB brand system: navy drives the interface; red is a secondary accent. */
+    --color-brand: #262459;
+    --color-brand-dark: #1B1942;
+    --color-brand-tint: #F2F2F2;
+    --color-brand-text: #262459;
     --color-near-black: #1A1A1A;
     --color-dark-gray: #2D2D2D;
     --color-mid-gray: #6B6B6B;
-    --color-surface: #F5F5F4;
-    --color-line: #E8E8E6;
+    --color-surface: #F5F5F5;
+    --color-line: #E5E5E5;
 
     --text-xs: var(--wp--preset--font-size--xs, 0.75rem);
     --text-sm: var(--wp--preset--font-size--sm, 0.875rem);

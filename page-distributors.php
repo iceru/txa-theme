@@ -56,10 +56,10 @@ if (!function_exists('txa_distributor_button')) {
     }
 }
 
-add_filter('pre_get_document_title', fn(): string => (string) txa_f('distributor_seo_title', 'TXA for Distributors | Access Bookable Australian Tourism Inventory'));
+add_filter('pre_get_document_title', fn(): string => (string) txa_f('distributor_seo_title', 'TXGB for Distributors | Access Bookable British Tourism Inventory'));
 add_action('wp_head', function (): void {
     if (is_page_template('page-distributors.php')) {
-        echo '<meta name="description" content="' . esc_attr(txa_f('distributor_seo_description', 'TXA gives distributors unique access to bookable Australian tourism inventory through flexible commercial and technical distribution models.')) . '">' . "\n";
+        echo '<meta name="description" content="' . esc_attr(txa_f('distributor_seo_description', 'TXGB gives distributors unique access to bookable British tourism inventory through flexible commercial and technical distribution models.')) . '">' . "\n";
     }
 });
 
@@ -71,7 +71,7 @@ $benefits = [
     ['icon' => 'bi-box-seam', 'title' => 'Access live inventory', 'copy' => 'Direct access to thousands of live-booked suppliers with real-time rates and availability.'],
     ['icon' => 'bi-cash-stack', 'title' => 'Commercial flexibility', 'copy' => 'Support for multiple payment and commercial models including Net, Gross, and Commission.'],
     ['icon' => 'bi-megaphone', 'title' => 'Campaign ready', 'copy' => 'Leverage national and state tourism campaigns by distributing opt-in campaign deals.'],
-    ['icon' => 'bi-link-45deg', 'title' => 'Reduced friction', 'copy' => 'Connect once to TXA and gain access to an entire ecosystem without individual integrations.'],
+    ['icon' => 'bi-link-45deg', 'title' => 'Reduced friction', 'copy' => 'Connect once to TXGB and gain access to an entire ecosystem without individual integrations.'],
 ];
 
 foreach ($benefits as $i => $benefit) {
@@ -110,24 +110,29 @@ foreach ($models as $i => $model) {
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div
-            class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
+            class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-black/40 sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
             <img src="<?php echo esc_url(txa_img('distributor_hero_image', get_template_directory_uri() . '/images/new/distributors-hero.jpg')); ?>"
-                alt="<?php echo esc_attr(txa_f('distributor_hero_image_alt', 'Australian landscape')); ?>"
+                alt="<?php echo esc_attr(txa_f('distributor_hero_image_alt', 'British landscape')); ?>"
                 class="absolute inset-0 h-full w-full object-cover">
-            <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
+            <div class="absolute inset-0 bg-black/55 sm:bg-black/45" aria-hidden="true"></div>
             <div
                 class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
                 <div class="w-full max-w-[760px]">
                     <p
                         class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                        <?php echo esc_html(txa_f('distributor_hero_label', 'TXA for distributors')); ?></p>
+                        <?php echo esc_html(txa_f('distributor_hero_label', 'TXGB for distributors')); ?>
+                    </p>
                     <h1
                         class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                        <?php echo esc_html(txa_f('distributor_hero_title', 'Unique access to bookable Australian tourism inventory')); ?></h1>
+                        <?php echo esc_html(txa_f('distributor_hero_title', 'Unique access to bookable British tourism inventory')); ?>
+                    </h1>
                     <p
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo esc_html(txa_f('distributor_hero_copy', 'TXA gives distributors a pathway to Australian tourism suppliers across accommodation, tours, attractions, events and experiences. TXA offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives.')); ?></p>
-                    <div class="mt-6"><?php echo txa_distributor_button(txa_f('distributor_hero_button_label', 'Become a Distributor'), $apply_url); ?></div>
+                        <?php echo esc_html(txa_f('distributor_hero_copy', 'TXGB gives distributors a pathway to British tourism suppliers across accommodation, tours, attractions, events and experiences. TXGB offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives.')); ?>
+                    </p>
+                    <div class="mt-6">
+                        <?php echo txa_distributor_button(txa_f('distributor_hero_button_label', 'Become a Distributor'), $apply_url); ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,13 +141,16 @@ foreach ($models as $i => $model) {
     <section class="bg-surface px-4 py-9 sm:py-10 lg:p-16">
         <div class="mx-auto max-w-[1312px]">
             <div class="max-w-[680px]">
-                <p class="text-xs uppercase leading-5 text-brand sm:text-sm">
-                    <?php echo esc_html(txa_f('distributor_ecosystem_eyebrow', 'Connected tourism ecosystem')); ?></p>
+                <p class="txgb-accent-text text-xs uppercase leading-5 sm:text-sm">
+                    <?php echo esc_html(txa_f('distributor_ecosystem_eyebrow', 'Connected tourism ecosystem')); ?>
+                </p>
                 <h2
                     class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                    <?php echo esc_html(txa_f('distributor_ecosystem_heading', 'See where distributors connect through TXA')); ?></h2>
+                    <?php echo esc_html(txa_f('distributor_ecosystem_heading', 'See where distributors connect through TXGB')); ?>
+                </h2>
                 <p class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('distributor_ecosystem_copy', 'TXA connects live tourism inventory with the websites and distribution channels travellers use to discover and book Australian experiences.')); ?></p>
+                    <?php echo esc_html(txa_f('distributor_ecosystem_copy', 'TXGB connects live tourism inventory with the websites and distribution channels travellers use to discover and book British experiences.')); ?>
+                </p>
             </div>
             <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'dmo']); ?>
         </div>
@@ -152,10 +160,12 @@ foreach ($models as $i => $model) {
         <div class="mx-auto max-w-[1312px]">
             <div class="text-left sm:text-center">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl">
-                    <?php echo esc_html(txa_f('distributor_benefits_heading', 'Why use TXA to source Australian tourism suppliers')); ?></h2>
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-brand sm:text-3xl">
+                    <?php echo esc_html(txa_f('distributor_benefits_heading', 'Why use TXGB to source British tourism suppliers')); ?>
+                </h2>
                 <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">
-                    <?php echo esc_html(txa_f('distributor_benefits_copy', 'Providing the connectivity required to scale your Australian tourism portfolio efficiently.')); ?></p>
+                    <?php echo esc_html(txa_f('distributor_benefits_copy', 'Providing the connectivity required to scale your British tourism portfolio efficiently.')); ?>
+                </p>
             </div>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
                 <?php foreach ($benefits as $index => $benefit): ?>
@@ -165,7 +175,7 @@ foreach ($models as $i => $model) {
                             class="bg-[#ffdad4] flex size-11 items-center justify-center rounded-lg text-lg font-bold text-brand sm:size-12"><i
                                 class="bi <?php echo esc_attr($benefit['icon']); ?>" aria-hidden="true"></i></span>
                         <h3
-                            class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:mt-6 sm:text-xl sm:leading-7">
+                            class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-brand sm:mt-6 sm:text-xl sm:leading-7">
                             <?php echo esc_html($benefit['title']); ?>
                         </h3>
                         <p class="mt-2 text-[15px] leading-6 text-mid-gray sm:mt-3 sm:text-base">
@@ -181,10 +191,12 @@ foreach ($models as $i => $model) {
         <div class="mx-auto max-w-[1312px] rounded-3xl bg-white py-2">
             <div class="max-w-[672px]">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl">
-                    <?php echo esc_html(txa_f('distributor_models_heading', 'Flexible distribution models')); ?></h2>
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-brand sm:text-3xl">
+                    <?php echo esc_html(txa_f('distributor_models_heading', 'Flexible distribution models')); ?>
+                </h2>
                 <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:mt-4 sm:text-base">
-                    <?php echo esc_html(txa_f('distributor_models_copy', 'We provide multiple ways to consume inventory based on your technical maturity and business model.')); ?></p>
+                    <?php echo esc_html(txa_f('distributor_models_copy', 'We provide multiple ways to consume inventory based on your technical maturity and business model.')); ?>
+                </p>
             </div>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:gap-6 lg:grid-cols-2">
                 <?php foreach ($models as $model): ?>
@@ -195,14 +207,14 @@ foreach ($models as $i => $model) {
                                 class="bi <?php echo esc_attr($model['icon']); ?>" aria-hidden="true"></i></span>
                         <div>
                             <h3
-                                class="[font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-[#151c27] sm:text-xl sm:leading-7">
+                                class="[font-family:'Hanken_Grotesk',sans-serif] text-lg font-semibold leading-6 text-brand sm:text-xl sm:leading-7">
                                 <?php echo esc_html($model['title']); ?>
                             </h3>
                             <p class="mt-2 text-[15px] leading-6 text-mid-gray sm:text-base">
                                 <?php echo esc_html($model['copy']); ?>
                             </p>
                             <?php if (!empty($model['points'])): ?>
-                                <ul class="mt-4 space-y-2 text-sm text-[#151c27]">
+                                <ul class="mt-4 space-y-2 text-sm text-brand">
                                     <?php foreach ($model['points'] as $point): ?>
                                         <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-brand"
                                                 aria-hidden="true"></i><?php echo esc_html($point); ?></li><?php endforeach; ?>
@@ -217,9 +229,9 @@ foreach ($models as $i => $model) {
 
     <section class="px-3 py-10 sm:px-4 sm:py-14 lg:px-16 lg:py-16">
         <div
-            class="relative mx-auto min-h-[390px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[420px] sm:rounded-2xl lg:min-h-[526px]">
+            class="relative mx-auto min-h-[390px] max-w-[1312px] overflow-hidden rounded-xl bg-black/40 sm:min-h-[420px] sm:rounded-2xl lg:min-h-[526px]">
             <img src="<?php echo esc_url(txa_img('distributor_campaign_image', get_template_directory_uri() . '/images/new/distributors-2.jpg')); ?>"
-                alt="<?php echo esc_attr(txa_f('distributor_campaign_image_alt', 'Australian city waterfront at night')); ?>"
+                alt="<?php echo esc_attr(txa_f('distributor_campaign_image_alt', 'British city waterfront at night')); ?>"
                 class="absolute inset-0 h-full w-full object-cover">
             <div class="absolute inset-0 bg-black/60 sm:bg-black/50" aria-hidden="true"></div>
             <div
@@ -227,11 +239,13 @@ foreach ($models as $i => $model) {
                 <div class="max-w-[687px]">
                     <h2
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-white sm:text-3xl sm:leading-10">
-                        <?php echo esc_html(txa_f('distributor_campaign_heading', 'Drive regional impact with destination-led campaigns')); ?></h2>
+                        <?php echo esc_html(txa_f('distributor_campaign_heading', 'Drive regional impact with destination-led campaigns')); ?>
+                    </h2>
                     <p class="mt-4 text-[15px] leading-6 text-white/90 sm:mt-6 sm:text-base">
-                        <?php echo esc_html(txa_f('distributor_campaign_copy', 'TXA sits at the heart of Australian tourism. We work closely with STOs and RTOs to power booking engines for state-wide initiatives. Become a partner in these high-value trade campaigns.')); ?></p>
+                        <?php echo esc_html(txa_f('distributor_campaign_copy', 'TXGB sits at the heart of British tourism. We work closely with STOs and RTOs to power booking engines for state-wide initiatives. Become a partner in these high-value trade campaigns.')); ?>
+                    </p>
                     <div class="mt-6">
-                        <?php echo txa_distributor_button(txa_f('distributor_campaign_button_label', 'Become a TXA distributor'), $apply_url, 'light'); ?>
+                        <?php echo txa_distributor_button(txa_f('distributor_campaign_button_label', 'Become a TXGB distributor'), $apply_url, 'light'); ?>
                     </div>
                 </div>
             </div>

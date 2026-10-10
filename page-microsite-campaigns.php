@@ -46,13 +46,15 @@ $tools = [
     <section class="bg-surface px-4 py-14 sm:py-16 lg:px-16 lg:py-24">
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_600px] lg:items-center lg:gap-16">
             <div>
-                <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
+                <p
+                    class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
                     Microsite Campaigns</p>
                 <h1
-                    class="mt-8 max-w-[660px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
-                    Create tactical destination microsites that <span class="text-brand">motivate and convert</span>
+                    class="mt-8 max-w-[660px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-brand sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
+                    Create tactical destination microsites that <span class="txgb-accent-text">motivate and
+                        convert</span>
                 </h1>
-                <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray">TXA can support campaign-specific
+                <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray">TXGB can support campaign-specific
                     microsites for event, seasonal, industry group or special-interest tourism initiatives.</p>
                 <a href="<?php echo esc_url($demo_url); ?>"
                     class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto">Plan
@@ -69,7 +71,7 @@ $tools = [
         <div class="mx-auto max-w-[1312px]">
             <div class="text-center">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                     Powerful tools for conversion-led campaigns</h2>
                 <span class="mx-auto mt-6 block h-1 w-24 rounded-full bg-brand" aria-hidden="true"></span>
             </div>
@@ -77,7 +79,7 @@ $tools = [
             <div class="mt-12 grid gap-6 lg:grid-cols-3">
                 <?php foreach ($tools as $tool) { ?>
                     <article
-                        class="<?php echo !empty($tool['red']) ? 'bg-brand text-white shadow-xl shadow-brand/20' : 'border border-[#dfc0ba] bg-white text-[#151c27] shadow-sm'; ?> rounded-2xl p-8 sm:p-10 <?php echo !empty($tool['span']) ? esc_attr($tool['span']) : ''; ?>">
+                        class="<?php echo !empty($tool['red']) ? 'bg-brand text-white shadow-xl shadow-brand/20' : 'border border-[#dfc0ba] bg-white text-brand shadow-sm'; ?> rounded-2xl p-8 sm:p-10 <?php echo !empty($tool['span']) ? esc_attr($tool['span']) : ''; ?>">
                         <?php if (!empty($tool['large'])) { ?>
                             <div class="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
                                 <div>
@@ -85,14 +87,13 @@ $tools = [
                                         class="flex size-12 items-center justify-center rounded-lg bg-brand-tint text-2xl text-brand">
                                         <i class="bi <?php echo esc_attr($tool['icon']); ?>" aria-hidden="true"></i>
                                     </span>
-                                    <h3
-                                        class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-[#151c27]">
+                                    <h3 class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold text-brand">
                                         <?php echo esc_html($tool['title']); ?>
                                     </h3>
                                     <p class="mt-5 text-base leading-8 text-mid-gray"><?php echo esc_html($tool['copy']); ?></p>
                                 </div>
                                 <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $tool['image'])); ?>"
-                                    alt="TXA campaign analytics dashboard" class="w-full rounded-xl">
+                                    alt="TXGB campaign analytics dashboard" class="w-full rounded-xl">
                             </div>
                         <?php } else { ?>
                             <span
@@ -103,7 +104,7 @@ $tools = [
                                 class="<?php echo !empty($tool['checks']) ? 'grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center' : ''; ?>">
                                 <div>
                                     <h3
-                                        class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($tool['red']) ? 'text-white' : 'text-[#151c27]'; ?>">
+                                        class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($tool['red']) ? 'text-white' : 'text-brand'; ?>">
                                         <?php echo esc_html($tool['title']); ?>
                                     </h3>
                                     <p
@@ -114,7 +115,7 @@ $tools = [
                                 <?php if (!empty($tool['checks'])) { ?>
                                     <ul class="mt-8 space-y-4 lg:mt-0">
                                         <?php foreach ($tool['checks'] as $check) { ?>
-                                            <li class="flex items-center gap-3 text-sm font-semibold text-[#151c27]">
+                                            <li class="flex items-center gap-3 text-sm font-semibold text-brand">
                                                 <i class="bi bi-check-circle-fill text-brand" aria-hidden="true"></i>
                                                 <?php echo esc_html($check); ?>
                                             </li>

@@ -34,12 +34,12 @@ $platform_items = [
     <div
         class="mx-auto grid max-w-[1160px] grid-cols-1 items-center gap-5 xl:grid-cols-[0.8fr_54px_1.08fr_54px_1.15fr_54px_0.8fr] xl:gap-3">
         <article
-            class="flex min-h-[230px] flex-col items-center justify-center rounded-2xl border p-6 text-center transition <?php echo $supplier_highlighted ? 'border-brand bg-brand/10 shadow-[0_0_42px_-16px_rgba(212,43,43,0.95)]' : 'border-white/20 bg-white/[0.03]'; ?>">
+            class="flex min-h-[230px] flex-col items-center justify-center rounded-2xl border p-6 text-center transition <?php echo $supplier_highlighted ? 'txgb-shadow-highlight border-secondary bg-secondary/10' : 'border-white/20 bg-white/[0.03]'; ?>">
             <span
-                class="flex size-20 items-center justify-center rounded-2xl text-5xl <?php echo $supplier_highlighted ? 'bg-brand text-white' : 'bg-white/10 text-white'; ?>"
+                class="flex size-20 items-center justify-center rounded-2xl text-5xl <?php echo $supplier_highlighted ? 'bg-secondary text-white' : 'bg-white/10 text-white'; ?>"
                 aria-hidden="true"><i class="bi bi-shop-window"></i></span>
             <h4
-                class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-bold <?php echo $supplier_highlighted ? 'text-brand' : 'text-white'; ?>">
+                class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-bold <?php echo $supplier_highlighted ? 'text-secondary' : 'text-white'; ?>">
                 Tourism Suppliers</h4>
             <p class="mt-3 text-sm leading-6 text-white/75">Businesses that sell travel online.</p>
         </article>
@@ -51,8 +51,8 @@ $platform_items = [
 
         <div class="flex flex-col">
             <div class="mb-5 flex min-h-14 items-end justify-center sm:mb-6 sm:min-h-16">
-                <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
-                    alt="Tourism Exchange Australia" class="h-11 w-auto brightness-0 invert sm:h-14">
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/logo-white.png')); ?>"
+                    alt="Tourism Exchange Great Britain" class="h-8 w-auto sm:h-9">
             </div>
             <article
                 class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6">
@@ -82,11 +82,11 @@ $platform_items = [
                     <?php foreach ($platform_items as $item):
                         $item_highlighted = $dmo_highlighted && 'dmo' === $item['key']; ?>
                         <div
-                            class="flex min-h-[112px] flex-1 flex-col items-center justify-center rounded-xl px-3 py-4 transition xl:min-h-16 <?php echo $item_highlighted ? 'bg-brand/15 shadow-[inset_0_0_0_2px_rgba(212,43,43,0.9)]' : ''; ?>">
-                            <i class="bi <?php echo esc_attr($item['icon']); ?> text-2xl <?php echo $item_highlighted ? 'text-brand' : 'text-white'; ?>"
+                            class="flex min-h-[112px] flex-1 flex-col items-center justify-center rounded-xl px-3 py-4 transition xl:min-h-16 <?php echo $item_highlighted ? 'txgb-shadow-inset bg-secondary/15' : ''; ?>">
+                            <i class="bi <?php echo esc_attr($item['icon']); ?> text-2xl <?php echo $item_highlighted ? 'text-secondary' : 'text-white'; ?>"
                                 aria-hidden="true"></i>
                             <p
-                                class="mt-2 text-sm font-semibold leading-5 <?php echo $item_highlighted ? 'text-brand' : 'text-white/90'; ?>">
+                                class="mt-2 text-sm font-semibold leading-5 <?php echo $item_highlighted ? 'text-secondary' : 'text-white/90'; ?>">
                                 <?php echo esc_html($item['label']); ?>
                             </p>
                         </div>

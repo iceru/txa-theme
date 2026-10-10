@@ -69,10 +69,10 @@ if (!function_exists('txa_booking_cards')) {
     }
 }
 
-add_filter('pre_get_document_title', fn(): string => (string) txa_f('booking_seo_title', 'TXA Booking Systems | Tourism Exchange Australia'));
+add_filter('pre_get_document_title', fn(): string => (string) txa_f('booking_seo_title', 'TXGB Booking Systems | Tourism Exchange Great Britain'));
 add_action('wp_head', function (): void {
     if (is_page_template('page-booking-systems.php')) {
-        echo '<meta name="description" content="' . esc_attr(txa_f('booking_seo_description', 'Connect your booking system to Australia\'s national tourism exchange and help operator customers access broader destination, distributor and trade channels.')) . '">' . "\n";
+        echo '<meta name="description" content="' . esc_attr(txa_f('booking_seo_description', 'Connect your booking system to Great Britain\'s national tourism exchange and help operator customers access broader destination, distributor and trade channels.')) . '">' . "\n";
     }
 });
 
@@ -83,7 +83,7 @@ $directory_url = home_url('/booking-systems');
 
 $benefits = txa_booking_cards('booking_benefit', [
     ['icon' => 'bi-share', 'title' => 'Broader Distribution', 'copy' => 'Access hundreds of distributors from global OTAs to hyper-local niche and re-seller channels and visitor information center.'],
-    ['icon' => 'bi-lightning-charge', 'title' => 'Reduced Friction', 'copy' => 'Connect once to TXA and manage all distributor relationships through a unified API.'],
+    ['icon' => 'bi-lightning-charge', 'title' => 'Reduced Friction', 'copy' => 'Connect once to TXGB and manage all distributor relationships through a unified API.'],
     ['icon' => 'bi-arrow-left-right', 'title' => 'Live Connectivity', 'copy' => 'Real-time availability and pricing updates ensure accurate booking data across the network.'],
 ], ['icon', 'title', 'copy']);
 
@@ -128,7 +128,7 @@ foreach ($systems as $i => $system) {
         .txa-booking-system-card:hover {
             z-index: 1;
             transform: translateY(-6px);
-            border-color: rgba(212, 43, 43, 0.4);
+            border-color: rgba(38, 36, 89, 0.4);
             box-shadow: 0 18px 34px -18px rgba(20, 20, 20, 0.35);
         }
 
@@ -154,25 +154,25 @@ foreach ($systems as $i => $system) {
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div
-            class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
+            class="relative mx-auto min-h-[590px] max-w-[1312px] overflow-hidden rounded-xl bg-black/40 sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
             <img src="<?php echo esc_url(txa_img('booking_hero_image', get_theme_file_uri('/images/new/booking-systems-1.jpg'))); ?>"
-                alt="<?php echo esc_attr(txa_f('booking_hero_image_alt', 'Aerial view of an Australian beach')); ?>"
+                alt="<?php echo esc_attr(txa_f('booking_hero_image_alt', 'Aerial view of an British beach')); ?>"
                 class="absolute inset-0 h-full w-full object-cover">
-            <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
+            <div class="absolute inset-0 bg-black/55 sm:bg-black/45" aria-hidden="true"></div>
             <div
                 class="relative z-10 grid min-h-[590px] items-center gap-8 px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:grid-cols-[minmax(0,1fr)_minmax(360px,485px)] lg:gap-10 lg:px-8">
                 <div class="w-full max-w-[760px]">
                     <p
                         class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                        <?php echo esc_html(txa_f('booking_hero_label', 'TXA CONNECTED BOOKING SYSTEMS')); ?>
+                        <?php echo esc_html(txa_f('booking_hero_label', 'TXGB CONNECTED BOOKING SYSTEMS')); ?>
                     </p>
                     <h1
                         class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                        <?php echo esc_html(txa_f('booking_hero_title', 'Connect your booking system to Australia’s national tourism exchange')); ?>
+                        <?php echo esc_html(txa_f('booking_hero_title', 'Connect your booking system to Great Britain’s national tourism exchange')); ?>
                     </h1>
                     <p
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo esc_html(txa_f('booking_hero_copy', 'TXA helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Australia’s open B2B tourism exchange.')); ?>
+                        <?php echo esc_html(txa_f('booking_hero_copy', 'TXGB helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Great Britain’s open B2B tourism exchange.')); ?>
                     </p>
                     <div class="mt-6">
                         <?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $partner_url); ?>
@@ -182,7 +182,7 @@ foreach ($systems as $i => $system) {
                 <div
                     class="overflow-hidden rounded-2xl border border-white/25 bg-white/10 px-5 py-7 text-center text-white shadow-[0_20px_45px_-18px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6 sm:py-8">
                     <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold uppercase sm:text-2xl">
-                        <?php echo esc_html(txa_f('booking_platform_heading', 'TXA PLATFORM')); ?>
+                        <?php echo esc_html(txa_f('booking_platform_heading', 'TXGB PLATFORM')); ?>
                     </h2>
                     <p class="mt-1 text-xs font-semibold text-white/80">
                         <?php echo esc_html(txa_f('booking_platform_tagline', 'One connection. More distribution.')); ?>
@@ -210,8 +210,8 @@ foreach ($systems as $i => $system) {
                         <div class="flex w-full min-w-0 flex-col items-center">
                             <span
                                 class="flex h-16 w-full max-w-[88px] items-center justify-center rounded-2xl border border-white/30 bg-white/15 px-2 shadow-lg sm:h-[72px] sm:max-w-[116px]">
-                                <img src="<?php echo esc_url(txa_img('booking_platform_logo', get_theme_file_uri('/images/logo.png'))); ?>"
-                                    alt="<?php echo esc_attr(txa_f('booking_platform_logo_alt', 'Tourism Exchange Australia')); ?>"
+                                <img src="<?php echo esc_url(txa_img('booking_platform_logo', get_theme_file_uri('/images/logo-with-text.png'))); ?>"
+                                    alt="<?php echo esc_attr(txa_f('booking_platform_logo_alt', 'Tourism Exchange Great Britain')); ?>"
                                     class="h-auto w-full brightness-0 invert">
                             </span>
                         </div>
@@ -242,11 +242,11 @@ foreach ($systems as $i => $system) {
         <div class="mx-auto max-w-[1312px]">
             <div class="max-w-[725px]">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-8 tracking-[-0.01em] text-[#151c27] sm:text-3xl sm:leading-10">
-                    <?php echo esc_html(txa_f('booking_intro_heading', 'Connect your customers to Australia’s national tourism exchange')); ?>
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-8 tracking-[-0.01em] text-brand sm:text-3xl sm:leading-10">
+                    <?php echo esc_html(txa_f('booking_intro_heading', 'Connect your customers to Great Britain’s national tourism exchange')); ?>
                 </h2>
                 <p class="mt-4 text-sm leading-6 text-mid-gray sm:text-base">
-                    <?php echo esc_html(txa_f('booking_intro_copy', 'Integrating your Booking system via TXA’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels.')); ?>
+                    <?php echo esc_html(txa_f('booking_intro_copy', 'Integrating your Booking system via TXGB’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels.')); ?>
                 </p>
             </div>
             <div class="mt-8 grid gap-5 md:grid-cols-3 md:gap-8">
@@ -257,7 +257,7 @@ foreach ($systems as $i => $system) {
                             class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-tint text-lg font-bold text-brand sm:size-12 sm:text-xl"><i
                                 class="bi <?php echo esc_attr($benefit['icon']); ?>" aria-hidden="true"></i></span>
                         <div>
-                            <h3 class="text-base font-semibold leading-6 text-[#151c27]">
+                            <h3 class="text-base font-semibold leading-6 text-brand">
                                 <?php echo esc_html($benefit['title']); ?>
                             </h3>
                             <p class="mt-2 text-sm leading-5 text-mid-gray"><?php echo esc_html($benefit['copy']); ?></p>
@@ -272,7 +272,7 @@ foreach ($systems as $i => $system) {
         <div class="mx-auto max-w-[1312px]">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <h2
-                    class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold tracking-[-0.01em] text-[#151c27] sm:text-3xl">
+                    class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold tracking-[-0.01em] text-brand sm:text-3xl">
                     <?php echo esc_html(txa_f('booking_systems_heading', 'Connected booking systems')); ?>
                 </h2>
             </div>
@@ -286,7 +286,7 @@ foreach ($systems as $i => $system) {
                                 alt="<?php echo esc_attr($system['name']); ?> logo"
                                 class="max-h-12 max-w-full object-contain sm:max-h-14" loading="lazy">
                         </span>
-                        <h3 class="mt-4 text-sm font-semibold text-[#151c27] sm:mt-6 sm:text-base">
+                        <h3 class="mt-4 text-sm font-semibold text-brand sm:mt-6 sm:text-base">
                             <?php echo esc_html($system['name']); ?>
                         </h3>
                     </article>
@@ -297,7 +297,7 @@ foreach ($systems as $i => $system) {
 
     <section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-16">
         <div
-            class="relative mx-auto min-h-[270px] max-w-[1312px] overflow-hidden rounded-2xl bg-near-black sm:min-h-[296px]">
+            class="relative mx-auto min-h-[270px] max-w-[1312px] overflow-hidden rounded-2xl bg-black/40 sm:min-h-[296px]">
             <img src="<?php echo esc_url(txa_img('booking_partners_image', get_theme_file_uri('/images/new/booking-systems-2.jpg'))); ?>"
                 alt="<?php echo esc_attr(txa_f('booking_partners_image_alt', 'Sydney Harbour')); ?>"
                 class="absolute inset-0 h-full w-full object-cover">
@@ -307,7 +307,7 @@ foreach ($systems as $i => $system) {
                 <div class="max-w-[687px]">
                     <h2
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-8 tracking-[-0.01em] text-white sm:text-3xl sm:leading-10">
-                        <?php echo esc_html(txa_f('booking_partners_heading', 'TXA Booking System partners')); ?>
+                        <?php echo esc_html(txa_f('booking_partners_heading', 'TXGB Booking System partners')); ?>
                     </h2>
                     <p class="mt-4 text-sm leading-6 text-white/90 sm:mt-5 sm:text-base">
                         <?php echo esc_html(txa_f('booking_partners_copy', 'Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry.')); ?>

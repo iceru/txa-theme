@@ -39,13 +39,13 @@ $distribution_channels = [
     [data-txa-network] .txa-network-node[data-node="txa"]:is(:hover, :focus-visible) {
         z-index: 30;
         transform: translateY(-6px) scale(1.05);
-        box-shadow: 0 26px 58px -24px rgba(227, 41, 41, 0.65), 0 18px 34px -28px rgba(0, 0, 0, 0.55);
+        box-shadow: 0 26px 58px -24px rgba(38, 36, 89, 0.65), 0 18px 34px -28px rgba(0, 0, 0, 0.55);
     }
 
     [data-txa-network] .txa-network-node[data-node="traveller"]:is(:hover, :focus-visible) {
         z-index: 10;
         transform: translateY(-6px);
-        box-shadow: 0 22px 38px -18px rgba(212, 43, 43, 0.65);
+        box-shadow: 0 22px 38px -18px rgba(38, 36, 89, 0.65);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -58,7 +58,7 @@ $distribution_channels = [
 <section class="bg-surface px-4 py-10 sm:py-14 lg:px-16 lg:py-20">
     <div class="mx-auto max-w-[1312px]">
         <div class="mx-auto max-w-[760px] text-center">
-            <p class="text-xs font-semibold uppercase tracking-wide text-brand sm:text-sm">A Connected Tourism Ecosystem
+            <p class="txgb-accent-text text-xs font-semibold uppercase tracking-wide sm:text-sm">A Connected Tourism Ecosystem
             </p>
             <h2
                 class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[30px] font-semibold leading-tight text-near-black sm:text-4xl">
@@ -113,11 +113,11 @@ $distribution_channels = [
                     </svg>
                 </div>
 
-                <div class="txa-network-node rounded-2xl border-2 border-brand bg-white p-6 text-center shadow-[0_22px_48px_-24px_rgba(212,43,43,0.65)]"
+                <div class="txa-network-node txgb-shadow-card rounded-2xl border-2 border-brand bg-white p-6 text-center"
                     data-node="txa" tabindex="0">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
-                        alt="Tourism Exchange Australia" class="mx-auto h-14 w-auto">
-                    <p class="mt-4 text-[11px] font-extrabold uppercase tracking-[0.1em] text-brand">Tourism Exchange
+                    <img src="<?php echo esc_url(get_theme_file_uri('/images/logo-with-text.png')); ?>"
+                        alt="Tourism Exchange Great Britain" class="mx-auto h-16 w-auto">
+                    <p class="txgb-accent-text mt-4 text-[11px] font-extrabold uppercase tracking-[0.1em]">Tourism Exchange
                         Australia</p>
                 </div>
 
@@ -168,7 +168,7 @@ $distribution_channels = [
                     </svg>
                 </div>
 
-                <div class="txa-network-node rounded-2xl bg-brand px-5 py-7 text-center text-white shadow-[0_18px_34px_-20px_rgba(212,43,43,0.85)]"
+                <div class="txa-network-node txgb-shadow-strong rounded-2xl bg-brand px-5 py-7 text-center text-white"
                     data-node="traveller" tabindex="0">
                     <div class="flex items-end justify-center gap-1 text-2xl" aria-hidden="true"><i
                             class="bi bi-person-walking"></i><i class="bi bi-person-standing-dress text-3xl"></i><i

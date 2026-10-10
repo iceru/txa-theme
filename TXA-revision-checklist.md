@@ -1,7 +1,7 @@
-# TXA Website Revision Checklist
+# TXGB Website Revision Checklist
 
-Source: `TXA website mockup comments_AC_260818.docx`  
-Reviewed against: current TXA WordPress theme files and local WordPress records  
+Source: `TXGB website mockup comments_AC_260818.docx`  
+Reviewed against: current TXGB WordPress theme files and local WordPress records  
 Status key: `[x]` done, `[ ]` outstanding, `[-]` partial or awaiting confirmation
 
 ## 1. Homepage
@@ -21,7 +21,7 @@ Notes/decision:
 
 - [x] Replace the old static section with a connected-network presentation.
 - [x] Add animated/glowing connection paths.
-- [x] Make hovering over TXA activate all paths.
+- [x] Make hovering over TXGB activate all paths.
 - [x] Make Suppliers independently hoverable.
 - [x] Make Booking Systems independently hoverable.
 - [x] Make Distributors independently hoverable.
@@ -37,11 +37,11 @@ Notes/decision:
 
 > 
 
-### How TXA Works video
+### How TXGB Works video
 
 - [x] Add an embedded video area to the homepage.
 - [-] Current embed is explicitly marked as a placeholder.
-- [ ] Obtain or approve the re-edited TXA Explainer video.
+- [ ] Obtain or approve the re-edited TXGB Explainer video.
 - [ ] Replace the placeholder URL with the approved video.
 - [ ] Confirm that all outdated logos and flows have been replaced in the video.
 
@@ -49,9 +49,9 @@ Approved video URL/file:
 
 > 
 
-### How to Connect to TXA
+### How to Connect to TXGB
 
-- [x] Rename “Choose Your Pathway” to “How to Connect to TXA?”
+- [x] Rename “Choose Your Pathway” to “How to Connect to TXGB?”
 - [x] Include Tourism Suppliers.
 - [x] Include Destinations.
 - [x] Include Distributors.
@@ -64,27 +64,27 @@ Notes/decision:
 
 > 
 
-## 2. TXA Suppliers
+## 2. TXGB Suppliers
 
 - [x] Replace the original Supplier Distribution Flow with a new concept diagram.
-- [x] Change the diagram to the approved TXA system-concept structure:
+- [x] Change the diagram to the approved TXGB system-concept structure:
   - [x] Column 1: Tourism Suppliers / businesses that sell travel online.
-  - [x] Column 2: TXA System with Booking Engine, CRM, and Database.
+  - [x] Column 2: TXGB System with Booking Engine, CRM, and Database.
   - [x] Column 3: Web Platforms with Company Website, Local Government/DMO, Google, and Various OTAs.
   - [x] Column 4: Customer / travellers who purchase travel online.
 - [x] Highlight Tourism Suppliers in the Supplier-page version.
 - [x] Replace the current “Travellers purchasing tourism products online” wording with “Customer.”
 - [x] Build this as a reusable system-diagram component shared with other pages.
 - [x] Prepare a Distributor-page variant that can highlight Local Government / DMO.
-- [x] Position the TXA logo above and completely outside the TXA System rectangle.
-- [x] Align the TXA System and Web Platforms columns to equal desktop heights.
+- [x] Position the TXGB logo above and completely outside the TXGB System rectangle.
+- [x] Align the TXGB System and Web Platforms columns to equal desktop heights.
 - [x] Prevent the Web Platforms footer label from overlapping its border.
 
 Notes/decision:
 
 > 
 
-## 3. TXA Destinations
+## 3. TXGB Destinations
 
 ### Six implementation steps
 
@@ -101,14 +101,14 @@ Notes/decision:
 
 ### Destination dashboard
 
-- [x] Replace the simple bar-graph preview with a TXA dashboard screenshot.
+- [x] Replace the simple bar-graph preview with a TXGB dashboard screenshot.
 - [x] Present the dashboard screenshot on a laptop.
 - [ ] Confirm that the dashboard data is approved for public display.
 
 ### Destination role diagram
 
-- [ ] Add a diagram explaining the role of a Destination in TXA.
-- [ ] Base it on the approved shared TXA system diagram.
+- [ ] Add a diagram explaining the role of a Destination in TXGB.
+- [ ] Base it on the approved shared TXGB system diagram.
 - [ ] Highlight the Local Government/DMO/Destination element.
 - [ ] Confirm the exact labels and copy.
 
@@ -116,9 +116,9 @@ Notes/decision:
 
 > 
 
-## 4. TXA Destination Pricing
+## 4. TXGB Destination Pricing
 
-- [ ] Remove the entire “TXA Smart Destination Packages” presentation.
+- [ ] Remove the entire “TXGB Smart Destination Packages” presentation.
 - [ ] Remove the Local, Regional, and State package cards.
 - [ ] Remove or revise package-specific setup/training copy.
 - [ ] Add a “Request Package Discussion” button.
@@ -190,7 +190,7 @@ Notes/decision:
 
 - [x] Rebuild the Data & Insights page template using the supplied design reference.
 - [-] Create/publish the corresponding WordPress page; template implementation is complete but route availability still requires verification.
-- [x] Replace the external stock hero image with a local TXA laptop mockup and position it to the right of the hero copy on desktop.
+- [x] Replace the external stock hero image with a local TXGB laptop mockup and position it to the right of the hero copy on desktop.
 - [x] Replace the fabricated dashboard/bar-chart block with the asymmetric Comprehensive Data Capabilities layout.
 - [x] Use Bootstrap icons for the Data & Insights capability panels.
 - [ ] Confirm which dashboard screenshot should be used.
@@ -216,11 +216,11 @@ Approved content/image notes:
 
 > 
 
-## 11. TXA Distributors
+## 11. TXGB Distributors
 
 ### Distributor gallery
 
-- [ ] Obtain the approved TXA distributor logos/images.
+- [ ] Obtain the approved TXGB distributor logos/images.
 - [ ] Add the distributor logos in a responsive gallery.
 - [ ] Add meaningful alternative text for every logo.
 - [ ] Confirm whether each logo should link to the distributor’s website.
@@ -228,7 +228,7 @@ Approved content/image notes:
 
 ### Distributor role diagram
 
-- [x] Add the shared four-column TXA system diagram.
+- [x] Add the shared four-column TXGB system diagram.
 - [x] Use these columns:
   - [x] Column 1: Tourism Suppliers.
   - [x] Column 2: Booking Engine, CRM, Database.
@@ -241,7 +241,7 @@ Notes/decision:
 
 > 
 
-## 12. TXA Pricing
+## 12. TXGB Pricing
 
 - [ ] Review the complete Pricing page content with the stakeholder.
 - [ ] Confirm supplier percentage pricing.
@@ -256,13 +256,13 @@ Approval notes:
 
 > 
 
-## 13. About TXA
+## 13. About TXGB
 
-- [x] Add the TXA Journey history section.
+- [x] Add the TXGB Journey history section.
 - [x] Redesign the implementation/history timeline.
 - [x] Use a winding/serpentine desktop timeline based on the supplied first reference, with a vertical mobile fallback.
-- [x] Use the milestone content from the supplied TXA Journey reference.
-- [x] Include the six-item value/benefit row shown in the TXA Journey reference.
+- [x] Use the milestone content from the supplied TXGB Journey reference.
+- [x] Include the six-item value/benefit row shown in the TXGB Journey reference.
 - [x] Replace unsupported timeline icons and add additional clearance around the 2014 milestone.
 - [ ] Confirm the milestone names, dates, and descriptions with Amy and Stephen.
 - [ ] Add approved dates and partner/integration logos if required.
@@ -284,7 +284,7 @@ Approved timeline content:
 
 ### Booking-system role diagram
 
-- [-] A simplified Booking System → TXA → Distribution Channels diagram exists.
+- [-] A simplified Booking System → TXGB → Distribution Channels diagram exists.
 - [x] Prevent the compact hero diagram from clipping at 1366×768 by using a flexible five-column layout.
 - [x] Match the Booking Systems hero heading and body typography to the Suppliers hero.
 - [ ] Replace it with the shared detailed system concept diagram.
@@ -383,13 +383,13 @@ Notes/decision:
 ## Decisions and Assets Still Required
 
 - [ ] Two homepage hero images from Amy.
-- [ ] Final re-edited TXA Explainer video.
-- [ ] Approved shared TXA system diagram design and labels.
+- [ ] Final re-edited TXGB Explainer video.
+- [ ] Approved shared TXGB system diagram design and labels.
 - [ ] Destination Pricing discussion-button destination.
 - [ ] Decision on POI page versus DMO Website Activation page.
 - [ ] Approved National Trade Portal map capture.
 - [ ] Approved microsite demonstration image.
-- [ ] Approved TXA dashboard screenshot for Data & Insights.
+- [ ] Approved TXGB dashboard screenshot for Data & Insights.
 - [ ] Approval for the current Virtual Concierge image and final page copy.
 - [ ] Distributor logos.
 - [ ] Booking-system logos and complete system list.
