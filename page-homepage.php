@@ -168,7 +168,7 @@ if (!$how_txa_works_embed) {
                 <div class="max-w-[629px]">
                     <h2
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-brand sm:text-3xl sm:leading-10">
-                        <?php echo esc_html(txa_f('intro_heading', "Great Britain's national tourism exchange.")); ?><span
+                        <?php echo esc_html(txa_f('intro_heading', "Great Britain's national tourism exchange.")); ?>&nbsp;<span
                             class="txgb-accent-text"><?php echo esc_html(txa_f('intro_heading_highlight', 'How TXGB was built and why')); ?></span>
                     </h2>
                     <div

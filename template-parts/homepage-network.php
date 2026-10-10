@@ -58,11 +58,12 @@ $distribution_channels = [
 <section class="bg-surface px-4 py-10 sm:py-14 lg:px-16 lg:py-20">
     <div class="mx-auto max-w-[1312px]">
         <div class="mx-auto max-w-[760px] text-center">
-            <p class="txgb-accent-text text-xs font-semibold uppercase tracking-wide sm:text-sm">A Connected Tourism Ecosystem
+            <p class="txgb-accent-text text-xs font-semibold uppercase tracking-wide sm:text-sm">A Connected Tourism
+                Ecosystem
             </p>
             <h2
                 class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[30px] font-semibold leading-tight text-near-black sm:text-4xl">
-                One exchange connecting Australia's tourism ecosystem
+                One exchange connecting Great Britain's tourism ecosystem
             </h2>
             <p class="mt-4 text-base leading-7 text-mid-gray sm:text-lg">Tourism products flow from connected booking
                 systems through TXA to destination websites, distributors, travel trade and travellers.</p>
@@ -117,8 +118,9 @@ $distribution_channels = [
                     data-node="txa" tabindex="0">
                     <img src="<?php echo esc_url(get_theme_file_uri('/images/logo-with-text.png')); ?>"
                         alt="Tourism Exchange Great Britain" class="mx-auto h-16 w-auto">
-                    <p class="txgb-accent-text mt-4 text-[11px] font-extrabold uppercase tracking-[0.1em]">Tourism Exchange
-                        Australia</p>
+                    <p class="txgb-accent-text mt-4 text-[11px] font-extrabold uppercase tracking-[0.1em]">Tourism
+                        Exchange
+                        Great Britain</p>
                 </div>
 
                 <div class="flex items-center justify-center" aria-hidden="true">

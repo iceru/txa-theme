@@ -120,7 +120,7 @@ $timeline_values = $default_timeline_values;
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight tracking-[-.01em]">
                     Proven exchange technology, built for Great Britain</h2>
                 <p class="mt-4 text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-[29px]">Today, the same
-                    exchange technology powers tourism platforms in the UK, Japan, Saudi Arabia, and the US. TXGB
+                    exchange technology powers tourism platforms in the Australia, Japan, Saudi Arabia, and the US. TXGB
                     remains
                     Great Britain’s own—tailored for our unique geography and market dynamics.</p>
             </div>
