@@ -21,7 +21,7 @@ $what_txa_does = [
     ['title' => 'Booking Systems', 'copy' => 'Electronic booking and inventory management systems used in the tourism industry', 'icon' => 'bi-calendar2-check'],
 ];
 $countries = [
-    ['name' => 'United Kingdom', 'icon' => 'txgb.png'],
+    ['name' => 'Australia', 'icon' => 'txa.png'],
     ['name' => 'Japan', 'icon' => 'txj.png'],
     ['name' => 'Saudi Arabia', 'icon' => 'txsa.jpg'],
     ['name' => 'United States', 'icon' => 'txusa.png'],
