@@ -1,0 +1,707 @@
+[
+  {
+    "key": "group_txa_main_pricing",
+    "title": "TXGB Pricing Page",
+    "fields": [
+      {
+        "key": "field_main_pricing_tab_hero",
+        "label": "Hero",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_main_pricing_hero_title",
+        "label": "Title",
+        "name": "main_pricing_hero_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_hero_copy",
+        "label": "Description",
+        "name": "main_pricing_hero_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_hero_primary_label",
+        "label": "Primary Button Label",
+        "name": "main_pricing_hero_primary_label",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_hero_primary_url",
+        "label": "Primary Button URL",
+        "name": "main_pricing_hero_primary_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_hero_secondary_label",
+        "label": "Secondary Button Label",
+        "name": "main_pricing_hero_secondary_label",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_hero_secondary_url",
+        "label": "Secondary Button URL",
+        "name": "main_pricing_hero_secondary_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_steps_heading",
+        "label": "Steps Accessibility Heading",
+        "name": "main_pricing_steps_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_hero_image",
+        "label": "Hero Image",
+        "name": "main_pricing_hero_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_main_pricing_hero_image_alt",
+        "label": "Hero Image Alt Text",
+        "name": "main_pricing_hero_image_alt",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_tab_steps",
+        "label": "How It Works",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_main_pricing_step_1_number",
+        "label": "Step 1 Number",
+        "name": "main_pricing_step_1_number",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_step_1_title",
+        "label": "Step 1 Title",
+        "name": "main_pricing_step_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_step_1_copy",
+        "label": "Step 1 Description",
+        "name": "main_pricing_step_1_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_step_2_number",
+        "label": "Step 2 Number",
+        "name": "main_pricing_step_2_number",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_step_2_title",
+        "label": "Step 2 Title",
+        "name": "main_pricing_step_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_step_2_copy",
+        "label": "Step 2 Description",
+        "name": "main_pricing_step_2_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_step_3_number",
+        "label": "Step 3 Number",
+        "name": "main_pricing_step_3_number",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_step_3_title",
+        "label": "Step 3 Title",
+        "name": "main_pricing_step_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_step_3_copy",
+        "label": "Step 3 Description",
+        "name": "main_pricing_step_3_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_tab_paths",
+        "label": "Pricing Path Links",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_main_pricing_path_1_icon",
+        "label": "Path 1 Bootstrap Icon Class",
+        "name": "main_pricing_path_1_icon",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_1_title",
+        "label": "Path 1 Title",
+        "name": "main_pricing_path_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_1_copy",
+        "label": "Path 1 Description",
+        "name": "main_pricing_path_1_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_1_url",
+        "label": "Path 1 URL",
+        "name": "main_pricing_path_1_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_2_icon",
+        "label": "Path 2 Bootstrap Icon Class",
+        "name": "main_pricing_path_2_icon",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_2_title",
+        "label": "Path 2 Title",
+        "name": "main_pricing_path_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_2_copy",
+        "label": "Path 2 Description",
+        "name": "main_pricing_path_2_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_2_url",
+        "label": "Path 2 URL",
+        "name": "main_pricing_path_2_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_3_icon",
+        "label": "Path 3 Bootstrap Icon Class",
+        "name": "main_pricing_path_3_icon",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_3_title",
+        "label": "Path 3 Title",
+        "name": "main_pricing_path_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_3_copy",
+        "label": "Path 3 Description",
+        "name": "main_pricing_path_3_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_3_url",
+        "label": "Path 3 URL",
+        "name": "main_pricing_path_3_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_4_icon",
+        "label": "Path 4 Bootstrap Icon Class",
+        "name": "main_pricing_path_4_icon",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_4_title",
+        "label": "Path 4 Title",
+        "name": "main_pricing_path_4_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_4_copy",
+        "label": "Path 4 Description",
+        "name": "main_pricing_path_4_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_path_4_url",
+        "label": "Path 4 URL",
+        "name": "main_pricing_path_4_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_tab_cards",
+        "label": "Pricing Cards",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_main_pricing_cards_heading",
+        "label": "Section Heading",
+        "name": "main_pricing_cards_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_featured_badge",
+        "label": "Featured Card Badge",
+        "name": "main_pricing_featured_badge",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_1_title",
+        "label": "Card 1 Title",
+        "name": "main_pricing_card_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_1_price",
+        "label": "Card 1 Price",
+        "name": "main_pricing_card_1_price",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_1_suffix",
+        "label": "Card 1 Price Separator",
+        "name": "main_pricing_card_1_suffix",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_1_price_end",
+        "label": "Card 1 Price End",
+        "name": "main_pricing_card_1_price_end",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_1_copy",
+        "label": "Card 1 Description",
+        "name": "main_pricing_card_1_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_1_points",
+        "label": "Card 1 Benefits (one per line)",
+        "name": "main_pricing_card_1_points",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_card_1_cta",
+        "label": "Card 1 Button Label",
+        "name": "main_pricing_card_1_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_1_url",
+        "label": "Card 1 Button URL",
+        "name": "main_pricing_card_1_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_1_featured",
+        "label": "Card 1 Featured",
+        "name": "main_pricing_card_1_featured",
+        "type": "true_false",
+        "ui": 1,
+        "default_value": 1
+      },
+      {
+        "key": "field_main_pricing_card_2_title",
+        "label": "Card 2 Title",
+        "name": "main_pricing_card_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_2_price",
+        "label": "Card 2 Price",
+        "name": "main_pricing_card_2_price",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_2_suffix",
+        "label": "Card 2 Price Separator",
+        "name": "main_pricing_card_2_suffix",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_2_price_end",
+        "label": "Card 2 Price End",
+        "name": "main_pricing_card_2_price_end",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_2_copy",
+        "label": "Card 2 Description",
+        "name": "main_pricing_card_2_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_2_points",
+        "label": "Card 2 Benefits (one per line)",
+        "name": "main_pricing_card_2_points",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_card_2_cta",
+        "label": "Card 2 Button Label",
+        "name": "main_pricing_card_2_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_2_url",
+        "label": "Card 2 Button URL",
+        "name": "main_pricing_card_2_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_2_featured",
+        "label": "Card 2 Featured",
+        "name": "main_pricing_card_2_featured",
+        "type": "true_false",
+        "ui": 1,
+        "default_value": 0
+      },
+      {
+        "key": "field_main_pricing_card_3_title",
+        "label": "Card 3 Title",
+        "name": "main_pricing_card_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_3_price",
+        "label": "Card 3 Price",
+        "name": "main_pricing_card_3_price",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_3_suffix",
+        "label": "Card 3 Price Separator",
+        "name": "main_pricing_card_3_suffix",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_3_price_end",
+        "label": "Card 3 Price End",
+        "name": "main_pricing_card_3_price_end",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_3_copy",
+        "label": "Card 3 Description",
+        "name": "main_pricing_card_3_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_3_points",
+        "label": "Card 3 Benefits (one per line)",
+        "name": "main_pricing_card_3_points",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_card_3_cta",
+        "label": "Card 3 Button Label",
+        "name": "main_pricing_card_3_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_3_url",
+        "label": "Card 3 Button URL",
+        "name": "main_pricing_card_3_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_3_featured",
+        "label": "Card 3 Featured",
+        "name": "main_pricing_card_3_featured",
+        "type": "true_false",
+        "ui": 1,
+        "default_value": 0
+      },
+      {
+        "key": "field_main_pricing_card_4_title",
+        "label": "Card 4 Title",
+        "name": "main_pricing_card_4_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_4_price",
+        "label": "Card 4 Price",
+        "name": "main_pricing_card_4_price",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_4_suffix",
+        "label": "Card 4 Price Separator",
+        "name": "main_pricing_card_4_suffix",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_4_price_end",
+        "label": "Card 4 Price End",
+        "name": "main_pricing_card_4_price_end",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_4_copy",
+        "label": "Card 4 Description",
+        "name": "main_pricing_card_4_copy",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_4_points",
+        "label": "Card 4 Benefits (one per line)",
+        "name": "main_pricing_card_4_points",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_card_4_cta",
+        "label": "Card 4 Button Label",
+        "name": "main_pricing_card_4_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_4_url",
+        "label": "Card 4 Button URL",
+        "name": "main_pricing_card_4_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_card_4_featured",
+        "label": "Card 4 Featured",
+        "name": "main_pricing_card_4_featured",
+        "type": "true_false",
+        "ui": 1,
+        "default_value": 0
+      },
+      {
+        "key": "field_main_pricing_tab_supplier",
+        "label": "Supplier Details",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_main_pricing_supplier_eyebrow",
+        "label": "Eyebrow",
+        "name": "main_pricing_supplier_eyebrow",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_supplier_heading",
+        "label": "Heading",
+        "name": "main_pricing_supplier_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_supplier_copy",
+        "label": "Description",
+        "name": "main_pricing_supplier_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_supplier_types",
+        "label": "Supplier Types (one per line)",
+        "name": "main_pricing_supplier_types",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_supplier_cta",
+        "label": "Button Label",
+        "name": "main_pricing_supplier_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_fee_label",
+        "label": "Fee Scale Label",
+        "name": "main_pricing_fee_label",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_fee_average",
+        "label": "Average Fee",
+        "name": "main_pricing_fee_average",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_fee_minimum",
+        "label": "Minimum Fee",
+        "name": "main_pricing_fee_minimum",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_fee_maximum",
+        "label": "Maximum Fee",
+        "name": "main_pricing_fee_maximum",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_tab_partners",
+        "label": "Partner Cards",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_main_pricing_partner_1_icon",
+        "label": "Partner Card 1 Bootstrap Icon Class",
+        "name": "main_pricing_partner_1_icon",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_1_eyebrow",
+        "label": "Partner Card 1 Eyebrow",
+        "name": "main_pricing_partner_1_eyebrow",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_1_title",
+        "label": "Partner Card 1 Title",
+        "name": "main_pricing_partner_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_1_copy",
+        "label": "Partner Card 1 Description",
+        "name": "main_pricing_partner_1_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_partner_1_points",
+        "label": "Partner Card 1 Benefits (one per line)",
+        "name": "main_pricing_partner_1_points",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_partner_1_cta",
+        "label": "Partner Card 1 Button Label",
+        "name": "main_pricing_partner_1_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_1_url",
+        "label": "Partner Card 1 Button URL",
+        "name": "main_pricing_partner_1_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_2_icon",
+        "label": "Partner Card 2 Bootstrap Icon Class",
+        "name": "main_pricing_partner_2_icon",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_2_eyebrow",
+        "label": "Partner Card 2 Eyebrow",
+        "name": "main_pricing_partner_2_eyebrow",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_2_title",
+        "label": "Partner Card 2 Title",
+        "name": "main_pricing_partner_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_2_copy",
+        "label": "Partner Card 2 Description",
+        "name": "main_pricing_partner_2_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_partner_2_points",
+        "label": "Partner Card 2 Benefits (one per line)",
+        "name": "main_pricing_partner_2_points",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_partner_2_cta",
+        "label": "Partner Card 2 Button Label",
+        "name": "main_pricing_partner_2_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_2_url",
+        "label": "Partner Card 2 Button URL",
+        "name": "main_pricing_partner_2_url",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_3_icon",
+        "label": "Partner Card 3 Bootstrap Icon Class",
+        "name": "main_pricing_partner_3_icon",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_3_eyebrow",
+        "label": "Partner Card 3 Eyebrow",
+        "name": "main_pricing_partner_3_eyebrow",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_3_title",
+        "label": "Partner Card 3 Title",
+        "name": "main_pricing_partner_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_3_copy",
+        "label": "Partner Card 3 Description",
+        "name": "main_pricing_partner_3_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_partner_3_points",
+        "label": "Partner Card 3 Benefits (one per line)",
+        "name": "main_pricing_partner_3_points",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_main_pricing_partner_3_cta",
+        "label": "Partner Card 3 Button Label",
+        "name": "main_pricing_partner_3_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_main_pricing_partner_3_url",
+        "label": "Partner Card 3 Button URL",
+        "name": "main_pricing_partner_3_url",
+        "type": "text"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-pricing.php"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Content fields for the main pricing page."
+  }
+]

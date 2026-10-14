@@ -8,34 +8,68 @@
 
 get_header();
 
-$apply_url = home_url('/apply-now/');
-$demo_url = home_url('/contact/');
+$pricing_f = static function (string $name, string $default): string {
+    $value = function_exists('get_field') ? get_field('main_pricing_' . $name) : null;
+    return (null === $value || '' === $value || false === $value) ? $default : (string) $value;
+};
+$pricing_list = static function (string $name, array $default) use ($pricing_f): array {
+    $value = $pricing_f($name, implode("\n", $default));
+    return array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $value))));
+};
+
+$apply_url = $pricing_f('hero_primary_url', home_url('/apply-now/'));
+$demo_url = $pricing_f('hero_secondary_url', home_url('/contact/'));
 $supplier_url = home_url('/suppliers/');
 $destination_url = home_url('/destinations/pricing/');
 $distributor_url = home_url('/distributors/');
 $booking_url = home_url('/booking-systems/partner-enquiry/');
 
-$hero_steps = [
-    ['number' => '1', 'title' => 'Identify your role', 'copy' => 'Supplier, destination, distributor and booking-system partner pricing are intentionally separated.'],
-    ['number' => '2', 'title' => 'Confirm the model', 'copy' => 'Success fee, platform package, commercial agreement or partner enquiry depends on the pathway.'],
-    ['number' => '3', 'title' => 'Take the right next step', 'copy' => 'Each pathway leads to the enquiry or application process that matches the organisation type.'],
+$hero_steps = [];
+$hero_step_defaults = [
+    ['1', 'Identify your role', 'Supplier, destination, distributor and booking-system partner pricing are intentionally separated.'],
+    ['2', 'Confirm the model', 'Success fee, platform package, commercial agreement or partner enquiry depends on the pathway.'],
+    ['3', 'Take the right next step', 'Each pathway leads to the enquiry or application process that matches the organisation type.'],
 ];
+foreach ($hero_step_defaults as $i => $step) {
+    $hero_steps[] = ['number' => $pricing_f("step_" . ($i + 1) . "_number", $step[0]), 'title' => $pricing_f("step_" . ($i + 1) . "_title", $step[1]), 'copy' => $pricing_f("step_" . ($i + 1) . "_copy", $step[2])];
+}
 
-$hero_paths = [
-    ['icon' => 'bi-house-door', 'title' => 'Suppliers', 'copy' => '0.75% - 2.8% success fee per booking.', 'url' => $supplier_url],
-    ['icon' => 'bi-map', 'title' => 'Destinations', 'copy' => 'Packages subject to approval and scope.', 'url' => $destination_url],
-    ['icon' => 'bi-diagram-3', 'title' => 'Distributors', 'copy' => 'Pricing by agreement based on volume.', 'url' => $distributor_url],
-    ['icon' => 'bi-calendar2-check', 'title' => 'Booking Systems', 'copy' => 'Technical integration partner enquiry.', 'url' => $booking_url],
+$hero_path_defaults = [
+    ['bi-house-door', 'Suppliers', '0.75% - 2.8% success fee per booking.', $supplier_url],
+    ['bi-map', 'Destinations', 'Packages subject to approval and scope.', $destination_url],
+    ['bi-diagram-3', 'Distributors', 'Pricing by agreement based on volume.', $distributor_url],
+    ['bi-calendar2-check', 'Booking Systems', 'Technical integration partner enquiry.', $booking_url],
 ];
+$hero_paths = [];
+foreach ($hero_path_defaults as $i => $path) {
+    $n = $i + 1;
+    $hero_paths[] = ['icon' => $pricing_f("path_{$n}_icon", $path[0]), 'title' => $pricing_f("path_{$n}_title", $path[1]), 'copy' => $pricing_f("path_{$n}_copy", $path[2]), 'url' => $pricing_f("path_{$n}_url", $path[3])];
+}
 
-$pricing_cards = [
+$pricing_card_defaults = [
     ['title' => 'Tourism Suppliers', 'price' => '0.75%', 'suffix' => 'to', 'price_end' => '2.8%', 'copy' => 'Success fee per booking. Perfect for hotels, tours, and attraction operators.', 'points' => ['No upfront fees', 'Unlimited distributors'], 'cta' => 'View Details', 'url' => $supplier_url, 'featured' => true],
     ['title' => 'Destinations', 'price' => 'Destination Packages', 'copy' => 'Fixed monthly platform service packages for destination activation, supplier support, content, trade, virtual concierge and data. Publish only after package approval.', 'cta' => 'View Packages', 'url' => $destination_url],
     ['title' => 'Distributors', 'price' => 'Commercial Base', 'copy' => 'Free to connect. Commercial arrangements depend on the distributor model and agreement.', 'cta' => 'Become a Distributor', 'url' => $distributor_url],
     ['title' => 'Booking Systems', 'price' => 'Partner Enquiry', 'copy' => 'Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry.', 'cta' => 'Partner Enquiry', 'url' => $booking_url],
 ];
+$pricing_cards = [];
+foreach ($pricing_card_defaults as $i => $card) {
+    $n = $i + 1;
+    $card['title'] = $pricing_f("card_{$n}_title", $card['title']);
+    $card['price'] = $pricing_f("card_{$n}_price", $card['price']);
+    $card['suffix'] = $pricing_f("card_{$n}_suffix", $card['suffix'] ?? '');
+    $card['price_end'] = $pricing_f("card_{$n}_price_end", $card['price_end'] ?? '');
+    $card['copy'] = $pricing_f("card_{$n}_copy", $card['copy']);
+    $card['points'] = $pricing_list("card_{$n}_points", $card['points'] ?? []);
+    $card['cta'] = $pricing_f("card_{$n}_cta", $card['cta']);
+    $card['url'] = $pricing_f("card_{$n}_url", $card['url']);
+    $card['featured'] = function_exists('get_field') && null !== get_field("main_pricing_card_{$n}_featured")
+        ? (bool) get_field("main_pricing_card_{$n}_featured")
+        : !empty($card['featured']);
+    $pricing_cards[] = $card;
+}
 
-$supplier_types = ['Accommodation and Hotels', 'Guided Tours and Experiences', 'Attractions and Rentals', 'Event and Activity Providers'];
+$supplier_types = $pricing_list('supplier_types', ['Accommodation and Hotels', 'Guided Tours and Experiences', 'Attractions and Rentals', 'Event and Activity Providers']);
 
 $partner_cards = [
     [
@@ -66,12 +100,25 @@ $partner_cards = [
         'url' => $booking_url,
     ],
 ];
+foreach ($partner_cards as $i => &$card) {
+    $n = $i + 1;
+    foreach (['icon', 'eyebrow', 'title', 'copy', 'cta', 'url'] as $key) {
+        $card[$key] = $pricing_f("partner_{$n}_{$key}", $card[$key]);
+    }
+    $card['points'] = $pricing_list("partner_{$n}_points", $card['points']);
+}
+unset($card);
+
+$pricing_hero_image = function_exists('get_field') ? get_field('main_pricing_hero_image') : null;
+$pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_image['url'])
+    ? $pricing_hero_image['url']
+    : get_theme_file_uri('/images/pricing.jpg');
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section
         class="relative min-h-[620px] overflow-hidden bg-black/40 px-4 py-12 text-white sm:py-16 lg:px-16 lg:py-24">
-        <img src="<?php echo esc_url(get_theme_file_uri('/images/pricing.jpg')); ?>" alt=""
+        <img src="<?php echo esc_url($pricing_hero_image_url); ?>" alt="<?php echo esc_attr($pricing_f('hero_image_alt', '')); ?>"
             class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-black/60" aria-hidden="true"></div>
         <div
@@ -79,17 +126,15 @@ $partner_cards = [
             <div>
                 <h1
                     class="max-w-[620px] [font-family:'Hanken_Grotesk',sans-serif] text-[42px] font-bold leading-[1.1] text-white sm:text-5xl lg:text-[44px]">
-                    TXGB pricing without the guesswork.</h1>
-                <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg">Tell us what
-                    you do and your preferred commercial model and we will help guide you.</p>
+                    <?php echo esc_html($pricing_f('hero_title', 'TXGB pricing without the guesswork.')); ?></h1>
+                <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg"><?php echo esc_html($pricing_f('hero_copy', 'Tell us what you do and your preferred commercial model and we will help guide you.')); ?></p>
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
                     <a href="<?php echo esc_url($apply_url); ?>"
-                        class="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-8 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark">Apply
-                        Now</a>
+                        class="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-8 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark"><?php echo esc_html($pricing_f('hero_primary_label', 'Apply Now')); ?></a>
                     <a href="<?php echo esc_url($demo_url); ?>"
-                        class="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/70 bg-white/10 px-8 py-3 text-base font-bold text-white !no-underline hover:bg-white/20">Request
-                        Demo</a>
+                        class="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/70 bg-white/10 px-8 py-3 text-base font-bold text-white !no-underline hover:bg-white/20"><?php echo esc_html($pricing_f('hero_secondary_label', 'Request Demo')); ?></a>
                 </div>
+                <h2 class="sr-only"><?php echo esc_html($pricing_f('steps_heading', 'How pricing works')); ?></h2>
                 <div class="mt-10 grid gap-6 sm:grid-cols-3">
                     <?php foreach ($hero_steps as $step): ?>
                         <div class="max-w-[250px]">
@@ -127,15 +172,14 @@ $partner_cards = [
         <div class="mx-auto max-w-[1312px]">
             <h2
                 class="text-center [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
-                Choose the pricing model that matches your organisation</h2>
+                <?php echo esc_html($pricing_f('cards_heading', 'Choose the pricing model that matches your organisation')); ?></h2>
             <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
                 <?php foreach ($pricing_cards as $card): ?>
                     <article
                         class="relative flex flex-col rounded-2xl border <?php echo !empty($card['featured']) ? 'border-2 border-brand' : 'border-line'; ?> bg-white p-8 shadow-sm md:min-h-[430px]">
                         <?php if (!empty($card['featured'])): ?>
                             <span
-                                class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-brand px-7 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white">Most
-                                Common</span>
+                                class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-brand px-7 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white"><?php echo esc_html($pricing_f('featured_badge', 'Most Common')); ?></span>
                         <?php endif; ?>
                         <h3 class="text-xl font-bold text-brand"><?php echo esc_html($card['title']); ?></h3>
                         <div class="mt-8">
@@ -169,17 +213,13 @@ $partner_cards = [
     </section>
 
     <section class="bg-surface px-4 py-16 sm:py-20 lg:px-16 lg:py-24">
-        <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_520px] lg:items-center lg:gap-16">
-            <div>
-                <p class="txgb-accent-text inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase">Are
-                    you a
-                    Supplier?</p>
+        <div class="mx-auto max-w-[1312px]">
+            <div class="flex flex-col justify-center items-center">
+                <p class="txgb-accent-text inline-flex rounded bg-[#ffdad4] px-4 py-1.5 text-xs font-bold uppercase"><?php echo esc_html($pricing_f('supplier_eyebrow', 'Are you a Supplier?')); ?></p>
                 <h2
                     class="mt-7 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
-                    No booking, no fee supplier pricing</h2>
-                <p class="mt-6 max-w-[620px] text-base leading-8 text-mid-gray">Our model is designed to grow with you.
-                    The 0.75%-2.8% success fee ensures that TXGB only succeeds when your business does. We reduce manual
-                    allocation and administrative overhead, allowing you to focus on the experience.</p>
+                    <?php echo esc_html($pricing_f('supplier_heading', 'No booking, no fee supplier pricing')); ?></h2>
+                <p class="mt-6 max-w-[620px] text-base leading-8 text-mid-gray"><?php echo esc_html($pricing_f('supplier_copy', 'Our model is designed to grow with you. The 0.75%-2.8% success fee ensures that TXGB only succeeds when your business does. We reduce manual allocation and administrative overhead, allowing you to focus on the experience.')); ?></p>
                 <div class="mt-8 grid gap-4 sm:grid-cols-2">
                     <?php foreach ($supplier_types as $type): ?>
                         <div class="flex items-center gap-3 text-sm font-semibold text-brand"><i
@@ -188,23 +228,22 @@ $partner_cards = [
                     <?php endforeach; ?>
                 </div>
                 <a href="<?php echo esc_url($apply_url); ?>"
-                    class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto">Apply
-                    Now using the TXGB Get Connected Wizard <i class="bi bi-box-arrow-up-right"
+                    class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto"><?php echo esc_html($pricing_f('supplier_cta', 'Apply Now using the TXGB Get Connected Wizard')); ?> <i class="bi bi-box-arrow-up-right"
                         aria-hidden="true"></i></a>
             </div>
-            <div class="rounded-2xl bg-white p-7 shadow-xl">
+            <!-- <div class="rounded-2xl bg-white p-7 shadow-xl">
                 <div class="flex items-center justify-between gap-4 text-sm font-bold">
-                    <span class="text-brand">Booking Success Fee</span>
-                    <span class="text-brand">1.5% Avg.</span>
+                    <span class="text-brand"><?php echo esc_html($pricing_f('fee_label', 'Booking Success Fee')); ?></span>
+                    <span class="text-brand"><?php echo esc_html($pricing_f('fee_average', '1.5% Avg.')); ?></span>
                 </div>
                 <div class="mt-6 h-4 overflow-hidden rounded-full bg-[#f0d2ce]">
                     <div class="h-full w-[58%] rounded-full bg-brand"></div>
                 </div>
                 <div class="mt-4 flex justify-between text-xs font-semibold text-mid-gray">
-                    <span>0.75%</span>
-                    <span>2.8%</span>
+                    <span><?php echo esc_html($pricing_f('fee_minimum', '0.75%')); ?></span>
+                    <span><?php echo esc_html($pricing_f('fee_maximum', '2.8%')); ?></span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
