@@ -170,10 +170,10 @@ foreach ($systems as $i => $system) {
                         class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
                         <?php echo esc_html(txa_f('booking_hero_title', 'Connect your booking system to Great Britain’s national tourism exchange')); ?>
                     </h1>
-                    <p
+                    <div
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo esc_html(txa_f('booking_hero_copy', 'TXGB helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Great Britain’s open B2B tourism exchange.')); ?>
-                    </p>
+                        <?php echo txa_field_output('booking_hero_copy', 'TXGB helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Great Britain’s open B2B tourism exchange.'); ?>
+                    </div>
                     <div class="mt-6">
                         <?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $partner_url); ?>
                     </div>
@@ -245,9 +245,9 @@ foreach ($systems as $i => $system) {
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-8 tracking-[-0.01em] text-brand sm:text-3xl sm:leading-10">
                     <?php echo esc_html(txa_f('booking_intro_heading', 'Connect your customers to Great Britain’s national tourism exchange')); ?>
                 </h2>
-                <p class="mt-4 text-sm leading-6 text-mid-gray sm:text-base">
-                    <?php echo esc_html(txa_f('booking_intro_copy', 'Integrating your Booking system via TXGB’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels.')); ?>
-                </p>
+                <div class="mt-4 text-sm leading-6 text-mid-gray sm:text-base">
+                    <?php echo txa_field_output('booking_intro_copy', 'Integrating your Booking system via TXGB’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels.'); ?>
+                </div>
             </div>
             <div class="mt-8 grid gap-5 md:grid-cols-3 md:gap-8">
                 <?php foreach ($benefits as $benefit): ?>
@@ -309,9 +309,9 @@ foreach ($systems as $i => $system) {
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-8 tracking-[-0.01em] text-white sm:text-3xl sm:leading-10">
                         <?php echo esc_html(txa_f('booking_partners_heading', 'TXGB Booking System partners')); ?>
                     </h2>
-                    <p class="mt-4 text-sm leading-6 text-white/90 sm:mt-5 sm:text-base">
-                        <?php echo esc_html(txa_f('booking_partners_copy', 'Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry.')); ?>
-                    </p>
+                    <div class="mt-4 text-sm leading-6 text-white/90 sm:mt-5 sm:text-base">
+                        <?php echo txa_field_output('booking_partners_copy', 'Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry.'); ?>
+                    </div>
                     <div class="mt-6">
                         <?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partner_url, 'light'); ?>
                     </div>

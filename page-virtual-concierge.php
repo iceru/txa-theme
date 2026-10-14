@@ -130,9 +130,9 @@ $partner_cards = txa_concierge_cards('concierge_partner', [
                     class="mt-8 max-w-[670px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-brand sm:text-5xl lg:text-[44px] lg:leading-[1.16]">
                     <?php echo esc_html(txa_f('concierge_hero_title', 'TXGB’s local reseller network or ‘Virtual Concierge’')); ?>
                 </h1>
-                <p class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg">
-                    <?php echo esc_html(txa_f('concierge_hero_copy', 'TXGB’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity providers cross sell, visitor information centres, National Park offices, airports and other local partners inter-connect offering visitors\' numerous local channels for booking local activities, events and experiences.')); ?>
-                </p>
+                <div class="mt-6 max-w-[650px] text-base leading-8 text-mid-gray sm:text-lg">
+                    <?php echo txa_field_output('concierge_hero_copy', 'TXGB’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity providers cross sell, visitor information centres, National Park offices, airports and other local partners inter-connect offering visitors\' numerous local channels for booking local activities, events and experiences.'); ?>
+                </div>
                 <a href="<?php echo esc_url($demo_url); ?>"
                     class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('concierge_hero_button_label', "Explore TXGB's Virtual Concierge")); ?></a>
             </div>
@@ -167,9 +167,9 @@ $partner_cards = txa_concierge_cards('concierge_partner', [
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                     <?php echo esc_html(txa_f('concierge_activation_heading', 'Interconnect and activate your visitor economy.')); ?>
                 </h2>
-                <p class="mt-5 text-base leading-7 text-mid-gray">
-                    <?php echo esc_html(txa_f('concierge_activation_copy', 'Transform every touchpoint into a booking opportunity. By connecting diverse local operators, you create a resilient network that keeps spending within the region.')); ?>
-                </p>
+                <div class="mt-5 text-base leading-7 text-mid-gray">
+                    <?php echo txa_field_output('concierge_activation_copy', 'Transform every touchpoint into a booking opportunity. By connecting diverse local operators, you create a resilient network that keeps spending within the region.'); ?>
+                </div>
             </div>
 
             <div class="mt-10 grid gap-6 lg:grid-cols-3">
@@ -213,9 +213,9 @@ $partner_cards = txa_concierge_cards('concierge_partner', [
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                     <?php echo esc_html(txa_f('concierge_partners_heading', 'Empower Your Local Partners')); ?>
                 </h2>
-                <p class="mt-6 text-base leading-7 text-mid-gray">
-                    <?php echo esc_html(txa_f('concierge_partners_copy', 'Give local partners a practical way to recommend and book experiences, turning every tourism operator, information desk and concierge into an active, informed and motivated local booking channel')); ?>
-                </p>
+                <div class="mt-6 text-base leading-7 text-mid-gray">
+                    <?php echo txa_field_output('concierge_partners_copy', 'Give local partners a practical way to recommend and book experiences, turning every tourism operator, information desk and concierge into an active, informed and motivated local booking channel'); ?>
+                </div>
             </div>
             <div class="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
                 <?php foreach ($partner_cards as $card) { ?>

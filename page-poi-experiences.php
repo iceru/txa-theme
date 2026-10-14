@@ -79,9 +79,9 @@ $feature_cards = [
                         class="txgb-accent-text"><?php echo esc_html(txa_poi_f('poi_hero_title_highlight', 'connects')); ?></span>
                     <?php echo esc_html(txa_poi_f('poi_hero_title_end', 'to bookable product')); ?>
                 </h1>
-                <p class="mt-6 max-w-[540px] text-lg leading-8 text-mid-gray">
-                    <?php echo esc_html(txa_poi_f('poi_hero_copy', 'TXGB allows a destination to add Points of Interest - free things to see and do - and to create recommended experiences and suggested itineraries.')); ?>
-                </p>
+                <div class="mt-6 max-w-[540px] text-lg leading-8 text-mid-gray">
+                    <?php echo wp_kses_post(txa_poi_f('poi_hero_copy', 'TXGB allows a destination to add Points of Interest - free things to see and do - and to create recommended experiences and suggested itineraries.')); ?>
+                </div>
                 <a href="<?php echo esc_url($demo_url); ?>"
                     class="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_poi_f('poi_hero_button_label', 'Discuss destination content activation')); ?>
                     <i class="bi bi-arrow-right text-xl" aria-hidden="true"></i></a>
@@ -101,9 +101,9 @@ $feature_cards = [
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                     <?php echo esc_html(txa_poi_f('poi_features_heading', 'Transforming destination assets into visitor journeys')); ?>
                 </h2>
-                <p class="mt-6 text-base leading-7 text-mid-gray">
-                    <?php echo esc_html(txa_poi_f('poi_features_copy', 'A unified ecosystem to manage free landmarks alongside bookable experiences.')); ?>
-                </p>
+                <div class="mt-6 text-base leading-7 text-mid-gray">
+                    <?php echo wp_kses_post(txa_poi_f('poi_features_copy', 'A unified ecosystem to manage free landmarks alongside bookable experiences.')); ?>
+                </div>
             </div>
             <div class="mt-12 grid gap-6 lg:grid-cols-[2fr_1fr]">
                 <?php foreach ($feature_cards as $card): ?>
@@ -117,10 +117,10 @@ $feature_cards = [
                             class="mt-8 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold <?php echo !empty($card['red']) ? 'text-white' : 'text-brand'; ?>">
                             <?php echo esc_html($card['title']); ?>
                         </h3>
-                        <p
+                        <div
                             class="mt-5 max-w-[560px] text-base leading-8 <?php echo !empty($card['red']) ? 'text-white/90' : 'text-mid-gray'; ?>">
-                            <?php echo esc_html($card['copy']); ?>
-                        </p>
+                            <?php echo wp_kses_post($card['copy']); ?>
+                        </div>
 
                         <?php if (!empty($card['tags'])): ?>
                             <div class="mt-7 flex flex-wrap gap-3">

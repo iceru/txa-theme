@@ -102,10 +102,10 @@ foreach ($benefits as $i => $benefit) {
                         class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
                         <?php echo esc_html(txa_f('supplier_hero_title', 'Connect once and sell across more channels')); ?>
                     </h1>
-                    <p
+                    <div
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo esc_html(txa_f('supplier_hero_copy', 'TXGB helps tourism suppliers connect live product, pricing and availability to destination websites, distributors and other online channels without manually allocating to and managing inventory on every site.')); ?>
-                    </p>
+                        <?php echo txa_field_output('supplier_hero_copy', 'TXGB helps tourism suppliers connect live product, pricing and availability to destination websites, distributors and other online channels without manually allocating to and managing inventory on every site.'); ?>
+                    </div>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                         <?php echo txa_supplier_button(txa_f('supplier_hero_primary_label', 'Apply Now'), txa_url('supplier_hero_primary_url', home_url('/apply-now/'))); ?>
                         <?php echo txa_supplier_button(txa_f('supplier_hero_secondary_label', 'See connected booking systems'), txa_url('supplier_hero_secondary_url', home_url('/booking-systems')), 'light'); ?>
@@ -125,9 +125,9 @@ foreach ($benefits as $i => $benefit) {
                     class="mt-2 text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                     <?php echo esc_html(txa_f('supplier_intro_heading', 'Boost your digital distribution profile')); ?>
                 </h2>
-                <p class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('supplier_intro_copy', 'TXGB is designed to reduce manual work by using your booking system as the single source of products, rates and availability where available.')); ?>
-                </p>
+                <div class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">
+                    <?php echo txa_field_output('supplier_intro_copy', 'TXGB is designed to reduce manual work by using your booking system as the single source of products, rates and availability where available.'); ?>
+                </div>
             </div>
             <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'supplier']); ?>
         </div>
@@ -142,9 +142,9 @@ foreach ($benefits as $i => $benefit) {
                 class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                 <?php echo esc_html(txa_f('supplier_benefits_heading', 'What TXGB helps suppliers do')); ?>
             </h2>
-            <p class="mt-3 max-w-[723px] text-base leading-6 text-mid-gray">
-                <?php echo esc_html(txa_f('supplier_benefits_copy', "TXGB has options for suppliers that don't have a suitable booking system or alternative connection pathways")); ?>
-            </p>
+            <div class="mt-3 max-w-[723px] text-base leading-6 text-mid-gray">
+                <?php echo txa_field_output('supplier_benefits_copy', "TXGB has options for suppliers that don't have a suitable booking system or alternative connection pathways"); ?>
+            </div>
             <div class="mt-7 grid gap-4 sm:mt-8 md:grid-cols-2 md:gap-6 xl:grid-cols-3 xl:gap-8">
                 <?php foreach ($benefits as $benefit): ?>
                     <article
@@ -177,12 +177,12 @@ foreach ($benefits as $i => $benefit) {
                     class="mt-3 text-[28px] font-semibold leading-9 sm:mt-4 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                     <?php echo esc_html(txa_f('supplier_connect_heading', 'Ready to connect your tourism business to TXGB?')); ?>
                 </h2>
-                <p class="mt-3 text-base leading-7 text-mid-gray sm:mt-4">
-                    <?php echo esc_html(txa_f('supplier_connect_copy', "It's so easy! Use the TXGB Get Connected Wizard. It captures your business details, website or social media URL, product description, industry category and images, then lets you confirm whether you want to remain content only or make your connection bookable.")); ?>
-                </p>
+                <div class="mt-3 text-base leading-7 text-mid-gray sm:mt-4">
+                    <?php echo txa_field_output('supplier_connect_copy', "It's so easy! Use the TXGB Get Connected Wizard. It captures your business details, website or social media URL, product description, industry category and images, then lets you confirm whether you want to remain content only or make your connection bookable."); ?>
+                </div>
                 <div
                     class="mt-4 rounded-lg bg-[#ffdad4]/80 p-3.5 text-sm font-semibold leading-5 text-brand sm:p-4 sm:text-base">
-                    <?php echo esc_html(txa_f('supplier_connect_notice', 'No booking, no fee. Pay only when you receive online bookings through TXGB channels, subject to final success fee of 0.75%-2.8% of total booking value.')); ?>
+                    <?php echo txa_field_output('supplier_connect_notice', 'No booking, no fee. Pay only when you receive online bookings through TXGB channels, subject to final success fee of 0.75%-2.8% of total booking value.'); ?>
                 </div>
                 <div class="mt-5 sm:mt-4">
                     <?php echo txa_supplier_button(txa_f('supplier_connect_button_label', 'Apply Now using TXGB Get Connected Wizard'), $wizard_url, 'primary', true); ?>

@@ -84,9 +84,9 @@ $faq_groups = [
                     class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.1] tracking-[-.02em] text-brand sm:text-5xl lg:text-[44px]">
                     <?php echo esc_html(txa_faq_header('faq_hero_title', 'Frequently asked questions')); ?>
                 </h1>
-                <p class="mt-5 max-w-[680px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">
-                    <?php echo esc_html(txa_faq_header('faq_hero_copy', 'Find answers for your pathway into Great Britain’s national tourism exchange. Choose a category, then open only the questions you need.')); ?>
-                </p>
+                <div class="mt-5 max-w-[680px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">
+                    <?php echo wp_kses_post(txa_faq_header('faq_hero_copy', 'Find answers for your pathway into Great Britain’s national tourism exchange. Choose a category, then open only the questions you need.')); ?>
+                </div>
             </div>
             <aside class="rounded-2xl bg-brand p-6 text-white shadow-xl sm:p-8">
                 <span class="flex size-12 items-center justify-center rounded-xl bg-white/15 text-2xl"
@@ -94,9 +94,9 @@ $faq_groups = [
                 <h2 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold">
                     <?php echo esc_html(txa_faq_header('faq_hero_aside_title', 'Can’t find your answer?')); ?>
                 </h2>
-                <p class="mt-3 text-sm leading-6 text-white/85">
-                    <?php echo esc_html(txa_faq_header('faq_hero_aside_copy', 'Tell us which pathway you are exploring and the TXGB team will help you find the right next step.')); ?>
-                </p>
+                <div class="mt-3 text-sm leading-6 text-white/85">
+                    <?php echo wp_kses_post(txa_faq_header('faq_hero_aside_copy', 'Tell us which pathway you are exploring and the TXGB team will help you find the right next step.')); ?>
+                </div>
                 <a href="<?php $faq_cta_url = txa_faq_header('faq_hero_aside_button_url', '/contact/');
                 echo esc_url((0 === strpos($faq_cta_url, '/') && 0 !== strpos($faq_cta_url, '//')) ? home_url($faq_cta_url) : $faq_cta_url); ?>"
                     class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-white px-5 py-3 font-bold text-brand !no-underline hover:bg-surface sm:w-auto"><?php echo esc_html(txa_faq_header('faq_hero_aside_button_label', 'Contact TXGB')); ?></a>

@@ -4,6 +4,24 @@ if (is_file(__DIR__ . '/vendor/autoload_packages.php')) {
     require_once __DIR__ . '/vendor/autoload_packages.php';
 }
 
+/**
+ * Escape regular ACF fields while allowing safe markup from WYSIWYG fields.
+ */
+function txa_field_output(string $name, $default = ''): string
+{
+    $value = function_exists('get_field') ? get_field($name) : null;
+    if (null === $value || '' === $value || false === $value) {
+        $value = $default;
+    }
+
+    $field = function_exists('get_field_object') ? get_field_object($name) : false;
+    if (is_array($field) && 'wysiwyg' === ($field['type'] ?? null)) {
+        return wp_kses_post((string) $value);
+    }
+
+    return esc_html((string) $value);
+}
+
 function tailpress(): TailPress\Framework\Theme
 {
     return TailPress\Framework\Theme::instance()

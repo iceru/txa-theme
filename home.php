@@ -49,7 +49,7 @@ $articles_query = new WP_Query([
                     <?php echo esc_html(txa_blog_header('blog_hero_title', 'Ideas for a more connected tourism industry')); ?>
                 </h1>
                 <p class="max-w-[540px] text-base leading-7 text-mid-gray sm:text-lg">
-                    <?php echo esc_html(txa_blog_header('blog_hero_copy', 'Explore practical perspectives on connected tourism, destination technology, distribution and the British visitor economy.')); ?>
+                    <?php echo wp_kses_post(txa_blog_header('blog_hero_copy', 'Explore practical perspectives on connected tourism, destination technology, distribution and the British visitor economy.')); ?>
                 </p>
             </div>
         </div>

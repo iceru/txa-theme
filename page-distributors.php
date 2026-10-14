@@ -126,10 +126,10 @@ foreach ($models as $i => $model) {
                         class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
                         <?php echo esc_html(txa_f('distributor_hero_title', 'Unique access to bookable British tourism inventory')); ?>
                     </h1>
-                    <p
+                    <div
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo esc_html(txa_f('distributor_hero_copy', 'TXGB gives distributors a pathway to British tourism suppliers across accommodation, tours, attractions, events and experiences. TXGB offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives.')); ?>
-                    </p>
+                        <?php echo txa_field_output('distributor_hero_copy', 'TXGB gives distributors a pathway to British tourism suppliers across accommodation, tours, attractions, events and experiences. TXGB offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives.'); ?>
+                    </div>
                     <div class="mt-6">
                         <?php echo txa_distributor_button(txa_f('distributor_hero_button_label', 'Become a Distributor'), $apply_url); ?>
                     </div>
@@ -148,9 +148,9 @@ foreach ($models as $i => $model) {
                     class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                     <?php echo esc_html(txa_f('distributor_ecosystem_heading', 'See where distributors connect through TXGB')); ?>
                 </h2>
-                <p class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('distributor_ecosystem_copy', 'TXGB connects live tourism inventory with the websites and distribution channels travellers use to discover and book British experiences.')); ?>
-                </p>
+                <div class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">
+                    <?php echo txa_field_output('distributor_ecosystem_copy', 'TXGB connects live tourism inventory with the websites and distribution channels travellers use to discover and book British experiences.'); ?>
+                </div>
             </div>
             <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'dmo']); ?>
         </div>
@@ -163,9 +163,9 @@ foreach ($models as $i => $model) {
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-brand sm:text-3xl">
                     <?php echo esc_html(txa_f('distributor_benefits_heading', 'Why use TXGB to source British tourism suppliers')); ?>
                 </h2>
-                <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">
-                    <?php echo esc_html(txa_f('distributor_benefits_copy', 'Providing the connectivity required to scale your British tourism portfolio efficiently.')); ?>
-                </p>
+                <div class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">
+                    <?php echo txa_field_output('distributor_benefits_copy', 'Providing the connectivity required to scale your British tourism portfolio efficiently.'); ?>
+                </div>
             </div>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
                 <?php foreach ($benefits as $index => $benefit): ?>
@@ -194,9 +194,9 @@ foreach ($models as $i => $model) {
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-brand sm:text-3xl">
                     <?php echo esc_html(txa_f('distributor_models_heading', 'Flexible distribution models')); ?>
                 </h2>
-                <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:mt-4 sm:text-base">
-                    <?php echo esc_html(txa_f('distributor_models_copy', 'We provide multiple ways to consume inventory based on your technical maturity and business model.')); ?>
-                </p>
+                <div class="mt-3 text-[15px] leading-6 text-mid-gray sm:mt-4 sm:text-base">
+                    <?php echo txa_field_output('distributor_models_copy', 'We provide multiple ways to consume inventory based on your technical maturity and business model.'); ?>
+                </div>
             </div>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:gap-6 lg:grid-cols-2">
                 <?php foreach ($models as $model): ?>
@@ -241,9 +241,9 @@ foreach ($models as $i => $model) {
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-white sm:text-3xl sm:leading-10">
                         <?php echo esc_html(txa_f('distributor_campaign_heading', 'Drive regional impact with destination-led campaigns')); ?>
                     </h2>
-                    <p class="mt-4 text-[15px] leading-6 text-white/90 sm:mt-6 sm:text-base">
-                        <?php echo esc_html(txa_f('distributor_campaign_copy', 'TXGB sits at the heart of British tourism. We work closely with STOs and RTOs to power booking engines for state-wide initiatives. Become a partner in these high-value trade campaigns.')); ?>
-                    </p>
+                    <div class="mt-4 text-[15px] leading-6 text-white/90 sm:mt-6 sm:text-base">
+                        <?php echo txa_field_output('distributor_campaign_copy', 'TXGB sits at the heart of British tourism. We work closely with STOs and RTOs to power booking engines for state-wide initiatives. Become a partner in these high-value trade campaigns.'); ?>
+                    </div>
                     <div class="mt-6">
                         <?php echo txa_distributor_button(txa_f('distributor_campaign_button_label', 'Become a TXGB distributor'), $apply_url, 'light'); ?>
                     </div>

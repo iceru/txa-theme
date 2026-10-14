@@ -106,9 +106,9 @@ foreach ($setup_cards as $i => $card) {
                     <?php echo esc_html(txa_f('pricing_hero_title_line_1', 'TXGB Smart Destination')); ?><br
                         class="hidden sm:block"> <?php echo esc_html(txa_f('pricing_hero_title_line_2', 'Packages')); ?>
                 </h1>
-                <p class="mt-5 text-base font-semibold leading-7 sm:mt-6 sm:text-lg sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('pricing_hero_copy', 'TXGB offers Smart Destination packages that match the scope and scale of your visitor economy. Each package is designed to give your destination access to platform infrastructure, supplier activation support, destination content activation and industry-facing tools without the risk of a custom technology build.')); ?>
-                </p>
+                <div class="mt-5 text-base font-semibold leading-7 sm:mt-6 sm:text-lg sm:leading-[30px]">
+                    <?php echo txa_field_output('pricing_hero_copy', 'TXGB offers Smart Destination packages that match the scope and scale of your visitor economy. Each package is designed to give your destination access to platform infrastructure, supplier activation support, destination content activation and industry-facing tools without the risk of a custom technology build.'); ?>
+                </div>
                 <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4"><a
                         href="<?php echo esc_url(txa_url('pricing_hero_primary_url', home_url('/apply-now/'))); ?>"
                         class="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-white px-6 py-3 text-center text-base font-bold text-brand !no-underline sm:w-auto sm:px-8 sm:text-lg"><?php echo esc_html(txa_f('pricing_hero_primary_label', 'Apply Now')); ?></a><a
@@ -124,9 +124,9 @@ foreach ($setup_cards as $i => $card) {
                 <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand">
                     <?php echo esc_html(txa_f('pricing_scale_heading', 'Choose Your Destination Scale')); ?>
                 </h2>
-                <p class="mx-auto mt-3 max-w-[640px] text-sm leading-6 text-mid-gray sm:mt-4 sm:text-base">
-                    <?php echo esc_html(txa_f('pricing_scale_copy', 'Scalable infrastructure designed for every level of the tourism ecosystem.')); ?>
-                </p>
+                <div class="mx-auto mt-3 max-w-[640px] text-sm leading-6 text-mid-gray sm:mt-4 sm:text-base">
+                    <?php echo txa_field_output('pricing_scale_copy', 'Scalable infrastructure designed for every level of the tourism ecosystem.'); ?>
+                </div>
                 <p class="txgb-accent-text mt-4 text-sm font-bold uppercase tracking-wide sm:text-base">
                     <?php echo esc_html(txa_f('pricing_includes_label', 'Destination packages include:')); ?>
                 </p>
@@ -164,9 +164,9 @@ foreach ($setup_cards as $i => $card) {
                             class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                             <?php echo esc_html(txa_f('pricing_setup_heading', 'Set up and Training')); ?>
                         </h2>
-                        <p class="mt-4 max-w-[680px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">
-                            <?php echo esc_html(txa_f('pricing_setup_copy', 'Every package includes a structured onboarding phase so your team and suppliers are ready to use the platform with confidence. We help prepare the system, organise the initial data and guide your destination team through the rollout.')); ?>
-                        </p>
+                        <div class="mt-4 max-w-[680px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">
+                            <?php echo txa_field_output('pricing_setup_copy', 'Every package includes a structured onboarding phase so your team and suppliers are ready to use the platform with confidence. We help prepare the system, organise the initial data and guide your destination team through the rollout.'); ?>
+                        </div>
 
                         <div class="mt-8 grid gap-4 sm:grid-cols-3">
                             <?php foreach ($setup_cards as $card): ?>
@@ -202,9 +202,9 @@ foreach ($setup_cards as $i => $card) {
                             </div>
                         </div>
                         <div class="mt-6 border-t border-line pt-6">
-                            <p class="text-sm leading-6 text-mid-gray">
-                                <?php echo esc_html(txa_f('pricing_charge_copy', 'Covers the initial setup, configuration, data preparation and onboarding support required to get your destination live.')); ?>
-                            </p>
+                            <div class="text-sm leading-6 text-mid-gray">
+                                <?php echo txa_field_output('pricing_charge_copy', 'Covers the initial setup, configuration, data preparation and onboarding support required to get your destination live.'); ?>
+                            </div>
                         </div>
                     </div>
                 </div>

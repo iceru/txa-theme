@@ -149,10 +149,10 @@ $implementation = txa_destination_cards('destination_step', [
                         class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
                         <?php echo esc_html(txa_f('destination_hero_title', 'Boost, sustain and protect your local visitor economy.')); ?>
                     </h1>
-                    <p
+                    <div
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo esc_html(txa_f('destination_hero_copy', 'TXGB helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXGB is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.')); ?>
-                    </p>
+                        <?php echo txa_field_output('destination_hero_copy', 'TXGB helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXGB is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.'); ?>
+                    </div>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                         <?php echo txa_destination_button(txa_f('destination_hero_primary_label', 'Request Smart Destination Demo'), $demo_url); ?>
                         <?php echo txa_destination_button(txa_f('destination_hero_secondary_label', 'See destination packages'), $pricing_url, 'light'); ?>
@@ -168,9 +168,9 @@ $implementation = txa_destination_cards('destination_step', [
                 class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-brand sm:text-3xl">
                 <?php echo esc_html(txa_f('destination_what_heading', 'What is a TXGB Smart Destination?')); ?>
             </h2>
-            <p class="mx-auto mt-3 max-w-[890px] text-[15px] leading-6 text-mid-gray sm:mt-2 sm:text-base">
-                <?php echo esc_html(txa_f('destination_what_copy', 'A Smart destination generates inspiration and TXGB helps you own the conversion. Your organisation can use TXGB to activate destination websites and apps, digitise local supply, connect suppliers to distributors, build tactical microsites, support trade initiatives, enable economy-wide re-seller networks and collaborative commerce.')); ?>
-            </p>
+            <div class="mx-auto mt-3 max-w-[890px] text-[15px] leading-6 text-mid-gray sm:mt-2 sm:text-base">
+                <?php echo txa_field_output('destination_what_copy', 'A Smart destination generates inspiration and TXGB helps you own the conversion. Your organisation can use TXGB to activate destination websites and apps, digitise local supply, connect suppliers to distributors, build tactical microsites, support trade initiatives, enable economy-wide re-seller networks and collaborative commerce.'); ?>
+            </div>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5">
                 <?php foreach ($pillars as $index => $pillar): ?>
                     <article
@@ -199,9 +199,9 @@ $implementation = txa_destination_cards('destination_step', [
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-brand sm:text-3xl">
                     <?php echo esc_html(txa_f('destination_problem_heading', 'The problem TXGB solves for destinations')); ?>
                 </h2>
-                <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">
-                    <?php echo esc_html(txa_f('destination_problem_copy', 'Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle.')); ?>
-                </p>
+                <div class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">
+                    <?php echo txa_field_output('destination_problem_copy', 'Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle.'); ?>
+                </div>
                 <div class="mt-7 grid gap-3 sm:mt-8 sm:gap-4 md:grid-cols-2">
                     <?php foreach ($problems as $problem): ?>
                         <article class="rounded-xl  bg-white px-5 py-5 shadow-sm sm:px-7 sm:py-6">
@@ -267,10 +267,10 @@ $implementation = txa_destination_cards('destination_step', [
                     <?php echo esc_html(txa_f('destination_data_heading', 'See who is visiting, what is working and where to invest next')); ?>
                 </h2>
                 <div class="mt-5 space-y-4 text-base leading-6 text-mid-gray sm:mt-6 sm:leading-7">
-                    <p><?php echo esc_html(txa_f('destination_data_paragraph_1', "Most destination marketing generates interest that's impossible to trace. Visitors click through to OTA listings or third-party pages, and the data disappears. TXGB gives destinations something different: first-party booking and engagement data that belongs to you.")); ?>
-                    </p>
-                    <p><?php echo esc_html(txa_f('destination_data_paragraph_2', 'For the first time, your destination can see, in one place, which campaigns converted, which suppliers are performing, and where visitor spend is flowing through your local economy.')); ?>
-                    </p>
+                    <div><?php echo txa_field_output('destination_data_paragraph_1', "Most destination marketing generates interest that's impossible to trace. Visitors click through to OTA listings or third-party pages, and the data disappears. TXGB gives destinations something different: first-party booking and engagement data that belongs to you."); ?>
+                    </div>
+                    <div><?php echo txa_field_output('destination_data_paragraph_2', 'For the first time, your destination can see, in one place, which campaigns converted, which suppliers are performing, and where visitor spend is flowing through your local economy.'); ?>
+                    </div>
                 </div>
                 <ul class="mt-5 space-y-3 text-sm font-semibold leading-5 text-brand sm:mt-6 sm:space-y-4">
                     <?php foreach ($data_points as $point): ?>

@@ -139,7 +139,7 @@ if (!$how_txa_works_embed) {
                         </h1>
                         <p data-hero-slide-copy
                             class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                            <?php echo esc_html($hero_slides[0]['copy']); ?>
+                            <?php echo txa_field_output('hero_copy', "TXGB connects British tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online."); ?>
                         </p>
                         <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                             <?php echo txa_button(txa_f('hero_primary_label', 'Apply Now'), txa_url('hero_primary_url', home_url('/apply-now/'))); ?><?php echo txa_button(txa_f('hero_secondary_label', 'Request Smart Destination Demo'), txa_url('hero_secondary_url', home_url('/contact/')), 'light'); ?>
@@ -173,10 +173,10 @@ if (!$how_txa_works_embed) {
                     </h2>
                     <div
                         class="mt-5 space-y-5 text-base leading-7 text-near-black sm:mt-6 sm:space-y-6 sm:text-lg sm:leading-[1.625]">
-                        <p><?php echo esc_html(txa_f('intro_paragraph_1', "Tourism Exchange Great Britain was established in 2008 in partnership with ATDW (an organisation representing all British State and Federal Government Tourism Organisations) as the nation's open, commercially neutral booking exchange.")); ?>
-                        </p>
-                        <p><?php echo esc_html(txa_f('intro_paragraph_2', "Selected through a global tender, TXGB was built to give every British tourism supplier, regardless of category, size or booking system, fair access to ecommerce and online distribution. The same exchange technology now powers tourism platforms in the United Kingdom, Japan, the United States and Saudi Arabia. TXGB remains Great Britain's own.")); ?>
-                        </p>
+                        <div><?php echo txa_field_output('intro_paragraph_1', "Tourism Exchange Great Britain was established in 2008 in partnership with ATDW (an organisation representing all British State and Federal Government Tourism Organisations) as the nation's open, commercially neutral booking exchange."); ?>
+                        </div>
+                        <div><?php echo txa_field_output('intro_paragraph_2', "Selected through a global tender, TXGB was built to give every British tourism supplier, regardless of category, size or booking system, fair access to ecommerce and online distribution. The same exchange technology now powers tourism platforms in the United Kingdom, Japan, the United States and Saudi Arabia. TXGB remains Great Britain's own."); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="h-[240px] overflow-hidden rounded-lg border border-line sm:h-[368px]"><img
@@ -202,9 +202,9 @@ if (!$how_txa_works_embed) {
                         <?php echo esc_html(txa_f('pathway_heading', 'How to Connect to TXGB?')); ?>
                     </h2>
                 </div>
-                <p class="text-sm leading-6 text-mid-gray">
-                    <?php echo esc_html(txa_f('pathway_copy', 'Each pathway connects to the same national exchange infrastructure, with different entry points for each part of the visitor economy.')); ?>
-                </p>
+                <div class="text-sm leading-6 text-mid-gray">
+                    <?php echo txa_field_output('pathway_copy', 'Each pathway connects to the same national exchange infrastructure, with different entry points for each part of the visitor economy.'); ?>
+                </div>
             </div>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
                 <?php foreach ($audiences as $card): ?>
@@ -271,9 +271,9 @@ if (!$how_txa_works_embed) {
                     class="mt-3 text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                     <?php echo esc_html(txa_f('smart_heading', 'Move destination marketing from inspiration to conversion')); ?>
                 </h2>
-                <p class="mt-3 text-base leading-7 text-white sm:text-lg sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('smart_copy', 'Smart Destinations use TXGB as digital infrastructure for their visitor economy. It connects local suppliers, destination content, owned websites and apps, trade channels, local reseller networks and real-time data.')); ?>
-                </p>
+                <div class="mt-3 text-base leading-7 text-white sm:text-lg sm:leading-[30px]">
+                    <?php echo txa_field_output('smart_copy', 'Smart Destinations use TXGB as digital infrastructure for their visitor economy. It connects local suppliers, destination content, owned websites and apps, trade channels, local reseller networks and real-time data.'); ?>
+                </div>
                 <div class="mt-6 flex flex-col gap-3 sm:flex-row">
                     <?php echo txa_button(txa_f('smart_primary_label', 'Explore Smart Destinations'), txa_url('smart_primary_url', home_url('/destinations/'))); ?><?php echo txa_button(txa_f('smart_secondary_label', 'Request Demo'), txa_url('smart_secondary_url', home_url('/contact/')), 'light'); ?>
                 </div>
@@ -303,9 +303,9 @@ if (!$how_txa_works_embed) {
                     class="mt-2 max-w-[480px] text-[28px] font-semibold leading-9 sm:mt-3 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                     <?php echo esc_html(txa_f('data_heading', 'Data that helps destinations see what is working')); ?>
                 </h2>
-                <p class="mt-3 max-w-[500px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('data_copy', 'TXGB helps destinations understand supplier activity, campaign performance, visitor engagement and booking outcomes through dashboards, attribution and data exports.')); ?>
-                </p>
+                <div class="mt-3 max-w-[500px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-[30px]">
+                    <?php echo txa_field_output('data_copy', 'TXGB helps destinations understand supplier activity, campaign performance, visitor engagement and booking outcomes through dashboards, attribution and data exports.'); ?>
+                </div>
                 <div class="mt-6">
                     <?php echo txa_button(txa_f('data_button_label', 'Learn about Data and Insights'), txa_url('data_button_url', home_url('/data-insights/')), 'secondary'); ?>
                 </div>

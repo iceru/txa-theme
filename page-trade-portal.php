@@ -145,9 +145,9 @@ $portal_tools = array_values(array_filter([
                         class="txgb-accent-text"><?php echo esc_html(txa_f('trade_hero_title_highlight', 'dedicated destination page')); ?></span>
                     <?php echo esc_html(txa_f('trade_hero_title_end', 'with bookable local supply')); ?>
                 </h1>
-                <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray">
-                    <?php echo esc_html(txa_f('trade_hero_copy', "TXGB can create a destination-specific landing page in Great Britain's National Trade Portal. The page can be accessed by URL or QR code and can present POIs, recommended experiences and suppliers with real-time booking access for domestic and international trade initiatives.")); ?>
-                </p>
+                <div class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray">
+                    <?php echo txa_field_output('trade_hero_copy', "TXGB can create a destination-specific landing page in Great Britain's National Trade Portal. The page can be accessed by URL or QR code and can present POIs, recommended experiences and suppliers with real-time booking access for domestic and international trade initiatives."); ?>
+                </div>
                 <a href="<?php echo esc_url($demo_url); ?>"
                     class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('trade_hero_button_label', 'Request trade portal activation')); ?></a>
             </div>
@@ -169,9 +169,9 @@ $portal_tools = array_values(array_filter([
                     class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                     <?php echo esc_html(txa_f('trade_intro_heading', 'Destination Trade Portal')); ?>
                 </h2>
-                <p class="mt-3 text-base leading-7 text-mid-gray sm:text-lg">
-                    <?php echo esc_html(txa_f('trade_intro_copy', 'Connecting trade partners to bookable local supply.')); ?>
-                </p>
+                <div class="mt-3 text-base leading-7 text-mid-gray sm:text-lg">
+                    <?php echo txa_field_output('trade_intro_copy', 'Connecting trade partners to bookable local supply.'); ?>
+                </div>
             </div>
 
             <div
@@ -188,9 +188,9 @@ $portal_tools = array_values(array_filter([
                                 class="mt-4 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-brand">
                                 <?php echo esc_html(txa_f('trade_access_title', 'Access for Trade Partners')); ?>
                             </h3>
-                            <p class="mt-2 text-xs leading-5 text-mid-gray">
-                                <?php echo esc_html(txa_f('trade_access_copy', 'Access the destination page via URL or QR code.')); ?>
-                            </p>
+                            <div class="mt-2 text-xs leading-5 text-mid-gray">
+                                <?php echo txa_field_output('trade_access_copy', 'Access the destination page via URL or QR code.'); ?>
+                            </div>
                         </div>
 
                         <div class="mt-5 rounded-xl border border-line bg-surface p-4 text-center">
@@ -277,9 +277,9 @@ $portal_tools = array_values(array_filter([
                                 class="mt-3 [font-family:'Hanken_Grotesk',sans-serif] text-lg font-bold uppercase leading-6 text-brand">
                                 <?php echo esc_html(txa_f('trade_supply_title', 'Integrated Local Supply and Booking')); ?>
                             </h3>
-                            <p class="mt-2 text-xs leading-5 text-mid-gray">
-                                <?php echo esc_html(txa_f('trade_supply_copy', 'Connect local supplier profiles, live availability, instant booking and confirmation tools in one trade-ready supply pathway.')); ?>
-                            </p>
+                            <div class="mt-2 text-xs leading-5 text-mid-gray">
+                                <?php echo txa_field_output('trade_supply_copy', 'Connect local supplier profiles, live availability, instant booking and confirmation tools in one trade-ready supply pathway.'); ?>
+                            </div>
                         </header>
 
                         <div class="divide-y divide-line">
@@ -364,9 +364,9 @@ $portal_tools = array_values(array_filter([
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-brand sm:text-4xl">
                     <?php echo esc_html(txa_f('trade_cards_heading', 'Empowering Destinations and Trade')); ?>
                 </h2>
-                <p class="mt-6 text-base leading-7 text-mid-gray">
-                    <?php echo esc_html(txa_f('trade_cards_copy', 'Discover how the TXGB Trade Portal bridges the gap between local supply and global demand through a structured, professional interface.')); ?>
-                </p>
+                <div class="mt-6 text-base leading-7 text-mid-gray">
+                    <?php echo txa_field_output('trade_cards_copy', 'Discover how the TXGB Trade Portal bridges the gap between local supply and global demand through a structured, professional interface.'); ?>
+                </div>
             </div>
             <div class="mt-12 grid gap-8 lg:grid-cols-2">
                 <?php foreach ($feature_cards as $card): ?>

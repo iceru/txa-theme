@@ -75,9 +75,9 @@ foreach ($pathways as $i => $pathway) {
                     class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-[1.12] tracking-[-.02em] text-brand sm:mt-6 sm:text-4xl lg:mt-8 lg:text-5xl lg:leading-[60px]">
                     <?php echo esc_html(txa_f('contact_hero_title', 'Get in touch with Tourism Exchange Great Britain')); ?>
                 </h1>
-                <p class="mt-5 max-w-[500px] text-base leading-7 text-mid-gray sm:mt-6 sm:text-lg lg:mt-8">
-                    <?php echo esc_html(txa_f('contact_hero_copy', 'Whether you are a tourism supplier, destination organisation, distributor or booking system partner, contact TXGB to find the right pathway for your organisation.')); ?>
-                </p>
+                <div class="mt-5 max-w-[500px] text-base leading-7 text-mid-gray sm:mt-6 sm:text-lg lg:mt-8">
+                    <?php echo txa_field_output('contact_hero_copy', 'Whether you are a tourism supplier, destination organisation, distributor or booking system partner, contact TXGB to find the right pathway for your organisation.'); ?>
+                </div>
             </div>
             <div class="h-[240px] overflow-hidden rounded-lg border border-line sm:h-[320px] lg:h-[430px]"><img
                     src="<?php echo esc_url(txa_img('contact_hero_image', get_theme_file_uri('/images/contact.jpg'))); ?>"
