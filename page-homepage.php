@@ -226,35 +226,6 @@ if (!$how_txa_works_embed) {
         </div>
     </section>
 
-    <section class="px-4 py-9 sm:py-10 lg:px-16 lg:py-16">
-        <div class="mx-auto max-w-[1312px] text-center">
-            <h2
-                class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                <?php echo esc_html(txa_f('video_heading', 'How TXGB Works')); ?>
-            </h2>
-            <div
-                class="relative mt-6 h-[240px] overflow-hidden rounded-xl bg-black/40 sm:mt-8 sm:h-[460px] sm:rounded-2xl lg:h-[551px] [&_iframe]:h-full [&_iframe]:w-full">
-                <?php if ($how_txa_works_embed): ?>
-                    <?php echo wp_kses($how_txa_works_embed, [
-                        'iframe' => [
-                            'src' => true,
-                            'width' => true,
-                            'height' => true,
-                            'title' => true,
-                            'frameborder' => true,
-                            'allow' => true,
-                            'allowfullscreen' => true,
-                            'loading' => true,
-                            'referrerpolicy' => true,
-                        ],
-                    ]); ?>
-                <?php else: ?>
-                    <p class="flex h-full items-center justify-center px-6 text-white">Video unavailable.</p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
     <section class="relative overflow-hidden bg-black/40 px-4 py-10 text-white sm:py-12 lg:px-16 lg:py-16"><img
             src="<?php echo esc_url(txa_img('smart_background_image', get_theme_file_uri('/images/pricing.jpg'))); ?>"
             alt="<?php echo esc_attr(txa_f('smart_background_alt', 'Torndirrup National Park')); ?>"
