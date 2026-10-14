@@ -272,7 +272,7 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                         <?php endforeach; ?>
                     </ol>
                     <a href="<?php echo esc_url($card['url']); ?>"
-                        class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-black/40 px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
+                        class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-primary px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
                 </article>
             <?php endforeach; ?>
         </div>
