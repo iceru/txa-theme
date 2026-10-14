@@ -1,0 +1,422 @@
+[
+  {
+    "key": "group_txa_about",
+    "title": "TXGB About Page",
+    "fields": [
+      {
+        "key": "field_about_tab_seo",
+        "label": "SEO",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_about_seo_title",
+        "label": "Browser Title",
+        "name": "about_seo_title",
+        "type": "text",
+        "placeholder": "About TXGB | Tourism Exchange Great Britain"
+      },
+      {
+        "key": "field_about_seo_description",
+        "label": "Meta Description",
+        "name": "about_seo_description",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": "",
+        "placeholder": "Learn how TXGB became Great Britain's open B2B tourism exchange."
+      },
+      {
+        "key": "field_about_tab_hero",
+        "label": "Hero",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_about_hero_label",
+        "label": "Hero Label",
+        "name": "about_hero_label",
+        "type": "text",
+        "placeholder": "About Us"
+      },
+      {
+        "key": "field_about_hero_title",
+        "label": "Hero Title",
+        "name": "about_hero_title",
+        "type": "text",
+        "placeholder": "Built for Great Britain’s tourism industry"
+      },
+      {
+        "key": "field_about_hero_copy",
+        "label": "Hero Copy",
+        "name": "about_hero_copy",
+        "type": "wysiwyg",
+        "rows": 4,
+        "new_lines": "",
+        "placeholder": "Describe TXGB's history and role."
+      },
+      {
+        "key": "field_about_hero_image",
+        "label": "Hero Image",
+        "name": "about_hero_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_about_hero_image_alt",
+        "label": "Hero Image Alt Text",
+        "name": "about_hero_image_alt",
+        "type": "text",
+        "placeholder": "British tourism landscape"
+      },
+      {
+        "key": "field_about_tab_audience",
+        "label": "What TXGB Does",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_about_audience_heading",
+        "label": "Section Heading",
+        "name": "about_audience_heading",
+        "type": "text",
+        "placeholder": "What TXGB does"
+      },
+      {
+        "key": "field_about_audience_intro",
+        "label": "Introduction",
+        "name": "about_audience_intro",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": "",
+        "placeholder": "Explain what TXGB connects."
+      },
+      {
+        "key": "field_about_audience_1_title",
+        "label": "Audience 1 Title",
+        "name": "about_audience_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_audience_1_copy",
+        "label": "Audience 1 Description",
+        "name": "about_audience_1_copy",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_audience_1_icon",
+        "label": "Audience 1 Bootstrap Icon",
+        "name": "about_audience_1_icon",
+        "type": "text",
+        "placeholder": "bi-shop"
+      },
+      {
+        "key": "field_about_audience_2_title",
+        "label": "Audience 2 Title",
+        "name": "about_audience_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_audience_2_copy",
+        "label": "Audience 2 Description",
+        "name": "about_audience_2_copy",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_audience_2_icon",
+        "label": "Audience 2 Bootstrap Icon",
+        "name": "about_audience_2_icon",
+        "type": "text",
+        "placeholder": "bi-shop"
+      },
+      {
+        "key": "field_about_audience_3_title",
+        "label": "Audience 3 Title",
+        "name": "about_audience_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_audience_3_copy",
+        "label": "Audience 3 Description",
+        "name": "about_audience_3_copy",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_audience_3_icon",
+        "label": "Audience 3 Bootstrap Icon",
+        "name": "about_audience_3_icon",
+        "type": "text",
+        "placeholder": "bi-shop"
+      },
+      {
+        "key": "field_about_audience_4_title",
+        "label": "Audience 4 Title",
+        "name": "about_audience_4_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_audience_4_copy",
+        "label": "Audience 4 Description",
+        "name": "about_audience_4_copy",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_audience_4_icon",
+        "label": "Audience 4 Bootstrap Icon",
+        "name": "about_audience_4_icon",
+        "type": "text",
+        "placeholder": "bi-shop"
+      },
+      {
+        "key": "field_about_tab_countries",
+        "label": "International Platforms",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_about_countries_heading",
+        "label": "Section Heading",
+        "name": "about_countries_heading",
+        "type": "text",
+        "placeholder": "Proven exchange technology, built for Great Britain"
+      },
+      {
+        "key": "field_about_countries_copy",
+        "label": "Description",
+        "name": "about_countries_copy",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_country_1_name",
+        "label": "Country 1 Name",
+        "name": "about_country_1_name",
+        "type": "text"
+      },
+      {
+        "key": "field_about_country_1_image",
+        "label": "Country 1 Image",
+        "name": "about_country_1_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_about_country_2_name",
+        "label": "Country 2 Name",
+        "name": "about_country_2_name",
+        "type": "text"
+      },
+      {
+        "key": "field_about_country_2_image",
+        "label": "Country 2 Image",
+        "name": "about_country_2_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_about_country_3_name",
+        "label": "Country 3 Name",
+        "name": "about_country_3_name",
+        "type": "text"
+      },
+      {
+        "key": "field_about_country_3_image",
+        "label": "Country 3 Image",
+        "name": "about_country_3_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_about_country_4_name",
+        "label": "Country 4 Name",
+        "name": "about_country_4_name",
+        "type": "text"
+      },
+      {
+        "key": "field_about_country_4_image",
+        "label": "Country 4 Image",
+        "name": "about_country_4_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_about_tab_timeline",
+        "label": "Journey and Values",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_about_timeline_heading",
+        "label": "Journey Heading",
+        "name": "about_timeline_heading",
+        "type": "text",
+        "placeholder": "TXGB Journey"
+      },
+      {
+        "key": "field_about_timeline_subheading",
+        "label": "Journey Subheading",
+        "name": "about_timeline_subheading",
+        "type": "text"
+      },
+      {
+        "key": "field_about_value_1_title",
+        "label": "Value 1 Title",
+        "name": "about_value_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_value_1_copy",
+        "label": "Value 1 Description",
+        "name": "about_value_1_copy",
+        "type": "textarea",
+        "rows": 2,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_value_1_icon",
+        "label": "Value 1 Bootstrap Icon",
+        "name": "about_value_1_icon",
+        "type": "text",
+        "placeholder": "bi-geo-alt"
+      },
+      {
+        "key": "field_about_value_2_title",
+        "label": "Value 2 Title",
+        "name": "about_value_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_value_2_copy",
+        "label": "Value 2 Description",
+        "name": "about_value_2_copy",
+        "type": "textarea",
+        "rows": 2,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_value_2_icon",
+        "label": "Value 2 Bootstrap Icon",
+        "name": "about_value_2_icon",
+        "type": "text",
+        "placeholder": "bi-geo-alt"
+      },
+      {
+        "key": "field_about_value_3_title",
+        "label": "Value 3 Title",
+        "name": "about_value_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_value_3_copy",
+        "label": "Value 3 Description",
+        "name": "about_value_3_copy",
+        "type": "textarea",
+        "rows": 2,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_value_3_icon",
+        "label": "Value 3 Bootstrap Icon",
+        "name": "about_value_3_icon",
+        "type": "text",
+        "placeholder": "bi-geo-alt"
+      },
+      {
+        "key": "field_about_value_4_title",
+        "label": "Value 4 Title",
+        "name": "about_value_4_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_value_4_copy",
+        "label": "Value 4 Description",
+        "name": "about_value_4_copy",
+        "type": "textarea",
+        "rows": 2,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_value_4_icon",
+        "label": "Value 4 Bootstrap Icon",
+        "name": "about_value_4_icon",
+        "type": "text",
+        "placeholder": "bi-geo-alt"
+      },
+      {
+        "key": "field_about_value_5_title",
+        "label": "Value 5 Title",
+        "name": "about_value_5_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_value_5_copy",
+        "label": "Value 5 Description",
+        "name": "about_value_5_copy",
+        "type": "textarea",
+        "rows": 2,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_value_5_icon",
+        "label": "Value 5 Bootstrap Icon",
+        "name": "about_value_5_icon",
+        "type": "text",
+        "placeholder": "bi-geo-alt"
+      },
+      {
+        "key": "field_about_value_6_title",
+        "label": "Value 6 Title",
+        "name": "about_value_6_title",
+        "type": "text"
+      },
+      {
+        "key": "field_about_value_6_copy",
+        "label": "Value 6 Description",
+        "name": "about_value_6_copy",
+        "type": "textarea",
+        "rows": 2,
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_value_6_icon",
+        "label": "Value 6 Bootstrap Icon",
+        "name": "about_value_6_icon",
+        "type": "text",
+        "placeholder": "bi-geo-alt"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-about.php"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

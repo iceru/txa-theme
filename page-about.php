@@ -5,10 +5,32 @@
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'About TXGB | Tourism Exchange Great Britain');
+if (!function_exists('txa_about_field')) {
+    function txa_about_field(string $name, $default = '')
+    {
+        $value = function_exists('get_field') ? get_field($name) : null;
+        return (null === $value || '' === $value || false === $value) ? $default : $value;
+    }
+}
+
+if (!function_exists('txa_about_image')) {
+    function txa_about_image(string $name, string $default): string
+    {
+        $value = txa_about_field($name);
+        if (is_array($value) && !empty($value['url'])) {
+            return $value['url'];
+        }
+        if (is_numeric($value)) {
+            return wp_get_attachment_image_url((int) $value, 'full') ?: $default;
+        }
+        return is_string($value) && '' !== $value ? $value : $default;
+    }
+}
+
+add_filter('pre_get_document_title', fn(): string => (string) txa_about_field('about_seo_title', 'About TXGB | Tourism Exchange Great Britain'));
 add_action('wp_head', function (): void {
     if (is_page_template('page-about.php')) {
-        echo '<meta name="description" content="' . esc_attr('Learn how TXGB became Great Britain\'s open B2B tourism exchange for suppliers, destinations, distributors and booking systems.') . '">' . "\n";
+        echo '<meta name="description" content="' . esc_attr(txa_about_field('about_seo_description', 'Learn how TXGB became Great Britain\'s open B2B tourism exchange for suppliers, destinations, distributors and booking systems.')) . '">' . "\n";
     }
 });
 
@@ -42,6 +64,27 @@ $default_timeline_values = [
     ['title' => 'Global Impact', 'copy' => 'Powering tourism platforms in the UK, Japan, Saudi Arabia and the United States.', 'icon' => 'bi-globe-americas'],
     ['title' => 'Value Stays in Great Britain', 'copy' => 'Keeping more of the value of British tourism circulating within the British visitor economy.', 'icon' => 'bi-currency-dollar'],
 ];
+$about_hero_image = txa_about_image('about_hero_image', get_theme_file_uri('/images/new/about-us.jpg'));
+foreach ($what_txa_does as $index => &$card) {
+    $number = $index + 1;
+    $card['title'] = txa_about_field("about_audience_{$number}_title", $card['title']);
+    $card['copy'] = txa_about_field("about_audience_{$number}_copy", $card['copy']);
+    $card['icon'] = txa_about_field("about_audience_{$number}_icon", $card['icon']);
+}
+unset($card);
+foreach ($countries as $index => &$country) {
+    $number = $index + 1;
+    $country['name'] = txa_about_field("about_country_{$number}_name", $country['name']);
+    $country['image'] = txa_about_image("about_country_{$number}_image", get_theme_file_uri('/images/' . $country['icon']));
+}
+unset($country);
+foreach ($default_timeline_values as $index => &$value) {
+    $number = $index + 1;
+    $value['title'] = txa_about_field("about_value_{$number}_title", $value['title']);
+    $value['copy'] = txa_about_field("about_value_{$number}_copy", $value['copy']);
+    $value['icon'] = txa_about_field("about_value_{$number}_icon", $value['icon']);
+}
+unset($value);
 $timeline_query = new WP_Query([
     'post_type' => 'txa_timeline',
     'post_status' => 'publish',
@@ -69,25 +112,21 @@ $timeline_values = $default_timeline_values;
         <div class="mx-auto max-w-[1312px]">
             <div
                 class="relative flex min-h-[590px] items-center overflow-hidden rounded-xl bg-black/40 sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
-                <img src="<?php echo esc_url(get_theme_file_uri('/images/new/about-us.jpg')); ?>"
-                    alt="British tourism landscape" class="absolute inset-0 h-full w-full object-cover object-center">
+                <img src="<?php echo esc_url($about_hero_image); ?>"
+                    alt="<?php echo esc_attr(txa_about_field('about_hero_image_alt', 'British tourism landscape')); ?>" class="absolute inset-0 h-full w-full object-cover object-center">
                 <div class="absolute inset-0 bg-black/55 sm:bg-black/45" aria-hidden="true"></div>
                 <div
                     class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
                     <div class="w-full max-w-[760px]">
                         <p
                             class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                            About Us</p>
+                            <?php echo esc_html(txa_about_field('about_hero_label', 'About Us')); ?></p>
                         <h1
                             class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                            Built for Great Britain’s tourism industry</h1>
+                            <?php echo esc_html(txa_about_field('about_hero_title', 'Built for Great Britain’s tourism industry')); ?></h1>
                         <p
                             class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                            Our journey started in Great Britain, being selected through a global tender in 2008 to
-                            partner
-                            with the British Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs.
-                            We operate as the structural backbone that allows local operators to compete on a global
-                            scale while maintaining their commercial independence.</p>
+                            <?php echo wp_kses_post(txa_about_field('about_hero_copy', 'Our journey started in Great Britain, being selected through a global tender in 2008 to partner with the British Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs. We operate as the structural backbone that allows local operators to compete on a global scale while maintaining their commercial independence.')); ?></p>
                     </div>
                 </div>
             </div>
@@ -96,11 +135,11 @@ $timeline_values = $default_timeline_values;
     <section class="px-4 py-12 sm:py-14 lg:px-16 lg:py-16">
         <div class="mx-auto max-w-[1312px]">
             <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold tracking-[-.01em] text-brand">
-                What TXGB does</h2>
-            <p class="mt-4 text-base leading-7 text-brand sm:mt-6 sm:text-lg sm:leading-[29px]">Tourism Exchange
+                <?php echo esc_html(txa_about_field('about_audience_heading', 'What TXGB does')); ?></h2>
+            <p class="mt-4 text-base leading-7 text-brand sm:mt-6 sm:text-lg sm:leading-[29px]"><?php echo esc_html(txa_about_field('about_audience_intro', 'Tourism Exchange
                 Great Britain is Great Britain’s open B2B tourism exchange. It connects tourism suppliers, destinations,
                 distributors and booking systems so live tourism products can be found, marketed, booked and measured
-                online.</p>
+                online.')); ?></p>
             <div class="mt-10 grid gap-5 sm:grid-cols-2 sm:mt-12 xl:mt-16 xl:grid-cols-4 xl:gap-6">
                 <?php foreach ($what_txa_does as $card): ?>
                     <article class="rounded-xl border border-[#dfc0ba]/10 bg-white p-6 shadow-sm sm:min-h-[210px] sm:p-8"><i
@@ -118,18 +157,18 @@ $timeline_values = $default_timeline_values;
             <div>
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight tracking-[-.01em]">
-                    Proven exchange technology, built for Great Britain</h2>
-                <p class="mt-4 text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-[29px]">Today, the same
+                    <?php echo esc_html(txa_about_field('about_countries_heading', 'Proven exchange technology, built for Great Britain')); ?></h2>
+                <p class="mt-4 text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-[29px]"><?php echo esc_html(txa_about_field('about_countries_copy', 'Today, the same
                     exchange technology powers tourism platforms in the Australia, Japan, Saudi Arabia, and the US. TXGB
                     remains
-                    Great Britain’s own—tailored for our unique geography and market dynamics.</p>
+                    Great Britain’s own—tailored for our unique geography and market dynamics.')); ?></p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <?php foreach ($countries as $country): ?>
                     <div
                         class="flex flex-col items-center justify-center rounded-xl bg-white p-4 text-center text-near-black shadow-sm">
-                        <?php if (!empty($country['icon'])): ?>
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $country['icon'])); ?>" alt=""
+                        <?php if (!empty($country['image'])): ?>
+                            <img src="<?php echo esc_url($country['image']); ?>" alt=""
                                 class="mb-4 h-14 w-auto max-w-full object-contain sm:h-16" aria-hidden="true">
                         <?php endif; ?>
                         <h3 class="text-sm font-bold uppercase tracking-wide sm:text-base">
@@ -144,10 +183,8 @@ $timeline_values = $default_timeline_values;
             <div class="text-center">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold uppercase leading-tight tracking-[-.01em] text-brand sm:text-4xl">
-                    TXGB Journey</h2>
-                <p class="txgb-accent-text mt-2 text-sm font-bold uppercase tracking-[.04em] sm:text-base">Built in
-                    Great Britain.
-                    Connected to the world. Powering our industry.</p>
+                    <?php echo esc_html(txa_about_field('about_timeline_heading', 'TXGB Journey')); ?></h2>
+                <p class="txgb-accent-text mt-2 text-sm font-bold uppercase tracking-[.04em] sm:text-base"><?php echo esc_html(txa_about_field('about_timeline_subheading', 'Built in Great Britain. Connected to the world. Powering our industry.')); ?></p>
             </div>
 
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
