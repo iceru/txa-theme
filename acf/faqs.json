@@ -21,7 +21,7 @@
         "key": "field_faq_header_copy",
         "label": "Description",
         "name": "faq_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Find answers for your pathway into Great Britain’s national tourism exchange. Choose a category, then open only the questions you need."
@@ -37,7 +37,7 @@
         "key": "field_faq_header_aside_copy",
         "label": "Aside Description",
         "name": "faq_hero_aside_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Tell us which pathway you are exploring and the TXGB team will help you find the right next step."

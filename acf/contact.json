@@ -20,7 +20,7 @@
         "key": "field_con_seo_description",
         "label": "Meta Description",
         "name": "contact_seo_description",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Contact Tourism Exchange Great Britain to find the right pathway for suppliers, destinations, distributors and booking-system partners."
@@ -50,7 +50,7 @@
         "key": "field_con_hero_copy",
         "label": "Hero Copy",
         "name": "contact_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Whether you are a tourism supplier, destination organisation, distributor or booking system partner, contact TXGB to find the right pathway for your organisation."
@@ -111,7 +111,7 @@
         "key": "field_con_pathway_1_copy",
         "label": "Pathway 1 Copy",
         "name": "contact_pathway_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "If you have tours, accommodation, or attractions, choose 'General Enquiry' or contact your current booking system provider to see if they are already integrated with TXGB."
@@ -128,7 +128,7 @@
         "key": "field_con_pathway_2_copy",
         "label": "Pathway 2 Copy",
         "name": "contact_pathway_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "OTAs and wholesalers looking for high quality bookable British inventory should select 'Distributor Enquiry' to start the technical evaluation process."
@@ -145,7 +145,7 @@
         "key": "field_con_pathway_3_copy",
         "label": "Pathway 3 Copy",
         "name": "contact_pathway_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Regional and State bodies should request the 'Smart Destination Demo' to understand the strategic benefits of our destination wide aggregation."
@@ -162,7 +162,7 @@
         "key": "field_con_pathway_4_copy",
         "label": "Pathway 4 Copy",
         "name": "contact_pathway_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Tech providers wanting to offer their clients global distribution via TXGB should select 'Booking-System Partner' for API documentation access."

@@ -20,7 +20,7 @@
         "key": "field_poi_seo_description",
         "label": "Meta Description",
         "name": "poi_seo_description",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Help destinations connect points of interest, itineraries and bookable tourism experiences."
@@ -64,7 +64,7 @@
         "key": "field_poi_hero_copy",
         "label": "Hero Copy",
         "name": "poi_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "TXGB allows a destination to add Points of Interest - free things to see and do - and to create recommended experiences and suggested itineraries."
@@ -117,7 +117,7 @@
         "key": "field_poi_features_copy",
         "label": "Section Description",
         "name": "poi_features_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "A unified ecosystem to manage free landmarks alongside bookable experiences."
@@ -147,7 +147,7 @@
         "key": "field_poi_card_1_copy",
         "label": "Copy",
         "name": "poi_card_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Build POIs for free visitor experiences, landmarks, attractions and public places. Enrich your maps with detailed content that matters to travelers."
@@ -198,7 +198,7 @@
         "key": "field_poi_card_2_copy",
         "label": "Copy",
         "name": "poi_card_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Connect content with bookable suppliers so visitors can act on inspiration immediately."
@@ -228,7 +228,7 @@
         "key": "field_poi_card_3_copy",
         "label": "Copy",
         "name": "poi_card_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Create recommended experiences for seasons, regions, events or specific visitor types."
@@ -258,7 +258,7 @@
         "key": "field_poi_card_4_copy",
         "label": "Copy",
         "name": "poi_card_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Use POIs and experiences in destination pages, trade pages, campaign microsites and virtual concierge journeys. Reach your audience wherever they are."

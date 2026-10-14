@@ -34,7 +34,7 @@
         "key": "field_prc_hero_copy",
         "label": "Hero Copy",
         "name": "pricing_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "TXGB offers Smart Destination packages that match the scope and scale of your visitor economy. Each package is designed to give your destination access to platform infrastructure, supplier activation support, destination content activation and industry-facing tools without the risk of a custom technology build."
@@ -101,7 +101,7 @@
         "key": "field_prc_scale_copy",
         "label": "Description",
         "name": "pricing_scale_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Scalable infrastructure designed for every level of the tourism ecosystem."
@@ -331,7 +331,7 @@
         "key": "field_prc_setup_copy",
         "label": "Copy",
         "name": "pricing_setup_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "Every package includes a structured onboarding phase so your team and suppliers are ready to use the platform with confidence. We help prepare the system, organise the initial data and guide your destination team through the rollout."
@@ -355,7 +355,7 @@
         "key": "field_prc_setup_1_copy",
         "label": "Card 1 Copy",
         "name": "pricing_setup_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Set up around your destination's requirements."
@@ -379,7 +379,7 @@
         "key": "field_prc_setup_2_copy",
         "label": "Card 2 Copy",
         "name": "pricing_setup_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Prepare core destination and supplier data."
@@ -403,7 +403,7 @@
         "key": "field_prc_setup_3_copy",
         "label": "Card 3 Copy",
         "name": "pricing_setup_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Practical guidance for your team and suppliers."
@@ -434,7 +434,7 @@
         "key": "field_prc_charge_copy",
         "label": "Charge Box Copy",
         "name": "pricing_charge_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Covers the initial setup, configuration, data preparation and onboarding support required to get your destination live."

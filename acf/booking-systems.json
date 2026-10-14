@@ -20,7 +20,7 @@
         "key": "field_book_seo_description",
         "label": "Meta Description",
         "name": "booking_seo_description",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Connect your booking system to Great Britain's national tourism exchange and help operator customers access broader destination, distributor and trade channels."
@@ -50,7 +50,7 @@
         "key": "field_book_hero_copy",
         "label": "Hero Copy",
         "name": "booking_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "TXGB helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Great Britain’s open B2B tourism exchange."
@@ -162,7 +162,7 @@
         "key": "field_book_intro_copy",
         "label": "Copy",
         "name": "booking_intro_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 6,
         "new_lines": "",
         "placeholder": "Integrating your Booking system via TXGB’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels."
@@ -186,7 +186,7 @@
         "key": "field_book_benefit_1_copy",
         "label": "Benefit 1 Copy",
         "name": "booking_benefit_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Access hundreds of distributors from global OTAs to hyper-local niche and re-seller channels and visitor information center."
@@ -210,7 +210,7 @@
         "key": "field_book_benefit_2_copy",
         "label": "Benefit 2 Copy",
         "name": "booking_benefit_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Connect once to TXGB and manage all distributor relationships through a unified API."
@@ -234,7 +234,7 @@
         "key": "field_book_benefit_3_copy",
         "label": "Benefit 3 Copy",
         "name": "booking_benefit_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Real-time availability and pricing updates ensure accurate booking data across the network."
@@ -528,7 +528,7 @@
         "key": "field_book_partners_copy",
         "label": "Copy",
         "name": "booking_partners_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry."

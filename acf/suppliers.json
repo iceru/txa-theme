@@ -27,7 +27,7 @@
         "key": "field_sup_hero_copy",
         "label": "Hero Copy",
         "name": "supplier_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "TXGB helps tourism suppliers connect live product, pricing and availability to destination websites, distributors and other online channels without manually allocating to and managing inventory on every site."
@@ -101,7 +101,7 @@
         "key": "field_sup_intro_copy",
         "label": "Copy",
         "name": "supplier_intro_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "TXGB is designed to reduce manual work by using your booking system as the single source of products, rates and availability where available."
@@ -131,7 +131,7 @@
         "key": "field_sup_benefits_copy",
         "label": "Description",
         "name": "supplier_benefits_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "TXGB has options for suppliers that don't have a suitable booking system or alternative connection pathways"
@@ -155,7 +155,7 @@
         "key": "field_sup_benefit_1_copy",
         "label": "Benefit 1 Copy",
         "name": "supplier_benefit_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Broader distribution pathway through connected channels and destination partners."
@@ -179,7 +179,7 @@
         "key": "field_sup_benefit_2_copy",
         "label": "Benefit 2 Copy",
         "name": "supplier_benefit_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Real-time automation and booking through your connected booking system where available."
@@ -203,7 +203,7 @@
         "key": "field_sup_benefit_3_copy",
         "label": "Benefit 3 Copy",
         "name": "supplier_benefit_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Options for suppliers without a suitable booking system, or alternative supported connection pathways."
@@ -227,7 +227,7 @@
         "key": "field_sup_benefit_4_copy",
         "label": "Benefit 4 Copy",
         "name": "supplier_benefit_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Support for direct payment and OTA / on-request account distributor models depending on the channel."
@@ -251,7 +251,7 @@
         "key": "field_sup_benefit_5_copy",
         "label": "Benefit 5 Copy",
         "name": "supplier_benefit_5_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "No need for time consuming inventory and rate management across multiple websites and platforms."
@@ -275,7 +275,7 @@
         "key": "field_sup_benefit_6_copy",
         "label": "Benefit 6 Copy",
         "name": "supplier_benefit_6_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "A no-booking-no-fee supplier pricing model for TXGB-originated online bookings means no fixed upfront or monthly fees = no risk!"
@@ -305,7 +305,7 @@
         "key": "field_sup_connect_copy",
         "label": "Copy",
         "name": "supplier_connect_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "It's so easy! Use the TXGB Get Connected Wizard. It captures your business details, website or social media URL, product description, industry category and images, then lets you confirm whether you want to remain content only or make your connection bookable."
@@ -314,7 +314,7 @@
         "key": "field_sup_connect_notice",
         "label": "Notice Box",
         "name": "supplier_connect_notice",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "No booking, no fee. Pay only when you receive online bookings through TXGB channels, subject to final success fee of 0.75%-2.8% of total booking value."

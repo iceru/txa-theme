@@ -34,7 +34,7 @@
         "key": "field_cnc_hero_copy",
         "label": "Hero Copy",
         "name": "concierge_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 6,
         "new_lines": "",
         "placeholder": "TXGB’s unique local re-seller network or ‘Virtual Concierge’ capability helps tourism product categories cross-sell, for example, accommodation and activity providers cross sell, visitor information centres, National Park offices, airports and other local partners inter-connect offering visitors' numerous local channels for booking local activities, events and experiences."
@@ -108,7 +108,7 @@
         "key": "field_cnc_activation_copy",
         "label": "Description",
         "name": "concierge_activation_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Transform every touchpoint into a booking opportunity. By connecting diverse local operators, you create a resilient network that keeps spending within the region."
@@ -132,7 +132,7 @@
         "key": "field_cnc_activation_1_copy",
         "label": "Card 1 Copy",
         "name": "concierge_activation_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Interconnect and activate your entire industry and visitor economy through a unified local channel with shared distribution technology."
@@ -156,7 +156,7 @@
         "key": "field_cnc_activation_2_copy",
         "label": "Card 2 Copy",
         "name": "concierge_activation_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Incentivize in-destination spend and facilitate wider visitor dispersal across the region."
@@ -189,7 +189,7 @@
         "key": "field_cnc_activation_3_copy",
         "label": "Card 3 Copy",
         "name": "concierge_activation_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Make real-time dashboards available to the destination and relevant industry participants for informed decision-making."
@@ -222,7 +222,7 @@
         "key": "field_cnc_activation_4_copy",
         "label": "Card 4 Copy",
         "name": "concierge_activation_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Use supplier opt-in, automated hosted booking pages, and integrated and automated direct payment and settlement of booking funds."
@@ -245,7 +245,7 @@
         "key": "field_cnc_partners_copy",
         "label": "Description",
         "name": "concierge_partners_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Give local partners a practical way to recommend and book experiences, turning every tourism operator, information desk and concierge into an active, informed and motivated local booking channel"
@@ -269,7 +269,7 @@
         "key": "field_cnc_partner_1_copy",
         "label": "Partner 1 Copy",
         "name": "concierge_partner_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Hotels and Bed and Breakfasts can easily book tours and activities for their guests directly through the concierge portal."
@@ -300,7 +300,7 @@
         "key": "field_cnc_partner_2_copy",
         "label": "Partner 2 Copy",
         "name": "concierge_partner_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "VICs become full-service booking hubs, reducing manual paperwork and improving visitor experience."
@@ -331,7 +331,7 @@
         "key": "field_cnc_partner_3_copy",
         "label": "Partner 3 Copy",
         "name": "concierge_partner_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Airports and National Park offices inter-connect to offer visitors numerous hyper local channels for discovery and booking options"

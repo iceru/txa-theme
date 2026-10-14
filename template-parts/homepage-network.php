@@ -6,21 +6,21 @@
  */
 
 $booking_systems = [
-    ['file' => 'fareharbor.png', 'name' => 'FareHarbor'],
-    ['file' => 'siteminder.png', 'name' => 'SiteMinder'],
-    ['file' => 'newbook.png', 'name' => 'NewBook'],
-    ['file' => 'rezobx.jpg', 'name' => 'Rezobx'],
-    ['file' => 'rezdy.png', 'name' => 'Rezdy'],
-    ['file' => 'rms.png', 'name' => 'RMS'],
+    ['image' => txa_img('network_booking_1_logo', get_theme_file_uri('/images/networks/fareharbor.png')), 'name' => txa_f('network_booking_1_name', 'FareHarbor')],
+    ['image' => txa_img('network_booking_2_logo', get_theme_file_uri('/images/networks/siteminder.png')), 'name' => txa_f('network_booking_2_name', 'SiteMinder')],
+    ['image' => txa_img('network_booking_3_logo', get_theme_file_uri('/images/networks/newbook.png')), 'name' => txa_f('network_booking_3_name', 'NewBook')],
+    ['image' => txa_img('network_booking_4_logo', get_theme_file_uri('/images/networks/rezobx.jpg')), 'name' => txa_f('network_booking_4_name', 'Rezobx')],
+    ['image' => txa_img('network_booking_5_logo', get_theme_file_uri('/images/networks/rezdy.png')), 'name' => txa_f('network_booking_5_name', 'Rezdy')],
+    ['image' => txa_img('network_booking_6_logo', get_theme_file_uri('/images/networks/rms.png')), 'name' => txa_f('network_booking_6_name', 'RMS')],
 ];
 
 $distribution_channels = [
-    ['name' => 'Destination websites', 'icon' => 'bi-globe2', 'type' => 'destination'],
-    ['name' => 'Booking.com', 'file' => 'booking.png', 'type' => 'distributor'],
-    ['name' => 'Google Things to do', 'file' => 'google.png', 'type' => 'distributor'],
-    ['name' => 'Tripadvisor', 'file' => 'tripadvisor.png', 'type' => 'distributor'],
-    ['name' => 'Travel trade', 'icon' => 'bi-briefcase', 'type' => 'distributor'],
-    ['name' => 'Tour operators', 'icon' => 'bi-signpost-split', 'type' => 'distributor'],
+    ['name' => txa_f('network_channel_1_name', 'Destination websites'), 'icon' => txa_f('network_channel_1_icon', 'bi-globe2'), 'type' => 'destination'],
+    ['name' => txa_f('network_channel_2_name', 'Booking.com'), 'image' => txa_img('network_channel_2_logo', get_theme_file_uri('/images/networks/booking.png')), 'type' => 'distributor'],
+    ['name' => txa_f('network_channel_3_name', 'Google Things to do'), 'image' => txa_img('network_channel_3_logo', get_theme_file_uri('/images/networks/google.png')), 'type' => 'distributor'],
+    ['name' => txa_f('network_channel_4_name', 'Tripadvisor'), 'image' => txa_img('network_channel_4_logo', get_theme_file_uri('/images/networks/tripadvisor.png')), 'type' => 'distributor'],
+    ['name' => txa_f('network_channel_5_name', 'Travel trade'), 'icon' => txa_f('network_channel_5_icon', 'bi-briefcase'), 'type' => 'distributor'],
+    ['name' => txa_f('network_channel_6_name', 'Tour operators'), 'icon' => txa_f('network_channel_6_icon', 'bi-signpost-split'), 'type' => 'distributor'],
 ];
 ?>
 
@@ -58,15 +58,16 @@ $distribution_channels = [
 <section class="bg-surface px-4 py-10 sm:py-14 lg:px-16 lg:py-20">
     <div class="mx-auto max-w-[1312px]">
         <div class="mx-auto max-w-[760px] text-center">
-            <p class="txgb-accent-text text-xs font-semibold uppercase tracking-wide sm:text-sm">A Connected Tourism
-                Ecosystem
+            <p class="txgb-accent-text text-xs font-semibold uppercase tracking-wide sm:text-sm">
+                <?php echo esc_html(txa_f('network_eyebrow', 'A Connected Tourism Ecosystem')); ?>
             </p>
             <h2
                 class="mt-2 [font-family:'Hanken_Grotesk',sans-serif] text-[30px] font-semibold leading-tight text-near-black sm:text-4xl">
-                One exchange connecting Great Britain's tourism ecosystem
+                <?php echo esc_html(txa_f('network_heading', "One exchange connecting Great Britain's tourism ecosystem")); ?>
             </h2>
-            <p class="mt-4 text-base leading-7 text-mid-gray sm:text-lg">Tourism products flow from connected booking
-                systems through TXA to destination websites, distributors, travel trade and travellers.</p>
+            <div class="mt-4 text-base leading-7 text-mid-gray sm:text-lg">
+                <?php echo wp_kses_post(txa_f('network_copy', 'Tourism products flow from connected booking systems through TXA to destination websites, distributors, travel trade and travellers.')); ?>
+            </div>
         </div>
 
         <div class="mt-10 rounded-2xl border border-line bg-[#f8f8f8] p-4 shadow-[0_20px_50px_-38px_rgba(20,20,20,0.35)] sm:p-6 lg:p-8"
@@ -77,10 +78,10 @@ $distribution_channels = [
                     data-node="supplier" tabindex="0">
                     <div class="flex items-center gap-3 text-brand">
                         <span class="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl"
-                            aria-hidden="true"><i class="bi bi-buildings"></i></span>
+                            aria-hidden="true"><i class="bi <?php echo esc_attr(txa_f('network_supplier_icon', 'bi-buildings')); ?>"></i></span>
                         <div>
-                            <h3 class="text-sm font-bold text-near-black">Tourism operators</h3>
-                            <p class="mt-0.5 text-xs text-mid-gray">Products, rates and availability</p>
+                            <h3 class="text-sm font-bold text-near-black"><?php echo esc_html(txa_f('network_supplier_title', 'Tourism operators')); ?></h3>
+                            <p class="mt-0.5 text-xs text-mid-gray"><?php echo esc_html(txa_f('network_supplier_copy', 'Products, rates and availability')); ?></p>
                         </div>
                     </div>
 
@@ -90,13 +91,14 @@ $distribution_channels = [
                         <span class="h-px flex-1 border-t border-dashed border-brand/40"></span>
                     </div>
 
-                    <p class="mb-3 text-center text-[11px] font-bold uppercase tracking-wide text-mid-gray">Connected
-                        booking systems</p>
+                    <p class="mb-3 text-center text-[11px] font-bold uppercase tracking-wide text-mid-gray">
+                        <?php echo esc_html(txa_f('network_booking_label', 'Connected booking systems')); ?>
+                    </p>
                     <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
                         <?php foreach ($booking_systems as $logo): ?>
                             <div class="txa-network-node grid min-h-[76px] place-items-center rounded-xl border border-line bg-white p-3"
                                 data-node="booking" tabindex="0">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/networks/' . $logo['file'])); ?>"
+                                <img src="<?php echo esc_url($logo['image']); ?>"
                                     alt="<?php echo esc_attr($logo['name']); ?>" class="max-h-10 max-w-full object-contain">
                             </div>
                         <?php endforeach; ?>
@@ -116,11 +118,11 @@ $distribution_channels = [
 
                 <div class="txa-network-node txgb-shadow-card rounded-2xl border-2 border-brand bg-white p-6 text-center"
                     data-node="txa" tabindex="0">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/logo-with-text.png')); ?>"
-                        alt="Tourism Exchange Great Britain" class="mx-auto h-16 w-auto">
-                    <p class="txgb-accent-text mt-4 text-[11px] font-extrabold uppercase tracking-[0.1em]">Tourism
-                        Exchange
-                        Great Britain</p>
+                    <img src="<?php echo esc_url(txa_img('network_exchange_logo', get_theme_file_uri('/images/logo-with-text.png'))); ?>"
+                        alt="<?php echo esc_attr(txa_f('network_exchange_logo_alt', 'Tourism Exchange Great Britain')); ?>" class="mx-auto h-16 w-auto">
+                    <p class="txgb-accent-text mt-4 text-[11px] font-extrabold uppercase tracking-[0.1em]">
+                        <?php echo esc_html(txa_f('network_exchange_label', 'Tourism Exchange Great Britain')); ?>
+                    </p>
                 </div>
 
                 <div class="flex items-center justify-center" aria-hidden="true">
@@ -136,14 +138,15 @@ $distribution_channels = [
 
                 <article class="txa-network-node rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6"
                     data-node="distributor" tabindex="0">
-                    <p class="mb-3 text-center text-[11px] font-bold uppercase tracking-wide text-mid-gray">Distribution
-                        platforms and channels</p>
+                    <p class="mb-3 text-center text-[11px] font-bold uppercase tracking-wide text-mid-gray">
+                        <?php echo esc_html(txa_f('network_channels_label', 'Distribution platforms and channels')); ?>
+                    </p>
                     <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-2">
                         <?php foreach ($distribution_channels as $channel): ?>
                             <div class="txa-network-node flex min-h-[86px] items-center justify-center rounded-xl border border-line bg-white p-3 text-center"
                                 data-node="<?php echo esc_attr($channel['type']); ?>" tabindex="0">
-                                <?php if (!empty($channel['file'])): ?>
-                                    <img src="<?php echo esc_url(get_theme_file_uri('/images/networks/' . $channel['file'])); ?>"
+                                <?php if (!empty($channel['image'])): ?>
+                                    <img src="<?php echo esc_url($channel['image']); ?>"
                                         alt="<?php echo esc_attr($channel['name']); ?>"
                                         class="max-h-10 max-w-full object-contain">
                                 <?php else: ?>
@@ -175,13 +178,14 @@ $distribution_channels = [
                     <div class="flex items-end justify-center gap-1 text-2xl" aria-hidden="true"><i
                             class="bi bi-person-walking"></i><i class="bi bi-person-standing-dress text-3xl"></i><i
                             class="bi bi-person-arms-up"></i></div>
-                    <h3 class="mt-3 text-base font-bold">Travellers</h3>
-                    <p class="mt-1 text-xs text-white/75">Discover and book</p>
+                    <h3 class="mt-3 text-base font-bold"><?php echo esc_html(txa_f('network_traveller_title', 'Travellers')); ?></h3>
+                    <p class="mt-1 text-xs text-white/75"><?php echo esc_html(txa_f('network_traveller_copy', 'Discover and book')); ?></p>
                 </div>
             </div>
 
-            <p class="mt-5 text-center text-[10px] font-bold uppercase tracking-[0.1em] text-mid-gray">Live products,
-                rates and availability move through one connected exchange</p>
+            <p class="mt-5 text-center text-[10px] font-bold uppercase tracking-[0.1em] text-mid-gray">
+                <?php echo esc_html(txa_f('network_flow_note', 'Live products, rates and availability move through one connected exchange')); ?>
+            </p>
         </div>
     </div>
 </section>

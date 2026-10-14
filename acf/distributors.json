@@ -20,7 +20,7 @@
         "key": "field_dist_seo_description",
         "label": "Meta Description",
         "name": "distributor_seo_description",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "TXGB gives distributors unique access to bookable British tourism inventory through flexible commercial and technical distribution models."
@@ -50,7 +50,7 @@
         "key": "field_dist_hero_copy",
         "label": "Hero Copy",
         "name": "distributor_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "TXGB gives distributors a pathway to British tourism suppliers across accommodation, tours, attractions, events and experiences. TXGB offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives."
@@ -110,7 +110,7 @@
         "key": "field_dist_ecosystem_copy",
         "label": "Copy",
         "name": "distributor_ecosystem_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "TXGB connects live tourism inventory with the websites and distribution channels travellers use to discover and book British experiences."
@@ -133,7 +133,7 @@
         "key": "field_dist_benefits_copy",
         "label": "Description",
         "name": "distributor_benefits_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Providing the connectivity required to scale your British tourism portfolio efficiently."
@@ -157,7 +157,7 @@
         "key": "field_dist_benefit_1_copy",
         "label": "Benefit 1 Copy",
         "name": "distributor_benefit_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Direct access to thousands of live-booked suppliers with real-time rates and availability."
@@ -181,7 +181,7 @@
         "key": "field_dist_benefit_2_copy",
         "label": "Benefit 2 Copy",
         "name": "distributor_benefit_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Support for multiple payment and commercial models including Net, Gross, and Commission."
@@ -205,7 +205,7 @@
         "key": "field_dist_benefit_3_copy",
         "label": "Benefit 3 Copy",
         "name": "distributor_benefit_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Leverage national and state tourism campaigns by distributing opt-in campaign deals."
@@ -229,7 +229,7 @@
         "key": "field_dist_benefit_4_copy",
         "label": "Benefit 4 Copy",
         "name": "distributor_benefit_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Connect once to TXGB and gain access to an entire ecosystem without individual integrations."
@@ -252,7 +252,7 @@
         "key": "field_dist_models_copy",
         "label": "Description",
         "name": "distributor_models_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "We provide multiple ways to consume inventory based on your technical maturity and business model."
@@ -276,7 +276,7 @@
         "key": "field_dist_model_1_copy",
         "label": "Model 1 Copy",
         "name": "distributor_model_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Direct JSON-based API for enterprise distributors who want total control over the booking UI and user experience."
@@ -314,7 +314,7 @@
         "key": "field_dist_model_2_copy",
         "label": "Model 2 Copy",
         "name": "distributor_model_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Branded booking widgets and search pages that integrate seamlessly into your website with minimal code."
@@ -352,7 +352,7 @@
         "key": "field_dist_model_3_copy",
         "label": "Model 3 Copy",
         "name": "distributor_model_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Support for traditional agency models where distributors hold accounts and manage payments offline."
@@ -390,7 +390,7 @@
         "key": "field_dist_model_4_copy",
         "label": "Model 4 Copy",
         "name": "distributor_model_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Targeted distribution focused on specific regions or events as part of institutional marketing efforts."
@@ -428,7 +428,7 @@
         "key": "field_dist_model_5_copy",
         "label": "Model 5 Copy",
         "name": "distributor_model_5_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Facilitates the Supplier transaction with the supplier as merchant. Distributors don't have PCI compliance or GDPR. Supplier is the merchant but distributor still gets credited with commission."
@@ -464,7 +464,7 @@
         "key": "field_dist_model_6_copy",
         "label": "Model 6 Copy",
         "name": "distributor_model_6_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Simple opt-in opt-out model for contracting. Single supplier contract legally covers all suppliers. Simple, fast, efficient."
@@ -515,7 +515,7 @@
         "key": "field_dist_campaign_copy",
         "label": "Copy",
         "name": "distributor_campaign_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "TXGB sits at the heart of British tourism. We work closely with STOs and RTOs to power booking engines for state-wide initiatives. Become a partner in these high-value trade campaigns."

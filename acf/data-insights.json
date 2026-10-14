@@ -20,7 +20,7 @@
         "key": "field_ins_seo_description",
         "label": "Meta Description",
         "name": "insights_seo_description",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Use TXGB destination data, dashboards, attribution and exports to understand visitor engagement, supplier activity and campaign performance."
@@ -64,7 +64,7 @@
         "key": "field_ins_hero_copy",
         "label": "Hero Copy",
         "name": "insights_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "TXGB gives destinations the capability to build useful analytics and consumer data sets. Dashboards, attribution data and exports can help DMOs understand visitor engagement, supplier activity, campaign ROI and the economic model of tourism."
@@ -117,7 +117,7 @@
         "key": "field_ins_capabilities_copy",
         "label": "Description",
         "name": "insights_capabilities_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "DMOs need evidence of marketing ROI, supplier engagement and local economic impact, but often lack real-time performance data."
@@ -147,7 +147,7 @@
         "key": "field_ins_dashboard_copy",
         "label": "Copy",
         "name": "insights_dashboard_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Monitor key industry metrics as they happen. Visualise visitor flow, booking surges and market shifts through a dynamic interface designed for DMO decision makers."
@@ -207,7 +207,7 @@
         "key": "field_ins_export_copy",
         "label": "Copy",
         "name": "insights_export_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Take your data anywhere. Export booking and consumer metrics into Excel or XML formats for deep internal auditing or offline presentation."
@@ -258,7 +258,7 @@
         "key": "field_ins_api_copy",
         "label": "Copy",
         "name": "insights_api_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Directly pipe your TXGB data into existing CRM or BI tools. Our robust Information API supports complex integrations for enterprise-level automation."
@@ -288,7 +288,7 @@
         "key": "field_ins_campaign_copy",
         "label": "Copy",
         "name": "insights_campaign_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Close the loop on marketing spend. Use unique attribution codes to track exactly which campaigns triggered bookings and visitor growth."
@@ -318,7 +318,7 @@
         "key": "field_ins_governance_copy",
         "label": "Copy",
         "name": "insights_governance_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Enterprise-grade privacy. We ensure all data access adheres to strict privacy, consent and governance rules to protect industry participants."

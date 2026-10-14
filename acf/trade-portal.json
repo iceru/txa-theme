@@ -41,7 +41,7 @@
         "key": "field_trd_hero_copy",
         "label": "Hero Copy",
         "name": "trade_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "TXGB can create a destination-specific landing page in Great Britain's National Trade Portal. The page can be accessed by URL or QR code and can present POIs, recommended experiences and suppliers with real-time booking access for domestic and international trade initiatives."
@@ -101,7 +101,7 @@
         "key": "field_trd_intro_copy",
         "label": "Copy",
         "name": "trade_intro_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Connecting trade partners to bookable local supply."
@@ -131,7 +131,7 @@
         "key": "field_trd_access_copy",
         "label": "Copy",
         "name": "trade_access_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Access the destination page via URL or QR code."
@@ -329,7 +329,7 @@
         "key": "field_trd_supply_copy",
         "label": "Copy",
         "name": "trade_supply_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Connect local supplier profiles, live availability, instant booking and confirmation tools in one trade-ready supply pathway."
@@ -618,7 +618,7 @@
         "key": "field_trd_cards_copy",
         "label": "Description",
         "name": "trade_cards_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Discover how the TXGB Trade Portal bridges the gap between local supply and global demand through a structured, professional interface."
@@ -641,7 +641,7 @@
         "key": "field_trd_card_1_copy",
         "label": "Card 1 Copy",
         "name": "trade_card_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Useful for trade shows, roadshows and trade campaigns. Instantly provide partners with a digital entry point to your region's best bookable product."
@@ -664,7 +664,7 @@
         "key": "field_trd_card_2_copy",
         "label": "Card 2 Copy",
         "name": "trade_card_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Provides a destination-branded entry point into supplier discovery and booking, ensuring your unique identity remains front and center."
@@ -687,7 +687,7 @@
         "key": "field_trd_card_3_copy",
         "label": "Card 3 Copy",
         "name": "trade_card_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Can reduce manual follow-up by making supplier contracting, content, images and descriptions, and bookable product easier to access for busy trade partners."
@@ -710,7 +710,7 @@
         "key": "field_trd_card_4_copy",
         "label": "Card 4 Copy",
         "name": "trade_card_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Supports the DMO role as a trade activation partner for local industry. Actively stimulate bookings and visibility for your regional operators without the heavy lifting."
@@ -740,7 +740,7 @@
         "key": "field_trd_inventory_1_copy",
         "label": "Point 1 Copy",
         "name": "trade_inventory_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Sync directly with supplier inventory for instant confirmation and zero overbookings."
@@ -756,7 +756,7 @@
         "key": "field_trd_inventory_2_copy",
         "label": "Point 2 Copy",
         "name": "trade_inventory_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Group products by theme, region, or campaign type to simplify the partner's journey."
@@ -772,7 +772,7 @@
         "key": "field_trd_inventory_3_copy",
         "label": "Point 3 Copy",
         "name": "trade_inventory_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Track which suppliers and experiences are getting the most attention from trade partners."

@@ -21,7 +21,7 @@
         "key": "field_blog_header_copy",
         "label": "Description",
         "name": "blog_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Explore practical perspectives on connected tourism, destination technology, distribution and the British visitor economy."

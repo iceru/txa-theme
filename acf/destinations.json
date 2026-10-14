@@ -20,7 +20,7 @@
         "key": "field_dest_seo_description",
         "label": "Meta Description",
         "name": "destination_seo_description",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "TXGB helps destination organisations move from inspiration-only marketing to connected, bookable visitor outcomes through Smart Destination infrastructure."
@@ -50,7 +50,7 @@
         "key": "field_dest_hero_copy",
         "label": "Hero Copy",
         "name": "destination_hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "TXGB helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXGB is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack."
@@ -117,7 +117,7 @@
         "key": "field_dest_what_copy",
         "label": "Copy",
         "name": "destination_what_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "A Smart destination generates inspiration and TXGB helps you own the conversion. Your organisation can use TXGB to activate destination websites and apps, digitise local supply, connect suppliers to distributors, build tactical microsites, support trade initiatives, enable economy-wide re-seller networks and collaborative commerce."
@@ -250,7 +250,7 @@
         "key": "field_dest_problem_copy",
         "label": "Description",
         "name": "destination_problem_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle."
@@ -267,7 +267,7 @@
         "key": "field_dest_problem_1_copy",
         "label": "Problem 1 Copy",
         "name": "destination_problem_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Suppliers use 100+ different booking systems, making a central portal impossible."
@@ -284,7 +284,7 @@
         "key": "field_dest_problem_2_copy",
         "label": "Problem 2 Copy",
         "name": "destination_problem_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Users leave the destination site to book, resulting in massive drop-offs, booking funds going offshore and lost data."
@@ -301,7 +301,7 @@
         "key": "field_dest_problem_3_copy",
         "label": "Problem 3 Copy",
         "name": "destination_problem_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "DMOs know who looks at pages, but not who actually visits the region."
@@ -318,7 +318,7 @@
         "key": "field_dest_problem_4_copy",
         "label": "Problem 4 Copy",
         "name": "destination_problem_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Updating content and product status across platforms is labor-intensive."
@@ -350,7 +350,7 @@
         "key": "field_dest_solution_1_copy",
         "label": "Solution 1 Copy",
         "name": "destination_solution_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "One connection to TXGB unlocks bookable local inventory regardless of software."
@@ -374,7 +374,7 @@
         "key": "field_dest_solution_2_copy",
         "label": "Solution 2 Copy",
         "name": "destination_solution_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Keep visitors on your domain from inspiration to confirmation."
@@ -398,7 +398,7 @@
         "key": "field_dest_solution_3_copy",
         "label": "Solution 3 Copy",
         "name": "destination_solution_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Own the transaction data and attribution for every campaign dollar spent."
@@ -436,7 +436,7 @@
         "key": "field_dest_capability_1_copy",
         "label": "Capability 1 Copy",
         "name": "destination_capability_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Use B2B and B2C destination websites, apps, APIs, widgets and custom booking pages to connect brand, content and conversion."
@@ -460,7 +460,7 @@
         "key": "field_dest_capability_2_copy",
         "label": "Capability 2 Copy",
         "name": "destination_capability_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Support multiple supplier pathways, including connected systems, free or low-cost booking options, on-request, content-only and smart referral models."
@@ -484,7 +484,7 @@
         "key": "field_dest_capability_3_copy",
         "label": "Capability 3 Copy",
         "name": "destination_capability_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Data and insights to drive growth that belongs to your destination, not a third-party platform."
@@ -508,7 +508,7 @@
         "key": "field_dest_capability_4_copy",
         "label": "Capability 4 Copy",
         "name": "destination_capability_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Aggregate supplier and destination content and make it available to distributors, trade channels, DMO-owned assets and connected APIs."
@@ -532,7 +532,7 @@
         "key": "field_dest_capability_5_copy",
         "label": "Capability 5 Copy",
         "name": "destination_capability_5_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Use a platform model that supports multiple booking systems and commercial models."
@@ -555,7 +555,7 @@
         "key": "field_dest_data_paragraph_1",
         "label": "Paragraph 1",
         "name": "destination_data_paragraph_1",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Most destination marketing generates interest that's impossible to trace. Visitors click through to OTA listings or third-party pages, and the data disappears. TXGB gives destinations something different: first-party booking and engagement data that belongs to you."
@@ -564,7 +564,7 @@
         "key": "field_dest_data_paragraph_2",
         "label": "Paragraph 2",
         "name": "destination_data_paragraph_2",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "For the first time, your destination can see, in one place, which campaigns converted, which suppliers are performing, and where visitor spend is flowing through your local economy."
@@ -581,7 +581,7 @@
         "key": "field_dest_data_point_1_text",
         "label": "Bullet 1 Text",
         "name": "destination_data_point_1_text",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Real-time Dashboards: Track supplier activity, campaign performance and visitor engagement in one place."
@@ -598,7 +598,7 @@
         "key": "field_dest_data_point_2_text",
         "label": "Bullet 2 Text",
         "name": "destination_data_point_2_text",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Attribution and ROI: Connect marketing spend to actual booking outcomes with attribution codes."
@@ -615,7 +615,7 @@
         "key": "field_dest_data_point_3_text",
         "label": "Bullet 3 Text",
         "name": "destination_data_point_3_text",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Data Ownership and Integration: Export insights or use APIs to flow data into your CRM or BI tools."
@@ -693,7 +693,7 @@
         "key": "field_dest_step_1_copy",
         "label": "Step 1 Copy",
         "name": "destination_step_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Define the destination assets for activation: website, campaign, trade, virtual concierge, data or a combination."
@@ -717,7 +717,7 @@
         "key": "field_dest_step_2_copy",
         "label": "Step 2 Copy",
         "name": "destination_step_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Identify priority suppliers, POIs, recommended experiences, itineraries and local partners."
@@ -741,7 +741,7 @@
         "key": "field_dest_step_3_copy",
         "label": "Step 3 Copy",
         "name": "destination_step_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Onboard suppliers through the most appropriate pathway for each business."
@@ -765,7 +765,7 @@
         "key": "field_dest_step_4_copy",
         "label": "Step 4 Copy",
         "name": "destination_step_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Create branded booking pages, destination landing pages, widgets, QR links and campaign assets."
@@ -789,7 +789,7 @@
         "key": "field_dest_step_5_copy",
         "label": "Step 5 Copy",
         "name": "destination_step_5_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Launch DMO website activation, microsite, trade portal or local reseller network."
@@ -813,7 +813,7 @@
         "key": "field_dest_step_6_copy",
         "label": "Step 6 Copy",
         "name": "destination_step_6_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Track engagement, conversion, attribution and data exports through dashboards and the agreed reporting model."

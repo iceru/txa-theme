@@ -27,7 +27,7 @@
         "key": "field_txa_hero_copy",
         "label": "Hero Copy",
         "name": "hero_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "TXGB connects British tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online."
@@ -94,7 +94,7 @@
         "key": "field_txa_intro_paragraph_1",
         "label": "Paragraph 1",
         "name": "intro_paragraph_1",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "Tourism Exchange Great Britain was established in 2008 in partnership with ATDW (an organisation representing all British State and Federal Government Tourism Organisations) as the nation's open, commercially neutral booking exchange."
@@ -103,7 +103,7 @@
         "key": "field_txa_intro_paragraph_2",
         "label": "Paragraph 2",
         "name": "intro_paragraph_2",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 5,
         "new_lines": "",
         "placeholder": "Selected through a global tender, TXGB was built to give every British tourism supplier, regardless of category, size or booking system, fair access to ecommerce and online distribution. The same exchange technology now powers tourism platforms in the United Kingdom, Japan, the United States and Saudi Arabia. TXGB remains Great Britain's own."
@@ -123,6 +123,306 @@
         "name": "intro_image_alt",
         "type": "text",
         "placeholder": "Glenelg, Adelaide"
+      },
+
+      {
+        "key": "field_txa_tab_network",
+        "label": "Connected Tourism Ecosystem",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_network_eyebrow",
+        "label": "Eyebrow",
+        "name": "network_eyebrow",
+        "type": "text",
+        "placeholder": "A Connected Tourism Ecosystem"
+      },
+      {
+        "key": "field_txa_network_heading",
+        "label": "Heading",
+        "name": "network_heading",
+        "type": "text",
+        "placeholder": "One exchange connecting Great Britain's tourism ecosystem"
+      },
+      {
+        "key": "field_txa_network_copy",
+        "label": "Description",
+        "name": "network_copy",
+        "type": "wysiwyg",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0,
+        "placeholder": "Tourism products flow from connected booking systems through TXA to destination websites, distributors, travel trade and travellers."
+      },
+      {
+        "key": "field_txa_network_supplier_icon",
+        "label": "Supplier Icon (Bootstrap Icons class)",
+        "name": "network_supplier_icon",
+        "type": "text",
+        "placeholder": "bi-buildings"
+      },
+      {
+        "key": "field_txa_network_supplier_title",
+        "label": "Supplier Title",
+        "name": "network_supplier_title",
+        "type": "text",
+        "placeholder": "Tourism operators"
+      },
+      {
+        "key": "field_txa_network_supplier_copy",
+        "label": "Supplier Description",
+        "name": "network_supplier_copy",
+        "type": "text",
+        "placeholder": "Products, rates and availability"
+      },
+      {
+        "key": "field_txa_network_booking_label",
+        "label": "Booking Systems Label",
+        "name": "network_booking_label",
+        "type": "text",
+        "placeholder": "Connected booking systems"
+      },
+
+      {
+        "key": "field_txa_network_booking_1_name",
+        "label": "Booking System 1 Name",
+        "name": "network_booking_1_name",
+        "type": "text",
+        "placeholder": "FareHarbor"
+      },
+      {
+        "key": "field_txa_network_booking_1_logo",
+        "label": "Booking System 1 Logo",
+        "name": "network_booking_1_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_booking_2_name",
+        "label": "Booking System 2 Name",
+        "name": "network_booking_2_name",
+        "type": "text",
+        "placeholder": "SiteMinder"
+      },
+      {
+        "key": "field_txa_network_booking_2_logo",
+        "label": "Booking System 2 Logo",
+        "name": "network_booking_2_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_booking_3_name",
+        "label": "Booking System 3 Name",
+        "name": "network_booking_3_name",
+        "type": "text",
+        "placeholder": "NewBook"
+      },
+      {
+        "key": "field_txa_network_booking_3_logo",
+        "label": "Booking System 3 Logo",
+        "name": "network_booking_3_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_booking_4_name",
+        "label": "Booking System 4 Name",
+        "name": "network_booking_4_name",
+        "type": "text",
+        "placeholder": "Rezobx"
+      },
+      {
+        "key": "field_txa_network_booking_4_logo",
+        "label": "Booking System 4 Logo",
+        "name": "network_booking_4_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_booking_5_name",
+        "label": "Booking System 5 Name",
+        "name": "network_booking_5_name",
+        "type": "text",
+        "placeholder": "Rezdy"
+      },
+      {
+        "key": "field_txa_network_booking_5_logo",
+        "label": "Booking System 5 Logo",
+        "name": "network_booking_5_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_booking_6_name",
+        "label": "Booking System 6 Name",
+        "name": "network_booking_6_name",
+        "type": "text",
+        "placeholder": "RMS"
+      },
+      {
+        "key": "field_txa_network_booking_6_logo",
+        "label": "Booking System 6 Logo",
+        "name": "network_booking_6_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+
+      {
+        "key": "field_txa_network_exchange_logo",
+        "label": "Exchange Logo",
+        "name": "network_exchange_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_exchange_logo_alt",
+        "label": "Exchange Logo Alt Text",
+        "name": "network_exchange_logo_alt",
+        "type": "text",
+        "placeholder": "Tourism Exchange Great Britain"
+      },
+      {
+        "key": "field_txa_network_exchange_label",
+        "label": "Exchange Label",
+        "name": "network_exchange_label",
+        "type": "text",
+        "placeholder": "Tourism Exchange Great Britain"
+      },
+      {
+        "key": "field_txa_network_channels_label",
+        "label": "Distribution Channels Label",
+        "name": "network_channels_label",
+        "type": "text",
+        "placeholder": "Distribution platforms and channels"
+      },
+
+      {
+        "key": "field_txa_network_channel_1_name",
+        "label": "Channel 1 Name",
+        "name": "network_channel_1_name",
+        "type": "text",
+        "placeholder": "Destination websites"
+      },
+      {
+        "key": "field_txa_network_channel_1_icon",
+        "label": "Channel 1 Icon (Bootstrap Icons class)",
+        "name": "network_channel_1_icon",
+        "type": "text",
+        "placeholder": "bi-globe2"
+      },
+      {
+        "key": "field_txa_network_channel_2_name",
+        "label": "Channel 2 Name",
+        "name": "network_channel_2_name",
+        "type": "text",
+        "placeholder": "Booking.com"
+      },
+      {
+        "key": "field_txa_network_channel_2_logo",
+        "label": "Channel 2 Logo",
+        "name": "network_channel_2_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_channel_3_name",
+        "label": "Channel 3 Name",
+        "name": "network_channel_3_name",
+        "type": "text",
+        "placeholder": "Google Things to do"
+      },
+      {
+        "key": "field_txa_network_channel_3_logo",
+        "label": "Channel 3 Logo",
+        "name": "network_channel_3_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_channel_4_name",
+        "label": "Channel 4 Name",
+        "name": "network_channel_4_name",
+        "type": "text",
+        "placeholder": "Tripadvisor"
+      },
+      {
+        "key": "field_txa_network_channel_4_logo",
+        "label": "Channel 4 Logo",
+        "name": "network_channel_4_logo",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_network_channel_5_name",
+        "label": "Channel 5 Name",
+        "name": "network_channel_5_name",
+        "type": "text",
+        "placeholder": "Travel trade"
+      },
+      {
+        "key": "field_txa_network_channel_5_icon",
+        "label": "Channel 5 Icon (Bootstrap Icons class)",
+        "name": "network_channel_5_icon",
+        "type": "text",
+        "placeholder": "bi-briefcase"
+      },
+      {
+        "key": "field_txa_network_channel_6_name",
+        "label": "Channel 6 Name",
+        "name": "network_channel_6_name",
+        "type": "text",
+        "placeholder": "Tour operators"
+      },
+      {
+        "key": "field_txa_network_channel_6_icon",
+        "label": "Channel 6 Icon (Bootstrap Icons class)",
+        "name": "network_channel_6_icon",
+        "type": "text",
+        "placeholder": "bi-signpost-split"
+      },
+      {
+        "key": "field_txa_network_traveller_title",
+        "label": "Traveller Title",
+        "name": "network_traveller_title",
+        "type": "text",
+        "placeholder": "Travellers"
+      },
+      {
+        "key": "field_txa_network_traveller_copy",
+        "label": "Traveller Description",
+        "name": "network_traveller_copy",
+        "type": "text",
+        "placeholder": "Discover and book"
+      },
+      {
+        "key": "field_txa_network_flow_note",
+        "label": "Flow Note",
+        "name": "network_flow_note",
+        "type": "text",
+        "placeholder": "Live products, rates and availability move through one connected exchange"
       },
 
       {
@@ -149,7 +449,7 @@
         "key": "field_txa_pathway_copy",
         "label": "Description",
         "name": "pathway_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Each pathway connects to the same national exchange infrastructure, with different entry points for each part of the visitor economy."
@@ -166,7 +466,7 @@
         "key": "field_txa_pathway_1_copy",
         "label": "Card 1 Copy",
         "name": "pathway_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Connect through your booking system and make your product bookable across more channels."
@@ -206,7 +506,7 @@
         "key": "field_txa_pathway_2_copy",
         "label": "Card 2 Copy",
         "name": "pathway_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Become a Smart Destination and make local supply bookable through your own digital assets."
@@ -246,7 +546,7 @@
         "key": "field_txa_pathway_3_copy",
         "label": "Card 3 Copy",
         "name": "pathway_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Access bookable British tourism inventory through TXGB connected supply."
@@ -286,7 +586,7 @@
         "key": "field_txa_pathway_4_copy",
         "label": "Card 4 Copy",
         "name": "pathway_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Connect your booking system to TXGB and unlock distribution for your customers."
@@ -377,7 +677,7 @@
         "key": "field_txa_smart_copy",
         "label": "Copy",
         "name": "smart_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "Smart Destinations use TXGB as digital infrastructure for their visitor economy. It connects local suppliers, destination content, owned websites and apps, trade channels, local reseller networks and real-time data."
@@ -429,7 +729,7 @@
         "key": "field_txa_smart_card_1_copy",
         "label": "Smart Card 1 Copy",
         "name": "smart_card_1_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Turn destination websites, apps and visitor touchpoints into conversion-ready channels."
@@ -460,7 +760,7 @@
         "key": "field_txa_smart_card_2_copy",
         "label": "Smart Card 2 Copy",
         "name": "smart_card_2_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Help local operators bring bookable products, pricing and availability online."
@@ -491,7 +791,7 @@
         "key": "field_txa_smart_card_3_copy",
         "label": "Smart Card 3 Copy",
         "name": "smart_card_3_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Open inventory pathways to trade channels, resellers and owned destination channels."
@@ -522,7 +822,7 @@
         "key": "field_txa_smart_card_4_copy",
         "label": "Smart Card 4 Copy",
         "name": "smart_card_4_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 3,
         "new_lines": "",
         "placeholder": "Use activity, campaign and booking signals to see what is driving outcomes."
@@ -559,7 +859,7 @@
         "key": "field_txa_data_copy",
         "label": "Copy",
         "name": "data_copy",
-        "type": "textarea",
+        "type": "wysiwyg",
         "rows": 4,
         "new_lines": "",
         "placeholder": "TXGB helps destinations understand supplier activity, campaign performance, visitor engagement and booking outcomes through dashboards, attribution and data exports."
