@@ -63,67 +63,58 @@ if (!function_exists('txa_button')) {
 if (!function_exists('txa_hero_slides')) {
     function txa_hero_slides(): array
     {
-        $normalize_url = function ($value, string $default): string {
-            if (is_array($value)) {
-                $value = $value['url'] ?? '';
-            }
+        $normalize_url = function ($value): string {
             $value = trim((string) $value);
-            if ('' === $value) {
-                $value = $default;
-            }
             if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
                 return home_url($value);
             }
             return $value;
         };
 
-        $fallback = [
-            'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
-            'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
-            'copy' => txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'),
-            'image' => txa_img('hero_image', get_theme_file_uri('/images/new/homepage-hero.jpg')),
-            'buttons' => [
-                1 => [
-                    'label' => txa_f('hero_primary_label', 'Apply Now'),
-                    'url' => $normalize_url(txa_f('hero_primary_url'), home_url('/apply-now/')),
-                ],
-                2 => [
-                    'label' => txa_f('hero_secondary_label', 'Request Smart Destination Demo'),
-                    'url' => $normalize_url(txa_f('hero_secondary_url'), home_url('/contact/')),
-                ],
-            ],
-        ];
+        $default_image = txa_img('hero_image', get_theme_file_uri('/images/new/homepage-hero.jpg'));
 
         $posts = get_posts([
             'post_type' => 'home_slider',
             'post_status' => 'publish',
             'posts_per_page' => -1,
-            'orderby' => ['menu_order' => 'ASC', 'date' => 'DESC'],
+            'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC'],
         ]);
 
         if (!$posts) {
-            return [$fallback];
+            return [[
+                'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
+                'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
+                'copy' => txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'),
+                'image' => $default_image,
+                'buttons' => [
+                    1 => [
+                        'label' => txa_f('hero_primary_label', 'Apply Now'),
+                        'url' => $normalize_url(txa_f('hero_primary_url', '/apply-now/')),
+                    ],
+                    2 => [
+                        'label' => txa_f('hero_secondary_label', 'Request Smart Destination Demo'),
+                        'url' => $normalize_url(txa_f('hero_secondary_url', '/contact/')),
+                    ],
+                ],
+            ]];
         }
 
         $slides = [];
         foreach ($posts as $post) {
-            $image = get_the_post_thumbnail_url($post, 'full');
-            $label = function_exists('get_field') ? get_field('slide_label', $post->ID) : '';
-            $copy = trim(wp_strip_all_tags($post->post_excerpt));
             $buttons = [];
             foreach ([1, 2] as $n) {
                 $button_label = function_exists('get_field') ? trim((string) get_field("button_{$n}_label", $post->ID)) : '';
-                $button_url = function_exists('get_field') ? get_field("button_{$n}_url", $post->ID) : '';
-                $buttons[$n] = [
-                    'label' => $button_label ?: $fallback['buttons'][$n]['label'],
-                    'url' => $normalize_url($button_url, $fallback['buttons'][$n]['url']),
-                ];
+                $button_url = function_exists('get_field') ? $normalize_url(get_field("button_{$n}_url", $post->ID)) : '';
+                if ('' !== $button_label && '' !== $button_url) {
+                    $buttons[$n] = ['label' => $button_label, 'url' => $button_url];
+                }
             }
+
             $slides[] = [
-                'label' => $label ?: $fallback['label'],
-                'title' => get_the_title($post) ?: $fallback['title'],
-                'copy' => $copy ?: $fallback['copy'],
-                'image' => $image ?: $fallback['image'],
+                'label' => function_exists('get_field') ? trim((string) get_field('slide_label', $post->ID)) : '',
+                'title' => get_the_title($post),
+                'copy' => trim(wp_strip_all_tags($post->post_excerpt)),
+                'image' => get_the_post_thumbnail_url($post, 'full') ?: $default_image,
                 'buttons' => $buttons,
             ];
         }
@@ -183,56 +174,58 @@ if (!$how_txa_works_embed) {
     <section class="px-4 pb-6 pt-3 sm:pt-5 lg:px-16 lg:pb-16 lg:pt-8">
         <div class="mx-auto max-w-[1312px]">
             <div class="txa-hero-slider relative min-h-[590px] overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]"
-                data-hero-slider>
-                <?php foreach ($hero_slides as $index => $slide): ?>
-                    <img src="<?php echo esc_url($slide['image']); ?>" alt=""
-                        class="<?php echo 0 === $index ? 'opacity-100' : 'opacity-0'; ?> absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700"
-                        data-hero-slide-image="<?php echo esc_attr($index); ?>">
-                <?php endforeach; ?>
-                <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
-                <div
-                    class="relative z-10 flex min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
-                    <div class="w-full max-w-[760px]">
-                        <p data-hero-slide-label
-                            class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                            <?php echo esc_html($hero_slides['label']); ?>
-                        </p>
-                        <h1 data-hero-slide-title
-                            class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                            <?php echo esc_html($hero_slides['title']); ?>
-                        </h1>
-                        <p data-hero-slide-copy
-                            class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                            <?php echo esc_html($hero_slides['copy']); ?>
-                        </p>
-                        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-                            <?php foreach ([1, 2] as $n):
-                                $button = $hero_slides['buttons'][$n];
-                                echo txa_button(
-                                    $button['label'],
-                                    $button['url'],
-                                    1 === $n ? 'primary' : 'light',
-                                    'data-hero-button="' . $n . '"' . ('' === $button['label'] ? ' style="display:none"' : '')
-                                );
-                            endforeach; ?>
+                data-txa-slider data-autoplay="6000" aria-roledescription="carousel" aria-label="Featured">
+                <?php foreach ($hero_slides as $index => $slide):
+                    $is_first = 0 === $index;
+                    $heading_tag = $is_first ? 'h1' : 'h2'; ?>
+                    <div class="<?php echo $is_first ? 'z-10 opacity-100' : 'pointer-events-none z-0 opacity-0'; ?> absolute inset-0 transition-opacity duration-700"
+                        data-txa-slide role="group" aria-roledescription="slide"
+                        aria-label="<?php echo esc_attr(($index + 1) . ' of ' . count($hero_slides)); ?>"
+                        <?php echo $is_first ? '' : 'inert'; ?>>
+                        <img src="<?php echo esc_url($slide['image']); ?>" alt=""
+                            class="absolute inset-0 h-full w-full object-cover object-center"
+                            <?php echo $is_first ? 'fetchpriority="high"' : 'loading="lazy"'; ?>>
+                        <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
+                        <div
+                            class="relative z-10 flex h-full min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
+                            <div class="w-full max-w-[760px]">
+                                <?php if ('' !== $slide['label']): ?>
+                                    <p
+                                        class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold uppercase leading-5 text-white sm:px-5 sm:py-3 sm:text-base">
+                                        <?php echo esc_html($slide['label']); ?>
+                                    </p>
+                                <?php endif; ?>
+                                <<?php echo $heading_tag; ?>
+                                    class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
+                                    <?php echo esc_html($slide['title']); ?>
+                                </<?php echo $heading_tag; ?>>
+                                <?php if ('' !== $slide['copy']): ?>
+                                    <p class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
+                                        <?php echo esc_html($slide['copy']); ?>
+                                    </p>
+                                <?php endif; ?>
+                                <?php if ($slide['buttons']): ?>
+                                    <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                                        <?php foreach ($slide['buttons'] as $n => $button) {
+                                            echo txa_button($button['label'], $button['url'], 1 === $n ? 'primary' : 'light');
+                                        } ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white p-2.5 shadow-sm sm:bottom-6 sm:left-auto sm:right-6 sm:translate-x-0 sm:p-3 lg:bottom-8 lg:right-8"
-                    aria-label="Hero slides">
-                    <?php foreach ($hero_slides as $index => $slide): ?><button type="button"
-                            class="<?php echo 0 === $index ? 'w-7 bg-brand' : 'w-2.5 bg-near-black/10'; ?> h-2.5 rounded-full transition-all"
-                            aria-label="<?php echo esc_attr('Show slide ' . ($index + 1) . ': ' . $slide['title']); ?>"
-                            aria-pressed="<?php echo 0 === $index ? 'true' : 'false'; ?>"
-                            data-hero-slide-label-value="<?php echo esc_attr($slide['label']); ?>"
-                            data-hero-slide-title-value="<?php echo esc_attr($slide['title']); ?>"
-                            data-hero-slide-copy-value="<?php echo esc_attr($slide['copy']); ?>"
-                            data-hero-slide-dot="<?php echo esc_attr($index); ?>"
-                            data-hero-button-1-label="<?php echo esc_attr($slide['buttons'][1]['label']); ?>"
-                            data-hero-button-1-url="<?php echo esc_url($slide['buttons'][1]['url']); ?>"
-                            data-hero-button-2-label="<?php echo esc_attr($slide['buttons'][2]['label']); ?>"
-                            data-hero-button-2-url="<?php echo esc_url($slide['buttons'][2]['url']); ?>"></button><?php endforeach; ?>
-                </div>
+                <?php endforeach; ?>
+
+                <?php if (count($hero_slides) > 1): ?>
+                    <div class="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white p-2.5 shadow-sm sm:bottom-6 sm:left-auto sm:right-6 sm:translate-x-0 sm:p-3 lg:bottom-8 lg:right-8"
+                        role="group" aria-label="Slide controls">
+                        <?php foreach ($hero_slides as $index => $slide): ?><button type="button"
+                                class="<?php echo 0 === $index ? 'w-7 bg-brand' : 'w-2.5 bg-near-black/10'; ?> h-2.5 rounded-full transition-all"
+                                aria-label="<?php echo esc_attr('Show slide ' . ($index + 1) . ': ' . $slide['title']); ?>"
+                                aria-pressed="<?php echo 0 === $index ? 'true' : 'false'; ?>"
+                                data-txa-dot></button><?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -386,36 +379,71 @@ if (!$how_txa_works_embed) {
 </article>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var slider = document.querySelector('[data-hero-slider]');
-        if (!slider) return;
-        var dots = slider.querySelectorAll('[data-hero-slide-dot]');
-        var buttons = {
-            1: slider.querySelector('[data-hero-button="1"]'),
-            2: slider.querySelector('[data-hero-button="2"]')
-        };
+        document.querySelectorAll('[data-txa-slider]').forEach(function(slider) {
+            var slides = Array.prototype.slice.call(slider.querySelectorAll('[data-txa-slide]'));
+            var dots = Array.prototype.slice.call(slider.querySelectorAll('[data-txa-dot]'));
+            if (slides.length < 2) return;
 
-        function sync(dot) {
-            [1, 2].forEach(function(n) {
-                var el = buttons[n];
-                if (!el) return;
-                var label = dot.getAttribute('data-hero-button-' + n + '-label');
-                el.textContent = label;
-                el.setAttribute('href', dot.getAttribute('data-hero-button-' + n + '-url'));
-                el.style.display = label ? '' : 'none';
-            });
-        }
+            var delay = parseInt(slider.getAttribute('data-autoplay'), 10) || 6000;
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var current = 0;
+            var timer = null;
 
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(m) {
-                if (m.target.getAttribute('aria-pressed') === 'true') sync(m.target);
-            });
-        });
+            function show(index) {
+                current = (index + slides.length) % slides.length;
 
-        dots.forEach(function(dot) {
-            observer.observe(dot, {
-                attributes: true,
-                attributeFilter: ['aria-pressed']
+                slides.forEach(function(slide, i) {
+                    var active = i === current;
+                    slide.classList.toggle('opacity-100', active);
+                    slide.classList.toggle('z-10', active);
+                    slide.classList.toggle('opacity-0', !active);
+                    slide.classList.toggle('z-0', !active);
+                    slide.classList.toggle('pointer-events-none', !active);
+                    if (active) {
+                        slide.removeAttribute('inert');
+                    } else {
+                        slide.setAttribute('inert', '');
+                    }
+                });
+
+                dots.forEach(function(dot, i) {
+                    var active = i === current;
+                    dot.classList.toggle('w-7', active);
+                    dot.classList.toggle('bg-brand', active);
+                    dot.classList.toggle('w-2.5', !active);
+                    dot.classList.toggle('bg-near-black/10', !active);
+                    dot.setAttribute('aria-pressed', active ? 'true' : 'false');
+                });
+            }
+
+            function stop() {
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+            }
+
+            function start() {
+                if (reduceMotion) return;
+                stop();
+                timer = setInterval(function() {
+                    show(current + 1);
+                }, delay);
+            }
+
+            dots.forEach(function(dot, i) {
+                dot.addEventListener('click', function() {
+                    show(i);
+                    start();
+                });
             });
+
+            slider.addEventListener('mouseenter', stop);
+            slider.addEventListener('mouseleave', start);
+            slider.addEventListener('focusin', stop);
+            slider.addEventListener('focusout', start);
+
+            start();
         });
     });
 </script>
