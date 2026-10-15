@@ -124,9 +124,9 @@ $timeline_values = $default_timeline_values;
                         <h1
                             class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
                             <?php echo esc_html(txa_about_field('about_hero_title', 'Built for Great Britain’s tourism industry')); ?></h1>
-                        <p
+                        <div
                             class="mt-4 max-w-[660px] text-base font-medium leading-6 !text-white sm:text-lg sm:leading-[30px]">
-                            <?php echo wp_kses_post(txa_about_field('about_hero_copy', 'Our journey started in Great Britain, being selected through a global tender in 2008 to partner with the British Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs. We operate as the structural backbone that allows local operators to compete on a global scale while maintaining their commercial independence.')); ?></p>
+                            <?php echo wp_kses_post(txa_about_field('about_hero_copy', 'Our journey started in Great Britain, being selected through a global tender in 2008 to partner with the British Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs. We operate as the structural backbone that allows local operators to compete on a global scale while maintaining their commercial independence.')); ?></div>
                     </div>
                 </div>
             </div>
