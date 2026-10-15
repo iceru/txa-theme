@@ -22,12 +22,12 @@ $system_items = [
 
 $platform_items = [
     ['icon' => 'bi-window-stack', 'label' => 'Supplier\'s own website'],
-    ['icon' => 'bi-briefcase', 'label' => 'Travel trade'],
+    ['icon' => 'bi-share', 'label' => 'Social media channels'],
     ['icon' => 'bi-buildings', 'label' => 'Local Gov’t/DMO website', 'span' => true],
     ['icon' => 'bi-layout-text-window', 'label' => 'Destination Microsites'],
     ['icon' => 'bi-chat-dots', 'label' => 'Virtual Concierge'],
     ['icon' => 'bi-geo-alt', 'label' => 'Google'],
-    ['icon' => 'bi-share', 'label' => 'Social media channels'],
+    ['icon' => 'bi-briefcase', 'label' => 'Travel trade'],
     [
         'icon' => 'bi-window',
         'label' => 'Various OTAs',
