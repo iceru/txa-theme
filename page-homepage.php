@@ -116,6 +116,7 @@ if (!function_exists('txa_hero_slides')) {
                 'copy' => trim(wp_strip_all_tags($post->post_excerpt)),
                 'image' => get_the_post_thumbnail_url($post, 'full') ?: $default_image,
                 'buttons' => $buttons,
+                'url' => function_exists('get_field') ? $normalize_url(get_field('slide_url', $post->ID)) : '',
             ];
         }
 
@@ -186,8 +187,12 @@ if (!$how_txa_works_embed) {
                             class="absolute inset-0 h-full w-full object-cover object-center"
                             <?php echo $is_first ? 'fetchpriority="high"' : 'loading="lazy"'; ?>>
                         <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
+                        <?php if (!empty($slide['url'])): ?>
+                            <a href="<?php echo esc_url($slide['url']); ?>" class="absolute inset-0 z-10"
+                                aria-label="<?php echo esc_attr($slide['title']); ?>"></a>
+                        <?php endif; ?>
                         <div
-                            class="relative z-10 flex h-full min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
+                            class="<?php echo !empty($slide['url']) ? 'pointer-events-none' : ''; ?> relative z-20 flex h-full min-h-[590px] items-center px-5 py-10 sm:min-h-[560px] sm:px-8 sm:py-16 lg:min-h-[600px] lg:px-8 lg:py-24">
                             <div class="w-full max-w-[760px]">
                                 <?php if ('' !== $slide['label']): ?>
                                     <p
@@ -205,7 +210,7 @@ if (!$how_txa_works_embed) {
                                     </p>
                                 <?php endif; ?>
                                 <?php if ($slide['buttons']): ?>
-                                    <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                                    <div class="pointer-events-auto mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                                         <?php foreach ($slide['buttons'] as $n => $button) {
                                             echo txa_button($button['label'], $button['url'], 1 === $n ? 'primary' : 'light');
                                         } ?>
