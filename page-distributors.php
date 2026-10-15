@@ -144,7 +144,7 @@ foreach ($models as $i => $model) {
                 <p class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">
                     <?php echo esc_html(txa_f('distributor_ecosystem_copy', 'TXA connects live tourism inventory with the websites and distribution channels travellers use to discover and book Australian experiences.')); ?></p>
             </div>
-            <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'dmo']); ?>
+            <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'distributor']); ?>
         </div>
     </section>
 

@@ -61,14 +61,45 @@ if (!function_exists('txa_button')) {
     }
 }
 
-$hero_slides = [
-    [
-        'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
-        'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
-        'copy' => txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'),
-        'image' => txa_img('hero_image', get_theme_file_uri('/images/new/homepage-hero.jpg')),
-    ],
-];
+if (!function_exists('txa_hero_slides')) {
+    function txa_hero_slides(): array
+    {
+        $fallback = [
+            'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
+            'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
+            'copy' => txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'),
+            'image' => txa_img('hero_image', get_theme_file_uri('/images/new/homepage-hero.jpg')),
+        ];
+
+        $posts = get_posts([
+            'post_type' => 'home_slider',
+            'post_status' => 'publish',
+            'posts_per_page' => -1,
+            'orderby' => ['menu_order' => 'ASC', 'date' => 'DESC'],
+        ]);
+
+        if (!$posts) {
+            return [$fallback];
+        }
+
+        $slides = [];
+        foreach ($posts as $post) {
+            $image = get_the_post_thumbnail_url($post, 'full');
+            $label = function_exists('get_field') ? get_field('slide_label', $post->ID) : '';
+            $copy = trim(wp_strip_all_tags($post->post_excerpt));
+            $slides[] = [
+                'label' => $label ?: $fallback['label'],
+                'title' => get_the_title($post) ?: $fallback['title'],
+                'copy' => $copy ?: $fallback['copy'],
+                'image' => $image ?: $fallback['image'],
+            ];
+        }
+
+        return $slides;
+    }
+}
+
+$hero_slides = txa_hero_slides();
 
 $audiences = [
     ['title' => 'Tourism Suppliers', 'copy' => 'Connect through your booking system and make your product bookable across more channels.', 'cta' => 'Apply Now', 'url' => home_url('/suppliers/'), 'image' => get_theme_file_uri('/images/new/homepage-suppliers.jpg')],
@@ -111,7 +142,7 @@ $how_txa_works_embed = is_string($how_txa_works_video) && false !== strpos($how_
     : ($how_txa_works_video ? wp_oembed_get($how_txa_works_video, ['width' => 1312, 'height' => 551]) : '');
 
 if (!$how_txa_works_embed) {
-    $how_txa_works_embed = '<iframe src="https://www.youtube.com/embed/1sPtIwpXi6M?si=56zHnuGjLdztmnOv" width="1312" height="551" title="How TXA works video placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>';
+    $how_txa_works_embed = '<iframe title="vimeo-player" src="https://player.vimeo.com/video/471241346?h=2b77c9cf5d" width="1321" height="551" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>';
 }
 ?>
 

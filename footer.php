@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme footer template.
  *
@@ -46,8 +47,7 @@
                     <ul class="mt-5 space-y-4 text-sm">
                         <li><a class="text-white/65 !no-underline hover:text-white"
                                 href="<?php echo esc_url(home_url('/pricing/')); ?>">Pricing</a></li>
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/data-insights/')); ?>">Data and Insights</a></li>
+
                         <li><a class="text-white/65 !no-underline hover:text-white"
                                 href="<?php echo esc_url(home_url('/faqs/')); ?>">FAQs</a></li>
                     </ul>

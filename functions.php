@@ -335,3 +335,23 @@ if (!function_exists('txa_article_image_url')) {
             ?: get_theme_file_uri('/images/hero-homepage.jpg');
     }
 }
+
+
+add_action('init', function () {
+    register_post_type('home_slider', [
+        'labels' => [
+            'name' => 'Home Sliders',
+            'singular_name' => 'Home Slider',
+            'add_new_item' => 'Add New Home Slider',
+            'edit_item' => 'Edit Home Slider',
+            'menu_name' => 'Home Sliders',
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-images-alt2',
+        'menu_position' => 20,
+        'supports' => ['title', 'excerpt', 'thumbnail', 'page-attributes'],
+    ]);
+});

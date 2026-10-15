@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Reusable TXA system concept diagram.
  *
@@ -10,6 +11,7 @@
 $highlight = isset($args['highlight']) ? sanitize_key($args['highlight']) : 'supplier';
 $supplier_highlighted = 'supplier' === $highlight;
 $dmo_highlighted = 'dmo' === $highlight;
+$distributor_highlighted = 'distributor' === $highlight;
 
 $system_items = [
     ['icon' => 'bi-calendar2-check', 'label' => 'Booking Engine'],
@@ -19,13 +21,27 @@ $system_items = [
 ];
 
 $platform_items = [
-    ['icon' => 'bi-window-stack', 'label' => 'Supplier\'s own website', 'key' => 'website'],
-    ['icon' => 'bi-buildings', 'label' => 'Local Government / DMO', 'key' => 'dmo'],
-    ['icon' => 'bi-briefcase', 'label' => 'Travel trade', 'key' => 'travel_trade'],
-    ['icon' => 'bi-geo-alt', 'label' => 'Google', 'key' => 'google'],
-    ['icon' => 'bi-window', 'label' => 'Various OTAs', 'key' => 'otas'],
-    ['icon' => 'bi-share', 'label' => 'Social media channels', 'key' => 'social'],
+    ['icon' => 'bi-window-stack', 'label' => 'Supplier\'s own website'],
+    ['icon' => 'bi-buildings', 'label' => 'Local Gov’t/DMO website'],
+    ['icon' => 'bi-layout-text-window', 'label' => 'Destination Microsites'],
+    ['icon' => 'bi-chat-dots', 'label' => 'Virtual Concierge'],
+    ['icon' => 'bi-briefcase', 'label' => 'Travel trade'],
+    ['icon' => 'bi-geo-alt', 'label' => 'Google'],
+    ['icon' => 'bi-window', 'label' => 'Various OTAs'],
+    ['icon' => 'bi-share', 'label' => 'Social media channels'],
 ];
+
+$render_platform_row = function (array $item, bool $highlighted): void {
+?>
+    <div class="flex min-h-[112px] flex-1 flex-col items-center justify-center px-3 py-4 xl:min-h-16">
+        <i class="bi <?php echo esc_attr($item['icon']); ?> text-2xl <?php echo $highlighted ? 'text-brand' : 'text-white'; ?>"
+            aria-hidden="true"></i>
+        <p class="mt-2 text-sm font-semibold leading-5 <?php echo $highlighted ? 'text-brand' : 'text-white/90'; ?>">
+            <?php echo esc_html($item['label']); ?>
+        </p>
+    </div>
+<?php
+};
 ?>
 
 <div
@@ -77,19 +93,19 @@ $platform_items = [
         <div class="flex flex-col">
             <div class="hidden xl:mb-6 xl:block xl:min-h-16" aria-hidden="true"></div>
             <article
-                class="flex grow flex-col rounded-2xl border border-white/50 bg-white/[0.03] p-5 text-center sm:p-6">
+                class="flex grow flex-col rounded-2xl border p-5 text-center transition sm:p-6 <?php echo $distributor_highlighted ? 'border-brand bg-brand/10 shadow-[0_0_42px_-16px_rgba(212,43,43,0.95)]' : 'border-white/50 bg-white/[0.03]'; ?>">
                 <div class="flex flex-1 flex-col divide-y divide-white/15">
-                    <?php foreach ($platform_items as $item):
-                        $item_highlighted = $dmo_highlighted && 'dmo' === $item['key']; ?>
-                        <div
-                            class="flex min-h-[112px] flex-1 flex-col items-center justify-center rounded-xl px-3 py-4 transition xl:min-h-16 <?php echo $item_highlighted ? 'bg-brand/15 shadow-[inset_0_0_0_2px_rgba(212,43,43,0.9)]' : ''; ?>">
-                            <i class="bi <?php echo esc_attr($item['icon']); ?> text-2xl <?php echo $item_highlighted ? 'text-brand' : 'text-white'; ?>"
-                                aria-hidden="true"></i>
-                            <p
-                                class="mt-2 text-sm font-semibold leading-5 <?php echo $item_highlighted ? 'text-brand' : 'text-white/90'; ?>">
-                                <?php echo esc_html($item['label']); ?>
-                            </p>
-                        </div>
+                    <?php foreach ($platform_items as $item): ?>
+                        <?php if (isset($item['group'])): ?>
+                            <div
+                                class="flex flex-[3] flex-col divide-y divide-white/15 rounded-xl transition <?php echo $dmo_highlighted ? 'my-2 border-2 border-brand bg-brand/10 shadow-[0_0_32px_-14px_rgba(212,43,43,0.95)]' : ''; ?>">
+                                <?php foreach ($item['items'] as $child) {
+                                    $render_platform_row($child, $dmo_highlighted);
+                                } ?>
+                            </div>
+                        <?php else: ?>
+                            <?php $render_platform_row($item, false); ?>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
             </article>

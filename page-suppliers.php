@@ -126,7 +126,8 @@ foreach ($benefits as $i => $benefit) {
                     <?php echo esc_html(txa_f('supplier_intro_heading', 'Boost your digital distribution profile')); ?>
                 </h2>
                 <p class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('supplier_intro_copy', 'TXA is designed to reduce manual work by using your booking system as the single source of products, rates and availability where available.')); ?>
+                    <?php echo esc_html(txa_f('supplier_intro_copy', 'TXA is designed to reduce manual work by using your booking system as the single source of 
+                    products, rates and availability where available. Designed for micro and small-medium enterprises, easy implementation regardless of technical skill level.”')); ?>
                 </p>
             </div>
             <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'supplier']); ?>
