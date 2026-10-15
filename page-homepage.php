@@ -46,9 +46,8 @@ if (!function_exists('txa_url')) {
         return $value;
     }
 }
-
 if (!function_exists('txa_button')) {
-    function txa_button(string $label, string $url, string $variant = 'primary'): string
+    function txa_button(string $label, string $url, string $variant = 'primary', string $attrs = ''): string
     {
         $classes = 'inline-flex min-h-12 w-full items-center justify-center rounded-lg px-5 py-3 text-center font-bold leading-5 !no-underline transition sm:w-auto sm:px-6';
         if ('secondary' === $variant)
@@ -57,18 +56,42 @@ if (!function_exists('txa_button')) {
             $classes .= ' border border-white bg-white/10 text-white hover:bg-white/20';
         else
             $classes .= ' bg-brand text-white hover:bg-brand-dark';
-        return sprintf('<a class="%s" href="%s">%s</a>', esc_attr($classes), esc_url($url), esc_html($label));
+        return sprintf('<a class="%s" href="%s" %s>%s</a>', esc_attr($classes), esc_url($url), $attrs, esc_html($label));
     }
 }
 
 if (!function_exists('txa_hero_slides')) {
     function txa_hero_slides(): array
     {
+        $normalize_url = function ($value, string $default): string {
+            if (is_array($value)) {
+                $value = $value['url'] ?? '';
+            }
+            $value = trim((string) $value);
+            if ('' === $value) {
+                $value = $default;
+            }
+            if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
+                return home_url($value);
+            }
+            return $value;
+        };
+
         $fallback = [
             'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
             'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
             'copy' => txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'),
             'image' => txa_img('hero_image', get_theme_file_uri('/images/new/homepage-hero.jpg')),
+            'buttons' => [
+                1 => [
+                    'label' => txa_f('hero_primary_label', 'Apply Now'),
+                    'url' => $normalize_url(txa_f('hero_primary_url'), home_url('/apply-now/')),
+                ],
+                2 => [
+                    'label' => txa_f('hero_secondary_label', 'Request Smart Destination Demo'),
+                    'url' => $normalize_url(txa_f('hero_secondary_url'), home_url('/contact/')),
+                ],
+            ],
         ];
 
         $posts = get_posts([
@@ -87,11 +110,21 @@ if (!function_exists('txa_hero_slides')) {
             $image = get_the_post_thumbnail_url($post, 'full');
             $label = function_exists('get_field') ? get_field('slide_label', $post->ID) : '';
             $copy = trim(wp_strip_all_tags($post->post_excerpt));
+            $buttons = [];
+            foreach ([1, 2] as $n) {
+                $button_label = function_exists('get_field') ? trim((string) get_field("button_{$n}_label", $post->ID)) : '';
+                $button_url = function_exists('get_field') ? get_field("button_{$n}_url", $post->ID) : '';
+                $buttons[$n] = [
+                    'label' => $button_label ?: $fallback['buttons'][$n]['label'],
+                    'url' => $normalize_url($button_url, $fallback['buttons'][$n]['url']),
+                ];
+            }
             $slides[] = [
                 'label' => $label ?: $fallback['label'],
                 'title' => get_the_title($post) ?: $fallback['title'],
                 'copy' => $copy ?: $fallback['copy'],
                 'image' => $image ?: $fallback['image'],
+                'buttons' => $buttons,
             ];
         }
 
@@ -162,18 +195,26 @@ if (!$how_txa_works_embed) {
                     <div class="w-full max-w-[760px]">
                         <p data-hero-slide-label
                             class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                            <?php echo esc_html($hero_slides[0]['label']); ?>
+                            <?php echo esc_html($hero_slides['label']); ?>
                         </p>
                         <h1 data-hero-slide-title
                             class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                            <?php echo esc_html($hero_slides[0]['title']); ?>
+                            <?php echo esc_html($hero_slides['title']); ?>
                         </h1>
                         <p data-hero-slide-copy
                             class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                            <?php echo esc_html($hero_slides[0]['copy']); ?>
+                            <?php echo esc_html($hero_slides['copy']); ?>
                         </p>
                         <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-                            <?php echo txa_button(txa_f('hero_primary_label', 'Apply Now'), txa_url('hero_primary_url', home_url('/apply-now/'))); ?><?php echo txa_button(txa_f('hero_secondary_label', 'Request Smart Destination Demo'), txa_url('hero_secondary_url', home_url('/contact/')), 'light'); ?>
+                            <?php foreach ([1, 2] as $n):
+                                $button = $hero_slides['buttons'][$n];
+                                echo txa_button(
+                                    $button['label'],
+                                    $button['url'],
+                                    1 === $n ? 'primary' : 'light',
+                                    'data-hero-button="' . $n . '"' . ('' === $button['label'] ? ' style="display:none"' : '')
+                                );
+                            endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -186,7 +227,11 @@ if (!$how_txa_works_embed) {
                             data-hero-slide-label-value="<?php echo esc_attr($slide['label']); ?>"
                             data-hero-slide-title-value="<?php echo esc_attr($slide['title']); ?>"
                             data-hero-slide-copy-value="<?php echo esc_attr($slide['copy']); ?>"
-                            data-hero-slide-dot="<?php echo esc_attr($index); ?>"></button><?php endforeach; ?>
+                            data-hero-slide-dot="<?php echo esc_attr($index); ?>"
+                            data-hero-button-1-label="<?php echo esc_attr($slide['buttons'][1]['label']); ?>"
+                            data-hero-button-1-url="<?php echo esc_url($slide['buttons'][1]['url']); ?>"
+                            data-hero-button-2-label="<?php echo esc_attr($slide['buttons'][2]['label']); ?>"
+                            data-hero-button-2-url="<?php echo esc_url($slide['buttons'][2]['url']); ?>"></button><?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -339,5 +384,40 @@ if (!$how_txa_works_embed) {
         </div>
     </section>
 </article>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var slider = document.querySelector('[data-hero-slider]');
+        if (!slider) return;
+        var dots = slider.querySelectorAll('[data-hero-slide-dot]');
+        var buttons = {
+            1: slider.querySelector('[data-hero-button="1"]'),
+            2: slider.querySelector('[data-hero-button="2"]')
+        };
 
-<?php get_footer();
+        function sync(dot) {
+            [1, 2].forEach(function(n) {
+                var el = buttons[n];
+                if (!el) return;
+                var label = dot.getAttribute('data-hero-button-' + n + '-label');
+                el.textContent = label;
+                el.setAttribute('href', dot.getAttribute('data-hero-button-' + n + '-url'));
+                el.style.display = label ? '' : 'none';
+            });
+        }
+
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(m) {
+                if (m.target.getAttribute('aria-pressed') === 'true') sync(m.target);
+            });
+        });
+
+        dots.forEach(function(dot) {
+            observer.observe(dot, {
+                attributes: true,
+                attributeFilter: ['aria-pressed']
+            });
+        });
+    });
+</script>
+<?php
+get_footer();
