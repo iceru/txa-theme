@@ -43,6 +43,7 @@ $what_txa_does = [
     ['title' => 'Booking Systems', 'copy' => 'Electronic booking and inventory management systems used in the tourism industry', 'icon' => 'bi-calendar2-check'],
 ];
 $countries = [
+    ['name' => 'Great Britain', 'icon' => 'logo-with-text.png'],
     ['name' => 'Australia', 'icon' => 'txa.png'],
     ['name' => 'Japan', 'icon' => 'txj.png'],
     ['name' => 'Saudi Arabia', 'icon' => 'txsa.jpg'],
@@ -163,10 +164,10 @@ $timeline_values = $default_timeline_values;
                     remains
                     Great Britain’s own—tailored for our unique geography and market dynamics.')); ?></p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <?php foreach ($countries as $country): ?>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-6">
+                <?php foreach ($countries as $index => $country): ?>
                     <div
-                        class="flex flex-col items-center justify-center rounded-xl bg-white p-4 text-center text-near-black shadow-sm">
+                        class="flex flex-col items-center justify-center rounded-xl bg-white p-4 text-center text-near-black shadow-sm sm:col-span-2 <?php echo $index >= 3 ? 'sm:col-span-3' : ''; ?>">
                         <?php if (!empty($country['image'])): ?>
                             <img src="<?php echo esc_url($country['image']); ?>" alt=""
                                 class="mb-4 h-14 w-auto max-w-full object-contain sm:h-16" aria-hidden="true">
