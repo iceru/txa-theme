@@ -22,23 +22,51 @@ $system_items = [
 
 $platform_items = [
     ['icon' => 'bi-window-stack', 'label' => 'Supplier\'s own website'],
-    ['icon' => 'bi-buildings', 'label' => 'Local Gov’t/DMO website'],
-    ['icon' => 'bi-layout-text-window', 'label' => 'Destination Microsites'],
-    ['icon' => 'bi-chat-dots', 'label' => 'Virtual Concierge'],
     ['icon' => 'bi-briefcase', 'label' => 'Travel trade'],
+    ['icon' => 'bi-buildings', 'label' => 'Local Gov’t/DMO website', 'span' => true, 'dmo' => true],
+    ['icon' => 'bi-layout-text-window', 'label' => 'Destination Microsites', 'dmo' => true],
+    ['icon' => 'bi-chat-dots', 'label' => 'Virtual Concierge', 'dmo' => true],
     ['icon' => 'bi-geo-alt', 'label' => 'Google'],
-    ['icon' => 'bi-window', 'label' => 'Various OTAs'],
+
+    [
+        'icon' => 'bi-window',
+        'label' => 'Various OTAs',
+        'span' => true,
+        'logos' => [
+            ['file' => 'airbnb.png', 'name' => 'Airbnb'],
+            ['file' => 'booking-com.png', 'name' => 'Booking.com'],
+            ['file' => 'expedia.png', 'name' => 'Expedia'],
+            ['file' => 'getyourguide.png', 'name' => 'GetYourGuide'],
+        ],
+    ],
+
     ['icon' => 'bi-share', 'label' => 'Social media channels'],
 ];
 
 $render_platform_row = function (array $item, bool $highlighted): void {
+    $span = !empty($item['span']) ? 'col-span-2' : '';
 ?>
-    <div class="flex min-h-[112px] flex-1 flex-col items-center justify-center px-3 py-4 xl:min-h-16">
+    <div class="flex h-full min-h-[112px] flex-col items-center justify-center rounded-xl border border-white/10 px-3 py-4 xl:min-h-24 <?php echo esc_attr($span); ?>">
         <i class="bi <?php echo esc_attr($item['icon']); ?> text-2xl <?php echo $highlighted ? 'text-brand' : 'text-white'; ?>"
             aria-hidden="true"></i>
         <p class="mt-2 text-sm font-semibold leading-5 <?php echo $highlighted ? 'text-brand' : 'text-white/90'; ?>">
             <?php echo esc_html($item['label']); ?>
         </p>
+        <?php if (!empty($item['logos'])): ?>
+            <div class="mt-3 flex flex-wrap items-center justify-center gap-2">
+                <?php foreach ($item['logos'] as $logo):
+                    $logo_path = '/images/' . $logo['file']; ?>
+                    <span class="flex h-8 items-center rounded-md bg-white px-2">
+                        <?php if (file_exists(get_theme_file_path($logo_path))): ?>
+                            <img src="<?php echo esc_url(get_theme_file_uri($logo_path)); ?>"
+                                alt="<?php echo esc_attr($logo['name']); ?>" class="h-5 w-auto">
+                        <?php else: ?>
+                            <span class="text-xs font-bold text-near-black"><?php echo esc_html($logo['name']); ?></span>
+                        <?php endif; ?>
+                    </span>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
 <?php
 };
@@ -96,16 +124,20 @@ $render_platform_row = function (array $item, bool $highlighted): void {
                 class="flex grow flex-col rounded-2xl border p-5 text-center transition sm:p-6 <?php echo $distributor_highlighted ? 'border-brand bg-brand/10 shadow-[0_0_42px_-16px_rgba(212,43,43,0.95)]' : 'border-white/50 bg-white/[0.03]'; ?>">
                 <div class="flex flex-1 flex-col divide-y divide-white/15">
                     <?php foreach ($platform_items as $item): ?>
-                        <?php if (isset($item['group'])): ?>
-                            <div
-                                class="flex flex-[3] flex-col divide-y divide-white/15 rounded-xl transition <?php echo $dmo_highlighted ? 'my-2 border-2 border-brand bg-brand/10 shadow-[0_0_32px_-14px_rgba(212,43,43,0.95)]' : ''; ?>">
-                                <?php foreach ($item['items'] as $child) {
-                                    $render_platform_row($child, $dmo_highlighted);
-                                } ?>
-                            </div>
-                        <?php else: ?>
-                            <?php $render_platform_row($item, false); ?>
-                        <?php endif; ?>
+                        <div class="grid flex-1 grid-cols-2 gap-3">
+                            <?php foreach ($platform_items as $item): ?>
+                                <?php if (isset($item['group'])): ?>
+                                    <div
+                                        class="col-span-2 grid grid-cols-2 gap-3 rounded-xl transition <?php echo $dmo_highlighted ? 'border-2 border-brand bg-brand/10 p-2 shadow-[0_0_32px_-14px_rgba(212,43,43,0.95)]' : ''; ?>">
+                                        <?php foreach ($item['items'] as $child) {
+                                            $render_platform_row($child, $dmo_highlighted);
+                                        } ?>
+                                    </div>
+                                <?php else: ?>
+                                    <?php $render_platform_row($item, false); ?>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </article>
