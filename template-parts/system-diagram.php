@@ -23,11 +23,11 @@ $system_items = [
 $platform_items = [
     ['icon' => 'bi-window-stack', 'label' => 'Supplier\'s own website'],
     ['icon' => 'bi-briefcase', 'label' => 'Travel trade'],
-    ['icon' => 'bi-buildings', 'label' => 'Local Gov’t/DMO website', 'span' => true, 'dmo' => true],
-    ['icon' => 'bi-layout-text-window', 'label' => 'Destination Microsites', 'dmo' => true],
-    ['icon' => 'bi-chat-dots', 'label' => 'Virtual Concierge', 'dmo' => true],
+    ['icon' => 'bi-buildings', 'label' => 'Local Gov’t/DMO website', 'span' => true],
+    ['icon' => 'bi-layout-text-window', 'label' => 'Destination Microsites'],
+    ['icon' => 'bi-chat-dots', 'label' => 'Virtual Concierge'],
     ['icon' => 'bi-geo-alt', 'label' => 'Google'],
-
+    ['icon' => 'bi-share', 'label' => 'Social media channels'],
     [
         'icon' => 'bi-window',
         'label' => 'Various OTAs',
@@ -40,7 +40,6 @@ $platform_items = [
         ],
     ],
 
-    ['icon' => 'bi-share', 'label' => 'Social media channels'],
 ];
 
 $render_platform_row = function (array $item, bool $highlighted): void {
@@ -122,22 +121,9 @@ $render_platform_row = function (array $item, bool $highlighted): void {
             <div class="hidden xl:mb-6 xl:block xl:min-h-16" aria-hidden="true"></div>
             <article
                 class="flex grow flex-col rounded-2xl border p-5 text-center transition sm:p-6 <?php echo $distributor_highlighted ? 'border-brand bg-brand/10 shadow-[0_0_42px_-16px_rgba(212,43,43,0.95)]' : 'border-white/50 bg-white/[0.03]'; ?>">
-                <div class="flex flex-1 flex-col divide-y divide-white/15">
+                <div class="grid flex-1 grid-cols-2 gap-3">
                     <?php foreach ($platform_items as $item): ?>
-                        <div class="grid flex-1 grid-cols-2 gap-3">
-                            <?php foreach ($platform_items as $item): ?>
-                                <?php if (isset($item['group'])): ?>
-                                    <div
-                                        class="col-span-2 grid grid-cols-2 gap-3 rounded-xl transition <?php echo $dmo_highlighted ? 'border-2 border-brand bg-brand/10 p-2 shadow-[0_0_32px_-14px_rgba(212,43,43,0.95)]' : ''; ?>">
-                                        <?php foreach ($item['items'] as $child) {
-                                            $render_platform_row($child, $dmo_highlighted);
-                                        } ?>
-                                    </div>
-                                <?php else: ?>
-                                    <?php $render_platform_row($item, false); ?>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </div>
+                        <?php $render_platform_row($item, $dmo_highlighted && !empty($item['dmo'])); ?>
                     <?php endforeach; ?>
                 </div>
             </article>
