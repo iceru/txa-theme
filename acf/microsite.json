@@ -1,0 +1,59 @@
+[
+  {
+    "key": "group_txgb_microsite_campaigns",
+    "title": "TXGB Microsite Campaigns Page",
+    "fields": [
+      {"key": "field_msc_tab_hero", "label": "Hero", "type": "tab", "placement": "top"},
+      {"key": "field_msc_hero_label", "label": "Hero Label", "name": "microsite_hero_label", "type": "text", "placeholder": "Microsite Campaigns"},
+      {"key": "field_msc_hero_title_start", "label": "Heading Start", "name": "microsite_hero_title_start", "type": "text", "placeholder": "Create tactical destination microsites that"},
+      {"key": "field_msc_hero_title_highlight", "label": "Heading Highlighted Text", "name": "microsite_hero_title_highlight", "type": "text", "placeholder": "motivate and convert"},
+      {"key": "field_msc_hero_title_end", "label": "Heading End", "name": "microsite_hero_title_end", "type": "text"},
+      {"key": "field_msc_hero_copy", "label": "Hero Copy", "name": "microsite_hero_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXGB can support campaign-specific microsites for event, seasonal, industry group or special-interest tourism initiatives."},
+      {"key": "field_msc_hero_button_label", "label": "Button Label", "name": "microsite_hero_button_label", "type": "text", "placeholder": "Plan a campaign microsite"},
+      {"key": "field_msc_hero_button_url", "label": "Button URL", "name": "microsite_hero_button_url", "type": "text", "placeholder": "/contact/"},
+      {"key": "field_msc_hero_image", "label": "Hero Image", "name": "microsite_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_msc_hero_image_alt", "label": "Hero Image Alt Text", "name": "microsite_hero_image_alt", "type": "text", "placeholder": "Destination microsite shown on a laptop"},
+
+      {"key": "field_msc_tab_tools", "label": "Tools Heading", "type": "tab", "placement": "top"},
+      {"key": "field_msc_tools_heading", "label": "Heading", "name": "microsite_tools_heading", "type": "text", "placeholder": "Powerful tools for conversion-led campaigns"},
+
+      {"key": "field_msc_tab_tool_1", "label": "Tool 1 (large)", "type": "tab", "placement": "top"},
+      {"key": "field_msc_tool_1_icon", "label": "Icon (Bootstrap Icons class)", "name": "microsite_tool_1_icon", "type": "text", "placeholder": "bi-share"},
+      {"key": "field_msc_tool_1_title", "label": "Title", "name": "microsite_tool_1_title", "type": "text", "placeholder": "Feature local groups, events and themes"},
+      {"key": "field_msc_tool_1_copy", "label": "Copy", "name": "microsite_tool_1_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Can activate all digital assets for conversion including social media content and feature specific supplier groups for seasonal, industry, or special interest tourism initiatives."},
+      {"key": "field_msc_tool_1_image", "label": "Image", "name": "microsite_tool_1_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
+      {"key": "field_msc_tool_1_image_alt", "label": "Image Alt Text", "name": "microsite_tool_1_image_alt", "type": "text", "placeholder": "TXGB campaign analytics dashboard"},
+
+      {"key": "field_msc_tab_tool_2", "label": "Tool 2", "type": "tab", "placement": "top"},
+      {"key": "field_msc_tool_2_icon", "label": "Icon (Bootstrap Icons class)", "name": "microsite_tool_2_icon", "type": "text", "placeholder": "bi-qr-code"},
+      {"key": "field_msc_tool_2_title", "label": "Title", "name": "microsite_tool_2_title", "type": "text", "placeholder": "Encourage Supplier Connection"},
+      {"key": "field_msc_tool_2_copy", "label": "Copy", "name": "microsite_tool_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Use widgets, QR codes and campaign pages to seamlessly connect physical audiences to bookable product."},
+      {"key": "field_msc_tool_2_cta", "label": "Link Label", "name": "microsite_tool_2_cta", "type": "text", "placeholder": "Learn about QR integration"},
+      {"key": "field_msc_tool_2_url", "label": "Link URL", "name": "microsite_tool_2_url", "type": "text", "placeholder": "/destinations/"},
+
+      {"key": "field_msc_tab_tool_3", "label": "Tool 3 (red)", "type": "tab", "placement": "top"},
+      {"key": "field_msc_tool_3_icon", "label": "Icon (Bootstrap Icons class)", "name": "microsite_tool_3_icon", "type": "text", "placeholder": "bi-person-check"},
+      {"key": "field_msc_tool_3_title", "label": "Title", "name": "microsite_tool_3_title", "type": "text", "placeholder": "Supplier Opt-in"},
+      {"key": "field_msc_tool_3_copy", "label": "Copy", "name": "microsite_tool_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Encourage regional supplier participation around clear, high-impact campaign opportunities with ease."},
+
+      {"key": "field_msc_tab_tool_4", "label": "Tool 4 (wide)", "type": "tab", "placement": "top"},
+      {"key": "field_msc_tool_4_icon", "label": "Icon (Bootstrap Icons class)", "name": "microsite_tool_4_icon", "type": "text", "placeholder": "bi-bullseye"},
+      {"key": "field_msc_tool_4_title", "label": "Title", "name": "microsite_tool_4_title", "type": "text", "placeholder": "Attribution Tracking"},
+      {"key": "field_msc_tool_4_copy", "label": "Copy", "name": "microsite_tool_4_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Precisely track campaign attribution and booking outcomes. Introduce coupon or voucher-based initiatives to drive and measure results."},
+      {"key": "field_msc_tool_4_check_1", "label": "Check 1", "name": "microsite_tool_4_check_1", "type": "text", "placeholder": "Real-time data reporting"},
+      {"key": "field_msc_tool_4_check_2", "label": "Check 2", "name": "microsite_tool_4_check_2", "type": "text", "placeholder": "ROI analysis for stakeholders"},
+      {"key": "field_msc_tool_4_check_3", "label": "Check 3", "name": "microsite_tool_4_check_3", "type": "text", "placeholder": "Voucher performance tracking"}
+    ],
+    "location": [
+      [
+        {"param": "page_template", "operator": "==", "value": "page-microsite-campaigns.php"}
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]
