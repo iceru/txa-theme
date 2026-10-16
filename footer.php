@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme footer template.
  *
@@ -62,7 +63,7 @@
                         <li><a class="text-white/65 !no-underline hover:text-white"
                                 href="<?php echo esc_url(home_url('/contact/')); ?>">Contact us</a></li>
                         <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="https://sites.txa.com.au/Dashboard/">Dashboard Login</a></li>
+                                href="<?php echo esc_url(txa_dashboard_login_url()); ?>">Dashboard Login</a></li>
                     </ul>
                 </div>
                 <div>

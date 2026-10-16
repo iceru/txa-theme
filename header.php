@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme header template.
  *
@@ -28,6 +29,16 @@ if (!function_exists('txa_header_link_class')) {
             : 'text-gray-500';
 
         return trim($extra_classes . ' text-sm ' . $state_classes . ' !no-underline');
+    }
+}
+
+if (!function_exists('txa_dashboard_login_url')) {
+    function txa_dashboard_login_url(): string
+    {
+        $front_id = (int) get_option('page_on_front');
+        $value = ($front_id && function_exists('get_field')) ? get_field('dashboard_login_url', $front_id) : '';
+        $value = trim((string) $value);
+        return '' !== $value ? $value : 'https://sites.txa.com.au/Dashboard/';
     }
 }
 ?>
@@ -149,7 +160,7 @@ if (!function_exists('txa_header_link_class')) {
                         </nav>
 
                         <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
-                            <a href="https://sites.txa.com.au/Dashboard/"
+                            <a href="<?php echo esc_url(txa_dashboard_login_url()); ?>"
                                 class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark">
                                 Dashboard Login</a>
                         </div>
