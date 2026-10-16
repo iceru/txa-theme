@@ -6,16 +6,84 @@
  * @package TailPress
  */
 
+if (!function_exists('txa_f')) {
+    function txa_f(string $name, $default = '')
+    {
+        $value = function_exists('get_field') ? get_field($name) : null;
+        return (null === $value || '' === $value || false === $value) ? $default : $value;
+    }
+}
+
+if (!function_exists('txa_img')) {
+    function txa_img(string $name, string $default): string
+    {
+        $value = txa_f($name);
+        if (is_array($value) && !empty($value['url'])) {
+            return $value['url'];
+        }
+        if (is_numeric($value)) {
+            $url = wp_get_attachment_image_url((int) $value, 'full');
+            if ($url) {
+                return $url;
+            }
+        }
+        if (is_string($value) && '' !== $value) {
+            return $value;
+        }
+        return $default;
+    }
+}
+
+if (!function_exists('txa_url')) {
+    function txa_url(string $name, string $default): string
+    {
+        $value = trim((string) txa_f($name, $default));
+        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
+            return home_url($value);
+        }
+        return $value;
+    }
+}
+
+if (!function_exists('txa_microsite_tools')) {
+    function txa_microsite_tools(array $tools): array
+    {
+        foreach ($tools as $i => $tool) {
+            $n = $i + 1;
+            foreach (['icon', 'title', 'copy', 'cta', 'image_alt'] as $key) {
+                if (array_key_exists($key, $tool)) {
+                    $tools[$i][$key] = txa_f("microsite_tool_{$n}_{$key}", $tool[$key]);
+                }
+            }
+            if (isset($tool['url'])) {
+                $tools[$i]['url'] = txa_url("microsite_tool_{$n}_url", $tool['url']);
+            }
+            if (isset($tool['image'])) {
+                $tools[$i]['image'] = txa_img("microsite_tool_{$n}_image", get_theme_file_uri('/images/' . $tool['image']));
+            }
+            if (isset($tool['checks'])) {
+                $checks = [];
+                foreach ($tool['checks'] as $k => $check) {
+                    $checks[] = txa_f("microsite_tool_{$n}_check_" . ($k + 1), $check);
+                }
+                $tools[$i]['checks'] = array_values(array_filter($checks));
+            }
+        }
+        return $tools;
+    }
+}
+
 get_header();
 
-$demo_url = home_url('/contact/');
+$demo_url = txa_url('microsite_hero_button_url', home_url('/contact/'));
 
-$tools = [
+$tools = txa_microsite_tools([
     [
         'icon' => 'bi-share',
         'title' => 'Feature local groups, events and themes',
         'copy' => 'Can activate all digital assets for conversion including social media content and feature specific supplier groups for seasonal, industry, or special interest tourism initiatives.',
         'image' => 'dashboard.png',
+        'image_alt' => 'TXA campaign analytics dashboard',
         'large' => true,
         'span' => 'lg:col-span-2',
     ],
@@ -39,7 +107,7 @@ $tools = [
         'checks' => ['Real-time data reporting', 'ROI analysis for stakeholders', 'Voucher performance tracking'],
         'span' => 'lg:col-span-2',
     ],
-];
+]);
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
@@ -47,20 +115,18 @@ $tools = [
         <div class="mx-auto grid max-w-[1312px] gap-10 lg:grid-cols-[1fr_600px] lg:items-center lg:gap-16">
             <div>
                 <p class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                    Microsite Campaigns</p>
+                    <?php echo esc_html(txa_f('microsite_hero_label', 'Microsite Campaigns')); ?></p>
                 <h1
                     class="mt-8 max-w-[660px] [font-family:'Hanken_Grotesk',sans-serif] text-[40px] font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
-                    Create tactical destination microsites that <span class="text-brand">motivate and convert</span>
+                    <?php echo esc_html(txa_f('microsite_hero_title_start', 'Create tactical destination microsites that')); ?> <span class="text-brand"><?php echo esc_html(txa_f('microsite_hero_title_highlight', 'motivate and convert')); ?></span> <?php echo esc_html(txa_f('microsite_hero_title_end', '')); ?>
                 </h1>
-                <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray">TXA can support campaign-specific
-                    microsites for event, seasonal, industry group or special-interest tourism initiatives.</p>
+                <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray"><?php echo esc_html(txa_f('microsite_hero_copy', 'TXA can support campaign-specific microsites for event, seasonal, industry group or special-interest tourism initiatives.')); ?></p>
                 <a href="<?php echo esc_url($demo_url); ?>"
-                    class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto">Plan
-                    a campaign microsite</a>
+                    class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('microsite_hero_button_label', 'Plan a campaign microsite')); ?></a>
             </div>
             <div>
-                <img src="<?php echo esc_url(get_theme_file_uri('/images/laptop-1.png')); ?>"
-                    alt="Destination microsite shown on a laptop" class="mx-auto w-full max-w-[620px]">
+                <img src="<?php echo esc_url(txa_img('microsite_hero_image', get_theme_file_uri('/images/laptop-1.png'))); ?>"
+                    alt="<?php echo esc_attr(txa_f('microsite_hero_image_alt', 'Destination microsite shown on a laptop')); ?>" class="mx-auto w-full max-w-[620px]">
             </div>
         </div>
     </section>
@@ -70,7 +136,7 @@ $tools = [
             <div class="text-center">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    Powerful tools for conversion-led campaigns</h2>
+                    <?php echo esc_html(txa_f('microsite_tools_heading', 'Powerful tools for conversion-led campaigns')); ?></h2>
                 <span class="mx-auto mt-6 block h-1 w-24 rounded-full bg-brand" aria-hidden="true"></span>
             </div>
 
@@ -91,8 +157,8 @@ $tools = [
                                     </h3>
                                     <p class="mt-5 text-base leading-8 text-mid-gray"><?php echo esc_html($tool['copy']); ?></p>
                                 </div>
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $tool['image'])); ?>"
-                                    alt="TXA campaign analytics dashboard" class="w-full rounded-xl">
+                                <img src="<?php echo esc_url($tool['image']); ?>"
+                                    alt="<?php echo esc_attr($tool['image_alt']); ?>" class="w-full rounded-xl">
                             </div>
                         <?php } else { ?>
                             <span
