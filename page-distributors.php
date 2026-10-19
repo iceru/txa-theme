@@ -66,6 +66,7 @@ add_action('wp_head', function (): void {
 get_header();
 
 $apply_url = txa_url('distributor_apply_url', home_url('/distributors/apply/'));
+$apply_url_2 = txa_url('distributor_apply_url_2', home_url('/distributors/apply/'));
 
 $benefits = [
     ['icon' => 'bi-box-seam', 'title' => 'Access live inventory', 'copy' => 'Direct access to thousands of live-booked suppliers with real-time rates and availability.'],
@@ -245,7 +246,7 @@ foreach ($models as $i => $model) {
                         <?php echo txa_field_output('distributor_campaign_copy', 'TXGB sits at the heart of British tourism. We work closely with STOs and RTOs to power booking engines for state-wide initiatives. Become a partner in these high-value trade campaigns.'); ?>
                     </div>
                     <div class="mt-6">
-                        <?php echo txa_distributor_button(txa_f('distributor_campaign_button_label', 'Become a TXGB distributor'), $apply_url, 'light'); ?>
+                        <?php echo txa_distributor_button(txa_f('distributor_campaign_button_label', 'Become a TXGB distributor'), $apply_url_2, 'light'); ?>
                     </div>
                 </div>
             </div>

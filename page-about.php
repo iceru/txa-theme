@@ -153,7 +153,7 @@ $timeline_values = $default_timeline_values;
             </div>
         </div>
     </section>
-    <section class="bg-brand px-4 py-12 text-white sm:py-14 lg:px-16 lg:py-16">
+    <section class="bg-dark-gray px-4 py-12 text-white sm:py-14 lg:px-16 lg:py-16">
         <div class="mx-auto grid max-w-[1280px] gap-8 lg:grid-cols-[550px_1fr] lg:items-center lg:gap-24">
             <div>
                 <h2

@@ -210,6 +210,31 @@ function txa_seo_metadata(): void
 add_action('wp_head', 'txa_seo_metadata', 99);
 
 /**
+ * Store connected booking systems as native WordPress content.
+ */
+add_action('init', function (): void {
+    register_post_type('txa_booking_system', [
+        'labels' => [
+            'name' => __('Booking Systems', 'tailpress'),
+            'singular_name' => __('Booking System', 'tailpress'),
+            'add_new_item' => __('Add Booking System', 'tailpress'),
+            'edit_item' => __('Edit Booking System', 'tailpress'),
+            'menu_name' => __('Booking Systems', 'tailpress'),
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => false,
+        'menu_icon' => 'dashicons-calendar-alt',
+        'supports' => ['title', 'thumbnail', 'page-attributes'],
+        'hierarchical' => false,
+        'has_archive' => false,
+        'rewrite' => false,
+        'query_var' => false,
+    ]);
+});
+
+/**
  * Store About page journey entries as regular WordPress content so they do not
  * depend on ACF Pro repeaters.
  */
