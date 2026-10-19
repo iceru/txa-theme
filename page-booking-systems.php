@@ -187,7 +187,7 @@ if ($booking_system_query->have_posts()) {
                     </h1>
                     <div
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo txa_field_output('booking_hero_copy', 'TXGB helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Great Britain’s open B2B tourism exchange.'); ?>
+                        <?php echo txa_field_output('booking_hero_copy', 'TXGB helps booking system vendors connect their operator customers to broader destination, distributor and trade channels through Great Britain’s open B2B tourism exchange.'); ?>
                     </div>
                     <div class="mt-6">
                         <?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $partner_url); ?>

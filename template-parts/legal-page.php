@@ -39,18 +39,9 @@ $sections = $args['sections'] ?? [];
                             class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-tight text-brand sm:text-3xl">
                             <?php echo esc_html($section['title']); ?>
                         </h2>
-                        <div class="mt-4 space-y-4 text-base leading-7 text-mid-gray sm:mt-5">
-                            <?php foreach ($section['content'] as $item): ?>
-                                <?php if ('list' === ($item['type'] ?? 'paragraph')): ?>
-                                    <ul class="list-disc space-y-2 pl-6">
-                                        <?php foreach ($item['items'] as $list_item): ?>
-                                            <li><?php echo wp_kses_post($list_item); ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php else: ?>
-                                    <p><?php echo wp_kses_post($item['text']); ?></p>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
+                        <div
+                            class="mt-4 space-y-4 text-base leading-7 text-mid-gray [&>ul]:list-disc [&>ul]:space-y-2 [&>ul]:pl-6 sm:mt-5">
+                            <?php echo wp_kses_post((string) $section['content']); ?>
                         </div>
                     </section>
                 <?php endforeach; ?>

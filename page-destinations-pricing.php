@@ -99,7 +99,7 @@ foreach ($setup_cards as $i => $card) {
         <div class="relative mx-auto flex min-h-[390px] max-w-[1312px] items-center sm:min-h-[420px] lg:min-h-0">
             <div class="max-w-[666px]">
                 <p
-                    class="txgb-accent-text inline-flex w-fit max-w-full rounded-lg bg-brand text-white px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base leading-5">
+                    class="inline-flex w-fit max-w-full rounded-lg bg-brand text-white px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base leading-5">
                     <?php echo esc_html(txa_f('pricing_hero_label', 'TXGB FOR DESTINATIONS')); ?>
                 </p>
                 <h1 class="mt-5 text-3xl font-semibold leading-[1.1] sm:mt-6 sm:text-5xl lg:leading-[56px]">
