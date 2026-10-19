@@ -92,7 +92,8 @@ $booking_system_query = new WP_Query([
     'post_type' => 'txa_booking_system',
     'post_status' => 'publish',
     'posts_per_page' => -1,
-    'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
+    'orderby' => 'title',
+    'order' => 'ASC',
     'no_found_rows' => true,
 ]);
 
