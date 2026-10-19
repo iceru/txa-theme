@@ -268,7 +268,7 @@ add_action('add_meta_boxes_txa_timeline', function (): void {
             wp_nonce_field('txa_timeline_details', 'txa_timeline_nonce');
             $year = get_post_meta($post->ID, '_txa_timeline_year', true);
             $copy = get_post_meta($post->ID, '_txa_timeline_copy', true);
-            ?>
+?>
         <p>
             <label for="txa_timeline_year"><strong><?php esc_html_e('Year or period', 'tailpress'); ?></strong></label><br>
             <input type="text" id="txa_timeline_year" name="txa_timeline_year" value="<?php echo esc_attr($year); ?>"
@@ -282,7 +282,7 @@ add_action('add_meta_boxes_txa_timeline', function (): void {
         <p class="description">
             <?php esc_html_e('Use the Featured image panel for the timeline icon. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
         </p>
-        <?php
+<?php
         }
     );
 });
@@ -396,4 +396,100 @@ if (!function_exists('txa_article_image_url')) {
         return get_the_post_thumbnail_url($post_id, $size)
             ?: get_theme_file_uri('/images/hero-homepage.jpg');
     }
+}
+
+
+function txa_import_booking_systems_page(): void
+{
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+
+    $names = [
+        'Anytime Booking',
+        'Bokun',
+        'Bookalet',
+        'Bookeo',
+        'Bookinghound',
+        'Caterbook',
+        'DigiTickets',
+        'eviivo',
+        'Fareharbor',
+        'FuseMetrix',
+        'GemaPark',
+        'OHIP',
+        'Palisis',
+        'Rezdy',
+        'roommaster',
+        'Seekom',
+        'Siteminder',
+        'Spektrix',
+        'STAAH',
+        'TicketingHub',
+        'Trekksoft',
+        'Vennersys',
+        'Ventrata',
+    ];
+
+    echo '<div class="wrap"><h1>Import Booking Systems</h1>';
+
+    $should_run = isset($_POST['txa_import_nonce'])
+        && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['txa_import_nonce'])), 'txa_import_booking_systems');
+
+    if ($should_run) {
+        echo '<ul>';
+
+        foreach ($names as $index => $name) {
+            $existing = get_posts([
+                'post_type' => 'txa_booking_system',
+                'post_status' => 'any',
+                'title' => $name,
+                'numberposts' => 1,
+                'fields' => 'ids',
+            ]);
+
+            if (!empty($existing)) {
+                echo '<li>Skipped (already exists): ' . esc_html($name) . '</li>';
+                continue;
+            }
+
+            $post_id = wp_insert_post([
+                'post_type' => 'txa_booking_system',
+                'post_status' => 'publish',
+                'post_title' => $name,
+                'menu_order' => $index + 1,
+            ], true);
+
+            if (is_wp_error($post_id)) {
+                echo '<li>Failed: ' . esc_html($name) . ' - ' . esc_html($post_id->get_error_message()) . '</li>';
+                continue;
+            }
+
+            $attachments = get_posts([
+                'post_type' => 'attachment',
+                'post_status' => 'inherit',
+                'title' => $name,
+                'numberposts' => 1,
+                'fields' => 'ids',
+            ]);
+
+            if (empty($attachments)) {
+                echo '<li>Created without logo (not found in Media Library): ' . esc_html($name) . '</li>';
+                continue;
+            }
+
+            set_post_thumbnail($post_id, $attachments[0]);
+            echo '<li>Imported with logo: ' . esc_html($name) . '</li>';
+        }
+
+        echo '</ul><p>Done. You can now remove this code from functions.php.</p>';
+    } else {
+        echo '<p>This creates ' . count($names) . ' booking systems and attaches matching logos from the Media Library.</p>';
+        echo '<form method="post">';
+        wp_nonce_field('txa_import_booking_systems', 'txa_import_nonce');
+        submit_button('Run import');
+        echo '</form>';
+    }
+
+    echo '</div>';
 }
