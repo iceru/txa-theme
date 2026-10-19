@@ -398,6 +398,16 @@ if (!function_exists('txa_article_image_url')) {
     }
 }
 
+add_action('admin_menu', function (): void {
+    add_management_page(
+        'Import Booking Systems',
+        'Import Booking Systems',
+        'manage_options',
+        'txa-import-booking-systems',
+        'txa_import_booking_systems_page'
+    );
+});
+
 
 function txa_import_booking_systems_page(): void
 {
