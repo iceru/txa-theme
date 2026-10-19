@@ -165,6 +165,77 @@
   :where(.wpcf7-not-valid-tip, .wpcf7-response-output) {
     font-size: 0.875rem;
   }
+
+  /* Validation marks on invalid fields */
+  :where(input.wpcf7-not-valid, select.wpcf7-not-valid, textarea.wpcf7-not-valid) {
+    border-color: color-mix(in srgb, #dc2626 55%, var(--color-line));
+    background-color: color-mix(in srgb, #dc2626 4%, #fff);
+  }
+
+  :where(input.wpcf7-not-valid:focus, select.wpcf7-not-valid:focus, textarea.wpcf7-not-valid:focus) {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px color-mix(in srgb, #dc2626 12%, transparent);
+  }
+
+  .wpcf7-not-valid-tip {
+    display: block;
+    margin-top: 0.375rem;
+    color: #b91c1c;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* Response messages: shaped like the theme's cards/pills */
+  .wpcf7-response-output {
+    display: none;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    background: var(--color-surface);
+    color: var(--color-near-black);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .wpcf7-response-output[aria-hidden='false'] {
+    display: block;
+  }
+
+  /* Safety net: state classes always imply a visible message */
+  .wpcf7-response-output.wpcf7-mail-sent-ok,
+  .wpcf7-response-output.wpcf7-validation-errors,
+  .wpcf7-response-output.wpcf7-acceptance-missing,
+  .wpcf7-response-output.wpcf7-mail-sent-ng,
+  .wpcf7-response-output.wpcf7-spam-blocked,
+  .wpcf7-response-output.wpcf7-aborted,
+  .wpcf7-response-output.wpcf7-payment-required,
+  .wpcf7-response-output.wpcf7-submission-errors {
+    display: block;
+  }
+
+  /* Success — brand navy, matching the label pills */
+  .wpcf7-response-output.wpcf7-mail-sent-ok {
+    border-color: color-mix(in srgb, var(--color-brand) 24%, var(--color-line));
+    background: color-mix(in srgb, var(--color-brand) 6%, #fff);
+    color: var(--color-brand);
+    font-weight: 700;
+  }
+
+  /* Errors — soft red so it reads as a problem without shouting */
+  .wpcf7-response-output.wpcf7-validation-errors,
+  .wpcf7-response-output.wpcf7-acceptance-missing,
+  .wpcf7-response-output.wpcf7-mail-sent-ng,
+  .wpcf7-response-output.wpcf7-spam-blocked,
+  .wpcf7-response-output.wpcf7-aborted,
+  .wpcf7-response-output.wpcf7-payment-required,
+  .wpcf7-response-output.wpcf7-submission-errors {
+    border-color: color-mix(in srgb, #dc2626 30%, var(--color-line));
+    background: color-mix(in srgb, #dc2626 6%, #fff);
+    color: #b91c1c;
+    font-weight: 700;
+  }
 }
 
 @media (min-width: 782px) {
