@@ -47,15 +47,11 @@ $defaults = [
     ],
 ];
 
-$sections = [];
-foreach ($defaults as $index => $default) {
-    $n = $index + 1;
-    $content = function_exists('get_field') ? get_field("terms_section_{$n}_content") : null;
-    $sections[] = [
-        'title' => (string) txa_f("terms_section_{$n}_title", $default['title']),
-        'content' => (null === $content || '' === $content) ? $default['content'] : $content,
-    ];
+$default_body = '';
+foreach ($defaults as $default) {
+    $default_body .= '<h2>' . $default['title'] . '</h2>' . "\n" . $default['content'] . "\n\n";
 }
+$body = txa_f('terms_body', trim($default_body));
 
 add_filter('pre_get_document_title', fn(): string => (string) txa_f('terms_seo_title', 'Terms of Use | Tourism Exchange Great Britain'));
 add_action('wp_head', function (): void {
@@ -70,7 +66,7 @@ get_template_part('template-parts/legal-page', null, [
     'label' => txa_f('terms_hero_label', 'LEGAL'),
     'title' => txa_f('terms_hero_title', 'Terms of Use'),
     'intro' => txa_f('terms_hero_intro', 'The terms and conditions that apply when using the Tourism Exchange Great Britain website.'),
-    'sections' => $sections,
+    'body' => $body,
 ]);
 
 get_footer();
