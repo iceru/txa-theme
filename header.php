@@ -32,23 +32,53 @@ if (!function_exists('txa_header_link_class')) {
     }
 }
 
+if (!function_exists('txa_homepage_field')) {
+    function txa_homepage_field(string $name, string $fallback): string
+    {
+        if (!function_exists('get_field')) {
+            return $fallback;
+        }
+
+        $page_id = (int) get_option('page_on_front');
+
+        if (!$page_id) {
+            $pages = get_posts([
+                'post_type'      => 'page',
+                'title'          => 'Homepage',
+                'post_status'    => 'publish',
+                'posts_per_page' => 1,
+                'fields'         => 'ids',
+            ]);
+            $page_id = $pages ? (int) $pages[0] : 0;
+        }
+
+        if (!$page_id) {
+            return $fallback;
+        }
+
+        $value = get_field($name, $page_id);
+
+        if (is_array($value)) {
+            $value = $value['url'] ?? '';
+        }
+
+        $value = trim((string) $value);
+
+        return '' !== $value ? $value : $fallback;
+    }
+}
+
 if (!function_exists('txa_dashboard_login_url')) {
     function txa_dashboard_login_url(): string
     {
-        $front_id = (int) get_option('page_on_front');
-        $value = ($front_id && function_exists('get_field')) ? get_field('dashboard_login_url', $front_id) : '';
-        $value = trim((string) $value);
-        return '' !== $value ? $value : 'https://sites.txgb.co.uk/Dashboard';
+        return txa_homepage_field('dashboard_login_url', 'https://sites.txgb.co.uk/Dashboard');
     }
 }
 
 if (!function_exists('txa_txload_login_url')) {
     function txa_txload_login_url(): string
     {
-        $front_id = (int) get_option('page_on_front');
-        $value = ($front_id && function_exists('get_field')) ? get_field('txload_login_url', $front_id) : '';
-        $value = trim((string) $value);
-        return '' !== $value ? $value : 'https://sites.txgb.co.uk/Dashboard';
+        return txa_homepage_field('txload_login_url', 'https://sites.txgb.co.uk/Dashboard');
     }
 }
 ?>
