@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shared presentation for legal pages.
  *
@@ -23,7 +24,7 @@ $body = $args['body'] ?? '';
             </h1>
             <?php if ($intro): ?>
                 <p class="mt-5 max-w-[820px] text-base leading-7 text-mid-gray sm:mt-6 sm:text-lg lg:mt-8">
-                    <?php echo esc_html($intro); ?>
+                    <?php echo wp_kses_post((string) $intro); ?>
                 </p>
             <?php endif; ?>
         </div>
