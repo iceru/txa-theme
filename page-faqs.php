@@ -24,53 +24,7 @@ add_action('wp_head', function (): void {
 get_header();
 
 // Placeholder group copy: only used until FAQ Groups / FAQ Questions posts are published.
-$faq_groups = [
-    'suppliers' => [
-        'eyebrow' => 'Tourism suppliers',
-        'title' => 'Supplier questions',
-        'intro' => 'Connecting tourism products, rates and availability to more online channels.',
-        'icon' => 'bi-shop-window',
-        'items' => [
-            ['question' => 'Do I need a booking system?', 'answer' => 'Usually TXGB works through a connected booking system. If you do not have one, TXGB can help you understand available options.'],
-            ['question' => 'Will I have to manage another system?', 'answer' => 'The goal is to reduce manual management by using your booking system as the source of product, rates and availability.'],
-            ['question' => 'Can I keep personal contact with customers?', 'answer' => 'Yes. The customer remains your customer, with booking and customer information flowing according to the relevant channel and payment model.'],
-            ['question' => 'What size business is TXGB designed for?', 'answer' => 'TXGB is designed for tourism suppliers of different sizes across accommodation, activities, attractions, events and experiences.'],
-        ],
-    ],
-    'destinations' => [
-        'eyebrow' => 'Destinations',
-        'title' => 'Destination questions',
-        'intro' => 'Activating destination assets, local supply and measurable visitor journeys.',
-        'icon' => 'bi-geo-alt',
-        'items' => [
-            ['question' => 'Does this replace our existing CMS?', 'answer' => 'No. TXGB can work alongside your existing destination website or CMS by powering bookable pathways, widgets, APIs and destination-specific booking pages.'],
-            ['question' => 'How much does it cost operators?', 'answer' => 'Commercial models can vary by destination. TXGB is designed to support flexible destination packages and supplier pathways.'],
-            ['question' => 'Is TXGB an OTA (Online Travel Agent)?', 'answer' => 'No. TXGB is a neutral B2B exchange connecting suppliers, destinations, distributors and booking systems.'],
-        ],
-    ],
-    'distributors' => [
-        'eyebrow' => 'Distributors',
-        'title' => 'Distributor questions',
-        'intro' => 'Accessing British tourism inventory through flexible technical and commercial models.',
-        'icon' => 'bi-globe2',
-        'items' => [
-            ['question' => 'What inventory can distributors access through TXGB?', 'answer' => 'TXGB provides a pathway to British tourism suppliers across accommodation, tours, attractions, events and experiences.'],
-            ['question' => 'How can a distributor connect to TXGB?', 'answer' => 'Connection options include a direct API, white-label booking pages, an on-account or agent model, and campaign or destination-led distribution.'],
-            ['question' => 'Does TXGB support different commercial models?', 'answer' => 'Yes. TXGB supports flexible commercial arrangements, including net, gross and commission-based models, depending on the distributor agreement.'],
-        ],
-    ],
-    'booking-systems' => [
-        'eyebrow' => 'Booking systems',
-        'title' => 'Booking System questions',
-        'intro' => 'Connecting operator customers to destination, distributor and trade channels.',
-        'icon' => 'bi-calendar2-check',
-        'items' => [
-            ['question' => 'What does a TXGB integration offer booking-system customers?', 'answer' => 'A TXGB integration can give operator customers access to broader destination, distributor and trade channels through Great Britain’s national tourism exchange.'],
-            ['question' => 'How is product availability kept current?', 'answer' => 'Connected systems can exchange live product, pricing and availability updates so booking data remains accurate across the network.'],
-            ['question' => 'Why connect once through TXGB?', 'answer' => 'A single TXGB integration can reduce the need to manage separate technical connections for each participating distribution relationship.'],
-        ],
-    ],
-];
+$faq_groups = txa_faq_default_groups();
 
 $faq_group_query = new WP_Query([
     'post_type' => 'txa_faq_group',

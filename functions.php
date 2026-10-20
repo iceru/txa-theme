@@ -464,6 +464,202 @@ add_action('save_post_txa_faq', function (int $post_id): void {
     update_post_meta($post_id, '_txa_faq_answer', sanitize_textarea_field(wp_unslash($_POST['txa_faq_answer'] ?? '')));
 });
 
+/**
+ * Placeholder FAQ copy. Used as the fallback by the FAQs template until both
+ * FAQ Groups and FAQ Questions have published content, and doubles as the
+ * source for seeding that content into the CPTs.
+ */
+function txa_faq_default_groups(): array
+{
+    return [
+        'suppliers' => [
+            'eyebrow' => 'Tourism suppliers',
+            'title' => 'Supplier questions',
+            'intro' => 'Connecting tourism products, rates and availability to more online channels.',
+            'icon' => 'bi-shop-window',
+            'items' => [
+                ['question' => 'Do I need a booking system?', 'answer' => 'Usually TXGB works through a connected booking system. If you do not have one, TXGB can help you understand available options.'],
+                ['question' => 'Will I have to manage another system?', 'answer' => 'The goal is to reduce manual management by using your booking system as the source of product, rates and availability.'],
+                ['question' => 'Can I keep personal contact with customers?', 'answer' => 'Yes. The customer remains your customer, with booking and customer information flowing according to the relevant channel and payment model.'],
+                ['question' => 'What size business is TXGB designed for?', 'answer' => 'TXGB is designed for tourism suppliers of different sizes across accommodation, activities, attractions, events and experiences.'],
+            ],
+        ],
+        'destinations' => [
+            'eyebrow' => 'Destinations',
+            'title' => 'Destination questions',
+            'intro' => 'Activating destination assets, local supply and measurable visitor journeys.',
+            'icon' => 'bi-geo-alt',
+            'items' => [
+                ['question' => 'Does this replace our existing CMS?', 'answer' => 'No. TXGB can work alongside your existing destination website or CMS by powering bookable pathways, widgets, APIs and destination-specific booking pages.'],
+                ['question' => 'How much does it cost operators?', 'answer' => 'Commercial models can vary by destination. TXGB is designed to support flexible destination packages and supplier pathways.'],
+                ['question' => 'Is TXGB an OTA (Online Travel Agent)?', 'answer' => 'No. TXGB is a neutral B2B exchange connecting suppliers, destinations, distributors and booking systems.'],
+            ],
+        ],
+        'distributors' => [
+            'eyebrow' => 'Distributors',
+            'title' => 'Distributor questions',
+            'intro' => 'Accessing British tourism inventory through flexible technical and commercial models.',
+            'icon' => 'bi-globe2',
+            'items' => [
+                ['question' => 'What inventory can distributors access through TXGB?', 'answer' => 'TXGB provides a pathway to British tourism suppliers across accommodation, tours, attractions, events and experiences.'],
+                ['question' => 'How can a distributor connect to TXGB?', 'answer' => 'Connection options include a direct API, white-label booking pages, an on-account or agent model, and campaign or destination-led distribution.'],
+                ['question' => 'Does TXGB support different commercial models?', 'answer' => 'Yes. TXGB supports flexible commercial arrangements, including net, gross and commission-based models, depending on the distributor agreement.'],
+            ],
+        ],
+        'booking-systems' => [
+            'eyebrow' => 'Booking systems',
+            'title' => 'Booking System questions',
+            'intro' => 'Connecting operator customers to destination, distributor and trade channels.',
+            'icon' => 'bi-calendar2-check',
+            'items' => [
+                ['question' => 'What does a TXGB integration offer booking-system customers?', 'answer' => 'A TXGB integration can give operator customers access to broader destination, distributor and trade channels through Great Britain’s national tourism exchange.'],
+                ['question' => 'How is product availability kept current?', 'answer' => 'Connected systems can exchange live product, pricing and availability updates so booking data remains accurate across the network.'],
+                ['question' => 'Why connect once through TXGB?', 'answer' => 'A single TXGB integration can reduce the need to manage separate technical connections for each participating distribution relationship.'],
+            ],
+        ],
+    ];
+}
+
+/**
+ * Import the placeholder FAQ copy into the FAQ Groups and FAQ Questions CPTs.
+ * Idempotent: existing groups are matched by anchor, and questions are only
+ * created when the same question is missing from a group.
+ */
+function txa_faq_seed_placeholder_content(): array
+{
+    $result = ['groups_created' => 0, 'questions_created' => 0, 'skipped' => 0];
+    $group_order = 0;
+
+    foreach (txa_faq_default_groups() as $anchor => $group) {
+        $existing_group = get_posts([
+            'post_type' => 'txa_faq_group',
+            'post_status' => 'publish',
+            'posts_per_page' => 1,
+            'fields' => 'ids',
+            'meta_key' => '_txa_faq_group_anchor',
+            'meta_value' => $anchor,
+        ])[0] ?? 0;
+
+        if (!$existing_group) {
+            $created = wp_insert_post([
+                'post_type' => 'txa_faq_group',
+                'post_status' => 'publish',
+                'post_title' => $group['title'],
+                'menu_order' => $group_order,
+            ], true);
+
+            if (is_wp_error($created) || !$created) {
+                $result['skipped']++;
+                $group_order++;
+                continue;
+            }
+
+            $existing_group = (int) $created;
+            update_post_meta($existing_group, '_txa_faq_group_eyebrow', $group['eyebrow']);
+            update_post_meta($existing_group, '_txa_faq_group_intro', $group['intro']);
+            update_post_meta($existing_group, '_txa_faq_group_icon', $group['icon']);
+            update_post_meta($existing_group, '_txa_faq_group_anchor', $anchor);
+            $result['groups_created']++;
+        }
+
+        foreach ($group['items'] as $index => $item) {
+            $existing_question = get_posts([
+                'post_type' => 'txa_faq',
+                'post_status' => ['publish', 'draft', 'pending'],
+                'posts_per_page' => 1,
+                'fields' => 'ids',
+                'title' => $item['question'],
+                'meta_key' => '_txa_faq_group_id',
+                'meta_value' => $existing_group,
+            ]);
+
+            if ($existing_question) {
+                $result['skipped']++;
+                continue;
+            }
+
+            $created = wp_insert_post([
+                'post_type' => 'txa_faq',
+                'post_status' => 'publish',
+                'post_title' => $item['question'],
+                'menu_order' => $index,
+            ], true);
+
+            if (is_wp_error($created) || !$created) {
+                $result['skipped']++;
+                continue;
+            }
+
+            update_post_meta((int) $created, '_txa_faq_group_id', $existing_group);
+            update_post_meta((int) $created, '_txa_faq_answer', $item['answer']);
+            $result['questions_created']++;
+        }
+
+        $group_order++;
+    }
+
+    return $result;
+}
+
+/**
+ * One-click trigger under Tools to seed the placeholder FAQ content.
+ */
+add_action('admin_menu', function (): void {
+    add_management_page(
+        __('FAQ placeholder import', 'tailpress'),
+        __('FAQ placeholders', 'tailpress'),
+        'manage_options',
+        'txa-faq-seed',
+        function (): void {
+            $groups = (int) (wp_count_posts('txa_faq_group')->publish ?? 0);
+            $questions = (int) (wp_count_posts('txa_faq')->publish ?? 0); ?>
+        <div class="wrap">
+            <h1><?php esc_html_e('FAQ placeholder import', 'tailpress'); ?></h1>
+            <?php if (isset($_GET['groups'], $_GET['questions'])): ?>
+                <div class="notice notice-success is-dismissible">
+                    <p><?php
+                        printf(
+                            esc_html__('Created %1$d FAQ group(s) and %2$d FAQ question(s).', 'tailpress'),
+                            (int) $_GET['groups'],
+                            (int) $_GET['questions']
+                        );
+                    ?></p>
+                </div>
+            <?php endif; ?>
+            <p>
+                <?php esc_html_e('Imports the current FAQs page placeholder copy into the FAQ Groups and FAQ Questions as published content. Groups are matched by anchor slug and existing questions are skipped, so this is safe to run more than once.', 'tailpress'); ?>
+            </p>
+            <p class="description">
+                <?php printf(esc_html__('Currently published: %1$d FAQ group(s), %2$d FAQ question(s).', 'tailpress'), $groups, $questions); ?>
+            </p>
+            <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+                <input type="hidden" name="action" value="txa_faq_seed_placeholder">
+                <?php wp_nonce_field('txa_faq_seed_placeholder'); ?>
+                <?php submit_button(__('Import placeholder FAQs', 'tailpress'), 'primary', 'submit', false); ?>
+            </form>
+        </div>
+<?php
+        }
+    );
+});
+
+add_action('admin_post_txa_faq_seed_placeholder', function (): void {
+    if (!current_user_can('manage_options')) {
+        wp_die(__('You are not allowed to run this import.', 'tailpress'));
+    }
+
+    check_admin_referer('txa_faq_seed_placeholder');
+
+    $result = txa_faq_seed_placeholder_content();
+
+    wp_safe_redirect(add_query_arg([
+        'page' => 'txa-faq-seed',
+        'groups' => $result['groups_created'],
+        'questions' => $result['questions_created'],
+    ], admin_url('tools.php')));
+    exit;
+});
+
 // TailPress enqueues the Vite entry as tailpress-app; its dev-server module filter misses that handle.
 add_filter('script_loader_tag', function (string $tag, string $handle, string $src): string {
     if ('tailpress-app' === $handle && str_contains($src, '/resources/js/app.js')) {
