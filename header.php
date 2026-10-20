@@ -78,7 +78,7 @@ if (!function_exists('txa_dashboard_login_url')) {
 if (!function_exists('txa_txload_login_url')) {
     function txa_txload_login_url(): string
     {
-        return txa_homepage_field('txload_login_url', 'https://sites.txgb.co.uk/Dashboard');
+        return txa_homepage_field('txload_login_url', 'https://sites.txgb.co.uk/TxLoad/v1/');
     }
 }
 ?>
