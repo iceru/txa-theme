@@ -38,7 +38,17 @@ if (!function_exists('txa_dashboard_login_url')) {
         $front_id = (int) get_option('page_on_front');
         $value = ($front_id && function_exists('get_field')) ? get_field('dashboard_login_url', $front_id) : '';
         $value = trim((string) $value);
-        return '' !== $value ? $value : 'https://sites.txa.com.au/Dashboard/';
+        return '' !== $value ? $value : 'https://sites.txgb.co.uk/Dashboard';
+    }
+}
+
+if (!function_exists('txa_txload_login_url')) {
+    function txa_txload_login_url(): string
+    {
+        $front_id = (int) get_option('page_on_front');
+        $value = ($front_id && function_exists('get_field')) ? get_field('txload_login_url', $front_id) : '';
+        $value = trim((string) $value);
+        return '' !== $value ? $value : 'https://sites.txgb.co.uk/Dashboard';
     }
 }
 ?>
@@ -159,10 +169,17 @@ if (!function_exists('txa_dashboard_login_url')) {
                             </ul>
                         </nav>
 
-                        <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
-                            <a href="<?php echo esc_url(txa_dashboard_login_url()); ?>"
-                                class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark">
-                                Dashboard Login</a>
+                        <div class="flex items-center space-x-4">
+                            <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
+                                <a href="<?php echo esc_url(txa_dashboard_login_url()); ?>"
+                                    class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark">
+                                    Dashboard Login</a>
+                            </div>
+                            <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
+                                <a href="<?php echo esc_url(txa_txload_login_url()); ?>"
+                                    class="inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark">
+                                    TxLoad</a>
+                            </div>
                         </div>
                     </div>
                 </div>

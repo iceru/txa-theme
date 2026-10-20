@@ -64,6 +64,8 @@
                                 href="<?php echo esc_url(home_url('/contact/')); ?>">Contact us</a></li>
                         <li><a class="text-white/65 !no-underline hover:text-white"
                                 href="<?php echo esc_url(txa_dashboard_login_url()); ?>">Dashboard Login</a></li>
+                        <li><a class="text-white/65 !no-underline hover:text-white"
+                                href="<?php echo esc_url(txa_txload_login_url()); ?>">TxLoad</a></li>
                     </ul>
                 </div>
                 <div>
@@ -79,7 +81,7 @@
         </div>
 
         <div class="mt-14 border-t border-white/10 pt-7 text-sm text-white/65">
-            Copyright 2016 - <?php echo esc_html(date_i18n('Y')); ?> TXGB | All Rights Reserved
+            Copyright <?php echo esc_html(date_i18n('Y')); ?> TXGB | All Rights Reserved
         </div>
     </div>
 </footer>
