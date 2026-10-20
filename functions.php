@@ -301,6 +301,169 @@ add_action('save_post_txa_timeline', function (int $post_id): void {
     update_post_meta($post_id, '_txa_timeline_copy', sanitize_textarea_field(wp_unslash($_POST['txa_timeline_copy'] ?? '')));
 });
 
+/**
+ * Store FAQ page categories and questions as native WordPress content so they
+ * do not depend on ACF repeaters. The FAQs template keeps placeholder copy and
+ * only switches to these entries once both types have published content.
+ */
+add_action('init', function (): void {
+    register_post_type('txa_faq_group', [
+        'labels' => [
+            'name' => __('FAQ Groups', 'tailpress'),
+            'singular_name' => __('FAQ Group', 'tailpress'),
+            'add_new_item' => __('Add FAQ Group', 'tailpress'),
+            'edit_item' => __('Edit FAQ Group', 'tailpress'),
+            'menu_name' => __('FAQ Groups', 'tailpress'),
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => false,
+        'menu_icon' => 'dashicons-category',
+        'supports' => ['title', 'page-attributes'],
+        'hierarchical' => false,
+        'has_archive' => false,
+        'rewrite' => false,
+        'query_var' => false,
+    ]);
+
+    register_post_type('txa_faq', [
+        'labels' => [
+            'name' => __('FAQ Questions', 'tailpress'),
+            'singular_name' => __('FAQ Question', 'tailpress'),
+            'add_new_item' => __('Add FAQ Question', 'tailpress'),
+            'edit_item' => __('Edit FAQ Question', 'tailpress'),
+            'menu_name' => __('FAQ Questions', 'tailpress'),
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => false,
+        'menu_icon' => 'dashicons-editor-help',
+        'supports' => ['title', 'page-attributes'],
+        'hierarchical' => false,
+        'has_archive' => false,
+        'rewrite' => false,
+        'query_var' => false,
+    ]);
+});
+
+add_action('add_meta_boxes_txa_faq_group', function (): void {
+    add_meta_box(
+        'txa_faq_group_details',
+        __('Group Details', 'tailpress'),
+        function (WP_Post $post): void {
+            wp_nonce_field('txa_faq_group_details', 'txa_faq_group_nonce');
+            $eyebrow = get_post_meta($post->ID, '_txa_faq_group_eyebrow', true);
+            $intro = get_post_meta($post->ID, '_txa_faq_group_intro', true);
+            $icon = get_post_meta($post->ID, '_txa_faq_group_icon', true);
+            $anchor = get_post_meta($post->ID, '_txa_faq_group_anchor', true);
+?>
+        <p>
+            <label for="txa_faq_group_eyebrow"><strong><?php esc_html_e('Eyebrow label', 'tailpress'); ?></strong></label><br>
+            <input type="text" id="txa_faq_group_eyebrow" name="txa_faq_group_eyebrow"
+                value="<?php echo esc_attr($eyebrow); ?>" class="widefat"
+                placeholder="Tourism suppliers">
+        </p>
+        <p>
+            <label for="txa_faq_group_intro"><strong><?php esc_html_e('Intro copy', 'tailpress'); ?></strong></label><br>
+            <textarea id="txa_faq_group_intro" name="txa_faq_group_intro" rows="3"
+                class="widefat" placeholder="Connecting tourism products, rates and availability to more online channels."><?php echo esc_textarea($intro); ?></textarea>
+        </p>
+        <p>
+            <label for="txa_faq_group_icon"><strong><?php esc_html_e('Bootstrap icon class', 'tailpress'); ?></strong></label><br>
+            <input type="text" id="txa_faq_group_icon" name="txa_faq_group_icon"
+                value="<?php echo esc_attr($icon); ?>" class="widefat" placeholder="bi-shop-window">
+        </p>
+        <p>
+            <label for="txa_faq_group_anchor"><strong><?php esc_html_e('Anchor slug', 'tailpress'); ?></strong></label><br>
+            <input type="text" id="txa_faq_group_anchor" name="txa_faq_group_anchor"
+                value="<?php echo esc_attr($anchor); ?>" class="widefat" placeholder="suppliers">
+        </p>
+        <p class="description">
+            <?php esc_html_e('The post title is the group heading. The anchor slug sets the "#" link target on the FAQs page. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
+        </p>
+<?php
+        },
+        'txa_faq_group',
+        'normal',
+        'default'
+    );
+});
+
+add_action('save_post_txa_faq_group', function (int $post_id): void {
+    if (
+        !isset($_POST['txa_faq_group_nonce'])
+        || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['txa_faq_group_nonce'])), 'txa_faq_group_details')
+        || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+        || !current_user_can('edit_post', $post_id)
+    ) {
+        return;
+    }
+
+    update_post_meta($post_id, '_txa_faq_group_eyebrow', sanitize_text_field(wp_unslash($_POST['txa_faq_group_eyebrow'] ?? '')));
+    update_post_meta($post_id, '_txa_faq_group_intro', sanitize_textarea_field(wp_unslash($_POST['txa_faq_group_intro'] ?? '')));
+    update_post_meta($post_id, '_txa_faq_group_icon', sanitize_text_field(wp_unslash($_POST['txa_faq_group_icon'] ?? '')));
+    update_post_meta($post_id, '_txa_faq_group_anchor', sanitize_title(wp_unslash($_POST['txa_faq_group_anchor'] ?? '')));
+});
+
+add_action('add_meta_boxes_txa_faq', function (): void {
+    add_meta_box(
+        'txa_faq_details',
+        __('FAQ Details', 'tailpress'),
+        function (WP_Post $post): void {
+            wp_nonce_field('txa_faq_details', 'txa_faq_nonce');
+            $selected_group = (int) get_post_meta($post->ID, '_txa_faq_group_id', true);
+            $answer = get_post_meta($post->ID, '_txa_faq_answer', true);
+            $groups = get_posts([
+                'post_type' => 'txa_faq_group',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
+                'order' => 'ASC',
+            ]);
+?>
+        <p>
+            <label for="txa_faq_group_id"><strong><?php esc_html_e('FAQ group', 'tailpress'); ?></strong></label><br>
+            <select id="txa_faq_group_id" name="txa_faq_group_id" class="widefat">
+                <option value="0"><?php esc_html_e('— No group —', 'tailpress'); ?></option>
+                <?php foreach ($groups as $group_post): ?>
+                    <option value="<?php echo (int) $group_post->ID; ?>" <?php selected($selected_group, (int) $group_post->ID); ?>>
+                        <?php echo esc_html(get_the_title($group_post) ?: sprintf(__('(no title #%d)', 'tailpress'), $group_post->ID)); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+        <p>
+            <label for="txa_faq_answer"><strong><?php esc_html_e('Answer', 'tailpress'); ?></strong></label><br>
+            <textarea id="txa_faq_answer" name="txa_faq_answer" rows="5"
+                class="widefat"><?php echo esc_textarea($answer); ?></textarea>
+        </p>
+        <p class="description">
+            <?php esc_html_e('The post title is the question shown in the accordion. Create the FAQ Groups first, then publish questions and assign each one to a group. Set the Order in the Page Attributes panel to control the position within the group.', 'tailpress'); ?>
+        </p>
+<?php
+        },
+        'txa_faq',
+        'normal',
+        'default'
+    );
+});
+
+add_action('save_post_txa_faq', function (int $post_id): void {
+    if (
+        !isset($_POST['txa_faq_nonce'])
+        || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['txa_faq_nonce'])), 'txa_faq_details')
+        || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+        || !current_user_can('edit_post', $post_id)
+    ) {
+        return;
+    }
+
+    update_post_meta($post_id, '_txa_faq_group_id', (int) ($_POST['txa_faq_group_id'] ?? 0));
+    update_post_meta($post_id, '_txa_faq_answer', sanitize_textarea_field(wp_unslash($_POST['txa_faq_answer'] ?? '')));
+});
+
 // TailPress enqueues the Vite entry as tailpress-app; its dev-server module filter misses that handle.
 add_filter('script_loader_tag', function (string $tag, string $handle, string $src): string {
     if ('tailpress-app' === $handle && str_contains($src, '/resources/js/app.js')) {

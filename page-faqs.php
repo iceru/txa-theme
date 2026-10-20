@@ -23,6 +23,7 @@ add_action('wp_head', function (): void {
 
 get_header();
 
+// Placeholder group copy: only used until FAQ Groups / FAQ Questions posts are published.
 $faq_groups = [
     'suppliers' => [
         'eyebrow' => 'Tourism suppliers',
@@ -70,6 +71,56 @@ $faq_groups = [
         ],
     ],
 ];
+
+$faq_group_query = new WP_Query([
+    'post_type' => 'txa_faq_group',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
+    'no_found_rows' => true,
+]);
+
+$faq_question_query = new WP_Query([
+    'post_type' => 'txa_faq',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
+    'no_found_rows' => true,
+]);
+
+// Replace the placeholder copy with editable content once CPT groups and
+// questions have been published.
+if ($faq_group_query->have_posts() && $faq_question_query->have_posts()) {
+    $questions_by_group = [];
+    while ($faq_question_query->have_posts()) {
+        $faq_question_query->the_post();
+        $group_id = (int) get_post_meta(get_the_ID(), '_txa_faq_group_id', true);
+        if ($group_id) {
+            $questions_by_group[$group_id][] = [
+                'question' => get_the_title(),
+                'answer' => get_post_meta(get_the_ID(), '_txa_faq_answer', true),
+            ];
+        }
+    }
+    wp_reset_postdata();
+
+    $cpt_faq_groups = [];
+    foreach ($faq_group_query->posts as $faq_group_post) {
+        $group_id = $faq_group_post->ID;
+        $anchor = get_post_meta($group_id, '_txa_faq_group_anchor', true) ?: ($faq_group_post->post_name ?: 'group-' . $group_id);
+        $cpt_faq_groups[$anchor] = [
+            'eyebrow' => get_post_meta($group_id, '_txa_faq_group_eyebrow', true) ?: get_the_title($faq_group_post),
+            'title' => get_the_title($faq_group_post),
+            'intro' => get_post_meta($group_id, '_txa_faq_group_intro', true),
+            'icon' => get_post_meta($group_id, '_txa_faq_group_icon', true) ?: 'bi-chat-square-text',
+            'items' => $questions_by_group[$group_id] ?? [],
+        ];
+    }
+
+    if ($cpt_faq_groups) {
+        $faq_groups = $cpt_faq_groups;
+    }
+}
 ?>
 
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">

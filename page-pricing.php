@@ -17,12 +17,51 @@ $pricing_list = static function (string $name, array $default) use ($pricing_f):
     return array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $value))));
 };
 
-$apply_url = $pricing_f('hero_primary_url', home_url('/apply-now/'));
-$demo_url = $pricing_f('hero_secondary_url', home_url('/contact/'));
-$supplier_url = home_url('/suppliers/');
-$destination_url = home_url('/destinations/pricing/');
-$distributor_url = home_url('/distributors/');
-$booking_url = home_url('/booking-systems/partner-enquiry/');
+$pricing_link = static function (string $name, string $default) use ($pricing_f): array {
+    $value = function_exists('get_field') ? get_field('main_pricing_' . $name . '_link') : null;
+    $url = '';
+    $title = '';
+    $target = '';
+    if (is_array($value)) {
+        $url = isset($value['url']) ? trim((string) $value['url']) : '';
+        $title = isset($value['title']) ? trim((string) $value['title']) : '';
+        $target = isset($value['target']) ? trim((string) $value['target']) : '';
+    } elseif (is_string($value) && '' !== trim($value)) {
+        $url = trim($value);
+    }
+    if ('' === $url) {
+        $url = $default;
+    }
+    if (0 === strpos($url, '/') && 0 !== strpos($url, '//')) {
+        $url = home_url($url);
+    }
+    return ['url' => $url, 'title' => $title, 'target' => $target];
+};
+$pricing_label = static function (string $name, array $link, string $default) use ($pricing_f): string {
+    $label = trim($pricing_f($name, ''));
+    if ('' === $label && '' !== $link['title']) {
+        $label = $link['title'];
+    }
+    return '' === $label ? $default : $label;
+};
+$pricing_target = static function (string $target): string {
+    if ('' === $target) {
+        return '';
+    }
+    $attr = ' target="' . esc_attr($target) . '"';
+    if ('_blank' === strtolower($target)) {
+        $attr .= ' rel="noopener"';
+    }
+    return $attr;
+};
+
+$hero_primary_link = $pricing_link('hero_primary', '/apply-now/');
+$hero_secondary_link = $pricing_link('hero_secondary', '/contact/');
+$supplier_link = $pricing_link('supplier', '/apply-now/');
+$supplier_path = '/suppliers/';
+$destination_path = '/destinations/pricing/';
+$distributor_path = '/distributors/';
+$booking_path = '/booking-systems/partner-enquiry/';
 
 $hero_steps = [];
 $hero_step_defaults = [
@@ -35,22 +74,23 @@ foreach ($hero_step_defaults as $i => $step) {
 }
 
 $hero_path_defaults = [
-    ['bi-house-door', 'Suppliers', '0.75% - 2.8% success fee per booking.', $supplier_url],
-    ['bi-map', 'Destinations', 'Packages subject to approval and scope.', $destination_url],
-    ['bi-diagram-3', 'Distributors', 'Pricing by agreement based on volume.', $distributor_url],
-    ['bi-calendar2-check', 'Booking Systems', 'Technical integration partner enquiry.', $booking_url],
+    ['bi-house-door', 'Suppliers', '0.75% - 2.8% success fee per booking.', $supplier_path],
+    ['bi-map', 'Destinations', 'Packages subject to approval and scope.', $destination_path],
+    ['bi-diagram-3', 'Distributors', 'Pricing by agreement based on volume.', $distributor_path],
+    ['bi-calendar2-check', 'Booking Systems', 'Technical integration partner enquiry.', $booking_path],
 ];
 $hero_paths = [];
 foreach ($hero_path_defaults as $i => $path) {
     $n = $i + 1;
-    $hero_paths[] = ['icon' => $pricing_f("path_{$n}_icon", $path[0]), 'title' => $pricing_f("path_{$n}_title", $path[1]), 'copy' => $pricing_f("path_{$n}_copy", $path[2]), 'url' => $pricing_f("path_{$n}_url", $path[3])];
+    $path_link = $pricing_link("path_{$n}", $path[3]);
+    $hero_paths[] = ['icon' => $pricing_f("path_{$n}_icon", $path[0]), 'title' => $pricing_f("path_{$n}_title", $path[1]), 'copy' => $pricing_f("path_{$n}_copy", $path[2]), 'url' => $path_link['url'], 'target' => $path_link['target']];
 }
 
 $pricing_card_defaults = [
-    ['title' => 'Tourism Suppliers', 'price' => '0.75%', 'suffix' => 'to', 'price_end' => '2.8%', 'copy' => 'Success fee per booking. Perfect for hotels, tours, and attraction operators.', 'points' => ['No upfront fees', 'Unlimited distributors'], 'cta' => 'View Details', 'url' => $supplier_url, 'featured' => true],
-    ['title' => 'Destinations', 'price' => 'Destination Packages', 'copy' => 'Fixed monthly platform service packages for destination activation, supplier support, content, trade, virtual concierge and data. Publish only after package approval.', 'cta' => 'View Packages', 'url' => $destination_url],
-    ['title' => 'Distributors', 'price' => 'Commercial Base', 'copy' => 'Free to connect. Commercial arrangements depend on the distributor model and agreement.', 'cta' => 'Become a Distributor', 'url' => $distributor_url],
-    ['title' => 'Booking Systems', 'price' => 'Partner Enquiry', 'copy' => 'Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry.', 'cta' => 'Partner Enquiry', 'url' => $booking_url],
+    ['title' => 'Tourism Suppliers', 'price' => '0.75%', 'suffix' => 'to', 'price_end' => '2.8%', 'copy' => 'Success fee per booking. Perfect for hotels, tours, and attraction operators.', 'points' => ['No upfront fees', 'Unlimited distributors'], 'cta' => 'View Details', 'url' => $supplier_path, 'featured' => true],
+    ['title' => 'Destinations', 'price' => 'Destination Packages', 'copy' => 'Fixed monthly platform service packages for destination activation, supplier support, content, trade, virtual concierge and data. Publish only after package approval.', 'cta' => 'View Packages', 'url' => $destination_path],
+    ['title' => 'Distributors', 'price' => 'Commercial Base', 'copy' => 'Free to connect. Commercial arrangements depend on the distributor model and agreement.', 'cta' => 'Become a Distributor', 'url' => $distributor_path],
+    ['title' => 'Booking Systems', 'price' => 'Partner Enquiry', 'copy' => 'Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry.', 'cta' => 'Partner Enquiry', 'url' => $booking_path],
 ];
 $pricing_cards = [];
 foreach ($pricing_card_defaults as $i => $card) {
@@ -61,8 +101,10 @@ foreach ($pricing_card_defaults as $i => $card) {
     $card['price_end'] = $pricing_f("card_{$n}_price_end", $card['price_end'] ?? '');
     $card['copy'] = $pricing_f("card_{$n}_copy", $card['copy']);
     $card['points'] = $pricing_list("card_{$n}_points", $card['points'] ?? []);
-    $card['cta'] = $pricing_f("card_{$n}_cta", $card['cta']);
-    $card['url'] = $pricing_f("card_{$n}_url", $card['url']);
+    $card_link = $pricing_link("card_{$n}", $card['url']);
+    $card['cta'] = $pricing_label("card_{$n}_cta", $card_link, $card['cta']);
+    $card['url'] = $card_link['url'];
+    $card['target'] = $card_link['target'];
     $card['featured'] = function_exists('get_field') && null !== get_field("main_pricing_card_{$n}_featured")
         ? (bool) get_field("main_pricing_card_{$n}_featured")
         : !empty($card['featured']);
@@ -79,7 +121,7 @@ $partner_cards = [
         'copy' => 'Choose a Smart Destination package matched to the scale of your visitor economy, with platform infrastructure and support for local supplier activation.',
         'points' => ['Local, Regional and State packages', 'Destination website and content activation', 'Trade portal and virtual concierge tools'],
         'cta' => 'View Destination Packages',
-        'url' => $destination_url,
+        'url' => $destination_path,
     ],
     [
         'icon' => 'bi-globe2',
@@ -88,7 +130,7 @@ $partner_cards = [
         'copy' => 'TXGB acts as a commercially neutral exchange, allowing distributors to connect with thousands of British suppliers through a single pipe.',
         'points' => ['Commercially Neutral Exchange', 'Live inventory from connected booking systems', 'Consolidated payment reconciliation'],
         'cta' => 'Become a Distributor',
-        'url' => $distributor_url,
+        'url' => $distributor_path,
     ],
     [
         'icon' => 'bi-terminal',
@@ -97,14 +139,18 @@ $partner_cards = [
         'copy' => 'Empower your software users with instant access to state and regional tourism markets via TXGB\'s integration framework.',
         'points' => ['Open API and Documentation', 'Technical support for onboarding', 'Value-add for your customer base'],
         'cta' => 'Partner Enquiry',
-        'url' => $booking_url,
+        'url' => $booking_path,
     ],
 ];
 foreach ($partner_cards as $i => &$card) {
     $n = $i + 1;
-    foreach (['icon', 'eyebrow', 'title', 'copy', 'cta', 'url'] as $key) {
+    $card_link = $pricing_link("partner_{$n}", $card['url']);
+    foreach (['icon', 'eyebrow', 'title', 'copy'] as $key) {
         $card[$key] = $pricing_f("partner_{$n}_{$key}", $card[$key]);
     }
+    $card['cta'] = $pricing_label("partner_{$n}_cta", $card_link, $card['cta']);
+    $card['url'] = $card_link['url'];
+    $card['target'] = $card_link['target'];
     $card['points'] = $pricing_list("partner_{$n}_points", $card['points']);
 }
 unset($card);
@@ -129,10 +175,10 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                     <?php echo esc_html($pricing_f('hero_title', 'TXGB pricing without the guesswork.')); ?></h1>
                 <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg"><?php echo esc_html($pricing_f('hero_copy', 'Tell us what you do and your preferred commercial model and we will help guide you.')); ?></p>
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <a href="<?php echo esc_url($apply_url); ?>"
-                        class="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-8 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark"><?php echo esc_html($pricing_f('hero_primary_label', 'Apply Now')); ?></a>
-                    <a href="<?php echo esc_url($demo_url); ?>"
-                        class="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/70 bg-white/10 px-8 py-3 text-base font-bold text-white !no-underline hover:bg-white/20"><?php echo esc_html($pricing_f('hero_secondary_label', 'Request Demo')); ?></a>
+                    <a href="<?php echo esc_url($hero_primary_link['url']); ?>"<?php echo $pricing_target($hero_primary_link['target']); ?>
+                        class="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-8 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark"><?php echo esc_html($pricing_label('hero_primary_label', $hero_primary_link, 'Apply Now')); ?></a>
+                    <a href="<?php echo esc_url($hero_secondary_link['url']); ?>"<?php echo $pricing_target($hero_secondary_link['target']); ?>
+                        class="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/70 bg-white/10 px-8 py-3 text-base font-bold text-white !no-underline hover:bg-white/20"><?php echo esc_html($pricing_label('hero_secondary_label', $hero_secondary_link, 'Request Demo')); ?></a>
                 </div>
                 <h2 class="sr-only"><?php echo esc_html($pricing_f('steps_heading', 'How pricing works')); ?></h2>
                 <div class="mt-10 grid gap-6 sm:grid-cols-3">
@@ -147,7 +193,7 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
             </div>
             <div class="grid gap-4">
                 <?php foreach ($hero_paths as $path): ?>
-                    <a href="<?php echo esc_url($path['url']); ?>"
+                    <a href="<?php echo esc_url($path['url']); ?>"<?php echo $pricing_target($path['target']); ?>
                         class="group flex min-h-[106px] items-center justify-between gap-5 rounded-lg border border-white/10 bg-white/20 p-6 shadow-lg backdrop-blur-md !no-underline hover:bg-white/25">
                         <span>
                             <div class="flex space-x-4 items-center">
@@ -204,7 +250,7 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
-                        <a href="<?php echo esc_url($card['url']); ?>"
+                        <a href="<?php echo esc_url($card['url']); ?>"<?php echo $pricing_target($card['target']); ?>
                             class="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-brand hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline md:mt-auto"><?php echo esc_html($card['cta']); ?></a>
                     </article>
                 <?php endforeach; ?>
@@ -227,8 +273,8 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <a href="<?php echo esc_url($apply_url); ?>"
-                    class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto"><?php echo esc_html($pricing_f('supplier_cta', 'Apply Now using the TXGB Get Connected Wizard')); ?> <i class="bi bi-box-arrow-up-right"
+                <a href="<?php echo esc_url($supplier_link['url']); ?>"<?php echo $pricing_target($supplier_link['target']); ?>
+                    class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto"><?php echo esc_html($pricing_label('supplier_cta', $supplier_link, 'Apply Now using the TXGB Get Connected Wizard')); ?> <i class="bi bi-box-arrow-up-right"
                         aria-hidden="true"></i></a>
             </div>
             <!-- <div class="rounded-2xl bg-white p-7 shadow-xl">
@@ -271,7 +317,7 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                             </li>
                         <?php endforeach; ?>
                     </ol>
-                    <a href="<?php echo esc_url($card['url']); ?>"
+                    <a href="<?php echo esc_url($card['url']); ?>"<?php echo $pricing_target($card['target']); ?>
                         class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-primary px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
                 </article>
             <?php endforeach; ?>

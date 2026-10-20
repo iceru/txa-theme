@@ -28,10 +28,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_hero_primary_url",
-        "label": "Primary Button URL",
-        "name": "main_pricing_hero_primary_url",
-        "type": "text"
+        "key": "field_main_pricing_hero_primary_link",
+        "label": "Primary Button Link",
+        "name": "main_pricing_hero_primary_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_hero_secondary_label",
@@ -40,10 +41,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_hero_secondary_url",
-        "label": "Secondary Button URL",
-        "name": "main_pricing_hero_secondary_url",
-        "type": "text"
+        "key": "field_main_pricing_hero_secondary_link",
+        "label": "Secondary Button Link",
+        "name": "main_pricing_hero_secondary_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_steps_heading",
@@ -151,10 +153,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_path_1_url",
-        "label": "Path 1 URL",
-        "name": "main_pricing_path_1_url",
-        "type": "text"
+        "key": "field_main_pricing_path_1_link",
+        "label": "Path 1 Link",
+        "name": "main_pricing_path_1_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_path_2_icon",
@@ -175,10 +178,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_path_2_url",
-        "label": "Path 2 URL",
-        "name": "main_pricing_path_2_url",
-        "type": "text"
+        "key": "field_main_pricing_path_2_link",
+        "label": "Path 2 Link",
+        "name": "main_pricing_path_2_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_path_3_icon",
@@ -199,10 +203,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_path_3_url",
-        "label": "Path 3 URL",
-        "name": "main_pricing_path_3_url",
-        "type": "text"
+        "key": "field_main_pricing_path_3_link",
+        "label": "Path 3 Link",
+        "name": "main_pricing_path_3_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_path_4_icon",
@@ -223,10 +228,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_path_4_url",
-        "label": "Path 4 URL",
-        "name": "main_pricing_path_4_url",
-        "type": "text"
+        "key": "field_main_pricing_path_4_link",
+        "label": "Path 4 Link",
+        "name": "main_pricing_path_4_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_tab_cards",
@@ -291,10 +297,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_card_1_url",
-        "label": "Card 1 Button URL",
-        "name": "main_pricing_card_1_url",
-        "type": "text"
+        "key": "field_main_pricing_card_1_link",
+        "label": "Card 1 Button Link",
+        "name": "main_pricing_card_1_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_card_1_featured",
@@ -349,10 +356,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_card_2_url",
-        "label": "Card 2 Button URL",
-        "name": "main_pricing_card_2_url",
-        "type": "text"
+        "key": "field_main_pricing_card_2_link",
+        "label": "Card 2 Button Link",
+        "name": "main_pricing_card_2_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_card_2_featured",
@@ -407,10 +415,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_card_3_url",
-        "label": "Card 3 Button URL",
-        "name": "main_pricing_card_3_url",
-        "type": "text"
+        "key": "field_main_pricing_card_3_link",
+        "label": "Card 3 Button Link",
+        "name": "main_pricing_card_3_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_card_3_featured",
@@ -465,10 +474,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_card_4_url",
-        "label": "Card 4 Button URL",
-        "name": "main_pricing_card_4_url",
-        "type": "text"
+        "key": "field_main_pricing_card_4_link",
+        "label": "Card 4 Button Link",
+        "name": "main_pricing_card_4_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_card_4_featured",
@@ -517,6 +527,13 @@
         "label": "Button Label",
         "name": "main_pricing_supplier_cta",
         "type": "text"
+      },
+      {
+        "key": "field_main_pricing_supplier_link",
+        "label": "Button Link",
+        "name": "main_pricing_supplier_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_fee_label",
@@ -589,10 +606,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_partner_1_url",
-        "label": "Partner Card 1 Button URL",
-        "name": "main_pricing_partner_1_url",
-        "type": "text"
+        "key": "field_main_pricing_partner_1_link",
+        "label": "Partner Card 1 Button Link",
+        "name": "main_pricing_partner_1_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_partner_2_icon",
@@ -635,10 +653,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_partner_2_url",
-        "label": "Partner Card 2 Button URL",
-        "name": "main_pricing_partner_2_url",
-        "type": "text"
+        "key": "field_main_pricing_partner_2_link",
+        "label": "Partner Card 2 Button Link",
+        "name": "main_pricing_partner_2_link",
+        "type": "link",
+        "return_format": "array"
       },
       {
         "key": "field_main_pricing_partner_3_icon",
@@ -681,10 +700,11 @@
         "type": "text"
       },
       {
-        "key": "field_main_pricing_partner_3_url",
-        "label": "Partner Card 3 Button URL",
-        "name": "main_pricing_partner_3_url",
-        "type": "text"
+        "key": "field_main_pricing_partner_3_link",
+        "label": "Partner Card 3 Button Link",
+        "name": "main_pricing_partner_3_link",
+        "type": "link",
+        "return_format": "array"
       }
     ],
     "location": [
