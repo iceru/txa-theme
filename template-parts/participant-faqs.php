@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Audience-specific FAQs shown at the end of participant pages.
  *
@@ -35,7 +36,7 @@ $faq_groups = [
     'booking-systems' => [
         'title' => 'Booking System FAQs',
         'items' => [
-            ['question' => 'What does a TXGB integration offer booking-system customers?', 'answer' => 'A TXGB integration can give operator customers access to broader destination, distributor and trade channels through Great Britain’s national tourism exchange.'],
+            ['question' => 'What does a TXGB integration offer booking system customers?', 'answer' => 'A TXGB integration can give operator customers access to broader destination, distributor and trade channels through Great Britain’s national tourism exchange.'],
             ['question' => 'How is product availability kept current?', 'answer' => 'Connected systems can exchange live product, pricing and availability updates so booking data remains accurate across the network.'],
             ['question' => 'Why connect once through TXGB?', 'answer' => 'A single TXGB integration can reduce the need to manage separate technical connections for each participating distribution relationship.'],
         ],

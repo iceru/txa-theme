@@ -65,7 +65,7 @@ $booking_path = '/booking-systems/partner-enquiry/';
 
 $hero_steps = [];
 $hero_step_defaults = [
-    ['1', 'Identify your role', 'Supplier, destination, distributor and booking-system partner pricing are intentionally separated.'],
+    ['1', 'Identify your role', 'Supplier, destination, distributor and booking system partner pricing are intentionally separated.'],
     ['2', 'Confirm the model', 'Success fee, platform package, commercial agreement or partner enquiry depends on the pathway.'],
     ['3', 'Take the right next step', 'Each pathway leads to the enquiry or application process that matches the organisation type.'],
 ];
@@ -175,9 +175,9 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                     <?php echo esc_html($pricing_f('hero_title', 'TXGB pricing without the guesswork.')); ?></h1>
                 <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg"><?php echo esc_html($pricing_f('hero_copy', 'Tell us what you do and your preferred commercial model and we will help guide you.')); ?></p>
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <a href="<?php echo esc_url($hero_primary_link['url']); ?>"<?php echo $pricing_target($hero_primary_link['target']); ?>
+                    <a href="<?php echo esc_url($hero_primary_link['url']); ?>" <?php echo $pricing_target($hero_primary_link['target']); ?>
                         class="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand px-8 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark"><?php echo esc_html($pricing_label('hero_primary_label', $hero_primary_link, 'Apply Now')); ?></a>
-                    <a href="<?php echo esc_url($hero_secondary_link['url']); ?>"<?php echo $pricing_target($hero_secondary_link['target']); ?>
+                    <a href="<?php echo esc_url($hero_secondary_link['url']); ?>" <?php echo $pricing_target($hero_secondary_link['target']); ?>
                         class="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/70 bg-white/10 px-8 py-3 text-base font-bold text-white !no-underline hover:bg-white/20"><?php echo esc_html($pricing_label('hero_secondary_label', $hero_secondary_link, 'Request Demo')); ?></a>
                 </div>
                 <h2 class="sr-only"><?php echo esc_html($pricing_f('steps_heading', 'How pricing works')); ?></h2>
@@ -193,7 +193,7 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
             </div>
             <div class="grid gap-4">
                 <?php foreach ($hero_paths as $path): ?>
-                    <a href="<?php echo esc_url($path['url']); ?>"<?php echo $pricing_target($path['target']); ?>
+                    <a href="<?php echo esc_url($path['url']); ?>" <?php echo $pricing_target($path['target']); ?>
                         class="group flex min-h-[106px] items-center justify-between gap-5 rounded-lg border border-white/10 bg-white/20 p-6 shadow-lg backdrop-blur-md !no-underline hover:bg-white/25">
                         <span>
                             <div class="flex space-x-4 items-center">
@@ -250,7 +250,7 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
-                        <a href="<?php echo esc_url($card['url']); ?>"<?php echo $pricing_target($card['target']); ?>
+                        <a href="<?php echo esc_url($card['url']); ?>" <?php echo $pricing_target($card['target']); ?>
                             class="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg <?php echo !empty($card['featured']) ? 'bg-brand text-white hover:bg-brand-dark' : 'border border-[#d7b8b3] text-brand hover:border-brand hover:text-brand'; ?> px-6 py-3 text-center font-bold !no-underline md:mt-auto"><?php echo esc_html($card['cta']); ?></a>
                     </article>
                 <?php endforeach; ?>
@@ -273,7 +273,7 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <a href="<?php echo esc_url($supplier_link['url']); ?>"<?php echo $pricing_target($supplier_link['target']); ?>
+                <a href="<?php echo esc_url($supplier_link['url']); ?>" <?php echo $pricing_target($supplier_link['target']); ?>
                     class="mt-10 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline shadow-lg shadow-brand/20 hover:bg-brand-dark sm:w-auto"><?php echo esc_html($pricing_label('supplier_cta', $supplier_link, 'Apply Now using the TXGB Get Connected Wizard')); ?> <i class="bi bi-box-arrow-up-right"
                         aria-hidden="true"></i></a>
             </div>
@@ -317,7 +317,7 @@ $pricing_hero_image_url = is_array($pricing_hero_image) && !empty($pricing_hero_
                             </li>
                         <?php endforeach; ?>
                     </ol>
-                    <a href="<?php echo esc_url($card['url']); ?>"<?php echo $pricing_target($card['target']); ?>
+                    <a href="<?php echo esc_url($card['url']); ?>" <?php echo $pricing_target($card['target']); ?>
                         class="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg bg-primary px-8 py-3 font-bold text-white !no-underline hover:bg-dark-gray"><?php echo esc_html($card['cta']); ?></a>
                 </article>
             <?php endforeach; ?>

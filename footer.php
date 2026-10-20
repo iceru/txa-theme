@@ -24,7 +24,7 @@
                 </a>
                 <p class="mt-6 max-w-sm text-sm leading-7 text-white/70">
                     Great Britain's open, commercially neutral B2B tourism exchange for suppliers, destinations,
-                    distributors and booking-system partners.
+                    distributors and booking system partners.
                 </p>
             </div>
 

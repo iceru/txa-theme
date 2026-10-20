@@ -282,7 +282,7 @@ add_action('add_meta_boxes_txa_timeline', function (): void {
         <p class="description">
             <?php esc_html_e('Use the Featured image panel for the timeline icon. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
         </p>
-<?php
+    <?php
         }
     );
 });
@@ -358,7 +358,7 @@ add_action('add_meta_boxes_txa_faq_group', function (): void {
             $intro = get_post_meta($post->ID, '_txa_faq_group_intro', true);
             $icon = get_post_meta($post->ID, '_txa_faq_group_icon', true);
             $anchor = get_post_meta($post->ID, '_txa_faq_group_anchor', true);
-?>
+    ?>
         <p>
             <label for="txa_faq_group_eyebrow"><strong><?php esc_html_e('Eyebrow label', 'tailpress'); ?></strong></label><br>
             <input type="text" id="txa_faq_group_eyebrow" name="txa_faq_group_eyebrow"
@@ -383,7 +383,7 @@ add_action('add_meta_boxes_txa_faq_group', function (): void {
         <p class="description">
             <?php esc_html_e('The post title is the group heading. The anchor slug sets the "#" link target on the FAQs page. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
         </p>
-<?php
+    <?php
         },
         'txa_faq_group',
         'normal',
@@ -422,7 +422,7 @@ add_action('add_meta_boxes_txa_faq', function (): void {
                 'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
                 'order' => 'ASC',
             ]);
-?>
+    ?>
         <p>
             <label for="txa_faq_group_id"><strong><?php esc_html_e('FAQ group', 'tailpress'); ?></strong></label><br>
             <select id="txa_faq_group_id" name="txa_faq_group_id" class="widefat">
@@ -442,7 +442,7 @@ add_action('add_meta_boxes_txa_faq', function (): void {
         <p class="description">
             <?php esc_html_e('The post title is the question shown in the accordion. Create the FAQ Groups first, then publish questions and assign each one to a group. Set the Order in the Page Attributes panel to control the position within the group.', 'tailpress'); ?>
         </p>
-<?php
+    <?php
         },
         'txa_faq',
         'normal',
@@ -512,7 +512,7 @@ function txa_faq_default_groups(): array
             'intro' => 'Connecting operator customers to destination, distributor and trade channels.',
             'icon' => 'bi-calendar2-check',
             'items' => [
-                ['question' => 'What does a TXGB integration offer booking-system customers?', 'answer' => 'A TXGB integration can give operator customers access to broader destination, distributor and trade channels through Great Britain’s national tourism exchange.'],
+                ['question' => 'What does a TXGB integration offer booking system customers?', 'answer' => 'A TXGB integration can give operator customers access to broader destination, distributor and trade channels through Great Britain’s national tourism exchange.'],
                 ['question' => 'How is product availability kept current?', 'answer' => 'Connected systems can exchange live product, pricing and availability updates so booking data remains accurate across the network.'],
                 ['question' => 'Why connect once through TXGB?', 'answer' => 'A single TXGB integration can reduce the need to manage separate technical connections for each participating distribution relationship.'],
             ],
@@ -623,7 +623,7 @@ add_action('admin_menu', function (): void {
                             (int) $_GET['groups'],
                             (int) $_GET['questions']
                         );
-                    ?></p>
+                        ?></p>
                 </div>
             <?php endif; ?>
             <p>

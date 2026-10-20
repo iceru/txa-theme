@@ -17,7 +17,7 @@ if (!function_exists('txa_faq_header')) {
 add_filter('pre_get_document_title', fn(): string => 'Frequently Asked Questions | Tourism Exchange Great Britain');
 add_action('wp_head', function (): void {
     if (is_page_template('page-faqs.php') || is_page('faqs')) {
-        echo '<meta name="description" content="' . esc_attr('Answers to common questions about connecting to Tourism Exchange Great Britain as a supplier, destination, distributor or booking-system partner.') . '">' . "\n";
+        echo '<meta name="description" content="' . esc_attr('Answers to common questions about connecting to Tourism Exchange Great Britain as a supplier, destination, distributor or booking system partner.') . '">' . "\n";
     }
 });
 
@@ -103,7 +103,7 @@ if ($faq_group_query->have_posts() && $faq_question_query->have_posts()) {
                     <?php echo wp_kses_post(txa_faq_header('faq_hero_aside_copy', 'Tell us which pathway you are exploring and the TXGB team will help you find the right next step.')); ?>
                 </div>
                 <a href="<?php $faq_cta_url = txa_faq_header('faq_hero_aside_button_url', '/contact/');
-                echo esc_url((0 === strpos($faq_cta_url, '/') && 0 !== strpos($faq_cta_url, '//')) ? home_url($faq_cta_url) : $faq_cta_url); ?>"
+                            echo esc_url((0 === strpos($faq_cta_url, '/') && 0 !== strpos($faq_cta_url, '//')) ? home_url($faq_cta_url) : $faq_cta_url); ?>"
                     class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-white px-5 py-3 font-bold text-brand !no-underline hover:bg-surface sm:w-auto"><?php echo esc_html(txa_faq_header('faq_hero_aside_button_label', 'Contact TXGB')); ?></a>
             </aside>
         </div>
@@ -177,7 +177,7 @@ if ($faq_group_query->have_posts() && $faq_question_query->have_posts()) {
                 <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold sm:text-3xl">Ready to find your
                     TXGB pathway?</h2>
                 <p class="mt-2 max-w-[650px] text-sm leading-6 text-white/75 sm:text-base">Talk with the team about
-                    suppliers, destinations, distribution or booking-system integration.</p>
+                    suppliers, destinations, distribution or booking system integration.</p>
             </div>
             <a href="<?php echo esc_url(home_url('/contact/')); ?>"
                 class="inline-flex min-h-12 w-full shrink-0 items-center justify-center rounded-lg bg-brand px-6 py-3 font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto">Contact
