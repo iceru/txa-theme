@@ -98,6 +98,12 @@ if (!function_exists('txa_contact_form_other_script')) {
 
                             wrapper.hidden = !isOther;
 
+                            /* Disabled fields are excluded from the browser's
+                               native validation and never sent on submit. */
+                            wrapper.querySelectorAll('input, textarea, select').forEach(function (field) {
+                                field.disabled = !isOther;
+                            });
+
                             if (wasHidden && isOther) {
                                 var field = wrapper.querySelector('input, textarea, select');
                                 if (field) {
