@@ -244,11 +244,12 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    :where(.wpcf7-form > p:nth-of-type(n + 7), .wpcf7-form > .wpcf7-response-output, .wpcf7-form > .wpcf7-spinner) {
-      grid-column: 1 / -1;
-    }
-
-    :where(.wpcf7-form > p:has(input[name='your-subject']), .wpcf7-form > p:has(textarea)) {
+    /* Keep the name/email fields side by side, and make every other field
+       span the full row so the conditional "Other" field never leaves an
+       empty cell on the right (or reflows the fields below) when hidden. */
+    :where(
+      .wpcf7-form > :not(:has([name='your-name'])):not(:has([name='your-email']))
+    ) {
       grid-column: 1 / -1;
     }
 
