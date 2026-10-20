@@ -503,3 +503,50 @@ function txa_import_booking_systems_page(): void
 
     echo '</div>';
 }
+
+if (!function_exists('txa_cf7_require_other_detail')) {
+    /**
+     * Make the CF7 "Other" follow-up field conditionally required.
+     *
+     * Field naming convention: a text/textarea tag named "<parent>-other"
+     * (e.g. "your-topic-other") must be filled whenever the parent select,
+     * checkbox group or radio group tag named "<parent>" (e.g. "your-topic")
+     * was set to "Other". Otherwise the follow-up is ignored.
+     */
+    add_filter('wpcf7_validate_text', 'txa_cf7_require_other_detail', 10, 2);
+    add_filter('wpcf7_validate_text*', 'txa_cf7_require_other_detail', 10, 2);
+    add_filter('wpcf7_validate_textarea', 'txa_cf7_require_other_detail', 10, 2);
+    add_filter('wpcf7_validate_textarea*', 'txa_cf7_require_other_detail', 10, 2);
+
+    function txa_cf7_require_other_detail(WPCF7_Validation $result, WPCF7_FormTag $tag)
+    {
+        $name = (string) ($tag->name ?? '');
+
+        if ('' === $name || !str_ends_with($name, '-other')) {
+            return $result;
+        }
+
+        $parent = substr($name, 0, -strlen('-other'));
+        $parent_value = $_POST[$parent] ?? '';
+
+        if (is_array($parent_value)) {
+            $parent_value = (string) (reset($parent_value) ?: '');
+        }
+        $parent_value = trim((string) wp_unslash($parent_value));
+
+        if (0 === strcasecmp($parent_value, 'Other')) {
+            $detail = $_POST[$name] ?? '';
+
+            if (is_array($detail)) {
+                $detail = (string) (reset($detail) ?: '');
+            }
+            $detail = trim(wp_unslash((string) $detail));
+
+            if ('' === $detail) {
+                $result->invalidate($tag, 'Please tell us more, since you selected "Other".');
+            }
+        }
+
+        return $result;
+    }
+}

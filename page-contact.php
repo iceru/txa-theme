@@ -47,6 +47,89 @@ if (!function_exists('txa_contact_form_markup')) {
         return !empty($forms) ? do_shortcode(sprintf('[contact-form-7 id="%d" title="%s"]', (int) $forms[0]->ID, esc_attr($forms[0]->post_title))) : do_shortcode('[contact-form-7 title="Contact form 1"]');
     }
 }
+if (!function_exists('txa_contact_form_other_script')) {
+    /**
+     * Reveal the CF7 "Other" follow-up field (the <p data-other-select="...">)
+     * only when the related select / radio / checkbox group is set to "Other".
+     */
+    add_action('wp_footer', function (): void {
+        if (!shortcode_exists('contact-form-7')) {
+            return;
+        }
+        ?>
+        <script>
+            (function () {
+                'use strict';
+
+                function toggleOtherFields(form) {
+                    var handled = {};
+
+                    form.querySelectorAll('select, input[type="radio"], input[type="checkbox"]').forEach(function (control) {
+                        var name = control.name.replace(/\[\]$/, '');
+
+                        if (!name || handled[name]) {
+                            return;
+                        }
+                        handled[name] = true;
+
+                        var wrappers = form.querySelectorAll('[data-other-select="' + name + '"]');
+
+                        if (!wrappers.length) {
+                            return;
+                        }
+
+                        var isOther = false;
+
+                        if ('SELECT' === control.tagName) {
+                            isOther = Array.prototype.some.call(control.selectedOptions || [], function (option) {
+                                return 'other' === option.value.trim().toLowerCase() || 'other' === option.text.trim().toLowerCase();
+                            });
+                        } else {
+                            var groupSelector = 'input[name="' + control.name + '"]:checked';
+                            form.querySelectorAll(groupSelector).forEach(function (checked) {
+                                if ('other' === checked.value.trim().toLowerCase()) {
+                                    isOther = true;
+                                }
+                            });
+                        }
+
+                        wrappers.forEach(function (wrapper) {
+                            var wasHidden = wrapper.hidden;
+
+                            wrapper.hidden = !isOther;
+
+                            if (wasHidden && isOther) {
+                                var field = wrapper.querySelector('input, textarea, select');
+                                if (field) {
+                                    field.focus();
+                                }
+                            }
+                        });
+                    });
+                }
+
+                function bindForms() {
+                    document.querySelectorAll('.wpcf7-form').forEach(function (form) {
+                        if (form.dataset.txaOtherReady) {
+                            return;
+                        }
+                        form.dataset.txaOtherReady = '1';
+
+                        form.addEventListener('change', function () { toggleOtherFields(form) });
+                        form.addEventListener('wpcf7invalid', function () { toggleOtherFields(form) });
+                        form.addEventListener('wpcf7mailsent', function () { toggleOtherFields(form) });
+                        form.addEventListener('wpcf7reset', function () { toggleOtherFields(form) });
+
+                        toggleOtherFields(form);
+                    });
+                }
+
+                bindForms();
+            })();
+        </script>
+        <?php
+    });
+}
 get_header();
 $pathways = [
     ['Tourism Suppliers', "If you have tours, accommodation, or attractions, choose 'General Enquiry' or contact your current booking system provider to see if they are already integrated with TXGB."],
