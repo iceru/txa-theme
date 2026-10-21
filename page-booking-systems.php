@@ -87,29 +87,43 @@ $benefits = txa_booking_cards('booking_benefit', [
     ['icon' => 'bi-arrow-left-right', 'title' => 'Live Connectivity', 'copy' => 'Real-time availability and pricing updates ensure accurate booking data across the network.'],
 ], ['icon', 'title', 'copy']);
 
-$systems = [
-    ['name' => 'Booking Boss', 'file' => 'bookingboss.png'],
-    ['name' => 'Bookeo', 'file' => 'bookeo.png'],
-    ['name' => 'CustomLinc', 'file' => 'customlinc.webp'],
-    ['name' => 'DigitalRez', 'file' => 'digitalrez.png'],
-    ['name' => 'FareHarbor', 'file' => 'fareharbor.png'],
-    ['name' => 'NewBook', 'file' => 'newbook.png'],
-    ['name' => 'Rezdy', 'file' => 'rezdy.png'],
-    ['name' => 'ResOnline', 'file' => 'resonline-logo.png'],
-    ['name' => 'Rezobx', 'file' => 'rezobx.jpg'],
-    ['name' => 'RMS', 'file' => 'rms.png'],
-    ['name' => 'RoomMaster', 'file' => 'roommaster.png'],
-    ['name' => 'Seekom', 'file' => 'seekom.png'],
-    ['name' => 'SiteMinder', 'file' => 'siteminder.png'],
-    ['name' => 'Little Hotelier', 'file' => 'little-hotelier.png'],
-    ['name' => 'Update 247', 'file' => 'update247.png'],
-];
+$booking_system_query = new WP_Query([
+    'post_type' => 'txa_booking_system',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'orderby' => 'title',
+    'order' => 'ASC',
+    'no_found_rows' => true,
+]);
 
-foreach ($systems as $i => $system) {
-    $n = $i + 1;
-    $systems[$i] = [
-        'name' => txa_f("booking_system_{$n}_name", $system['name']),
-        'logo' => txa_img("booking_system_{$n}_logo", get_theme_file_uri('/images/networks/' . $system['file'])),
+$systems = [];
+if ($booking_system_query->have_posts()) {
+    while ($booking_system_query->have_posts()) {
+        $booking_system_query->the_post();
+        $logo = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        $systems[] = [
+            'name' => get_the_title(),
+            'logo' => $logo ?: '',
+        ];
+    }
+    wp_reset_postdata();
+} else {
+    $systems = [
+        ['name' => 'Booking Boss', 'logo' => get_theme_file_uri('/images/networks/bookingboss.png')],
+        ['name' => 'Bookeo', 'logo' => get_theme_file_uri('/images/networks/bookeo.png')],
+        ['name' => 'CustomLinc', 'logo' => get_theme_file_uri('/images/networks/customlinc.webp')],
+        ['name' => 'DigitalRez', 'logo' => get_theme_file_uri('/images/networks/digitalrez.png')],
+        ['name' => 'FareHarbor', 'logo' => get_theme_file_uri('/images/networks/fareharbor.png')],
+        ['name' => 'NewBook', 'logo' => get_theme_file_uri('/images/networks/newbook.png')],
+        ['name' => 'Rezdy', 'logo' => get_theme_file_uri('/images/networks/rezdy.png')],
+        ['name' => 'ResOnline', 'logo' => get_theme_file_uri('/images/networks/resonline-logo.png')],
+        ['name' => 'Rezobx', 'logo' => get_theme_file_uri('/images/networks/rezobx.jpg')],
+        ['name' => 'RMS', 'logo' => get_theme_file_uri('/images/networks/rms.png')],
+        ['name' => 'RoomMaster', 'logo' => get_theme_file_uri('/images/networks/roommaster.png')],
+        ['name' => 'Seekom', 'logo' => get_theme_file_uri('/images/networks/seekom.png')],
+        ['name' => 'SiteMinder', 'logo' => get_theme_file_uri('/images/networks/siteminder.png')],
+        ['name' => 'Little Hotelier', 'logo' => get_theme_file_uri('/images/networks/little-hotelier.png')],
+        ['name' => 'Update 247', 'logo' => get_theme_file_uri('/images/networks/update247.png')],
     ];
 }
 ?>

@@ -4,14 +4,13 @@
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'Privacy Policy | Tourism Exchange Australia');
-add_action('wp_head', function (): void {
-    if (is_page('privacy-policy') || is_page_template('page-privacy-policy.php')) {
-        echo '<meta name="description" content="' . esc_attr('Learn how Tourism Exchange Australia collects, uses, stores and protects personal information.') . '">' . "\n";
+if (!function_exists('txa_f')) {
+    function txa_f(string $name, $default = '')
+    {
+        $value = function_exists('get_field') ? get_field($name) : null;
+        return (null === $value || '' === $value || false === $value) ? $default : $value;
     }
-});
-
-get_header();
+}
 
 $sections = [
     [
@@ -159,11 +158,36 @@ $sections = [
     ],
 ];
 
+$default_body = '';
+foreach ($sections as $section) {
+    $default_body .= '<h2>' . $section['title'] . '</h2>' . "\n";
+    foreach ($section['content'] as $item) {
+        if ('list' === ($item['type'] ?? 'paragraph')) {
+            $list_items = array_map(static fn (string $li): string => '<li>' . $li . '</li>', $item['items']);
+            $default_body .= '<ul>' . "\n" . implode("\n", $list_items) . "\n</ul>" . "\n";
+        } else {
+            $default_body .= '<p>' . $item['text'] . '</p>' . "\n";
+        }
+    }
+    $default_body .= "\n\n";
+}
+
+$body = txa_f('privacy_body', trim($default_body));
+
+add_filter('pre_get_document_title', fn(): string => (string) txa_f('privacy_seo_title', 'Privacy Policy | Tourism Exchange Australia'));
+add_action('wp_head', function (): void {
+    if (is_page('privacy-policy') || is_page_template('page-privacy-policy.php')) {
+        echo '<meta name="description" content="' . esc_attr(strip_tags(txa_f('privacy_seo_description', 'Learn how Tourism Exchange Australia collects, uses, stores and protects personal information.'))) . '">' . "\n";
+    }
+});
+
+get_header();
+
 get_template_part('template-parts/legal-page', null, [
-    'label' => 'PRIVACY',
-    'title' => 'Privacy Policy',
-    'intro' => 'How TXA collects, uses, stores and protects your personal information.',
-    'sections' => $sections,
+    'label' => txa_f('privacy_hero_label', 'PRIVACY'),
+    'title' => txa_f('privacy_hero_title', 'Privacy Policy'),
+    'intro' => txa_f('privacy_hero_intro', 'How TXA collects, uses, stores and protects your personal information.'),
+    'body' => $body,
 ]);
 
 get_footer();

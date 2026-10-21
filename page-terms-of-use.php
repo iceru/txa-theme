@@ -4,14 +4,13 @@
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'Terms of Use | Tourism Exchange Australia');
-add_action('wp_head', function (): void {
-    if (is_page('terms-of-use') || is_page_template('page-terms-of-use.php')) {
-        echo '<meta name="description" content="' . esc_attr('Read the terms and conditions that apply when using the Tourism Exchange Australia website.') . '">' . "\n";
+if (!function_exists('txa_f')) {
+    function txa_f(string $name, $default = '')
+    {
+        $value = function_exists('get_field') ? get_field($name) : null;
+        return (null === $value || '' === $value || false === $value) ? $default : $value;
     }
-});
-
-get_header();
+}
 
 $sections = [
     [
@@ -93,11 +92,36 @@ $sections = [
     ],
 ];
 
+$default_body = '';
+foreach ($sections as $section) {
+    $default_body .= '<h2>' . $section['title'] . '</h2>' . "\n";
+    foreach ($section['content'] as $item) {
+        if ('list' === ($item['type'] ?? 'paragraph')) {
+            $list_items = array_map(static fn (string $li): string => '<li>' . $li . '</li>', $item['items']);
+            $default_body .= '<ul>' . "\n" . implode("\n", $list_items) . "\n</ul>" . "\n";
+        } else {
+            $default_body .= '<p>' . $item['text'] . '</p>' . "\n";
+        }
+    }
+    $default_body .= "\n\n";
+}
+
+$body = txa_f('terms_body', trim($default_body));
+
+add_filter('pre_get_document_title', fn(): string => (string) txa_f('terms_seo_title', 'Terms of Use | Tourism Exchange Australia'));
+add_action('wp_head', function (): void {
+    if (is_page('terms-of-use') || is_page_template('page-terms-of-use.php')) {
+        echo '<meta name="description" content="' . esc_attr(strip_tags(txa_f('terms_seo_description', 'Read the terms and conditions that apply when using the Tourism Exchange Australia website.'))) . '">' . "\n";
+    }
+});
+
+get_header();
+
 get_template_part('template-parts/legal-page', null, [
-    'label' => 'LEGAL',
-    'title' => 'Terms of Use',
-    'intro' => 'The terms and conditions that apply when using the Tourism Exchange Australia website.',
-    'sections' => $sections,
+    'label' => txa_f('terms_hero_label', 'LEGAL'),
+    'title' => txa_f('terms_hero_title', 'Terms of Use'),
+    'intro' => txa_f('terms_hero_intro', 'The terms and conditions that apply when using the Tourism Exchange Australia website.'),
+    'body' => $body,
 ]);
 
 get_footer();

@@ -8,7 +8,7 @@
 $label = $args['label'] ?? 'LEGAL';
 $title = $args['title'] ?? '';
 $intro = $args['intro'] ?? '';
-$sections = $args['sections'] ?? [];
+$body = $args['body'] ?? '';
 ?>
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
     <section class="bg-surface px-4 py-10 sm:py-12 lg:px-16 lg:py-24">
@@ -21,7 +21,7 @@ $sections = $args['sections'] ?? [];
             </h1>
             <?php if ($intro): ?>
                 <p class="mt-5 max-w-[820px] text-base leading-7 text-mid-gray sm:mt-6 sm:text-lg lg:mt-8">
-                    <?php echo esc_html($intro); ?>
+                    <?php echo wp_kses_post((string) $intro); ?>
                 </p>
             <?php endif; ?>
         </div>
@@ -29,27 +29,8 @@ $sections = $args['sections'] ?? [];
 
     <section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-16">
         <div class="mx-auto max-w-[960px] rounded-2xl border border-[#dfc0ba]/20 bg-white p-5 shadow-sm sm:p-8 lg:rounded-3xl lg:p-12">
-            <div class="space-y-10 sm:space-y-12">
-                <?php foreach ($sections as $section): ?>
-                    <section>
-                        <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold leading-tight text-[#151c27] sm:text-3xl">
-                            <?php echo esc_html($section['title']); ?>
-                        </h2>
-                        <div class="mt-4 space-y-4 text-base leading-7 text-mid-gray sm:mt-5">
-                            <?php foreach ($section['content'] as $item): ?>
-                                <?php if ('list' === ($item['type'] ?? 'paragraph')): ?>
-                                    <ul class="list-disc space-y-2 pl-6">
-                                        <?php foreach ($item['items'] as $list_item): ?>
-                                            <li><?php echo wp_kses_post($list_item); ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php else: ?>
-                                    <p><?php echo wp_kses_post($item['text']); ?></p>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </div>
-                    </section>
-                <?php endforeach; ?>
+            <div class="text-base leading-7 text-mid-gray [&_h2]:mt-12 [&_h2]:[font-family:'Hanken_Grotesk',sans-serif] [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:leading-tight [&_h2]:text-[#151c27] [&_h2:first-child]:mt-0 [&_li]:mt-2 [&_li]:first:mt-0 [&_p]:mt-4 [&_p]:first:mt-0 [&_strong]:font-semibold [&_strong]:text-[#151c27] [&_ul]:list-disc [&_ul]:pl-6">
+                <?php echo wp_kses_post((string) $body); ?>
             </div>
         </div>
     </section>

@@ -240,6 +240,133 @@ add_action('save_post_txa_timeline', function (int $post_id): void {
 });
 
 /**
+ * Store connected booking systems as native WordPress content.
+ */
+add_action('init', function (): void {
+    register_post_type('txa_booking_system', [
+        'labels' => [
+            'name' => __('Booking Systems', 'tailpress'),
+            'singular_name' => __('Booking System', 'tailpress'),
+            'add_new_item' => __('Add Booking System', 'tailpress'),
+            'edit_item' => __('Edit Booking System', 'tailpress'),
+            'menu_name' => __('Booking Systems', 'tailpress'),
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => false,
+        'menu_icon' => 'dashicons-calendar-alt',
+        'supports' => ['title', 'thumbnail', 'page-attributes'],
+        'hierarchical' => false,
+        'has_archive' => false,
+        'rewrite' => false,
+        'query_var' => false,
+    ]);
+});
+
+/**
+ * One-click importer under Tools: creates the booking systems shown on the
+ * Booking Systems page and attaches matching logos from the Media Library.
+ */
+add_action('admin_menu', function (): void {
+    add_management_page(
+        'Import Booking Systems',
+        'Import Booking Systems',
+        'manage_options',
+        'txa-import-booking-systems',
+        'txa_import_booking_systems_page'
+    );
+});
+
+
+function txa_import_booking_systems_page(): void
+{
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+
+    $names = [
+        'Booking Boss',
+        'Bookeo',
+        'CustomLinc',
+        'DigitalRez',
+        'FareHarbor',
+        'NewBook',
+        'Rezdy',
+        'ResOnline',
+        'Rezobx',
+        'RMS',
+        'RoomMaster',
+        'Seekom',
+        'SiteMinder',
+        'Little Hotelier',
+        'Update 247',
+    ];
+
+    echo '<div class="wrap"><h1>Import Booking Systems</h1>';
+
+    $should_run = isset($_POST['txa_import_nonce'])
+        && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['txa_import_nonce'])), 'txa_import_booking_systems');
+
+    if ($should_run) {
+        echo '<ul>';
+
+        foreach ($names as $index => $name) {
+            $existing = get_posts([
+                'post_type' => 'txa_booking_system',
+                'post_status' => 'any',
+                'title' => $name,
+                'numberposts' => 1,
+                'fields' => 'ids',
+            ]);
+
+            if (!empty($existing)) {
+                echo '<li>Skipped (already exists): ' . esc_html($name) . '</li>';
+                continue;
+            }
+
+            $post_id = wp_insert_post([
+                'post_type' => 'txa_booking_system',
+                'post_status' => 'publish',
+                'post_title' => $name,
+                'menu_order' => $index + 1,
+            ], true);
+
+            if (is_wp_error($post_id)) {
+                echo '<li>Failed: ' . esc_html($name) . ' - ' . esc_html($post_id->get_error_message()) . '</li>';
+                continue;
+            }
+
+            $attachments = get_posts([
+                'post_type' => 'attachment',
+                'post_status' => 'inherit',
+                'title' => $name,
+                'numberposts' => 1,
+                'fields' => 'ids',
+            ]);
+
+            if (empty($attachments)) {
+                echo '<li>Created without logo (not found in Media Library): ' . esc_html($name) . '</li>';
+                continue;
+            }
+
+            set_post_thumbnail($post_id, $attachments[0]);
+            echo '<li>Imported with logo: ' . esc_html($name) . '</li>';
+        }
+
+        echo '</ul><p>Done. You can now remove this code from functions.php.</p>';
+    } else {
+        echo '<p>This creates ' . count($names) . ' booking systems and attaches matching logos from the Media Library.</p>';
+        echo '<form method="post">';
+        wp_nonce_field('txa_import_booking_systems', 'txa_import_nonce');
+        submit_button('Run import');
+        echo '</form>';
+    }
+
+    echo '</div>';
+}
+
+/**
  * Store FAQ page categories and questions as native WordPress content so they
  * do not depend on ACF repeaters. The FAQs template keeps placeholder copy and
  * only switches to these entries once both types have published content.
