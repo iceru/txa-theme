@@ -239,6 +239,365 @@ add_action('save_post_txa_timeline', function (int $post_id): void {
     update_post_meta($post_id, '_txa_timeline_copy', sanitize_textarea_field(wp_unslash($_POST['txa_timeline_copy'] ?? '')));
 });
 
+/**
+ * Store FAQ page categories and questions as native WordPress content so they
+ * do not depend on ACF repeaters. The FAQs template keeps placeholder copy and
+ * only switches to these entries once both types have published content.
+ */
+add_action('init', function (): void {
+    register_post_type('txa_faq_group', [
+        'labels' => [
+            'name' => __('FAQ Groups', 'tailpress'),
+            'singular_name' => __('FAQ Group', 'tailpress'),
+            'add_new_item' => __('Add FAQ Group', 'tailpress'),
+            'edit_item' => __('Edit FAQ Group', 'tailpress'),
+            'menu_name' => __('FAQ Groups', 'tailpress'),
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => false,
+        'menu_icon' => 'dashicons-category',
+        'supports' => ['title', 'page-attributes'],
+        'hierarchical' => false,
+        'has_archive' => false,
+        'rewrite' => false,
+        'query_var' => false,
+    ]);
+
+    register_post_type('txa_faq', [
+        'labels' => [
+            'name' => __('FAQ Questions', 'tailpress'),
+            'singular_name' => __('FAQ Question', 'tailpress'),
+            'add_new_item' => __('Add FAQ Question', 'tailpress'),
+            'edit_item' => __('Edit FAQ Question', 'tailpress'),
+            'menu_name' => __('FAQ Questions', 'tailpress'),
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => false,
+        'menu_icon' => 'dashicons-editor-help',
+        'supports' => ['title', 'page-attributes'],
+        'hierarchical' => false,
+        'has_archive' => false,
+        'rewrite' => false,
+        'query_var' => false,
+    ]);
+});
+
+add_action('add_meta_boxes_txa_faq_group', function (): void {
+    add_meta_box(
+        'txa_faq_group_details',
+        __('Group Details', 'tailpress'),
+        function (WP_Post $post): void {
+            wp_nonce_field('txa_faq_group_details', 'txa_faq_group_nonce');
+            $eyebrow = get_post_meta($post->ID, '_txa_faq_group_eyebrow', true);
+            $intro = get_post_meta($post->ID, '_txa_faq_group_intro', true);
+            $icon = get_post_meta($post->ID, '_txa_faq_group_icon', true);
+            $anchor = get_post_meta($post->ID, '_txa_faq_group_anchor', true);
+    ?>
+        <p>
+            <label for="txa_faq_group_eyebrow"><strong><?php esc_html_e('Eyebrow label', 'tailpress'); ?></strong></label><br>
+            <input type="text" id="txa_faq_group_eyebrow" name="txa_faq_group_eyebrow"
+                value="<?php echo esc_attr($eyebrow); ?>" class="widefat"
+                placeholder="Tourism suppliers">
+        </p>
+        <p>
+            <label for="txa_faq_group_intro"><strong><?php esc_html_e('Intro copy', 'tailpress'); ?></strong></label><br>
+            <textarea id="txa_faq_group_intro" name="txa_faq_group_intro" rows="3"
+                class="widefat" placeholder="Connecting tourism products, rates and availability to more online channels."><?php echo esc_textarea($intro); ?></textarea>
+        </p>
+        <p>
+            <label for="txa_faq_group_icon"><strong><?php esc_html_e('Bootstrap icon class', 'tailpress'); ?></strong></label><br>
+            <input type="text" id="txa_faq_group_icon" name="txa_faq_group_icon"
+                value="<?php echo esc_attr($icon); ?>" class="widefat" placeholder="bi-shop-window">
+        </p>
+        <p>
+            <label for="txa_faq_group_anchor"><strong><?php esc_html_e('Anchor slug', 'tailpress'); ?></strong></label><br>
+            <input type="text" id="txa_faq_group_anchor" name="txa_faq_group_anchor"
+                value="<?php echo esc_attr($anchor); ?>" class="widefat" placeholder="suppliers">
+        </p>
+        <p class="description">
+            <?php esc_html_e('The post title is the group heading. The anchor slug sets the "#" link target on the FAQs page. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
+        </p>
+    <?php
+        },
+        'txa_faq_group',
+        'normal',
+        'default'
+    );
+});
+
+add_action('save_post_txa_faq_group', function (int $post_id): void {
+    if (
+        !isset($_POST['txa_faq_group_nonce'])
+        || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['txa_faq_group_nonce'])), 'txa_faq_group_details')
+        || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+        || !current_user_can('edit_post', $post_id)
+    ) {
+        return;
+    }
+
+    update_post_meta($post_id, '_txa_faq_group_eyebrow', sanitize_text_field(wp_unslash($_POST['txa_faq_group_eyebrow'] ?? '')));
+    update_post_meta($post_id, '_txa_faq_group_intro', sanitize_textarea_field(wp_unslash($_POST['txa_faq_group_intro'] ?? '')));
+    update_post_meta($post_id, '_txa_faq_group_icon', sanitize_text_field(wp_unslash($_POST['txa_faq_group_icon'] ?? '')));
+    update_post_meta($post_id, '_txa_faq_group_anchor', sanitize_title(wp_unslash($_POST['txa_faq_group_anchor'] ?? '')));
+});
+
+add_action('add_meta_boxes_txa_faq', function (): void {
+    add_meta_box(
+        'txa_faq_details',
+        __('FAQ Details', 'tailpress'),
+        function (WP_Post $post): void {
+            wp_nonce_field('txa_faq_details', 'txa_faq_nonce');
+            $selected_group = (int) get_post_meta($post->ID, '_txa_faq_group_id', true);
+            $answer = get_post_meta($post->ID, '_txa_faq_answer', true);
+            $groups = get_posts([
+                'post_type' => 'txa_faq_group',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
+                'order' => 'ASC',
+            ]);
+    ?>
+        <p>
+            <label for="txa_faq_group_id"><strong><?php esc_html_e('FAQ group', 'tailpress'); ?></strong></label><br>
+            <select id="txa_faq_group_id" name="txa_faq_group_id" class="widefat">
+                <option value="0"><?php esc_html_e('— No group —', 'tailpress'); ?></option>
+                <?php foreach ($groups as $group_post): ?>
+                    <option value="<?php echo (int) $group_post->ID; ?>" <?php selected($selected_group, (int) $group_post->ID); ?>>
+                        <?php echo esc_html(get_the_title($group_post) ?: sprintf(__('(no title #%d)', 'tailpress'), $group_post->ID)); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+        <p>
+            <label for="txa_faq_answer"><strong><?php esc_html_e('Answer', 'tailpress'); ?></strong></label><br>
+            <textarea id="txa_faq_answer" name="txa_faq_answer" rows="5"
+                class="widefat"><?php echo esc_textarea($answer); ?></textarea>
+        </p>
+        <p class="description">
+            <?php esc_html_e('The post title is the question shown in the accordion. Create the FAQ Groups first, then publish questions and assign each one to a group. Set the Order in the Page Attributes panel to control the position within the group.', 'tailpress'); ?>
+        </p>
+    <?php
+        },
+        'txa_faq',
+        'normal',
+        'default'
+    );
+});
+
+add_action('save_post_txa_faq', function (int $post_id): void {
+    if (
+        !isset($_POST['txa_faq_nonce'])
+        || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['txa_faq_nonce'])), 'txa_faq_details')
+        || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+        || !current_user_can('edit_post', $post_id)
+    ) {
+        return;
+    }
+
+    update_post_meta($post_id, '_txa_faq_group_id', (int) ($_POST['txa_faq_group_id'] ?? 0));
+    update_post_meta($post_id, '_txa_faq_answer', sanitize_textarea_field(wp_unslash($_POST['txa_faq_answer'] ?? '')));
+});
+
+/**
+ * Placeholder FAQ copy. Used as the fallback by the FAQs template until both
+ * FAQ Groups and FAQ Questions have published content, and doubles as the
+ * source for seeding that content into the CPTs.
+ */
+function txa_faq_default_groups(): array
+{
+    return [
+        'suppliers' => [
+            'eyebrow' => 'Tourism suppliers',
+            'title' => 'Supplier questions',
+            'intro' => 'Connecting tourism products, rates and availability to more online channels.',
+            'icon' => 'bi-shop-window',
+            'items' => [
+                ['question' => 'Do I need a booking system?', 'answer' => 'Usually TXA works through a connected booking system. If you do not have one, TXA can help you understand available options.'],
+                ['question' => 'Will I have to manage another system?', 'answer' => 'The goal is to reduce manual management by using your booking system as the source of product, rates and availability.'],
+                ['question' => 'Can I keep personal contact with customers?', 'answer' => 'Yes. The customer remains your customer, with booking and customer information flowing according to the relevant channel and payment model.'],
+                ['question' => 'What size business is TXA designed for?', 'answer' => 'TXA is designed for tourism suppliers of different sizes across accommodation, activities, attractions, events and experiences.'],
+            ],
+        ],
+        'destinations' => [
+            'eyebrow' => 'Destinations',
+            'title' => 'Destination questions',
+            'intro' => 'Activating destination assets, local supply and measurable visitor journeys.',
+            'icon' => 'bi-geo-alt',
+            'items' => [
+                ['question' => 'Does this replace our existing CMS?', 'answer' => 'No. TXA can work alongside your existing destination website or CMS by powering bookable pathways, widgets, APIs and destination-specific booking pages.'],
+                ['question' => 'How much does it cost operators?', 'answer' => 'Commercial models can vary by destination. TXA is designed to support flexible destination packages and supplier pathways.'],
+                ['question' => 'Is TXA an OTA (Online Travel Agent)?', 'answer' => 'No. TXA is a neutral B2B exchange connecting suppliers, destinations, distributors and booking systems.'],
+            ],
+        ],
+        'distributors' => [
+            'eyebrow' => 'Distributors',
+            'title' => 'Distributor questions',
+            'intro' => 'Accessing Australian tourism inventory through flexible technical and commercial models.',
+            'icon' => 'bi-globe2',
+            'items' => [
+                ['question' => 'What inventory can distributors access through TXA?', 'answer' => 'TXA provides a pathway to Australian tourism suppliers across accommodation, tours, attractions, events and experiences.'],
+                ['question' => 'How can a distributor connect to TXA?', 'answer' => 'Connection options include a direct API, white-label booking pages, an on-account or agent model, and campaign or destination-led distribution.'],
+                ['question' => 'Does TXA support different commercial models?', 'answer' => 'Yes. TXA supports flexible commercial arrangements, including net, gross and commission-based models, depending on the distributor agreement.'],
+            ],
+        ],
+        'booking-systems' => [
+            'eyebrow' => 'Booking systems',
+            'title' => 'Booking System questions',
+            'intro' => 'Connecting operator customers to destination, distributor and trade channels.',
+            'icon' => 'bi-calendar2-check',
+            'items' => [
+                ['question' => 'What does a TXA integration offer booking system customers?', 'answer' => 'A TXA integration can give operator customers access to broader destination, distributor and trade channels through Australia’s national tourism exchange.'],
+                ['question' => 'How is product availability kept current?', 'answer' => 'Connected systems can exchange live product, pricing and availability updates so booking data remains accurate across the network.'],
+                ['question' => 'Why connect once through TXA?', 'answer' => 'A single TXA integration can reduce the need to manage separate technical connections for each participating distribution relationship.'],
+            ],
+        ],
+    ];
+}
+
+/**
+ * Import the placeholder FAQ copy into the FAQ Groups and FAQ Questions CPTs.
+ * Idempotent: existing groups are matched by anchor, and questions are only
+ * created when the same question is missing from a group.
+ */
+function txa_faq_seed_placeholder_content(): array
+{
+    $result = ['groups_created' => 0, 'questions_created' => 0, 'skipped' => 0];
+    $group_order = 0;
+
+    foreach (txa_faq_default_groups() as $anchor => $group) {
+        $existing_group = get_posts([
+            'post_type' => 'txa_faq_group',
+            'post_status' => 'publish',
+            'posts_per_page' => 1,
+            'fields' => 'ids',
+            'meta_key' => '_txa_faq_group_anchor',
+            'meta_value' => $anchor,
+        ])[0] ?? 0;
+
+        if (!$existing_group) {
+            $created = wp_insert_post([
+                'post_type' => 'txa_faq_group',
+                'post_status' => 'publish',
+                'post_title' => $group['title'],
+                'menu_order' => $group_order,
+            ], true);
+
+            if (is_wp_error($created) || !$created) {
+                $result['skipped']++;
+                $group_order++;
+                continue;
+            }
+
+            $existing_group = (int) $created;
+            update_post_meta($existing_group, '_txa_faq_group_eyebrow', $group['eyebrow']);
+            update_post_meta($existing_group, '_txa_faq_group_intro', $group['intro']);
+            update_post_meta($existing_group, '_txa_faq_group_icon', $group['icon']);
+            update_post_meta($existing_group, '_txa_faq_group_anchor', $anchor);
+            $result['groups_created']++;
+        }
+
+        foreach ($group['items'] as $index => $item) {
+            $existing_question = get_posts([
+                'post_type' => 'txa_faq',
+                'post_status' => ['publish', 'draft', 'pending'],
+                'posts_per_page' => 1,
+                'fields' => 'ids',
+                'title' => $item['question'],
+                'meta_key' => '_txa_faq_group_id',
+                'meta_value' => $existing_group,
+            ]);
+
+            if ($existing_question) {
+                $result['skipped']++;
+                continue;
+            }
+
+            $created = wp_insert_post([
+                'post_type' => 'txa_faq',
+                'post_status' => 'publish',
+                'post_title' => $item['question'],
+                'menu_order' => $index,
+            ], true);
+
+            if (is_wp_error($created) || !$created) {
+                $result['skipped']++;
+                continue;
+            }
+
+            update_post_meta((int) $created, '_txa_faq_group_id', $existing_group);
+            update_post_meta((int) $created, '_txa_faq_answer', $item['answer']);
+            $result['questions_created']++;
+        }
+
+        $group_order++;
+    }
+
+    return $result;
+}
+
+/**
+ * One-click trigger under Tools to seed the placeholder FAQ content.
+ */
+add_action('admin_menu', function (): void {
+    add_management_page(
+        __('FAQ placeholder import', 'tailpress'),
+        __('FAQ placeholders', 'tailpress'),
+        'manage_options',
+        'txa-faq-seed',
+        function (): void {
+            $groups = (int) (wp_count_posts('txa_faq_group')->publish ?? 0);
+            $questions = (int) (wp_count_posts('txa_faq')->publish ?? 0); ?>
+        <div class="wrap">
+            <h1><?php esc_html_e('FAQ placeholder import', 'tailpress'); ?></h1>
+            <?php if (isset($_GET['groups'], $_GET['questions'])): ?>
+                <div class="notice notice-success is-dismissible">
+                    <p><?php
+                        printf(
+                            esc_html__('Created %1$d FAQ group(s) and %2$d FAQ question(s).', 'tailpress'),
+                            (int) $_GET['groups'],
+                            (int) $_GET['questions']
+                        );
+                        ?></p>
+                </div>
+            <?php endif; ?>
+            <p>
+                <?php esc_html_e('Imports the current FAQs page placeholder copy into the FAQ Groups and FAQ Questions as published content. Groups are matched by anchor slug and existing questions are skipped, so this is safe to run more than once.', 'tailpress'); ?>
+            </p>
+            <p class="description">
+                <?php printf(esc_html__('Currently published: %1$d FAQ group(s), %2$d FAQ question(s).', 'tailpress'), $groups, $questions); ?>
+            </p>
+            <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+                <input type="hidden" name="action" value="txa_faq_seed_placeholder">
+                <?php wp_nonce_field('txa_faq_seed_placeholder'); ?>
+                <?php submit_button(__('Import placeholder FAQs', 'tailpress'), 'primary', 'submit', false); ?>
+            </form>
+        </div>
+<?php
+        }
+    );
+});
+
+add_action('admin_post_txa_faq_seed_placeholder', function (): void {
+    if (!current_user_can('manage_options')) {
+        wp_die(__('You are not allowed to run this import.', 'tailpress'));
+    }
+
+    check_admin_referer('txa_faq_seed_placeholder');
+
+    $result = txa_faq_seed_placeholder_content();
+
+    wp_safe_redirect(add_query_arg([
+        'page' => 'txa-faq-seed',
+        'groups' => $result['groups_created'],
+        'questions' => $result['questions_created'],
+    ], admin_url('tools.php')));
+    exit;
+});
+
 // TailPress enqueues the Vite entry as tailpress-app; its dev-server module filter misses that handle.
 add_filter('script_loader_tag', function (string $tag, string $handle, string $src): string {
     if ('tailpress-app' === $handle && str_contains($src, '/resources/js/app.js')) {

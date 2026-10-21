@@ -36,7 +36,7 @@ if (!function_exists('txa_img')) {
 add_filter('pre_get_document_title', fn(): string => (string) txa_f('contact_seo_title', 'Contact TXA | Tourism Exchange Australia'));
 add_action('wp_head', function (): void {
     if (is_page_template('page-contact.php'))
-        echo '<meta name="description" content="' . esc_attr(txa_f('contact_seo_description', 'Contact Tourism Exchange Australia to find the right pathway for suppliers, destinations, distributors and booking-system partners.')) . '">' . "\n";
+        echo '<meta name="description" content="' . esc_attr(txa_f('contact_seo_description', 'Contact Tourism Exchange Australia to find the right pathway for suppliers, destinations, distributors and booking system partners.')) . '">' . "\n";
 });
 if (!function_exists('txa_contact_form_markup')) {
     function txa_contact_form_markup(): string

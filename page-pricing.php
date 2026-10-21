@@ -16,7 +16,7 @@ $distributor_url = home_url('/distributors/');
 $booking_url = home_url('/booking-systems/partner-enquiry/');
 
 $hero_steps = [
-    ['number' => '1', 'title' => 'Identify your role', 'copy' => 'Supplier, destination, distributor and booking-system partner pricing are intentionally separated.'],
+    ['number' => '1', 'title' => 'Identify your role', 'copy' => 'Supplier, destination, distributor and booking system partner pricing are intentionally separated.'],
     ['number' => '2', 'title' => 'Confirm the model', 'copy' => 'Success fee, platform package, commercial agreement or partner enquiry depends on the pathway.'],
     ['number' => '3', 'title' => 'Take the right next step', 'copy' => 'Each pathway leads to the enquiry or application process that matches the organisation type.'],
 ];
