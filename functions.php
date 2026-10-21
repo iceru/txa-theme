@@ -266,7 +266,7 @@ add_action('init', function (): void {
 
 /**
  * One-click importer under Tools: creates the booking systems shown on the
- * Booking Systems page and attaches matching logos from the Media Library.
+ * Booking Systems page and attaches the matching logos from the theme folder.
  */
 add_action('admin_menu', function (): void {
     add_management_page(
@@ -286,21 +286,21 @@ function txa_import_booking_systems_page(): void
     }
 
     $names = [
-        'Booking Boss',
-        'Bookeo',
-        'CustomLinc',
-        'DigitalRez',
-        'FareHarbor',
-        'NewBook',
-        'Rezdy',
-        'ResOnline',
-        'Rezobx',
-        'RMS',
-        'RoomMaster',
-        'Seekom',
-        'SiteMinder',
-        'Little Hotelier',
-        'Update 247',
+        'Booking Boss' => 'bookingboss.png',
+        'Bookeo' => 'bookeo.png',
+        'CustomLinc' => 'customlinc.webp',
+        'DigitalRez' => 'digitalrez.png',
+        'FareHarbor' => 'fareharbor.png',
+        'NewBook' => 'newbook.png',
+        'Rezdy' => 'rezdy.png',
+        'ResOnline' => 'resonline-logo.png',
+        'Rezobx' => 'rezobx.jpg',
+        'RMS' => 'rms.png',
+        'RoomMaster' => 'roommaster.png',
+        'Seekom' => 'seekom.png',
+        'SiteMinder' => 'siteminder.png',
+        'Little Hotelier' => 'little-hotelier.png',
+        'Update 247' => 'update247.png',
     ];
 
     echo '<div class="wrap"><h1>Import Booking Systems</h1>';
@@ -309,9 +309,14 @@ function txa_import_booking_systems_page(): void
         && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['txa_import_nonce'])), 'txa_import_booking_systems');
 
     if ($should_run) {
+        require_once ABSPATH . 'wp-admin/includes/image.php';
+
         echo '<ul>';
 
-        foreach ($names as $index => $name) {
+        $index = 0;
+
+        foreach ($names as $name => $file) {
+            $index++;
             $existing = get_posts([
                 'post_type' => 'txa_booking_system',
                 'post_status' => 'any',
@@ -337,26 +342,42 @@ function txa_import_booking_systems_page(): void
                 continue;
             }
 
-            $attachments = get_posts([
-                'post_type' => 'attachment',
-                'post_status' => 'inherit',
-                'title' => $name,
-                'numberposts' => 1,
-                'fields' => 'ids',
-            ]);
+            $logo_path = get_theme_file_path('/images/networks/' . $file);
 
-            if (empty($attachments)) {
-                echo '<li>Created without logo (not found in Media Library): ' . esc_html($name) . '</li>';
+            if (!file_exists($logo_path)) {
+                echo '<li>Created without logo (file not found in /images/networks): ' . esc_html($name) . '</li>';
                 continue;
             }
 
-            set_post_thumbnail($post_id, $attachments[0]);
-            echo '<li>Imported with logo: ' . esc_html($name) . '</li>';
+            $basename = basename($logo_path);
+            $upload = wp_upload_bits($basename, null, (string) file_get_contents($logo_path));
+
+            if (!empty($upload['error'])) {
+                echo '<li>Created without logo (upload failed): ' . esc_html($name) . ' - ' . esc_html($upload['error']) . '</li>';
+                continue;
+            }
+
+            $attachment_id = wp_insert_attachment([
+                'post_title' => $name . ' logo',
+                'post_status' => 'inherit',
+                'guid' => $upload['url'],
+                'post_mime_type' => $upload['type'],
+            ], $upload['file'], $post_id);
+
+            if (is_wp_error($attachment_id)) {
+                echo '<li>Created without logo (attachment failed): ' . esc_html($name) . '</li>';
+                continue;
+            }
+
+            wp_update_attachment_metadata($attachment_id, wp_generate_attachment_metadata($attachment_id, $upload['file']));
+
+            set_post_thumbnail($post_id, $attachment_id);
+            echo '<li>Imported with logo from theme folder: ' . esc_html($name) . ' (' . esc_html('/images/networks/' . $basename) . ')</li>';
         }
 
         echo '</ul><p>Done. You can now remove this code from functions.php.</p>';
     } else {
-        echo '<p>This creates ' . count($names) . ' booking systems and attaches matching logos from the Media Library.</p>';
+        echo '<p>This creates ' . count($names) . ' booking systems and attaches the matching logos from the theme folder.</p>';
         echo '<form method="post">';
         wp_nonce_field('txa_import_booking_systems', 'txa_import_nonce');
         submit_button('Run import');
