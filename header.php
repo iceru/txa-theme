@@ -203,7 +203,7 @@ if (!function_exists('txa_txload_login_url')) {
                             <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
                                 <a href="<?php echo esc_url(txa_dashboard_login_url()); ?>"
                                     class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark transition">
-                                    Dashboard Login</a>
+                                    Dashboard</a>
                             </div>
                             <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
                                 <a href="<?php echo esc_url(txa_txload_login_url()); ?>"
