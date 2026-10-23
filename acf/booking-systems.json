@@ -15,6 +15,7 @@
       {"key": "field_book_hero_image_alt", "label": "Hero Image Alt Text", "name": "booking_hero_image_alt", "type": "text", "placeholder": "Aerial view of an Australian beach"},
       {"key": "field_book_hero_button_label", "label": "Hero Button Label", "name": "booking_hero_button_label", "type": "text", "placeholder": "Booking System Partner Enquiry"},
       {"key": "field_book_partner_url", "label": "Partner Enquiry URL (used by all buttons)", "name": "booking_partner_url", "type": "text", "placeholder": "/booking-systems/partner-enquiry/"},
+      {"key":"field_book_partner_url_new_tab","label":"Open in new tab","name":"booking_partner_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_book_platform_heading", "label": "Platform Card Heading", "name": "booking_platform_heading", "type": "text", "placeholder": "TXA PLATFORM"},
       {"key": "field_book_platform_tagline", "label": "Platform Card Tagline", "name": "booking_platform_tagline", "type": "text", "placeholder": "One connection. More distribution."},

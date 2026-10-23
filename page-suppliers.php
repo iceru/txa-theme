@@ -8,45 +8,6 @@
 
 get_header();
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-
 if (!function_exists('txa_supplier_button')) {
     function txa_supplier_button(string $label, string $url, string $variant = 'primary', bool $external = false): string
     {
@@ -107,8 +68,8 @@ foreach ($benefits as $i => $benefit) {
                         <?php echo esc_html(txa_f('supplier_hero_copy', 'TXA helps tourism suppliers connect live product, pricing and availability to destination websites, distributors and other online channels without manually allocating to and managing inventory on every site.')); ?>
                     </p>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-                        <?php echo txa_supplier_button(txa_f('supplier_hero_primary_label', 'Apply Now'), txa_url('supplier_hero_primary_url', home_url('/apply-now/'))); ?>
-                        <?php echo txa_supplier_button(txa_f('supplier_hero_secondary_label', 'See connected booking systems'), txa_url('supplier_hero_secondary_url', home_url('/booking-systems')), 'light'); ?>
+                        <?php echo txa_supplier_button(txa_f('supplier_hero_primary_label', 'Apply Now'), txa_url('supplier_hero_primary_url', home_url('/apply-now/')), 'primary', txa_new_tab('supplier_hero_primary_url')); ?>
+                        <?php echo txa_supplier_button(txa_f('supplier_hero_secondary_label', 'See connected booking systems'), txa_url('supplier_hero_secondary_url', home_url('/booking-systems')), 'light', txa_new_tab('supplier_hero_secondary_url')); ?>
                     </div>
                 </div>
             </div>
@@ -186,7 +147,7 @@ foreach ($benefits as $i => $benefit) {
                     <?php echo esc_html(txa_f('supplier_connect_notice', 'No booking, no fee. Pay only when you receive online bookings through TXA channels, subject to final success fee of 0.75%-2.8% of total booking value.')); ?>
                 </div>
                 <div class="mt-5 sm:mt-4">
-                    <?php echo txa_supplier_button(txa_f('supplier_connect_button_label', 'Apply Now using TXA Get Connected Wizard'), $wizard_url, 'primary', true); ?>
+                    <?php echo txa_supplier_button(txa_f('supplier_connect_button_label', 'Apply Now using TXA Get Connected Wizard'), $wizard_url, 'primary', txa_new_tab('supplier_connect_button_url', true)); ?>
                 </div>
             </div>
             <div class="h-[230px] overflow-hidden rounded-lg border border-line sm:h-[408px]">

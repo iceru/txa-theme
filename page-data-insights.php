@@ -6,45 +6,6 @@
  * @package TailPress
  */
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-
 add_filter('pre_get_document_title', fn(): string => (string) txa_f('insights_seo_title', 'Data and Insights | Tourism Exchange Australia'));
 add_action('wp_head', function (): void {
     if (is_page_template('page-data-insights.php')) {
@@ -80,7 +41,7 @@ $export_formats = array_values(array_filter([
                 </h1>
                 <p class="mt-6 max-w-[600px] text-base leading-7 text-mid-gray sm:text-lg sm:leading-8">
                     <?php echo esc_html(txa_f('insights_hero_copy', 'TXA gives destinations the capability to build useful analytics and consumer data sets. Dashboards, attribution data and exports can help DMOs understand visitor engagement, supplier activity, campaign ROI and the economic model of tourism.')); ?></p>
-                <a href="<?php echo esc_url($demo_url); ?>"
+                <a href="<?php echo esc_url($demo_url); ?>" <?php echo txa_target_attr(txa_new_tab('insights_hero_button_url'), $demo_url); ?>
                     class="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 font-bold text-white !no-underline transition hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('insights_hero_button_label', 'Request a demo')); ?></a>
             </div>
 

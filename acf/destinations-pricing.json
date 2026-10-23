@@ -12,8 +12,10 @@
       {"key": "field_prc_hero_image_alt", "label": "Hero Image Alt Text", "name": "pricing_hero_image_alt", "type": "text", "placeholder": "Australian destination landscape"},
       {"key": "field_prc_hero_primary_label", "label": "Primary Button Label", "name": "pricing_hero_primary_label", "type": "text", "placeholder": "Apply Now"},
       {"key": "field_prc_hero_primary_url", "label": "Primary Button URL", "name": "pricing_hero_primary_url", "type": "text", "placeholder": "/apply-now/"},
+      {"key":"field_prc_hero_primary_url_new_tab","label":"Open in new tab","name":"pricing_hero_primary_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_prc_hero_secondary_label", "label": "Secondary Button Label", "name": "pricing_hero_secondary_label", "type": "text", "placeholder": "Request Demo"},
       {"key": "field_prc_hero_secondary_url", "label": "Secondary Button URL", "name": "pricing_hero_secondary_url", "type": "text", "placeholder": "/contact/"},
+      {"key":"field_prc_hero_secondary_url_new_tab","label":"Open in new tab","name":"pricing_hero_secondary_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_prc_tab_packages", "label": "Packages", "type": "tab", "placement": "top"},
       {"key": "field_prc_scale_heading", "label": "Heading", "name": "pricing_scale_heading", "type": "text", "placeholder": "Choose Your Destination Scale"},
@@ -21,6 +23,7 @@
       {"key": "field_prc_includes_label", "label": "Includes Label", "name": "pricing_includes_label", "type": "text", "placeholder": "Destination packages include:"},
       {"key": "field_prc_popular_badge", "label": "Popular Badge Text", "name": "pricing_popular_badge", "type": "text", "placeholder": "MOST POPULAR"},
       {"key": "field_prc_package_button_url", "label": "Package Button URL (used by all packages)", "name": "pricing_package_button_url", "type": "text", "placeholder": "/contact/"},
+      {"key":"field_prc_package_button_url_new_tab","label":"Open in new tab","name":"pricing_package_button_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_prc_feature_paas", "label": "Feature: Subscription", "name": "pricing_feature_paas", "type": "text", "placeholder": "PaaS subscription"},
       {"key": "field_prc_feature_poi_suffix", "label": "Feature: POI Text (after the number)", "name": "pricing_feature_poi_suffix", "type": "text", "placeholder": "POI assets input service"},

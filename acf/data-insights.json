@@ -15,6 +15,7 @@
       {"key": "field_ins_hero_copy", "label": "Hero Copy", "name": "insights_hero_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "TXA gives destinations the capability to build useful analytics and consumer data sets. Dashboards, attribution data and exports can help DMOs understand visitor engagement, supplier activity, campaign ROI and the economic model of tourism."},
       {"key": "field_ins_hero_button_label", "label": "Button Label", "name": "insights_hero_button_label", "type": "text", "placeholder": "Request a demo"},
       {"key": "field_ins_hero_button_url", "label": "Button URL", "name": "insights_hero_button_url", "type": "text", "placeholder": "/contact"},
+      {"key":"field_ins_hero_button_url_new_tab","label":"Open in new tab","name":"insights_hero_button_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_ins_hero_image", "label": "Hero Image", "name": "insights_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
       {"key": "field_ins_hero_image_alt", "label": "Hero Image Alt Text", "name": "insights_hero_image_alt", "type": "text", "placeholder": "Destination website displayed on a laptop"},
 

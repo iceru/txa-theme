@@ -9,7 +9,8 @@
       {"key": "field_faq_header_aside_title", "label": "Aside Heading", "name": "faq_hero_aside_title", "type": "text", "placeholder": "Can’t find your answer?"},
       {"key": "field_faq_header_aside_copy", "label": "Aside Description", "name": "faq_hero_aside_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Tell us which pathway you are exploring and the TXA team will help you find the right next step."},
       {"key": "field_faq_header_button_label", "label": "Button Label", "name": "faq_hero_aside_button_label", "type": "text", "placeholder": "Contact TXA"},
-      {"key": "field_faq_header_button_url", "label": "Button URL", "name": "faq_hero_aside_button_url", "type": "text", "placeholder": "/contact/"}
+      {"key": "field_faq_header_button_url", "label": "Button URL", "name": "faq_hero_aside_button_url", "type": "text", "placeholder": "/contact/"},
+      {"key":"field_faq_header_button_url_new_tab","label":"Open in new tab","name":"faq_hero_aside_button_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0}
     ],
     "location": [
       [

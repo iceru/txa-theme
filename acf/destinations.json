@@ -16,7 +16,9 @@
       {"key": "field_dest_hero_primary_label", "label": "Primary Button Label", "name": "destination_hero_primary_label", "type": "text", "placeholder": "Request Smart Destination Demo"},
       {"key": "field_dest_hero_secondary_label", "label": "Secondary Button Label", "name": "destination_hero_secondary_label", "type": "text", "placeholder": "See destination packages"},
       {"key": "field_dest_demo_url", "label": "Demo URL (used by all demo buttons)", "name": "destination_demo_url", "type": "text", "placeholder": "/destinations/contact/"},
+      {"key":"field_dest_demo_url_new_tab","label":"Open in new tab","name":"destination_demo_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_dest_pricing_url", "label": "Pricing URL (used by all package buttons)", "name": "destination_pricing_url", "type": "text", "placeholder": "/destinations/pricing/"},
+      {"key":"field_dest_pricing_url_new_tab","label":"Open in new tab","name":"destination_pricing_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_dest_tab_what", "label": "What is a Smart Destination", "type": "tab", "placement": "top"},
       {"key": "field_dest_what_heading", "label": "Heading", "name": "destination_what_heading", "type": "text", "placeholder": "What is a TXA Smart Destination?"},

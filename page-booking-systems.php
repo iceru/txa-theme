@@ -6,53 +6,14 @@
  * @package TailPress
  */
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-
 if (!function_exists('txa_booking_button')) {
-    function txa_booking_button(string $label, string $url, string $variant = 'primary'): string
+    function txa_booking_button(string $label, string $url, string $variant = 'primary', bool $new_tab = false): string
     {
         $classes = 'inline-flex min-h-11 w-full items-center justify-center rounded-lg px-5 py-3 font-bold text-center !no-underline transition sm:w-auto';
         $classes .= 'light' === $variant
             ? ' bg-white text-brand hover:bg-surface'
             : ' bg-brand text-white hover:bg-brand-dark';
-        return sprintf('<a class="%s" href="%s">%s</a>', esc_attr($classes), esc_url($url), esc_html($label));
+        return sprintf('<a class="%s" href="%s"%s>%s</a>', esc_attr($classes), esc_url($url), txa_target_attr($new_tab, $url), esc_html($label));
     }
 }
 
@@ -189,7 +150,7 @@ if ($booking_system_query->have_posts()) {
                         <?php echo esc_html(txa_f('booking_hero_copy', 'TXA helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Australia’s open B2B tourism exchange.')); ?>
                     </p>
                     <div class="mt-6">
-                        <?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $partner_url); ?>
+                        <?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $partner_url, 'primary', txa_new_tab('booking_partner_url')); ?>
                     </div>
                 </div>
 
@@ -327,7 +288,7 @@ if ($booking_system_query->have_posts()) {
                         <?php echo esc_html(txa_f('booking_partners_copy', 'Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry.')); ?>
                     </p>
                     <div class="mt-6">
-                        <?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partner_url, 'light'); ?>
+                        <?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partner_url, 'light', txa_new_tab('booking_partner_url')); ?>
                     </div>
                 </div>
             </div>

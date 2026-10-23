@@ -5,34 +5,6 @@
  * @package TailPress
  */
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
 add_filter('pre_get_document_title', fn(): string => (string) txa_f('contact_seo_title', 'Contact TXA | Tourism Exchange Australia'));
 add_action('wp_head', function (): void {
     if (is_page_template('page-contact.php'))

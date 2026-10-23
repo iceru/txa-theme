@@ -31,48 +31,55 @@
             <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 <div>
                     <h2 class="text-xs font-semibold uppercase tracking-wide text-brand">Pathways</h2>
-                    <ul class="mt-5 space-y-4 text-sm">
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/suppliers/')); ?>">Suppliers</a></li>
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/destinations/')); ?>">Destinations</a></li>
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/distributors/')); ?>">Distributors</a></li>
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/booking-systems/')); ?>">Booking Systems</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'footer_pathways',
+                        'container' => false,
+                        'menu_class' => 'mt-5 space-y-4 text-sm',
+                        'depth' => 1,
+                        'fallback_cb' => 'txa_footer_menu_fallback',
+                        'walker' => new TailPress\Walkers\FooterNavWalker(),
+                    ]);
+                    ?>
                 </div>
                 <div>
                     <h2 class="text-xs font-semibold uppercase tracking-wide text-brand">Platform</h2>
-                    <ul class="mt-5 space-y-4 text-sm">
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/pricing/')); ?>">Pricing</a></li>
-
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/faqs/')); ?>">FAQs</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'footer_platform',
+                        'container' => false,
+                        'menu_class' => 'mt-5 space-y-4 text-sm',
+                        'depth' => 1,
+                        'fallback_cb' => 'txa_footer_menu_fallback',
+                        'walker' => new TailPress\Walkers\FooterNavWalker(),
+                    ]);
+                    ?>
                 </div>
                 <div>
                     <h2 class="text-xs font-semibold uppercase tracking-wide text-brand">Company</h2>
-                    <ul class="mt-5 space-y-4 text-sm">
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/about/')); ?>">About TXA</a></li>
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/blog/')); ?>">Blog</a></li>
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/contact/')); ?>">Contact us</a></li>
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="https://sites.txa.com.au/Dashboard/">Dashboard Login</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'footer_company',
+                        'container' => false,
+                        'menu_class' => 'mt-5 space-y-4 text-sm',
+                        'depth' => 1,
+                        'fallback_cb' => 'txa_footer_menu_fallback',
+                        'walker' => new TailPress\Walkers\FooterNavWalker(),
+                    ]);
+                    ?>
                 </div>
                 <div>
                     <h2 class="text-xs font-semibold uppercase tracking-wide text-brand">Legal</h2>
-                    <ul class="mt-5 space-y-4 text-sm">
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a></li>
-                        <li><a class="text-white/65 !no-underline hover:text-white"
-                                href="<?php echo esc_url(home_url('/terms-of-use/')); ?>">Terms of Use</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'footer_legal',
+                        'container' => false,
+                        'menu_class' => 'mt-5 space-y-4 text-sm',
+                        'depth' => 1,
+                        'fallback_cb' => 'txa_footer_menu_fallback',
+                        'walker' => new TailPress\Walkers\FooterNavWalker(),
+                    ]);
+                    ?>
                 </div>
             </div>
         </div>

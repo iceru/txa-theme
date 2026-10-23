@@ -6,47 +6,8 @@
  * @package TailPress
  */
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-
 if (!function_exists('txa_destination_button')) {
-    function txa_destination_button(string $label, string $url, string $variant = 'primary'): string
+    function txa_destination_button(string $label, string $url, string $variant = 'primary', bool $new_tab = false): string
     {
         $classes = 'inline-flex min-h-12 w-full items-center justify-center rounded-lg px-5 py-3 font-bold !no-underline transition sm:w-auto sm:px-6';
         $classes .= 'light' === $variant
@@ -55,7 +16,7 @@ if (!function_exists('txa_destination_button')) {
                 ? ' bg-white text-brand hover:bg-white/90'
                 : ' bg-brand text-white hover:bg-brand-dark');
 
-        return sprintf('<a class="%s" href="%s">%s</a>', esc_attr($classes), esc_url($url), esc_html($label));
+        return sprintf('<a class="%s" href="%s"%s>%s</a>', esc_attr($classes), esc_url($url), txa_target_attr($new_tab, $url), esc_html($label));
     }
 }
 
@@ -151,7 +112,7 @@ $implementation = txa_destination_cards('destination_step', [
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
                         <?php echo esc_html(txa_f('destination_hero_copy', 'TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.')); ?></p>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-                        <?php echo txa_destination_button(txa_f('destination_hero_secondary_label', 'See destination packages'), $pricing_url, 'light'); ?>
+                        <?php echo txa_destination_button(txa_f('destination_hero_secondary_label', 'See destination packages'), $pricing_url, 'light', txa_new_tab('destination_pricing_url')); ?>
                     </div>
                 </div>
             </div>
@@ -184,7 +145,7 @@ $implementation = txa_destination_cards('destination_step', [
                 <?php endforeach; ?>
             </div>
             <div class="mt-7 flex justify-center">
-                <?php echo txa_destination_button(txa_f('destination_hero_primary_label', 'Request Smart Destination Demo'), $demo_url); ?>
+                <?php echo txa_destination_button(txa_f('destination_hero_primary_label', 'Request Smart Destination Demo'), $demo_url, 'primary', txa_new_tab('destination_demo_url')); ?>
             </div>
         </div>
     </section>
@@ -286,8 +247,8 @@ $implementation = txa_destination_cards('destination_step', [
                     class="text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
                     <?php echo esc_html(txa_f('destination_steps_heading', 'How a TXA Smart Destination is easily implemented')); ?></h2>
                 <div class="mt-5 flex flex-col gap-3 sm:mt-6 sm:items-start">
-                    <?php echo txa_destination_button(txa_f('destination_steps_primary_label', 'Ask about our destination packages'), $pricing_url); ?>
-                    <?php echo txa_destination_button(txa_f('destination_steps_secondary_label', 'Request website activation demo'), $demo_url, 'white'); ?>
+                    <?php echo txa_destination_button(txa_f('destination_steps_primary_label', 'Ask about our destination packages'), $pricing_url, 'primary', txa_new_tab('destination_pricing_url')); ?>
+                    <?php echo txa_destination_button(txa_f('destination_steps_secondary_label', 'Request website activation demo'), $demo_url, 'white', txa_new_tab('destination_demo_url')); ?>
                 </div>
             </div>
             <div class="relative">

@@ -6,45 +6,6 @@
  * @package TailPress
  */
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-
 if (!function_exists('txa_microsite_tools')) {
     function txa_microsite_tools(array $tools): array
     {
@@ -121,7 +82,7 @@ $tools = txa_microsite_tools([
                     <?php echo esc_html(txa_f('microsite_hero_title_start', 'Create tactical destination microsites that')); ?> <span class="text-brand"><?php echo esc_html(txa_f('microsite_hero_title_highlight', 'motivate and convert')); ?></span> <?php echo esc_html(txa_f('microsite_hero_title_end', '')); ?>
                 </h1>
                 <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray"><?php echo esc_html(txa_f('microsite_hero_copy', 'TXA can support campaign-specific microsites for event, seasonal, industry group or special-interest tourism initiatives.')); ?></p>
-                <a href="<?php echo esc_url($demo_url); ?>"
+                <a href="<?php echo esc_url($demo_url); ?>" <?php echo txa_target_attr(txa_new_tab('microsite_hero_button_url'), $demo_url); ?>
                     class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('microsite_hero_button_label', 'Plan a campaign microsite')); ?></a>
             </div>
             <div>
@@ -191,6 +152,7 @@ $tools = txa_microsite_tools([
                             <?php if (!empty($tool['cta']) && !empty($tool['url'])) { ?>
                                 <div class="mt-10 border-t border-[#dfc0ba] pt-8">
                                     <a href="<?php echo esc_url($tool['url']); ?>"
+                                        <?php echo txa_target_attr(txa_new_tab('microsite_tool_2_url'), $tool['url']); ?>
                                         class="inline-flex items-center gap-2 text-base font-bold text-brand !no-underline"><?php echo esc_html($tool['cta']); ?>
                                         <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
                                 </div>

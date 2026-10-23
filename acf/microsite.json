@@ -11,6 +11,7 @@
       {"key": "field_msc_hero_copy", "label": "Hero Copy", "name": "microsite_hero_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXA can support campaign-specific microsites for event, seasonal, industry group or special-interest tourism initiatives."},
       {"key": "field_msc_hero_button_label", "label": "Button Label", "name": "microsite_hero_button_label", "type": "text", "placeholder": "Plan a campaign microsite"},
       {"key": "field_msc_hero_button_url", "label": "Button URL", "name": "microsite_hero_button_url", "type": "text", "placeholder": "/contact/"},
+      {"key":"field_msc_hero_button_url_new_tab","label":"Open in new tab","name":"microsite_hero_button_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_msc_hero_image", "label": "Hero Image", "name": "microsite_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
       {"key": "field_msc_hero_image_alt", "label": "Hero Image Alt Text", "name": "microsite_hero_image_alt", "type": "text", "placeholder": "Destination microsite shown on a laptop"},
 
@@ -30,6 +31,7 @@
       {"key": "field_msc_tool_2_copy", "label": "Copy", "name": "microsite_tool_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Use widgets, QR codes and campaign pages to seamlessly connect physical audiences to bookable product."},
       {"key": "field_msc_tool_2_cta", "label": "Link Label", "name": "microsite_tool_2_cta", "type": "text", "placeholder": "Learn about QR integration"},
       {"key": "field_msc_tool_2_url", "label": "Link URL", "name": "microsite_tool_2_url", "type": "text", "placeholder": "/destinations/"},
+      {"key":"field_msc_tool_2_url_new_tab","label":"Open in new tab","name":"microsite_tool_2_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_msc_tab_tool_3", "label": "Tool 3 (red)", "type": "tab", "placement": "top"},
       {"key": "field_msc_tool_3_icon", "label": "Icon (Bootstrap Icons class)", "name": "microsite_tool_3_icon", "type": "text", "placeholder": "bi-person-check"},

@@ -5,45 +5,6 @@
  * @package TailPress
  */
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-
 get_header();
 
 $packages = [
@@ -104,7 +65,9 @@ foreach ($setup_cards as $i => $card) {
                 <p class="mt-5 text-base font-semibold leading-7 sm:mt-6 sm:text-lg sm:leading-[30px]"><?php echo esc_html(txa_f('pricing_hero_copy', 'TXA offers Smart Destination packages that match the scope and scale of your visitor economy. Each package is designed to give your destination access to platform infrastructure, supplier activation support, destination content activation and industry-facing tools without the risk of a custom technology build.')); ?></p>
                 <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4"><a
                         href="<?php echo esc_url(txa_url('pricing_hero_primary_url', home_url('/apply-now/'))); ?>"
+                        <?php echo txa_target_attr(txa_new_tab('pricing_hero_primary_url'), txa_url('pricing_hero_primary_url', home_url('/apply-now/'))); ?>
                         class="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-white px-6 py-3 text-center text-base font-bold text-brand !no-underline sm:w-auto sm:px-8 sm:text-lg"><?php echo esc_html(txa_f('pricing_hero_primary_label', 'Apply Now')); ?></a><a href="<?php echo esc_url(txa_url('pricing_hero_secondary_url', home_url('/contact/'))); ?>"
+                        <?php echo txa_target_attr(txa_new_tab('pricing_hero_secondary_url'), txa_url('pricing_hero_secondary_url', home_url('/contact/'))); ?>
                         class="inline-flex min-h-12 w-full items-center justify-center rounded-lg border border-white px-6 py-3 text-center text-base font-bold text-white !no-underline sm:w-auto sm:px-8 sm:text-lg"><?php echo esc_html(txa_f('pricing_hero_secondary_label', 'Request Demo')); ?></a></div>
             </div>
         </div>
@@ -132,6 +95,7 @@ foreach ($setup_cards as $i => $card) {
                             <?php endforeach; ?>
                         </ul>
                         <a href="<?php echo esc_url(txa_url('pricing_package_button_url', home_url('/contact/'))); ?>"
+                            <?php echo txa_target_attr(txa_new_tab('pricing_package_button_url'), txa_url('pricing_package_button_url', home_url('/contact/'))); ?>
                             class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg <?php echo !empty($package['popular']) ? 'bg-brand text-white' : 'border border-brand text-brand'; ?> px-4 py-3 text-center font-semibold !no-underline sm:mt-10"><?php echo esc_html($package['button']); ?></a>
                     </article><?php endforeach; ?>
             </div>

@@ -15,6 +15,7 @@
       {"key": "field_dist_hero_image_alt", "label": "Hero Image Alt Text", "name": "distributor_hero_image_alt", "type": "text", "placeholder": "Australian landscape"},
       {"key": "field_dist_hero_button_label", "label": "Hero Button Label", "name": "distributor_hero_button_label", "type": "text", "placeholder": "Become a Distributor"},
       {"key": "field_dist_apply_url", "label": "Apply URL (used by all buttons)", "name": "distributor_apply_url", "type": "text", "placeholder": "/distributors/apply/"},
+      {"key":"field_dist_apply_url_new_tab","label":"Open in new tab","name":"distributor_apply_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_dist_tab_ecosystem", "label": "Ecosystem", "type": "tab", "placement": "top"},
       {"key": "field_dist_ecosystem_eyebrow", "label": "Eyebrow", "name": "distributor_ecosystem_eyebrow", "type": "text", "placeholder": "Connected tourism ecosystem"},

@@ -11,8 +11,10 @@
       {"key": "field_sup_hero_image_alt", "label": "Hero Image Alt Text", "name": "supplier_hero_image_alt", "type": "text", "placeholder": "Rottnest Island, Perth"},
       {"key": "field_sup_hero_primary_label", "label": "Primary Button Label", "name": "supplier_hero_primary_label", "type": "text", "placeholder": "Apply Now"},
       {"key": "field_sup_hero_primary_url", "label": "Primary Button URL", "name": "supplier_hero_primary_url", "type": "text", "placeholder": "/apply-now/"},
+      {"key":"field_sup_hero_primary_url_new_tab","label":"Open in new tab","name":"supplier_hero_primary_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_sup_hero_secondary_label", "label": "Secondary Button Label", "name": "supplier_hero_secondary_label", "type": "text", "placeholder": "See connected booking systems"},
       {"key": "field_sup_hero_secondary_url", "label": "Secondary Button URL", "name": "supplier_hero_secondary_url", "type": "text", "placeholder": "/booking-systems"},
+      {"key":"field_sup_hero_secondary_url_new_tab","label":"Open in new tab","name":"supplier_hero_secondary_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_sup_tab_intro", "label": "Intro", "type": "tab", "placement": "top"},
       {"key": "field_sup_intro_eyebrow", "label": "Eyebrow", "name": "supplier_intro_eyebrow", "type": "text", "placeholder": "Connect once, sell everywhere"},
@@ -55,6 +57,7 @@
       {"key": "field_sup_connect_notice", "label": "Notice Box", "name": "supplier_connect_notice", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "No booking, no fee. Pay only when you receive online bookings through TXA channels, subject to final success fee of 0.75%-2.8% of total booking value."},
       {"key": "field_sup_connect_button_label", "label": "Button Label", "name": "supplier_connect_button_label", "type": "text", "placeholder": "Apply Now using TXA Get Connected Wizard"},
       {"key": "field_sup_connect_button_url", "label": "Button URL", "name": "supplier_connect_button_url", "type": "text", "placeholder": "https://sites.txa.com.au/Connect"},
+      {"key":"field_sup_connect_button_url_new_tab","label":"Open in new tab","name":"supplier_connect_button_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_sup_connect_image", "label": "Image", "name": "supplier_connect_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
       {"key": "field_sup_connect_image_alt", "label": "Image Alt Text", "name": "supplier_connect_image_alt", "type": "text", "placeholder": "TXA supplier connection"}
     ],

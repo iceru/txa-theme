@@ -21,7 +21,7 @@ $body = $args['body'] ?? '';
             </h1>
             <?php if ($intro): ?>
                 <p class="mt-5 max-w-[820px] text-base leading-7 text-mid-gray sm:mt-6 sm:text-lg lg:mt-8">
-                    <?php echo wp_kses_post((string) $intro); ?>
+                    <?php echo txa_external_link_targets(wp_kses_post((string) $intro)); ?>
                 </p>
             <?php endif; ?>
         </div>
@@ -30,7 +30,7 @@ $body = $args['body'] ?? '';
     <section class="px-4 py-10 sm:py-12 lg:px-16 lg:py-16">
         <div class="mx-auto max-w-[960px] rounded-2xl border border-[#dfc0ba]/20 bg-white p-5 shadow-sm sm:p-8 lg:rounded-3xl lg:p-12">
             <div class="text-base leading-7 text-mid-gray [&_h2]:mt-12 [&_h2]:[font-family:'Hanken_Grotesk',sans-serif] [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:leading-tight [&_h2]:text-[#151c27] [&_h2:first-child]:mt-0 [&_li]:mt-2 [&_li]:first:mt-0 [&_p]:mt-4 [&_p]:first:mt-0 [&_strong]:font-semibold [&_strong]:text-[#151c27] [&_ul]:list-disc [&_ul]:pl-6">
-                <?php echo wp_kses_post((string) $body); ?>
+                <?php echo txa_external_link_targets(wp_kses_post((string) $body)); ?>
             </div>
         </div>
     </section>

@@ -11,6 +11,7 @@
       {"key": "field_trd_hero_copy", "label": "Hero Copy", "name": "trade_hero_copy", "type": "textarea", "rows": 5, "new_lines": "", "placeholder": "TXA can create a destination-specific landing page in Australia's National Trade Portal. The page can be accessed by URL or QR code and can present POIs, recommended experiences and suppliers with real-time booking access for domestic and international trade initiatives."},
       {"key": "field_trd_hero_button_label", "label": "Button Label", "name": "trade_hero_button_label", "type": "text", "placeholder": "Request trade portal activation"},
       {"key": "field_trd_hero_button_url", "label": "Button URL", "name": "trade_hero_button_url", "type": "text", "placeholder": "/contact/"},
+      {"key":"field_trd_hero_button_url_new_tab","label":"Open in new tab","name":"trade_hero_button_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_trd_hero_image", "label": "Hero Image", "name": "trade_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
       {"key": "field_trd_hero_image_alt", "label": "Hero Image Alt Text", "name": "trade_hero_image_alt", "type": "text", "placeholder": "Trade portal destination page on a laptop"},
 

@@ -30,6 +30,69 @@ if (!function_exists('txa_header_link_class')) {
         return trim($extra_classes . ' text-sm ' . $state_classes . ' !no-underline hover:text-brand');
     }
 }
+
+/**
+ * Primary menu fallback: echoes the original hardcoded navigation until a
+ * menu is assigned to the primary location in Appearance → Menus.
+ */
+if (!function_exists('txa_primary_menu_fallback')) {
+    function txa_primary_menu_fallback($args = []): void
+    {
+        $destination_items = [
+            ['Overview', '/destinations/'],
+            ['Destination Pricing', '/destinations/pricing/'],
+            ['POI and Experiences', '/destinations/poi-experiences/'],
+            ['Trade Portal', '/destinations/trade-portal/'],
+            ['Microsite Campaigns', '/destinations/microsite-campaigns/'],
+            ['Data and Insights', '/destinations/data-insights/'],
+            ['Virtual Concierge', '/destinations/virtual-concierge/'],
+        ];
+        ?>
+                                <ul class="space-y-5 lg:flex lg:items-center lg:space-y-0 lg:-mx-4">
+                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/suppliers/')); ?>"
+                                            class="<?php echo esc_attr(txa_header_link_class('/suppliers/', false, 'block py-1')); ?>">Suppliers</a>
+                                    </li>
+                                    <li class="relative lg:mx-4">
+                                        <button type="button"
+                                            class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex w-full items-center justify-between gap-1 rounded py-1 lg:w-auto lg:justify-start')); ?>"
+                                            aria-expanded="false" aria-haspopup="true" aria-controls="destinations-submenu"
+                                            data-destinations-toggle>
+                                            <span>Destinations</span>
+                                            <i class="bi bi-chevron-down ml-0.5 text-sm leading-none transition"
+                                                aria-hidden="true"></i>
+                                        </button>
+                                        <ul id="destinations-submenu"
+                                            class="hidden mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:block lg:min-w-[240px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition"
+                                            data-destinations-submenu>
+                                            <?php foreach ($destination_items as $destination_item): ?>
+                                                <li><a href="<?php echo esc_url(home_url($destination_item[1])); ?>"
+                                                        class="<?php echo esc_attr(txa_header_link_class($destination_item[1], false, 'block rounded-lg py-1 lg:px-3 lg:py-2.5 lg:hover:bg-surface')); ?>"><?php echo esc_html($destination_item[0]); ?></a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </li>
+                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/distributors/')); ?>"
+                                            class="<?php echo esc_attr(txa_header_link_class('/distributors/', false, 'block py-1')); ?>">Distributors</a>
+                                    </li>
+                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/booking-systems/')); ?>"
+                                            class="<?php echo esc_attr(txa_header_link_class('/booking-systems/', true, 'block py-1')); ?>">Booking
+                                            Systems</a></li>
+                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/pricing/')); ?>"
+                                            class="<?php echo esc_attr(txa_header_link_class('/pricing/', false, 'block py-1')); ?>">Pricing</a>
+                                    </li>
+                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/about/')); ?>"
+                                            class="<?php echo esc_attr(txa_header_link_class('/about/', false, 'block py-1')); ?>">About</a>
+                                    </li>
+                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/contact/')); ?>"
+                                            class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>
+                                    </li>
+                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/blog/')); ?>"
+                                            class="<?php echo esc_attr(txa_header_link_class('/blog/', false, 'block py-1')); ?>">Blog</a>
+                                    </li>
+                                </ul>
+        <?php
+    }
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -102,62 +165,20 @@ if (!function_exists('txa_header_link_class')) {
                         </div>
 
                         <nav class="lg:justify-self-center" aria-label="Primary navigation">
-                            <ul class="space-y-5 lg:flex lg:items-center lg:space-y-0 lg:-mx-4">
-                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/suppliers/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/suppliers/', false, 'block py-1')); ?>">Suppliers</a>
-                                </li>
-                                <li class="relative lg:mx-4">
-                                    <button type="button"
-                                        class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex w-full items-center justify-between gap-1 rounded py-1 lg:w-auto lg:justify-start')); ?>"
-                                        aria-expanded="false" aria-haspopup="true" aria-controls="destinations-submenu"
-                                        data-destinations-toggle>
-                                        <span>Destinations</span>
-                                        <i class="bi bi-chevron-down ml-0.5 text-sm leading-none transition"
-                                            aria-hidden="true"></i>
-                                    </button>
-                                    <ul id="destinations-submenu"
-                                        class="hidden mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:block lg:min-w-[240px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition"
-                                        data-destinations-submenu>
-                                        <?php
-                                        $destination_items = [
-                                            ['Overview', '/destinations/'],
-                                            ['Destination Pricing', '/destinations/pricing/'],
-                                            ['POI and Experiences', '/destinations/poi-experiences/'],
-                                            ['Trade Portal', '/destinations/trade-portal/'],
-                                            ['Microsite Campaigns', '/destinations/microsite-campaigns/'],
-                                            ['Data and Insights', '/destinations/data-insights/'],
-                                            ['Virtual Concierge', '/destinations/virtual-concierge/'],
-                                        ];
-                                        foreach ($destination_items as $destination_item): ?>
-                                            <li><a href="<?php echo esc_url(home_url($destination_item[1])); ?>"
-                                                    class="<?php echo esc_attr(txa_header_link_class($destination_item[1], false, 'block rounded-lg py-1 lg:px-3 lg:py-2.5 lg:hover:bg-surface')); ?>"><?php echo esc_html($destination_item[0]); ?></a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </li>
-                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/distributors/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/distributors/', false, 'block py-1')); ?>">Distributors</a>
-                                </li>
-                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/booking-systems/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/booking-systems/', true, 'block py-1')); ?>">Booking
-                                        Systems</a></li>
-                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/pricing/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/pricing/', false, 'block py-1')); ?>">Pricing</a>
-                                </li>
-                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/about/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/about/', false, 'block py-1')); ?>">About</a>
-                                </li>
-                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>
-                                </li>
-                                <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/blog/')); ?>"
-                                        class="<?php echo esc_attr(txa_header_link_class('/blog/', false, 'block py-1')); ?>">Blog</a>
-                                </li>
-                            </ul>
+                            <?php
+                            wp_nav_menu([
+                                'theme_location' => 'primary',
+                                'container' => false,
+                                'menu_class' => 'space-y-5 lg:flex lg:items-center lg:space-y-0 lg:-mx-4',
+                                'depth' => 2,
+                                'fallback_cb' => 'txa_primary_menu_fallback',
+                                'walker' => new TailPress\Walkers\HeaderNavWalker(),
+                            ]);
+                            ?>
                         </nav>
 
                         <div class="mt-8 flex flex-col gap-3 lg:mt-0 lg:justify-self-end">
-                            <a href="https://sites.txa.com.au/Dashboard/"
+                            <a href="https://sites.txa.com.au/Dashboard/" target="_blank" rel="noopener noreferrer"
                                 class="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 font-bold text-white text-sm !no-underline hover:bg-brand-dark">
                                 Dashboard Login</a>
                         </div>

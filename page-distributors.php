@@ -6,53 +6,14 @@
  * @package TailPress
  */
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-
 if (!function_exists('txa_distributor_button')) {
-    function txa_distributor_button(string $label, string $url, string $variant = 'primary'): string
+    function txa_distributor_button(string $label, string $url, string $variant = 'primary', bool $new_tab = false): string
     {
         $classes = 'inline-flex min-h-12 w-full items-center justify-center rounded-lg px-5 py-3 font-bold !no-underline transition sm:w-auto sm:px-6';
         $classes .= 'light' === $variant
             ? ' bg-white text-brand hover:bg-surface'
             : ' bg-brand text-white hover:bg-brand-dark';
-        return sprintf('<a class="%s" href="%s">%s</a>', esc_attr($classes), esc_url($url), esc_html($label));
+        return sprintf('<a class="%s" href="%s"%s>%s</a>', esc_attr($classes), esc_url($url), txa_target_attr($new_tab, $url), esc_html($label));
     }
 }
 
@@ -127,7 +88,7 @@ foreach ($models as $i => $model) {
                     <p
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
                         <?php echo esc_html(txa_f('distributor_hero_copy', 'TXA gives distributors a pathway to Australian tourism suppliers across accommodation, tours, attractions, events and experiences. TXA offers distribution channels flexible commercial models, API or white label booking page options, and the ability to participate in destination-led campaigns and trade initiatives.')); ?></p>
-                    <div class="mt-6"><?php echo txa_distributor_button(txa_f('distributor_hero_button_label', 'Become a Distributor'), $apply_url); ?></div>
+                    <div class="mt-6"><?php echo txa_distributor_button(txa_f('distributor_hero_button_label', 'Become a Distributor'), $apply_url, 'primary', txa_new_tab('distributor_apply_url')); ?></div>
                 </div>
             </div>
         </div>
@@ -231,7 +192,7 @@ foreach ($models as $i => $model) {
                     <p class="mt-4 text-[15px] leading-6 text-white/90 sm:mt-6 sm:text-base">
                         <?php echo esc_html(txa_f('distributor_campaign_copy', 'TXA sits at the heart of Australian tourism. We work closely with STOs and RTOs to power booking engines for state-wide initiatives. Become a partner in these high-value trade campaigns.')); ?></p>
                     <div class="mt-6">
-                        <?php echo txa_distributor_button(txa_f('distributor_campaign_button_label', 'Become a TXA distributor'), $apply_url, 'light'); ?>
+                        <?php echo txa_distributor_button(txa_f('distributor_campaign_button_label', 'Become a TXA distributor'), $apply_url, 'light', txa_new_tab('distributor_apply_url')); ?>
                     </div>
                 </div>
             </div>

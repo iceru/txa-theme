@@ -6,45 +6,6 @@
  * @package TailPress
  */
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-
 if (!function_exists('txa_trade_cards')) {
     function txa_trade_cards(string $prefix, array $cards, array $keys): array
     {
@@ -142,7 +103,7 @@ $portal_tools = array_values(array_filter([
                     class="mt-8 max-w-[680px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
                     <?php echo esc_html(txa_f('trade_hero_title_start', 'Give trade partners a')); ?> <span class="text-brand"><?php echo esc_html(txa_f('trade_hero_title_highlight', 'dedicated destination page')); ?></span> <?php echo esc_html(txa_f('trade_hero_title_end', 'with bookable local supply')); ?></h1>
                 <p class="mt-6 max-w-[620px] text-lg leading-8 text-mid-gray"><?php echo esc_html(txa_f('trade_hero_copy', "TXA can create a destination-specific landing page in Australia's National Trade Portal. The page can be accessed by URL or QR code and can present POIs, recommended experiences and suppliers with real-time booking access for domestic and international trade initiatives.")); ?></p>
-                <a href="<?php echo esc_url($demo_url); ?>"
+                <a href="<?php echo esc_url($demo_url); ?>" <?php echo txa_target_attr(txa_new_tab('trade_hero_button_url'), $demo_url); ?>
                     class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('trade_hero_button_label', 'Request trade portal activation')); ?></a>
             </div>
             <div>

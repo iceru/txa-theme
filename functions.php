@@ -19,7 +19,14 @@ function tailpress(): TailPress\Framework\Theme
                 ->enqueueAssets()
         )
         ->features(fn($manager) => $manager->add(TailPress\Framework\Features\MenuOptions::class))
-        ->menus(fn($manager) => $manager->add('primary', __('Primary Menu', 'tailpress')))
+        ->menus(
+            fn($manager) => $manager
+                ->add('primary', __('Primary Menu', 'tailpress'))
+                ->add('footer_pathways', __('Footer: Pathways', 'tailpress'))
+                ->add('footer_platform', __('Footer: Platform', 'tailpress'))
+                ->add('footer_company', __('Footer: Company', 'tailpress'))
+                ->add('footer_legal', __('Footer: Legal', 'tailpress'))
+        )
         ->themeSupport(fn($manager) => $manager->add([
             'title-tag',
             'custom-logo',
@@ -38,6 +45,296 @@ function tailpress(): TailPress\Framework\Theme
 }
 
 tailpress();
+
+/**
+ * Load the ACF field group definitions stored in the theme's /acf folder so
+ * they stay versioned with the theme.
+ */
+add_filter('acf/settings/load_json', function (array $paths): array {
+    $paths[] = get_template_directory() . '/acf';
+    return $paths;
+});
+
+/**
+ * Register the "Open in new tab" toggles for the Home Sliders CPT. The rest of
+ * the slider fields are managed through ACF, so the toggles are attached to
+ * whichever field group targets home_slider posts.
+ */
+add_action('acf/include_fields', function (): void {
+    if (!function_exists('acf_add_local_field')) {
+        return;
+    }
+
+    $instructions = 'When enabled the button opens the URL in a new browser tab (target="_blank").';
+
+    foreach ([1, 2] as $number) {
+        acf_add_local_field([
+            'key' => "field_txa_slider_button_{$number}_new_tab",
+            'label' => 'Open in new tab',
+            'name' => "button_{$number}_new_tab",
+            'type' => 'true_false',
+            'ui' => 1,
+            'ui_on_text' => 'New tab',
+            'ui_off_text' => 'Same tab',
+            'instructions' => $instructions,
+            'default_value' => 0,
+        ]);
+    }
+
+    acf_add_local_field([
+        'key' => 'field_txa_slider_url_new_tab',
+        'label' => 'Open in new tab',
+        'name' => 'slide_url_new_tab',
+        'type' => 'true_false',
+        'ui' => 1,
+        'ui_on_text' => 'New tab',
+        'ui_off_text' => 'Same tab',
+        'instructions' => 'When enabled the slide overlay link opens in a new browser tab (target="_blank").',
+        'default_value' => 0,
+    ]);
+});
+
+add_filter('acf/load_field_group', function (array $group): array {
+    if (!function_exists('acf_get_field')) {
+        return $group;
+    }
+
+    $targets_home_slider = false;
+
+    foreach ($group['location'] ?? [] as $or_group) {
+        foreach ($or_group as $condition) {
+            if ('home_slider' === ($condition['value'] ?? '')
+                && in_array($condition['param'] ?? '', ['post_type', 'post'], true)) {
+                $targets_home_slider = true;
+                break 2;
+            }
+        }
+    }
+
+    if (!$targets_home_slider) {
+        return $group;
+    }
+
+    foreach ([
+        'field_txa_slider_button_1_new_tab',
+        'field_txa_slider_button_2_new_tab',
+        'field_txa_slider_url_new_tab',
+    ] as $field_key) {
+        $existing_keys = array_column(is_array($group['fields'] ?? null) ? $group['fields'] : [], 'key');
+        if (in_array($field_key, $existing_keys, true)) {
+            continue;
+        }
+
+        $field = acf_get_field($field_key);
+        if ($field) {
+            $group['fields'][] = $field;
+        }
+    }
+
+    return $group;
+});
+
+/**
+ * Footer menu fallback: echoes the original hardcoded link columns until
+ * matching menus are assigned in Appearance → Menus. External links keep
+ * opening in a new tab.
+ */
+if (!function_exists('txa_footer_menu_fallback')) {
+    function txa_footer_menu_fallback($args): void
+    {
+        $location = $args->theme_location ?? '';
+        $menus = [
+            'footer_pathways' => [
+                [home_url('/suppliers/'), 'Suppliers'],
+                [home_url('/destinations/'), 'Destinations'],
+                [home_url('/distributors/'), 'Distributors'],
+                [home_url('/booking-systems/'), 'Booking Systems'],
+            ],
+            'footer_platform' => [
+                [home_url('/pricing/'), 'Pricing'],
+                [home_url('/faqs/'), 'FAQs'],
+            ],
+            'footer_company' => [
+                [home_url('/about/'), 'About TXA'],
+                [home_url('/blog/'), 'Blog'],
+                [home_url('/contact/'), 'Contact us'],
+                ['https://sites.txa.com.au/Dashboard/', 'Dashboard Login', true],
+            ],
+            'footer_legal' => [
+                [home_url('/privacy-policy/'), 'Privacy Policy'],
+                [home_url('/terms-of-use/'), 'Terms of Use'],
+            ],
+        ];
+
+        foreach ($menus[$location] ?? [] as $item) {
+            printf(
+                '<li><a href="%s" class="text-white/65 !no-underline hover:text-white"%s>%s</a></li>',
+                esc_url($item[0]),
+                !empty($item[2]) ? ' target="_blank" rel="noopener noreferrer"' : '',
+                esc_html($item[1])
+            );
+        }
+    }
+}
+
+/**
+ * Add target="_blank" (with noopener) to absolute external hrefs inside
+ * prepared rich text (legal copy, editor content). Absolute URLs pointing to
+ * the site itself or its subdomains stay in the same tab; relative URLs,
+ * mailto: and tel: links are left untouched.
+ */
+if (!function_exists('txa_external_link_targets')) {
+    function txa_external_link_targets(string $html): string
+    {
+        $site_host = strtolower((string) wp_parse_url(home_url('/'), PHP_URL_HOST));
+        // Compare without a leading "www." so www/example variants match.
+        $site_base = preg_replace('/^www\./', '', $site_host);
+
+        return (string) preg_replace_callback(
+            '/<a\b[^>]*\shref=(["\'])(https?:\/\/[^"\']+)\1[^>]*>/is',
+            function (array $match) use ($site_base, $site_host): string {
+                $anchor = $match[0];
+                $href = $match[2];
+
+                if (str_contains(strtolower($anchor), 'target=')) {
+                    return $anchor;
+                }
+
+                $host = strtolower((string) wp_parse_url($href, PHP_URL_HOST));
+                if ('' === $host || '' === $site_base) {
+                    return $anchor;
+                }
+
+                $host_base = preg_replace('/^www\./', '', $host);
+
+                $is_same_site = $host === $site_host
+                    || $host_base === $site_base
+                    || str_ends_with($host_base, '.' . $site_base);
+
+                if ($is_same_site) {
+                    return $anchor;
+                }
+
+                return str_replace('<a', '<a target="_blank" rel="noopener noreferrer"', $anchor);
+            },
+            $html
+        );
+    }
+}
+
+/**
+ * Shared ACF content helpers used by the classic page templates. They were
+ * previously duplicated per template; keeping one copy here means every
+ * template gets the same normalization and link behaviour.
+ */
+if (!function_exists('txa_f')) {
+    function txa_f(string $name, $default = '')
+    {
+        $value = function_exists('get_field') ? get_field($name) : null;
+        return (null === $value || '' === $value || false === $value) ? $default : $value;
+    }
+}
+
+if (!function_exists('txa_img')) {
+    function txa_img(string $name, string $default): string
+    {
+        $value = txa_f($name);
+        if (is_array($value) && !empty($value['url'])) {
+            return $value['url'];
+        }
+        if (is_numeric($value)) {
+            $url = wp_get_attachment_image_url((int) $value, 'full');
+            if ($url) {
+                return $url;
+            }
+        }
+        if (is_string($value) && '' !== $value) {
+            return $value;
+        }
+        return $default;
+    }
+}
+
+if (!function_exists('txa_url')) {
+    function txa_url(string $name, string $default): string
+    {
+        $value = trim((string) txa_f($name, $default));
+        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
+            return home_url($value);
+        }
+        return $value;
+    }
+}
+
+/**
+ * Resolve the "Open in new tab" toggle stored next to a URL field
+ * (<url_field_name>_new_tab). Returns the passed default only while the toggle
+ * has never been saved, so an explicit editor choice always wins.
+ */
+if (!function_exists('txa_new_tab')) {
+    function txa_new_tab(string $url_field_name, bool $default_blank = false, int $post_id = 0): bool
+    {
+        $field_name = $url_field_name . '_new_tab';
+        $post_id = $post_id ?: (int) get_the_ID();
+
+        $value = function_exists('get_field') ? get_field($field_name, $post_id ?: null) : null;
+
+        $configured = !(null === $value || '' === $value || false === $value)
+            || (0 !== $post_id && metadata_exists('post', $post_id, $field_name));
+
+        if (!$configured) {
+            return $default_blank;
+        }
+
+        $stored = $value ?: get_post_meta($post_id, $field_name, true);
+
+        return (bool) $stored;
+    }
+}
+
+/**
+ * Build the anchor attributes for a configurable link. Placeholder URLs (#)
+ * never get a target because they do not navigate anywhere.
+ */
+if (!function_exists('txa_target_attr')) {
+    function txa_target_attr(bool $new_tab = false, string $url = ''): string
+    {
+        if (!$new_tab || '#' === trim($url)) {
+            return '';
+        }
+
+        return ' target="_blank" rel="noopener noreferrer"';
+    }
+}
+
+/**
+ * Shared button renderer. Variants cover the existing template styles and the
+ * "new_tab" argument applies the per-link target toggle.
+ */
+if (!function_exists('txa_button')) {
+    function txa_button(string $label, string $url, string $variant = 'primary', array $args = []): string
+    {
+        $args = wp_parse_args($args, ['new_tab' => false, 'attrs' => '']);
+
+        $classes = 'inline-flex min-h-12 w-full items-center justify-center rounded-lg px-5 py-3 text-center font-bold leading-5 !no-underline transition sm:w-auto sm:px-6';
+        if ('secondary' === $variant) {
+            $classes .= ' border border-line bg-white text-brand hover:bg-surface';
+        } elseif ('light' === $variant) {
+            $classes .= ' border border-white bg-white/10 text-white hover:bg-white/20';
+        } else {
+            $classes .= ' bg-brand text-white hover:bg-brand-dark';
+        }
+
+        return sprintf(
+            '<a class="%s" href="%s"%s%s>%s</a>',
+            esc_attr($classes),
+            esc_url($url),
+            txa_target_attr((bool) $args['new_tab'], $url),
+            $args['attrs'],
+            esc_html($label)
+        );
+    }
+}
 
 /**
  * Add a consistent SEO and entity layer when a dedicated SEO plugin is not

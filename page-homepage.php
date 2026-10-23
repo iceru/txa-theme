@@ -8,58 +8,6 @@
 
 get_header();
 
-if (!function_exists('txa_f')) {
-    function txa_f(string $name, $default = '')
-    {
-        $value = function_exists('get_field') ? get_field($name) : null;
-        return (null === $value || '' === $value || false === $value) ? $default : $value;
-    }
-}
-
-if (!function_exists('txa_img')) {
-    function txa_img(string $name, string $default): string
-    {
-        $value = txa_f($name);
-        if (is_array($value) && !empty($value['url'])) {
-            return $value['url'];
-        }
-        if (is_numeric($value)) {
-            $url = wp_get_attachment_image_url((int) $value, 'full');
-            if ($url) {
-                return $url;
-            }
-        }
-        if (is_string($value) && '' !== $value) {
-            return $value;
-        }
-        return $default;
-    }
-}
-
-if (!function_exists('txa_url')) {
-    function txa_url(string $name, string $default): string
-    {
-        $value = trim((string) txa_f($name, $default));
-        if (0 === strpos($value, '/') && 0 !== strpos($value, '//')) {
-            return home_url($value);
-        }
-        return $value;
-    }
-}
-if (!function_exists('txa_button')) {
-    function txa_button(string $label, string $url, string $variant = 'primary', string $attrs = ''): string
-    {
-        $classes = 'inline-flex min-h-12 w-full items-center justify-center rounded-lg px-5 py-3 text-center font-bold leading-5 !no-underline transition sm:w-auto sm:px-6';
-        if ('secondary' === $variant)
-            $classes .= ' border border-line bg-white text-brand hover:bg-surface';
-        elseif ('light' === $variant)
-            $classes .= ' border border-white bg-white/10 text-white hover:bg-white/20';
-        else
-            $classes .= ' bg-brand text-white hover:bg-brand-dark';
-        return sprintf('<a class="%s" href="%s" %s>%s</a>', esc_attr($classes), esc_url($url), $attrs, esc_html($label));
-    }
-}
-
 if (!function_exists('txa_hero_slides')) {
     function txa_hero_slides(): array
     {
@@ -90,12 +38,15 @@ if (!function_exists('txa_hero_slides')) {
                     1 => [
                         'label' => txa_f('hero_primary_label', 'Apply Now'),
                         'url' => $normalize_url(txa_f('hero_primary_url', '/apply-now/')),
+                        'new_tab' => txa_new_tab('hero_primary_url'),
                     ],
                     2 => [
                         'label' => txa_f('hero_secondary_label', 'Request Smart Destination Demo'),
                         'url' => $normalize_url(txa_f('hero_secondary_url', '/contact/')),
+                        'new_tab' => txa_new_tab('hero_secondary_url'),
                     ],
                 ],
+                'url_new_tab' => false,
             ]];
         }
 
@@ -106,7 +57,11 @@ if (!function_exists('txa_hero_slides')) {
                 $button_label = function_exists('get_field') ? trim((string) get_field("button_{$n}_label", $post->ID)) : '';
                 $button_url = function_exists('get_field') ? $normalize_url(get_field("button_{$n}_url", $post->ID)) : '';
                 if ('' !== $button_label && '' !== $button_url) {
-                    $buttons[$n] = ['label' => $button_label, 'url' => $button_url];
+                    $buttons[$n] = [
+                        'label' => $button_label,
+                        'url' => $button_url,
+                        'new_tab' => txa_new_tab("button_{$n}_url", false, (int) $post->ID),
+                    ];
                 }
             }
 
@@ -117,6 +72,7 @@ if (!function_exists('txa_hero_slides')) {
                 'image' => get_the_post_thumbnail_url($post, 'full') ?: $default_image,
                 'buttons' => $buttons,
                 'url' => function_exists('get_field') ? $normalize_url(get_field('slide_url', $post->ID)) : '',
+                'url_new_tab' => function_exists('get_field') ? txa_new_tab('slide_url', false, (int) $post->ID) : false,
             ];
         }
 
@@ -140,6 +96,7 @@ foreach ($audiences as $i => $audience) {
         'copy' => txa_f("pathway_{$n}_copy", $audience['copy']),
         'cta' => txa_f("pathway_{$n}_cta", $audience['cta']),
         'url' => txa_url("pathway_{$n}_url", $audience['url']),
+        'new_tab' => txa_new_tab("pathway_{$n}_url"),
         'image' => txa_img("pathway_{$n}_image", $audience['image']),
     ];
 }
@@ -158,6 +115,7 @@ foreach ($smart_cards as $i => $card) {
         'title' => txa_f("smart_card_{$n}_title", $card['title']),
         'copy' => txa_f("smart_card_{$n}_copy", $card['copy']),
         'url' => txa_url("smart_card_{$n}_url", $card['url']),
+        'new_tab' => txa_new_tab("smart_card_{$n}_url"),
     ];
 }
 
@@ -188,7 +146,8 @@ if (!$how_txa_works_embed) {
                             <?php echo $is_first ? 'fetchpriority="high"' : 'loading="lazy"'; ?>>
                         <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
                         <?php if (!empty($slide['url'])): ?>
-                            <a href="<?php echo esc_url($slide['url']); ?>" class="absolute inset-0 z-10"
+                            <a href="<?php echo esc_url($slide['url']); ?>"
+                                class="absolute inset-0 z-10" <?php echo txa_target_attr($slide['url_new_tab'] ?? false); ?>
                                 aria-label="<?php echo esc_attr($slide['title']); ?>"></a>
                         <?php endif; ?>
                         <div
@@ -212,7 +171,7 @@ if (!$how_txa_works_embed) {
                                 <?php if ($slide['buttons']): ?>
                                     <div class="pointer-events-auto mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                                         <?php foreach ($slide['buttons'] as $n => $button) {
-                                            echo txa_button($button['label'], $button['url'], 1 === $n ? 'primary' : 'light');
+                                            echo txa_button($button['label'], $button['url'], 1 === $n ? 'primary' : 'light', ['new_tab' => $button['new_tab'] ?? false]);
                                         } ?>
                                     </div>
                                 <?php endif; ?>
@@ -278,7 +237,7 @@ if (!$how_txa_works_embed) {
             </div>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
                 <?php foreach ($audiences as $card): ?>
-                    <a href="<?php echo esc_url($card['url']); ?>"
+                    <a href="<?php echo esc_url($card['url']); ?>" <?php echo txa_target_attr($card['new_tab'], $card['url']); ?>
                         class="group flex min-h-[0] flex-col overflow-hidden rounded-lg border border-line bg-white text-near-black shadow-[0_12px_28px_-8px_rgba(26,26,26,0.12)] !no-underline transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:min-h-[360px]">
                         <div class="h-[160px] overflow-hidden sm:h-[180px]"><img
                                 src="<?php echo esc_url($card['image']); ?>" alt=""
@@ -342,11 +301,11 @@ if (!$how_txa_works_embed) {
                     <?php echo esc_html(txa_f('smart_copy', 'Smart Destinations use TXA as digital infrastructure for their visitor economy. It connects local suppliers, destination content, owned websites and apps, trade channels, local reseller networks and real-time data.')); ?>
                 </p>
                 <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-                    <?php echo txa_button(txa_f('smart_primary_label', 'Explore Smart Destinations'), txa_url('smart_primary_url', home_url('/destinations/'))); ?><?php echo txa_button(txa_f('smart_secondary_label', 'Request Demo'), txa_url('smart_secondary_url', home_url('/contact/')), 'light'); ?>
+                    <?php echo txa_button(txa_f('smart_primary_label', 'Explore Smart Destinations'), txa_url('smart_primary_url', home_url('/destinations/')), 'primary', ['new_tab' => txa_new_tab('smart_primary_url')]); ?><?php echo txa_button(txa_f('smart_secondary_label', 'Request Demo'), txa_url('smart_secondary_url', home_url('/contact/')), 'light', ['new_tab' => txa_new_tab('smart_secondary_url')]); ?>
                 </div>
             </div>
             <div class="grid gap-3 sm:grid-cols-2 sm:gap-6"><?php foreach ($smart_cards as $card): ?>
-                    <a href="<?php echo esc_url($card['url']); ?>"
+                    <a href="<?php echo esc_url($card['url']); ?>" <?php echo txa_target_attr($card['new_tab'], $card['url']); ?>
                         class="block rounded-lg bg-white/15 p-4 text-white !no-underline backdrop-blur-md transition-colors hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:bg-white/20 sm:p-5"><span
                             class="flex size-10 items-center justify-center rounded-lg bg-brand text-lg text-white sm:size-11 sm:text-xl">
                             <i class="bi <?php echo esc_attr($card['icon']); ?>" aria-hidden="true"></i>
@@ -372,7 +331,7 @@ if (!$how_txa_works_embed) {
                     <?php echo esc_html(txa_f('data_copy', 'TXA helps destinations understand supplier activity, campaign performance, visitor engagement and booking outcomes through dashboards, attribution and data exports.')); ?>
                 </p>
                 <div class="mt-6">
-                    <?php echo txa_button(txa_f('data_button_label', 'Learn about Data and Insights'), txa_url('data_button_url', home_url('/data-insights/')), 'secondary'); ?>
+                    <?php echo txa_button(txa_f('data_button_label', 'Learn about Data and Insights'), txa_url('data_button_url', home_url('/data-insights/')), 'secondary', ['new_tab' => txa_new_tab('data_button_url')]); ?>
                 </div>
             </div>
             <div class="flex min-h-[260px] items-center justify-center sm:min-h-[330px] lg:min-h-[414px]">
