@@ -862,3 +862,36 @@ add_action('init', function () {
         'supports' => ['title', 'excerpt', 'thumbnail', 'page-attributes'],
     ]);
 });
+
+// Use the classic editor for home_slider so the WYSIWYG excerpt box below works.
+add_filter('use_block_editor_for_post_type', function (bool $enabled, string $post_type): bool {
+    if ('home_slider' === $post_type) {
+        return false;
+    }
+    return $enabled;
+}, 10, 2);
+
+// Replace the plain excerpt textarea with a WYSIWYG editor (keeps saving to post_excerpt).
+add_action('add_meta_boxes_home_slider', function (): void {
+    remove_meta_box('postexcerpt', 'home_slider', 'normal');
+
+    add_meta_box(
+        'txa_home_slider_excerpt',
+        __('Slider Copy', 'tailpress'),
+        function (WP_Post $post): void {
+            wp_editor($post->post_excerpt, 'home_slider_excerpt', [
+                'textarea_name' => 'excerpt', // still saved as the post excerpt.
+                'textarea_rows' => 8,
+                'media_buttons' => false,
+                'tinymce' => [
+                    'toolbar1' => 'bold,italic,link,unlink,bullist,numlist,blockquote,removeformat',
+                    'toolbar2' => '',
+                ],
+                'quicktags' => ['buttons' => 'strong,em,link,ul,li,blockquote'],
+            ]);
+        },
+        'home_slider',
+        'normal',
+        'high'
+    );
+});

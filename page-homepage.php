@@ -84,7 +84,7 @@ if (!function_exists('txa_hero_slides')) {
             return [[
                 'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
                 'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
-                'copy' => txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.'),
+                'copy' => trim(wpautop(wp_kses_post(txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.')))),
                 'image' => $default_image,
                 'buttons' => [
                     1 => [
@@ -113,7 +113,7 @@ if (!function_exists('txa_hero_slides')) {
             $slides[] = [
                 'label' => function_exists('get_field') ? trim((string) get_field('slide_label', $post->ID)) : '',
                 'title' => get_the_title($post),
-                'copy' => trim(wp_strip_all_tags($post->post_excerpt)),
+                'copy' => trim(wpautop(wp_kses_post($post->post_excerpt))),
                 'image' => get_the_post_thumbnail_url($post, 'full') ?: $default_image,
                 'buttons' => $buttons,
                 'url' => function_exists('get_field') ? $normalize_url(get_field('slide_url', $post->ID)) : '',
@@ -205,9 +205,9 @@ if (!$how_txa_works_embed) {
                                     <?php echo esc_html($slide['title']); ?>
                                 </<?php echo $heading_tag; ?>>
                                 <?php if ('' !== $slide['copy']): ?>
-                                    <p class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                                        <?php echo esc_html($slide['copy']); ?>
-                                    </p>
+                                    <div class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
+                                        <?php echo $slide['copy']; ?>
+                                    </div>
                                 <?php endif; ?>
                                 <?php if ($slide['buttons']): ?>
                                     <div class="pointer-events-auto mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
