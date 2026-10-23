@@ -151,7 +151,6 @@ $implementation = txa_destination_cards('destination_step', [
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
                         <?php echo esc_html(txa_f('destination_hero_copy', 'TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.')); ?></p>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-                        <?php echo txa_destination_button(txa_f('destination_hero_primary_label', 'Request Smart Destination Demo'), $demo_url); ?>
                         <?php echo txa_destination_button(txa_f('destination_hero_secondary_label', 'See destination packages'), $pricing_url, 'light'); ?>
                     </div>
                 </div>
@@ -183,6 +182,9 @@ $implementation = txa_destination_cards('destination_step', [
                         </div>
                     </article>
                 <?php endforeach; ?>
+            </div>
+            <div class="mt-4 flex justify-center">
+                <?php echo txa_destination_button(txa_f('destination_hero_primary_label', 'Request Smart Destination Demo'), $demo_url); ?>
             </div>
         </div>
     </section>
