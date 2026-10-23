@@ -183,7 +183,7 @@ $implementation = txa_destination_cards('destination_step', [
                     </article>
                 <?php endforeach; ?>
             </div>
-            <div class="mt-4 flex justify-center">
+            <div class="mt-7 flex justify-center">
                 <?php echo txa_destination_button(txa_f('destination_hero_primary_label', 'Request Smart Destination Demo'), $demo_url); ?>
             </div>
         </div>
