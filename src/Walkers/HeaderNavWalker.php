@@ -11,7 +11,8 @@ namespace TailPress\Walkers;
  */
 class HeaderNavWalker extends \Walker_Nav_Menu
 {
-    private bool $has_children = false;
+    /** Tracks the current menu item's children without redeclaring Walker::$has_children. */
+    private bool $txa_has_children = false;
 
     private int $current_parent_id = 0;
 
@@ -41,7 +42,7 @@ class HeaderNavWalker extends \Walker_Nav_Menu
 
     public function display_element($element, &$children_elements, $max_depth, $depth = 0, $args = [], &$output = '')
     {
-        $this->has_children = isset($children_elements[$element->ID]);
+        $this->txa_has_children = isset($children_elements[$element->ID]);
 
         return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
     }
@@ -72,7 +73,7 @@ class HeaderNavWalker extends \Walker_Nav_Menu
         if (0 === $depth) {
             $this->current_parent_id = (int) $item->ID;
 
-            if ($this->has_children) {
+            if ($this->txa_has_children) {
                 $output .= sprintf(
                     '<li class="relative lg:mx-4"><button type="button" class="%s" aria-expanded="false" aria-haspopup="true" aria-controls="menu-item-%d-submenu" data-destinations-toggle><span>%s</span><i class="bi bi-chevron-down ml-0.5 text-sm leading-none transition" aria-hidden="true"></i></button>',
                     esc_attr($this->link_class($path, true,
@@ -104,7 +105,7 @@ class HeaderNavWalker extends \Walker_Nav_Menu
 
     public function end_el(&$output, $item, $depth = 0, $args = null)
     {
-        if ((0 === $depth && !$this->has_children) || $depth > 0) {
+        if ((0 === $depth && !$this->txa_has_children) || $depth > 0) {
             $output .= '</li>';
         }
     }

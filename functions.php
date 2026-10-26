@@ -21,11 +21,13 @@ function tailpress(): TailPress\Framework\Theme
         ->features(fn($manager) => $manager->add(TailPress\Framework\Features\MenuOptions::class))
         ->menus(
             fn($manager) => $manager
-                ->add('primary', __('Primary Menu', 'tailpress'))
-                ->add('footer_pathways', __('Footer: Pathways', 'tailpress'))
-                ->add('footer_platform', __('Footer: Platform', 'tailpress'))
-                ->add('footer_company', __('Footer: Company', 'tailpress'))
-                ->add('footer_legal', __('Footer: Legal', 'tailpress'))
+                // Keep bootstrap labels untranslated here: functions.php loads
+                // before init, when WordPress 6.7+ does not allow JIT translations.
+                ->add('primary', 'Primary Menu')
+                ->add('footer_pathways', 'Footer: Pathways')
+                ->add('footer_platform', 'Footer: Platform')
+                ->add('footer_company', 'Footer: Company')
+                ->add('footer_legal', 'Footer: Legal')
         )
         ->themeSupport(fn($manager) => $manager->add([
             'title-tag',

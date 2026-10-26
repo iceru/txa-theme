@@ -10,40 +10,18 @@
         "placement": "top"
       },
       {
-        "key": "field_txa_pricing_apply_url",
-        "label": "Apply Url",
-        "name": "pricing_apply_url",
-        "type": "text"
+        "key": "field_txa_pricing_hero_apply_url",
+        "label": "Hero Apply Button URL",
+        "name": "pricing_hero_apply_url",
+        "type": "text",
+        "placeholder": "/apply-now/"
       },
       {
-        "key": "field_txa_pricing_demo_url",
-        "label": "Demo Url",
-        "name": "pricing_demo_url",
-        "type": "text"
-      },
-      {
-        "key": "field_txa_pricing_supplier_url",
-        "label": "Supplier Url",
-        "name": "pricing_supplier_url",
-        "type": "text"
-      },
-      {
-        "key": "field_txa_pricing_destination_url",
-        "label": "Destination Url",
-        "name": "pricing_destination_url",
-        "type": "text"
-      },
-      {
-        "key": "field_txa_pricing_distributor_url",
-        "label": "Distributor Url",
-        "name": "pricing_distributor_url",
-        "type": "text"
-      },
-      {
-        "key": "field_txa_pricing_booking_url",
-        "label": "Booking Url",
-        "name": "pricing_booking_url",
-        "type": "text"
+        "key": "field_txa_pricing_hero_demo_url",
+        "label": "Hero Demo Button URL",
+        "name": "pricing_hero_demo_url",
+        "type": "text",
+        "placeholder": "/contact/"
       },
       {
         "key": "field_txa_pricing_step_1_title",
@@ -102,6 +80,13 @@
         "new_lines": ""
       },
       {
+        "key": "field_txa_pricing_path_1_url",
+        "label": "Supplier Path Card URL",
+        "name": "pricing_path_1_url",
+        "type": "text",
+        "placeholder": "/suppliers/"
+      },
+      {
         "key": "field_txa_pricing_path_2_title",
         "label": "Path 2 Title",
         "name": "pricing_path_2_title",
@@ -114,6 +99,13 @@
         "type": "textarea",
         "rows": 4,
         "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_path_2_url",
+        "label": "Destination Path Card URL",
+        "name": "pricing_path_2_url",
+        "type": "text",
+        "placeholder": "/destinations/pricing/"
       },
       {
         "key": "field_txa_pricing_path_3_title",
@@ -130,6 +122,13 @@
         "new_lines": ""
       },
       {
+        "key": "field_txa_pricing_path_3_url",
+        "label": "Distributor Path Card URL",
+        "name": "pricing_path_3_url",
+        "type": "text",
+        "placeholder": "/distributors/"
+      },
+      {
         "key": "field_txa_pricing_path_4_title",
         "label": "Path 4 Title",
         "name": "pricing_path_4_title",
@@ -142,6 +141,13 @@
         "type": "textarea",
         "rows": 4,
         "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_path_4_url",
+        "label": "Booking Systems Path Card URL",
+        "name": "pricing_path_4_url",
+        "type": "text",
+        "placeholder": "/booking-systems/partner-enquiry/"
       },
       {
         "key": "field_txa_pricing_card_1_title",
@@ -194,6 +200,13 @@
         "type": "text"
       },
       {
+        "key": "field_txa_pricing_card_1_url",
+        "label": "Supplier Pricing Card Button URL",
+        "name": "pricing_card_1_url",
+        "type": "text",
+        "placeholder": "/suppliers/"
+      },
+      {
         "key": "field_txa_pricing_card_2_title",
         "label": "Card 2 Title",
         "name": "pricing_card_2_title",
@@ -218,6 +231,13 @@
         "label": "Card 2 Cta",
         "name": "pricing_card_2_cta",
         "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_2_url",
+        "label": "Destination Pricing Card Button URL",
+        "name": "pricing_card_2_url",
+        "type": "text",
+        "placeholder": "/destinations/pricing/"
       },
       {
         "key": "field_txa_pricing_card_3_title",
@@ -246,6 +266,13 @@
         "type": "text"
       },
       {
+        "key": "field_txa_pricing_card_3_url",
+        "label": "Distributor Pricing Card Button URL",
+        "name": "pricing_card_3_url",
+        "type": "text",
+        "placeholder": "/distributors/"
+      },
+      {
         "key": "field_txa_pricing_card_4_title",
         "label": "Card 4 Title",
         "name": "pricing_card_4_title",
@@ -270,6 +297,13 @@
         "label": "Card 4 Cta",
         "name": "pricing_card_4_cta",
         "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_4_url",
+        "label": "Booking Systems Pricing Card Button URL",
+        "name": "pricing_card_4_url",
+        "type": "text",
+        "placeholder": "/booking-systems/partner-enquiry/"
       },
       {
         "key": "field_txa_pricing_supplier_type_1",
@@ -346,6 +380,13 @@
         "type": "text"
       },
       {
+        "key": "field_txa_pricing_partner_1_url",
+        "label": "Destination Partner Card Button URL",
+        "name": "pricing_partner_1_url",
+        "type": "text",
+        "placeholder": "/destinations/pricing/"
+      },
+      {
         "key": "field_txa_pricing_partner_2_eyebrow",
         "label": "Partner 2 Eyebrow",
         "name": "pricing_partner_2_eyebrow",
@@ -390,6 +431,13 @@
         "type": "text"
       },
       {
+        "key": "field_txa_pricing_partner_2_url",
+        "label": "Distributor Partner Card Button URL",
+        "name": "pricing_partner_2_url",
+        "type": "text",
+        "placeholder": "/distributors/"
+      },
+      {
         "key": "field_txa_pricing_partner_3_eyebrow",
         "label": "Partner 3 Eyebrow",
         "name": "pricing_partner_3_eyebrow",
@@ -432,6 +480,13 @@
         "label": "Partner 3 Cta",
         "name": "pricing_partner_3_cta",
         "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_3_url",
+        "label": "Booking Systems Partner Card Button URL",
+        "name": "pricing_partner_3_url",
+        "type": "text",
+        "placeholder": "/booking-systems/partner-enquiry/"
       },
       {
         "key": "field_txa_pricing_hero_image_alt",
@@ -514,6 +569,13 @@
         "label": "Supplier Apply Label",
         "name": "pricing_supplier_apply_label",
         "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_supplier_apply_url",
+        "label": "Supplier Section Apply Button URL",
+        "name": "pricing_supplier_apply_url",
+        "type": "text",
+        "placeholder": "/apply-now/"
       },
       {
         "key": "field_txa_pricing_fee_label",
