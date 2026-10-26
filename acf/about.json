@@ -1,0 +1,509 @@
+[
+  {
+    "key": "group_txa_about",
+    "title": "TXA About Page",
+    "fields": [
+      {
+        "key": "field_txa_about_tab_seo",
+        "label": "SEO",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_about_seo_title",
+        "label": "Browser Title",
+        "name": "about_seo_title",
+        "type": "text",
+        "placeholder": "About TXA | Tourism Exchange Australia"
+      },
+      {
+        "key": "field_txa_about_seo_description",
+        "label": "Meta Description",
+        "name": "about_seo_description",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_tab_hero",
+        "label": "Hero",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_about_hero_eyebrow",
+        "label": "Eyebrow",
+        "name": "about_hero_eyebrow",
+        "type": "text",
+        "placeholder": "About Us"
+      },
+      {
+        "key": "field_txa_about_hero_title",
+        "label": "Title",
+        "name": "about_hero_title",
+        "type": "text",
+        "placeholder": "Built for Australia's tourism industry"
+      },
+      {
+        "key": "field_txa_about_hero_copy",
+        "label": "Description",
+        "name": "about_hero_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_hero_image",
+        "label": "Background Image",
+        "name": "about_hero_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_about_hero_image_alt",
+        "label": "Background Image Alt Text",
+        "name": "about_hero_image_alt",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_about_tab_audience",
+        "label": "What TXA Does",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_about_audience_heading",
+        "label": "Section Heading",
+        "name": "about_audience_heading",
+        "type": "text",
+        "placeholder": "What TXA does"
+      },
+      {
+        "key": "field_txa_about_audience_copy",
+        "label": "Section Description",
+        "name": "about_audience_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_audience_1_title",
+        "label": "Suppliers Card Title",
+        "name": "about_audience_1_title",
+        "type": "text",
+        "placeholder": "Suppliers"
+      },
+      {
+        "key": "field_txa_about_audience_1_copy",
+        "label": "Suppliers Card Description",
+        "name": "about_audience_1_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_audience_2_title",
+        "label": "Destinations Card Title",
+        "name": "about_audience_2_title",
+        "type": "text",
+        "placeholder": "Destinations"
+      },
+      {
+        "key": "field_txa_about_audience_2_copy",
+        "label": "Destinations Card Description",
+        "name": "about_audience_2_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_audience_3_title",
+        "label": "Distributors Card Title",
+        "name": "about_audience_3_title",
+        "type": "text",
+        "placeholder": "Distributors"
+      },
+      {
+        "key": "field_txa_about_audience_3_copy",
+        "label": "Distributors Card Description",
+        "name": "about_audience_3_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_audience_4_title",
+        "label": "Booking Systems Card Title",
+        "name": "about_audience_4_title",
+        "type": "text",
+        "placeholder": "Booking Systems"
+      },
+      {
+        "key": "field_txa_about_audience_4_copy",
+        "label": "Booking Systems Card Description",
+        "name": "about_audience_4_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_tab_global",
+        "label": "Global Reach",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_about_global_heading",
+        "label": "Section Heading",
+        "name": "about_global_heading",
+        "type": "text",
+        "placeholder": "Proven exchange technology, built for Australia"
+      },
+      {
+        "key": "field_txa_about_global_copy",
+        "label": "Section Description",
+        "name": "about_global_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_country_1_name",
+        "label": "Country 1 Name",
+        "name": "about_country_1_name",
+        "type": "text",
+        "placeholder": "United Kingdom"
+      },
+      {
+        "key": "field_txa_about_country_1_image",
+        "label": "Country 1 Image",
+        "name": "about_country_1_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_about_country_2_name",
+        "label": "Country 2 Name",
+        "name": "about_country_2_name",
+        "type": "text",
+        "placeholder": "Japan"
+      },
+      {
+        "key": "field_txa_about_country_2_image",
+        "label": "Country 2 Image",
+        "name": "about_country_2_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_about_country_3_name",
+        "label": "Country 3 Name",
+        "name": "about_country_3_name",
+        "type": "text",
+        "placeholder": "Saudi Arabia"
+      },
+      {
+        "key": "field_txa_about_country_3_image",
+        "label": "Country 3 Image",
+        "name": "about_country_3_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_about_country_4_name",
+        "label": "Country 4 Name",
+        "name": "about_country_4_name",
+        "type": "text",
+        "placeholder": "United States"
+      },
+      {
+        "key": "field_txa_about_country_4_image",
+        "label": "Country 4 Image",
+        "name": "about_country_4_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_txa_about_tab_journey",
+        "label": "Journey",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_about_journey_heading",
+        "label": "Section Heading",
+        "name": "about_journey_heading",
+        "type": "text",
+        "placeholder": "TXA Journey"
+      },
+      {
+        "key": "field_txa_about_journey_tagline",
+        "label": "Tagline",
+        "name": "about_journey_tagline",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_tab_timeline",
+        "label": "Journey Timeline Fallback",
+        "type": "tab",
+        "placement": "top",
+        "instructions": "Fallback milestones are used only when no TXA Timeline entries are published."
+      },
+      {
+        "key": "field_txa_about_timeline_1_year",
+        "label": "Milestone 1 Year",
+        "name": "about_timeline_1_year",
+        "type": "text",
+        "placeholder": "2012"
+      },
+      {
+        "key": "field_txa_about_timeline_1_title",
+        "label": "Milestone 1 Title",
+        "name": "about_timeline_1_title",
+        "type": "text",
+        "placeholder": "The Conviction"
+      },
+      {
+        "key": "field_txa_about_timeline_1_copy",
+        "label": "Milestone 1 Description",
+        "name": "about_timeline_1_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_timeline_2_year",
+        "label": "Milestone 2 Year",
+        "name": "about_timeline_2_year",
+        "type": "text",
+        "placeholder": "2013"
+      },
+      {
+        "key": "field_txa_about_timeline_2_title",
+        "label": "Milestone 2 Title",
+        "name": "about_timeline_2_title",
+        "type": "text",
+        "placeholder": "Global Tender"
+      },
+      {
+        "key": "field_txa_about_timeline_2_copy",
+        "label": "Milestone 2 Description",
+        "name": "about_timeline_2_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_timeline_3_year",
+        "label": "Milestone 3 Year",
+        "name": "about_timeline_3_year",
+        "type": "text",
+        "placeholder": "2014"
+      },
+      {
+        "key": "field_txa_about_timeline_3_title",
+        "label": "Milestone 3 Title",
+        "name": "about_timeline_3_title",
+        "type": "text",
+        "placeholder": "National Support"
+      },
+      {
+        "key": "field_txa_about_timeline_3_copy",
+        "label": "Milestone 3 Description",
+        "name": "about_timeline_3_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_timeline_4_year",
+        "label": "Milestone 4 Year",
+        "name": "about_timeline_4_year",
+        "type": "text",
+        "placeholder": "2015"
+      },
+      {
+        "key": "field_txa_about_timeline_4_title",
+        "label": "Milestone 4 Title",
+        "name": "about_timeline_4_title",
+        "type": "text",
+        "placeholder": "Exchange Launched"
+      },
+      {
+        "key": "field_txa_about_timeline_4_copy",
+        "label": "Milestone 4 Description",
+        "name": "about_timeline_4_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_timeline_5_year",
+        "label": "Milestone 5 Year",
+        "name": "about_timeline_5_year",
+        "type": "text",
+        "placeholder": "2018+"
+      },
+      {
+        "key": "field_txa_about_timeline_5_title",
+        "label": "Milestone 5 Title",
+        "name": "about_timeline_5_title",
+        "type": "text",
+        "placeholder": "Global Expansion"
+      },
+      {
+        "key": "field_txa_about_timeline_5_copy",
+        "label": "Milestone 5 Description",
+        "name": "about_timeline_5_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_timeline_6_year",
+        "label": "Milestone 6 Year",
+        "name": "about_timeline_6_year",
+        "type": "text",
+        "placeholder": "Today"
+      },
+      {
+        "key": "field_txa_about_timeline_6_title",
+        "label": "Milestone 6 Title",
+        "name": "about_timeline_6_title",
+        "type": "text",
+        "placeholder": "Built Here. For Here."
+      },
+      {
+        "key": "field_txa_about_timeline_6_copy",
+        "label": "Milestone 6 Description",
+        "name": "about_timeline_6_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_tab_values",
+        "label": "TXA Values",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_about_value_1_title",
+        "label": "Value 1 Title",
+        "name": "about_value_1_title",
+        "type": "text",
+        "placeholder": "Australia's Own"
+      },
+      {
+        "key": "field_txa_about_value_1_copy",
+        "label": "Value 1 Description",
+        "name": "about_value_1_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_value_2_title",
+        "label": "Value 2 Title",
+        "name": "about_value_2_title",
+        "type": "text",
+        "placeholder": "For the Industry"
+      },
+      {
+        "key": "field_txa_about_value_2_copy",
+        "label": "Value 2 Description",
+        "name": "about_value_2_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_value_3_title",
+        "label": "Value 3 Title",
+        "name": "about_value_3_title",
+        "type": "text",
+        "placeholder": "Government Backed"
+      },
+      {
+        "key": "field_txa_about_value_3_copy",
+        "label": "Value 3 Description",
+        "name": "about_value_3_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_value_4_title",
+        "label": "Value 4 Title",
+        "name": "about_value_4_title",
+        "type": "text",
+        "placeholder": "One Connected Platform"
+      },
+      {
+        "key": "field_txa_about_value_4_copy",
+        "label": "Value 4 Description",
+        "name": "about_value_4_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_value_5_title",
+        "label": "Value 5 Title",
+        "name": "about_value_5_title",
+        "type": "text",
+        "placeholder": "Global Impact"
+      },
+      {
+        "key": "field_txa_about_value_5_copy",
+        "label": "Value 5 Description",
+        "name": "about_value_5_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_value_6_title",
+        "label": "Value 6 Title",
+        "name": "about_value_6_title",
+        "type": "text",
+        "placeholder": "Value Stays in Australia"
+      },
+      {
+        "key": "field_txa_about_value_6_copy",
+        "label": "Value 6 Description",
+        "name": "about_value_6_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-about.php"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

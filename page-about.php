@@ -5,42 +5,42 @@
  * @package TailPress
  */
 
-add_filter('pre_get_document_title', fn(): string => 'About TXA | Tourism Exchange Australia');
+add_filter('pre_get_document_title', fn(): string => (string) txa_f('about_seo_title', 'About TXA | Tourism Exchange Australia'));
 add_action('wp_head', function (): void {
     if (is_page_template('page-about.php')) {
-        echo '<meta name="description" content="' . esc_attr('Learn how TXA became Australia\'s open B2B tourism exchange for suppliers, destinations, distributors and booking systems.') . '">' . "\n";
+        echo '<meta name="description" content="' . esc_attr(txa_f('about_seo_description', 'Learn how TXA became Australia\'s open B2B tourism exchange for suppliers, destinations, distributors and booking systems.')) . '">' . "\n";
     }
 });
 
 get_header();
 
 $what_txa_does = [
-    ['title' => 'Suppliers', 'copy' => 'All categories, styles and sizes of accommodation, activities, experiences, and events seeking broad local and global visibility', 'icon' => 'bi-shop'],
-    ['title' => 'Destinations', 'copy' => 'National, State, regional and city tourism organisations marketing and empowering local businesses to go digital.', 'icon' => 'bi-signpost-split'],
-    ['title' => 'Distributors', 'copy' => 'All marketing/sales channels including global OTAs, tourism and travel and niche websites, social media and travel agents', 'icon' => 'bi-globe2'],
-    ['title' => 'Booking Systems', 'copy' => 'Electronic booking and inventory management systems used in the tourism industry', 'icon' => 'bi-calendar2-check'],
+    ['title' => txa_f('about_audience_1_title', 'Suppliers'), 'copy' => txa_f('about_audience_1_copy', 'All categories, styles and sizes of accommodation, activities, experiences, and events seeking broad local and global visibility'), 'icon' => 'bi-shop'],
+    ['title' => txa_f('about_audience_2_title', 'Destinations'), 'copy' => txa_f('about_audience_2_copy', 'National, State, regional and city tourism organisations marketing and empowering local businesses to go digital.'), 'icon' => 'bi-signpost-split'],
+    ['title' => txa_f('about_audience_3_title', 'Distributors'), 'copy' => txa_f('about_audience_3_copy', 'All marketing/sales channels including global OTAs, tourism and travel and niche websites, social media and travel agents'), 'icon' => 'bi-globe2'],
+    ['title' => txa_f('about_audience_4_title', 'Booking Systems'), 'copy' => txa_f('about_audience_4_copy', 'Electronic booking and inventory management systems used in the tourism industry'), 'icon' => 'bi-calendar2-check'],
 ];
 $countries = [
-    ['name' => 'United Kingdom', 'icon' => 'txgb.png'],
-    ['name' => 'Japan', 'icon' => 'txj.png'],
-    ['name' => 'Saudi Arabia', 'icon' => 'txsa.jpg'],
-    ['name' => 'United States', 'icon' => 'txusa.png'],
+    ['name' => txa_f('about_country_1_name', 'United Kingdom'), 'image' => txa_img('about_country_1_image', get_theme_file_uri('/images/txgb.png'))],
+    ['name' => txa_f('about_country_2_name', 'Japan'), 'image' => txa_img('about_country_2_image', get_theme_file_uri('/images/txj.png'))],
+    ['name' => txa_f('about_country_3_name', 'Saudi Arabia'), 'image' => txa_img('about_country_3_image', get_theme_file_uri('/images/txsa.jpg'))],
+    ['name' => txa_f('about_country_4_name', 'United States'), 'image' => txa_img('about_country_4_image', get_theme_file_uri('/images/txusa.png'))],
 ];
 $default_timeline = [
-    ['year' => '2012', 'title' => 'The Conviction', 'copy' => 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.', 'icon' => 'bi-lightbulb'],
-    ['year' => '2013', 'title' => 'Global Tender', 'copy' => 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.', 'icon' => 'bi-globe2'],
-    ['year' => '2014', 'title' => 'National Support', 'copy' => 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.', 'icon' => 'bi-people'],
-    ['year' => '2015', 'title' => 'Exchange Launched', 'copy' => 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.', 'icon' => 'bi-rocket-takeoff'],
-    ['year' => '2018+', 'title' => 'Global Expansion', 'copy' => 'The same exchange technology began powering tourism platforms internationally.', 'icon' => 'bi-airplane'],
-    ['year' => 'Today', 'title' => 'Built Here. For Here.', 'copy' => 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-house-heart'],
+    ['year' => txa_f('about_timeline_1_year', '2012'), 'title' => txa_f('about_timeline_1_title', 'The Conviction'), 'copy' => txa_f('about_timeline_1_copy', 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.'), 'icon' => 'bi-lightbulb'],
+    ['year' => txa_f('about_timeline_2_year', '2013'), 'title' => txa_f('about_timeline_2_title', 'Global Tender'), 'copy' => txa_f('about_timeline_2_copy', 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.'), 'icon' => 'bi-globe2'],
+    ['year' => txa_f('about_timeline_3_year', '2014'), 'title' => txa_f('about_timeline_3_title', 'National Support'), 'copy' => txa_f('about_timeline_3_copy', 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.'), 'icon' => 'bi-people'],
+    ['year' => txa_f('about_timeline_4_year', '2015'), 'title' => txa_f('about_timeline_4_title', 'Exchange Launched'), 'copy' => txa_f('about_timeline_4_copy', 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.'), 'icon' => 'bi-rocket-takeoff'],
+    ['year' => txa_f('about_timeline_5_year', '2018+'), 'title' => txa_f('about_timeline_5_title', 'Global Expansion'), 'copy' => txa_f('about_timeline_5_copy', 'The same exchange technology began powering tourism platforms internationally.'), 'icon' => 'bi-airplane'],
+    ['year' => txa_f('about_timeline_6_year', 'Today'), 'title' => txa_f('about_timeline_6_title', 'Built Here. For Here.'), 'copy' => txa_f('about_timeline_6_copy', 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.'), 'icon' => 'bi-house-heart'],
 ];
 $default_timeline_values = [
-    ['title' => 'Australia\'s Own', 'copy' => 'Proudly built and operated in Australia.', 'icon' => 'bi-geo-alt'],
-    ['title' => 'For the Industry', 'copy' => 'Designed for all tourism businesses, big and small.', 'icon' => 'bi-people'],
-    ['title' => 'Government Backed', 'copy' => 'Supported by every State and Federal Government Tourism Organisation.', 'icon' => 'bi-building-check'],
-    ['title' => 'One Connected Platform', 'copy' => 'Connecting suppliers, destinations, distributors and booking systems seamlessly.', 'icon' => 'bi-diagram-3'],
-    ['title' => 'Global Impact', 'copy' => 'Powering tourism platforms in the UK, Japan, Saudi Arabia and the United States.', 'icon' => 'bi-globe-americas'],
-    ['title' => 'Value Stays in Australia', 'copy' => 'Keeping more of the value of Australian tourism circulating within the Australian visitor economy.', 'icon' => 'bi-currency-dollar'],
+    ['title' => txa_f('about_value_1_title', 'Australia\'s Own'), 'copy' => txa_f('about_value_1_copy', 'Proudly built and operated in Australia.'), 'icon' => 'bi-geo-alt'],
+    ['title' => txa_f('about_value_2_title', 'For the Industry'), 'copy' => txa_f('about_value_2_copy', 'Designed for all tourism businesses, big and small.'), 'icon' => 'bi-people'],
+    ['title' => txa_f('about_value_3_title', 'Government Backed'), 'copy' => txa_f('about_value_3_copy', 'Supported by every State and Federal Government Tourism Organisation.'), 'icon' => 'bi-building-check'],
+    ['title' => txa_f('about_value_4_title', 'One Connected Platform'), 'copy' => txa_f('about_value_4_copy', 'Connecting suppliers, destinations, distributors and booking systems seamlessly.'), 'icon' => 'bi-diagram-3'],
+    ['title' => txa_f('about_value_5_title', 'Global Impact'), 'copy' => txa_f('about_value_5_copy', 'Powering tourism platforms in the UK, Japan, Saudi Arabia and the United States.'), 'icon' => 'bi-globe-americas'],
+    ['title' => txa_f('about_value_6_title', 'Value Stays in Australia'), 'copy' => txa_f('about_value_6_copy', 'Keeping more of the value of Australian tourism circulating within the Australian visitor economy.'), 'icon' => 'bi-currency-dollar'],
 ];
 $timeline_query = new WP_Query([
     'post_type' => 'txa_timeline',
@@ -69,8 +69,8 @@ $timeline_values = $default_timeline_values;
         <div class="mx-auto max-w-[1312px]">
             <div
                 class="relative flex min-h-[590px] items-center overflow-hidden rounded-xl bg-near-black sm:min-h-[560px] sm:rounded-2xl lg:min-h-[600px]">
-                <img src="<?php echo esc_url(get_theme_file_uri('/images/new/about-us.jpg')); ?>"
-                    alt="Australian tourism landscape"
+                <img src="<?php echo esc_url(txa_img('about_hero_image', get_theme_file_uri('/images/new/about-us.jpg'))); ?>"
+                    alt="<?php echo esc_attr(txa_f('about_hero_image_alt', 'Australian tourism landscape')); ?>"
                     class="absolute inset-0 h-full w-full object-cover object-center">
                 <div class="absolute inset-0 bg-near-black/55 sm:bg-near-black/45" aria-hidden="true"></div>
                 <div
@@ -78,16 +78,13 @@ $timeline_values = $default_timeline_values;
                     <div class="w-full max-w-[760px]">
                         <p
                             class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                            About Us</p>
+                            <?php echo esc_html(txa_f('about_hero_eyebrow', 'About Us')); ?></p>
                         <h1
                             class="mt-4 max-w-[760px] [font-family:'Hanken_Grotesk',sans-serif] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                            Built for Australia’s tourism industry</h1>
+                            <?php echo esc_html(txa_f('about_hero_title', "Built for Australia's tourism industry")); ?></h1>
                         <p
                             class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                            Our journey started in Australia, being selected through a global tender in 2008 to partner
-                            with the Australian Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs.
-                            We operate as the structural backbone that allows local operators to compete on a global
-                            scale while maintaining their commercial independence.</p>
+                            <?php echo esc_html(txa_f('about_hero_copy', 'Our journey started in Australia, being selected through a global tender in 2008 to partner with the Australian Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs. We operate as the structural backbone that allows local operators to compete on a global scale while maintaining their commercial independence.')); ?></p>
                     </div>
                 </div>
             </div>
@@ -96,11 +93,8 @@ $timeline_values = $default_timeline_values;
     <section class="px-4 py-12 sm:py-14 lg:px-16 lg:py-16">
         <div class="mx-auto max-w-[1312px]">
             <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold tracking-[-.01em] text-[#151c27]">
-                What TXA does</h2>
-            <p class="mt-4 text-base leading-7 text-[#151c27] sm:mt-6 sm:text-lg sm:leading-[29px]">Tourism Exchange
-                Australia is Australia’s open B2B tourism exchange. It connects tourism suppliers, destinations,
-                distributors and booking systems so live tourism products can be found, marketed, booked and measured
-                online.</p>
+                <?php echo esc_html(txa_f('about_audience_heading', 'What TXA does')); ?></h2>
+            <p class="mt-4 text-base leading-7 text-[#151c27] sm:mt-6 sm:text-lg sm:leading-[29px]"><?php echo esc_html(txa_f('about_audience_copy', "Tourism Exchange Australia is Australia's open B2B tourism exchange. It connects tourism suppliers, destinations, distributors and booking systems so live tourism products can be found, marketed, booked and measured online.")); ?></p>
             <div class="mt-10 grid gap-5 sm:grid-cols-2 sm:mt-12 xl:mt-16 xl:grid-cols-4 xl:gap-6">
                 <?php foreach ($what_txa_does as $card): ?>
                     <article class="rounded-xl border border-[#dfc0ba]/10 bg-white p-6 shadow-sm sm:min-h-[210px] sm:p-8"><i
@@ -118,17 +112,15 @@ $timeline_values = $default_timeline_values;
             <div>
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight tracking-[-.01em]">
-                    Proven exchange technology, built for Australia</h2>
-                <p class="mt-4 text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-[29px]">Today, the same
-                    exchange technology powers tourism platforms in the UK, Japan, Saudi Arabia, and the US. TXA remains
-                    Australia’s own—tailored for our unique geography and market dynamics.</p>
+                    <?php echo esc_html(txa_f('about_global_heading', 'Proven exchange technology, built for Australia')); ?></h2>
+                <p class="mt-4 text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-[29px]"><?php echo esc_html(txa_f('about_global_copy', "Today, the same exchange technology powers tourism platforms in the UK, Japan, Saudi Arabia, and the US. TXA remains Australia's own, tailored for our unique geography and market dynamics.")); ?></p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <?php foreach ($countries as $country): ?>
                     <div
                         class="flex flex-col items-center justify-center rounded-xl bg-white p-4 text-center text-near-black shadow-sm">
-                        <?php if (!empty($country['icon'])): ?>
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/' . $country['icon'])); ?>" alt=""
+                        <?php if (!empty($country['image'])): ?>
+                            <img src="<?php echo esc_url($country['image']); ?>" alt=""
                                 class="mb-4 h-14 w-auto max-w-full object-contain sm:h-16" aria-hidden="true">
                         <?php endif; ?>
                         <h3 class="text-sm font-bold uppercase tracking-wide sm:text-base">
@@ -143,9 +135,8 @@ $timeline_values = $default_timeline_values;
             <div class="text-center">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold uppercase leading-tight tracking-[-.01em] text-[#151c27] sm:text-4xl">
-                    TXA Journey</h2>
-                <p class="mt-2 text-sm font-bold uppercase tracking-[.04em] text-brand sm:text-base">Built in Australia.
-                    Connected to the world. Powering our industry.</p>
+                    <?php echo esc_html(txa_f('about_journey_heading', 'TXA Journey')); ?></h2>
+                <p class="mt-2 text-sm font-bold uppercase tracking-[.04em] text-brand sm:text-base"><?php echo esc_html(txa_f('about_journey_tagline', 'Built in Australia. Connected to the world. Powering our industry.')); ?></p>
             </div>
 
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
