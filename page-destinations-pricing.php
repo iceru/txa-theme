@@ -9,7 +9,7 @@ get_header();
 
 $packages = [
     ['name' => 'Local', 'poi' => '150', 'microsites' => '1', 'concierge' => '5', 'popular' => false],
-    ['name' => 'Regional', 'poi' => '375', 'microsites' => '2', 'concierge' => '10', 'popular' => true],
+    ['name' => 'Regional', 'poi' => '375', 'microsites' => '2', 'concierge' => '10', 'popular' => false],
     ['name' => 'State', 'poi' => '1,125', 'microsites' => '5', 'concierge' => '20', 'popular' => false],
 ];
 
@@ -59,14 +59,15 @@ foreach ($setup_cards as $i => $card) {
         <div class="relative mx-auto flex min-h-[390px] max-w-[1312px] items-center sm:min-h-[420px] lg:min-h-0">
             <div class="max-w-[666px]">
                 <p
-                    class="inline-flex w-fit max-w-full rounded-lg bg-white px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base leading-5 text-brand">
+                    class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base leading-5 text-white">
                     <?php echo esc_html(txa_f('pricing_hero_label', 'TXA FOR DESTINATIONS')); ?></p>
                 <h1 class="mt-5 text-3xl font-semibold leading-[1.1] sm:mt-6 sm:text-5xl lg:leading-[56px]"><?php echo esc_html(txa_f('pricing_hero_title_line_1', 'TXA Smart Destination')); ?><br class="hidden sm:block"> <?php echo esc_html(txa_f('pricing_hero_title_line_2', 'Packages')); ?></h1>
                 <p class="mt-5 text-base font-semibold leading-7 sm:mt-6 sm:text-lg sm:leading-[30px]"><?php echo esc_html(txa_f('pricing_hero_copy', 'TXA offers Smart Destination packages that match the scope and scale of your visitor economy. Each package is designed to give your destination access to platform infrastructure, supplier activation support, destination content activation and industry-facing tools without the risk of a custom technology build.')); ?></p>
-                <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4"><a
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                    <a
                         href="<?php echo esc_url(txa_url('pricing_hero_primary_url', home_url('/apply-now/'))); ?>"
                         <?php echo txa_target_attr(txa_new_tab('pricing_hero_primary_url'), txa_url('pricing_hero_primary_url', home_url('/apply-now/'))); ?>
-                        class="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-white px-6 py-3 text-center text-base font-bold text-brand !no-underline sm:w-auto sm:px-8 sm:text-lg"><?php echo esc_html(txa_f('pricing_hero_primary_label', 'Apply Now')); ?></a><a href="<?php echo esc_url(txa_url('pricing_hero_secondary_url', home_url('/contact/'))); ?>"
+                        class="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-6 py-3 text-center text-base font-bold text-white !no-underline sm:w-auto sm:px-8 sm:text-lg"><?php echo esc_html(txa_f('pricing_hero_primary_label', 'Apply Now')); ?></a><a href="<?php echo esc_url(txa_url('pricing_hero_secondary_url', home_url('/contact/'))); ?>"
                         <?php echo txa_target_attr(txa_new_tab('pricing_hero_secondary_url'), txa_url('pricing_hero_secondary_url', home_url('/contact/'))); ?>
                         class="inline-flex min-h-12 w-full items-center justify-center rounded-lg border border-white px-6 py-3 text-center text-base font-bold text-white !no-underline sm:w-auto sm:px-8 sm:text-lg"><?php echo esc_html(txa_f('pricing_hero_secondary_label', 'Request Demo')); ?></a></div>
             </div>
@@ -96,7 +97,7 @@ foreach ($setup_cards as $i => $card) {
                         </ul>
                         <a href="<?php echo esc_url(txa_url('pricing_package_button_url', home_url('/contact/'))); ?>"
                             <?php echo txa_target_attr(txa_new_tab('pricing_package_button_url'), txa_url('pricing_package_button_url', home_url('/contact/'))); ?>
-                            class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg <?php echo !empty($package['popular']) ? 'bg-brand text-white' : 'border border-brand text-brand'; ?> px-4 py-3 text-center font-semibold !no-underline sm:mt-10"><?php echo esc_html($package['button']); ?></a>
+                            class="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-center font-semibold text-white !no-underline sm:mt-10"><?php echo esc_html($package['button']); ?></a>
                     </article><?php endforeach; ?>
             </div>
 

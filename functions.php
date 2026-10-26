@@ -141,11 +141,10 @@ add_filter('acf/load_field_group', function (array $group): array {
  * matching menus are assigned in Appearance → Menus. External links keep
  * opening in a new tab.
  */
-if (!function_exists('txa_footer_menu_fallback')) {
-    function txa_footer_menu_fallback($args): void
+if (!function_exists('txa_footer_menu_defaults')) {
+    function txa_footer_menu_defaults(): array
     {
-        $location = $args->theme_location ?? '';
-        $menus = [
+        return [
             'footer_pathways' => [
                 [home_url('/suppliers/'), 'Suppliers'],
                 [home_url('/destinations/'), 'Destinations'],
@@ -167,8 +166,15 @@ if (!function_exists('txa_footer_menu_fallback')) {
                 [home_url('/terms-of-use/'), 'Terms of Use'],
             ],
         ];
+    }
 
-        foreach ($menus[$location] ?? [] as $item) {
+}
+
+if (!function_exists('txa_footer_menu_fallback')) {
+    function txa_footer_menu_fallback($args): void
+    {
+        $location = $args->theme_location ?? '';
+        foreach (txa_footer_menu_defaults()[$location] ?? [] as $item) {
             printf(
                 '<li><a href="%s" class="text-white/65 !no-underline hover:text-white"%s>%s</a></li>',
                 esc_url($item[0]),
@@ -178,6 +184,31 @@ if (!function_exists('txa_footer_menu_fallback')) {
         }
     }
 }
+
+if (!function_exists('txa_footer_menu_add_missing_defaults')) {
+    function txa_footer_menu_add_missing_defaults(string $items, $args): string
+    {
+        $location = $args->theme_location ?? '';
+        $defaults = txa_footer_menu_defaults()[$location] ?? [];
+
+        foreach ($defaults as $item) {
+            $url = esc_url($item[0]);
+            if (false !== strpos($items, 'href="' . $url . '"')) {
+                continue;
+            }
+
+            $items .= sprintf(
+                '<li><a href="%s" class="text-white/65 !no-underline hover:text-white"%s>%s</a></li>',
+                $url,
+                !empty($item[2]) ? ' target="_blank" rel="noopener noreferrer"' : '',
+                esc_html($item[1])
+            );
+        }
+
+        return $items;
+    }
+}
+add_filter('wp_nav_menu_items', 'txa_footer_menu_add_missing_defaults', 10, 2);
 
 /**
  * Add target="_blank" (with noopener) to absolute external hrefs inside
