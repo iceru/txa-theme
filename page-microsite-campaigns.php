@@ -59,7 +59,6 @@ $tools = txa_microsite_tools([
         'icon' => 'bi-person-check',
         'title' => 'Supplier Opt-in',
         'copy' => 'Encourage regional supplier participation around clear, high-impact campaign opportunities with ease.',
-        'red' => true,
     ],
     [
         'icon' => 'bi-bullseye',

@@ -104,15 +104,18 @@ $implementation = txa_destination_cards('destination_step', [
                 <div class="w-full max-w-[760px]">
                     <p
                         class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                        <?php echo esc_html(txa_f('destination_hero_label', 'TXA for destinations')); ?></p>
+                        <?php echo esc_html(txa_f('destination_hero_label', 'TXA for destinations')); ?>
+                    </p>
                     <h1
                         class="mt-4 max-w-[760px] text-[34px] font-semibold leading-[1.08] text-white min-[390px]:text-4xl sm:text-5xl lg:leading-[56px]">
-                        <?php echo esc_html(txa_f('destination_hero_title', 'Boost, sustain and protect your local visitor economy.')); ?></h1>
+                        <?php echo esc_html(txa_f('destination_hero_title', 'Boost, sustain and protect your local visitor economy.')); ?>
+                    </h1>
                     <p
                         class="mt-4 max-w-[660px] text-base font-medium leading-6 text-white sm:text-lg sm:leading-[30px]">
-                        <?php echo esc_html(txa_f('destination_hero_copy', 'TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.')); ?></p>
+                        <?php echo esc_html(txa_f('destination_hero_copy', 'TXA helps destination organisations move from inspiration only marketing to connected, bookable visitor outcomes. TXA is commercially neutral and booking system agnostic, so destinations can support their whole industry without forcing suppliers into one commercial model or technology stack.')); ?>
+                    </p>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-                        <?php echo txa_destination_button(txa_f('destination_hero_secondary_label', 'See destination packages'), $pricing_url, 'light', txa_new_tab('destination_pricing_url')); ?>
+                        <?php echo txa_destination_button(txa_f('destination_hero_secondary_label', 'See destination packages'), $pricing_url, 'primary', txa_new_tab('destination_pricing_url')); ?>
                     </div>
                 </div>
             </div>
@@ -123,9 +126,11 @@ $implementation = txa_destination_cards('destination_step', [
         <div class="mx-auto max-w-[1312px] text-left sm:text-center">
             <h2
                 class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl">
-                <?php echo esc_html(txa_f('destination_what_heading', 'What is a TXA Smart Destination?')); ?></h2>
+                <?php echo esc_html(txa_f('destination_what_heading', 'What is a TXA Smart Destination?')); ?>
+            </h2>
             <p class="mx-auto mt-3 max-w-[890px] text-[15px] leading-6 text-mid-gray sm:mt-2 sm:text-base">
-                <?php echo esc_html(txa_f('destination_what_copy', 'A Smart destination generates inspiration and TXA helps you own the conversion. Your organisation can use TXA to activate destination websites and apps, digitise local supply, connect suppliers to distributors, build tactical microsites, support trade initiatives, enable economy-wide re-seller networks and collaborative commerce.')); ?></p>
+                <?php echo esc_html(txa_f('destination_what_copy', 'A Smart destination generates inspiration and TXA helps you own the conversion. Your organisation can use TXA to activate destination websites and apps, digitise local supply, connect suppliers to distributors, build tactical microsites, support trade initiatives, enable economy-wide re-seller networks and collaborative commerce.')); ?>
+            </p>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5">
                 <?php foreach ($pillars as $index => $pillar): ?>
                     <article
@@ -155,9 +160,11 @@ $implementation = txa_destination_cards('destination_step', [
             <div>
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl">
-                    <?php echo esc_html(txa_f('destination_problem_heading', 'The problem TXA solves for destinations')); ?></h2>
+                    <?php echo esc_html(txa_f('destination_problem_heading', 'The problem TXA solves for destinations')); ?>
+                </h2>
                 <p class="mt-3 text-[15px] leading-6 text-mid-gray sm:text-base">
-                    <?php echo esc_html(txa_f('destination_problem_copy', 'Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle.')); ?></p>
+                    <?php echo esc_html(txa_f('destination_problem_copy', 'Marketing a destination to inspire is easy. Converting that interest into actual regional bookings is where most DMOs struggle.')); ?>
+                </p>
                 <div class="mt-7 grid gap-3 sm:mt-8 sm:gap-4 md:grid-cols-2">
                     <?php foreach ($problems as $problem): ?>
                         <article class="rounded-xl  bg-white px-5 py-5 shadow-sm sm:px-7 sm:py-6">
@@ -171,7 +178,8 @@ $implementation = txa_destination_cards('destination_step', [
             <aside
                 class="overflow-hidden rounded-2xl bg-brand p-5 text-white shadow-xl sm:rounded-3xl sm:p-8 sm:shadow-2xl">
                 <h3 class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold">
-                    <?php echo esc_html(txa_f('destination_solution_heading', 'The TXA Solution')); ?></h3>
+                    <?php echo esc_html(txa_f('destination_solution_heading', 'The TXA Solution')); ?>
+                </h3>
                 <div class="mt-5 space-y-5 sm:mt-6 sm:space-y-6">
                     <?php foreach ($solutions as $item): ?>
                         <div class="flex gap-3 sm:gap-4">
@@ -194,7 +202,8 @@ $implementation = txa_destination_cards('destination_step', [
         <div class="mx-auto max-w-[1312px]">
             <h2
                 class="max-w-[486px] [font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#181c21] sm:text-3xl sm:leading-10">
-                <?php echo esc_html(txa_f('destination_capabilities_heading', 'Your destination, your digital assets, your commercial model')); ?></h2>
+                <?php echo esc_html(txa_f('destination_capabilities_heading', 'Your destination, your digital assets, your commercial model')); ?>
+            </h2>
             <div class="mt-7 grid gap-4 sm:mt-8 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
                 <?php foreach ($capabilities as $card): ?>
                     <article
@@ -218,10 +227,13 @@ $implementation = txa_destination_cards('destination_step', [
             <div>
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl sm:leading-10">
-                    <?php echo esc_html(txa_f('destination_data_heading', 'See who is visiting, what is working and where to invest next')); ?></h2>
+                    <?php echo esc_html(txa_f('destination_data_heading', 'See who is visiting, what is working and where to invest next')); ?>
+                </h2>
                 <div class="mt-5 space-y-4 text-base leading-6 text-mid-gray sm:mt-6 sm:text-lg sm:leading-7">
-                    <p><?php echo esc_html(txa_f('destination_data_paragraph_1', "Most destination marketing generates interest that's impossible to trace. Visitors click through to OTA listings or third-party pages, and the data disappears. TXA gives destinations something different: first-party booking and engagement data that belongs to you.")); ?></p>
-                    <p><?php echo esc_html(txa_f('destination_data_paragraph_2', 'For the first time, your destination can see, in one place, which campaigns converted, which suppliers are performing, and where visitor spend is flowing through your local economy.')); ?></p>
+                    <p><?php echo esc_html(txa_f('destination_data_paragraph_1', "Most destination marketing generates interest that's impossible to trace. Visitors click through to OTA listings or third-party pages, and the data disappears. TXA gives destinations something different: first-party booking and engagement data that belongs to you.")); ?>
+                    </p>
+                    <p><?php echo esc_html(txa_f('destination_data_paragraph_2', 'For the first time, your destination can see, in one place, which campaigns converted, which suppliers are performing, and where visitor spend is flowing through your local economy.')); ?>
+                    </p>
                 </div>
                 <ul class="mt-5 space-y-3 text-sm font-semibold leading-5 text-[#151c27] sm:mt-6 sm:space-y-4">
                     <?php foreach ($data_points as $point): ?>
@@ -238,14 +250,15 @@ $implementation = txa_destination_cards('destination_step', [
     </section>
 
     <section class="relative overflow-hidden px-4 py-10 text-white sm:py-14 lg:px-16 lg:py-16">
-        <img src="<?php echo esc_url(txa_img('destination_steps_image', get_theme_file_uri('/images/new/destinations-2.jpg'))); ?>" alt=""
-            class="absolute inset-0 h-full w-full object-cover">
+        <img src="<?php echo esc_url(txa_img('destination_steps_image', get_theme_file_uri('/images/new/destinations-2.jpg'))); ?>"
+            alt="" class="absolute inset-0 h-full w-full object-cover">
         <div class="absolute inset-0 bg-black/65 sm:bg-black/60" aria-hidden="true"></div>
         <div class="relative z-10 mx-auto grid max-w-[1312px] gap-8 sm:gap-10 lg:grid-cols-[379px_1fr] lg:gap-12">
             <div>
                 <h2
                     class="text-[28px] font-semibold leading-9 sm:text-3xl sm:leading-tight lg:text-4xl lg:leading-[44px]">
-                    <?php echo esc_html(txa_f('destination_steps_heading', 'How a TXA Smart Destination is easily implemented')); ?></h2>
+                    <?php echo esc_html(txa_f('destination_steps_heading', 'How a TXA Smart Destination is easily implemented')); ?>
+                </h2>
                 <div class="mt-5 flex flex-col gap-3 sm:mt-6 sm:items-start">
                     <?php echo txa_destination_button(txa_f('destination_steps_primary_label', 'Ask about our destination packages'), $pricing_url, 'primary', txa_new_tab('destination_pricing_url')); ?>
                     <?php echo txa_destination_button(txa_f('destination_steps_secondary_label', 'Request website activation demo'), $demo_url, 'white', txa_new_tab('destination_demo_url')); ?>

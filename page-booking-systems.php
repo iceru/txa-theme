@@ -288,7 +288,7 @@ if ($booking_system_query->have_posts()) {
                         <?php echo esc_html(txa_f('booking_partners_copy', 'Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry.')); ?>
                     </p>
                     <div class="mt-6">
-                        <?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partner_url, 'light', txa_new_tab('booking_partner_url')); ?>
+                        <?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partner_url, 'primary', txa_new_tab('booking_partner_url')); ?>
                     </div>
                 </div>
             </div>

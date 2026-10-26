@@ -1,0 +1,568 @@
+[
+  {
+    "key": "group_txa_pricing_page",
+    "title": "TXA Pricing Page",
+    "fields": [
+      {
+        "key": "field_txa_pricing_tab_hero",
+        "label": "Hero",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_pricing_apply_url",
+        "label": "Apply Url",
+        "name": "pricing_apply_url",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_demo_url",
+        "label": "Demo Url",
+        "name": "pricing_demo_url",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_supplier_url",
+        "label": "Supplier Url",
+        "name": "pricing_supplier_url",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_destination_url",
+        "label": "Destination Url",
+        "name": "pricing_destination_url",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_distributor_url",
+        "label": "Distributor Url",
+        "name": "pricing_distributor_url",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_booking_url",
+        "label": "Booking Url",
+        "name": "pricing_booking_url",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_step_1_title",
+        "label": "Step 1 Title",
+        "name": "pricing_step_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_step_1_copy",
+        "label": "Step 1 Copy",
+        "name": "pricing_step_1_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_step_2_title",
+        "label": "Step 2 Title",
+        "name": "pricing_step_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_step_2_copy",
+        "label": "Step 2 Copy",
+        "name": "pricing_step_2_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_step_3_title",
+        "label": "Step 3 Title",
+        "name": "pricing_step_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_step_3_copy",
+        "label": "Step 3 Copy",
+        "name": "pricing_step_3_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_path_1_title",
+        "label": "Path 1 Title",
+        "name": "pricing_path_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_path_1_copy",
+        "label": "Path 1 Copy",
+        "name": "pricing_path_1_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_path_2_title",
+        "label": "Path 2 Title",
+        "name": "pricing_path_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_path_2_copy",
+        "label": "Path 2 Copy",
+        "name": "pricing_path_2_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_path_3_title",
+        "label": "Path 3 Title",
+        "name": "pricing_path_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_path_3_copy",
+        "label": "Path 3 Copy",
+        "name": "pricing_path_3_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_path_4_title",
+        "label": "Path 4 Title",
+        "name": "pricing_path_4_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_path_4_copy",
+        "label": "Path 4 Copy",
+        "name": "pricing_path_4_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_card_1_title",
+        "label": "Card 1 Title",
+        "name": "pricing_card_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_1_price",
+        "label": "Card 1 Price",
+        "name": "pricing_card_1_price",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_1_suffix",
+        "label": "Card 1 Suffix",
+        "name": "pricing_card_1_suffix",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_1_price_end",
+        "label": "Card 1 Price End",
+        "name": "pricing_card_1_price_end",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_1_copy",
+        "label": "Card 1 Copy",
+        "name": "pricing_card_1_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_card_1_point_1",
+        "label": "Card 1 Point 1",
+        "name": "pricing_card_1_point_1",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_1_point_2",
+        "label": "Card 1 Point 2",
+        "name": "pricing_card_1_point_2",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_1_cta",
+        "label": "Card 1 Cta",
+        "name": "pricing_card_1_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_2_title",
+        "label": "Card 2 Title",
+        "name": "pricing_card_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_2_price",
+        "label": "Card 2 Price",
+        "name": "pricing_card_2_price",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_2_copy",
+        "label": "Card 2 Copy",
+        "name": "pricing_card_2_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_card_2_cta",
+        "label": "Card 2 Cta",
+        "name": "pricing_card_2_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_3_title",
+        "label": "Card 3 Title",
+        "name": "pricing_card_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_3_price",
+        "label": "Card 3 Price",
+        "name": "pricing_card_3_price",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_3_copy",
+        "label": "Card 3 Copy",
+        "name": "pricing_card_3_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_card_3_cta",
+        "label": "Card 3 Cta",
+        "name": "pricing_card_3_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_4_title",
+        "label": "Card 4 Title",
+        "name": "pricing_card_4_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_4_price",
+        "label": "Card 4 Price",
+        "name": "pricing_card_4_price",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_card_4_copy",
+        "label": "Card 4 Copy",
+        "name": "pricing_card_4_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_card_4_cta",
+        "label": "Card 4 Cta",
+        "name": "pricing_card_4_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_supplier_type_1",
+        "label": "Supplier Type 1",
+        "name": "pricing_supplier_type_1",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_supplier_type_2",
+        "label": "Supplier Type 2",
+        "name": "pricing_supplier_type_2",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_supplier_type_3",
+        "label": "Supplier Type 3",
+        "name": "pricing_supplier_type_3",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_supplier_type_4",
+        "label": "Supplier Type 4",
+        "name": "pricing_supplier_type_4",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_1_eyebrow",
+        "label": "Partner 1 Eyebrow",
+        "name": "pricing_partner_1_eyebrow",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_tab_partners",
+        "label": "Partner Cards",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_pricing_partner_1_title",
+        "label": "Partner 1 Title",
+        "name": "pricing_partner_1_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_1_copy",
+        "label": "Partner 1 Copy",
+        "name": "pricing_partner_1_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_partner_1_point_1",
+        "label": "Partner 1 Point 1",
+        "name": "pricing_partner_1_point_1",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_1_point_2",
+        "label": "Partner 1 Point 2",
+        "name": "pricing_partner_1_point_2",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_1_point_3",
+        "label": "Partner 1 Point 3",
+        "name": "pricing_partner_1_point_3",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_1_cta",
+        "label": "Partner 1 Cta",
+        "name": "pricing_partner_1_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_2_eyebrow",
+        "label": "Partner 2 Eyebrow",
+        "name": "pricing_partner_2_eyebrow",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_2_title",
+        "label": "Partner 2 Title",
+        "name": "pricing_partner_2_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_2_copy",
+        "label": "Partner 2 Copy",
+        "name": "pricing_partner_2_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_partner_2_point_1",
+        "label": "Partner 2 Point 1",
+        "name": "pricing_partner_2_point_1",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_2_point_2",
+        "label": "Partner 2 Point 2",
+        "name": "pricing_partner_2_point_2",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_2_point_3",
+        "label": "Partner 2 Point 3",
+        "name": "pricing_partner_2_point_3",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_2_cta",
+        "label": "Partner 2 Cta",
+        "name": "pricing_partner_2_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_3_eyebrow",
+        "label": "Partner 3 Eyebrow",
+        "name": "pricing_partner_3_eyebrow",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_3_title",
+        "label": "Partner 3 Title",
+        "name": "pricing_partner_3_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_3_copy",
+        "label": "Partner 3 Copy",
+        "name": "pricing_partner_3_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_partner_3_point_1",
+        "label": "Partner 3 Point 1",
+        "name": "pricing_partner_3_point_1",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_3_point_2",
+        "label": "Partner 3 Point 2",
+        "name": "pricing_partner_3_point_2",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_3_point_3",
+        "label": "Partner 3 Point 3",
+        "name": "pricing_partner_3_point_3",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_partner_3_cta",
+        "label": "Partner 3 Cta",
+        "name": "pricing_partner_3_cta",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_hero_image_alt",
+        "label": "Hero Image Alt",
+        "name": "pricing_hero_image_alt",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_hero_title",
+        "label": "Hero Title",
+        "name": "pricing_hero_title",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_hero_copy",
+        "label": "Hero Copy",
+        "name": "pricing_hero_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_apply_label",
+        "label": "Apply Label",
+        "name": "pricing_apply_label",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_demo_label",
+        "label": "Demo Label",
+        "name": "pricing_demo_label",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_cards_heading",
+        "label": "Cards Heading",
+        "name": "pricing_cards_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_tab_cards",
+        "label": "Pricing Cards and Pathways",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_pricing_featured_badge",
+        "label": "Featured Badge",
+        "name": "pricing_featured_badge",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_supplier_eyebrow",
+        "label": "Supplier Eyebrow",
+        "name": "pricing_supplier_eyebrow",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_tab_supplier",
+        "label": "Supplier Pricing",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_pricing_supplier_heading",
+        "label": "Supplier Heading",
+        "name": "pricing_supplier_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_supplier_copy",
+        "label": "Supplier Copy",
+        "name": "pricing_supplier_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_pricing_supplier_apply_label",
+        "label": "Supplier Apply Label",
+        "name": "pricing_supplier_apply_label",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_fee_label",
+        "label": "Fee Label",
+        "name": "pricing_fee_label",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_fee_average",
+        "label": "Fee Average",
+        "name": "pricing_fee_average",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_fee_min",
+        "label": "Fee Min",
+        "name": "pricing_fee_min",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_fee_max",
+        "label": "Fee Max",
+        "name": "pricing_fee_max",
+        "type": "text"
+      },
+      {
+        "key": "field_txa_pricing_hero_image",
+        "label": "Hero Background Image",
+        "name": "pricing_hero_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-pricing.php"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

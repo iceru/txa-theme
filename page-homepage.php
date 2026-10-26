@@ -201,7 +201,7 @@ if (!$how_txa_works_embed) {
                 <div class="max-w-[629px]">
                     <h2
                         class="[font-family:'Hanken_Grotesk',sans-serif] text-[28px] font-bold leading-9 tracking-[-0.01em] text-[#151c27] sm:text-3xl sm:leading-10">
-                        <?php echo esc_html(txa_f('intro_heading', "Australia's national tourism exchange.")); ?><br><span
+                        <span
                             class="text-brand"><?php echo esc_html(txa_f('intro_heading_highlight', 'How TXA was built and why')); ?></span></h2>
                     <div
                         class="mt-5 space-y-5 text-base leading-7 text-near-black sm:mt-6 sm:space-y-6 sm:text-lg sm:leading-[1.625]">

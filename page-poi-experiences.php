@@ -33,7 +33,6 @@ $feature_cards = [
         'icon' => txa_f('poi_card_2_icon', 'bi-stars'),
         'title' => txa_f('poi_card_2_title', 'Connect Content'),
         'copy' => txa_f('poi_card_2_copy', 'Connect content with bookable suppliers so visitors can act on inspiration immediately.'),
-        'red' => true,
     ],
     [
         'icon' => txa_f('poi_card_3_icon', 'bi-calendar3'),
@@ -55,13 +54,20 @@ $feature_cards = [
             <div>
                 <p
                     class="inline-flex w-fit max-w-full rounded-lg bg-brand px-4 py-2 text-sm font-bold sm:px-5 sm:py-3 sm:text-base uppercase leading-5 text-white">
-                    <?php echo esc_html(txa_f('poi_hero_label', 'Point of Interests and Experiences')); ?></p>
+                    <?php echo esc_html(txa_f('poi_hero_label', 'Point of Interests and Experiences')); ?>
+                </p>
                 <h1
                     class="mt-8 max-w-[610px] [font-family:'Hanken_Grotesk',sans-serif] text-4xl font-bold leading-[1.18] text-[#151c27] sm:text-5xl lg:text-[44px] lg:leading-[1.15]">
-                    <?php echo esc_html(txa_f('poi_hero_title_start', 'Create destination content that')); ?> <span class="text-brand"><?php echo esc_html(txa_f('poi_hero_title_highlight', 'connects')); ?></span> <?php echo esc_html(txa_f('poi_hero_title_end', 'to bookable product')); ?></h1>
-                <p class="mt-6 max-w-[540px] text-lg leading-8 text-mid-gray"><?php echo esc_html(txa_f('poi_hero_copy', 'TXA allows a destination to add Points of Interest - free things to see and do - and to create recommended experiences and suggested itineraries.')); ?></p>
+                    <?php echo esc_html(txa_f('poi_hero_title_start', 'Create destination content that')); ?> <span
+                        class="text-brand"><?php echo esc_html(txa_f('poi_hero_title_highlight', 'connects')); ?></span>
+                    <?php echo esc_html(txa_f('poi_hero_title_end', 'to bookable product')); ?>
+                </h1>
+                <p class="mt-6 max-w-[540px] text-lg leading-8 text-mid-gray">
+                    <?php echo esc_html(txa_f('poi_hero_copy', 'TXA allows a destination to add Points of Interest - free things to see and do - and to create recommended experiences and suggested itineraries.')); ?>
+                </p>
                 <a href="<?php echo esc_url($demo_url); ?>" <?php echo txa_target_attr(txa_new_tab('poi_hero_button_url'), $demo_url); ?>
-                    class="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('poi_hero_button_label', 'Discuss destination content activation')); ?> <i class="bi bi-arrow-right text-xl" aria-hidden="true"></i></a>
+                    class="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-brand px-7 py-3 text-base font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('poi_hero_button_label', 'Discuss destination content activation')); ?>
+                    <i class="bi bi-arrow-right text-xl" aria-hidden="true"></i></a>
             </div>
             <div class="overflow-hidden rounded-lg shadow-sm">
                 <img src="<?php echo esc_url(txa_f('poi_hero_image', get_theme_file_uri('/images/map.jpg'))); ?>"
@@ -76,8 +82,11 @@ $feature_cards = [
             <div class="mx-auto max-w-[720px] text-center">
                 <h2
                     class="[font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
-                    <?php echo esc_html(txa_f('poi_features_heading', 'Transforming destination assets into visitor journeys')); ?></h2>
-                <p class="mt-6 text-base leading-7 text-mid-gray"><?php echo esc_html(txa_f('poi_features_copy', 'A unified ecosystem to manage free landmarks alongside bookable experiences.')); ?></p>
+                    <?php echo esc_html(txa_f('poi_features_heading', 'Transforming destination assets into visitor journeys')); ?>
+                </h2>
+                <p class="mt-6 text-base leading-7 text-mid-gray">
+                    <?php echo esc_html(txa_f('poi_features_copy', 'A unified ecosystem to manage free landmarks alongside bookable experiences.')); ?>
+                </p>
             </div>
             <div class="mt-12 grid gap-6 lg:grid-cols-[2fr_1fr]">
                 <?php foreach ($feature_cards as $card): ?>
