@@ -173,8 +173,23 @@ if (!function_exists('txa_footer_menu_defaults')) {
 if (!function_exists('txa_footer_menu_fallback')) {
     function txa_footer_menu_fallback($args): void
     {
-        $location = $args->theme_location ?? '';
-        foreach (txa_footer_menu_defaults()[$location] ?? [] as $item) {
+        // WordPress passes fallback callback arguments as an array, while
+        // wp_nav_menu_items filters receive an object.
+        $location = is_array($args)
+            ? ($args['theme_location'] ?? '')
+            : ($args->theme_location ?? '');
+        $items = txa_footer_menu_defaults()[$location] ?? [];
+
+        if (!$items) {
+            return;
+        }
+
+        $menu_class = is_array($args)
+            ? ($args['menu_class'] ?? 'menu')
+            : ($args->menu_class ?? 'menu');
+
+        printf('<ul class="%s">', esc_attr($menu_class));
+        foreach ($items as $item) {
             printf(
                 '<li><a href="%s" class="text-white/65 !no-underline hover:text-white"%s>%s</a></li>',
                 esc_url($item[0]),
@@ -182,6 +197,7 @@ if (!function_exists('txa_footer_menu_fallback')) {
                 esc_html($item[1])
             );
         }
+        echo '</ul>';
     }
 }
 
