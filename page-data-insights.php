@@ -105,20 +105,20 @@ $export_formats = array_values(array_filter([
                 </article>
 
                 <article class="flex flex-col rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-                    <span class="flex size-12 items-center justify-center rounded-xl bg-white/15 text-xl text-white">
+                    <span class="flex size-12 items-center justify-center rounded-xl bg-brand-tint text-xl text-brand">
                         <i class="bi <?php echo esc_attr(txa_f('insights_export_icon', 'bi-file-earmark-arrow-down')); ?>"
                             aria-hidden="true"></i>
                     </span>
-                    <h3 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold sm:text-2xl">
+                    <h3 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold text-[#151c27] sm:text-2xl">
                         <?php echo esc_html(txa_f('insights_export_title', 'Export Power')); ?>
                     </h3>
-                    <p class="mt-4 text-sm leading-6 text-white/90 sm:text-base">
+                    <p class="mt-4 text-sm leading-6 text-mid-gray sm:text-base">
                         <?php echo esc_html(txa_f('insights_export_copy', 'Take your data anywhere. Export booking and consumer metrics into Excel or XML formats for deep internal auditing or offline presentation.')); ?>
                     </p>
                     <div class="mt-auto flex flex-wrap gap-3 pt-6">
                         <?php foreach ($export_formats as $format): ?>
                             <span
-                                class="rounded-md border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold text-white"><?php echo esc_html($format); ?></span>
+                                class="rounded-md border border-line bg-brand-tint px-4 py-1.5 text-xs font-bold text-brand"><?php echo esc_html($format); ?></span>
                         <?php endforeach; ?>
                     </div>
                 </article>
@@ -152,14 +152,14 @@ $export_formats = array_values(array_filter([
                 </article>
 
                 <article class="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-                    <span class="flex size-12 items-center justify-center rounded-xl bg-white/15 text-xl text-white">
+                    <span class="flex size-12 items-center justify-center rounded-xl bg-brand-tint text-xl text-brand">
                         <i class="bi <?php echo esc_attr(txa_f('insights_governance_icon', 'bi-shield-check')); ?>"
                             aria-hidden="true"></i>
                     </span>
-                    <h3 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold sm:text-2xl">
+                    <h3 class="mt-5 [font-family:'Hanken_Grotesk',sans-serif] text-xl font-semibold text-[#151c27] sm:text-2xl">
                         <?php echo esc_html(txa_f('insights_governance_title', 'Secure Governance')); ?>
                     </h3>
-                    <p class="mt-4 text-sm leading-6 text-white/90 sm:text-base">
+                    <p class="mt-4 text-sm leading-6 text-mid-gray sm:text-base">
                         <?php echo esc_html(txa_f('insights_governance_copy', 'Enterprise-grade privacy. We ensure all data access adheres to strict privacy, consent and governance rules to protect industry participants.')); ?>
                     </p>
                 </article>
