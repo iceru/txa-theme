@@ -39,8 +39,10 @@ add_action('wp_head', function (): void {
 
 get_header();
 
-$partner_url = txa_url('booking_partner_url', home_url('/booking-systems/partner-enquiry/'));
-$directory_url = home_url('/booking-systems');
+$legacy_partner_url = txa_url('booking_partner_url', home_url('/booking-systems/partner-enquiry/'));
+$legacy_partner_new_tab = txa_new_tab('booking_partner_url');
+$hero_button_url = txa_url('booking_hero_button_url', $legacy_partner_url);
+$partners_button_url = txa_url('booking_partners_button_url', $legacy_partner_url);
 
 $benefits = txa_booking_cards('booking_benefit', [
     ['icon' => 'bi-share', 'title' => 'Broader Distribution', 'copy' => 'Access hundreds of distributors from global OTAs to hyper-local niche and re-seller channels and visitor information center.'],
@@ -150,7 +152,7 @@ if ($booking_system_query->have_posts()) {
                         <?php echo esc_html(txa_f('booking_hero_copy', 'TXA helps booking-system vendors connect their operator customers to broader destination, distributor and trade channels through Australia’s open B2B tourism exchange.')); ?>
                     </p>
                     <div class="mt-6">
-                        <?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $partner_url, 'primary', txa_new_tab('booking_partner_url')); ?>
+                        <?php echo txa_booking_button(txa_f('booking_hero_button_label', 'Booking System Partner Enquiry'), $hero_button_url, 'primary', txa_new_tab('booking_hero_button_url', $legacy_partner_new_tab)); ?>
                     </div>
                 </div>
 
@@ -288,7 +290,7 @@ if ($booking_system_query->have_posts()) {
                         <?php echo esc_html(txa_f('booking_partners_copy', 'Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry.')); ?>
                     </p>
                     <div class="mt-6">
-                        <?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partner_url, 'primary', txa_new_tab('booking_partner_url')); ?>
+                        <?php echo txa_booking_button(txa_f('booking_partners_button_label', 'Free to connect'), $partners_button_url, 'primary', txa_new_tab('booking_partners_button_url', $legacy_partner_new_tab)); ?>
                     </div>
                 </div>
             </div>

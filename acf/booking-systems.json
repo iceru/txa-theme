@@ -14,7 +14,9 @@
       {"key": "field_book_hero_image", "label": "Hero Image", "name": "booking_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
       {"key": "field_book_hero_image_alt", "label": "Hero Image Alt Text", "name": "booking_hero_image_alt", "type": "text", "placeholder": "Aerial view of an Australian beach"},
       {"key": "field_book_hero_button_label", "label": "Hero Button Label", "name": "booking_hero_button_label", "type": "text", "placeholder": "Booking System Partner Enquiry"},
-      {"key": "field_book_partner_url", "label": "Partner Enquiry URL (used by all buttons)", "name": "booking_partner_url", "type": "text", "placeholder": "/booking-systems/partner-enquiry/"},
+      {"key": "field_book_hero_button_url", "label": "Hero Button URL", "name": "booking_hero_button_url", "type": "text", "placeholder": "/booking-systems/partner-enquiry/"},
+      {"key":"field_book_hero_button_url_new_tab","label":"Open in new tab","name":"booking_hero_button_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
+      {"key": "field_book_partner_url", "label": "Legacy shared Partner Enquiry URL (fallback)", "name": "booking_partner_url", "type": "text", "placeholder": "/booking-systems/partner-enquiry/"},
       {"key":"field_book_partner_url_new_tab","label":"Open in new tab","name":"booking_partner_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_book_platform_heading", "label": "Platform Card Heading", "name": "booking_platform_heading", "type": "text", "placeholder": "TXA PLATFORM"},
@@ -81,7 +83,9 @@
       {"key": "field_book_partners_image_alt", "label": "Background Alt Text", "name": "booking_partners_image_alt", "type": "text", "placeholder": "Sydney Harbour"},
       {"key": "field_book_partners_heading", "label": "Heading", "name": "booking_partners_heading", "type": "text", "placeholder": "TXA Booking-system partners"},
       {"key": "field_book_partners_copy", "label": "Copy", "name": "booking_partners_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Free to connect. Integration scope, documentation and commercial arrangements via partner enquiry."},
-      {"key": "field_book_partners_button_label", "label": "Button Label", "name": "booking_partners_button_label", "type": "text", "placeholder": "Free to connect"}
+      {"key": "field_book_partners_button_label", "label": "Button Label", "name": "booking_partners_button_label", "type": "text", "placeholder": "Free to connect"},
+      {"key": "field_book_partners_button_url", "label": "Button URL", "name": "booking_partners_button_url", "type": "text", "placeholder": "/booking-systems/partner-enquiry/"},
+      {"key":"field_book_partners_button_url_new_tab","label":"Open in new tab","name":"booking_partners_button_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0}
     ],
     "location": [
       [
