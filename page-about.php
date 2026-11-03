@@ -139,7 +139,7 @@ $timeline_values = $default_timeline_values;
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
                 <svg class="absolute inset-x-0 top-0 hidden h-[414px] w-full text-brand lg:block" viewBox="0 0 1180 414"
                     preserveAspectRatio="none" fill="none" aria-hidden="true">
-                    <path d="M147 2 H1030 M1028 410 H442"
+                    <path d="M147 2 H1030 C1108 2 1170 38 1170 82 V329 C1170 374 1108 410 1028 410 H442"
                         stroke="currentColor" stroke-width="5" stroke-linecap="round" />
                 </svg>
 
@@ -176,10 +176,10 @@ $timeline_values = $default_timeline_values;
                                     <?php echo esc_html($item['year']); ?>
                                 </p>
                                 <h3
-                                    class="mt-2 inline-flex rounded-lg bg-brand px-4 py-1.5 [font-family:'Hanken_Grotesk',sans-serif] text-xs font-bold uppercase tracking-wide text-white sm:text-sm">
+                                    class="mt-2 inline-flex max-w-[260px] justify-center rounded-lg bg-brand px-4 py-1.5 text-center [font-family:'Hanken_Grotesk',sans-serif] text-xs font-bold uppercase tracking-wide text-white sm:text-sm">
                                     <?php echo esc_html($item['title']); ?>
                                 </h3>
-                                <p class="mx-auto mt-3 max-w-[310px] text-sm leading-5 text-mid-gray">
+                                <p class="mx-auto mt-3 max-w-[260px] text-sm leading-5 text-mid-gray">
                                     <?php echo esc_html($item['copy']); ?>
                                 </p>
                             </div>
