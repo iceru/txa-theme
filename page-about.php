@@ -138,8 +138,8 @@ $timeline_values = $default_timeline_values;
 
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
                 <svg class="absolute inset-x-0 top-0 hidden h-[414px] w-full text-brand lg:block" viewBox="0 0 1180 414"
-                    preserveAspectRatio="none" fill="none" aria-hidden="true">
-                    <path d="M147 2 H1030 C1108 2 1170 38 1170 82 V329 C1170 374 1108 410 1028 410 H442"
+                    preserveAspectRatio="none" overflow="visible" fill="none" aria-hidden="true">
+                    <path d="M147 2 H1030 C1120 2 1210 38 1210 82 V329 C1210 374 1120 410 1028 410 H442"
                         stroke="currentColor" stroke-width="5" stroke-linecap="round" />
                 </svg>
 
