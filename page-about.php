@@ -137,14 +137,14 @@ $timeline_values = $default_timeline_values;
             </div>
 
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
-                <svg class="absolute inset-x-0 top-0 hidden h-[382px] w-full text-brand lg:block" viewBox="0 0 1180 382"
+                <svg class="absolute inset-x-0 top-0 hidden h-[414px] w-full text-brand lg:block" viewBox="0 0 1180 414"
                     preserveAspectRatio="none" fill="none" aria-hidden="true">
-                    <path d="M147 2 H1030 C1080 2 1106 38 1106 82 V297 C1106 346 1078 378 1028 378 H442"
+                    <path d="M147 2 H1030 M1028 410 H442"
                         stroke="currentColor" stroke-width="5" stroke-linecap="round" />
                 </svg>
 
                 <div class="absolute bottom-4 left-[19px] top-4 w-0.5 bg-brand lg:hidden" aria-hidden="true"></div>
-                <div class="relative grid gap-9 lg:grid-cols-4 lg:gap-x-12 lg:gap-y-12">
+                <div class="relative grid gap-9 lg:grid-cols-4 lg:gap-x-12 lg:gap-y-24">
                     <?php
                     $timeline_positions = [
                         4 => 'lg:col-start-4 lg:row-start-2',
