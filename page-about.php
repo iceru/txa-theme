@@ -137,16 +137,21 @@ $timeline_values = $default_timeline_values;
             </div>
 
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
-                <svg class="absolute inset-x-0 top-0 hidden h-[414px] w-full text-brand lg:block" viewBox="0 0 1180 414"
-                    preserveAspectRatio="none" overflow="visible" fill="none" aria-hidden="true">
-                    <path d="M147 2 H1030 C1120 2 1210 38 1210 82 V329 C1210 374 1120 410 1028 410 H442"
-                        stroke="currentColor" stroke-width="5" stroke-linecap="round" />
-                </svg>
-
                 <div class="absolute bottom-4 left-[19px] top-4 w-0.5 bg-brand lg:hidden" aria-hidden="true"></div>
                 <div class="relative grid gap-9 lg:grid-cols-4 lg:gap-x-12 lg:gap-y-24">
+                    <div class="relative hidden lg:col-start-1 lg:col-end-5 lg:row-start-1 lg:block" aria-hidden="true">
+                        <svg class="absolute inset-x-0 top-0 w-full text-brand" style="height: calc(100% + 6rem)"
+                            viewBox="0 0 1180 414" preserveAspectRatio="none" overflow="visible" fill="none">
+                            <path d="M147 2 H1030 C1120 2 1210 38 1210 82 V329 C1210 374 1120 414 1028 414 H442"
+                                stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+                        </svg>
+                    </div>
                     <?php
                     $timeline_positions = [
+                        0 => 'lg:col-start-1 lg:row-start-1',
+                        1 => 'lg:col-start-2 lg:row-start-1',
+                        2 => 'lg:col-start-3 lg:row-start-1',
+                        3 => 'lg:col-start-4 lg:row-start-1',
                         4 => 'lg:col-start-4 lg:row-start-2',
                         5 => 'lg:col-start-3 lg:row-start-2',
                         6 => 'lg:col-start-2 lg:row-start-2',
