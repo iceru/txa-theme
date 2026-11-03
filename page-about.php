@@ -27,20 +27,17 @@ $countries = [
     ['name' => txa_f('about_country_4_name', 'United States'), 'image' => txa_img('about_country_4_image', get_theme_file_uri('/images/txusa.png'))],
 ];
 $default_timeline = [
-    ['year' => txa_f('about_timeline_1_year', '2012'), 'title' => txa_f('about_timeline_1_title', 'The Conviction'), 'copy' => txa_f('about_timeline_1_copy', 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.'), 'icon' => 'bi-lightbulb'],
-    ['year' => txa_f('about_timeline_2_year', '2013'), 'title' => txa_f('about_timeline_2_title', 'Global Tender'), 'copy' => txa_f('about_timeline_2_copy', 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.'), 'icon' => 'bi-globe2'],
-    ['year' => txa_f('about_timeline_3_year', '2014'), 'title' => txa_f('about_timeline_3_title', 'National Support'), 'copy' => txa_f('about_timeline_3_copy', 'Backed by every State and Federal Government Tourism Organisation, TXA launched as Australia\'s open, commercially neutral booking exchange.'), 'icon' => 'bi-people'],
-    ['year' => txa_f('about_timeline_4_year', '2015'), 'title' => txa_f('about_timeline_4_title', 'Exchange Launched'), 'copy' => txa_f('about_timeline_4_copy', 'TXA launched its platform, connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.'), 'icon' => 'bi-rocket-takeoff'],
-    ['year' => txa_f('about_timeline_5_year', '2018+'), 'title' => txa_f('about_timeline_5_title', 'Global Expansion'), 'copy' => txa_f('about_timeline_5_copy', 'The same exchange technology began powering tourism platforms internationally.'), 'icon' => 'bi-airplane'],
-    ['year' => txa_f('about_timeline_6_year', 'Today'), 'title' => txa_f('about_timeline_6_title', 'Built Here. For Here.'), 'copy' => txa_f('about_timeline_6_copy', 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.'), 'icon' => 'bi-house-heart'],
+    ['year' => txa_f('about_timeline_1_year', '2006'), 'title' => txa_f('about_timeline_1_title', 'The Conviction'), 'copy' => txa_f('about_timeline_1_copy', 'TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players.'), 'icon' => 'bi-lightbulb'],
+    ['year' => txa_f('about_timeline_2_year', '2008'), 'title' => txa_f('about_timeline_2_title', 'Global Tender'), 'copy' => txa_f('about_timeline_2_copy', 'TXA was selected through a global tender as the technology partner for Australia\'s national booking exchange.'), 'icon' => 'bi-globe2'],
+    ['year' => txa_f('about_timeline_3_year', '2010'), 'title' => txa_f('about_timeline_3_title', 'National Support'), 'copy' => txa_f('about_timeline_3_copy', 'Partnership with ATDW (backed by every State and Federal Government Tourism Organisation), TXA becomes Australia\'s only open, commercially neutral national booking exchange connecting tourism suppliers, destinations, distributors and booking systems through one shared platform.'), 'icon' => 'bi-people'],
+    ['year' => txa_f('about_timeline_4_year', '2016'), 'title' => txa_f('about_timeline_4_title', 'Tourism Exchange Launched Globally'), 'copy' => txa_f('about_timeline_4_copy', 'Tourism Exchange platform is internationalised and launched to global markets.'), 'icon' => 'bi-rocket-takeoff'],
+    ['year' => txa_f('about_timeline_5_year', '2018+'), 'title' => txa_f('about_timeline_5_title', 'Global Expansion'), 'copy' => txa_f('about_timeline_5_copy', 'The exchange technology powering TXA begins powering the tourism industry in international territories.'), 'icon' => 'bi-airplane'],
+    ['year' => txa_f('about_timeline_6_year', '2025'), 'title' => txa_f('about_timeline_6_title', 'Deployed in Five Countries'), 'copy' => txa_f('about_timeline_6_copy', 'The foundation exchange technology which powers TXA deployed in five countries.'), 'icon' => 'bi-globe-americas'],
+    ['year' => txa_f('about_timeline_7_year', 'Today'), 'title' => txa_f('about_timeline_7_title', 'Built Here. For Here.'), 'copy' => txa_f('about_timeline_7_copy', 'TXA remains Australia\'s own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy.'), 'icon' => 'bi-house-heart'],
 ];
 $default_timeline_values = [
     ['title' => txa_f('about_value_1_title', 'Australia\'s Own'), 'copy' => txa_f('about_value_1_copy', 'Proudly built and operated in Australia.'), 'icon' => 'bi-geo-alt'],
     ['title' => txa_f('about_value_2_title', 'For the Industry'), 'copy' => txa_f('about_value_2_copy', 'Designed for all tourism businesses, big and small.'), 'icon' => 'bi-people'],
-    ['title' => txa_f('about_value_3_title', 'Government Backed'), 'copy' => txa_f('about_value_3_copy', 'Supported by every State and Federal Government Tourism Organisation.'), 'icon' => 'bi-building-check'],
-    ['title' => txa_f('about_value_4_title', 'One Connected Platform'), 'copy' => txa_f('about_value_4_copy', 'Connecting suppliers, destinations, distributors and booking systems seamlessly.'), 'icon' => 'bi-diagram-3'],
-    ['title' => txa_f('about_value_5_title', 'Global Impact'), 'copy' => txa_f('about_value_5_copy', 'Powering tourism platforms in the UK, Japan, Saudi Arabia and the United States.'), 'icon' => 'bi-globe-americas'],
-    ['title' => txa_f('about_value_6_title', 'Value Stays in Australia'), 'copy' => txa_f('about_value_6_copy', 'Keeping more of the value of Australian tourism circulating within the Australian visitor economy.'), 'icon' => 'bi-currency-dollar'],
 ];
 $timeline_query = new WP_Query([
     'post_type' => 'txa_timeline',
@@ -142,17 +139,17 @@ $timeline_values = $default_timeline_values;
             <div class="relative mx-auto mt-12 max-w-[1180px] lg:mt-16">
                 <svg class="absolute inset-x-0 top-0 hidden h-[382px] w-full text-brand lg:block" viewBox="0 0 1180 382"
                     preserveAspectRatio="none" fill="none" aria-hidden="true">
-                    <path d="M54 2 H1100 C1150 2 1176 38 1176 82 V297 C1176 346 1148 378 1098 378 H54"
+                    <path d="M147 2 H1030 C1080 2 1106 38 1106 82 V297 C1106 346 1078 378 1028 378 H442"
                         stroke="currentColor" stroke-width="5" stroke-linecap="round" />
                 </svg>
 
                 <div class="absolute bottom-4 left-[19px] top-4 w-0.5 bg-brand lg:hidden" aria-hidden="true"></div>
-                <div class="relative grid gap-9 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-12">
+                <div class="relative grid gap-9 lg:grid-cols-4 lg:gap-x-12 lg:gap-y-12">
                     <?php
                     $timeline_positions = [
-                        3 => 'lg:col-start-3 lg:row-start-2',
-                        4 => 'lg:col-start-2 lg:row-start-2',
-                        5 => 'lg:col-start-1 lg:row-start-2',
+                        4 => 'lg:col-start-4 lg:row-start-2',
+                        5 => 'lg:col-start-3 lg:row-start-2',
+                        6 => 'lg:col-start-2 lg:row-start-2',
                     ];
                     foreach ($timeline as $index => $item):
                         $desktop_position = $timeline_positions[$index] ?? ''; ?>
@@ -192,7 +189,7 @@ $timeline_values = $default_timeline_values;
             </div>
 
             <div
-                class="mt-12 grid overflow-hidden rounded-xl border border-line bg-white shadow-sm sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 xl:grid-cols-6">
+                class="mt-12 grid overflow-hidden rounded-xl border border-line bg-white shadow-sm sm:grid-cols-2 lg:mt-16 lg:grid-cols-2">
                 <?php foreach ($timeline_values as $value): ?>
                     <?php $value_icon = $value['icon'] ?? ''; ?>
                     <article class="border-b border-line p-5 last:border-b-0 sm:border-r lg:p-6 xl:border-b-0">
