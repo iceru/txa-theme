@@ -78,8 +78,8 @@ if (!function_exists('txa_primary_menu_fallback')) {
             <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/pricing/')); ?>"
                     class="<?php echo esc_attr(txa_header_link_class('/pricing/', false, 'block py-1')); ?>">Pricing</a>
             </li>
-            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/about/')); ?>"
-                    class="<?php echo esc_attr(txa_header_link_class('/about/', false, 'block py-1')); ?>">About</a>
+            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/about-us/')); ?>"
+                    class="<?php echo esc_attr(txa_header_link_class('/about-us/', false, 'block py-1')); ?>">About</a>
             </li>
             <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/contact/')); ?>"
                     class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>

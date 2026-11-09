@@ -130,8 +130,10 @@ add_filter('acf/load_field_group', function (array $group): array {
 
     foreach ($group['location'] ?? [] as $or_group) {
         foreach ($or_group as $condition) {
-            if ('home_slider' === ($condition['value'] ?? '')
-                && in_array($condition['param'] ?? '', ['post_type', 'post'], true)) {
+            if (
+                'home_slider' === ($condition['value'] ?? '')
+                && in_array($condition['param'] ?? '', ['post_type', 'post'], true)
+            ) {
                 $targets_home_slider = true;
                 break 2;
             }
@@ -181,7 +183,7 @@ if (!function_exists('txa_footer_menu_defaults')) {
                 [home_url('/faqs/'), 'FAQs'],
             ],
             'footer_company' => [
-                [home_url('/about/'), 'About TXA'],
+                [home_url('/about-us/'), 'About TXA'],
                 [home_url('/blog/'), 'Blog'],
                 [home_url('/contact/'), 'Contact us'],
                 ['https://sites.txa.com.au/Dashboard/', 'Dashboard Login', true],
@@ -581,17 +583,21 @@ add_action('add_meta_boxes_txa_timeline', function (): void {
             wp_nonce_field('txa_timeline_details', 'txa_timeline_nonce');
             $year = get_post_meta($post->ID, '_txa_timeline_year', true);
             $copy = get_post_meta($post->ID, '_txa_timeline_copy', true);
-?>
+            ?>
         <p>
             <label for="txa_timeline_year"><strong><?php esc_html_e('Year or period', 'tailpress'); ?></strong></label><br>
-            <input type="text" id="txa_timeline_year" name="txa_timeline_year" value="<?php echo esc_attr($year); ?>" class="widefat" placeholder="2012 or Today">
+            <input type="text" id="txa_timeline_year" name="txa_timeline_year" value="<?php echo esc_attr($year); ?>"
+                class="widefat" placeholder="2012 or Today">
         </p>
         <p>
             <label for="txa_timeline_copy"><strong><?php esc_html_e('Description', 'tailpress'); ?></strong></label><br>
-            <textarea id="txa_timeline_copy" name="txa_timeline_copy" rows="4" class="widefat"><?php echo esc_textarea($copy); ?></textarea>
+            <textarea id="txa_timeline_copy" name="txa_timeline_copy" rows="4"
+                class="widefat"><?php echo esc_textarea($copy); ?></textarea>
         </p>
-        <p class="description"><?php esc_html_e('Use the Featured image panel for the timeline icon. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?></p>
-<?php
+        <p class="description">
+            <?php esc_html_e('Use the Featured image panel for the timeline icon. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
+        </p>
+        <?php
         }
     );
 });
@@ -815,32 +821,32 @@ add_action('add_meta_boxes_txa_faq_group', function (): void {
             $intro = get_post_meta($post->ID, '_txa_faq_group_intro', true);
             $icon = get_post_meta($post->ID, '_txa_faq_group_icon', true);
             $anchor = get_post_meta($post->ID, '_txa_faq_group_anchor', true);
-    ?>
+            ?>
         <p>
             <label for="txa_faq_group_eyebrow"><strong><?php esc_html_e('Eyebrow label', 'tailpress'); ?></strong></label><br>
-            <input type="text" id="txa_faq_group_eyebrow" name="txa_faq_group_eyebrow"
-                value="<?php echo esc_attr($eyebrow); ?>" class="widefat"
-                placeholder="Tourism suppliers">
+            <input type="text" id="txa_faq_group_eyebrow" name="txa_faq_group_eyebrow" value="<?php echo esc_attr($eyebrow); ?>"
+                class="widefat" placeholder="Tourism suppliers">
         </p>
         <p>
             <label for="txa_faq_group_intro"><strong><?php esc_html_e('Intro copy', 'tailpress'); ?></strong></label><br>
-            <textarea id="txa_faq_group_intro" name="txa_faq_group_intro" rows="3"
-                class="widefat" placeholder="Connecting tourism products, rates and availability to more online channels."><?php echo esc_textarea($intro); ?></textarea>
+            <textarea id="txa_faq_group_intro" name="txa_faq_group_intro" rows="3" class="widefat"
+                placeholder="Connecting tourism products, rates and availability to more online channels."><?php echo esc_textarea($intro); ?></textarea>
         </p>
         <p>
-            <label for="txa_faq_group_icon"><strong><?php esc_html_e('Bootstrap icon class', 'tailpress'); ?></strong></label><br>
-            <input type="text" id="txa_faq_group_icon" name="txa_faq_group_icon"
-                value="<?php echo esc_attr($icon); ?>" class="widefat" placeholder="bi-shop-window">
+            <label
+                for="txa_faq_group_icon"><strong><?php esc_html_e('Bootstrap icon class', 'tailpress'); ?></strong></label><br>
+            <input type="text" id="txa_faq_group_icon" name="txa_faq_group_icon" value="<?php echo esc_attr($icon); ?>"
+                class="widefat" placeholder="bi-shop-window">
         </p>
         <p>
             <label for="txa_faq_group_anchor"><strong><?php esc_html_e('Anchor slug', 'tailpress'); ?></strong></label><br>
-            <input type="text" id="txa_faq_group_anchor" name="txa_faq_group_anchor"
-                value="<?php echo esc_attr($anchor); ?>" class="widefat" placeholder="suppliers">
+            <input type="text" id="txa_faq_group_anchor" name="txa_faq_group_anchor" value="<?php echo esc_attr($anchor); ?>"
+                class="widefat" placeholder="suppliers">
         </p>
         <p class="description">
             <?php esc_html_e('The post title is the group heading. The anchor slug sets the "#" link target on the FAQs page. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
         </p>
-    <?php
+        <?php
         },
         'txa_faq_group',
         'normal',
@@ -879,7 +885,7 @@ add_action('add_meta_boxes_txa_faq', function (): void {
                 'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
                 'order' => 'ASC',
             ]);
-    ?>
+            ?>
         <p>
             <label for="txa_faq_group_id"><strong><?php esc_html_e('FAQ group', 'tailpress'); ?></strong></label><br>
             <select id="txa_faq_group_id" name="txa_faq_group_id" class="widefat">
@@ -899,7 +905,7 @@ add_action('add_meta_boxes_txa_faq', function (): void {
         <p class="description">
             <?php esc_html_e('The post title is the question shown in the accordion. Create the FAQ Groups first, then publish questions and assign each one to a group. Set the Order in the Page Attributes panel to control the position within the group.', 'tailpress'); ?>
         </p>
-    <?php
+        <?php
         },
         'txa_faq',
         'normal',
@@ -1095,7 +1101,7 @@ add_action('admin_menu', function (): void {
                 <?php submit_button(__('Import placeholder FAQs', 'tailpress'), 'primary', 'submit', false); ?>
             </form>
         </div>
-<?php
+        <?php
         }
     );
 });
@@ -1187,9 +1193,13 @@ add_action('admin_menu', function (): void {
         <div class="wrap">
             <h1><?php esc_html_e('TXA Apply Now pages', 'tailpress'); ?></h1>
             <?php if (isset($_GET['created'], $_GET['prepared'])): ?>
-                <div class="notice notice-success is-dismissible"><p><?php printf(esc_html__('%1$d draft page(s) created. %2$d existing page(s) prepared.', 'tailpress'), (int) $_GET['created'], (int) $_GET['prepared']); ?></p></div>
+                <div class="notice notice-success is-dismissible">
+                    <p><?php printf(esc_html__('%1$d draft page(s) created. %2$d existing page(s) prepared.', 'tailpress'), (int) $_GET['created'], (int) $_GET['prepared']); ?>
+                    </p>
+                </div>
             <?php endif; ?>
-            <p><?php esc_html_e('Create any missing application pages as drafts and assign the shared Apply Now template. Existing page content is preserved. Select a Gravity Form in ACF on each application page before publishing.', 'tailpress'); ?></p>
+            <p><?php esc_html_e('Create any missing application pages as drafts and assign the shared Apply Now template. Existing page content is preserved. Select a Gravity Form in ACF on each application page before publishing.', 'tailpress'); ?>
+            </p>
             <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
                 <input type="hidden" name="action" value="txa_seed_apply_now_pages">
                 <?php wp_nonce_field('txa_seed_apply_now_pages'); ?>
@@ -1236,12 +1246,14 @@ add_action('admin_post_txa_seed_apply_now_pages', function (): void {
 
         update_post_meta($page_id, '_wp_page_template', 'page-apply-now.php');
         if ($step_url && function_exists('update_field')) {
-            update_field('apply_steps', [[
-                'heading' => 'Step 1: Get your Bookeo API key',
-                'copy' => '<p>Log in to your Bookeo account and grant permission for the TXA connection. Bookeo will show you an API key. Copy it for the application form in Step 2.</p>',
-                'button_label' => 'Log in to Bookeo',
-                'button_url' => $step_url,
-            ]], $page_id);
+            update_field('apply_steps', [
+                [
+                    'heading' => 'Step 1: Get your Bookeo API key',
+                    'copy' => '<p>Log in to your Bookeo account and grant permission for the TXA connection. Bookeo will show you an API key. Copy it for the application form in Step 2.</p>',
+                    'button_label' => 'Log in to Bookeo',
+                    'button_url' => $step_url,
+                ]
+            ], $page_id);
         }
         if ($notice && function_exists('update_field')) {
             update_field('apply_notice', '<p>' . esc_html($notice) . '</p>', $page_id);
