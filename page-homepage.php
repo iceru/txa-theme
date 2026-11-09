@@ -37,7 +37,7 @@ if (!function_exists('txa_hero_slides')) {
                 'buttons' => [
                     1 => [
                         'label' => txa_f('hero_primary_label', 'Apply Now'),
-                        'url' => $normalize_url(txa_f('hero_primary_url', '/apply-now/')),
+                        'url' => $normalize_url(txa_f('hero_primary_url', '/apply-now-txa/')),
                         'new_tab' => txa_new_tab('hero_primary_url'),
                     ],
                     2 => [

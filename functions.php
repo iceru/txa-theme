@@ -1166,24 +1166,24 @@ add_filter('home_url', function (string $url, string $path): string {
 function txa_apply_now_page_definitions(): array
 {
     return [
-        ['apply-now', 'Apply Now', 'Choose your booking system or organisation type to view the right TXA application.'],
-        ['distributor-apply-now', 'Become a Distributor', 'Submit your details to apply to become a connected TXA distributor. We will email a confirmation and follow up about your application.'],
-        ['apply-now-for-bookeo', 'Apply for Bookeo', 'Complete both steps to apply for a TXA–Bookeo connection.', 'https://signin.bookeo.com/'],
-        ['apply-now-for-booking-boss', 'Apply for Booking Boss', 'Complete the application form to apply for a TXA–Booking Boss connection.'],
-        ['apply-now-for-custom-linc', 'Apply for CustomLinc', 'Complete the application form to apply for a TXA–CustomLinc connection.'],
-        ['apply-now-for-enta', 'Apply for Enta', 'Complete the application form to apply for a TXA–Enta connection.'],
-        ['apply-now-for-fareharbor', 'Apply for FareHarbor', 'Complete the application form to apply for a TXA–FareHarbor connection.'],
-        ['apply-now-for-myfidelio', 'Apply for Myfidelio', 'Complete the application form to apply for a TXA–Myfidelio connection.'],
-        ['apply-now-for-newbook', 'Apply for Newbook', 'Complete the application form to apply for a TXA–Newbook connection.'],
-        ['apply-now-for-resonline', 'Apply for ResOnline', 'Complete the application form to apply for a TXA–ResOnline connection.'],
-        ['apply-now-for-respax', 'Apply for Respax', 'Complete the application form to apply for a TXA–Respax connection.'],
-        ['apply-now-for-rezdy', 'Apply for Rezdy', 'Complete the application form to apply for a TXA–Rezdy connection.'],
-        ['apply-now-for-rezexpert', 'Apply for RezExpert', 'Complete the application form to apply for a TXA–RezExpert connection.'],
-        ['apply-now-for-rms', 'Apply for RMS', 'Complete the application form to apply for a TXA–RMS connection.'],
-        ['apply-now-for-roommaster', 'Apply for RoomMaster', 'Complete the application form to apply for a TXA–RoomMaster connection.', '', 'RoomMaster needs iQ-Worldlink activated to connect with TXA. Contact InnQuest support if you are unsure whether it is enabled.'],
-        ['apply-now-for-seekomibex', 'Apply for Seekom/iBex', 'Complete the application form to apply for a TXA–Seekom/iBex connection.', '', 'Seekom may contact you for extra information to set up your TXA account. For help, contact Seekom support at support@seekom.com.'],
-        ['apply-now-for-siteminder', 'Apply for SiteMinder', 'Complete the application form to apply for a TXA–SiteMinder connection.'],
-        ['apply-now-for-update-247', 'Apply for Update 247', 'Complete the application form to apply for a TXA–Update 247 connection.'],
+        ['apply-now-txa', 'Apply Now', 'Choose your booking system or organisation type to view the right TXA application.'],
+        ['distributor-apply-now-txa', 'Become a Distributor', 'Submit your details to apply to become a connected TXA distributor. We will email a confirmation and follow up about your application.'],
+        ['apply-now-for-bookeo-txa', 'Apply for Bookeo', 'Complete both steps to apply for a TXA–Bookeo connection.', 'https://signin.bookeo.com/'],
+        ['apply-now-for-booking-boss-txa', 'Apply for Booking Boss', 'Complete the application form to apply for a TXA–Booking Boss connection.'],
+        ['apply-now-for-custom-linc-txa', 'Apply for CustomLinc', 'Complete the application form to apply for a TXA–CustomLinc connection.'],
+        ['apply-now-for-enta-txa', 'Apply for Enta', 'Complete the application form to apply for a TXA–Enta connection.'],
+        ['apply-now-for-fareharbor-txa', 'Apply for FareHarbor', 'Complete the application form to apply for a TXA–FareHarbor connection.'],
+        ['apply-now-for-myfidelio-txa', 'Apply for Myfidelio', 'Complete the application form to apply for a TXA–Myfidelio connection.'],
+        ['apply-now-for-newbook-txa', 'Apply for Newbook', 'Complete the application form to apply for a TXA–Newbook connection.'],
+        ['apply-now-for-resonline-txa', 'Apply for ResOnline', 'Complete the application form to apply for a TXA–ResOnline connection.'],
+        ['apply-now-for-respax-txa', 'Apply for Respax', 'Complete the application form to apply for a TXA–Respax connection.'],
+        ['apply-now-for-rezdy-txa', 'Apply for Rezdy', 'Complete the application form to apply for a TXA–Rezdy connection.'],
+        ['apply-now-for-rezexpert-txa', 'Apply for RezExpert', 'Complete the application form to apply for a TXA–RezExpert connection.'],
+        ['apply-now-for-rms-txa', 'Apply for RMS', 'Complete the application form to apply for a TXA–RMS connection.'],
+        ['apply-now-for-roommaster-txa', 'Apply for RoomMaster', 'Complete the application form to apply for a TXA–RoomMaster connection.', '', 'RoomMaster needs iQ-Worldlink activated to connect with TXA. Contact InnQuest support if you are unsure whether it is enabled.'],
+        ['apply-now-for-seekomibex-txa', 'Apply for Seekom/iBex', 'Complete the application form to apply for a TXA–Seekom/iBex connection.', '', 'Seekom may contact you for extra information to set up your TXA account. For help, contact Seekom support at support@seekom.com.'],
+        ['apply-now-for-siteminder-txa', 'Apply for SiteMinder', 'Complete the application form to apply for a TXA–SiteMinder connection.'],
+        ['apply-now-for-update-247-txa', 'Apply for Update 247', 'Complete the application form to apply for a TXA–Update 247 connection.'],
     ];
 }
 
@@ -1233,7 +1233,7 @@ add_action('admin_post_txa_seed_apply_now_pages', function (): void {
                 'post_title' => $title,
                 'post_name' => $slug,
                 'post_parent' => 0,
-                'post_content' => 'apply-now' === $slug
+                'post_content' => 'apply-now-txa' === $slug
                     ? '<p>Choose your booking system to view the application details and submit your TXA connection request.</p>'
                     : '<p>' . esc_html($copy) . '</p>',
             ], true);
@@ -1244,7 +1244,7 @@ add_action('admin_post_txa_seed_apply_now_pages', function (): void {
             $created++;
         }
 
-        update_post_meta($page_id, '_wp_page_template', 'page-apply-now.php');
+        update_post_meta($page_id, '_wp_page_template', 'page-apply-now-txa.php');
         if ($step_url && function_exists('update_field')) {
             update_field('apply_steps', [
                 [

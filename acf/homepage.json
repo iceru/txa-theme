@@ -9,7 +9,7 @@
       {"key": "field_txa_hero_copy", "label": "Hero Copy", "name": "hero_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online."},
       {"key": "field_txa_hero_image", "label": "Hero Image", "name": "hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
       {"key": "field_txa_hero_primary_label", "label": "Primary Button Label", "name": "hero_primary_label", "type": "text", "placeholder": "Apply Now"},
-      {"key": "field_txa_hero_primary_url", "label": "Primary Button URL", "name": "hero_primary_url", "type": "text", "placeholder": "/apply-now/"},
+      {"key": "field_txa_hero_primary_url", "label": "Primary Button URL", "name": "hero_primary_url", "type": "text", "placeholder": "/apply-now-txa/"},
       {"key":"field_txa_hero_primary_url_new_tab","label":"Open in new tab","name":"hero_primary_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_txa_hero_secondary_label", "label": "Secondary Button Label", "name": "hero_secondary_label", "type": "text", "placeholder": "Request Smart Destination Demo"},
       {"key": "field_txa_hero_secondary_url", "label": "Secondary Button URL", "name": "hero_secondary_url", "type": "text", "placeholder": "/contact/"},

@@ -65,8 +65,8 @@ foreach ($setup_cards as $i => $card) {
                 <p class="mt-5 text-base font-semibold leading-7 sm:mt-6 sm:text-lg sm:leading-[30px]"><?php echo esc_html(txa_f('pricing_hero_copy', 'TXA offers Smart Destination packages that match the scope and scale of your visitor economy. Each package is designed to give your destination access to platform infrastructure, supplier activation support, destination content activation and industry-facing tools without the risk of a custom technology build.')); ?></p>
                 <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                     <a
-                        href="<?php echo esc_url(txa_url('pricing_hero_primary_url', home_url('/apply-now/'))); ?>"
-                        <?php echo txa_target_attr(txa_new_tab('pricing_hero_primary_url'), txa_url('pricing_hero_primary_url', home_url('/apply-now/'))); ?>
+                        href="<?php echo esc_url(txa_url('pricing_hero_primary_url', home_url('/apply-now-txa/'))); ?>"
+                        <?php echo txa_target_attr(txa_new_tab('pricing_hero_primary_url'), txa_url('pricing_hero_primary_url', home_url('/apply-now-txa/'))); ?>
                         class="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand px-6 py-3 text-center text-base font-bold text-white !no-underline sm:w-auto sm:px-8 sm:text-lg"><?php echo esc_html(txa_f('pricing_hero_primary_label', 'Apply Now')); ?></a><a href="<?php echo esc_url(txa_url('pricing_hero_secondary_url', home_url('/contact/'))); ?>"
                         <?php echo txa_target_attr(txa_new_tab('pricing_hero_secondary_url'), txa_url('pricing_hero_secondary_url', home_url('/contact/'))); ?>
                         class="inline-flex min-h-12 w-full items-center justify-center rounded-lg border border-white px-6 py-3 text-center text-base font-bold text-white !no-underline sm:w-auto sm:px-8 sm:text-lg"><?php echo esc_html(txa_f('pricing_hero_secondary_label', 'Request Demo')); ?></a></div>

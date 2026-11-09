@@ -10,7 +10,7 @@
       {"key": "field_sup_hero_image", "label": "Hero Image", "name": "supplier_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
       {"key": "field_sup_hero_image_alt", "label": "Hero Image Alt Text", "name": "supplier_hero_image_alt", "type": "text", "placeholder": "Rottnest Island, Perth"},
       {"key": "field_sup_hero_primary_label", "label": "Primary Button Label", "name": "supplier_hero_primary_label", "type": "text", "placeholder": "Apply Now"},
-      {"key": "field_sup_hero_primary_url", "label": "Primary Button URL", "name": "supplier_hero_primary_url", "type": "text", "placeholder": "/apply-now/"},
+      {"key": "field_sup_hero_primary_url", "label": "Primary Button URL", "name": "supplier_hero_primary_url", "type": "text", "placeholder": "/apply-now-txa/"},
       {"key":"field_sup_hero_primary_url_new_tab","label":"Open in new tab","name":"supplier_hero_primary_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
       {"key": "field_sup_hero_secondary_label", "label": "Secondary Button Label", "name": "supplier_hero_secondary_label", "type": "text", "placeholder": "See connected booking systems"},
       {"key": "field_sup_hero_secondary_url", "label": "Secondary Button URL", "name": "supplier_hero_secondary_url", "type": "text", "placeholder": "/booking-systems"},

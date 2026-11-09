@@ -68,7 +68,7 @@ foreach ($benefits as $i => $benefit) {
                         <?php echo esc_html(txa_f('supplier_hero_copy', 'TXA helps tourism suppliers connect live product, pricing and availability to destination websites, distributors and other online channels without manually allocating to and managing inventory on every site.')); ?>
                     </p>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-                        <?php echo txa_supplier_button(txa_f('supplier_hero_primary_label', 'Apply Now'), txa_url('supplier_hero_primary_url', home_url('/apply-now/')), 'primary', txa_new_tab('supplier_hero_primary_url')); ?>
+                        <?php echo txa_supplier_button(txa_f('supplier_hero_primary_label', 'Apply Now'), txa_url('supplier_hero_primary_url', home_url('/apply-now-txa/')), 'primary', txa_new_tab('supplier_hero_primary_url')); ?>
                         <?php echo txa_supplier_button(txa_f('supplier_hero_secondary_label', 'See connected booking systems'), txa_url('supplier_hero_secondary_url', home_url('/booking-systems')), 'light', txa_new_tab('supplier_hero_secondary_url')); ?>
                     </div>
                 </div>

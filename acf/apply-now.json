@@ -22,7 +22,7 @@
       {"key": "field_apply_form_heading", "label": "Form Heading", "name": "apply_form_heading", "type": "text", "placeholder": "Application Form"},
       {"key": "field_apply_gravity_form_id", "label": "Gravity Form", "name": "txa_gravity_form_id", "type": "select", "choices": {}, "allow_null": 1, "ui": 1, "ajax": 0, "placeholder": "Select a Gravity Form", "instructions": "Choose the Gravity Form used for this application page."}
     ],
-    "location": [[{"param": "page_template", "operator": "==", "value": "page-apply-now.php"}]],
+    "location": [[{"param": "page_template", "operator": "==", "value": "page-apply-now-txa.php"}]],
     "menu_order": 0,
     "position": "normal",
     "style": "default",

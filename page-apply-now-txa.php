@@ -1,42 +1,42 @@
 <?php
 /**
- * Template Name: Apply Now
+ * Template Name: Apply Now TXA
  * @package TailPress
  */
 
 add_filter('pre_get_document_title', static function (string $title): string {
-    return is_page_template('page-apply-now.php')
+    return is_page_template('page-apply-now-txa.php')
         ? (string) txa_f('apply_seo_title', get_the_title() . ' | TXA')
         : $title;
 });
 
 add_action('wp_head', static function (): void {
-    if (is_page_template('page-apply-now.php')) {
+    if (is_page_template('page-apply-now-txa.php')) {
         $description = txa_f('apply_seo_description', 'Apply to connect your business or booking system with Tourism Exchange Australia.');
         echo '<meta name="description" content="' . esc_attr($description) . '">' . "\n";
     }
 });
 
 get_header();
-$is_landing = 'apply-now' === (string) get_post_field('post_name', get_the_ID());
+$is_landing = 'apply-now-txa' === (string) get_post_field('post_name', get_the_ID());
 $providers = [
-    ['Become a Distributor', 'distributor-apply-now'],
-    ['Apply for Bookeo', 'apply-now-for-bookeo'],
-    ['Apply for Booking Boss', 'apply-now-for-booking-boss'],
-    ['Apply for CustomLinc', 'apply-now-for-custom-linc'],
-    ['Apply for Enta', 'apply-now-for-enta'],
-    ['Apply for FareHarbor', 'apply-now-for-fareharbor'],
-    ['Apply for Myfidelio', 'apply-now-for-myfidelio'],
-    ['Apply for Newbook', 'apply-now-for-newbook'],
-    ['Apply for ResOnline', 'apply-now-for-resonline'],
-    ['Apply for Respax', 'apply-now-for-respax'],
-    ['Apply for Rezdy', 'apply-now-for-rezdy'],
-    ['Apply for RezExpert', 'apply-now-for-rezexpert'],
-    ['Apply for RMS', 'apply-now-for-rms'],
-    ['Apply for RoomMaster', 'apply-now-for-roommaster'],
-    ['Apply for Seekom/iBex', 'apply-now-for-seekomibex'],
-    ['Apply for SiteMinder', 'apply-now-for-siteminder'],
-    ['Apply for Update 247', 'apply-now-for-update-247'],
+    ['Become a Distributor', 'distributor-apply-now-txa'],
+    ['Apply for Bookeo', 'apply-now-for-bookeo-txa'],
+    ['Apply for Booking Boss', 'apply-now-for-booking-boss-txa'],
+    ['Apply for CustomLinc', 'apply-now-for-custom-linc-txa'],
+    ['Apply for Enta', 'apply-now-for-enta-txa'],
+    ['Apply for FareHarbor', 'apply-now-for-fareharbor-txa'],
+    ['Apply for Myfidelio', 'apply-now-for-myfidelio-txa'],
+    ['Apply for Newbook', 'apply-now-for-newbook-txa'],
+    ['Apply for ResOnline', 'apply-now-for-resonline-txa'],
+    ['Apply for Respax', 'apply-now-for-respax-txa'],
+    ['Apply for Rezdy', 'apply-now-for-rezdy-txa'],
+    ['Apply for RezExpert', 'apply-now-for-rezexpert-txa'],
+    ['Apply for RMS', 'apply-now-for-rms-txa'],
+    ['Apply for RoomMaster', 'apply-now-for-roommaster-txa'],
+    ['Apply for Seekom/iBex', 'apply-now-for-seekomibex-txa'],
+    ['Apply for SiteMinder', 'apply-now-for-siteminder-txa'],
+    ['Apply for Update 247', 'apply-now-for-update-247-txa'],
 ];
 ?>
 <article class="bg-white text-near-black [font-family:'Source_Sans_Pro',sans-serif]">
@@ -83,17 +83,18 @@ $providers = [
             <div class="mx-auto grid max-w-[1312px] items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] lg:gap-12">
                 <div class="txa-apply-content min-w-0 text-base leading-7 text-mid-gray">
                     <?php the_content(); ?>
-                    <?php if (have_rows('apply_steps')): ?>
+                    <?php $application_steps = function_exists('get_field') ? get_field('apply_steps') : []; ?>
+                    <?php if (is_array($application_steps) && !empty($application_steps)): ?>
                         <div class="mt-8 space-y-6">
-                            <?php while (have_rows('apply_steps')): the_row(); ?>
+                            <?php foreach ($application_steps as $step): ?>
                                 <section class="rounded-2xl border border-line bg-surface p-5 sm:p-6">
-                                    <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-bold text-[#151c27] sm:text-2xl"><?php echo esc_html((string) get_sub_field('heading')); ?></h2>
-                                    <div class="mt-3"><?php echo wp_kses_post((string) get_sub_field('copy')); ?></div>
-                                    <?php if ($url = get_sub_field('button_url')): ?>
-                                        <a href="<?php echo esc_url($url); ?>"<?php echo txa_target_attr(true, $url); ?> class="mt-5 inline-flex min-h-11 items-center justify-center rounded-lg bg-brand px-5 py-3 font-bold text-white !no-underline hover:bg-brand-dark"><?php echo esc_html((string) (get_sub_field('button_label') ?: 'Continue')); ?></a>
+                                    <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-xl font-bold text-[#151c27] sm:text-2xl"><?php echo esc_html((string) ($step['heading'] ?? '')); ?></h2>
+                                    <div class="mt-3"><?php echo wp_kses_post((string) ($step['copy'] ?? '')); ?></div>
+                                    <?php if (!empty($step['button_url'])): ?>
+                                        <a href="<?php echo esc_url($step['button_url']); ?>"<?php echo txa_target_attr(true, $step['button_url']); ?> class="mt-5 inline-flex min-h-11 items-center justify-center rounded-lg bg-brand px-5 py-3 font-bold text-white !no-underline hover:bg-brand-dark"><?php echo esc_html((string) (!empty($step['button_label']) ? $step['button_label'] : 'Continue')); ?></a>
                                     <?php endif; ?>
                                 </section>
-                            <?php endwhile; ?>
+                            <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
                     <?php if ($notice = txa_f('apply_notice', '')): ?>

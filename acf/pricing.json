@@ -14,7 +14,7 @@
         "label": "Hero Apply Button URL",
         "name": "pricing_hero_apply_url",
         "type": "text",
-        "placeholder": "/apply-now/"
+        "placeholder": "/apply-now-txa/"
       },
       {
         "key": "field_txa_pricing_hero_demo_url",
@@ -575,7 +575,7 @@
         "label": "Supplier Section Apply Button URL",
         "name": "pricing_supplier_apply_url",
         "type": "text",
-        "placeholder": "/apply-now/"
+        "placeholder": "/apply-now-txa/"
       },
       {
         "key": "field_txa_pricing_fee_label",

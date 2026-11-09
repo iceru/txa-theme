@@ -8,7 +8,7 @@
 
 get_header();
 
-$hero_apply_url = txa_url('pricing_hero_apply_url', '/apply-now/');
+$hero_apply_url = txa_url('pricing_hero_apply_url', '/apply-now-txa/');
 $hero_demo_url = txa_url('pricing_hero_demo_url', '/contact/');
 $supplier_url = txa_url('pricing_path_1_url', '/suppliers/');
 $destination_url = txa_url('pricing_path_2_url', '/destinations/pricing/');

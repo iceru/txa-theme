@@ -87,19 +87,19 @@ if (!function_exists('txa_primary_menu_fallback')) {
             <li class="relative lg:mx-4">
                 <details class="group relative">
                     <summary
-                        class="<?php echo esc_attr(txa_header_link_class('/apply-now/', true, 'flex cursor-pointer list-none items-center gap-1 py-1')); ?>">
+                        class="<?php echo esc_attr(txa_header_link_class('/apply-now-txa/', true, 'flex cursor-pointer list-none items-center gap-1 py-1')); ?>">
                         Apply Now <i class="bi bi-chevron-down text-sm leading-none" aria-hidden="true"></i>
                     </summary>
                     <ul
                         class="mt-3 space-y-2 border-l border-line pl-4 lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:min-w-[260px] lg:rounded-xl lg:border lg:bg-white lg:p-2 lg:pl-2 lg:shadow-xl">
-                        <li><a href="<?php echo esc_url(home_url('/apply-now/')); ?>"
+                        <li><a href="<?php echo esc_url(home_url('/apply-now-txa/')); ?>"
                                 class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5">All
                                 Applications</a></li>
                         <?php foreach (txa_apply_now_page_definitions() as [$apply_slug, $apply_title]): ?>
-                            <?php if ('apply-now' === $apply_slug)
+                            <?php if ('apply-now-txa' === $apply_slug)
                                 continue; ?>
                             <li><a href="<?php echo esc_url(home_url('/' . $apply_slug . '/')); ?>"
-                                    class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5"><?php echo esc_html('distributor-apply-now' === $apply_slug ? 'Become a Distributor' : str_replace('Apply for ', 'Apply Now for ', $apply_title)); ?></a>
+                                    class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5"><?php echo esc_html('distributor-apply-now-txa' === $apply_slug ? 'Become a Distributor' : str_replace('Apply for ', 'Apply Now for ', $apply_title)); ?></a>
                             </li>
                         <?php endforeach; ?>
                         <li><a href="https://www.rezobx.com/" target="_blank" rel="noopener noreferrer"
