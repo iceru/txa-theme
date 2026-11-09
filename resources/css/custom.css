@@ -182,6 +182,83 @@
   }
 }
 
+.txa-apply-copy {
+  :where(p, div, span) {
+    margin: 0;
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :where(p + p) {
+    margin-top: 1rem;
+  }
+
+  :where(a) {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.txa-contact-form {
+  :where(.gform_heading, .gform_description) {
+    display: none;
+  }
+
+  :where(fieldset, .gfield, .ginput_complex, .ginput_container) {
+    min-width: 0;
+    border: 0;
+    padding: 0;
+  }
+
+  :where(.gsection) {
+    margin-top: 0.75rem;
+    border: 0;
+    border-bottom: 1px solid var(--color-line);
+    padding: 0 0 0.75rem;
+  }
+
+  :where(.gsection_title) {
+    margin: 0;
+    color: var(--color-brand);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  :where(.gfield_required) {
+    color: var(--color-brand);
+  }
+
+  :where(.ginput_complex) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  :where(.ginput_complex > span) {
+    min-width: 0;
+  }
+
+  :where(.gform_footer) {
+    margin-top: 0.5rem;
+    padding: 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .txa-contact-form {
+    :where(.ginput_complex) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
+
 @media (min-width: 782px) {
   .txa-contact-form {
     :where(.gform_fields) {
