@@ -1,0 +1,33 @@
+[
+  {
+    "key": "group_txa_apply_now",
+    "title": "TXA Application Page",
+    "fields": [
+      {"key": "field_apply_tab_seo", "label": "SEO", "type": "tab", "placement": "top"},
+      {"key": "field_apply_seo_title", "label": "Browser Title", "name": "apply_seo_title", "type": "text", "placeholder": "Apply to connect with TXA"},
+      {"key": "field_apply_seo_description", "label": "Meta Description", "name": "apply_seo_description", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Apply to connect your business or booking system with Tourism Exchange Australia."},
+
+      {"key": "field_apply_tab_content", "label": "Page Content", "type": "tab", "placement": "top"},
+      {"key": "field_apply_hero_label", "label": "Hero Label", "name": "apply_hero_label", "type": "text", "placeholder": "TXA APPLICATION"},
+      {"key": "field_apply_intro", "label": "Introduction", "name": "apply_intro", "type": "wysiwyg", "tabs": "visual", "toolbar": "basic", "media_upload": 0, "instructions": "Introductory copy shown below the page title."},
+      {"key": "field_apply_steps", "label": "Application Steps", "name": "apply_steps", "type": "repeater", "layout": "block", "button_label": "Add Step", "sub_fields": [
+        {"key": "field_apply_step_heading", "label": "Heading", "name": "heading", "type": "text"},
+        {"key": "field_apply_step_copy", "label": "Instructions", "name": "copy", "type": "wysiwyg", "tabs": "visual", "toolbar": "basic", "media_upload": 0},
+        {"key": "field_apply_step_button_label", "label": "Button Label", "name": "button_label", "type": "text"},
+        {"key": "field_apply_step_button_url", "label": "Button URL", "name": "button_url", "type": "url"}
+      ]},
+      {"key": "field_apply_notice", "label": "Important Notice", "name": "apply_notice", "type": "wysiwyg", "tabs": "visual", "toolbar": "basic", "media_upload": 0},
+
+      {"key": "field_apply_tab_form", "label": "Gravity Form", "type": "tab", "placement": "top"},
+      {"key": "field_apply_form_heading", "label": "Form Heading", "name": "apply_form_heading", "type": "text", "placeholder": "Application Form"},
+      {"key": "field_apply_gravity_form_id", "label": "Gravity Form", "name": "txa_gravity_form_id", "type": "select", "choices": {}, "allow_null": 1, "ui": 1, "ajax": 0, "placeholder": "Select a Gravity Form", "instructions": "Choose the Gravity Form used for this application page."}
+    ],
+    "location": [[{"param": "page_template", "operator": "==", "value": "page-apply-now.php"}]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

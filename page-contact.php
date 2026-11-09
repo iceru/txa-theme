@@ -13,10 +13,9 @@ add_action('wp_head', function (): void {
 if (!function_exists('txa_contact_form_markup')) {
     function txa_contact_form_markup(): string
     {
-        if (!shortcode_exists('contact-form-7'))
-            return '<p class="text-sm leading-6 text-mid-gray">Contact Form 7 is required to display the enquiry form.</p>';
-        $forms = get_posts(['post_type' => 'wpcf7_contact_form', 'post_status' => 'publish', 'numberposts' => 1, 'orderby' => 'date', 'order' => 'ASC']);
-        return !empty($forms) ? do_shortcode(sprintf('[contact-form-7 id="%d" title="%s"]', (int) $forms[0]->ID, esc_attr($forms[0]->post_title))) : do_shortcode('[contact-form-7 title="Contact form 1"]');
+        return function_exists('txa_gravity_form_markup')
+            ? txa_gravity_form_markup()
+            : '<p class="text-sm leading-6 text-mid-gray">Gravity Forms is required to display the enquiry form.</p>';
     }
 }
 get_header();

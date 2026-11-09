@@ -83,7 +83,12 @@
 }
 
 .txa-contact-form {
-  :where(.wpcf7-form) {
+  :where(.gform_wrapper form) {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  :where(.gform_fields) {
     display: grid;
     gap: 1.5rem;
   }
@@ -126,11 +131,7 @@
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand) 16%, transparent);
   }
 
-  :where(.wpcf7-list-item) {
-    margin: 0;
-  }
-
-  :where(.wpcf7-list-item label) {
+  :where(.gfield_checkbox label, .gfield_radio label) {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
@@ -138,14 +139,14 @@
     font-weight: 500;
   }
 
-  :where(input[type='checkbox']) {
+  :where(input[type='checkbox'], input[type='radio']) {
     margin-top: 0.2rem;
     width: 1rem;
     height: 1rem;
     accent-color: var(--color-brand);
   }
 
-  :where(input[type='submit']) {
+  :where(input[type='submit'], button[type='submit']) {
     width: 100%;
     border: 0;
     border-radius: 0.375rem;
@@ -158,33 +159,23 @@
     transition: background-color 160ms ease;
   }
 
-  :where(input[type='submit']:hover) {
+  :where(input[type='submit']:hover, button[type='submit']:hover) {
     background: var(--color-brand-dark);
   }
 
-  :where(.wpcf7-not-valid-tip, .wpcf7-response-output) {
+  :where(.gfield_validation_message, .gform_validation_errors, .gform_confirmation_message) {
     font-size: 0.875rem;
   }
 }
 
 @media (min-width: 782px) {
   .txa-contact-form {
-    :where(.wpcf7-form) {
+    :where(.gform_fields) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    :where(.wpcf7-form > p:nth-of-type(n + 7), .wpcf7-form > .wpcf7-response-output, .wpcf7-form > .wpcf7-spinner) {
+    :where(.gfield--width-full, .gfield--type-textarea, .gform_validation_errors, .gform_footer) {
       grid-column: 1 / -1;
-    }
-
-    :where(.wpcf7-form > p:has(input[name='your-subject']), .wpcf7-form > p:has(textarea)) {
-      grid-column: 1 / -1;
-    }
-
-    :where(.txa-form-grid) {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }

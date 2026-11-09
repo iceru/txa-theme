@@ -16,6 +16,7 @@
 
       {"key": "field_con_tab_form", "label": "Enquiry Form", "type": "tab", "placement": "top"},
       {"key": "field_con_form_heading", "label": "Form Heading", "name": "contact_form_heading", "type": "text", "placeholder": "Send an Enquiry"},
+      {"key": "field_con_gravity_form_id", "label": "Gravity Form", "name": "txa_gravity_form_id", "type": "select", "choices": {}, "allow_null": 1, "ui": 1, "ajax": 0, "placeholder": "Select a Gravity Form"},
 
       {"key": "field_con_tab_pathways", "label": "Pathway Guidance", "type": "tab", "placement": "top"},
       {"key": "field_con_pathways_heading", "label": "Heading", "name": "contact_pathways_heading", "type": "text", "placeholder": "Pathway Guidance"},

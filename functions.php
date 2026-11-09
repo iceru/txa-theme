@@ -57,6 +57,31 @@ add_filter('acf/settings/load_json', function (array $paths): array {
     return $paths;
 });
 
+/** Populate ACF Gravity Forms selectors from the forms configured in WordPress. */
+add_filter('acf/load_field/name=txa_gravity_form_id', function (array $field): array {
+    $field['choices'] = ['' => 'Select a Gravity Form'];
+    if (class_exists('GFAPI')) {
+        foreach (GFAPI::get_forms() as $form) {
+            if (!empty($form['id']) && !empty($form['title'])) {
+                $field['choices'][(string) $form['id']] = $form['title'];
+            }
+        }
+    }
+    return $field;
+});
+
+if (!function_exists('txa_gravity_form_markup')) {
+    function txa_gravity_form_markup(string $field_name = 'txa_gravity_form_id'): string
+    {
+        $form_id = function_exists('get_field') ? (int) get_field($field_name) : 0;
+        if ($form_id > 0 && shortcode_exists('gravityform')) {
+            return do_shortcode(sprintf('[gravityform id="%d" title="false" description="false" ajax="true"]', $form_id));
+        }
+
+        return '<p class="text-sm leading-6 text-mid-gray">Select a Gravity Form for this page in its page settings.</p>';
+    }
+}
+
 /**
  * Register the "Open in new tab" toggles for the Home Sliders CPT. The rest of
  * the slider fields are managed through ACF, so the toggles are attached to
@@ -1101,7 +1126,6 @@ add_action('wp_enqueue_scripts', function () {
  */
 add_filter('home_url', function (string $url, string $path): string {
     $placeholder_paths = [
-        '/apply-now/',
         '/destinations/contact/',
         '/distributors/apply/',
         '/booking-systems/partner-enquiry/',
@@ -1112,6 +1136,109 @@ add_filter('home_url', function (string $url, string $path): string {
 
     return in_array($normalized_path, $placeholder_paths, true) ? '#' : $url;
 }, 10, 2);
+
+/**
+ * Create the Apply Now landing page and application page drafts. Each child
+ * page uses the shared template; editors select its Gravity Form in ACF.
+ */
+function txa_apply_now_page_definitions(): array
+{
+    return [
+        ['apply-now', 'Apply Now', 'Choose your booking system or organisation type to view the right TXA application.'],
+        ['distributor-apply-now', 'Become a Distributor', 'Submit your details to apply to become a connected TXA distributor. We will email a confirmation and follow up about your application.'],
+        ['apply-now-for-bookeo', 'Apply for Bookeo', 'Complete both steps to apply for a TXA–Bookeo connection.', 'https://signin.bookeo.com/'],
+        ['apply-now-for-booking-boss', 'Apply for Booking Boss', 'Complete the application form to apply for a TXA–Booking Boss connection.'],
+        ['apply-now-for-custom-linc', 'Apply for CustomLinc', 'Complete the application form to apply for a TXA–CustomLinc connection.'],
+        ['apply-now-for-enta', 'Apply for Enta', 'Complete the application form to apply for a TXA–Enta connection.'],
+        ['apply-now-for-fareharbor', 'Apply for FareHarbor', 'Complete the application form to apply for a TXA–FareHarbor connection.'],
+        ['apply-now-for-myfidelio', 'Apply for Myfidelio', 'Complete the application form to apply for a TXA–Myfidelio connection.'],
+        ['apply-now-for-newbook', 'Apply for Newbook', 'Complete the application form to apply for a TXA–Newbook connection.'],
+        ['apply-now-for-resonline', 'Apply for ResOnline', 'Complete the application form to apply for a TXA–ResOnline connection.'],
+        ['apply-now-for-respax', 'Apply for Respax', 'Complete the application form to apply for a TXA–Respax connection.'],
+        ['apply-now-for-rezdy', 'Apply for Rezdy', 'Complete the application form to apply for a TXA–Rezdy connection.'],
+        ['apply-now-for-rezexpert', 'Apply for RezExpert', 'Complete the application form to apply for a TXA–RezExpert connection.'],
+        ['apply-now-for-rms', 'Apply for RMS', 'Complete the application form to apply for a TXA–RMS connection.'],
+        ['apply-now-for-roommaster', 'Apply for RoomMaster', 'Complete the application form to apply for a TXA–RoomMaster connection.', '', 'RoomMaster needs iQ-Worldlink activated to connect with TXA. Contact InnQuest support if you are unsure whether it is enabled.'],
+        ['apply-now-for-seekomibex', 'Apply for Seekom/iBex', 'Complete the application form to apply for a TXA–Seekom/iBex connection.', '', 'Seekom may contact you for extra information to set up your TXA account. For help, contact Seekom support at support@seekom.com.'],
+        ['apply-now-for-siteminder', 'Apply for SiteMinder', 'Complete the application form to apply for a TXA–SiteMinder connection.'],
+        ['apply-now-for-update-247', 'Apply for Update 247', 'Complete the application form to apply for a TXA–Update 247 connection.'],
+    ];
+}
+
+add_action('admin_menu', function (): void {
+    add_management_page('TXA Apply Now Pages', 'TXA Apply Now Pages', 'manage_options', 'txa-apply-now-pages', function (): void {
+        ?>
+        <div class="wrap">
+            <h1><?php esc_html_e('TXA Apply Now pages', 'tailpress'); ?></h1>
+            <?php if (isset($_GET['created'], $_GET['prepared'])): ?>
+                <div class="notice notice-success is-dismissible"><p><?php printf(esc_html__('%1$d draft page(s) created. %2$d existing page(s) prepared.', 'tailpress'), (int) $_GET['created'], (int) $_GET['prepared']); ?></p></div>
+            <?php endif; ?>
+            <p><?php esc_html_e('Create any missing application pages as drafts and assign the shared Apply Now template. Existing page content is preserved. Select a Gravity Form in ACF on each application page before publishing.', 'tailpress'); ?></p>
+            <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+                <input type="hidden" name="action" value="txa_seed_apply_now_pages">
+                <?php wp_nonce_field('txa_seed_apply_now_pages'); ?>
+                <?php submit_button(__('Create or prepare Apply Now pages', 'tailpress'), 'primary', 'submit', false); ?>
+            </form>
+        </div>
+        <?php
+    });
+});
+
+add_action('admin_post_txa_seed_apply_now_pages', function (): void {
+    if (!current_user_can('manage_options')) {
+        wp_die(__('You are not allowed to create these pages.', 'tailpress'));
+    }
+    check_admin_referer('txa_seed_apply_now_pages');
+
+    $created = 0;
+    $prepared = 0;
+    foreach (txa_apply_now_page_definitions() as $definition) {
+        [$slug, $title, $copy] = $definition;
+        $step_url = $definition[3] ?? '';
+        $notice = $definition[4] ?? '';
+        $existing = get_page_by_path($slug, OBJECT, 'page');
+        if ($existing) {
+            $page_id = (int) $existing->ID;
+            $prepared++;
+        } else {
+            $page_id = wp_insert_post([
+                'post_type' => 'page',
+                'post_status' => 'draft',
+                'post_title' => $title,
+                'post_name' => $slug,
+                'post_parent' => 0,
+                'post_content' => 'apply-now' === $slug
+                    ? '<p>Choose your booking system to view the application details and submit your TXA connection request.</p>'
+                    : '<p>' . esc_html($copy) . '</p>',
+            ], true);
+            if (is_wp_error($page_id)) {
+                continue;
+            }
+            $page_id = (int) $page_id;
+            $created++;
+        }
+
+        update_post_meta($page_id, '_wp_page_template', 'page-apply-now.php');
+        if ($step_url && function_exists('update_field')) {
+            update_field('apply_steps', [[
+                'heading' => 'Step 1: Get your Bookeo API key',
+                'copy' => '<p>Log in to your Bookeo account and grant permission for the TXA connection. Bookeo will show you an API key. Copy it for the application form in Step 2.</p>',
+                'button_label' => 'Log in to Bookeo',
+                'button_url' => $step_url,
+            ]], $page_id);
+        }
+        if ($notice && function_exists('update_field')) {
+            update_field('apply_notice', '<p>' . esc_html($notice) . '</p>', $page_id);
+        }
+    }
+
+    wp_safe_redirect(add_query_arg([
+        'page' => 'txa-apply-now-pages',
+        'created' => $created,
+        'prepared' => $prepared,
+    ], admin_url('tools.php')));
+    exit;
+});
 
 /**
  * Keep the public blog archive available if the WordPress Blog page is missing
