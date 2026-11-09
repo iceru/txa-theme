@@ -40,7 +40,7 @@ if (!function_exists('txa_primary_menu_fallback')) {
     {
         $destination_items = [
             ['Overview', '/destinations/'],
-            ['Destination Pricing', '/destinations/pricing/'],
+            ['Destination Pricing', '/destinations/destination-pricing/'],
             ['POI and Experiences', '/destinations/poi-experiences/'],
             ['Trade Portal', '/destinations/trade-portal/'],
             ['Microsite Campaigns', '/destinations/microsite-campaigns/'],
@@ -48,63 +48,70 @@ if (!function_exists('txa_primary_menu_fallback')) {
             ['Virtual Concierge', '/destinations/virtual-concierge/'],
         ];
         ?>
-                                <ul class="space-y-5 lg:flex lg:items-center lg:space-y-0 lg:-mx-4">
-                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/suppliers/')); ?>"
-                                            class="<?php echo esc_attr(txa_header_link_class('/suppliers/', false, 'block py-1')); ?>">Suppliers</a>
-                                    </li>
-                                    <li class="relative lg:mx-4">
-                                        <button type="button"
-                                            class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex w-full items-center justify-between gap-1 rounded py-1 lg:w-auto lg:justify-start')); ?>"
-                                            aria-expanded="false" aria-haspopup="true" aria-controls="destinations-submenu"
-                                            data-destinations-toggle>
-                                            <span>Destinations</span>
-                                            <i class="bi bi-chevron-down ml-0.5 text-sm leading-none transition"
-                                                aria-hidden="true"></i>
-                                        </button>
-                                        <ul id="destinations-submenu"
-                                            class="hidden mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:block lg:min-w-[240px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition"
-                                            data-destinations-submenu>
-                                            <?php foreach ($destination_items as $destination_item): ?>
-                                                <li><a href="<?php echo esc_url(home_url($destination_item[1])); ?>"
-                                                        class="<?php echo esc_attr(txa_header_link_class($destination_item[1], false, 'block rounded-lg py-1 lg:px-3 lg:py-2.5 lg:hover:bg-surface')); ?>"><?php echo esc_html($destination_item[0]); ?></a>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </li>
-                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/distributors/')); ?>"
-                                            class="<?php echo esc_attr(txa_header_link_class('/distributors/', false, 'block py-1')); ?>">Distributors</a>
-                                    </li>
-                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/booking-systems/')); ?>"
-                                            class="<?php echo esc_attr(txa_header_link_class('/booking-systems/', true, 'block py-1')); ?>">Booking
-                                            Systems</a></li>
-                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/pricing/')); ?>"
-                                            class="<?php echo esc_attr(txa_header_link_class('/pricing/', false, 'block py-1')); ?>">Pricing</a>
-                                    </li>
-                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/about/')); ?>"
-                                            class="<?php echo esc_attr(txa_header_link_class('/about/', false, 'block py-1')); ?>">About</a>
-                                    </li>
-                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                                            class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>
-                                    </li>
-                                    <li class="relative lg:mx-4">
-                                        <details class="group relative">
-                                            <summary class="<?php echo esc_attr(txa_header_link_class('/apply-now/', true, 'flex cursor-pointer list-none items-center gap-1 py-1')); ?>">
-                                                Apply Now <i class="bi bi-chevron-down text-sm leading-none" aria-hidden="true"></i>
-                                            </summary>
-                                            <ul class="mt-3 space-y-2 border-l border-line pl-4 lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:min-w-[260px] lg:rounded-xl lg:border lg:bg-white lg:p-2 lg:pl-2 lg:shadow-xl">
-                                                <li><a href="<?php echo esc_url(home_url('/apply-now/')); ?>" class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5">All Applications</a></li>
-                                                <?php foreach (txa_apply_now_page_definitions() as [$apply_slug, $apply_title]): ?>
-                                                    <?php if ('apply-now' === $apply_slug) continue; ?>
-                                                    <li><a href="<?php echo esc_url(home_url('/' . $apply_slug . '/')); ?>" class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5"><?php echo esc_html('distributor-apply-now' === $apply_slug ? 'Become a Distributor' : str_replace('Apply for ', 'Apply Now for ', $apply_title)); ?></a></li>
-                                                <?php endforeach; ?>
-                                                <li><a href="https://www.rezobx.com/" target="_blank" rel="noopener noreferrer" class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5">Apply Now for Rezobx ↗</a></li>
-                                            </ul>
-                                        </details>
-                                    </li>
-                                    <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/blog/')); ?>"
-                                            class="<?php echo esc_attr(txa_header_link_class('/blog/', false, 'block py-1')); ?>">Blog</a>
-                                    </li>
-                                </ul>
+        <ul class="space-y-5 lg:flex lg:items-center lg:space-y-0 lg:-mx-4">
+            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/suppliers/')); ?>"
+                    class="<?php echo esc_attr(txa_header_link_class('/suppliers/', false, 'block py-1')); ?>">Suppliers</a>
+            </li>
+            <li class="relative lg:mx-4">
+                <button type="button"
+                    class="<?php echo esc_attr(txa_header_link_class('/destinations/', true, 'inline-flex w-full items-center justify-between gap-1 rounded py-1 lg:w-auto lg:justify-start')); ?>"
+                    aria-expanded="false" aria-haspopup="true" aria-controls="destinations-submenu" data-destinations-toggle>
+                    <span>Destinations</span>
+                    <i class="bi bi-chevron-down ml-0.5 text-sm leading-none transition" aria-hidden="true"></i>
+                </button>
+                <ul id="destinations-submenu"
+                    class="hidden mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:block lg:min-w-[240px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition"
+                    data-destinations-submenu>
+                    <?php foreach ($destination_items as $destination_item): ?>
+                        <li><a href="<?php echo esc_url(home_url($destination_item[1])); ?>"
+                                class="<?php echo esc_attr(txa_header_link_class($destination_item[1], false, 'block rounded-lg py-1 lg:px-3 lg:py-2.5 lg:hover:bg-surface')); ?>"><?php echo esc_html($destination_item[0]); ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </li>
+            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/distributors/')); ?>"
+                    class="<?php echo esc_attr(txa_header_link_class('/distributors/', false, 'block py-1')); ?>">Distributors</a>
+            </li>
+            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/booking-systems/')); ?>"
+                    class="<?php echo esc_attr(txa_header_link_class('/booking-systems/', true, 'block py-1')); ?>">Booking
+                    Systems</a></li>
+            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/pricing/')); ?>"
+                    class="<?php echo esc_attr(txa_header_link_class('/pricing/', false, 'block py-1')); ?>">Pricing</a>
+            </li>
+            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/about/')); ?>"
+                    class="<?php echo esc_attr(txa_header_link_class('/about/', false, 'block py-1')); ?>">About</a>
+            </li>
+            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/contact/')); ?>"
+                    class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>
+            </li>
+            <li class="relative lg:mx-4">
+                <details class="group relative">
+                    <summary
+                        class="<?php echo esc_attr(txa_header_link_class('/apply-now/', true, 'flex cursor-pointer list-none items-center gap-1 py-1')); ?>">
+                        Apply Now <i class="bi bi-chevron-down text-sm leading-none" aria-hidden="true"></i>
+                    </summary>
+                    <ul
+                        class="mt-3 space-y-2 border-l border-line pl-4 lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:min-w-[260px] lg:rounded-xl lg:border lg:bg-white lg:p-2 lg:pl-2 lg:shadow-xl">
+                        <li><a href="<?php echo esc_url(home_url('/apply-now/')); ?>"
+                                class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5">All
+                                Applications</a></li>
+                        <?php foreach (txa_apply_now_page_definitions() as [$apply_slug, $apply_title]): ?>
+                            <?php if ('apply-now' === $apply_slug)
+                                continue; ?>
+                            <li><a href="<?php echo esc_url(home_url('/' . $apply_slug . '/')); ?>"
+                                    class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5"><?php echo esc_html('distributor-apply-now' === $apply_slug ? 'Become a Distributor' : str_replace('Apply for ', 'Apply Now for ', $apply_title)); ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                        <li><a href="https://www.rezobx.com/" target="_blank" rel="noopener noreferrer"
+                                class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5">Apply
+                                Now for Rezobx ↗</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/blog/')); ?>"
+                    class="<?php echo esc_attr(txa_header_link_class('/blog/', false, 'block py-1')); ?>">Blog</a>
+            </li>
+        </ul>
         <?php
     }
 }
