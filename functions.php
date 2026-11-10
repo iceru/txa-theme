@@ -144,11 +144,13 @@ add_filter('acf/load_field_group', function (array $group): array {
         return $group;
     }
 
-    foreach ([
-        'field_txa_slider_button_1_new_tab',
-        'field_txa_slider_button_2_new_tab',
-        'field_txa_slider_url_new_tab',
-    ] as $field_key) {
+    foreach (
+        [
+            'field_txa_slider_button_1_new_tab',
+            'field_txa_slider_button_2_new_tab',
+            'field_txa_slider_url_new_tab',
+        ] as $field_key
+    ) {
         $existing_keys = array_column(is_array($group['fields'] ?? null) ? $group['fields'] : [], 'key');
         if (in_array($field_key, $existing_keys, true)) {
             continue;
@@ -194,7 +196,6 @@ if (!function_exists('txa_footer_menu_defaults')) {
             ],
         ];
     }
-
 }
 
 if (!function_exists('txa_footer_menu_fallback')) {
@@ -583,7 +584,7 @@ add_action('add_meta_boxes_txa_timeline', function (): void {
             wp_nonce_field('txa_timeline_details', 'txa_timeline_nonce');
             $year = get_post_meta($post->ID, '_txa_timeline_year', true);
             $copy = get_post_meta($post->ID, '_txa_timeline_copy', true);
-            ?>
+?>
         <p>
             <label for="txa_timeline_year"><strong><?php esc_html_e('Year or period', 'tailpress'); ?></strong></label><br>
             <input type="text" id="txa_timeline_year" name="txa_timeline_year" value="<?php echo esc_attr($year); ?>"
@@ -597,7 +598,7 @@ add_action('add_meta_boxes_txa_timeline', function (): void {
         <p class="description">
             <?php esc_html_e('Use the Featured image panel for the timeline icon. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
         </p>
-        <?php
+    <?php
         }
     );
 });
@@ -821,7 +822,7 @@ add_action('add_meta_boxes_txa_faq_group', function (): void {
             $intro = get_post_meta($post->ID, '_txa_faq_group_intro', true);
             $icon = get_post_meta($post->ID, '_txa_faq_group_icon', true);
             $anchor = get_post_meta($post->ID, '_txa_faq_group_anchor', true);
-            ?>
+    ?>
         <p>
             <label for="txa_faq_group_eyebrow"><strong><?php esc_html_e('Eyebrow label', 'tailpress'); ?></strong></label><br>
             <input type="text" id="txa_faq_group_eyebrow" name="txa_faq_group_eyebrow" value="<?php echo esc_attr($eyebrow); ?>"
@@ -846,7 +847,7 @@ add_action('add_meta_boxes_txa_faq_group', function (): void {
         <p class="description">
             <?php esc_html_e('The post title is the group heading. The anchor slug sets the "#" link target on the FAQs page. Set the Order in the Page Attributes panel to control display position.', 'tailpress'); ?>
         </p>
-        <?php
+    <?php
         },
         'txa_faq_group',
         'normal',
@@ -885,7 +886,7 @@ add_action('add_meta_boxes_txa_faq', function (): void {
                 'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC', 'ID' => 'ASC'],
                 'order' => 'ASC',
             ]);
-            ?>
+    ?>
         <p>
             <label for="txa_faq_group_id"><strong><?php esc_html_e('FAQ group', 'tailpress'); ?></strong></label><br>
             <select id="txa_faq_group_id" name="txa_faq_group_id" class="widefat">
@@ -905,7 +906,7 @@ add_action('add_meta_boxes_txa_faq', function (): void {
         <p class="description">
             <?php esc_html_e('The post title is the question shown in the accordion. Create the FAQ Groups first, then publish questions and assign each one to a group. Set the Order in the Page Attributes panel to control the position within the group.', 'tailpress'); ?>
         </p>
-        <?php
+    <?php
         },
         'txa_faq',
         'normal',
@@ -1101,7 +1102,7 @@ add_action('admin_menu', function (): void {
                 <?php submit_button(__('Import placeholder FAQs', 'tailpress'), 'primary', 'submit', false); ?>
             </form>
         </div>
-        <?php
+    <?php
         }
     );
 });
@@ -1168,28 +1169,28 @@ function txa_apply_now_page_definitions(): array
     return [
         ['apply-now-txa', 'Apply Now', 'Choose your booking system or organisation type to view the right TXA application.'],
         ['distributor-apply-now-txa', 'Become a Distributor', 'Submit your details to apply to become a connected TXA distributor. We will email a confirmation and follow up about your application.'],
-        ['apply-now-for-bookeo-txa', 'Apply for Bookeo', 'Complete both steps to apply for a TXA–Bookeo connection.', 'https://signin.bookeo.com/'],
-        ['apply-now-for-booking-boss-txa', 'Apply for Booking Boss', 'Complete the application form to apply for a TXA–Booking Boss connection.'],
-        ['apply-now-for-custom-linc-txa', 'Apply for CustomLinc', 'Complete the application form to apply for a TXA–CustomLinc connection.'],
-        ['apply-now-for-enta-txa', 'Apply for Enta', 'Complete the application form to apply for a TXA–Enta connection.'],
+        // ['apply-now-for-bookeo-txa', 'Apply for Bookeo', 'Complete both steps to apply for a TXA–Bookeo connection.', 'https://signin.bookeo.com/'],
+        // ['apply-now-for-booking-boss-txa', 'Apply for Booking Boss', 'Complete the application form to apply for a TXA–Booking Boss connection.'],
+        // ['apply-now-for-custom-linc-txa', 'Apply for CustomLinc', 'Complete the application form to apply for a TXA–CustomLinc connection.'],
+        // ['apply-now-for-enta-txa', 'Apply for Enta', 'Complete the application form to apply for a TXA–Enta connection.'],
         ['apply-now-for-fareharbor-txa', 'Apply for FareHarbor', 'Complete the application form to apply for a TXA–FareHarbor connection.'],
-        ['apply-now-for-myfidelio-txa', 'Apply for Myfidelio', 'Complete the application form to apply for a TXA–Myfidelio connection.'],
+        // ['apply-now-for-myfidelio-txa', 'Apply for Myfidelio', 'Complete the application form to apply for a TXA–Myfidelio connection.'],
         ['apply-now-for-newbook-txa', 'Apply for Newbook', 'Complete the application form to apply for a TXA–Newbook connection.'],
-        ['apply-now-for-resonline-txa', 'Apply for ResOnline', 'Complete the application form to apply for a TXA–ResOnline connection.'],
+        // ['apply-now-for-resonline-txa', 'Apply for ResOnline', 'Complete the application form to apply for a TXA–ResOnline connection.'],
         ['apply-now-for-respax-txa', 'Apply for Respax', 'Complete the application form to apply for a TXA–Respax connection.'],
         ['apply-now-for-rezdy-txa', 'Apply for Rezdy', 'Complete the application form to apply for a TXA–Rezdy connection.'],
-        ['apply-now-for-rezexpert-txa', 'Apply for RezExpert', 'Complete the application form to apply for a TXA–RezExpert connection.'],
+        // ['apply-now-for-rezexpert-txa', 'Apply for RezExpert', 'Complete the application form to apply for a TXA–RezExpert connection.'],
         ['apply-now-for-rms-txa', 'Apply for RMS', 'Complete the application form to apply for a TXA–RMS connection.'],
-        ['apply-now-for-roommaster-txa', 'Apply for RoomMaster', 'Complete the application form to apply for a TXA–RoomMaster connection.', '', 'RoomMaster needs iQ-Worldlink activated to connect with TXA. Contact InnQuest support if you are unsure whether it is enabled.'],
-        ['apply-now-for-seekomibex-txa', 'Apply for Seekom/iBex', 'Complete the application form to apply for a TXA–Seekom/iBex connection.', '', 'Seekom may contact you for extra information to set up your TXA account. For help, contact Seekom support at support@seekom.com.'],
+        // ['apply-now-for-roommaster-txa', 'Apply for RoomMaster', 'Complete the application form to apply for a TXA–RoomMaster connection.', '', 'RoomMaster needs iQ-Worldlink activated to connect with TXA. Contact InnQuest support if you are unsure whether it is enabled.'],
+        // ['apply-now-for-seekomibex-txa', 'Apply for Seekom/iBex', 'Complete the application form to apply for a TXA–Seekom/iBex connection.', '', 'Seekom may contact you for extra information to set up your TXA account. For help, contact Seekom support at support@seekom.com.'],
         ['apply-now-for-siteminder-txa', 'Apply for SiteMinder', 'Complete the application form to apply for a TXA–SiteMinder connection.'],
-        ['apply-now-for-update-247-txa', 'Apply for Update 247', 'Complete the application form to apply for a TXA–Update 247 connection.'],
+        // ['apply-now-for-update-247-txa', 'Apply for Update 247', 'Complete the application form to apply for a TXA–Update 247 connection.'],
     ];
 }
 
 add_action('admin_menu', function (): void {
     add_management_page('TXA Apply Now Pages', 'TXA Apply Now Pages', 'manage_options', 'txa-apply-now-pages', function (): void {
-        ?>
+    ?>
         <div class="wrap">
             <h1><?php esc_html_e('TXA Apply Now pages', 'tailpress'); ?></h1>
             <?php if (isset($_GET['created'], $_GET['prepared'])): ?>
@@ -1206,7 +1207,7 @@ add_action('admin_menu', function (): void {
                 <?php submit_button(__('Create or prepare Apply Now pages', 'tailpress'), 'primary', 'submit', false); ?>
             </form>
         </div>
-        <?php
+<?php
     });
 });
 
