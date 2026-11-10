@@ -28,29 +28,26 @@ if (!function_exists('txa_hero_slides')) {
             'orderby' => ['menu_order' => 'ASC', 'date' => 'ASC'],
         ]);
 
-        if (!$posts) {
-            return [[
-                'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
-                'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
-                'copy' => trim(wpautop(wp_kses_post(txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.')))),
-                'image' => $default_image,
-                'buttons' => [
-                    1 => [
-                        'label' => txa_f('hero_primary_label', 'Apply Now'),
-                        'url' => $normalize_url(txa_f('hero_primary_url', '/apply-now-txa/')),
-                        'new_tab' => txa_new_tab('hero_primary_url'),
-                    ],
-                    2 => [
-                        'label' => txa_f('hero_secondary_label', 'Request Smart Destination Demo'),
-                        'url' => $normalize_url(txa_f('hero_secondary_url', '/contact/')),
-                        'new_tab' => txa_new_tab('hero_secondary_url'),
-                    ],
+        $slides = [[
+            'label' => txa_f('hero_label', 'Tourism Exchange Australia'),
+            'title' => txa_f('hero_title', "Australia's B2B Tourism Exchange"),
+            'copy' => trim(wpautop(wp_kses_post(txa_f('hero_copy', 'TXA connects Australian tourism suppliers, destinations, distributors and booking systems so tourism products can be found, marketed, booked and measured online.')))),
+            'image' => $default_image,
+            'buttons' => [
+                1 => [
+                    'label' => txa_f('hero_primary_label', 'Apply Now'),
+                    'url' => $normalize_url(txa_f('hero_primary_url', '/apply-now-txa/')),
+                    'new_tab' => txa_new_tab('hero_primary_url'),
                 ],
-                'url_new_tab' => false,
-            ]];
-        }
+                2 => [
+                    'label' => txa_f('hero_secondary_label', 'Request Smart Destination Demo'),
+                    'url' => $normalize_url(txa_f('hero_secondary_url', '/contact/')),
+                    'new_tab' => txa_new_tab('hero_secondary_url'),
+                ],
+            ],
+            'url_new_tab' => false,
+        ]];
 
-        $slides = [];
         foreach ($posts as $post) {
             $buttons = [];
             foreach ([1, 2] as $n) {

@@ -1,0 +1,83 @@
+[
+  {
+    "key": "group_txa_home_sliders",
+    "title": "Home Slider Fields",
+    "fields": [
+      {
+        "key": "field_txa_slider_label",
+        "label": "Slide Label",
+        "name": "slide_label",
+        "type": "text",
+        "instructions": "Optional small label displayed above the slide title."
+      },
+      {
+        "key": "field_txa_slider_button_1_tab",
+        "label": "Button 1",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_slider_button_1_label",
+        "label": "Button Label",
+        "name": "button_1_label",
+        "type": "text",
+        "instructions": "Leave the label or URL empty to hide this button."
+      },
+      {
+        "key": "field_txa_slider_button_1_url",
+        "label": "Button URL",
+        "name": "button_1_url",
+        "type": "text",
+        "instructions": "Use a relative path such as /contact/ or a full URL."
+      },
+      {
+        "key": "field_txa_slider_button_2_tab",
+        "label": "Button 2",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_slider_button_2_label",
+        "label": "Button Label",
+        "name": "button_2_label",
+        "type": "text",
+        "instructions": "Leave the label or URL empty to hide this button."
+      },
+      {
+        "key": "field_txa_slider_button_2_url",
+        "label": "Button URL",
+        "name": "button_2_url",
+        "type": "text",
+        "instructions": "Use a relative path such as /contact/ or a full URL."
+      },
+      {
+        "key": "field_txa_slider_link_tab",
+        "label": "Slide Link",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_txa_slider_url",
+        "label": "Slide Link URL",
+        "name": "slide_url",
+        "type": "text",
+        "instructions": "Optional link across the slide background, separate from the buttons. Use a relative path or full URL."
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "home_slider"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]
