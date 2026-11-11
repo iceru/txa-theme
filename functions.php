@@ -48,6 +48,107 @@ function tailpress(): TailPress\Framework\Theme
 
 tailpress();
 
+if (!function_exists('txa_header_apply_now_links')) {
+    function txa_header_apply_now_links(): array
+    {
+        return [
+            ['Become a Supplier', '/suppliers/'],
+            ['Become a Destination', '/destinations/'],
+            ['Become a Distributor', '/distributors/'],
+            ['Become a Booking System Partner', '/booking-systems/'],
+        ];
+    }
+}
+
+/**
+ * Keep the Apply Now dropdown consistent when a menu is assigned in
+ * Appearance -> Menus. Its children are controlled by the theme so editors do
+ * not need to duplicate these pathway links in WordPress.
+ */
+add_filter('wp_nav_menu_objects', function (array $items, $args): array {
+    if ('primary' !== ($args->theme_location ?? '') || !$items) {
+        return $items;
+    }
+
+    $apply_parent = null;
+    foreach ($items as $item) {
+        $path = untrailingslashit((string) wp_parse_url($item->url ?? '', PHP_URL_PATH));
+        $title = strtolower(trim(wp_strip_all_tags($item->title ?? '')));
+
+        if ('apply now' === $title || '/apply-now-txa' === $path) {
+            $apply_parent = clone $item;
+            break;
+        }
+    }
+
+    $seed = $apply_parent ?: clone $items[0];
+    $parent_id = $apply_parent ? (int) $apply_parent->db_id : -910000;
+
+    if ($apply_parent) {
+        $descendant_ids = [];
+        do {
+            $found_descendant = false;
+            foreach ($items as $item) {
+                $item_id = (int) $item->db_id;
+                $item_parent = (int) $item->menu_item_parent;
+                if (
+                    !in_array($item_id, $descendant_ids, true)
+                    && ($parent_id === $item_parent || in_array($item_parent, $descendant_ids, true))
+                ) {
+                    $descendant_ids[] = $item_id;
+                    $found_descendant = true;
+                }
+            }
+        } while ($found_descendant);
+
+        $items = array_values(array_filter(
+            $items,
+            static fn($item): bool => !in_array((int) $item->db_id, $descendant_ids, true)
+        ));
+    } else {
+        $apply_parent = clone $seed;
+        $apply_parent->ID = $parent_id;
+        $apply_parent->db_id = $parent_id;
+        $apply_parent->menu_item_parent = 0;
+        $apply_parent->object_id = $parent_id;
+        $apply_parent->object = 'custom';
+        $apply_parent->type = 'custom';
+        $apply_parent->type_label = 'Custom Link';
+        $apply_parent->classes = [];
+        $items[] = $apply_parent;
+    }
+
+    $apply_parent->title = 'Apply Now';
+    $apply_parent->url = home_url('/apply-now-txa/');
+    $apply_parent->target = '';
+
+    foreach ($items as $index => $item) {
+        if ((int) $item->db_id === $parent_id) {
+            $items[$index] = $apply_parent;
+            break;
+        }
+    }
+
+    foreach (txa_header_apply_now_links() as $index => [$label, $path]) {
+        $child_id = -910001 - $index;
+        $child = clone $seed;
+        $child->ID = $child_id;
+        $child->db_id = $child_id;
+        $child->menu_item_parent = $parent_id;
+        $child->object_id = $child_id;
+        $child->object = 'custom';
+        $child->type = 'custom';
+        $child->type_label = 'Custom Link';
+        $child->classes = [];
+        $child->title = $label;
+        $child->url = home_url($path);
+        $child->target = '';
+        $items[] = $child;
+    }
+
+    return $items;
+}, 10, 2);
+
 /**
  * Load the ACF field group definitions stored in the theme's /acf folder so
  * they stay versioned with the theme.

@@ -85,28 +85,22 @@ if (!function_exists('txa_primary_menu_fallback')) {
                     class="<?php echo esc_attr(txa_header_link_class('/contact/', false, 'block py-1')); ?>">Contact</a>
             </li>
             <li class="relative lg:mx-4">
-                <details class="group relative">
-                    <summary
-                        class="<?php echo esc_attr(txa_header_link_class('/apply-now-txa/', true, 'flex cursor-pointer list-none items-center gap-1 py-1')); ?>">
-                        Apply Now <i class="bi bi-chevron-down text-sm leading-none" aria-hidden="true"></i>
-                    </summary>
-                    <ul
-                        class="mt-3 space-y-2 border-l border-line pl-4 lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:min-w-[260px] lg:rounded-xl lg:border lg:bg-white lg:p-2 lg:pl-2 lg:shadow-xl">
-                        <li><a href="<?php echo esc_url(home_url('/apply-now-txa/')); ?>"
-                                class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5">All
-                                Applications</a></li>
-                        <?php foreach (txa_apply_now_page_definitions() as [$apply_slug, $apply_title]): ?>
-                            <?php if ('apply-now-txa' === $apply_slug)
-                                continue; ?>
-                            <li><a href="<?php echo esc_url(home_url('/' . $apply_slug . '/')); ?>"
-                                    class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5"><?php echo esc_html('distributor-apply-now-txa' === $apply_slug ? 'Become a Distributor' : str_replace('Apply for ', 'Apply Now for ', $apply_title)); ?></a>
-                            </li>
-                        <?php endforeach; ?>
-                        <li><a href="https://www.rezobx.com/" target="_blank" rel="noopener noreferrer"
-                                class="block rounded-lg py-1 text-sm text-mid-gray !no-underline hover:bg-surface hover:text-brand lg:px-3 lg:py-2.5">Apply
-                                Now for Rezobx ↗</a></li>
-                    </ul>
-                </details>
+                <button type="button"
+                    class="<?php echo esc_attr(txa_header_link_class('/apply-now-txa/', true, 'inline-flex w-full items-center justify-between gap-1 rounded py-1 lg:w-auto lg:justify-start')); ?>"
+                    aria-expanded="false" aria-haspopup="true" aria-controls="apply-now-submenu"
+                    data-destinations-toggle>
+                    <span>Apply Now</span>
+                    <i class="bi bi-chevron-down ml-0.5 text-sm leading-none transition" aria-hidden="true"></i>
+                </button>
+                <ul id="apply-now-submenu"
+                    class="hidden mt-3 space-y-2 border-l border-line pl-4 lg:invisible lg:absolute lg:right-0 lg:top-full lg:z-50 lg:mt-2 lg:block lg:min-w-[260px] lg:space-y-0 lg:rounded-xl lg:border lg:border-line lg:bg-white lg:p-2 lg:pl-2 lg:opacity-0 lg:shadow-xl lg:transition"
+                    data-destinations-submenu>
+                    <?php foreach (txa_header_apply_now_links() as [$apply_label, $apply_path]): ?>
+                        <li><a href="<?php echo esc_url(home_url($apply_path)); ?>"
+                                class="<?php echo esc_attr(txa_header_link_class($apply_path, false, 'block rounded-lg py-1 lg:px-3 lg:py-2.5 lg:hover:bg-surface')); ?>"><?php echo esc_html($apply_label); ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </li>
             <li class="lg:mx-4"><a href="<?php echo esc_url(home_url('/blog/')); ?>"
                     class="<?php echo esc_attr(txa_header_link_class('/blog/', false, 'block py-1')); ?>">Blog</a>
