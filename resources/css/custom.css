@@ -249,6 +249,20 @@
     margin-top: 0.5rem;
     padding: 0;
   }
+
+  :where(.gform_footer input[type="submit"], .gform_footer button, .gform_footer .gform_button) {
+    display: inline-flex;
+    width: 100%;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.625rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.25;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 639px) {

@@ -166,14 +166,12 @@ if ($faq_group_query->have_posts() && $faq_question_query->have_posts()) {
         <div
             class="mx-auto flex max-w-[1100px] flex-col items-start justify-between gap-6 rounded-2xl bg-near-black px-6 py-8 text-white sm:px-8 sm:py-10 lg:flex-row lg:items-center lg:px-12">
             <div>
-                <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold sm:text-3xl">Ready to find your
-                    TXA pathway?</h2>
-                <p class="mt-2 max-w-[650px] text-sm leading-6 text-white/75 sm:text-base">Talk with the team about
-                    suppliers, destinations, distribution or booking system integration.</p>
+                <h2 class="[font-family:'Hanken_Grotesk',sans-serif] text-2xl font-bold sm:text-3xl"><?php echo esc_html(txa_f('faq_closing_heading', 'Ready to find your TXA pathway?')); ?></h2>
+                <p class="mt-2 max-w-[650px] text-sm leading-6 text-white/75 sm:text-base"><?php echo esc_html(txa_f('faq_closing_copy', 'Talk with the team about suppliers, destinations, distribution or booking system integration.')); ?></p>
             </div>
-            <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                class="inline-flex min-h-12 w-full shrink-0 items-center justify-center rounded-lg bg-brand px-6 py-3 font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto">Contact
-                TXA</a>
+            <?php $faq_closing_url = txa_url('faq_closing_button_url', home_url('/contact/')); ?>
+            <a href="<?php echo esc_url($faq_closing_url); ?>" <?php echo txa_target_attr(txa_new_tab('faq_closing_button_url'), $faq_closing_url); ?>
+                class="inline-flex min-h-12 w-full shrink-0 items-center justify-center rounded-lg bg-brand px-6 py-3 font-bold text-white !no-underline hover:bg-brand-dark sm:w-auto"><?php echo esc_html(txa_f('faq_closing_button_label', 'Contact TXA')); ?></a>
         </div>
     </section>
 </article>

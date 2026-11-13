@@ -383,12 +383,34 @@
         "label": "Milestone 6 Title",
         "name": "about_timeline_6_title",
         "type": "text",
-        "placeholder": "Built Here. For Here."
+        "placeholder": "Deployed in Five Countries"
       },
       {
         "key": "field_txa_about_timeline_6_copy",
         "label": "Milestone 6 Description",
         "name": "about_timeline_6_copy",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_txa_about_timeline_7_year",
+        "label": "Milestone 7 Year",
+        "name": "about_timeline_7_year",
+        "type": "text",
+        "placeholder": "Today"
+      },
+      {
+        "key": "field_txa_about_timeline_7_title",
+        "label": "Milestone 7 Title",
+        "name": "about_timeline_7_title",
+        "type": "text",
+        "placeholder": "Built Here. For Here."
+      },
+      {
+        "key": "field_txa_about_timeline_7_copy",
+        "label": "Milestone 7 Description",
+        "name": "about_timeline_7_copy",
         "type": "textarea",
         "rows": 4,
         "new_lines": ""
@@ -495,7 +517,7 @@
         {
           "param": "page_template",
           "operator": "==",
-          "value": "page-about.php"
+          "value": "page-about-us.php"
         }
       ]
     ],

@@ -1,7 +1,7 @@
 import LocomotiveScroll from 'locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
 
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
     let mainNavigation = document.getElementById('primary-navigation')
     let mainNavigationToggle = document.getElementById('primary-menu-toggle')
     let mainNavigationClose = document.getElementById('primary-menu-close')

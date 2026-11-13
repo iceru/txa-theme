@@ -7,7 +7,7 @@
 
 add_filter('pre_get_document_title', fn(): string => (string) txa_f('about_seo_title', 'About TXA | Tourism Exchange Australia'));
 add_action('wp_head', function (): void {
-    if (is_page_template('page-about.php')) {
+    if (is_page_template('page-about-us.php')) {
         echo '<meta name="description" content="' . esc_attr(txa_f('about_seo_description', 'Learn how TXA became Australia\'s open B2B tourism exchange for suppliers, destinations, distributors and booking systems.')) . '">' . "\n";
     }
 });
@@ -38,6 +38,10 @@ $default_timeline = [
 $default_timeline_values = [
     ['title' => txa_f('about_value_1_title', 'Australia\'s Own'), 'copy' => txa_f('about_value_1_copy', 'Proudly built and operated in Australia.'), 'icon' => 'bi-geo-alt'],
     ['title' => txa_f('about_value_2_title', 'For the Industry'), 'copy' => txa_f('about_value_2_copy', 'Designed for all tourism businesses, big and small.'), 'icon' => 'bi-people'],
+    ['title' => txa_f('about_value_3_title', 'Commercially Neutral'), 'copy' => txa_f('about_value_3_copy', 'An open exchange built to serve the whole tourism industry.'), 'icon' => 'bi-arrows-angle-contract'],
+    ['title' => txa_f('about_value_4_title', 'Connected'), 'copy' => txa_f('about_value_4_copy', 'Connecting suppliers, destinations, distributors and booking systems.'), 'icon' => 'bi-diagram-3'],
+    ['title' => txa_f('about_value_5_title', 'Global Impact'), 'copy' => txa_f('about_value_5_copy', 'Exchange technology supporting tourism platforms around the world.'), 'icon' => 'bi-globe2'],
+    ['title' => txa_f('about_value_6_title', 'Value Stays in Australia'), 'copy' => txa_f('about_value_6_copy', 'Keeping more of the value of Australian tourism in the visitor economy.'), 'icon' => 'bi-house-heart'],
 ];
 $timeline_query = new WP_Query([
     'post_type' => 'txa_timeline',
