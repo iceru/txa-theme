@@ -22,7 +22,8 @@
         "name": "about_seo_description",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Learn how TXA became Australia's open B2B tourism exchange for suppliers, destinations, distributors and booking systems."
       },
       {
         "key": "field_txa_about_tab_hero",
@@ -50,7 +51,8 @@
         "name": "about_hero_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Our journey started in Australia, being selected through a global tender in 2008 to partner with the Australian Tourism Data Warehouse (ATDW) and then backed by State and Federal GTOs. We operate as the structural backbone that allows local operators to compete on a global scale while maintaining their commercial independence."
       },
       {
         "key": "field_txa_about_hero_image",
@@ -65,7 +67,8 @@
         "key": "field_txa_about_hero_image_alt",
         "label": "Background Image Alt Text",
         "name": "about_hero_image_alt",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Australian tourism landscape"
       },
       {
         "key": "field_txa_about_tab_audience",
@@ -86,7 +89,8 @@
         "name": "about_audience_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Tourism Exchange Australia is Australia's open B2B tourism exchange. It connects tourism suppliers, destinations, distributors and booking systems so live tourism products can be found, marketed, booked and measured online."
       },
       {
         "key": "field_txa_about_audience_1_title",
@@ -101,7 +105,8 @@
         "name": "about_audience_1_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "All categories, styles and sizes of accommodation, activities, experiences, and events seeking broad local and global visibility"
       },
       {
         "key": "field_txa_about_audience_2_title",
@@ -116,7 +121,8 @@
         "name": "about_audience_2_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "National, State, regional and city tourism organisations marketing and empowering local businesses to go digital."
       },
       {
         "key": "field_txa_about_audience_3_title",
@@ -131,7 +137,8 @@
         "name": "about_audience_3_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "All marketing/sales channels including global OTAs, tourism and travel and niche websites, social media and travel agents"
       },
       {
         "key": "field_txa_about_audience_4_title",
@@ -146,7 +153,8 @@
         "name": "about_audience_4_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Electronic booking and inventory management systems used in the tourism industry"
       },
       {
         "key": "field_txa_about_tab_global",
@@ -167,7 +175,8 @@
         "name": "about_global_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Today, the same exchange technology powers tourism platforms in the UK, Japan, Saudi Arabia, and the US. TXA remains Australia's own, tailored for our unique geography and market dynamics."
       },
       {
         "key": "field_txa_about_country_1_name",
@@ -252,7 +261,8 @@
         "name": "about_journey_tagline",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Built in Australia. Connected to the world. Powering our industry."
       },
       {
         "key": "field_txa_about_tab_timeline",
@@ -281,7 +291,8 @@
         "name": "about_timeline_1_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "TXA was born from a simple conviction: Australian tourism deserved a national exchange that worked for the whole industry, not just the biggest players."
       },
       {
         "key": "field_txa_about_timeline_2_year",
@@ -303,7 +314,8 @@
         "name": "about_timeline_2_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "TXA was selected through a global tender as the technology partner for Australia's national booking exchange."
       },
       {
         "key": "field_txa_about_timeline_3_year",
@@ -325,7 +337,8 @@
         "name": "about_timeline_3_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Partnership with ATDW (backed by every State and Federal Government Tourism Organisation), TXA becomes Australia's only open, commercially neutral national booking exchange connecting tourism suppliers, destinations, distributors and booking systems through one shared platform."
       },
       {
         "key": "field_txa_about_timeline_4_year",
@@ -347,7 +360,8 @@
         "name": "about_timeline_4_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Tourism Exchange platform is internationalised and launched to global markets."
       },
       {
         "key": "field_txa_about_timeline_5_year",
@@ -369,7 +383,8 @@
         "name": "about_timeline_5_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "The exchange technology powering TXA begins powering the tourism industry in international territories."
       },
       {
         "key": "field_txa_about_timeline_6_year",
@@ -391,7 +406,8 @@
         "name": "about_timeline_6_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "The foundation exchange technology which powers TXA deployed in five countries."
       },
       {
         "key": "field_txa_about_timeline_7_year",
@@ -413,7 +429,8 @@
         "name": "about_timeline_7_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "TXA remains Australia's own: built here, run here, and designed to keep more of the value of Australian tourism circulating within the Australian visitor economy."
       },
       {
         "key": "field_txa_about_tab_values",
@@ -434,7 +451,8 @@
         "name": "about_value_1_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Proudly built and operated in Australia."
       },
       {
         "key": "field_txa_about_value_2_title",
@@ -449,7 +467,8 @@
         "name": "about_value_2_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Designed for all tourism businesses, big and small."
       },
       {
         "key": "field_txa_about_value_3_title",
@@ -464,7 +483,8 @@
         "name": "about_value_3_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "An open exchange built to serve the whole tourism industry."
       },
       {
         "key": "field_txa_about_value_4_title",
@@ -479,7 +499,8 @@
         "name": "about_value_4_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Connecting suppliers, destinations, distributors and booking systems."
       },
       {
         "key": "field_txa_about_value_5_title",
@@ -494,7 +515,8 @@
         "name": "about_value_5_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Exchange technology supporting tourism platforms around the world."
       },
       {
         "key": "field_txa_about_value_6_title",
@@ -509,7 +531,8 @@
         "name": "about_value_6_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Keeping more of the value of Australian tourism in the visitor economy."
       }
     ],
     "location": [

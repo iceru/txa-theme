@@ -14,6 +14,7 @@ $supplier_url = txa_url('pricing_path_1_url', '/suppliers/');
 $destination_url = txa_url('pricing_path_2_url', '/destinations/pricing/');
 $distributor_url = txa_url('pricing_path_3_url', '/distributors/');
 $booking_url = txa_url('pricing_path_4_url', '/booking-systems/partner-enquiry/');
+$fee_fill_percentage = min(100, max(0, (int) txa_f('pricing_fee_fill_percentage', 58)));
 
 $hero_steps = [
     ['number' => '1', 'title' => txa_f('pricing_step_1_title', 'Identify your role'), 'copy' => txa_f('pricing_step_1_copy', 'Supplier, destination, distributor and booking system partner pricing are intentionally separated.')],
@@ -82,7 +83,7 @@ $partner_cards = [
                     class="max-w-[620px] [font-family:'Hanken_Grotesk',sans-serif] text-[42px] font-bold leading-[1.1] text-white sm:text-5xl lg:text-[44px]">
                     <?php echo esc_html(txa_f('pricing_hero_title', 'TXA pricing without the guesswork.')); ?>
                 </h1>
-                <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg">Tell us what
+                <p class="mt-6 max-w-[650px] text-base font-semibold leading-7 text-white/90 sm:text-lg">
                     <?php echo esc_html(txa_f('pricing_hero_copy', 'Tell us what you do and your preferred commercial model and we will help guide you.')); ?>
                 </p>
                 <div class="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -136,7 +137,7 @@ $partner_cards = [
                         class="relative flex flex-col rounded-2xl border <?php echo !empty($card['featured']) ? 'border-2 border-brand' : 'border-line'; ?> bg-white p-8 shadow-sm md:min-h-[430px]">
                         <?php if (!empty($card['featured'])): ?>
                             <span
-                                class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-brand px-7 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white">Most
+                                class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-brand px-7 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white">
                                 <?php echo esc_html(txa_f('pricing_featured_badge', 'Most Common')); ?></span>
                         <?php endif; ?>
                         <h3 class="text-xl font-bold text-brand"><?php echo esc_html($card['title']); ?></h3>
@@ -179,7 +180,7 @@ $partner_cards = [
                     class="mt-7 [font-family:'Hanken_Grotesk',sans-serif] text-3xl font-bold leading-tight text-[#151c27] sm:text-4xl">
                     <?php echo esc_html(txa_f('pricing_supplier_heading', 'No booking, no fee supplier pricing')); ?>
                 </h2>
-                <p class="mt-6 max-w-[620px] text-base leading-8 text-mid-gray">Our model is designed to grow with you.
+                <p class="mt-6 max-w-[620px] text-base leading-8 text-mid-gray">
                     <?php echo esc_html(txa_f('pricing_supplier_copy', 'Our model is designed to grow with you. The 0.75%-2.8% success fee ensures that TXA only succeeds when your business does. We reduce manual allocation and administrative overhead, allowing you to focus on the experience.')); ?>
                 </p>
                 <div class="mt-8 grid gap-4 sm:grid-cols-2">
@@ -200,7 +201,7 @@ $partner_cards = [
                     <span class="text-brand"><?php echo esc_html(txa_f('pricing_fee_average', '1.5% Avg.')); ?></span>
                 </div>
                 <div class="mt-6 h-4 overflow-hidden rounded-full bg-[#f0d2ce]">
-                    <div class="h-full w-[58%] rounded-full bg-brand"></div>
+                    <div class="h-full rounded-full bg-brand" style="width: <?php echo esc_attr((string) $fee_fill_percentage); ?>%"></div>
                 </div>
                 <div class="mt-4 flex justify-between text-xs font-semibold text-mid-gray">
                     <span><?php echo esc_html(txa_f('pricing_fee_min', '0.75%')); ?></span>

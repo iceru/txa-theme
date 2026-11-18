@@ -44,7 +44,7 @@ add_action('wp_head', function (): void {
 get_header();
 
 $demo_url = txa_url('destination_demo_url', home_url('/destinations/contact/'));
-$pricing_url = txa_url('destination_pricing_url', home_url('/destinations/pricing/'));
+$pricing_url = txa_url('destination_pricing_url', home_url('/destinations/destination-pricing/'));
 
 $pillars = txa_destination_cards('destination_pillar', [
     ['icon' => 'bi-box-seam', 'title' => 'Supply', 'copy' => 'Real-time inventory'],

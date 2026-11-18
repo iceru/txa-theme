@@ -14,7 +14,8 @@
                 "label": "Browser Title",
                 "name": "privacy_seo_title",
                 "type": "text",
-                "default_value": "Privacy Policy | Tourism Exchange Australia"
+                "default_value": "Privacy Policy | Tourism Exchange Australia",
+        "placeholder": "Privacy Policy | Tourism Exchange Australia"
             },
             {
                 "key": "field_privacy_seo_description",
@@ -36,14 +37,16 @@
                 "label": "Hero Label",
                 "name": "privacy_hero_label",
                 "type": "text",
-                "default_value": "PRIVACY"
+                "default_value": "PRIVACY",
+        "placeholder": "PRIVACY"
             },
             {
                 "key": "field_privacy_hero_title",
                 "label": "Hero Title",
                 "name": "privacy_hero_title",
                 "type": "text",
-                "default_value": "Privacy Policy"
+                "default_value": "Privacy Policy",
+        "placeholder": "Privacy Policy"
             },
             {
                 "key": "field_privacy_hero_intro",

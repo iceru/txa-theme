@@ -14,7 +14,8 @@
                 "label": "Browser Title",
                 "name": "terms_seo_title",
                 "type": "text",
-                "default_value": "Terms of Use | Tourism Exchange Australia"
+                "default_value": "Terms of Use | Tourism Exchange Australia",
+        "placeholder": "Terms of Use | Tourism Exchange Australia"
             },
             {
                 "key": "field_terms_seo_description",
@@ -36,14 +37,16 @@
                 "label": "Hero Label",
                 "name": "terms_hero_label",
                 "type": "text",
-                "default_value": "LEGAL"
+                "default_value": "LEGAL",
+        "placeholder": "LEGAL"
             },
             {
                 "key": "field_terms_hero_title",
                 "label": "Hero Title",
                 "name": "terms_hero_title",
                 "type": "text",
-                "default_value": "Terms of Use"
+                "default_value": "Terms of Use",
+        "placeholder": "Terms of Use"
             },
             {
                 "key": "field_terms_hero_intro",

@@ -27,7 +27,8 @@
         "key": "field_txa_pricing_step_1_title",
         "label": "Step 1 Title",
         "name": "pricing_step_1_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Identify your role"
       },
       {
         "key": "field_txa_pricing_step_1_copy",
@@ -35,13 +36,15 @@
         "name": "pricing_step_1_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Supplier, destination, distributor and booking system partner pricing are intentionally separated."
       },
       {
         "key": "field_txa_pricing_step_2_title",
         "label": "Step 2 Title",
         "name": "pricing_step_2_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Confirm the model"
       },
       {
         "key": "field_txa_pricing_step_2_copy",
@@ -49,13 +52,15 @@
         "name": "pricing_step_2_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Success fee, platform package, commercial agreement or partner enquiry depends on the pathway."
       },
       {
         "key": "field_txa_pricing_step_3_title",
         "label": "Step 3 Title",
         "name": "pricing_step_3_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Take the right next step"
       },
       {
         "key": "field_txa_pricing_step_3_copy",
@@ -63,13 +68,15 @@
         "name": "pricing_step_3_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Each pathway leads to the enquiry or application process that matches the organisation type."
       },
       {
         "key": "field_txa_pricing_path_1_title",
         "label": "Path 1 Title",
         "name": "pricing_path_1_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Suppliers"
       },
       {
         "key": "field_txa_pricing_path_1_copy",
@@ -77,7 +84,8 @@
         "name": "pricing_path_1_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "0.75% - 2.8% success fee per booking."
       },
       {
         "key": "field_txa_pricing_path_1_url",
@@ -90,7 +98,8 @@
         "key": "field_txa_pricing_path_2_title",
         "label": "Path 2 Title",
         "name": "pricing_path_2_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Destinations"
       },
       {
         "key": "field_txa_pricing_path_2_copy",
@@ -98,7 +107,8 @@
         "name": "pricing_path_2_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Packages subject to approval and scope."
       },
       {
         "key": "field_txa_pricing_path_2_url",
@@ -111,7 +121,8 @@
         "key": "field_txa_pricing_path_3_title",
         "label": "Path 3 Title",
         "name": "pricing_path_3_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Distributors"
       },
       {
         "key": "field_txa_pricing_path_3_copy",
@@ -119,7 +130,8 @@
         "name": "pricing_path_3_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Pricing by agreement based on volume."
       },
       {
         "key": "field_txa_pricing_path_3_url",
@@ -132,7 +144,8 @@
         "key": "field_txa_pricing_path_4_title",
         "label": "Path 4 Title",
         "name": "pricing_path_4_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Booking Systems"
       },
       {
         "key": "field_txa_pricing_path_4_copy",
@@ -140,7 +153,8 @@
         "name": "pricing_path_4_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Technical integration partner enquiry."
       },
       {
         "key": "field_txa_pricing_path_4_url",
@@ -153,25 +167,29 @@
         "key": "field_txa_pricing_card_1_title",
         "label": "Card 1 Title",
         "name": "pricing_card_1_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Tourism Suppliers"
       },
       {
         "key": "field_txa_pricing_card_1_price",
         "label": "Card 1 Price",
         "name": "pricing_card_1_price",
-        "type": "text"
+        "type": "text",
+        "placeholder": "0.75%"
       },
       {
         "key": "field_txa_pricing_card_1_suffix",
         "label": "Card 1 Suffix",
         "name": "pricing_card_1_suffix",
-        "type": "text"
+        "type": "text",
+        "placeholder": "to"
       },
       {
         "key": "field_txa_pricing_card_1_price_end",
         "label": "Card 1 Price End",
         "name": "pricing_card_1_price_end",
-        "type": "text"
+        "type": "text",
+        "placeholder": "2.8%"
       },
       {
         "key": "field_txa_pricing_card_1_copy",
@@ -179,25 +197,29 @@
         "name": "pricing_card_1_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Success fee per booking. Perfect for hotels, tours, and attraction operators."
       },
       {
         "key": "field_txa_pricing_card_1_point_1",
         "label": "Card 1 Point 1",
         "name": "pricing_card_1_point_1",
-        "type": "text"
+        "type": "text",
+        "placeholder": "No upfront fees"
       },
       {
         "key": "field_txa_pricing_card_1_point_2",
         "label": "Card 1 Point 2",
         "name": "pricing_card_1_point_2",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Unlimited distributors"
       },
       {
         "key": "field_txa_pricing_card_1_cta",
         "label": "Card 1 Cta",
         "name": "pricing_card_1_cta",
-        "type": "text"
+        "type": "text",
+        "placeholder": "View Details"
       },
       {
         "key": "field_txa_pricing_card_1_url",
@@ -210,13 +232,15 @@
         "key": "field_txa_pricing_card_2_title",
         "label": "Card 2 Title",
         "name": "pricing_card_2_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Destinations"
       },
       {
         "key": "field_txa_pricing_card_2_price",
         "label": "Card 2 Price",
         "name": "pricing_card_2_price",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Destination Packages"
       },
       {
         "key": "field_txa_pricing_card_2_copy",
@@ -224,13 +248,15 @@
         "name": "pricing_card_2_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Fixed monthly platform service packages for destination activation, supplier support, content, trade, virtual concierge and data. Publish only after package approval."
       },
       {
         "key": "field_txa_pricing_card_2_cta",
         "label": "Card 2 Cta",
         "name": "pricing_card_2_cta",
-        "type": "text"
+        "type": "text",
+        "placeholder": "View Packages"
       },
       {
         "key": "field_txa_pricing_card_2_url",
@@ -243,13 +269,15 @@
         "key": "field_txa_pricing_card_3_title",
         "label": "Card 3 Title",
         "name": "pricing_card_3_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Distributors"
       },
       {
         "key": "field_txa_pricing_card_3_price",
         "label": "Card 3 Price",
         "name": "pricing_card_3_price",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Commercial Base"
       },
       {
         "key": "field_txa_pricing_card_3_copy",
@@ -257,13 +285,15 @@
         "name": "pricing_card_3_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Free to connect. Commercial arrangements depend on the distributor model and agreement."
       },
       {
         "key": "field_txa_pricing_card_3_cta",
         "label": "Card 3 Cta",
         "name": "pricing_card_3_cta",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Become a Distributor"
       },
       {
         "key": "field_txa_pricing_card_3_url",
@@ -276,13 +306,15 @@
         "key": "field_txa_pricing_card_4_title",
         "label": "Card 4 Title",
         "name": "pricing_card_4_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Booking Systems"
       },
       {
         "key": "field_txa_pricing_card_4_price",
         "label": "Card 4 Price",
         "name": "pricing_card_4_price",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Partner Enquiry"
       },
       {
         "key": "field_txa_pricing_card_4_copy",
@@ -290,13 +322,15 @@
         "name": "pricing_card_4_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry."
       },
       {
         "key": "field_txa_pricing_card_4_cta",
         "label": "Card 4 Cta",
         "name": "pricing_card_4_cta",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Partner Enquiry"
       },
       {
         "key": "field_txa_pricing_card_4_url",
@@ -309,31 +343,36 @@
         "key": "field_txa_pricing_supplier_type_1",
         "label": "Supplier Type 1",
         "name": "pricing_supplier_type_1",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Accommodation and Hotels"
       },
       {
         "key": "field_txa_pricing_supplier_type_2",
         "label": "Supplier Type 2",
         "name": "pricing_supplier_type_2",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Guided Tours and Experiences"
       },
       {
         "key": "field_txa_pricing_supplier_type_3",
         "label": "Supplier Type 3",
         "name": "pricing_supplier_type_3",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Attractions and Rentals"
       },
       {
         "key": "field_txa_pricing_supplier_type_4",
         "label": "Supplier Type 4",
         "name": "pricing_supplier_type_4",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Event and Activity Providers"
       },
       {
         "key": "field_txa_pricing_partner_1_eyebrow",
         "label": "Partner 1 Eyebrow",
         "name": "pricing_partner_1_eyebrow",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Are you a Destination Manager?"
       },
       {
         "key": "field_txa_pricing_tab_partners",
@@ -345,7 +384,8 @@
         "key": "field_txa_pricing_partner_1_title",
         "label": "Partner 1 Title",
         "name": "pricing_partner_1_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Destinations"
       },
       {
         "key": "field_txa_pricing_partner_1_copy",
@@ -353,31 +393,36 @@
         "name": "pricing_partner_1_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Choose a Smart Destination package matched to the scale of your visitor economy, with platform infrastructure and support for local supplier activation."
       },
       {
         "key": "field_txa_pricing_partner_1_point_1",
         "label": "Partner 1 Point 1",
         "name": "pricing_partner_1_point_1",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Local, Regional and State packages"
       },
       {
         "key": "field_txa_pricing_partner_1_point_2",
         "label": "Partner 1 Point 2",
         "name": "pricing_partner_1_point_2",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Destination website and content activation"
       },
       {
         "key": "field_txa_pricing_partner_1_point_3",
         "label": "Partner 1 Point 3",
         "name": "pricing_partner_1_point_3",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Trade portal and virtual concierge tools"
       },
       {
         "key": "field_txa_pricing_partner_1_cta",
         "label": "Partner 1 Cta",
         "name": "pricing_partner_1_cta",
-        "type": "text"
+        "type": "text",
+        "placeholder": "View Destination Packages"
       },
       {
         "key": "field_txa_pricing_partner_1_url",
@@ -390,13 +435,15 @@
         "key": "field_txa_pricing_partner_2_eyebrow",
         "label": "Partner 2 Eyebrow",
         "name": "pricing_partner_2_eyebrow",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Are you a Distributor?"
       },
       {
         "key": "field_txa_pricing_partner_2_title",
         "label": "Partner 2 Title",
         "name": "pricing_partner_2_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Distributors"
       },
       {
         "key": "field_txa_pricing_partner_2_copy",
@@ -404,31 +451,36 @@
         "name": "pricing_partner_2_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "TXA acts as a commercially neutral exchange, allowing distributors to connect with thousands of Australian suppliers through a single pipe."
       },
       {
         "key": "field_txa_pricing_partner_2_point_1",
         "label": "Partner 2 Point 1",
         "name": "pricing_partner_2_point_1",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Commercially Neutral Exchange"
       },
       {
         "key": "field_txa_pricing_partner_2_point_2",
         "label": "Partner 2 Point 2",
         "name": "pricing_partner_2_point_2",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Live inventory from connected booking systems"
       },
       {
         "key": "field_txa_pricing_partner_2_point_3",
         "label": "Partner 2 Point 3",
         "name": "pricing_partner_2_point_3",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Consolidated payment reconciliation"
       },
       {
         "key": "field_txa_pricing_partner_2_cta",
         "label": "Partner 2 Cta",
         "name": "pricing_partner_2_cta",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Become a Distributor"
       },
       {
         "key": "field_txa_pricing_partner_2_url",
@@ -441,13 +493,15 @@
         "key": "field_txa_pricing_partner_3_eyebrow",
         "label": "Partner 3 Eyebrow",
         "name": "pricing_partner_3_eyebrow",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Are you a Booking System Vendor?"
       },
       {
         "key": "field_txa_pricing_partner_3_title",
         "label": "Partner 3 Title",
         "name": "pricing_partner_3_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Booking System Partners"
       },
       {
         "key": "field_txa_pricing_partner_3_copy",
@@ -455,31 +509,36 @@
         "name": "pricing_partner_3_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Empower your software users with instant access to state and regional tourism markets via TXA's integration framework."
       },
       {
         "key": "field_txa_pricing_partner_3_point_1",
         "label": "Partner 3 Point 1",
         "name": "pricing_partner_3_point_1",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Open API and Documentation"
       },
       {
         "key": "field_txa_pricing_partner_3_point_2",
         "label": "Partner 3 Point 2",
         "name": "pricing_partner_3_point_2",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Technical support for onboarding"
       },
       {
         "key": "field_txa_pricing_partner_3_point_3",
         "label": "Partner 3 Point 3",
         "name": "pricing_partner_3_point_3",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Value-add for your customer base"
       },
       {
         "key": "field_txa_pricing_partner_3_cta",
         "label": "Partner 3 Cta",
         "name": "pricing_partner_3_cta",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Partner Enquiry"
       },
       {
         "key": "field_txa_pricing_partner_3_url",
@@ -498,7 +557,8 @@
         "key": "field_txa_pricing_hero_title",
         "label": "Hero Title",
         "name": "pricing_hero_title",
-        "type": "text"
+        "type": "text",
+        "placeholder": "TXA pricing without the guesswork."
       },
       {
         "key": "field_txa_pricing_hero_copy",
@@ -506,25 +566,29 @@
         "name": "pricing_hero_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Tell us what you do and your preferred commercial model and we will help guide you."
       },
       {
         "key": "field_txa_pricing_apply_label",
         "label": "Apply Label",
         "name": "pricing_apply_label",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Apply Now"
       },
       {
         "key": "field_txa_pricing_demo_label",
         "label": "Demo Label",
         "name": "pricing_demo_label",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Request Demo"
       },
       {
         "key": "field_txa_pricing_cards_heading",
         "label": "Cards Heading",
         "name": "pricing_cards_heading",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Choose the pricing model that matches your organisation"
       },
       {
         "key": "field_txa_pricing_tab_cards",
@@ -536,13 +600,15 @@
         "key": "field_txa_pricing_featured_badge",
         "label": "Featured Badge",
         "name": "pricing_featured_badge",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Most Common"
       },
       {
         "key": "field_txa_pricing_supplier_eyebrow",
         "label": "Supplier Eyebrow",
         "name": "pricing_supplier_eyebrow",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Are you a Supplier?"
       },
       {
         "key": "field_txa_pricing_tab_supplier",
@@ -554,7 +620,8 @@
         "key": "field_txa_pricing_supplier_heading",
         "label": "Supplier Heading",
         "name": "pricing_supplier_heading",
-        "type": "text"
+        "type": "text",
+        "placeholder": "No booking, no fee supplier pricing"
       },
       {
         "key": "field_txa_pricing_supplier_copy",
@@ -562,13 +629,15 @@
         "name": "pricing_supplier_copy",
         "type": "textarea",
         "rows": 4,
-        "new_lines": ""
+        "new_lines": "",
+        "placeholder": "Our model is designed to grow with you. The 0.75%-2.8% success fee ensures that TXA only succeeds when your business does. We reduce manual allocation and administrative overhead, allowing you to focus on the experience."
       },
       {
         "key": "field_txa_pricing_supplier_apply_label",
         "label": "Supplier Apply Label",
         "name": "pricing_supplier_apply_label",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Apply Now using the TXA Get Connected Wizard"
       },
       {
         "key": "field_txa_pricing_supplier_apply_url",
@@ -581,25 +650,39 @@
         "key": "field_txa_pricing_fee_label",
         "label": "Fee Label",
         "name": "pricing_fee_label",
-        "type": "text"
+        "type": "text",
+        "placeholder": "Booking Success Fee"
       },
       {
         "key": "field_txa_pricing_fee_average",
         "label": "Fee Average",
         "name": "pricing_fee_average",
-        "type": "text"
+        "type": "text",
+        "placeholder": "1.5% Avg."
       },
       {
         "key": "field_txa_pricing_fee_min",
         "label": "Fee Min",
         "name": "pricing_fee_min",
-        "type": "text"
+        "type": "text",
+        "placeholder": "0.75%"
       },
       {
         "key": "field_txa_pricing_fee_max",
         "label": "Fee Max",
         "name": "pricing_fee_max",
-        "type": "text"
+        "type": "text",
+        "placeholder": "2.8%"
+      },
+      {
+        "key": "field_txa_pricing_fee_fill_percentage",
+        "label": "Fee Range Graphic Fill Percentage",
+        "name": "pricing_fee_fill_percentage",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "placeholder": "58"
       },
       {
         "key": "field_txa_pricing_hero_image",
