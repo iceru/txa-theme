@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single article template.
  *
@@ -31,7 +32,7 @@ $blog_page_url = $blog_page ? get_permalink($blog_page) : home_url('/blog/');
             <header class="bg-surface px-4 py-12 sm:py-16 lg:px-16 lg:py-20">
                 <div class="mx-auto max-w-[980px] text-center">
                     <a href="<?php echo esc_url($blog_page_url); ?>"
-                        class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-brand !no-underline">
+                        class="mr-auto block w-fit text-left text-sm font-bold uppercase tracking-wide text-brand !no-underline">
                         <i class="bi bi-arrow-left" aria-hidden="true"></i> Back to blog
                     </a>
                     <p class="mt-7 text-sm font-bold uppercase tracking-wide text-brand">
@@ -59,13 +60,13 @@ $blog_page_url = $blog_page ? get_permalink($blog_page) : home_url('/blog/');
             </header>
 
             <?php if (has_post_thumbnail()): ?>
-            <div class="px-4 pt-8 sm:pt-10 lg:px-16 lg:pt-12">
-                <div class="mx-auto max-w-[1312px] overflow-hidden rounded-2xl bg-surface shadow-sm">
-                    <img src="<?php echo esc_url(get_the_post_thumbnail_url($article_id, 'full')); ?>"
-                        alt="<?php echo esc_attr(get_the_title()); ?>"
-                        class="aspect-[16/7] min-h-[260px] w-full object-cover sm:min-h-[360px]">
+                <div class="px-4 pt-8 sm:pt-10 lg:px-16 lg:pt-12">
+                    <div class="mx-auto max-w-[1312px] overflow-hidden rounded-2xl bg-surface shadow-sm">
+                        <img src="<?php echo esc_url(get_the_post_thumbnail_url($article_id, 'full')); ?>"
+                            alt="<?php echo esc_attr(get_the_title()); ?>"
+                            class="aspect-[16/7] min-h-[260px] w-full object-cover sm:min-h-[360px]">
+                    </div>
                 </div>
-            </div>
             <?php endif; ?>
 
             <div class="px-4 py-12 sm:py-16 lg:px-16 lg:py-20">
@@ -74,7 +75,8 @@ $blog_page_url = $blog_page ? get_permalink($blog_page) : home_url('/blog/');
                     <?php wp_link_pages(); ?>
                 </div>
                 <div class="mx-auto mt-12 flex max-w-[800px] flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:justify-between">
-                    <?php $older_post = get_previous_post(); $newer_post = get_next_post(); ?>
+                    <?php $older_post = get_previous_post();
+                    $newer_post = get_next_post(); ?>
                     <?php if ($older_post): ?>
                         <a href="<?php echo esc_url(get_permalink($older_post)); ?>" class="max-w-sm text-sm font-semibold text-brand !no-underline hover:text-brand-dark">← Previous post<br><span class="mt-1 block text-base text-near-black"><?php echo esc_html(get_the_title($older_post)); ?></span></a>
                     <?php endif; ?>
