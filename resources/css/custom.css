@@ -203,6 +203,82 @@
   }
 }
 
+/* Keep legacy Avada/Fusion post content inside the current single-post layout. */
+body.single-post .entry-content {
+  color: var(--color-dark-gray);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+body.single-post .entry-content :where(.fusion-fullwidth, .fusion-builder-row, .fusion-layout-column, .fusion-column-wrapper, .fusion-text) {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.single-post .entry-content :where(.fusion-fullwidth, .fusion-builder-row) {
+  display: block;
+  overflow: visible;
+}
+
+body.single-post .entry-content :where(p) {
+  margin: 0 0 1.25rem !important;
+  color: inherit;
+  font: inherit;
+}
+
+body.single-post .entry-content :where(h2, h3, h4) {
+  margin: 2.5rem 0 1rem !important;
+  color: #151c27;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+body.single-post .entry-content :where(h2) { font-size: 1.875rem; }
+body.single-post .entry-content :where(h3) { font-size: 1.5rem; }
+body.single-post .entry-content :where(h4) { font-size: 1.25rem; }
+
+body.single-post .entry-content :where(img) {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+  margin: 0 0 1.75rem;
+  border-radius: 0.75rem;
+}
+
+body.single-post .entry-content :where(a) {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+body.single-post .entry-content :where(ul, ol) {
+  margin: 0 0 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+body.single-post .entry-content :where(ul) { list-style: disc; }
+body.single-post .entry-content :where(ol) { list-style: decimal; }
+
+body.single-post .entry-content :where(li) {
+  margin: 0.5rem 0 !important;
+  padding: 0;
+}
+
+@media (max-width: 639px) {
+  body.single-post .entry-content { font-size: 1rem; }
+  body.single-post .entry-content :where(h2) { font-size: 1.625rem; }
+}
+
 .txa-contact-form {
   :where(.gform_heading, .gform_description) {
     display: none;
