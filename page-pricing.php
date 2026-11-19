@@ -11,10 +11,9 @@ get_header();
 $hero_apply_url = txa_url('pricing_hero_apply_url', '/apply-now-txa/');
 $hero_demo_url = txa_url('pricing_hero_demo_url', '/contact/');
 $supplier_url = txa_url('pricing_path_1_url', '/suppliers/');
-$destination_url = txa_url('pricing_path_2_url', '/destinations/pricing/');
+$destination_url = txa_url('pricing_path_2_url', '/destinations/destination-pricing/');
 $distributor_url = txa_url('pricing_path_3_url', '/distributors/');
 $booking_url = txa_url('pricing_path_4_url', '/booking-systems/partner-enquiry/');
-$fee_fill_percentage = min(100, max(0, (int) txa_f('pricing_fee_fill_percentage', 58)));
 
 $hero_steps = [
     ['number' => '1', 'title' => txa_f('pricing_step_1_title', 'Identify your role'), 'copy' => txa_f('pricing_step_1_copy', 'Supplier, destination, distributor and booking system partner pricing are intentionally separated.')],
@@ -33,7 +32,7 @@ $pricing_cards = [
     ['title' => txa_f('pricing_card_1_title', 'Tourism Suppliers'), 'price' => txa_f('pricing_card_1_price', '0.75%'), 'suffix' => txa_f('pricing_card_1_suffix', 'to'), 'price_end' => txa_f('pricing_card_1_price_end', '2.8%'), 'copy' => txa_f('pricing_card_1_copy', 'Success fee per booking. Perfect for hotels, tours, and attraction operators.'), 'points' => [txa_f('pricing_card_1_point_1', 'No upfront fees'), txa_f('pricing_card_1_point_2', 'Unlimited distributors')], 'cta' => txa_f('pricing_card_1_cta', 'View Details'), 'url' => txa_url('pricing_card_1_url', $supplier_url)],
     ['title' => txa_f('pricing_card_2_title', 'Destinations'), 'price' => txa_f('pricing_card_2_price', 'Destination Packages'), 'copy' => txa_f('pricing_card_2_copy', 'Fixed monthly platform service packages for destination activation, supplier support, content, trade, virtual concierge and data. Publish only after package approval.'), 'cta' => txa_f('pricing_card_2_cta', 'View Packages'), 'url' => txa_url('pricing_card_2_url', $destination_url)],
     ['title' => txa_f('pricing_card_3_title', 'Distributors'), 'price' => txa_f('pricing_card_3_price', 'Commercial Base'), 'copy' => txa_f('pricing_card_3_copy', 'Free to connect. Commercial arrangements depend on the distributor model and agreement.'), 'cta' => txa_f('pricing_card_3_cta', 'Become a Distributor'), 'url' => txa_url('pricing_card_3_url', $distributor_url)],
-    ['title' => txa_f('pricing_card_4_title', 'Booking Systems'), 'price' => txa_f('pricing_card_4_price', 'Partner Enquiry'), 'copy' => txa_f('pricing_card_4_copy', 'Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry.'), 'cta' => txa_f('pricing_card_4_cta', 'Partner Enquiry'), 'url' => txa_url('pricing_card_4_url', $booking_url)],
+    ['title' => txa_f('pricing_card_4_title', 'Booking Systems'), 'price' => txa_f('pricing_card_4_price', 'Partner Enquiry'), 'copy' => txa_f('pricing_card_4_copy', 'Free to connect. Integration scope, documentation and commercial arrangements are handled through partner enquiry.'), 'cta' => txa_f('pricing_card_4_cta', 'Partner Enquiry'), 'url' => txa_url('pricing_card_4_url', $booking_url)],
 ];
 
 $supplier_types = [txa_f('pricing_supplier_type_1', 'Accommodation and Hotels'), txa_f('pricing_supplier_type_2', 'Guided Tours and Experiences'), txa_f('pricing_supplier_type_3', 'Attractions and Rentals'), txa_f('pricing_supplier_type_4', 'Event and Activity Providers')];
@@ -198,14 +197,7 @@ $partner_cards = [
                 <div class="flex items-center justify-between gap-4 text-sm font-bold">
                     <span
                         class="text-[#151c27]"><?php echo esc_html(txa_f('pricing_fee_label', 'Booking Success Fee')); ?></span>
-                    <span class="text-brand"><?php echo esc_html(txa_f('pricing_fee_average', '1.5% Avg.')); ?></span>
-                </div>
-                <div class="mt-6 h-4 overflow-hidden rounded-full bg-[#f0d2ce]">
-                    <div class="h-full rounded-full bg-brand" style="width: <?php echo esc_attr((string) $fee_fill_percentage); ?>%"></div>
-                </div>
-                <div class="mt-4 flex justify-between text-xs font-semibold text-mid-gray">
-                    <span><?php echo esc_html(txa_f('pricing_fee_min', '0.75%')); ?></span>
-                    <span><?php echo esc_html(txa_f('pricing_fee_max', '2.8%')); ?></span>
+                    <span class="text-brand"><?php echo esc_html(txa_f('pricing_fee_min', '0.75%')); ?>–<?php echo esc_html(txa_f('pricing_fee_max', '2.8%')); ?> per booking</span>
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@
       {"key": "field_ins_tab_export", "label": "Export Card", "type": "tab", "placement": "top"},
       {"key": "field_ins_export_icon", "label": "Icon (Bootstrap Icons class)", "name": "insights_export_icon", "type": "text", "placeholder": "bi-file-earmark-arrow-down"},
       {"key": "field_ins_export_title", "label": "Title", "name": "insights_export_title", "type": "text", "placeholder": "Export Power"},
-      {"key": "field_ins_export_copy", "label": "Copy", "name": "insights_export_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Take your data anywhere. Export booking and consumer metrics into Excel or XML formats for deep internal auditing or offline presentation."},
+      {"key": "field_ins_export_copy", "label": "Copy", "name": "insights_export_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Export booking and consumer metrics for internal review and offline analysis."},
       {"key": "field_ins_export_format_1", "label": "Format Tag 1", "name": "insights_export_format_1", "type": "text", "placeholder": "XLSX"},
       {"key": "field_ins_export_format_2", "label": "Format Tag 2", "name": "insights_export_format_2", "type": "text", "placeholder": "XML"},
       {"key": "field_ins_export_format_3", "label": "Format Tag 3", "name": "insights_export_format_3", "type": "text", "placeholder": "JSON"},

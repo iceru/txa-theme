@@ -69,7 +69,7 @@ $solutions = txa_destination_cards('destination_solution', [
 
 $capabilities = txa_destination_cards('destination_capability', [
     ['icon' => 'bi-window-stack', 'title' => 'Activate digital assets', 'copy' => 'Use B2B and B2C destination websites, apps, APIs, widgets and custom booking pages to connect brand, content and conversion.'],
-    ['icon' => 'bi-graph-up-arrow', 'title' => 'Insights to drive growth', 'copy' => 'Support multiple supplier pathways, including connected systems, free or low-cost booking options, on-request, content-only and smart referral models.'],
+    ['icon' => 'bi-graph-up-arrow', 'title' => 'Flexible supplier pathways', 'copy' => 'Support multiple supplier pathways, including connected systems, free or low-cost booking options, on-request, content-only and smart referral models.'],
     ['icon' => 'bi-database-lock', 'title' => 'Own your data', 'copy' => 'Data and insights to drive growth that belongs to your destination, not a third-party platform.'],
     ['icon' => 'bi-globe2', 'title' => 'Connect supply to the world', 'copy' => 'Aggregate supplier and destination content and make it available to distributors, trade channels, DMO-owned assets and connected APIs.'],
     ['icon' => 'bi-diagram-3', 'title' => 'Commercial neutrality', 'copy' => 'Use a platform model that supports multiple booking systems and commercial models.'],

@@ -31,7 +31,7 @@ $benefits = [
     ['icon' => 'bi-diagram-3', 'title' => 'Connection options', 'copy' => 'Options for suppliers without a suitable booking system, or alternative connection pathways.'],
     ['icon' => 'bi-credit-card-2-front', 'title' => 'Flexible booking payment models', 'copy' => 'Support for direct payment and OTA / on-request account distributor models depending on the channel.'],
     ['icon' => 'bi-list-check', 'title' => 'Less manual tasks', 'copy' => 'No need for time consuming inventory and rate management across multiple websites and platforms.'],
-    ['icon' => 'bi-cash-coin', 'title' => 'No booking, no fee', 'copy' => 'A no-booking-no-fee supplier pricing model for TXA-originated online bookings means no fixed upfront or monthly fees = no risk!'],
+    ['icon' => 'bi-cash-coin', 'title' => 'No booking, no fee', 'copy' => 'No fixed upfront or monthly TXA fees for TXA-originated online bookings. A success fee applies when a booking is completed.'],
 ];
 
 foreach ($benefits as $i => $benefit) {
@@ -87,8 +87,7 @@ foreach ($benefits as $i => $benefit) {
                     <?php echo esc_html(txa_f('supplier_intro_heading', 'Boost your digital distribution profile')); ?>
                 </h2>
                 <p class="mt-3 text-base leading-7 text-mid-gray sm:leading-[30px]">
-                    <?php echo esc_html(txa_f('supplier_intro_copy', 'TXA is designed to reduce manual work by using your booking system as the single source of 
-                    products, rates and availability where available. Designed for micro and small-medium enterprises, easy implementation regardless of technical skill level.”')); ?>
+                    <?php echo esc_html(txa_f('supplier_intro_copy', 'TXA is designed to reduce manual work by using your booking system as the single source of products, rates and availability where available. Designed for micro and small-to-medium enterprises, with straightforward implementation.')); ?>
                 </p>
             </div>
             <?php get_template_part('template-parts/system-diagram', null, ['highlight' => 'supplier']); ?>

@@ -223,7 +223,7 @@ if ($booking_system_query->have_posts()) {
                     <?php echo esc_html(txa_f('booking_intro_heading', 'Connect your customers to Australia’s national tourism exchange')); ?>
                 </h2>
                 <p class="mt-4 text-sm leading-6 text-mid-gray sm:text-base">
-                    <?php echo esc_html(txa_f('booking_intro_copy', 'Integrating your Booking system via TXA’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels.')); ?>
+                    <?php echo esc_html(txa_f('booking_intro_copy', 'TXA’s APIs let connected booking systems share live product content, rates and availability. Booking confirmation and payment timing depend on the selected distributor, supplier setup and payment pathway, including on-account/agent, direct-payment and on-request models.')); ?>
                 </p>
             </div>
             <div class="mt-8 grid gap-5 md:grid-cols-3 md:gap-8">

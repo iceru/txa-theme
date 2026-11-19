@@ -19,7 +19,7 @@
       {"key": "field_sup_tab_intro", "label": "Intro", "type": "tab", "placement": "top"},
       {"key": "field_sup_intro_eyebrow", "label": "Eyebrow", "name": "supplier_intro_eyebrow", "type": "text", "placeholder": "Connect once, sell everywhere"},
       {"key": "field_sup_intro_heading", "label": "Heading", "name": "supplier_intro_heading", "type": "text", "placeholder": "Boost your digital distribution profile"},
-      {"key": "field_sup_intro_copy", "label": "Copy", "name": "supplier_intro_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "TXA is designed to reduce manual work by using your booking system as the single source of products, rates and availability where available."},
+      {"key": "field_sup_intro_copy", "label": "Copy", "name": "supplier_intro_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "TXA is designed to reduce manual work by using your booking system as the single source of products, rates and availability where available. Designed for micro and small-to-medium enterprises, with straightforward implementation."},
 
       {"key": "field_sup_tab_benefits", "label": "Benefits", "type": "tab", "placement": "top"},
       {"key": "field_sup_benefits_eyebrow", "label": "Eyebrow", "name": "supplier_benefits_eyebrow", "type": "text", "placeholder": "Supplier benefits"},
@@ -48,7 +48,7 @@
 
       {"key": "field_sup_benefit_6_icon", "label": "Benefit 6 Icon (Bootstrap Icons class)", "name": "supplier_benefit_6_icon", "type": "text", "placeholder": "bi-cash-coin"},
       {"key": "field_sup_benefit_6_title", "label": "Benefit 6 Title", "name": "supplier_benefit_6_title", "type": "text", "placeholder": "No booking, no fee"},
-      {"key": "field_sup_benefit_6_copy", "label": "Benefit 6 Copy", "name": "supplier_benefit_6_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "A no-booking-no-fee supplier pricing model for TXA-originated online bookings means no fixed upfront or monthly fees = no risk!"},
+      {"key": "field_sup_benefit_6_copy", "label": "Benefit 6 Copy", "name": "supplier_benefit_6_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "No fixed upfront or monthly TXA fees for TXA-originated online bookings. A success fee applies when a booking is completed."},
 
       {"key": "field_sup_tab_connect", "label": "Get Connected", "type": "tab", "placement": "top"},
       {"key": "field_sup_connect_eyebrow", "label": "Eyebrow", "name": "supplier_connect_eyebrow", "type": "text", "placeholder": "Get connected"},

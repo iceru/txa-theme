@@ -115,7 +115,7 @@
         "label": "Destination Path Card URL",
         "name": "pricing_path_2_url",
         "type": "text",
-        "placeholder": "/destinations/pricing/"
+        "placeholder": "/destinations/destination-pricing/"
       },
       {
         "key": "field_txa_pricing_path_3_title",
@@ -263,7 +263,7 @@
         "label": "Destination Pricing Card Button URL",
         "name": "pricing_card_2_url",
         "type": "text",
-        "placeholder": "/destinations/pricing/"
+        "placeholder": "/destinations/destination-pricing/"
       },
       {
         "key": "field_txa_pricing_card_3_title",
@@ -323,7 +323,7 @@
         "type": "textarea",
         "rows": 4,
         "new_lines": "",
-        "placeholder": "Fee to connect. Integration scope and commercial arrangements are handled through partner enquiry."
+        "placeholder": "Free to connect. Integration scope, documentation and commercial arrangements are handled through partner enquiry."
       },
       {
         "key": "field_txa_pricing_card_4_cta",
@@ -429,7 +429,7 @@
         "label": "Destination Partner Card Button URL",
         "name": "pricing_partner_1_url",
         "type": "text",
-        "placeholder": "/destinations/pricing/"
+        "placeholder": "/destinations/destination-pricing/"
       },
       {
         "key": "field_txa_pricing_partner_2_eyebrow",
@@ -654,13 +654,6 @@
         "placeholder": "Booking Success Fee"
       },
       {
-        "key": "field_txa_pricing_fee_average",
-        "label": "Fee Average",
-        "name": "pricing_fee_average",
-        "type": "text",
-        "placeholder": "1.5% Avg."
-      },
-      {
         "key": "field_txa_pricing_fee_min",
         "label": "Fee Min",
         "name": "pricing_fee_min",
@@ -673,16 +666,6 @@
         "name": "pricing_fee_max",
         "type": "text",
         "placeholder": "2.8%"
-      },
-      {
-        "key": "field_txa_pricing_fee_fill_percentage",
-        "label": "Fee Range Graphic Fill Percentage",
-        "name": "pricing_fee_fill_percentage",
-        "type": "number",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "placeholder": "58"
       },
       {
         "key": "field_txa_pricing_hero_image",

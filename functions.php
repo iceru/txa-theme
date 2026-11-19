@@ -1249,14 +1249,21 @@ add_action('wp_enqueue_scripts', function () {
  * This lets templates keep descriptive route names without sending visitors to 404 pages.
  */
 add_filter('home_url', function (string $url, string $path): string {
+    $route_aliases = [
+        '/distributors/apply/' => '/distributor-apply-now-txa/',
+        '/destinations/pricing/' => '/destinations/destination-pricing/',
+    ];
     $placeholder_paths = [
         '/destinations/contact/',
-        '/distributors/apply/',
         '/booking-systems/partner-enquiry/',
         '/register-your-interest/',
     ];
 
     $normalized_path = '/' . trim($path, '/') . '/';
+
+    if (isset($route_aliases[$normalized_path])) {
+        return substr($url, 0, -strlen($normalized_path)) . $route_aliases[$normalized_path];
+    }
 
     return in_array($normalized_path, $placeholder_paths, true) ? '#' : $url;
 }, 10, 2);

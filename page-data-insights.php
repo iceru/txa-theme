@@ -113,7 +113,7 @@ $export_formats = array_values(array_filter([
                         <?php echo esc_html(txa_f('insights_export_title', 'Export Power')); ?>
                     </h3>
                     <p class="mt-4 text-sm leading-6 text-mid-gray sm:text-base">
-                        <?php echo esc_html(txa_f('insights_export_copy', 'Take your data anywhere. Export booking and consumer metrics into Excel or XML formats for deep internal auditing or offline presentation.')); ?>
+                        <?php echo esc_html(txa_f('insights_export_copy', 'Export booking and consumer metrics for internal review and offline analysis.')); ?>
                     </p>
                     <div class="mt-auto flex flex-wrap gap-3 pt-6">
                         <?php foreach ($export_formats as $format): ?>

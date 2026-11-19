@@ -17,7 +17,7 @@
       {"key": "field_dest_hero_secondary_label", "label": "Secondary Button Label", "name": "destination_hero_secondary_label", "type": "text", "placeholder": "See destination packages"},
       {"key": "field_dest_demo_url", "label": "Demo URL (used by all demo buttons)", "name": "destination_demo_url", "type": "text", "placeholder": "/destinations/contact/"},
       {"key":"field_dest_demo_url_new_tab","label":"Open in new tab","name":"destination_demo_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
-      {"key": "field_dest_pricing_url", "label": "Pricing URL (used by all package buttons)", "name": "destination_pricing_url", "type": "text", "placeholder": "/destinations/pricing/"},
+      {"key": "field_dest_pricing_url", "label": "Pricing URL (used by all package buttons)", "name": "destination_pricing_url", "type": "text", "placeholder": "/destinations/destination-pricing/"},
       {"key":"field_dest_pricing_url_new_tab","label":"Open in new tab","name":"destination_pricing_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_dest_tab_what", "label": "What is a Smart Destination", "type": "tab", "placement": "top"},
@@ -82,7 +82,7 @@
       {"key": "field_dest_capability_1_copy", "label": "Capability 1 Copy", "name": "destination_capability_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Use B2B and B2C destination websites, apps, APIs, widgets and custom booking pages to connect brand, content and conversion."},
 
       {"key": "field_dest_capability_2_icon", "label": "Capability 2 Icon (Bootstrap Icons class)", "name": "destination_capability_2_icon", "type": "text", "placeholder": "bi-graph-up-arrow"},
-      {"key": "field_dest_capability_2_title", "label": "Capability 2 Title", "name": "destination_capability_2_title", "type": "text", "placeholder": "Insights to drive growth"},
+      {"key": "field_dest_capability_2_title", "label": "Capability 2 Title", "name": "destination_capability_2_title", "type": "text", "placeholder": "Flexible supplier pathways"},
       {"key": "field_dest_capability_2_copy", "label": "Capability 2 Copy", "name": "destination_capability_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Support multiple supplier pathways, including connected systems, free or low-cost booking options, on-request, content-only and smart referral models."},
 
       {"key": "field_dest_capability_3_icon", "label": "Capability 3 Icon (Bootstrap Icons class)", "name": "destination_capability_3_icon", "type": "text", "placeholder": "bi-database-lock"},

@@ -22,16 +22,16 @@
       {"key": "field_con_pathways_heading", "label": "Heading", "name": "contact_pathways_heading", "type": "text", "placeholder": "Pathway Guidance"},
 
       {"key": "field_con_pathway_1_title", "label": "Pathway 1 Title", "name": "contact_pathway_1_title", "type": "text", "placeholder": "Tourism Suppliers"},
-      {"key": "field_con_pathway_1_copy", "label": "Pathway 1 Copy", "name": "contact_pathway_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "If you have tours, accommodation, or attractions, choose 'General Enquiry' or contact your current booking system provider to see if they are already integrated with TXA."},
+      {"key": "field_con_pathway_1_copy", "label": "Pathway 1 Copy", "name": "contact_pathway_1_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "If you have tours, accommodation or attractions, tell us about your business in the message or contact your booking-system provider to ask whether they are connected to TXA."},
 
       {"key": "field_con_pathway_2_title", "label": "Pathway 2 Title", "name": "contact_pathway_2_title", "type": "text", "placeholder": "Distributors"},
-      {"key": "field_con_pathway_2_copy", "label": "Pathway 2 Copy", "name": "contact_pathway_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "OTAs and wholesalers looking for high quality bookable Australian inventory should select 'Distributor Enquiry' to start the technical evaluation process."},
+      {"key": "field_con_pathway_2_copy", "label": "Pathway 2 Copy", "name": "contact_pathway_2_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "OTAs and wholesalers looking for bookable Australian inventory can tell us they are enquiring as a distributor in the message."},
 
       {"key": "field_con_pathway_3_title", "label": "Pathway 3 Title", "name": "contact_pathway_3_title", "type": "text", "placeholder": "Destinations"},
-      {"key": "field_con_pathway_3_copy", "label": "Pathway 3 Copy", "name": "contact_pathway_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Regional and State bodies should request the 'Smart Destination Demo' to understand the strategic benefits of our destination wide aggregation."},
+      {"key": "field_con_pathway_3_copy", "label": "Pathway 3 Copy", "name": "contact_pathway_3_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Regional and State tourism organisations can describe their destination and the support they are looking for in the message."},
 
       {"key": "field_con_pathway_4_title", "label": "Pathway 4 Title", "name": "contact_pathway_4_title", "type": "text", "placeholder": "Booking Systems"},
-      {"key": "field_con_pathway_4_copy", "label": "Pathway 4 Copy", "name": "contact_pathway_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Tech providers wanting to offer their clients global distribution via TXA should select 'Booking-System Partner' for API documentation access."}
+      {"key": "field_con_pathway_4_copy", "label": "Pathway 4 Copy", "name": "contact_pathway_4_copy", "type": "textarea", "rows": 3, "new_lines": "", "placeholder": "Booking-system providers can mention their platform and partnership enquiry in the message."}
     ],
     "location": [
       [

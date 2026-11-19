@@ -30,7 +30,7 @@
 
       {"key": "field_book_tab_intro", "label": "Intro and Benefits", "type": "tab", "placement": "top"},
       {"key": "field_book_intro_heading", "label": "Heading", "name": "booking_intro_heading", "type": "text", "placeholder": "Connect your customers to Australia’s national tourism exchange"},
-      {"key": "field_book_intro_copy", "label": "Copy", "name": "booking_intro_copy", "type": "textarea", "rows": 6, "new_lines": "", "placeholder": "Integrating your Booking system via TXA’s easy to use APIs means your client’s tourism businesses can offer live product content, rates, availability, and receive instant paid bookings, using On account/agent, direct-payment and ‘on-request’ payment pathways with support for supplier participation across destination and myriad distributor channels."},
+      {"key": "field_book_intro_copy", "label": "Copy", "name": "booking_intro_copy", "type": "textarea", "rows": 6, "new_lines": "", "placeholder": "TXA’s APIs let connected booking systems share live product content, rates and availability. Booking confirmation and payment timing depend on the selected distributor, supplier setup and payment pathway, including on-account/agent, direct-payment and on-request models."},
 
       {"key": "field_book_benefit_1_icon", "label": "Benefit 1 Icon (Bootstrap Icons class)", "name": "booking_benefit_1_icon", "type": "text", "placeholder": "bi-share"},
       {"key": "field_book_benefit_1_title", "label": "Benefit 1 Title", "name": "booking_benefit_1_title", "type": "text", "placeholder": "Broader Distribution"},

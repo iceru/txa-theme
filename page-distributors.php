@@ -26,7 +26,7 @@ add_action('wp_head', function (): void {
 
 get_header();
 
-$apply_url = txa_url('distributor_apply_url', home_url('/distributors/apply/'));
+$apply_url = txa_url('distributor_apply_url', home_url('/distributor-apply-now-txa/'));
 
 $benefits = [
     ['icon' => 'bi-box-seam', 'title' => 'Access live inventory', 'copy' => 'Direct access to thousands of live-booked suppliers with real-time rates and availability.'],
@@ -49,7 +49,7 @@ $models = [
     ['icon' => 'bi-window', 'title' => 'White-label Booking Pages', 'copy' => 'Branded booking widgets and search pages that integrate seamlessly into your website with minimal code.', 'points' => ['Rapid deployment', 'Mobile optimized']],
     ['icon' => 'bi-person-vcard', 'title' => 'On-account / Agent Model', 'copy' => 'Support for traditional agency models where distributors hold accounts and manage payments offline.', 'points' => ['Flexible settlement', 'Back-office reconciliation']],
     ['icon' => 'bi-signpost-split', 'title' => 'Campaign and Destination Led', 'copy' => 'Targeted distribution focused on specific regions or events as part of institutional marketing efforts.', 'points' => ['High-intent traffic', 'Curated inventory lists']],
-    ['icon' => 'bi-credit-card-2-front', 'title' => 'Direct to Supplier payment option', 'copy' => "Facilitates the Supplier transaction with the supplier as merchant. Distributors don't have PCI compliance or GDPR. Supplier is the merchant but distributor still gets credited with commission.", 'points' => []],
+    ['icon' => 'bi-credit-card-2-front', 'title' => 'Direct to Supplier payment option', 'copy' => 'Payment responsibilities depend on the transaction model and each party’s role. When the supplier handles payment directly, the distributor may still receive commission. Each party should confirm its obligations for the payment and data it handles.', 'points' => []],
     ['icon' => 'bi-file-earmark-check', 'title' => 'Simple and easy Supplier contracting', 'copy' => 'Simple opt-in opt-out model for contracting. Single supplier contract legally covers all suppliers. Simple, fast, efficient.', 'points' => []],
 ];
 

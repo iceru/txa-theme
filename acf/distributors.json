@@ -14,7 +14,7 @@
       {"key": "field_dist_hero_image", "label": "Hero Image", "name": "distributor_hero_image", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all"},
       {"key": "field_dist_hero_image_alt", "label": "Hero Image Alt Text", "name": "distributor_hero_image_alt", "type": "text", "placeholder": "Australian landscape"},
       {"key": "field_dist_hero_button_label", "label": "Hero Button Label", "name": "distributor_hero_button_label", "type": "text", "placeholder": "Become a Distributor"},
-      {"key": "field_dist_apply_url", "label": "Apply URL (used by all buttons)", "name": "distributor_apply_url", "type": "text", "placeholder": "/distributors/apply/"},
+      {"key": "field_dist_apply_url", "label": "Apply URL (used by all buttons)", "name": "distributor_apply_url", "type": "text", "placeholder": "/distributor-apply-now-txa/"},
       {"key":"field_dist_apply_url_new_tab","label":"Open in new tab","name":"distributor_apply_url_new_tab","type":"true_false","ui":1,"ui_on_text":"New tab","ui_off_text":"Same tab","instructions":"When enabled the button opens the URL in a new browser tab (target=\"_blank\").","default_value":0},
 
       {"key": "field_dist_tab_ecosystem", "label": "Ecosystem", "type": "tab", "placement": "top"},
@@ -72,7 +72,7 @@
 
       {"key": "field_dist_model_5_icon", "label": "Model 5 Icon (Bootstrap Icons class)", "name": "distributor_model_5_icon", "type": "text", "placeholder": "bi-credit-card-2-front"},
       {"key": "field_dist_model_5_title", "label": "Model 5 Title", "name": "distributor_model_5_title", "type": "text", "placeholder": "Direct to Supplier payment option"},
-      {"key": "field_dist_model_5_copy", "label": "Model 5 Copy", "name": "distributor_model_5_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Facilitates the Supplier transaction with the supplier as merchant. Distributors don't have PCI compliance or GDPR. Supplier is the merchant but distributor still gets credited with commission."},
+      {"key": "field_dist_model_5_copy", "label": "Model 5 Copy", "name": "distributor_model_5_copy", "type": "textarea", "rows": 4, "new_lines": "", "placeholder": "Payment responsibilities depend on the transaction model and each party’s role. When the supplier handles payment directly, the distributor may still receive commission. Each party should confirm its obligations for the payment and data it handles."},
       {"key": "field_dist_model_5_point_1", "label": "Model 5 Point 1 (optional)", "name": "distributor_model_5_point_1", "type": "text"},
       {"key": "field_dist_model_5_point_2", "label": "Model 5 Point 2 (optional)", "name": "distributor_model_5_point_2", "type": "text"},
 

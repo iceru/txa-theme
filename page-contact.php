@@ -20,10 +20,10 @@ if (!function_exists('txa_contact_form_markup')) {
 }
 get_header();
 $pathways = [
-    ['Tourism Suppliers', "If you have tours, accommodation, or attractions, choose 'General Enquiry' or contact your current booking system provider to see if they are already integrated with TXA."],
-    ['Distributors', "OTAs and wholesalers looking for high quality bookable Australian inventory should select 'Distributor Enquiry' to start the technical evaluation process."],
-    ['Destinations', "Regional and State bodies should request the 'Smart Destination Demo' to understand the strategic benefits of our destination wide aggregation."],
-    ['Booking Systems', "Tech providers wanting to offer their clients global distribution via TXA should select 'Booking System Partner' for API documentation access."],
+    ['Tourism Suppliers', 'If you have tours, accommodation or attractions, tell us about your business in the message or contact your booking-system provider to ask whether they are connected to TXA.'],
+    ['Distributors', 'OTAs and wholesalers looking for bookable Australian inventory can tell us they are enquiring as a distributor in the message.'],
+    ['Destinations', 'Regional and State tourism organisations can describe their destination and the support they are looking for in the message.'],
+    ['Booking Systems', 'Booking-system providers can mention their platform and partnership enquiry in the message.'],
 ];
 
 foreach ($pathways as $i => $pathway) {
